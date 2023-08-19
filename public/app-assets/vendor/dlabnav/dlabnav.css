@@ -319,7 +319,7 @@ a {
   font-size: 16px;
   margin-bottom: 1.875rem;
   margin-top: 3.125rem;
-  border-bottom: 1px solid #e4e4e6;
+  border-bottom: 1px solid #a9a9b8;
   padding-bottom: 10px; }
   [direction="rtl"] .content-heading {
     text-align: right; }
@@ -731,7 +731,7 @@ li {
   right: 0;
   padding: 1.25rem 2.8125rem; }
   [data-layout="horizontal"] .dlabnav .metismenu > li.mega-menu ul li {
-    border-right: 1px solid #e4e4e6;
+    border-right: 1px solid #a9a9b8;
     padding: 0.1rem 1.25rem; }
     [data-theme-version="dark"][data-layout="horizontal"] .dlabnav .metismenu > li.mega-menu ul li {
       border-color: #111829; }
@@ -1022,7 +1022,7 @@ a {
   font-size: 16px;
   margin-bottom: 1.875rem;
   margin-top: 3.125rem;
-  border-bottom: 1px solid #e4e4e6;
+  border-bottom: 1px solid #a9a9b8;
   padding-bottom: 10px; }
   [direction="rtl"] .content-heading {
     text-align: right; }
@@ -1421,7 +1421,7 @@ a {
   font-size: 16px;
   margin-bottom: 1.875rem;
   margin-top: 3.125rem;
-  border-bottom: 1px solid #e4e4e6;
+  border-bottom: 1px solid #a9a9b8;
   padding-bottom: 10px; }
   [direction="rtl"] .content-heading {
     text-align: right; }
@@ -1800,7 +1800,7 @@ a {
   font-size: 16px;
   margin-bottom: 1.875rem;
   margin-top: 3.125rem;
-  border-bottom: 1px solid #e4e4e6;
+  border-bottom: 1px solid #a9a9b8;
   padding-bottom: 10px; }
   [direction="rtl"] .content-heading {
     text-align: right; }
@@ -1975,7 +1975,7 @@ a {
         flex: 0 0 auto;
         position: relative; }
         [data-layout="horizontal"] .dlabnav .metismenu > li:not(:last-child) {
-          border-right: 1px solid #e4e4e6; }
+          border-right: 1px solid #a9a9b8; }
           [data-theme-version="dark"][data-layout="horizontal"] .dlabnav .metismenu > li:not(:last-child) {
             border-color: #111829; }
         [direction="rtl"][data-layout="horizontal"] .dlabnav .metismenu > li:not(:first-child) {
@@ -2183,7 +2183,7 @@ a {
     width: 9.375rem; }
   [data-sidebar-style="modern"] .dlabnav .metismenu > li {
     text-align: center;
-    border-bottom: 1px solid #e4e4e6; }
+    border-bottom: 1px solid #a9a9b8; }
     [data-sidebar-style="modern"] .dlabnav .metismenu > li > a {
       padding: 20px 15px 20px 15px !important; }
       [data-sidebar-style="modern"] .dlabnav .metismenu > li > a::after {
@@ -2230,7 +2230,7 @@ a {
         top: 0;
         bottom: 0;
         background-color: #fff;
-        border: 1px solid #e4e4e6;
+        border: 1px solid #a9a9b8;
         width: 200px; }
         [direction="rtl"][data-sidebar-style="modern"][data-layout="vertical"] .dlabnav .metismenu li ul {
           left: auto;
@@ -2489,7 +2489,7 @@ a {
   font-size: 16px;
   margin-bottom: 1.875rem;
   margin-top: 3.125rem;
-  border-bottom: 1px solid #e4e4e6;
+  border-bottom: 1px solid #a9a9b8;
   padding-bottom: 10px; }
   [direction="rtl"] .content-heading {
     text-align: right; }
@@ -3254,7 +3254,7 @@ svg.pulse-svg {
     .header-right .notification_dropdown .dropdown-item a:hover {
       text-decoration: none; }
   .header-right .dropdown-menu {
-    border-color: #e4e4e6;
+    border-color: #a9a9b8;
     box-shadow: 0px 0px 10px rgba(120, 130, 140, 0.13); }
   .header-right .header-profile .dropdown-menu {
     padding: 0px; }
@@ -3288,7 +3288,7 @@ svg.pulse-svg {
       color: #fff;
       margin-bottom: 3px; }
   .notification_dropdown .dropdown-menu-right .media {
-    border-bottom: 1px solid #e4e4e6;
+    border-bottom: 1px solid #a9a9b8;
     padding: 20px 25px; }
     .notification_dropdown .dropdown-menu-right .media img {
       width: 35px;
@@ -4913,11 +4913,11 @@ svg.pulse-svg {
   text-align: right !important; }
 
 [direction="rtl"] .border-right {
-  border-left: 1px solid #e4e4e6 !important;
+  border-left: 1px solid #a9a9b8 !important;
   border-right: 0 !important; }
 
 [direction="rtl"] .border-left {
-  border-right: 1px solid #e4e4e6 !important;
+  border-right: 1px solid #a9a9b8 !important;
   border-left: 0 !important; }
 
 [direction="rtl"] .dropdown-menu {
@@ -5235,7 +5235,7 @@ a {
   font-size: 16px;
   margin-bottom: 1.875rem;
   margin-top: 3.125rem;
-  border-bottom: 1px solid #e4e4e6;
+  border-bottom: 1px solid #a9a9b8;
   padding-bottom: 10px; }
   [direction="rtl"] .content-heading {
     text-align: right; }
@@ -5643,7 +5643,7 @@ a {
   font-size: 16px;
   margin-bottom: 1.875rem;
   margin-top: 3.125rem;
-  border-bottom: 1px solid #e4e4e6;
+  border-bottom: 1px solid #a9a9b8;
   padding-bottom: 10px; }
   [direction="rtl"] .content-heading {
     text-align: right; }

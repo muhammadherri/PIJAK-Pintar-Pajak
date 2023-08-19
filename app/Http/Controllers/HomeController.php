@@ -1,11 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-use App\Models\Transaksi;
-use App\Models\Category;
-use App\Models\CategoryPengeluaran;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -26,18 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $catpemasukan=Category::selectRaw('SUM(attribute1) as total')->value('total');
-        $catpengeluaran=CategoryPengeluaran::selectRaw('SUM(attribute1) as total')->value('total');
-        $trxpemasukan=Transaksi::where('jenis_transaksi',0)->selectRaw('SUM(nominal) as total')->value('total');
-        $trxpengeluaran=Transaksi::where('jenis_transaksi',1)->selectRaw('SUM(nominal) as total')->value('total');
-        $subtotalpemasukan=$catpemasukan+$trxpemasukan;
-        $subtotalpengeluaran=$catpengeluaran+$trxpengeluaran;
-        $totalsaldo=$subtotalpemasukan-$subtotalpengeluaran;
-        if($totalsaldo<0){
-            $totalsaldo=0;
-        }else{
-            $totalsaldo;
-        }
-        return view('home',compact('totalsaldo','subtotalpengeluaran','subtotalpemasukan'));
+        $user=Auth::user();
+        return view('home',compact('user'));
     }
 }
