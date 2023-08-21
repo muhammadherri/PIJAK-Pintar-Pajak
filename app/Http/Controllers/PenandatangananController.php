@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Ptkp;
-use Illuminate\Support\Facades\Auth;
 
-class PtkpController extends Controller
+class PenandatangananController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +13,7 @@ class PtkpController extends Controller
      */
     public function index()
     {
-        $ptkp=Ptkp::all();
-        return view('ptkp.index',compact('ptkp'))->with('no',1);
+        //
     }
 
     /**
@@ -26,7 +23,7 @@ class PtkpController extends Controller
      */
     public function create()
     {
-        return view('ptkp.create');
+        //
     }
 
     /**
@@ -37,18 +34,7 @@ class PtkpController extends Controller
      */
     public function store(Request $request)
     {
-        $data = array(
-            'status'=>$request->status,
-            'tanggungan'=>$request->tanggungan,
-            'besaran_ptkp'=>$request->besaran_ptkp,
-            'attribute1'=>Auth::user()->name,
-            'attribute2'=>'NULL',
-            'attribute3'=>'NULL',
-            'created_at'=>date('Y-m-d'),
-        );
-        Ptkp::create($data);
-        $a= \DB::commit();
-        return redirect()->back()->with('alert','Berhasil');
+        //
     }
 
     /**
@@ -59,8 +45,7 @@ class PtkpController extends Controller
      */
     public function show($id)
     {
-        $ptkp = Ptkp::where('id',$id)->get()->first();
-        return view('ptkp.show',compact('ptkp'));
+        //
     }
 
     /**
@@ -71,9 +56,7 @@ class PtkpController extends Controller
      */
     public function edit($id)
     {
-        $ptkp = Ptkp::where('id',$id)->get()->first();
-        return view('ptkp.edit',compact('ptkp'));
-        
+        //
     }
 
     /**
@@ -85,15 +68,7 @@ class PtkpController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Ptkp::where('id',$id)->update([
-            'status'=>$request->status,
-            'tanggungan'=>$request->tanggungan,
-            'besaran_ptkp'=>$request->besaran_ptkp,
-            'attribute2'=>Auth::user()->name,
-            'updated_at'=>date('Y-m-d'),
-        ]);
-        $a= \DB::commit();    
-        return back();
+        //
     }
 
     /**
@@ -104,9 +79,6 @@ class PtkpController extends Controller
      */
     public function destroy($id)
     {
-        $delete=Ptkp::find($id);
-        $delete->delete();
-        return redirect()->back()->with('alert','Berhasil Dihapus');
-
+        //
     }
 }

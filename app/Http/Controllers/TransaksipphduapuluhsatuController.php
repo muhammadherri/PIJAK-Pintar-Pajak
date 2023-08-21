@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\TransaksiPphDuapuluhSatu;
+use App\Models\Ptkp;
 use Illuminate\Support\Facades\Auth;
 
 class TransaksipphduapuluhsatuController extends Controller
@@ -26,8 +27,10 @@ class TransaksipphduapuluhsatuController extends Controller
      */
     public function create()
     {
-        return view('transaksiduapuluhsatu.create');
-        
+        $ptkp=Ptkp::all();
+        $status_pernikahan=Ptkp::select('status_pernikahan')->groupBy('status_pernikahan')->get();
+        $tanggungan=Ptkp::select('tanggungan')->groupBy('tanggungan')->get();
+        return view('transaksiduapuluhsatu.create',compact('ptkp','status_pernikahan','tanggungan'));
     }
 
     /**

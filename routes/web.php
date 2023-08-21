@@ -120,7 +120,7 @@ Route::put('/billing/{id}', [App\Http\Controllers\BillingController::class, 'upd
 // billing
 
 // ptkp
-Route::get('/ptkp', [App\Http\Controllers\PtkpController::class, 'index'])->name('billing');
+Route::get('/ptkp', [App\Http\Controllers\PtkpController::class, 'index'])->name('ptkp');
 Route::get('/ptkp/create', [App\Http\Controllers\PtkpController::class, 'create'])->name('ptkp/create');
 Route::post('/ptkp/store', [App\Http\Controllers\PtkpController::class, 'store'])->name('ptkp/store');
 

@@ -61,10 +61,10 @@
                                             <label class="col-sm-3 col-form-label">Status Pernikahan</label>
                                             <div class="col-sm-9">
                                                 <select id="status_pernikahan" name="status_pernikahan"
-                                                    class="default-select form-control wide">
-                                                    <option selected value="0">Belum Menikah</option>
-                                                    <option value="1">Sudah Menikah</option>
-                                                    <option value="2">Berpisah</option>
+                                                    class="form-control wide">
+                                                    @foreach ($status_pernikahan as $row)
+                                                        <option value="{{ $row->id }}">{{ $row->status_pernikahan }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
@@ -73,10 +73,9 @@
                                             <div class="col-sm-9">
                                                 <select id="tanggungan" name="tanggungan"
                                                     class="default-select form-control wide">
-                                                    <option value="0" selected>0</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
+                                                    @foreach ($tanggungan as $row)
+                                                        <option value="{{ $row->id }}">{{ $row->tanggungan }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
@@ -139,7 +138,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Gaji/Pensiun</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" type="number" id="gajidanpensiun" name="gajidanpensiun"
+                                                <input autocomplete="off" type="text" id="rupiah" name="rupiah"
                                                     class="form-control" placeholder="Masukkan Gaji / Pensiun">
                                             </div>
                                         </div>
@@ -243,11 +242,10 @@
                                             <label class="col-sm-3 col-form-label">PTKP</label>
                                             <div class="col-sm-9">
                                                 <select id="fasilitas"
-                                                    name="fasilitas"class="default-select form-control wide">
-                                                    {{-- @foreach ($fasilitas as $row)
-                                                        <option value="{{ $row->id }}">
-                                                            {{ $row->no }}-{{ $row->jenis_fasilitas }}</option>
-                                                    @endforeach --}}
+                                                    name="fasilitas" class="default-select form-control wide">
+                                                    @foreach ($ptkp as $row)
+                                                        <option value="{{ $row->besaran_ptkp }}">{{ $row->besaran_ptkp }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
@@ -355,7 +353,31 @@
         </div>
     </div>
 @endsection
-<script>
+<script type="text/javascript">
+    var rupiah = document.getElementById('rupiah');
+		rupiah.addEventListener('keyup', function(e){
+			// tambahkan 'Rp.' pada saat form di ketik
+			// gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
+			rupiah.value = formatRupiah(this.value, 'Rp. ');
+		});
+ 
+		/* Fungsi formatRupiah */
+		function formatRupiah(angka, prefix){
+			var number_string = angka.replace(/[^,\d]/g, '').toString(),
+			split   		= number_string.split(','),
+			sisa     		= split[0].length % 3,
+			rupiah     		= split[0].substr(0, sisa),
+			ribuan     		= split[0].substr(sisa).match(/\d{3}/gi);
+ 
+			// tambahkan titik jika yang di input sudah menjadi angka ribuan
+			if(ribuan){
+				separator = sisa ? '.' : '';
+				rupiah += separator + ribuan.join('.');
+			}
+ 
+			rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+			return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+		}
     document.addEventListener('DOMContentLoaded', function() {
         const inputpotongantarif1 = document.getElementById('potongantarif1');
         const inputtarif1 = document.getElementById('tarif1');

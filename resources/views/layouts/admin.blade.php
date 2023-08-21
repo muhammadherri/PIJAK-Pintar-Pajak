@@ -204,6 +204,7 @@
                             <li><a href="{{ route('top') }}">Top</a></li>
                             <li><a href="{{ route('vendor') }}">Vendor</a></li>
                             <li><a href="{{ route('dokumenreferensi') }}">Dokumen Referensi</a></li>
+                            <li><a href="{{ route('ptkp') }}">PTKP</a></li>
                         </ul>
                     </li>
                 </ul>

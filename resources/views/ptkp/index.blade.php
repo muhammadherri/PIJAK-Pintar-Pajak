@@ -38,9 +38,9 @@
                                     <thead>
                                         <tr>
                                             <th></th>
-                                            <th>No Akun</th>
-                                            <th>Nama Akun</th>
-                                            <th>Saldo</th>
+                                            <th>Status</th>
+                                            <th>Tanggungan</th>
+                                            <th>Besaran PTKP</th>
                                             <th>Tanggal</th>
                                             <th>Action</th>
                                         </tr>
@@ -51,14 +51,14 @@
                                                 <td>
                                                     {{ $no++ }}
                                                 </td>
-                                                <td>{{ $row->no_akun }}</td>
-                                                <td>{{ $row->nama_akun }}</td>
-                                                <td>{{ $row->saldo }}</td>
+                                                <td>{{ $row->status }}</td>
+                                                <td>{{ $row->tanggungan }}</td>
+                                                <td>{{ $row->besaran_ptkp }}</td>
                                                 <td>{{ date('d-M-Y',strtotime($row->created_at)) }}</td>
                                                 <td>
                                                     <div class="d-flex">
 
-                                                        <form action="neraca/{{ $row->id }}" method="POST">
+                                                        <form action="ptkp/{{ $row->id }}" method="POST">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit"
@@ -66,11 +66,11 @@
                                                                     class="fa fa-trash"></i></button>
                                                         </form>
                                                         <a
-                                                            class="btn btn-primary shadow btn-xs sharp me-1"href="{{ route('neraca/edit', $row->id) }}">
+                                                            class="btn btn-primary shadow btn-xs sharp me-1"href="{{ route('ptkp/edit', $row->id) }}">
                                                             <i class="fa fa-pencil"></i>
                                                         </a>
                                                         <a
-                                                            class="btn btn-success shadow btn-xs sharp me-1"href="{{ route('neraca/show', $row->id) }}">
+                                                            class="btn btn-success shadow btn-xs sharp me-1"href="{{ route('ptkp/show', $row->id) }}">
                                                             <i class="fa fa-eye"></i>
                                                         </a>
                                                     </div>
