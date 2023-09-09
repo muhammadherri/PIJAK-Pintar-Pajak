@@ -11,8 +11,9 @@
         <div class="container-fluid">
             <div class="row page-titles">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item active"><a href="{{ route('dokumenreferensi') }}">PPH 22</a></li>
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">CREATE</a></li>
+                    <li class="breadcrumb-item active"><a href="{{ route('ebupot') }}">Transaksi</a></li>
+                    <li class="breadcrumb-item active"><a href="{{ route('ebupot') }}">PPH 22</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Buat</a></li>
                 </ol>
             </div>
             <!-- row -->
@@ -33,23 +34,29 @@
                                             <div class="col-sm-9">
                                                 <select id="jenis_pph" name="jenis_pph"
                                                     class="default-select form-control wide">
-                                                    <option value="0">PPH</option>
-                                                    <option value="1">PPH</option>
+                                                    <option value="0">PPh 22</option>
+                                                    <option value="1">PPh 23</option>
+                                                    <option value="2">PPh 4 Ayat 2</option>
+                                                    <option value="3">PPh 24</option>
+                                                    <option value="4">PPh 26</option>
+                                                    <option value="5">PPh 28/29</option>
+                                                    <option value="6">PPh 28/29</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Pilih Transaksi</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" id="transaksi_npwp" name="transaksi_npwp" type="text"
-                                                    class="form-control" placeholder="Masukkan Transaksi NPWP">
+                                                <input autocomplete="off" id="transaksi_npwp" name="transaksi_npwp"
+                                                    type="text" class="form-control"
+                                                    placeholder="Masukkan Transaksi NPWP">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">No Telp</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" id="no_telp" name="no_telp" type="number" class="form-control"
-                                                    placeholder="Masukkan Nomor Telepone">
+                                                <input autocomplete="off" id="no_telp" name="no_telp" type="number"
+                                                    class="form-control" placeholder="Masukkan Nomor Telepone">
                                             </div>
                                         </div>
                                         <h5 class="card-title">Dasar Pemotongan</h5>
@@ -73,7 +80,8 @@
                                                             @endforeach
                                                         </select>
                                                     </td>
-                                                    <td><input autocomplete="off" type="text" name="column2[]" class="form-control"></td>
+                                                    <td><input autocomplete="off" type="text" name="column2[]"
+                                                            class="form-control"></td>
                                                     <td><input type="date" name="column3[]" class="form-control"></td>
                                                     <td><button type="button" class="btn btn-light btn-submit"><i
                                                                 class="fa fa-trash"></i></button></td>
@@ -134,13 +142,13 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Jumlah Bruto</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" id="jumlah_bruto" name="jumlah_bruto" type="number"
-                                                    class="form-control">
+                                                <input autocomplete="off" id="jumlah_bruto" name="jumlah_bruto"
+                                                    type="number" class="form-control">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Tarif</label>
-                                            <div class="col-sm-9">
+                                            <div class="col-sm-3">
                                                 <input autocomplete="off" id="tarif" name="tarif" type="number"
                                                     class="form-control">
                                             </div>
@@ -148,8 +156,8 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Potongan PPH</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" id="potongan_pph" name="potongan_pph" type="number"
-                                                    class="form-control">
+                                                <input readonly autocomplete="off" id="potongan_pph" name="potongan_pph"
+                                                    type="number" class="form-control">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
@@ -157,14 +165,19 @@
                                             <div class="col-sm-9">
                                                 <select id="penandatanganan" name="penandatanganan"
                                                     class="default-select form-control wide">
-                                                    <option selected>ttd</option>
-                                                    <option>ttd</option>
+                                                    @foreach ($penandatanganan as $row)
+                                                        <option value="{{ $row->name }}">{{ $row->npwp }}
+                                                        </option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-between">
-                                        <div></div>
+                                        <button class="btn btn-warning btn-submit"name='action' value="create"
+                                            id="add_all" onclick="resetFormebupot()" type="button"><i
+                                                data-feather='save'></i>
+                                            {{ 'Bersihkan' }}</button>
                                         <button class="btn btn-primary btn-submit"name='action' value="create"
                                             id="add_all" type="submit"><i data-feather='save'></i>
                                             {{ 'Simpan' }}</button>
@@ -204,5 +217,7 @@
         $("table").on("click", ".remove", function() {
             $(this).closest("tr").remove();
         });
+
     });
+    
 </script>

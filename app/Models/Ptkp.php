@@ -13,9 +13,10 @@ class Ptkp extends Model
     public $table = 'tx_ptkp';
     protected $fillable = [
         'id',
-        'status',
+        'status_pernikahan',
         'tanggungan',
         'besaran_ptkp',
+        'kode_ptkp',
         'attribute1',
         'attribute2',
         'attribute3',

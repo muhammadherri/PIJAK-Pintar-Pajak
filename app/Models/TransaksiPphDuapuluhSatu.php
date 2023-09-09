@@ -17,7 +17,8 @@ class TransaksiPphDuapuluhSatu extends Model
         'no_npwp',
         'status_pernikahan',
         'tanggungan',
-        'masa_penghasilan',
+        'masa_penghasilan_start',
+        'masa_penghasilan_end',
         'tunjangan_pajak',
         'ketentuan_ptkp',
         'ketentuan_tarif',
@@ -51,4 +52,9 @@ class TransaksiPphDuapuluhSatu extends Model
         'updated_at',
         'deleted_at',
     ];
+    public function ptkp()
+    {
+        return $this->hasOne(Ptkp::class, 'kode_ptkp', 'status_pernikahan');
+    }
+
 }

@@ -38,9 +38,10 @@ class PtkpController extends Controller
     public function store(Request $request)
     {
         $data = array(
-            'status'=>$request->status,
+            'status_pernikahan'=>$request->status,
             'tanggungan'=>$request->tanggungan,
             'besaran_ptkp'=>$request->besaran_ptkp,
+            'kode_ptkp'=>$request->kode,
             'attribute1'=>Auth::user()->name,
             'attribute2'=>'NULL',
             'attribute3'=>'NULL',
@@ -86,9 +87,10 @@ class PtkpController extends Controller
     public function update(Request $request, $id)
     {
         Ptkp::where('id',$id)->update([
-            'status'=>$request->status,
+            'status_pernikahan'=>$request->status,
             'tanggungan'=>$request->tanggungan,
             'besaran_ptkp'=>$request->besaran_ptkp,
+            'kode_ptkp'=>$request->kode,
             'attribute2'=>Auth::user()->name,
             'updated_at'=>date('Y-m-d'),
         ]);

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\TransaksiPphDuapuluhSatu;
 use App\Models\Ptkp;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class TransaksipphduapuluhsatuController extends Controller
 {
@@ -28,7 +29,7 @@ class TransaksipphduapuluhsatuController extends Controller
     public function create()
     {
         $ptkp=Ptkp::all();
-        $status_pernikahan=Ptkp::select('status_pernikahan')->groupBy('status_pernikahan')->get();
+        $status_pernikahan=Ptkp::select('status_pernikahan','kode_ptkp')->groupBy('status_pernikahan','kode_ptkp')->get();
         $tanggungan=Ptkp::select('tanggungan')->groupBy('tanggungan')->get();
         return view('transaksiduapuluhsatu.create',compact('ptkp','status_pernikahan','tanggungan'));
     }
@@ -43,14 +44,15 @@ class TransaksipphduapuluhsatuController extends Controller
     {
         // dd($request);
         if($request->gross==0){
-            TransaksiPphDuapuluhSatu::updateOrCreate([
+            $data = array(
                 'status_npwp'=>$request->npwp,
                 'nama_wajib_pajak'=>$request->input_wajib_pajak,
                 'no_npwp'=>$request->no_npwp,
                 'status_pernikahan'=>$request->status_pernikahan,
                 'tanggungan'=>$request->tanggungan,
-                'masa_penghasilan'=>$request->masa_penghasilan,
-                // 'tunjangan_pajak'=>$request->contact_person,
+                'masa_penghasilan_start'=>$request->masa_penghasilan,
+                'masa_penghasilan_end'=>$request->masa_penghasilan_end,
+                'tunjangan_pajak'=>$request->gross,
                 'ketentuan_ptkp'=>$request->ketentuan_ptkp,
                 'ketentuan_tarif'=>$request->ketentuan_tarif,
                 'gaji_pensiun'=>$request->gajidanpensiun,
@@ -63,64 +65,69 @@ class TransaksipphduapuluhsatuController extends Controller
                 'penghasilan_bruto'=>$request->penghasilan_bruto,
                 'biaya_jabatan'=>$request->biaya_jabatan,
                 'tht_jht'=>$request->iuran_pensiun,
-                // 'total_pengurangan'=>$request->contact_person,
-                // 'penghasilan_netto'=>$request->contact_person,
-                // 'netto_massa'=>$request->contact_person,
-                // 'netto_setahun'=>$request->contact_person,
-                // 'ptkp'=>$request->contact_person,
-                // 'pkp'=>$request->contact_person,
+                'total_pengurangan'=>$request->total_pengurang,
+                'penghasilan_netto'=>$request->penghasilan_netto,
+                'netto_massa'=>$request->penghasilan_netto_ms,
+                'netto_setahun'=>$request->netto_pertahun,
+                'ptkp'=>$request->pilih_ptkp,
+                'pkp'=>$request->input_pkp,
                 'tarif1'=>$request->totaltarif1,
                 'tarif2'=>$request->totaltarif2,
                 'tarif3'=>$request->totaltarif3,
                 'tarif4'=>$request->totaltarif4,
-                // 'pph21ataspkp'=>$request->contact_person,
-                // 'pph21_dipotong_sebelumnya'=>$request->contact_person,
-                // 'pph21_terutang'=>$request->contact_person,
+                'pph21ataspkp'=>$request->jumlahtotal,
+                'pph21_dipotong_sebelumnya'=>$request->pph21potongan,
+                'pph21_terutang'=>$request->pph21terutang,
                 'attribute1'=>Auth::user()->name,
                 'attribute2'=>'NULL',
                 'attribute3'=>'NULL',
                 'created_at'=>date('Y-m-d'),
-            ]);
+            );
+            TransaksiPphDuapuluhSatu::create($data);
+            $a= \DB::commit();
+        }else{
+            $data = array(
+                'status_npwp'=>$request->npwp,
+                'nama_wajib_pajak'=>$request->input_wajib_pajak,
+                'no_npwp'=>$request->no_npwp,
+                'status_pernikahan'=>$request->status_pernikahan,
+                'tanggungan'=>$request->tanggungan,
+                'masa_penghasilan_start'=>$request->masa_penghasilan,
+                'masa_penghasilan_end'=>$request->masa_penghasilan_end,
+                'tunjangan_pajak'=>$request->gross,
+                'ketentuan_ptkp'=>$request->ketentuan_ptkp,
+                'ketentuan_tarif'=>$request->ketentuan_tarif,
+                'gaji_pensiun'=>$request->gajidanpensiun,
+                // 'tunjangan_pph'=>$request->tunjangan_pph,
+                'tunjangan_lain'=>$request->tunjanganlain,
+                'honorarium'=>$request->honorarium,
+                'premi_asuransi'=>$request->premi_asuransi,
+                'natura'=>$request->natura,
+                'tantiem'=>$request->tantiem,
+                'penghasilan_bruto'=>$request->penghasilan_bruto,
+                'biaya_jabatan'=>$request->biaya_jabatan,
+                'tht_jht'=>$request->iuran_pensiun,
+                'total_pengurangan'=>$request->total_pengurang,
+                'penghasilan_netto'=>$request->penghasilan_netto,
+                'netto_massa'=>$request->penghasilan_netto_ms,
+                'netto_setahun'=>$request->netto_pertahun,
+                'ptkp'=>$request->pilih_ptkp,
+                'pkp'=>$request->input_pkp,
+                'tarif1'=>$request->totaltarif1,
+                'tarif2'=>$request->totaltarif2,
+                'tarif3'=>$request->totaltarif3,
+                'tarif4'=>$request->totaltarif4,
+                'pph21ataspkp'=>$request->jumlahtotal,
+                'pph21_dipotong_sebelumnya'=>$request->pph21potongan,
+                'pph21_terutang'=>$request->pph21terutang,
+                'attribute1'=>Auth::user()->name,
+                'attribute2'=>'NULL',
+                'attribute3'=>'NULL',
+                'created_at'=>date('Y-m-d'),
+            );
+            TransaksiPphDuapuluhSatu::create($data);
             $a= \DB::commit();
         }
-        TransaksiPphDuapuluhSatu::updateOrCreate([
-            'status_npwp'=>$request->npwp,
-            'nama_wajib_pajak'=>$request->input_wajib_pajak,
-            'no_npwp'=>$request->no_npwp,
-            'status_pernikahan'=>$request->status_pernikahan,
-            'tanggungan'=>$request->tanggungan,
-            'masa_penghasilan'=>$request->masa_penghasilan,
-            // 'tunjangan_pajak'=>$request->contact_person,
-            'ketentuan_ptkp'=>$request->ketentuan_ptkp,
-            'ketentuan_tarif'=>$request->ketentuan_tarif,
-            'gaji_pensiun'=>$request->gajidanpensiun,
-            'tunjangan_lain'=>$request->tunjanganlain,
-            'honorarium'=>$request->honorarium,
-            'premi_asuransi'=>$request->premi_asuransi,
-            'natura'=>$request->natura,
-            'tantiem'=>$request->tantiem,
-            'penghasilan_bruto'=>$request->penghasilan_bruto,
-            'biaya_jabatan'=>$request->biaya_jabatan,
-            'tht_jht'=>$request->iuran_pensiun,
-            // 'total_pengurangan'=>$request->contact_person,
-            // 'penghasilan_netto'=>$request->contact_person,
-            // 'netto_massa'=>$request->contact_person,
-            // 'netto_setahun'=>$request->contact_person,
-            // 'ptkp'=>$request->contact_person,
-            // 'pkp'=>$request->contact_person,
-            'tarif1'=>$request->totaltarif1,
-            'tarif2'=>$request->totaltarif2,
-            'tarif3'=>$request->totaltarif3,
-            'tarif4'=>$request->totaltarif4,
-            // 'pph21ataspkp'=>$request->contact_person,
-            // 'pph21_dipotong_sebelumnya'=>$request->contact_person,
-            // 'pph21_terutang'=>$request->contact_person,
-            'attribute1'=>Auth::user()->name,
-            'attribute2'=>'NULL',
-            'attribute3'=>'NULL',
-            'created_at'=>date('Y-m-d'),
-        ]);
-        $a= \DB::commit();
         return back();
     }
 
@@ -132,7 +139,13 @@ class TransaksipphduapuluhsatuController extends Controller
      */
     public function show($id)
     {
-        dd('tes');
+        $pph21 = TransaksiPphDuapuluhSatu::where('id',$id)->get()->first();
+        $ptkp=Ptkp::all();
+        $status_pernikahan=Ptkp::select('status_pernikahan','kode_ptkp')->groupBy('status_pernikahan','kode_ptkp')->get();
+        $tanggungan=Ptkp::select('tanggungan')->groupBy('tanggungan')->get();
+
+        return view('transaksiduapuluhsatu.show',compact('pph21','ptkp','status_pernikahan','tanggungan'));
+
     }
 
     /**
@@ -144,8 +157,11 @@ class TransaksipphduapuluhsatuController extends Controller
     public function edit($id)
     {
         $pph21 = TransaksiPphDuapuluhSatu::where('id',$id)->get()->first();
-        dd($pph21);
-        return view('transaksiduapuluhsatu.edit',compact('pph21'));
+        $ptkp=Ptkp::all();
+        $status_pernikahan=Ptkp::select('status_pernikahan','kode_ptkp')->groupBy('status_pernikahan','kode_ptkp')->get();
+        $tanggungan=Ptkp::select('tanggungan')->groupBy('tanggungan')->get();
+
+        return view('transaksiduapuluhsatu.edit',compact('pph21','ptkp','status_pernikahan','tanggungan'));
     }
 
     /**
@@ -157,7 +173,86 @@ class TransaksipphduapuluhsatuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd('tes');
+        if($request->gross==0){
+            TransaksiPphDuapuluhSatu::where('id',$id)->update([
+                'status_npwp'=>$request->npwp,
+                'nama_wajib_pajak'=>$request->input_wajib_pajak,
+                'no_npwp'=>$request->no_npwp,
+                'status_pernikahan'=>$request->status_pernikahan,
+                'tanggungan'=>$request->tanggungan,
+                'masa_penghasilan_start'=>$request->masa_penghasilan,
+                'masa_penghasilan_end'=>$request->masa_penghasilan_end,
+                'tunjangan_pajak'=>$request->gross,
+                'ketentuan_ptkp'=>$request->ketentuan_ptkp,
+                'ketentuan_tarif'=>$request->ketentuan_tarif,
+                'gaji_pensiun'=>$request->gajidanpensiun,
+                'tunjangan_pph'=>$request->tunjangan_pph,
+                'tunjangan_lain'=>$request->tunjanganlain,
+                'honorarium'=>$request->honorarium,
+                'premi_asuransi'=>$request->premi_asuransi,
+                'natura'=>$request->natura,
+                'tantiem'=>$request->tantiem,
+                'penghasilan_bruto'=>$request->penghasilan_bruto,
+                'biaya_jabatan'=>$request->biaya_jabatan,
+                'tht_jht'=>$request->iuran_pensiun,
+                'total_pengurangan'=>$request->total_pengurang,
+                'penghasilan_netto'=>$request->penghasilan_netto,
+                'netto_massa'=>$request->penghasilan_netto_ms,
+                'netto_setahun'=>$request->netto_pertahun,
+                'ptkp'=>$request->pilih_ptkp,
+                'pkp'=>$request->input_pkp,
+                'tarif1'=>$request->totaltarif1,
+                'tarif2'=>$request->totaltarif2,
+                'tarif3'=>$request->totaltarif3,
+                'tarif4'=>$request->totaltarif4,
+                'pph21ataspkp'=>$request->jumlahtotal,
+                'pph21_dipotong_sebelumnya'=>$request->pph21potongan,
+                'pph21_terutang'=>$request->pph21terutang,
+                'attribute2'=>Auth::user()->name,
+                'updated_at'=>date('Y-m-d'),
+            ]);
+            $a= \DB::commit();    
+        }else{
+            TransaksiPphDuapuluhSatu::where('id',$id)->update([
+                'status_npwp'=>$request->npwp,
+                'nama_wajib_pajak'=>$request->input_wajib_pajak,
+                'no_npwp'=>$request->no_npwp,
+                'status_pernikahan'=>$request->status_pernikahan,
+                'tanggungan'=>$request->tanggungan,
+                'masa_penghasilan_start'=>$request->masa_penghasilan,
+                'masa_penghasilan_end'=>$request->masa_penghasilan_end,
+                'tunjangan_pajak'=>$request->gross,
+                'ketentuan_ptkp'=>$request->ketentuan_ptkp,
+                'ketentuan_tarif'=>$request->ketentuan_tarif,
+                'gaji_pensiun'=>$request->gajidanpensiun,
+                // 'tunjangan_pph'=>$request->tunjangan_pph,
+                'tunjangan_lain'=>$request->tunjanganlain,
+                'honorarium'=>$request->honorarium,
+                'premi_asuransi'=>$request->premi_asuransi,
+                'natura'=>$request->natura,
+                'tantiem'=>$request->tantiem,
+                'penghasilan_bruto'=>$request->penghasilan_bruto,
+                'biaya_jabatan'=>$request->biaya_jabatan,
+                'tht_jht'=>$request->iuran_pensiun,
+                'total_pengurangan'=>$request->total_pengurang,
+                'penghasilan_netto'=>$request->penghasilan_netto,
+                'netto_massa'=>$request->penghasilan_netto_ms,
+                'netto_setahun'=>$request->netto_pertahun,
+                'ptkp'=>$request->pilih_ptkp,
+                'pkp'=>$request->input_pkp,
+                'tarif1'=>$request->totaltarif1,
+                'tarif2'=>$request->totaltarif2,
+                'tarif3'=>$request->totaltarif3,
+                'tarif4'=>$request->totaltarif4,
+                'pph21ataspkp'=>$request->jumlahtotal,
+                'pph21_dipotong_sebelumnya'=>$request->pph21potongan,
+                'pph21_terutang'=>$request->pph21terutang,
+                'attribute2'=>Auth::user()->name,
+                'updated_at'=>date('Y-m-d'),
+            ]);
+            $a= \DB::commit();    
+        }
+        return back();
     }
 
     /**

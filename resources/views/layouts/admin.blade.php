@@ -134,12 +134,7 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{ route('transaksipph21') }}">PPH 21</a></li>
-                            <li><a href="{{ route('ebupot') }}">PPH 22</a></li>
-                            <li><a href="cards-center.html">PPH 23</a></li>
-                            <li><a href="cards-center.html">PPH 4 AYAT 2</a></li>
-                            <li><a href="cards-center.html">PPH 24</a></li>
-                            <li><a href="cards-center.html">PPH 26</a></li>
-                            <li><a href="cards-center.html">PPH 28/29</a></li>
+                            <li><a href="{{ route('ebupot') }}">E-Bupot</a></li>
                             <li><a href="cards-center.html">PPN MASUKAN</a></li>
                             <li><a href="cards-center.html">PPN KELUARAN</a></li>
                         </ul>
@@ -205,6 +200,7 @@
                             <li><a href="{{ route('vendor') }}">Vendor</a></li>
                             <li><a href="{{ route('dokumenreferensi') }}">Dokumen Referensi</a></li>
                             <li><a href="{{ route('ptkp') }}">PTKP</a></li>
+                            <li><a href="{{ route('penandatanganan') }}">Penandatanganan</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -248,6 +244,7 @@
     ***********************************-->
     <!-- Required vendors -->
     <script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
+   
     {{-- <script src="{{ asset('app-assets/chart.js/Chart.bundle.min.js') }}"></script> --}}
     <script src="{{ asset('app-assets/vendor/jquery-nice-select/js/jquery.nice-select.min.js') }}"></script>
 

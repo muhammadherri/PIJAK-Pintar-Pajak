@@ -11,8 +11,8 @@
         <div class="container-fluid">
             <div class="row page-titles">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item active"><a href="{{ route('fasilitas') }}">Lainnya</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('fasilitas') }}">Fasilitas</a></li>
+                    <li class="breadcrumb-item active"><a href="{{ route('penandatanganan') }}">Lainnya</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('penandatanganan') }}">Penandatanganan</a></li>
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Buat</a></li>
                 </ol>
             </div>
@@ -21,34 +21,27 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Fasilitas</h4>
+                            <h4 class="card-title">Penandatanganan</h4>
                         </div>
                         <div class="card-body">
                             <div class="basic-form">
-                                <form action="{{ route('fasilitas/store') }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('penandatanganan/store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('POST')
                                     <div class="row">
                                         <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">Nomor</label>
+                                            <label class="col-sm-3 col-form-label">Nama</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" required id="nomor" name="nomor"type="number" class="form-control"
-                                                    placeholder="Masukkan Nomor">
+                                                <input autocomplete="off" required id="name" name="name"type="text" class="form-control"
+                                                    placeholder="Masukkan Nama">
                                             </div>
                                         </div>
 
                                         <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">Jenis Fasilitas</label>
+                                            <label class="col-sm-3 col-form-label">No.NPWP</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" required id="jenisfasilitas" name="jenisfasilitas"type="text" class="form-control"
-                                                    placeholder="Masukkan Jenis Fasilitas">
-                                            </div>
-                                        </div>
-                                        <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">Sertifikat</label>
-                                            <div class="col-sm-9">
-                                                <input autocomplete="off" required id="sertifikat" name="sertifikat" type="text" class="form-control"
-                                                    placeholder="Masukkan Sertifikat">
+                                                <input autocomplete="off" required id="npwp" name="npwp"type="number" class="form-control"
+                                                    placeholder="Masukkan No.NPWP">
                                             </div>
                                         </div>
                                     </div>
@@ -71,11 +64,9 @@
 @endsection
 <script>
     function resetForm() {
-        var nomor = document.getElementById("nomor");
-        var jenisfasilitas = document.getElementById("jenisfasilitas");
-        var sertifikat = document.getElementById("sertifikat");
-        nomor.value = '';
-        jenisfasilitas.value = '';
-        sertifikat.value = '';
+        var name = document.getElementById("name");
+        var npwp = document.getElementById("npwp");
+        name.value = '';
+        npwp.value = '';
     }
 </script>

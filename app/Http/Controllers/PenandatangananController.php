@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Penandatanganan;
+use Illuminate\Support\Facades\Auth;
 
 class PenandatangananController extends Controller
 {
@@ -13,7 +15,8 @@ class PenandatangananController extends Controller
      */
     public function index()
     {
-        //
+        $penandatanganan=Penandatanganan::all();
+        return view('penandatanganan.index',compact('penandatanganan'))->with('no',1);
     }
 
     /**
@@ -23,7 +26,7 @@ class PenandatangananController extends Controller
      */
     public function create()
     {
-        //
+        return view('penandatanganan.create');
     }
 
     /**
@@ -34,7 +37,15 @@ class PenandatangananController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = array(
+            'name'=>$request->name,
+            'npwp'=>$request->npwp,
+            'attribute1'=>Auth::user()->name,
+            'created_at'=>date('Y-m-d'),
+        );
+        Penandatanganan::create($data);
+        $a= \DB::commit();
+        return redirect()->back()->with('alert','Berhasil');
     }
 
     /**
@@ -45,7 +56,8 @@ class PenandatangananController extends Controller
      */
     public function show($id)
     {
-        //
+        $penandatanganan=Penandatanganan::where('id',$id)->get()->first();
+        return view('penandatanganan.show',compact('penandatanganan'));
     }
 
     /**
@@ -56,7 +68,8 @@ class PenandatangananController extends Controller
      */
     public function edit($id)
     {
-        //
+        $penandatanganan=Penandatanganan::where('id',$id)->get()->first();
+        return view('penandatanganan.edit',compact('penandatanganan'));
     }
 
     /**
@@ -68,7 +81,14 @@ class PenandatangananController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Penandatanganan::where('id',$id)->update([
+            'name'=>$request->name,
+            'npwp'=>$request->npwp,
+            'attribute2'=>Auth::user()->name,
+            'updated_at'=>date('Y-m-d'),
+        ]);
+        $a= \DB::commit();    
+        return back();
     }
 
     /**
@@ -79,6 +99,8 @@ class PenandatangananController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete=Penandatanganan::find($id);
+        $delete->delete();
+        return redirect()->back()->with('alert','Berhasil Dihapus');
     }
 }

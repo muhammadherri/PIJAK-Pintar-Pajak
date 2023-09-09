@@ -128,10 +128,23 @@ Route::delete('/ptkp/{id}', [App\Http\Controllers\PtkpController::class, 'destro
 Route::get('/ptkp/{id}/show', [App\Http\Controllers\PtkpController::class, 'show'])->name('ptkp/show');
 Route::get('/ptkp/{id}/edit', [App\Http\Controllers\PtkpController::class, 'edit'])->name('ptkp/edit');
 Route::put('/ptkp/{id}', [App\Http\Controllers\PtkpController::class, 'update'])->name('ptkp/update');
-
 // ptkp
+
+// penandatanganan
+Route::get('/penandatanganan', [App\Http\Controllers\PenandatangananController::class, 'index'])->name('penandatanganan');
+Route::get('/penandatanganan/create', [App\Http\Controllers\PenandatangananController::class, 'create'])->name('penandatanganan/create');
+Route::post('/penandatanganan/store', [App\Http\Controllers\PenandatangananController::class, 'store'])->name('penandatanganan/store');
+
+Route::delete('/penandatanganan/{id}', [App\Http\Controllers\PenandatangananController::class, 'destroy']);
+Route::get('/penandatanganan/{id}/show', [App\Http\Controllers\PenandatangananController::class, 'show'])->name('penandatanganan/show');
+Route::get('/penandatanganan/{id}/edit', [App\Http\Controllers\PenandatangananController::class, 'edit'])->name('penandatanganan/edit');
+Route::put('/penandatanganan/{id}', [App\Http\Controllers\PenandatangananController::class, 'update'])->name('penandatanganan/update');
+// penandatanganan
+
 // ALL IN ONE
 Route::get('/dokref', [App\Http\Controllers\AllInController::class,'dokrefindex'])->name('get.dokref');
+Route::get('/search/resultPtkp/{status}', [App\Http\Controllers\AllInController::class,'resultPtkp'])->name('get.ptkp');
+Route::get('/search/pphduapuluhsatu', [App\Http\Controllers\AllInController::class,'indexpphduasatu']);
 
 // ALL IN ONE
 

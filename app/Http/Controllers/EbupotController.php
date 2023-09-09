@@ -8,6 +8,7 @@ use App\Models\Ebupotlines;
 use App\Models\Fasilitas;
 use App\Models\Kodepajak;
 use App\Models\DokumenReferensi;
+use App\Models\Penandatanganan;
 use Illuminate\Support\Facades\Auth;
 
 class EbupotController extends Controller
@@ -33,8 +34,9 @@ class EbupotController extends Controller
         $fasilitas=Fasilitas::all();
         $kodepajak=Kodepajak::all();
         $dokref=DokumenReferensi::all();
+        $penandatanganan=Penandatanganan::all();
         // dd($fasilitas);
-        return view('ebupot.create',compact('fasilitas','kodepajak','dokref'));
+        return view('ebupot.create',compact('fasilitas','kodepajak','dokref','penandatanganan'));
         
     }
 

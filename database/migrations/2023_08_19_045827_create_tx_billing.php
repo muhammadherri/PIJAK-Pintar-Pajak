@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('tx_billing', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('kode_billing');
             $table->string('kode_akun_pajak');
             $table->string('kode_jenis_setoran');
             $table->string('npwp');

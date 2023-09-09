@@ -12,7 +12,7 @@ class Billing extends Model
     public $table = 'tx_billing';
     protected $fillable = [
         'id',
-        'billing_id',
+        'kode_billing',
         'kode_akun_pajak',
         'kode_jenis_setoran',
         'npwp',

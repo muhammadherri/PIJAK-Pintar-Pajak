@@ -12,7 +12,7 @@
             <div class="row page-titles">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item active"><a href="{{ route('transaksipph21') }}">PPH 21</a></li>
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">Buat</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">View</a></li>
                 </ol>
             </div>
             <!-- row -->
@@ -24,35 +24,44 @@
                         </div>
                         <div class="card-body">
                             <div class="basic-form">
-                                <form action="{{ route('transaksipph21/store') }}" method="POST"
+                                <form action="{{ route('transaksipph21/update', [$pph21->id]) }}" method="POST"
                                     enctype="multipart/form-data">
                                     @csrf
-                                    @method('POST')
+                                    @method('PUT')
                                     <div class="row">
                                         <h5>Personal</h5>
 
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Status NPWP</label>
                                             <div class="col-sm-9">
-                                                <select onchange="toggleInput()" id="npwp"name="npwp"
-                                                    class="default-select form-control wide">
-                                                    <option value="0">NPWP</option>
-                                                    <option value="1">Non NPWP</option>
-                                                </select>
+                                                @if ($pph21->status_npwp == 0)
+                                                    <select onchange="toggleInput()" id="npwp"name="npwp"
+                                                        class="default-select form-control wide">
+                                                        <option selected value="0">NPWP</option>
+                                                        <option value="1">Non NPWP</option>
+                                                    </select>
+                                                @else
+                                                    <select onchange="toggleInput()" id="npwp"name="npwp"
+                                                        class="default-select form-control wide">
+                                                        <option value="0">NPWP</option>
+                                                        <option selected value="1">Non NPWP</option>
+                                                    </select>
+                                                @endif
+
                                             </div>
                                         </div>
 
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Nama Wajib Pajak</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" id="input_wajib_pajak" name="input_wajib_pajak"
+                                                <input value="{{$pph21->nama_wajib_pajak}}" autocomplete="off" id="input_wajib_pajak" name="input_wajib_pajak"
                                                     type="text" class="form-control" placeholder="Masukkan Nama NPWP">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">No NPWP</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" id="no_npwp" name="no_npwp" type="number"
+                                                <input value="{{$pph21->no_npwp}}" autocomplete="off" id="no_npwp" name="no_npwp" type="number"
                                                     class="form-control" placeholder="Masukkan Nomor NPWP">
                                             </div>
                                         </div>
@@ -63,14 +72,11 @@
                                                 <select id="status_pernikahan" name="status_pernikahan"
                                                     class="default-select form-control wide">
                                                     @foreach ($status_pernikahan as $row)
-                                                        <option value="{{ $row->kode_ptkp }}">
+                                                        <option value="{{ $row->kode_ptkp }}" {{ $pph21->status_pernikahan == $row->kode_ptkp ? 'selected' : '' }}>
                                                             {{ $row->status_pernikahan }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
-                                        </div>
-                                        <div id="results">
-
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Tanggungan</label>
@@ -78,7 +84,7 @@
                                                 <select id="tanggungan" name="tanggungan"
                                                     class="default-select form-control wide">
                                                     @foreach ($tanggungan as $row)
-                                                        <option value="{{ $row->tanggungan }}">{{ $row->tanggungan }}
+                                                        <option value="{{ $row->tanggungan }}"{{ $pph21->tanggungan == $row->tanggungan ? 'selected' : '' }}>{{ $row->tanggungan }}
                                                         </option>
                                                     @endforeach
                                                 </select>
@@ -87,7 +93,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Masa Penghasilan</label>
                                             <div class="col-sm-4">
-                                                <input autocomplete="off" id="masa_penghasilan" name="masa_penghasilan"
+                                                <input value="{{$pph21->masa_penghasilan_start}}" autocomplete="off" id="mdate" name="masa_penghasilan"
                                                     type="date" class="form-control">
                                             </div>
                                             <label class="col-sm-1 col-form-label">s/d</label>
@@ -100,24 +106,45 @@
                                         <h5>Konfigurasi</h5>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Tunjangan Pajak</label>
-                                            <div class="col-sm-3">
-                                                <div class="form-check">
-                                                    <input onchange="grossup()" id="gross_up" class="form-check-input"
-                                                        type="radio" name="gross" value="1">
-                                                    <label class="form-check-label">
-                                                        Gross-Up
-                                                    </label>
+                                            @if($pph21->tunjangan_pajak==1)
+                                                <div class="col-sm-3">
+                                                    <div class="form-check">
+                                                        <input onchange="grossup()" id="gross_up" class="form-check-input"
+                                                            type="radio" name="gross"checked value="1">
+                                                        <label class="form-check-label">
+                                                            Gross-Up
+                                                        </label>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="form-check">
-                                                    <input onchange="grossup()" id="nongross_up" class="form-check-input"
-                                                        type="radio" name="gross" value="0"checked>
-                                                    <label class="form-check-label">
-                                                        Non Gross-Up
-                                                    </label>
+                                                <div class="col-sm-3">
+                                                    <div class="form-check">
+                                                        <input onchange="grossup()" id="nongross_up" class="form-check-input"
+                                                            type="radio" name="gross" value="0">
+                                                        <label class="form-check-label">
+                                                            Non Gross-Up
+                                                        </label>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            @else
+                                                <div class="col-sm-3">
+                                                    <div class="form-check">
+                                                        <input onchange="grossup()" id="gross_up" class="form-check-input"
+                                                            type="radio" name="gross" value="1">
+                                                        <label class="form-check-label">
+                                                            Gross-Up
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <div class="form-check">
+                                                        <input onchange="grossup()" id="nongross_up" class="form-check-input"
+                                                            type="radio" name="gross" checked value="0">
+                                                        <label class="form-check-label">
+                                                            Non Gross-Up
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            @endif
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Ketentuan PTKP</label>
@@ -148,7 +175,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Gaji/Pensiun</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" type="number" id="gajidanpensiun"
+                                                <input value="{{$pph21->gaji_pensiun}}" autocomplete="off" type="number" id="gajidanpensiun"
                                                     name="gajidanpensiun" class="form-control"
                                                     placeholder="Masukkan Gaji / Pensiun">
                                             </div>
@@ -156,7 +183,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Tunjangan PPh</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" id="tunjangan_pph" name="tunjangan_pph"
+                                                <input value="{{$pph21->tunjangan_pph}}" autocomplete="off" id="tunjangan_pph" name="tunjangan_pph"
                                                     type="number" class="form-control"
                                                     placeholder="Masukkan Tunjangan PPh">
                                             </div>
@@ -164,7 +191,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Tunjangan Lain</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" type="number" id="tunjanganlain"
+                                                <input value="{{$pph21->tunjangan_lain}}" autocomplete="off" type="number" id="tunjanganlain"
                                                     name="tunjanganlain" class="form-control"
                                                     placeholder="Masukkan Uang Lembur, dan sebagainya">
                                             </div>
@@ -172,7 +199,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Honorarium</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" type="number" id="honorarium"
+                                                <input value="{{$pph21->honorarium}}" autocomplete="off" type="number" id="honorarium"
                                                     name="honorarium" class="form-control"
                                                     placeholder="Masukkan Imbalan Lainnya">
                                             </div>
@@ -180,7 +207,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Premi Asuransi</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" type="number" id="premi_asuransi"
+                                                <input value="{{$pph21->premi_asuransi}}" autocomplete="off" type="number" id="premi_asuransi"
                                                     name="premi_asuransi" class="form-control"
                                                     placeholder="Masukkan Premi Asuransi">
                                             </div>
@@ -188,14 +215,14 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Natura</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" type="number" id="natura" name="natura"
+                                                <input value="{{$pph21->natura}}" autocomplete="off" type="number" id="natura" name="natura"
                                                     class="form-control" placeholder="Masukkan Natura">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Tantiem</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" type="number" id="tantiem" name="tantiem"
+                                                <input value="{{$pph21->tantiem}}" autocomplete="off" type="number" id="tantiem" name="tantiem"
                                                     class="form-control"
                                                     placeholder="Masukkan Tantiem, Bonus, Gratifikasi, Jasa Produksi dan THR">
                                             </div>
@@ -203,7 +230,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Penghasilan Bruto</label>
                                             <div class="col-sm-9">
-                                                <input readonly autocomplete="off" type="number" id="penghasilan_bruto"
+                                                <input value="{{$pph21->penghasilan_bruto}}" readonly autocomplete="off" type="number" id="penghasilan_bruto"
                                                     name="penghasilan_bruto" class="form-control"
                                                     placeholder="Masukkan Penghasilan Bruto">
                                             </div>
@@ -213,14 +240,14 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Biaya Jabatan</label>
                                             <div class="col-sm-9">
-                                                <input readonly type="" id="biaya_jabatan" name="biaya_jabatan"
+                                                <input value="{{$pph21->biaya_jabatan}}" readonly type="" id="biaya_jabatan" name="biaya_jabatan"
                                                     class="form-control" placeholder="Masukkan Biaya Jabatan">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Iuran Pensiun</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" type="number" id="iuran_pensiun"
+                                                <input value="{{$pph21->tht_jht}}" autocomplete="off" type="number" id="iuran_pensiun"
                                                     name="iuran_pensiun" class="form-control"
                                                     placeholder="Masukkan Iuran Pensiun atau Iuran THT/JHT">
                                             </div>
@@ -228,46 +255,47 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Total Pengurang</label>
                                             <div class="col-sm-9">
-                                                <input placeholder="Masukkan Total Pengurang" readonly type="number" id="total_pengurang"
-                                                    name="total_pengurang" class="form-control">
+                                                <input value="{{$pph21->total_pengurangan}}" placeholder="Masukkan Total Pengurang" readonly type="number"
+                                                    id="total_pengurang" name="total_pengurang" class="form-control">
                                             </div>
                                         </div>
                                         <h5>Perhitungan PPh Pasal 21</h5>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Penghasilan Netto</label>
                                             <div class="col-sm-9">
-                                                <input placeholder="Masukkan Penghasilan Netto" readonly type="number" id="penghasilan_netto"
-                                                    name="penghasilan_netto" class="form-control">
+                                                <input value="{{$pph21->penghasilan_netto}}" placeholder="Masukkan Penghasilan Netto" readonly type="number"
+                                                    id="penghasilan_netto" name="penghasilan_netto" class="form-control">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Penghasilan Netto Masa
                                                 Sebelumnya</label>
                                             <div class="col-sm-9">
-                                                <input placeholder="Masukkan Penghasilan Netto Masa Sebelumnya" autocomplete="off" type="number" id="penghasilan_netto_ms"
+                                                <input value="{{$pph21->netto_massa}}" placeholder="Masukkan Penghasilan Netto Masa Sebelumnya"
+                                                    autocomplete="off" type="number" id="penghasilan_netto_ms"
                                                     name="penghasilan_netto_ms" class="form-control">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Netto Pertahun</label>
                                             <div class="col-sm-9">
-                                                <input placeholder="Masukkan Netto Pertahun" readonly type="number" id="netto_pertahun" name="netto_pertahun"
-                                                    class="form-control">
+                                                <input value="{{$pph21->netto_setahun}}" placeholder="Masukkan Netto Pertahun" readonly type="number"
+                                                    id="netto_pertahun" name="netto_pertahun" class="form-control">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">PTKP</label>
                                             <div class="col-sm-9">
                                                 <select id="pilih_ptkp" class="form-control" name="pilih_ptkp">
-                                                    <option value="">Pilih Besaran PTKP</option>
+                                                    <option value="{{$pph21->ptkp}}">{{$pph21->ptkp}}</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">PKP</label>
                                             <div class="col-sm-9">
-                                                <input placeholder="Masukkan Nilai PKP" readonly type="text" id="input_pkp" name="input_pkp"
-                                                class="form-control">
+                                                <input value="{{$pph21->pkp}}" placeholder="Masukkan Nilai PKP" readonly type="text"
+                                                    id="input_pkp" name="input_pkp" class="form-control">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
@@ -282,7 +310,7 @@
                                                     class="form-control" placeholder="Masukkan PKP">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input autocomplete="off" readonly type="number" id="totaltarif1"
+                                                <input value="{{$pph21->tarif1}}" autocomplete="off" readonly type="number" id="totaltarif1"
                                                     name="totaltarif1" class="form-control">
                                             </div>
                                         </div>
@@ -298,7 +326,7 @@
                                                     class="form-control" placeholder="Masukkan PKP">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input autocomplete="off" readonly type="number" id="totaltarif2"
+                                                <input value="{{$pph21->tarif2}}" autocomplete="off" readonly type="number" id="totaltarif2"
                                                     name="totaltarif2" class="form-control">
                                             </div>
                                         </div>
@@ -314,7 +342,7 @@
                                                     class="form-control" placeholder="Masukkan PKP">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input autocomplete="off" readonly type="number" id="totaltarif3"
+                                                <input value="{{$pph21->tarif3}}" autocomplete="off" readonly type="number" id="totaltarif3"
                                                     name="totaltarif3" class="form-control">
                                             </div>
                                         </div>
@@ -330,41 +358,34 @@
                                                     class="form-control" placeholder="Masukkan PKP">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input autocomplete="off" readonly type="number" id="totaltarif4"
+                                                <input value="{{$pph21->tarif4}}" autocomplete="off" readonly type="number" id="totaltarif4"
                                                     name="totaltarif4" class="form-control">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">PPH 21 PKP</label>
                                             <div class="col-sm-9">
-                                                <input placeholder="Masukkan Nilai PPH 21 PKP" autocomplete="off" readonly type="number" id="jumlahtotal"
-                                                    name="jumlahtotal" class="form-control">
+                                                <input value="{{$pph21->pph21ataspkp}}" placeholder="Masukkan Nilai PPH 21 PKP" autocomplete="off" readonly
+                                                    type="number" id="jumlahtotal" name="jumlahtotal"
+                                                    class="form-control">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">PPH 21 Potongan</label>
                                             <div class="col-sm-9">
-                                                <input placeholder="Masukkan Nilai PPH 21 Potongan" autocomplete="off" type="number" id="pph21potongan"
-                                                    name="pph21potongan" class="form-control">
+                                                <input value="{{$pph21->pph21_dipotong_sebelumnya}}" placeholder="Masukkan Nilai PPH 21 Potongan" autocomplete="off"
+                                                    type="number" id="pph21potongan" name="pph21potongan"
+                                                    class="form-control">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">PPH 21 Terutang</label>
                                             <div class="col-sm-9">
-                                                <input placeholder="Masukkan Nilai PPH 21 Terutang" autocomplete="off" readonly type="number" id="pph21terutang"
-                                                    name="pph21terutang" class="form-control">
+                                                <input value="{{$pph21->pph21_terutang}}" placeholder="Masukkan Nilai PPH 21 Terutang" autocomplete="off"
+                                                    readonly type="number" id="pph21terutang" name="pph21terutang"
+                                                    class="form-control">
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <div class="d-flex justify-content-between">
-                                        <button class="btn btn-warning btn-submit"name='action' value="create"
-                                            id="add_all" onclick="resetForm()" type="button"><i
-                                                data-feather='save'></i>
-                                            {{ 'Bersihkan' }}</button>
-                                        <button class="btn btn-primary btn-submit"name='action' value="create"
-                                            id="add_all" type="submit"><i data-feather='save'></i>
-                                            {{ 'Simpan' }}</button>
                                     </div>
                                 </form>
                             </div>
@@ -387,12 +408,14 @@
                 url: url,
                 type: 'GET',
                 dataType: 'json',
-                
+
                 success: function(data) {
                     var dropdown = $('#pilih_ptkp');
-                    $.each(data, function(key, value){
+                    $.each(data, function(key, value) {
                         console.log(value.besaran_ptkp);
-                        dropdown.append($('<option>Pilih Besaran PTKP</option>').attr('value',value.besaran_ptkp).text(value.besaran_ptkp));
+                        dropdown.append($('<option>Pilih Besaran PTKP</option>')
+                            .attr('value', value.besaran_ptkp).text(value
+                                .besaran_ptkp));
                     })
                 }
             });
@@ -443,7 +466,8 @@
         const inputpph21potongan = document.getElementById('pph21potongan');
         const resultpph21terutang = document.getElementById('pph21terutang');
 
-        [inputpph21potongan,inputpilih_ptkp,inputtunjangan_pph, inputtunjanganlain, inputhonorarium, inputpremi_asuransi, inputnatura,
+        [inputpph21potongan, inputpilih_ptkp, inputtunjangan_pph, inputtunjanganlain, inputhonorarium,
+            inputpremi_asuransi, inputnatura,
             inputtantiem, inputpenghasilan_bruto, inputgajipensiun, biaya_jabatan, iuran_pensiun,
             inputpotongantarif1,
             inputtarif1, inputpotongantarif2, inputtarif2, inputpotongantarif3, inputtarif3,
@@ -525,119 +549,23 @@
             const nettopertahun = resultnetto * 12;
 
             const resultPTKP = nettopertahun - pilih_ptkp;
-            if(resultPTKP<=0){
+            if (resultPTKP <= 0) {
                 resultinput_pkp.value = '0';
-            }else{
+            } else {
                 resultinput_pkp.value = nettopertahun - pilih_ptkp;
             }
 
             const pph21potongan = parseFloat(inputpph21potongan.value) || 0;
             const resultpphterutang = hasilperhitungantarif - pph21potongan;
             console.log(resultpphterutang);
-            if(resultpphterutang<=0){
+            if (resultpphterutang <= 0) {
                 resultpph21terutang.value = '0';
-            }else{
+            } else {
                 resultpph21terutang.value = resultpphterutang;
             }
-            
+
         }
     });
-
-    function resetForm() {
-        var input_wajib_pajak = document.getElementById("input_wajib_pajak");
-        var no_npwp = document.getElementById("no_npwp");
-        var status_pernikahan = document.getElementById("status_pernikahan");
-        var tanggungan = document.getElementById("tanggungan");
-        var masa_penghasilan = document.getElementById("masa_penghasilan");
-        var masa_penghasilan_end = document.getElementById("masa_penghasilan_end");
-        var ketentuan_ptkp = document.getElementById("ketentuan_ptkp");
-        var ketentuan_tarif = document.getElementById("ketentuan_tarif");
-        var gajidanpensiun = document.getElementById("gajidanpensiun");
-        var tunjangan_pph = document.getElementById("tunjangan_pph");
-        var tunjanganlain = document.getElementById("tunjanganlain");
-        var honorarium = document.getElementById("honorarium");
-        var premi_asuransi = document.getElementById("premi_asuransi");
-        var natura = document.getElementById("natura");
-        var tantiem = document.getElementById("tantiem");
-        var penghasilan_bruto = document.getElementById("penghasilan_bruto");
-        var biaya_jabatan = document.getElementById("biaya_jabatan");
-        var iuran_pensiun = document.getElementById("iuran_pensiun");
-        var penghasilan_netto_ms = document.getElementById("penghasilan_netto_ms");
-
-        var potongantarif1 = document.getElementById("potongantarif1");
-        var potongantarif2 = document.getElementById("potongantarif2");
-        var potongantarif3 = document.getElementById("potongantarif3");
-        var potongantarif4 = document.getElementById("potongantarif4");
-
-        var tarif1 = document.getElementById("tarif1");
-        var tarif2 = document.getElementById("tarif2");
-        var tarif3 = document.getElementById("tarif3");
-        var tarif4 = document.getElementById("tarif4");
-
-        var totaltarif1 = document.getElementById("totaltarif1");
-        var totaltarif2 = document.getElementById("totaltarif2");
-        var totaltarif3 = document.getElementById("totaltarif3");
-        var totaltarif4 = document.getElementById("totaltarif4");
-        var jumlahtotal = document.getElementById("jumlahtotal");
-
-        var status_pernikahan = document.getElementById("status_pernikahan");
-        var tanggungan = document.getElementById("tanggungan");
-        var total_pengurang = document.getElementById("total_pengurang");
-        var penghasilan_netto = document.getElementById("penghasilan_netto");
-        var penghasilan_netto_ms = document.getElementById("penghasilan_netto_ms");
-        var netto_pertahun = document.getElementById("netto_pertahun");
-        var pilih_ptkp = document.getElementById("pilih_ptkp");
-        var input_pkp = document.getElementById("input_pkp");
-        var pph21potongan = document.getElementById("pph21potongan");
-        var pph21terutang = document.getElementById("pph21terutang");
-
-        status_pernikahan.value = '';
-        tanggungan.value = '';
-        total_pengurang.value = '';
-        penghasilan_netto.value = '';
-        penghasilan_netto_ms.value = '';
-        netto_pertahun.value = '';
-        pilih_ptkp.value = '';
-        input_pkp.value = '';
-        pph21potongan.value = '';
-        pph21terutang.value = '';
-
-        potongantarif1.value = '';
-        tarif1.value = '';
-        totaltarif1.value = '';
-
-        potongantarif2.value = '';
-        tarif2.value = '';
-        totaltarif2.value = '';
-
-        potongantarif3.value = '';
-        tarif3.value = '';
-        totaltarif3.value = '';
-
-        potongantarif4.value = '';
-        tarif4.value = '';
-        totaltarif4.value = '';
-        jumlahtotal.value = '';
-
-        input_wajib_pajak.value = '';
-        no_npwp.value = '';
-        status_pernikahan.value = '';
-        tanggungan.value = '';
-        masa_penghasilan.value = '';
-        masa_penghasilan_end.value = '';
-        ketentuan_ptkp.value = '';
-        ketentuan_tarif.value = '';
-        gajidanpensiun.value = '';
-        tunjangan_pph.value = '';
-        tunjanganlain.value = '';
-        honorarium.value = '';
-        premi_asuransi.value = '';
-        natura.value = '';
-        tantiem.value = '';
-        penghasilan_bruto.value = '';
-        biaya_jabatan.value = '';
-        iuran_pensiun.value = '';
-    }
 
     function toggleInput() {
         var npwp = document.getElementById("npwp");

@@ -38,7 +38,14 @@ class BillingController extends Controller
      */
     public function store(Request $request)
     {
+        $date = date('Ymd');
+        $header_id =Billing::get()->count();
+        $header_id = $header_id ?? 0;
+        $header_id = $header_id+1;
+        $header_id = '00'.$header_id.$date;
+        // dd($header_id);
         $data = array(
+            'kode_billing'=>$header_id,
             'kode_akun_pajak'=>$request->kode_akun_pajak,
             'kode_jenis_setoran'=>$request->kode_jenis_setoran,
             'npwp'=>$request->npwp,

@@ -17,10 +17,11 @@ return new class extends Migration
             $table->increments('id');
             $table->string('status_npwp')->nullable();
             $table->string('nama_wajib_pajak')->nullable();
-            $table->integer('no_npwp')->nullable();
+            $table->string('no_npwp')->nullable();
             $table->string('status_pernikahan')->nullable();
             $table->integer('tanggungan')->nullable();
-            $table->dateTime('masa_penghasilan')->nullable();
+            $table->dateTime('masa_penghasilan_start')->nullable();
+            $table->dateTime('masa_penghasilan_end')->nullable();
             $table->integer('tunjangan_pajak')->nullable();
             $table->string('ketentuan_ptkp')->nullable();
             $table->integer('ketentuan_tarif')->nullable();

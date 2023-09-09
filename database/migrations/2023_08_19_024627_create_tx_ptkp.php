@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('tx_ptkp', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('status');
+            $table->string('status_pernikahan');
             $table->integer('tanggungan');
             $table->integer('besaran_ptkp');
+            $table->string('kode_ptkp');
             $table->string('attribute1')->nullable();
             $table->string('attribute2')->nullable();
             $table->string('attribute3')->nullable();

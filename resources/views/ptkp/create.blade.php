@@ -51,6 +51,13 @@
                                                     placeholder="Masukkan Besaran PTKP">
                                             </div>
                                         </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Kode PTKP</label>
+                                            <div class="col-sm-9">
+                                                <input autocomplete="off" required id="kode" name="kode" type="number" class="form-control"
+                                                    placeholder="Masukkan Kode Huruf PTKP Tanpa Spasi">
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="d-flex justify-content-between">
                                         <button onclick="resetForm()" class="btn btn-warning btn-submit"name='action' value="create"

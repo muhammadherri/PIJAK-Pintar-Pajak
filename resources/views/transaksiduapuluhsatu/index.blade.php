@@ -38,7 +38,6 @@
                                     <thead>
                                         <tr>
                                             <th></th>
-                                            <th>Status NPWP</th>
                                             <th>Nama</th>
                                             <th>No NPWP</th>
                                             <th>Status</th>
@@ -48,7 +47,8 @@
                                             <th>Ketentuan PTKP</th>
                                             <th>Ketentuan Tarif</th>
                                             <th>Gaji Pensiun</th>
-                                            <th>Tanggal</th>
+                                            <th>Tanggal Pembuatan</th>
+                                            <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -58,17 +58,23 @@
                                             <td>
                                                 {{ $no++ }}
                                             </td>
-                                            <td >{{ $row->status_npwp }}</td>
                                             <td>{{ $row->nama_wajib_pajak }}</td>
                                             <td>{{ $row->no_npwp }}</td>
-                                            <td>{{ $row->status_pernikahan }}</td>
+                                            <td>{{ $row->ptkp->status_pernikahan ??'' }}</td>
                                             <td>{{ $row->tanggungan }}</td>
-                                            <td>{{ date('d-m-Y',strtotime($row->masa_penghasilan))}}</td>
+                                            <td>{{ date('d-m-Y',strtotime($row->masa_penghasilan_start))}}</td>
                                             <td>{{ $row->tunjangan_pajak }}</td>
                                             <td>{{ $row->ketentuan_ptkp }}</td>
                                             <td>{{ $row->ketentuan_tarif }}</td>
                                             <td>{{ $row->gaji_pensiun }}</td>
                                             <td>{{ date('d-m-Y',strtotime($row->created_at)) }}</td>
+                                            <td >
+                                                @if($row->status_npwp==0)
+                                                <span class="badge light badge-success">NPWP</span>
+                                                @else
+                                                <span class="badge light badge-warning">Non NPWP</span>
+                                                @endif
+                                            </td>
                                             <td>
                                                 <div class="d-flex">
                                                     <form action="transaksipph21/{{ $row->id }}" method="POST">
@@ -99,4 +105,22 @@
             </div>
         </div>
     </div>
-    @endsection
+@endsection
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#pphduasatu').DataTable({
+            "ajax": {
+                url: "/search/pphduapuluhsatu/",
+                type: "GET",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+            },
+            columns:[
+                {data:'id',name:'id'},
+            ]
+        })
+    });
+</script>
