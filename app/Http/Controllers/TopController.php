@@ -41,7 +41,7 @@ class TopController extends Controller
         $data = array(
             'jenis_termin'=>$request->termin,
             'keterangan_termin'=>$request->kettermin,
-            'attribute1'=>Auth::user()->name,
+            'attribute1'=>Auth::user()->id,
             'attribute2'=>'NULL',
             'attribute3'=>'NULL',
             'created_at'=>date('Y-m-d'),
@@ -89,7 +89,7 @@ class TopController extends Controller
         Top::where('id',$id)->update([
             'jenis_termin'=>$request->termin,
             'keterangan_termin'=>$request->kettermin,
-            'attribute2'=>Auth::user()->name,
+            'attribute2'=>Auth::user()->id,
             'attribute3'=>'NULL',
             'updated_at'=>date('Y-m-d'),
         ]);

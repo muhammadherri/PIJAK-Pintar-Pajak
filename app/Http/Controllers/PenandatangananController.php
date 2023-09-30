@@ -40,7 +40,7 @@ class PenandatangananController extends Controller
         $data = array(
             'name'=>$request->name,
             'npwp'=>$request->npwp,
-            'attribute1'=>Auth::user()->name,
+            'attribute1'=>Auth::user()->id,
             'created_at'=>date('Y-m-d'),
         );
         Penandatanganan::create($data);
@@ -84,7 +84,7 @@ class PenandatangananController extends Controller
         Penandatanganan::where('id',$id)->update([
             'name'=>$request->name,
             'npwp'=>$request->npwp,
-            'attribute2'=>Auth::user()->name,
+            'attribute2'=>Auth::user()->id,
             'updated_at'=>date('Y-m-d'),
         ]);
         $a= \DB::commit();    

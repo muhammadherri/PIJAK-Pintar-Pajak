@@ -42,7 +42,7 @@ class KodeObjekPajakController extends Controller
             'kode_objek_pajak'=>$request->kodeobjekpajak,
             'keterangan'=>$request->keterangan,
             'tarif'=>$request->tarif,
-            'attribute1'=>Auth::user()->name,
+            'attribute1'=>Auth::user()->id,
             'attribute2'=>'NULL',
             'attribute3'=>'NULL',
             'created_at'=>date('Y-m-d'),
@@ -90,7 +90,7 @@ class KodeObjekPajakController extends Controller
             'kode_objek_pajak'=>$request->kodeobjekpajak,
             'keterangan'=>$request->keterangan,
             'tarif'=>$request->tarif,
-            'attribute2'=>Auth::user()->name,
+            'attribute2'=>Auth::user()->id,
             'attribute3'=>'NULL',
             'created_at'=>date('Y-m-d'),
         ]);

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('no_id_vendor');
             $table->string('nama_vendor');
             $table->string('alamat_vendor');
-            $table->integer('contact_person');
+            $table->string('contact_person');
             $table->string('attribute1');
             $table->string('attribute2');
             $table->string('attribute3');

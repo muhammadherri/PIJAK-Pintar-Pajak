@@ -58,6 +58,13 @@
                                                     placeholder="Masukkan Kontak Person">
                                             </div>
                                         </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">No Rekening</label>
+                                            <div class="col-sm-9">
+                                                <input min="0" value="{{$vendor->attribute3}}" autocomplete="off" required id="no_rek"name="no_rek" type="number" class="form-control"
+                                                    placeholder="Masukkan No Rekening">
+                                            </div>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
@@ -68,3 +75,5 @@
         </div>
     </div>
 @endsection
+<script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
+<script src="{{ asset('app-assets/js/custom.min.js') }}"></script>

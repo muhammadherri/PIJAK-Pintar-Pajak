@@ -144,6 +144,66 @@ let dataSet = [
 		  }
 		
 	}); 
+	var table = $('#efakturtable').DataTable({
+		searching: false,
+		paging:false,
+		select: false,
+		info: false,         
+		lengthChange:false ,
+		language: {
+			paginate: {
+			  next: '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
+			  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>' 
+			}
+		  }
+		
+	}); 
+	var table = $('#invoicedataTable').DataTable({
+		searching: false,
+		paging:false,
+		select: false,
+		info: false,         
+		lengthChange:false ,
+		language: {
+			paginate: {
+			  next: '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
+			  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>' 
+			}
+		  }
+		
+	}); 
+	var table = $('#mahasiswaDatatable').DataTable({
+		"lengthMenu": [
+			[10, 25, 50, -1],
+			[10, 25, 50, 300]
+		],
+		searching: true,
+		paging:true,
+		select: false,
+		info: false,         
+		lengthChange:false ,
+		language: {
+			paginate: {
+			  next: '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
+			  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>' 
+			}
+		},
+		// ajax:{
+		// 	url:"/mahasiswaList",
+		// 	columns:[
+		// 		{data:'id',name:'id'},
+		// 		{data:'name',name:'name'},
+		// 		{data:'email',name:'email'},
+		// 		{data:'status',name:'status'},
+		// 		{data:'created_at',name:'created_at'},
+		// 		{data:'created_at',name:'created_at'},
+		// 	],
+		// 	method:'GET',
+		// 	headers: {
+        //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        //     },
+		// }
+	}); 
 	
 	// dataTable6
 		var table = $('#example6').DataTable({

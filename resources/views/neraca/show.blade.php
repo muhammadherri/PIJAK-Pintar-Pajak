@@ -51,6 +51,13 @@
                                                     placeholder="Masukkan saldo">
                                             </div>
                                         </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Kategori Laporan Pajak</label>
+                                            <div class="col-sm-9">
+                                                <input readonly value="{{$neraca->attribute3}}" required id="kategori" name="kategori" type="text" class="form-control"
+                                                    placeholder="Masukkan saldo">
+                                            </div>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
@@ -72,3 +79,5 @@
         saldo.value = '';
     }
 </script>
+<script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
+<script src="{{ asset('app-assets/js/custom.min.js') }}"></script>

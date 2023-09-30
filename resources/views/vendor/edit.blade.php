@@ -48,14 +48,21 @@
                                             <label class="col-sm-3 col-form-label">Alamat Vendor</label>
                                             <div class="col-sm-9">
                                                 <textarea autocomplete="off" value="{{$vendor->alamat_vendor}}" required placeholder="Masukkan Alamat Vendor" class="form-control" rows="4"
-                                                id="alamat_vendor"name="alamat_vendor"></textarea>
+                                                id="alamat_vendor"name="alamat_vendor">{{$vendor->alamat_vendor}}</textarea>
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Kontak Person</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" value="{{$vendor->contact_person}}" required id="contact_person"name="contact_person" type="number" class="form-control"
+                                                <input min="0" autocomplete="off" value="{{$vendor->contact_person}}" required id="contact_person"name="contact_person" type="number" class="form-control"
                                                     placeholder="Masukkan Kontak Person">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">No Rekening</label>
+                                            <div class="col-sm-9">
+                                                <input min="0" value="{{$vendor->attribute3}}" autocomplete="off" required id="no_rek"name="no_rek" type="number" class="form-control"
+                                                    placeholder="Masukkan No Rekening">
                                             </div>
                                         </div>
                                     </div>
@@ -74,3 +81,5 @@
         </div>
     </div>
 @endsection
+<script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
+<script src="{{ asset('app-assets/js/custom.min.js') }}"></script>

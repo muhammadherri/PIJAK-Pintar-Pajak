@@ -42,7 +42,7 @@ class DokumenReferensiController extends Controller
             'no'=>$request->no,
             'jenis_dokumen'=>$request->jenisdokumen,
             'sertifikat'=>$request->sertifikat,
-            'attribute1'=>Auth::user()->name,
+            'attribute1'=>Auth::user()->id,
             'attribute2'=>'NULL',
             'attribute3'=>'NULL',
             'created_at'=>date('Y-m-d'),
@@ -92,7 +92,7 @@ class DokumenReferensiController extends Controller
             'no'=>$request->no,
             'jenis_dokumen'=>$request->jenisdokumen,
             'sertifikat'=>$request->sertifikat,
-            'attribute2'=>Auth::user()->name,
+            'attribute2'=>Auth::user()->id,
             'updated_at'=>date('Y-m-d'),
         ]);
         $a= \DB::commit();    

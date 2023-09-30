@@ -13,7 +13,7 @@
             <div class="row page-titles">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item active"><a href="javascript:void(0)">Transaksi</a></li>
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">PPH 22</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">E-Bupot</a></li>
                 </ol>
             </div>
             <!-- row -->
@@ -21,7 +21,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">PPH 22</h4>
+                            <h4 class="card-title">E-Bupot</h4>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <a class="btn btn-primary" href="{{ route('ebupot/create') }}">
@@ -93,4 +93,6 @@
             </div>
         </div>
     </div>
-    @endsection
+@endsection
+<script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
+<script src="{{ asset('app-assets/js/custom.min.js') }}"></script>

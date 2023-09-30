@@ -12,8 +12,8 @@
         <div class="container-fluid">
             <div class="row page-titles">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Lainnya</a></li>
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">Pembayaran</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Pembayaran</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Billing</a></li>
                 </ol>
             </div>
             <!-- row -->
@@ -35,11 +35,15 @@
                                 <table id="example3" class="display" style="min-width: 845px">
                                     <thead>
                                         <tr>
-                                            <th></th>
-                                            <th>Kode Akun Pajak</th>
-                                            <th>Kode Jenis Setoran</th>
+                                            <th>No</th>
+                                            <th>ID Billing</th>
                                             <th>NPWP</th>
-                                            <th>Tanggal</th>
+                                            <th>Jenis Pajak</th>
+                                            <th>Jenis Setoran</th>
+                                            <th>Masa Pajak</th>
+                                            <th>Masa Aktif</th>
+                                            <th>Jumlah</th>
+                                            <th>Dibuat Oleh</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -49,10 +53,14 @@
                                                 <td>
                                                     {{ $no++ }}
                                                 </td>
-                                                <td>{{ $row->kode_akun_pajak }}</td>
-                                                <td>{{ $row->kode_jenis_setoran }}</td>
+                                                <td>{{ $row->kode_billing }}</td>
                                                 <td>{{ $row->npwp }}</td>
-                                                <td>{{ date('d-M-Y',strtotime($row->created_at)) }}</td>
+                                                <td>{{ $row->jenis_pajak }}</td>
+                                                <td>{{ $row->kode_jenis_setoran }}</td>
+                                                <td>{{ $row->masa_pajak }}</td>
+                                                <td>{{ date('d-M',strtotime($row->end_periode_pajak)) }}</td>
+                                                <td>{{ $row->jumlah }}</td>
+                                                <td>{{ $row->users->name }}</td>
                                                 <td>
                                                     <div class="d-flex">
                                                         <form action="billing/{{ $row->id }}" method="POST">
@@ -84,4 +92,6 @@
         </div>
     </div>
 @endsection
+<script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
+<script src="{{ asset('app-assets/js/custom.min.js') }}"></script>
 

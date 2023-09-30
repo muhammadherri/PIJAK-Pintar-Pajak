@@ -51,7 +51,7 @@
                                                 <td>
                                                     {{ $no++ }}
                                                 </td>
-                                                <td>{{ $row->no}}</td>
+                                                <td>{{ $row->no }}</td>
                                                 <td>{{ $row->jenis_fasilitas }}</td>
                                                 <td>{{ $row->sertifikat }}</td>
                                                 <td>{{ $row->created_at }}</td>
@@ -86,4 +86,6 @@
             </div>
         </div>
     </div>
-    @endsection
+@endsection
+<script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
+<script src="{{ asset('app-assets/js/custom.min.js') }}"></script>

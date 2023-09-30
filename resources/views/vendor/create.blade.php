@@ -54,8 +54,15 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Kontak Person</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" required id="contact_person"name="contact_person" type="number" class="form-control"
+                                                <input min="0" autocomplete="off" required id="contact_person"name="contact_person" type="number" class="form-control"
                                                     placeholder="Masukkan Kontak Person">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">No Rekening</label>
+                                            <div class="col-sm-9">
+                                                <input min="0" autocomplete="off" required id="no_rek"name="no_rek" type="number" class="form-control"
+                                                    placeholder="Masukkan No Rekening">
                                             </div>
                                         </div>
                                     </div>
@@ -82,9 +89,13 @@
         var nama_vendor = document.getElementById("nama_vendor");
         var alamat_vendor = document.getElementById("alamat_vendor");
         var contact_person = document.getElementById("contact_person");
+        var no_rek = document.getElementById("no_rek");
         no_id_vendor.value = '';
         nama_vendor.value = '';
+        no_rek.value = '';
         alamat_vendor.value = '';
         contact_person.value = '';
     }
 </script>
+<script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
+<script src="{{ asset('app-assets/js/custom.min.js') }}"></script>

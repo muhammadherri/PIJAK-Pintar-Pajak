@@ -36,7 +36,15 @@ Route::put('/ebupot/{id}', [App\Http\Controllers\EbupotController::class, 'updat
 // transaksipph22
 
 // invoice
+Route::get('/invoice', [App\Http\Controllers\InvoiceController::class, 'index'])->name('invoice');
 Route::get('/invoice/create', [App\Http\Controllers\InvoiceController::class, 'create'])->name('invoice/create');
+Route::post('/invoice/store', [App\Http\Controllers\InvoiceController::class, 'store'])->name('invoice/store');
+
+Route::get('/invoice/{id}/destroy', [App\Http\Controllers\InvoiceController::class, 'destroy'])->name('invoice/destroy');
+Route::get('/invoice/{id}/show', [App\Http\Controllers\InvoiceController::class, 'show'])->name('invoice/show');
+Route::get('/invoice/{id}/edit', [App\Http\Controllers\InvoiceController::class, 'edit'])->name('invoice/edit');
+Route::put('/invoice/{id}', [App\Http\Controllers\InvoiceController::class, 'update'])->name('invoice/update');
+
 // invoice
 
 // fasilitas
@@ -141,10 +149,44 @@ Route::get('/penandatanganan/{id}/edit', [App\Http\Controllers\PenandatangananCo
 Route::put('/penandatanganan/{id}', [App\Http\Controllers\PenandatangananController::class, 'update'])->name('penandatanganan/update');
 // penandatanganan
 
+// jenis pph
+Route::get('/jenispph', [App\Http\Controllers\JenisPphController::class, 'index'])->name('jenispph');
+Route::get('/jenispph/create', [App\Http\Controllers\JenisPphController::class, 'create'])->name('jenispph/create');
+Route::post('/jenispph/store', [App\Http\Controllers\JenisPphController::class, 'store'])->name('jenispph/store');
+
+Route::delete('/jenispph/{id}', [App\Http\Controllers\JenisPphController::class, 'destroy']);
+Route::get('/jenispph/{id}/show', [App\Http\Controllers\JenisPphController::class, 'show'])->name('jenispph/show');
+Route::get('/jenispph/{id}/edit', [App\Http\Controllers\JenisPphController::class, 'edit'])->name('jenispph/edit');
+Route::put('/jenispph/{id}', [App\Http\Controllers\JenisPphController::class, 'update'])->name('jenispph/update');
+// jenis pph
+
+// listmahasiswa
+Route::get('/mahasiswa/{id}/show', [App\Http\Controllers\MahasiswaController::class, 'show'])->name('mahasiswa/show');
+// listmahasiswa
+
+// jurnalmanual
+Route::get('/jurnalmanual', [App\Http\Controllers\JurnalManualController::class, 'index'])->name('jurnalmanual');
+Route::get('/jurnalmanual/create', [App\Http\Controllers\JurnalManualController::class, 'create'])->name('jurnalmanual/create');
+Route::post('/jurnalmanual/store', [App\Http\Controllers\JurnalManualController::class, 'store'])->name('jurnalmanual/store');
+
+Route::delete('/jurnalmanual/{id}', [App\Http\Controllers\JurnalManualController::class, 'destroy']);
+Route::get('/jurnalmanual/{id}/show', [App\Http\Controllers\JurnalManualController::class, 'show'])->name('jurnalmanual/show');
+Route::get('/jurnalmanual/{id}/edit', [App\Http\Controllers\JurnalManualController::class, 'edit'])->name('jurnalmanual/edit');
+Route::put('/jurnalmanual/{id}', [App\Http\Controllers\JurnalManualController::class, 'update'])->name('jurnalmanual/update');
+// jurnalmanual
+
+// pembayaran
+Route::get('/pembayaran', [App\Http\Controllers\PembayaranController::class, 'index'])->name('pembayaran');
+Route::post('/pembayaran/show', [App\Http\Controllers\PembayaranController::class, 'show'])->name('pembayaran/show');
+// pembayaran
 // ALL IN ONE
 Route::get('/dokref', [App\Http\Controllers\AllInController::class,'dokrefindex'])->name('get.dokref');
-Route::get('/search/resultPtkp/{status}', [App\Http\Controllers\AllInController::class,'resultPtkp'])->name('get.ptkp');
+// Route::get('/search/resultPtkp/{status}', [App\Http\Controllers\AllInController::class,'resultPtkp'])->name('get.ptkp');
+Route::get('/search/resultPtkp', [App\Http\Controllers\AllInController::class,'resultPtkp'])->name('get.ptkp');
 Route::get('/search/pphduapuluhsatu', [App\Http\Controllers\AllInController::class,'indexpphduasatu']);
-
+Route::get('/mahasiswaList', [App\Http\Controllers\AllInController::class,'listMahasiswa'])->name('data.mahasiswa');
+Route::get('/invList', [App\Http\Controllers\AllInController::class,'listInvoice'])->name('data.inv');
+Route::get('/pphList', [App\Http\Controllers\AllInController::class,'listPph'])->name('data.pph');
+Route::get('/fiskalList', [App\Http\Controllers\AllInController::class,'listFiskal'])->name('data.fiskal');
 // ALL IN ONE
-
+Route::post('/pembayaranpdf', [App\Http\Controllers\PDFController::class,'pembarayanPDF']);

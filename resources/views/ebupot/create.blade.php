@@ -34,20 +34,17 @@
                                             <div class="col-sm-9">
                                                 <select id="jenis_pph" name="jenis_pph"
                                                     class="default-select form-control wide">
-                                                    <option value="0">PPh 22</option>
-                                                    <option value="1">PPh 23</option>
-                                                    <option value="2">PPh 4 Ayat 2</option>
-                                                    <option value="3">PPh 24</option>
-                                                    <option value="4">PPh 26</option>
-                                                    <option value="5">PPh 28/29</option>
-                                                    <option value="6">PPh 28/29</option>
+                                                    @foreach ($jenispph as $row)
+                                                        <option value="{{ $row->id }}">
+                                                            {{ $row->jenis_pph }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Pilih Transaksi</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" id="transaksi_npwp" name="transaksi_npwp"
+                                                <input required autocomplete="off" id="transaksi_npwp" name="transaksi_npwp"
                                                     type="text" class="form-control"
                                                     placeholder="Masukkan Transaksi NPWP">
                                             </div>
@@ -55,7 +52,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">No Telp</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" id="no_telp" name="no_telp" type="number"
+                                                <input required min="0" autocomplete="off" id="no_telp" name="no_telp" type="number"
                                                     class="form-control" placeholder="Masukkan Nomor Telepone">
                                             </div>
                                         </div>
@@ -80,22 +77,25 @@
                                                             @endforeach
                                                         </select>
                                                     </td>
-                                                    <td><input autocomplete="off" type="text" name="column2[]"
+                                                    <td><input required min="0" autocomplete="off" type="text" name="column2[]"
                                                             class="form-control"></td>
-                                                    <td><input type="date" name="column3[]" class="form-control"></td>
+                                                    <td><input required type="date" name="column3[]" class="form-control"></td>
                                                     <td><button type="button" class="btn btn-light btn-submit"><i
                                                                 class="fa fa-trash"></i></button></td>
                                                 </tr>
 
                                             </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="3">
+                                                        <button class="btn btn-primary btn-submit"name='action'
+                                                            value="create" id="addRow" type="button"><i
+                                                                data-feather='save'></i>
+                                                            {{ 'Tambah Dokumen' }}</button>
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
                                         </table>
-                                        <p></p>
-                                        <div class="d-flex justify-content-between">
-                                            <div></div>
-                                            <button class="btn btn-primary btn-submit"name='action' value="create"
-                                                id="addRow" type="button"><i data-feather='save'></i>
-                                                {{ 'Tambah Dokumen' }}</button>
-                                        </div>
                                         <p></p>
                                         <h5 class="card-title">Fasilitas</h5>
                                         <hr>
@@ -116,14 +116,14 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Tanggal Bukti Potong</label>
                                             <div class="col-sm-9">
-                                                <input id="tgl_bukti_potong" name="tgl_bukti_potong" type="date"
+                                                <input id="tgl_bukti_potong" required name="tgl_bukti_potong" type="date"
                                                     class="form-control">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Periode Pajak</label>
                                             <div class="col-sm-9">
-                                                <input id="periode_pajak" name="periode_pajak" type="date"
+                                                <input id="periode_pajak" required name="periode_pajak" type="date"
                                                     class="form-control">
                                             </div>
                                         </div>
@@ -142,22 +142,24 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Jumlah Bruto</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" id="jumlah_bruto" name="jumlah_bruto"
-                                                    type="number" class="form-control">
+                                                <input required min="0" placeholder="Masukkan Jumlah Bruto" autocomplete="off"
+                                                    id="jumlah_bruto" name="jumlah_bruto" type="number"
+                                                    class="form-control">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Tarif</label>
                                             <div class="col-sm-3">
-                                                <input autocomplete="off" id="tarif" name="tarif" type="number"
-                                                    class="form-control">
+                                                <input required min="0" placeholder="Masukkan Tarif" autocomplete="off" id="tarif"
+                                                    name="tarif" type="number" class="form-control">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Potongan PPH</label>
                                             <div class="col-sm-9">
-                                                <input readonly autocomplete="off" id="potongan_pph" name="potongan_pph"
-                                                    type="number" class="form-control">
+                                                <input placeholder="Masukkan Potongan PPh" readonly autocomplete="off"
+                                                    id="potongan_pph" name="potongan_pph" type="number"
+                                                    class="form-control">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
@@ -166,7 +168,7 @@
                                                 <select id="penandatanganan" name="penandatanganan"
                                                     class="default-select form-control wide">
                                                     @foreach ($penandatanganan as $row)
-                                                        <option value="{{ $row->name }}">{{ $row->npwp }}
+                                                        <option value="{{ $row->id }}">{{ $row->npwp }}
                                                         </option>
                                                     @endforeach
                                                 </select>
@@ -205,8 +207,8 @@
                         @endforeach
                     </select>
                 </td>
-                <td><input autocomplete="off" type="text" name="column2[]" class="form-control"></td>
-                <td><input type="date" name="column3[]" class="form-control"></td>
+                <td><input required min="0" autocomplete="off" type="text" name="column2[]" class="form-control"></td>
+                <td><input required min="0" type="date" name="column3[]" class="form-control"></td>
                 <td><button type="button" class="btn btn-danger btn-submit remove"><i class="fa fa-trash"></i></button></td>
             </tr>
             `;
@@ -219,5 +221,31 @@
         });
 
     });
-    
+    document.addEventListener('DOMContentLoaded', function() {
+        const inputjumlah_bruto = document.getElementById('jumlah_bruto');
+        const inputtarif = document.getElementById('tarif');
+        const result = document.getElementById('potongan_pph');
+        [inputjumlah_bruto, inputtarif].forEach(input => {
+            input.addEventListener('input', updateResult);
+        });
+
+        function updateResult() {
+            const jumbruto = parseFloat(inputjumlah_bruto.value) || 0;
+            const tarif = parseFloat(inputtarif.value) || 0;
+            const jumlah = jumbruto * tarif / 100;
+            result.value = jumlah;
+
+        }
+    });
+
+    function resetFormebupot() {
+        var jumlah_bruto = document.getElementById("jumlah_bruto");
+        var tarif = document.getElementById("tarif");
+        var potongan_pph = document.getElementById("potongan_pph");
+        jumlah_bruto.value = '';
+        tarif.value = '';
+        potongan_pph.value = '';
+    }
 </script>
+<script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
+<script src="{{ asset('app-assets/js/custom.min.js') }}"></script>

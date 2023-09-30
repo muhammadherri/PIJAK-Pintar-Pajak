@@ -18,9 +18,9 @@ return new class extends Migration
             $table->integer('no_akun');
             $table->string('nama_akun');
             $table->integer('saldo');
-            $table->string('attribute1');
-            $table->string('attribute2');
-            $table->string('attribute3');
+            $table->string('attribute1')->nullable();
+            $table->string('attribute2')->nullable();
+            $table->string('attribute3')->nullable();
             $table->timestamps();
             $table->dateTime('delete_at')->nullable();
         });

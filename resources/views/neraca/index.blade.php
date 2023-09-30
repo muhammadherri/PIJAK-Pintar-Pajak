@@ -41,6 +41,7 @@
                                             <th>No Akun</th>
                                             <th>Nama Akun</th>
                                             <th>Saldo</th>
+                                            <th>Kategori</th>
                                             <th>Tanggal</th>
                                             <th>Action</th>
                                         </tr>
@@ -54,6 +55,7 @@
                                                 <td>{{ $row->no_akun }}</td>
                                                 <td>{{ $row->nama_akun }}</td>
                                                 <td>{{ $row->saldo }}</td>
+                                                <td>{{ $row->attribute3 }}</td>
                                                 <td>{{ date('d-M-Y',strtotime($row->created_at)) }}</td>
                                                 <td>
                                                     <div class="d-flex">
@@ -87,3 +89,5 @@
         </div>
     </div>
 @endsection
+<script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
+<script src="{{ asset('app-assets/js/custom.min.js') }}"></script>

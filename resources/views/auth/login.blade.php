@@ -5,12 +5,12 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="mb-4">
-                    <h3>{{ __('TAXCEED') }}</h3>
+                    <h3><strong>{{ __('TAXCEED') }}</strong></h3>
                 </div>
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="form-group first">
-                        <label for="username">Email</label>
+                        <label for="username"><strong>Email</strong></label>
                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
                             name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                         @error('email')
@@ -21,7 +21,7 @@
 
                     </div>
                     <div class="form-group last mb-4">
-                        <label for="password">Password</label>
+                        <label><strong>Password</strong></label>
                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
                             name="password" required autocomplete="current-password">
                         @error('password')

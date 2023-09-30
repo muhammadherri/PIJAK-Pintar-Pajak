@@ -38,18 +38,26 @@ class NeracaController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
+        $cari = Neraca::where('no_akun',$request->noakun)->first();
+        // dd($cari);
         $data = array(
             'no_akun'=>$request->noakun,
             'nama_akun'=>$request->namaakun,
             'saldo'=>$request->saldo,
-            'attribute1'=>Auth::user()->name,
-            'attribute2'=>'NULL',
-            'attribute3'=>'NULL',
+            'attribute1'=>Auth::user()->id,
+            'attribute3'=>$request->kategori_pajak,
             'created_at'=>date('Y-m-d'),
         );
-        Neraca::create($data);
-        $a= \DB::commit();
+        if($cari==null){
+            // dd('masuk');
+            Neraca::create($data);
+            $a= \DB::commit();
+            return redirect()->back()->with('alert','Berhasil');
+        }
+        // dd('keluar');
         return redirect()->back()->with('alert','Berhasil');
+        // dd($data);
     }
 
     /**
@@ -91,8 +99,8 @@ class NeracaController extends Controller
             'no_akun'=>$request->noakun,
             'nama_akun'=>$request->namaakun,
             'saldo'=>$request->saldo,
-            'attribute2'=>Auth::user()->name,
-            'attribute3'=>'NULL',
+            'attribute2'=>Auth::user()->id,
+            'attribute3'=>$request->kategori_pajak,
             'updated_at'=>date('Y-m-d'),
         ]);
         $a= \DB::commit();    

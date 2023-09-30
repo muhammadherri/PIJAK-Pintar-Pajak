@@ -43,9 +43,9 @@ class VendorController extends Controller
             'nama_vendor'=>$request->nama_vendor,
             'alamat_vendor'=>$request->alamat_vendor,
             'contact_person'=>$request->contact_person,
-            'attribute1'=>Auth::user()->name,
+            'attribute1'=>Auth::user()->id,
             'attribute2'=>'NULL',
-            'attribute3'=>'NULL',
+            'attribute3'=>$request->no_rek,
             'created_at'=>date('Y-m-d'),
         ]);
         $vendor=Vendor::all();
@@ -92,8 +92,8 @@ class VendorController extends Controller
             'nama_vendor'=>$request->nama_vendor,
             'alamat_vendor'=>$request->alamat_vendor,
             'contact_person'=>$request->contact_person,
-            'attribute2'=>Auth::user()->name,
-            'attribute3'=>'NULL',
+            'attribute2'=>Auth::user()->id,
+            'attribute3'=>$request->no_rek,
             'created_at'=>date('Y-m-d'),
         ]);
         $a= \DB::commit();    

@@ -82,4 +82,6 @@
         </div>
     </div>
 @endsection
+<script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
+<script src="{{ asset('app-assets/js/custom.min.js') }}"></script>
 

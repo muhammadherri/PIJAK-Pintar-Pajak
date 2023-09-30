@@ -42,7 +42,7 @@ class PtkpController extends Controller
             'tanggungan'=>$request->tanggungan,
             'besaran_ptkp'=>$request->besaran_ptkp,
             'kode_ptkp'=>$request->kode,
-            'attribute1'=>Auth::user()->name,
+            'attribute1'=>Auth::user()->id,
             'attribute2'=>'NULL',
             'attribute3'=>'NULL',
             'created_at'=>date('Y-m-d'),
@@ -91,7 +91,7 @@ class PtkpController extends Controller
             'tanggungan'=>$request->tanggungan,
             'besaran_ptkp'=>$request->besaran_ptkp,
             'kode_ptkp'=>$request->kode,
-            'attribute2'=>Auth::user()->name,
+            'attribute2'=>Auth::user()->id,
             'updated_at'=>date('Y-m-d'),
         ]);
         $a= \DB::commit();    

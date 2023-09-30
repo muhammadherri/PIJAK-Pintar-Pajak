@@ -41,7 +41,7 @@ class FasilitasController extends Controller
             'no'=>$request->nomor,
             'jenis_fasilitas'=>$request->jenisfasilitas,
             'sertifikat'=>$request->sertifikat,
-            'attribute1'=>Auth::user()->name,
+            'attribute1'=>Auth::user()->id,
             'attribute2'=>'NULL',
             'attribute3'=>'NULL',
             'created_at'=>date('Y-m-d'),
@@ -90,7 +90,7 @@ class FasilitasController extends Controller
             'no'=>$request->nomor,
             'jenis_fasilitas'=>$request->jenisfasilitas,
             'sertifikat'=>$request->sertifikat,
-            'attribute2'=>Auth::user()->name,
+            'attribute2'=>Auth::user()->id,
             'attribute3'=>'NULL',
             'updated_at'=>date('Y-m-d'),
         ]);

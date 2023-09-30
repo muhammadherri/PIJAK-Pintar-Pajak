@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('ebupot_id');
             $table->string('jenis_pph');
             $table->string('pilih_transaksi');
-            $table->integer('no_tlp');
+            $table->string('no_tlp');
             $table->string('fasilitas');
             $table->dateTime('tanggal_bukti_potong')->nullable();
             $table->dateTime('periode_pajak')->nullable();

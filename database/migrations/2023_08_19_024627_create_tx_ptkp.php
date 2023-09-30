@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('tx_ptkp', function (Blueprint $table) {
             $table->increments('id');
             $table->string('status_pernikahan');
-            $table->integer('tanggungan');
+            $table->float('tanggungan');
             $table->integer('besaran_ptkp');
             $table->string('kode_ptkp');
             $table->string('attribute1')->nullable();

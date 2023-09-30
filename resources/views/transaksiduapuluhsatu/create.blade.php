@@ -45,15 +45,16 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Nama Wajib Pajak</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" id="input_wajib_pajak" name="input_wajib_pajak"
+                                                <input required autocomplete="off" id="input_wajib_pajak" name="input_wajib_pajak"
                                                     type="text" class="form-control" placeholder="Masukkan Nama NPWP">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">No NPWP</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" id="no_npwp" name="no_npwp" type="number"
+                                                <input required autocomplete="off" id="no_npwp" name="no_npwp" type="number"
                                                     class="form-control" placeholder="Masukkan Nomor NPWP">
+                                                    <span id="errorText" style="color: red;"></span>
                                             </div>
                                         </div>
 
@@ -69,9 +70,7 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div id="results">
-
-                                        </div>
+                                       
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Tanggungan</label>
                                             <div class="col-sm-9">
@@ -148,7 +147,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Gaji/Pensiun</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" type="number" id="gajidanpensiun"
+                                                <input required min="0" autocomplete="off" type="number" id="gajidanpensiun"
                                                     name="gajidanpensiun" class="form-control"
                                                     placeholder="Masukkan Gaji / Pensiun">
                                             </div>
@@ -156,7 +155,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Tunjangan PPh</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" id="tunjangan_pph" name="tunjangan_pph"
+                                                <input required min="0" autocomplete="off" id="tunjangan_pph" name="tunjangan_pph"
                                                     type="number" class="form-control"
                                                     placeholder="Masukkan Tunjangan PPh">
                                             </div>
@@ -172,7 +171,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Honorarium</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" type="number" id="honorarium"
+                                                <input required min="0" autocomplete="off" type="number" id="honorarium"
                                                     name="honorarium" class="form-control"
                                                     placeholder="Masukkan Imbalan Lainnya">
                                             </div>
@@ -180,7 +179,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Premi Asuransi</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" type="number" id="premi_asuransi"
+                                                <input required min="0" autocomplete="off" type="number" id="premi_asuransi"
                                                     name="premi_asuransi" class="form-control"
                                                     placeholder="Masukkan Premi Asuransi">
                                             </div>
@@ -188,14 +187,14 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Natura</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" type="number" id="natura" name="natura"
+                                                <input required min="0" autocomplete="off" type="number" id="natura" name="natura"
                                                     class="form-control" placeholder="Masukkan Natura">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Tantiem</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" type="number" id="tantiem" name="tantiem"
+                                                <input required min="0" autocomplete="off" type="number" id="tantiem" name="tantiem"
                                                     class="form-control"
                                                     placeholder="Masukkan Tantiem, Bonus, Gratifikasi, Jasa Produksi dan THR">
                                             </div>
@@ -203,7 +202,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Penghasilan Bruto</label>
                                             <div class="col-sm-9">
-                                                <input readonly autocomplete="off" type="number" id="penghasilan_bruto"
+                                                <input required min="0" readonly autocomplete="off" type="number" id="penghasilan_bruto"
                                                     name="penghasilan_bruto" class="form-control"
                                                     placeholder="Masukkan Penghasilan Bruto">
                                             </div>
@@ -213,14 +212,14 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Biaya Jabatan</label>
                                             <div class="col-sm-9">
-                                                <input readonly type="" id="biaya_jabatan" name="biaya_jabatan"
+                                                <input required min="0" readonly type="" id="biaya_jabatan" name="biaya_jabatan"
                                                     class="form-control" placeholder="Masukkan Biaya Jabatan">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Iuran Pensiun</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" type="number" id="iuran_pensiun"
+                                                <input required min="0" autocomplete="off" type="number" id="iuran_pensiun"
                                                     name="iuran_pensiun" class="form-control"
                                                     placeholder="Masukkan Iuran Pensiun atau Iuran THT/JHT">
                                             </div>
@@ -244,7 +243,7 @@
                                             <label class="col-sm-3 col-form-label">Penghasilan Netto Masa
                                                 Sebelumnya</label>
                                             <div class="col-sm-9">
-                                                <input placeholder="Masukkan Penghasilan Netto Masa Sebelumnya" autocomplete="off" type="number" id="penghasilan_netto_ms"
+                                                <input required min="0" placeholder="Masukkan Penghasilan Netto Masa Sebelumnya" autocomplete="off" type="number" id="penghasilan_netto_ms"
                                                     name="penghasilan_netto_ms" class="form-control">
                                             </div>
                                         </div>
@@ -259,7 +258,7 @@
                                             <label class="col-sm-3 col-form-label">PTKP</label>
                                             <div class="col-sm-9">
                                                 <select id="pilih_ptkp" class="form-control" name="pilih_ptkp">
-                                                    <option value="">Pilih Besaran PTKP</option>
+                                                    {{-- <option value="">Pilih Besaran PTKP</option> --}}
                                                 </select>
                                             </div>
                                         </div>
@@ -273,12 +272,12 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Tarif</label>
                                             <div class="col-sm-3">
-                                                <input autocomplete="off" type="number" id="potongantarif1"
+                                                <input required min="0" autocomplete="off" type="number" id="potongantarif1"
                                                     name="potongantarif1" class="form-control"
                                                     placeholder="Masukkan Tarif">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input autocomplete="off" type="number" id="tarif1" name="tarif1"
+                                                <input required min="0" autocomplete="off" type="number" id="tarif1" name="tarif1"
                                                     class="form-control" placeholder="Masukkan PKP">
                                             </div>
                                             <div class="col-sm-3">
@@ -289,12 +288,12 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label"></label>
                                             <div class="col-sm-3">
-                                                <input autocomplete="off" type="number" id="potongantarif2"
+                                                <input required min="0" autocomplete="off" type="number" id="potongantarif2"
                                                     name="potongantarif2" class="form-control"
                                                     placeholder="Masukkan Tarif">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input autocomplete="off" type="number" id="tarif2" name="tarif2"
+                                                <input required min="0" autocomplete="off" type="number" id="tarif2" name="tarif2"
                                                     class="form-control" placeholder="Masukkan PKP">
                                             </div>
                                             <div class="col-sm-3">
@@ -305,12 +304,12 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label"></label>
                                             <div class="col-sm-3">
-                                                <input autocomplete="off" type="number" id="potongantarif3"
+                                                <input required min="0" autocomplete="off" type="number" id="potongantarif3"
                                                     name="potongantarif3" class="form-control"
                                                     placeholder="Masukkan Tarif">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input autocomplete="off" type="number" id="tarif3" name="tarif3"
+                                                <input required min="0" autocomplete="off" type="number" id="tarif3" name="tarif3"
                                                     class="form-control" placeholder="Masukkan PKP">
                                             </div>
                                             <div class="col-sm-3">
@@ -321,12 +320,12 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label"></label>
                                             <div class="col-sm-3">
-                                                <input autocomplete="off" type="number" id="potongantarif4"
+                                                <input required min="0" autocomplete="off" type="number" id="potongantarif4"
                                                     name="potongantarif4" class="form-control"
                                                     placeholder="Masukkan Tarif">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input autocomplete="off" type="number" id="tarif4" name="tarif4"
+                                                <input required min="0" autocomplete="off" type="number" id="tarif4" name="tarif4"
                                                     class="form-control" placeholder="Masukkan PKP">
                                             </div>
                                             <div class="col-sm-3">
@@ -344,7 +343,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">PPH 21 Potongan</label>
                                             <div class="col-sm-9">
-                                                <input placeholder="Masukkan Nilai PPH 21 Potongan" autocomplete="off" type="number" id="pph21potongan"
+                                                <input required min="0" placeholder="Masukkan Nilai PPH 21 Potongan" autocomplete="off" type="number" id="pph21potongan"
                                                     name="pph21potongan" class="form-control">
                                             </div>
                                         </div>
@@ -375,19 +374,23 @@
         </div>
     </div>
 @endsection
-{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
+<script src="{{ asset('app-assets/js/custom.min.js') }}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script>
     $(document).ready(function() {
         $('#tanggungan').on('change', function() {
-            var tanggungan = $('#tanggungan').val();
+            let tanggungan = $('#tanggungan').val();
             var status = $('#status_pernikahan').val();
             var url = "/search/resultPtkp/" + status + tanggungan;
             $.ajax({
-                url: url,
+                // url: url,
+                url: "{{ route('get.ptkp') }}",
                 type: 'GET',
                 dataType: 'json',
-                
+                data: {
+                    country_id: tanggungan,
+                },
                 success: function(data) {
                     var dropdown = $('#pilih_ptkp');
                     $.each(data, function(key, value){
@@ -401,6 +404,18 @@
     });
 
     document.addEventListener('DOMContentLoaded', function() {
+        const inputElement = document.getElementById('no_npwp');
+        const errorText = document.getElementById('errorText');
+        inputElement.addEventListener('input',function(){
+            const inputValue = inputElement.value;
+            
+            if(inputValue.length > 14){
+                inputElement.value = inputValue.slice(0,14);
+                errorText.textContent = 'Maksimal 15 digit';
+            }else{
+                errorText.textContent = '';
+            }
+        })
         const inputpotongantarif1 = document.getElementById('potongantarif1');
         const inputtarif1 = document.getElementById('tarif1');
         const resulttotaltarif1 = document.getElementById('totaltarif1');

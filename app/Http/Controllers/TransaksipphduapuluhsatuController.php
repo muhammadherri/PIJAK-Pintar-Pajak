@@ -17,7 +17,12 @@ class TransaksipphduapuluhsatuController extends Controller
      */
     public function index()
     {
-        $pph21 = TransaksiPphDuapuluhSatu::all();
+        $id=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $pph21 = TransaksiPphDuapuluhSatu::get();
+        }else{
+            $pph21 = TransaksiPphDuapuluhSatu::where('attribute1',$id)->get();
+        }
         return view('transaksiduapuluhsatu.index',compact('pph21'))->with('no',1);
     }
 
@@ -78,7 +83,7 @@ class TransaksipphduapuluhsatuController extends Controller
                 'pph21ataspkp'=>$request->jumlahtotal,
                 'pph21_dipotong_sebelumnya'=>$request->pph21potongan,
                 'pph21_terutang'=>$request->pph21terutang,
-                'attribute1'=>Auth::user()->name,
+                'attribute1'=>Auth::user()->id,
                 'attribute2'=>'NULL',
                 'attribute3'=>'NULL',
                 'created_at'=>date('Y-m-d'),
@@ -120,7 +125,7 @@ class TransaksipphduapuluhsatuController extends Controller
                 'pph21ataspkp'=>$request->jumlahtotal,
                 'pph21_dipotong_sebelumnya'=>$request->pph21potongan,
                 'pph21_terutang'=>$request->pph21terutang,
-                'attribute1'=>Auth::user()->name,
+                'attribute1'=>Auth::user()->id,
                 'attribute2'=>'NULL',
                 'attribute3'=>'NULL',
                 'created_at'=>date('Y-m-d'),
@@ -139,12 +144,23 @@ class TransaksipphduapuluhsatuController extends Controller
      */
     public function show($id)
     {
-        $pph21 = TransaksiPphDuapuluhSatu::where('id',$id)->get()->first();
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $pph21 = TransaksiPphDuapuluhSatu::where('id',$id)->get()->first();
+        }else{
+            $pph21 = TransaksiPphDuapuluhSatu::where('id',$id)->where('attribute1',$iduser)->get()->first();
+        }
         $ptkp=Ptkp::all();
         $status_pernikahan=Ptkp::select('status_pernikahan','kode_ptkp')->groupBy('status_pernikahan','kode_ptkp')->get();
         $tanggungan=Ptkp::select('tanggungan')->groupBy('tanggungan')->get();
-
-        return view('transaksiduapuluhsatu.show',compact('pph21','ptkp','status_pernikahan','tanggungan'));
+        
+        if($pph21==null)
+        {
+            return back();
+        }   else{
+            return view('transaksiduapuluhsatu.show',compact('pph21','ptkp','status_pernikahan','tanggungan'));
+        }
+    
 
     }
 
@@ -156,12 +172,21 @@ class TransaksipphduapuluhsatuController extends Controller
      */
     public function edit($id)
     {
-        $pph21 = TransaksiPphDuapuluhSatu::where('id',$id)->get()->first();
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $pph21 = TransaksiPphDuapuluhSatu::where('id',$id)->get()->first();
+        }else{
+            $pph21 = TransaksiPphDuapuluhSatu::where('id',$id)->where('attribute1',$iduser)->get()->first();
+        }        
         $ptkp=Ptkp::all();
         $status_pernikahan=Ptkp::select('status_pernikahan','kode_ptkp')->groupBy('status_pernikahan','kode_ptkp')->get();
         $tanggungan=Ptkp::select('tanggungan')->groupBy('tanggungan')->get();
-
-        return view('transaksiduapuluhsatu.edit',compact('pph21','ptkp','status_pernikahan','tanggungan'));
+        if($pph21==null)
+        {
+            return back();
+        }else{
+            return view('transaksiduapuluhsatu.edit',compact('pph21','ptkp','status_pernikahan','tanggungan'));
+        }
     }
 
     /**
@@ -208,7 +233,7 @@ class TransaksipphduapuluhsatuController extends Controller
                 'pph21ataspkp'=>$request->jumlahtotal,
                 'pph21_dipotong_sebelumnya'=>$request->pph21potongan,
                 'pph21_terutang'=>$request->pph21terutang,
-                'attribute2'=>Auth::user()->name,
+                'attribute2'=>Auth::user()->id,
                 'updated_at'=>date('Y-m-d'),
             ]);
             $a= \DB::commit();    
@@ -247,7 +272,7 @@ class TransaksipphduapuluhsatuController extends Controller
                 'pph21ataspkp'=>$request->jumlahtotal,
                 'pph21_dipotong_sebelumnya'=>$request->pph21potongan,
                 'pph21_terutang'=>$request->pph21terutang,
-                'attribute2'=>Auth::user()->name,
+                'attribute2'=>Auth::user()->id,
                 'updated_at'=>date('Y-m-d'),
             ]);
             $a= \DB::commit();    
