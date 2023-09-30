@@ -1196,13 +1196,13 @@
                                                                     <td class="text-center">
                                                                         <input readonly autocomplete="off"
                                                                             type="number" name="subangkabiaya_luar1"
-                                                                            id="angkabiaya_luar1" min="0"
+                                                                            id="subangkabiaya_luar1" min="0"
                                                                             class="form-control total_biayaluar" />
                                                                     </td>
                                                                     <td class="text-center">
                                                                         <input readonly autocomplete="off"
-                                                                            type="number" name="subjum1"
-                                                                            id="subjum1" min="0"
+                                                                            type="number" name="totaljum1"
+                                                                            id="totaljum1" min="0"
                                                                             class="form-control total" />
                                                                     </td>
                                                                     <td></td>

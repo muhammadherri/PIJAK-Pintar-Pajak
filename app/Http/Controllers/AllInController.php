@@ -14,6 +14,21 @@ use App\Models\Neraca;
 use App\Models\Prepopulate;
 use App\Models\Akun;
 use App\Models\SptTahunan;
+use App\Models\SptTahunanI;
+use App\Models\SptTahunanIIHead;
+use App\Models\SptTahunanIIIHead;
+use App\Models\SptTahunanIIILines;
+use App\Models\SptTahunanIILines;
+use App\Models\SptTahunanIVHead;
+use App\Models\SptTahunanIVLinesA;
+use App\Models\SptTahunanIVLinesB;
+use App\Models\SptTahunanVHead;
+use App\Models\SptTahunanVIHead;
+use App\Models\SptTahunanVILinesA;
+use App\Models\SptTahunanVILinesB;
+use App\Models\SptTahunanVILinesC;
+use App\Models\SptTahunanVLinesA;
+use App\Models\SptTahunanVLinesB;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\Facades\DataTables;
@@ -301,4 +316,111 @@ class AllInController extends Controller
         );
         return json_encode($response);
     }
+    public function formulirpertama(Request $request){
+        // dd($request);
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $sptI=SptTahunanI::where('formulir_id',$request->formulir_id)->get()->first();
+            // dd($sptI);
+        }else{
+            $sptI=SptTahunanI::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
+        }
+
+        if($sptI==null){
+            return back();
+        }
+        return view('spttahunan.formulirsatu',compact('sptI'));
+    }
+    public function formulirkedua(Request $request){
+        // dd($request);
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $sptII=SptTahunanIIHead::where('formulir_id',$request->formulir_id)->get()->first();
+            $sptIIlines=SptTahunanIILines::where('formulir_id',$request->formulir_id)->get();
+            // dd($sptIIlines);
+        }else{
+            $sptII=SptTahunanIIHead::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
+            $sptIIlines=SptTahunanIILines::where('formulir_id',$request->formulir_id)->get();
+        }
+        if($sptII==null){
+            return back();
+        }
+        return view('spttahunan.formulirdua',compact('sptII','sptIIlines'))->with('no',1);
+    }
+    public function formulirketiga(Request $request){
+        // dd($request);
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $spt=SptTahunanIIIHead::where('formulir_id',$request->formulir_id)->get()->first();
+            $sptlines=SptTahunanIIILines::where('formulir_id',$request->formulir_id)->get();
+            // dd($sptIIlines);
+        }else{
+            $spt=SptTahunanIIIHead::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
+            $sptlines=SptTahunanIIILines::where('formulir_id',$request->formulir_id)->get();
+        }
+        if($spt==null){
+            return back();
+        }
+        return view('spttahunan.formulirtiga',compact('spt','sptlines'))->with('no',1);
+    }
+    public function formulirkeempat(Request $request){
+        // dd($request);
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $spt=SptTahunanIVHead::where('formulir_id',$request->formulir_id)->get()->first();
+            $sptlinesa=SptTahunanIVLinesA::where('formulir_id',$request->formulir_id)->get();
+            $sptlinescountdasar_pengenaan_pajak=SptTahunanIVLinesA::where('formulir_id',$request->formulir_id)->sum('dasar_pengenaan_pajak');
+            $sptlinescountpph_terutang=SptTahunanIVLinesA::where('formulir_id',$request->formulir_id)->sum('pph_terutang');
+            $sptlinesb=SptTahunanIVLinesB::where('formulir_id',$request->formulir_id)->get();
+            $sptlinesbpenghasilan_bruto=SptTahunanIVLinesB::where('formulir_id',$request->formulir_id)->sum('penghasilan_bruto');
+            // dd($sptlinescount);
+        }else{
+            $spt=SptTahunanIVHead::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
+            $sptlinesa=SptTahunanIVLinesA::where('formulir_id',$request->formulir_id)->get();
+            $sptlinescountdasar_pengenaan_pajak=SptTahunanIVLinesA::where('formulir_id',$request->formulir_id)->sum('dasar_pengenaan_pajak');
+            $sptlinescountpph_terutang=SptTahunanIVLinesA::where('formulir_id',$request->formulir_id)->sum('pph_terutang');
+            $sptlinesb=SptTahunanIVLinesB::where('formulir_id',$request->formulir_id)->get();
+            $sptlinesbpenghasilan_bruto=SptTahunanIVLinesB::where('formulir_id',$request->formulir_id)->sum('penghasilan_bruto');
+        }
+        if($spt==null){
+            return back();
+        }
+        return view('spttahunan.formulirempat',compact('spt','sptlinesa','sptlinesb','sptlinescountpph_terutang','sptlinescountdasar_pengenaan_pajak','sptlinesbpenghasilan_bruto'))->with('no',1)->with('non',1);
+    }
+    public function formulirkelima(Request $request){
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $spt=SptTahunanVHead::where('formulir_id',$request->formulir_id)->get()->first();
+            $sptlinesa=SptTahunanVLinesA::where('formulir_id',$request->formulir_id)->get();
+            $sptlinesb=SptTahunanVLinesB::where('formulir_id',$request->formulir_id)->get();
+        }else{
+            $spt=SptTahunanVHead::where('formulir_id',$request->formulir_id)->get()->first();
+            $sptlinesa=SptTahunanVLinesA::where('formulir_id',$request->formulir_id)->get();
+            $sptlinesb=SptTahunanVLinesB::where('formulir_id',$request->formulir_id)->get();
+        }
+        if($spt==null){
+            return back();
+        }
+        return view('spttahunan.formulirlima',compact('spt','sptlinesa','sptlinesb'))->with('no',1)->with('non',1);
+    }
+    public function formulirkeenam(Request $request){
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $spt=SptTahunanVIHead::where('formulir_id',$request->formulir_id)->get()->first();
+            $sptlinesa=SptTahunanVILinesA::where('formulir_id',$request->formulir_id)->get();
+            $sptlinesb=SptTahunanVILinesB::where('formulir_id',$request->formulir_id)->get();
+            $sptlinesc=SptTahunanVILinesC::where('formulir_id',$request->formulir_id)->get();
+        }else{
+            $spt=SptTahunanVIHead::where('formulir_id',$request->formulir_id)->get()->first();
+            $sptlinesa=SptTahunanVILinesA::where('formulir_id',$request->formulir_id)->get();
+            $sptlinesb=SptTahunanVILinesB::where('formulir_id',$request->formulir_id)->get();
+            $sptlinesc=SptTahunanVILinesC::where('formulir_id',$request->formulir_id)->get();
+        }
+        if($spt==null){
+            return back();
+        }
+        return view('spttahunan.formulirenam',compact('spt','sptlinesa','sptlinesb','sptlinesc'))->with('no',1)->with('nob',1)->with('noc',1);
+
+    }
+   
 }

@@ -60,6 +60,7 @@ class SptTahunanController extends Controller
         // dd($request);
 
         // 1771 II
+        $rincian = $request->input('angkapembelianbarang');
         $harpok = $request->input('angkaharpok1');
         $biayausaha = $request->input('angkabiaya_usaha1');
         $biayaluar = $request->input('angkabiaya_luar1');
@@ -227,13 +228,14 @@ class SptTahunanController extends Controller
             'sub_harga_pokok'=>$request->subangkaharpok1,
             'sub_biaya_usaha'=>$request->subangkabiaya_usaha1,
             'sub_biaya_luar_usaha'=>$request->subangkabiaya_luar1,
-            'total_jumlah_biaya'=>$request->subjum1,
+            'total_jumlah_biaya'=>$request->totaljum1,
             'attribute1'=>Auth::user()->id,
         );
         SptTahunanIIHead::create($data1771iihead);
         foreach ($harpok as $key => $row) {
             $data1771iilines = array(
                 'formulir_id' => $header_id,
+                'perincian_pembelian_barang' => $rincian[$key],
                 'harga_pokok' => $harpok[$key],
                 'biaya_usaha' => $biayausaha[$key],
                 'biaya_luar_usaha' => $biayaluar[$key],
@@ -400,7 +402,7 @@ class SptTahunanController extends Controller
         if(Auth::user()->status==1){
             $spt=SptTahunan::where('formulir_id',$id)->get()->first();
             $sptI=SptTahunanI::where('formulir_id',$id)->get()->first();
-            // dd($sptI);
+            // dd($spt);
             $sptIIhead=SptTahunanIIHead::where('formulir_id',$id)->get()->first();
             $sptIIline=SptTahunanIILines::where('formulir_id',$id)->get()->first();
             $sptIIIhead=SptTahunanIIIHead::where('formulir_id',$id)->get()->first();
@@ -416,7 +418,6 @@ class SptTahunanController extends Controller
             $sptVIlineb=SptTahunanVILinesB::where('formulir_id',$id)->get()->first();
             $sptVIlinec=SptTahunanVILinesC::where('formulir_id',$id)->get()->first();
         }else{
-
             $spt=SptTahunan::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
             $sptI=SptTahunanI::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
             $sptIIhead=SptTahunanIIHead::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
@@ -477,4 +478,5 @@ class SptTahunanController extends Controller
     {
         //
     }
+   
 }

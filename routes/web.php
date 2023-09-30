@@ -236,3 +236,10 @@ Route::get('/search/akun', [App\Http\Controllers\AllInController::class,'cariaku
 Route::post('/pembayaranpdf', [App\Http\Controllers\PDFController::class,'pembarayanPDF']);
 Route::post('/printpdflabarugifiskal', [App\Http\Controllers\PDFController::class,'labarugifiskalPDF']);
 Route::post('/printpdfneracafiskal', [App\Http\Controllers\PDFController::class,'neracafiskalPDF']);
+
+Route::post('/formulirpertama', [App\Http\Controllers\AllInController::class,'formulirpertama']);
+Route::post('/formulirkedua', [App\Http\Controllers\AllInController::class,'formulirkedua']);
+Route::post('/formulirketiga', [App\Http\Controllers\AllInController::class,'formulirketiga']);
+Route::post('/formulirkeempat', [App\Http\Controllers\AllInController::class,'formulirkeempat']);
+Route::post('/formulirkelima', [App\Http\Controllers\AllInController::class,'formulirkelima']);
+Route::post('/formulirkeenam', [App\Http\Controllers\AllInController::class,'formulirkeenam']);
