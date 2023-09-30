@@ -30,6 +30,17 @@
                                     @method('POST')
                                     <div class="row">
                                         <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Transaksi</label>
+                                            <div class="col-sm-9">
+                                                <select id="trx" name="trx"
+                                                class="default-select form-control wide">
+                                                @foreach ($trx as $row)
+                                                    <option value="{{ $row->id }}">
+                                                        {{ $row->trx }}</option>
+                                                @endforeach
+                                            </select>                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">NPWP</label>
                                             <div class="col-sm-9">
                                                 <input min="0" maxlength="15" autocomplete="off" required id="npwp" name="npwp"
@@ -262,5 +273,3 @@
         nama_penyetor.value = '';
     }
 </script>
-<script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
-<script src="{{ asset('app-assets/js/custom.min.js') }}"></script>

@@ -76,6 +76,14 @@ class TransaksipphduapuluhsatuController extends Controller
                 'netto_setahun'=>$request->netto_pertahun,
                 'ptkp'=>$request->pilih_ptkp,
                 'pkp'=>$request->input_pkp,
+                'masukan_tarif1'=>$request->potongantarif1,
+                'masukan_tarif2'=>$request->potongantarif2,
+                'masukan_tarif3'=>$request->potongantarif3,
+                'masukan_tarif4'=>$request->potongantarif4,
+                'pkp1'=>$request->tarif1,
+                'pkp2'=>$request->tarif2,
+                'pkp3'=>$request->tarif3,
+                'pkp4'=>$request->tarif4,
                 'tarif1'=>$request->totaltarif1,
                 'tarif2'=>$request->totaltarif2,
                 'tarif3'=>$request->totaltarif3,
@@ -86,7 +94,7 @@ class TransaksipphduapuluhsatuController extends Controller
                 'attribute1'=>Auth::user()->id,
                 'attribute2'=>'NULL',
                 'attribute3'=>'NULL',
-                'created_at'=>date('Y-m-d'),
+                'created_at'=>date('Y-m-d H:i:s'),
             );
             TransaksiPphDuapuluhSatu::create($data);
             $a= \DB::commit();
@@ -118,6 +126,14 @@ class TransaksipphduapuluhsatuController extends Controller
                 'netto_setahun'=>$request->netto_pertahun,
                 'ptkp'=>$request->pilih_ptkp,
                 'pkp'=>$request->input_pkp,
+                'masukan_tarif1'=>$request->potongantarif1,
+                'masukan_tarif2'=>$request->potongantarif2,
+                'masukan_tarif3'=>$request->potongantarif3,
+                'masukan_tarif4'=>$request->potongantarif4,
+                'pkp1'=>$request->tarif1,
+                'pkp2'=>$request->tarif2,
+                'pkp3'=>$request->tarif3,
+                'pkp4'=>$request->tarif4,
                 'tarif1'=>$request->totaltarif1,
                 'tarif2'=>$request->totaltarif2,
                 'tarif3'=>$request->totaltarif3,
@@ -128,7 +144,7 @@ class TransaksipphduapuluhsatuController extends Controller
                 'attribute1'=>Auth::user()->id,
                 'attribute2'=>'NULL',
                 'attribute3'=>'NULL',
-                'created_at'=>date('Y-m-d'),
+                'created_at'=>date('Y-m-d H:i:s'),
             );
             TransaksiPphDuapuluhSatu::create($data);
             $a= \DB::commit();
@@ -226,6 +242,14 @@ class TransaksipphduapuluhsatuController extends Controller
                 'netto_setahun'=>$request->netto_pertahun,
                 'ptkp'=>$request->pilih_ptkp,
                 'pkp'=>$request->input_pkp,
+                'masukan_tarif1'=>$request->potongantarif1,
+                'masukan_tarif2'=>$request->potongantarif2,
+                'masukan_tarif3'=>$request->potongantarif3,
+                'masukan_tarif4'=>$request->potongantarif4,
+                'pkp1'=>$request->tarif1,
+                'pkp2'=>$request->tarif2,
+                'pkp3'=>$request->tarif3,
+                'pkp4'=>$request->tarif4,
                 'tarif1'=>$request->totaltarif1,
                 'tarif2'=>$request->totaltarif2,
                 'tarif3'=>$request->totaltarif3,
@@ -234,7 +258,7 @@ class TransaksipphduapuluhsatuController extends Controller
                 'pph21_dipotong_sebelumnya'=>$request->pph21potongan,
                 'pph21_terutang'=>$request->pph21terutang,
                 'attribute2'=>Auth::user()->id,
-                'updated_at'=>date('Y-m-d'),
+                'updated_at'=>date('Y-m-d H:i:s'),
             ]);
             $a= \DB::commit();    
         }else{
@@ -265,6 +289,14 @@ class TransaksipphduapuluhsatuController extends Controller
                 'netto_setahun'=>$request->netto_pertahun,
                 'ptkp'=>$request->pilih_ptkp,
                 'pkp'=>$request->input_pkp,
+                'masukan_tarif1'=>$request->potongantarif1,
+                'masukan_tarif2'=>$request->potongantarif2,
+                'masukan_tarif3'=>$request->potongantarif3,
+                'masukan_tarif4'=>$request->potongantarif4,
+                'pkp1'=>$request->tarif1,
+                'pkp2'=>$request->tarif2,
+                'pkp3'=>$request->tarif3,
+                'pkp4'=>$request->tarif4,
                 'tarif1'=>$request->totaltarif1,
                 'tarif2'=>$request->totaltarif2,
                 'tarif3'=>$request->totaltarif3,
@@ -273,7 +305,7 @@ class TransaksipphduapuluhsatuController extends Controller
                 'pph21_dipotong_sebelumnya'=>$request->pph21potongan,
                 'pph21_terutang'=>$request->pph21terutang,
                 'attribute2'=>Auth::user()->id,
-                'updated_at'=>date('Y-m-d'),
+                'updated_at'=>date('Y-m-d H:i:s'),
             ]);
             $a= \DB::commit();    
         }

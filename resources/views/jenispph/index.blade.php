@@ -37,22 +37,26 @@
                                 <table id="example3" class="display" style="min-width: 845px">
                                     <thead>
                                         <tr>
-                                            <th></th>
+                                            {{-- <th></th> --}}
                                             <th>Jenis PPh</th>
                                             <th>Nama Pembuat</th>
                                             <th>Tanggal Pembuatan</th>
+                                            @if(Auth::user()->status==1)
                                             <th>Action</th>
+                                            @else
+                                            @endif
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($jenispph as $key => $row)
                                             <tr>
-                                                <td>
+                                                {{-- <td>
                                                     {{ $no++ }}
-                                                </td>
+                                                </td> --}}
                                                 <td>{{ $row->jenis_pph }}</td>
-                                                <td>{{ $row->jenis_pph }}</td>
-                                                <td>{{ $row->created_at }}</td>
+                                                <td>{{ $row->users->name }}</td>
+                                                <td>{{  date('d-M-Y',strtotime($row->created_at)) }}</td>
+                                                @if(Auth::user()->status==1)
                                                 <td>
                                                     <div class="d-flex">
                                                         <form action="jenispph/{{ $row->id }}" method="POST">
@@ -72,6 +76,8 @@
                                                         </a>
                                                     </div>
                                                 </td>
+                                                @else
+                                                @endif
                                             </tr>
                                         @endforeach
                                     </tbody>
@@ -84,5 +90,5 @@
         </div>
     </div>
 @endsection
-<script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
-<script src="{{ asset('app-assets/js/custom.min.js') }}"></script>
+{{-- <script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
+<script src="{{ asset('app-assets/js/custom.min.js') }}"></script> --}}

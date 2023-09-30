@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Pembayaran</title>
+        <title>Taxceed</title>
         <style>
 			.invoice-box {
 				max-width: 800px;

@@ -15,6 +15,7 @@ class Billing extends Model
     protected $fillable = [
         'id',
         'kode_billing',
+        'trx_bupot',
         'npwp',
         'nama',
         'alamat',

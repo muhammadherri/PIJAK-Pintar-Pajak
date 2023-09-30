@@ -21,9 +21,9 @@ class InvoiceController extends Controller
     {
         $id=Auth::user()->id;
         if(Auth::user()->status==1){
-            $invcount = Invoice::sum('total');
+            $invcount = Invoice::sum('ppn');
         }else{
-            $invcount = Invoice::where('attribute1',$id)->sum('total');
+            $invcount = Invoice::where('attribute1',$id)->sum('ppn');
         }
         return view('invoice.index',compact('invcount'));
     }
@@ -77,7 +77,7 @@ class InvoiceController extends Controller
             'catatan'=>$request->catatan,
             'informasi_pembayaran'=>$request->informasi_pembayaran,
             'attribute1'=>Auth::user()->id,
-            'created_at'=>date('Y-m-d'),
+            'created_at'=>date('Y-m-d H:i:s'),
         );
         $data_faktur = array(
             'faktur_id'=>$header_id,
@@ -88,9 +88,9 @@ class InvoiceController extends Controller
             'no_dok'=>$request->no_dokumen,
             'catatan'=>$request->catatan_efaktur,
             'attribute1'=>Auth::user()->id,
-            'created_at'=>date('Y-m-d'),
+            'created_at'=>date('Y-m-d H:i:s'),
         );
-        // dd($data_faktur);
+        // dd($data_inv);
         Invoice::create($data_inv);
         Faktur::create($data_faktur);
         $a= \DB::commit();
@@ -103,7 +103,7 @@ class InvoiceController extends Controller
                 'harga_satuan' => $harga_satuan_inv[$key],
                 'total_diskon' => $total_diskon_inv[$key],
                 'total_harga' => $total_harga_inv[$key],
-                'created_at'=>date('Y-m-d'),
+                'created_at'=>date('Y-m-d H:i:s'),
             );
             // dd($data_inv);
             $data_faktur = array(
@@ -113,7 +113,7 @@ class InvoiceController extends Controller
                 'harga_satuan' => $harga_satuan_faktur[$key],
                 'total_diskon' => $total_diskon_faktur[$key],
                 'total_harga' => $total_harga_faktur[$key],
-                'created_at'=>date('Y-m-d'),
+                'created_at'=>date('Y-m-d H:i:s'),
             );
             // dd($data_inv);
             InvoiceLine::create($data_inv);
@@ -164,8 +164,9 @@ class InvoiceController extends Controller
      */
     public function destroy($id)
     {
-        $delete=Invoice::find($id);
-        $delete->delete();
-        return redirect()->back()->with('alert','Berhasil Dihapus');
+        // dd($id);
+        // $delete=Invoice::find($id);
+        // $delete->delete();
+        // return redirect()->back()->with('alert','Berhasil Dihapus');
     }
 }

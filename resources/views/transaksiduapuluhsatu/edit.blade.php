@@ -302,11 +302,11 @@
                                             <label class="col-sm-3 col-form-label">Tarif</label>
                                             <div class="col-sm-3">
                                                 <input autocomplete="off" type="number" id="potongantarif1"
-                                                    name="potongantarif1" class="form-control"
+                                                    name="potongantarif1" class="form-control" value="{{$pph21->masukan_tarif1}}"
                                                     placeholder="Masukkan Tarif">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input autocomplete="off" type="number" id="tarif1" name="tarif1"
+                                                <input autocomplete="off" type="number" id="tarif1" name="tarif1" value="{{$pph21->pkp1}}"
                                                     class="form-control" placeholder="Masukkan PKP">
                                             </div>
                                             <div class="col-sm-3">
@@ -317,12 +317,12 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label"></label>
                                             <div class="col-sm-3">
-                                                <input autocomplete="off" type="number" id="potongantarif2"
+                                                <input autocomplete="off" type="number" id="potongantarif2"value="{{$pph21->masukan_tarif2}}"
                                                     name="potongantarif2" class="form-control"
                                                     placeholder="Masukkan Tarif">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input autocomplete="off" type="number" id="tarif2" name="tarif2"
+                                                <input autocomplete="off" type="number" id="tarif2" name="tarif2"value="{{$pph21->pkp1}}"
                                                     class="form-control" placeholder="Masukkan PKP">
                                             </div>
                                             <div class="col-sm-3">
@@ -333,12 +333,12 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label"></label>
                                             <div class="col-sm-3">
-                                                <input autocomplete="off" type="number" id="potongantarif3"
+                                                <input autocomplete="off" type="number" id="potongantarif3"value="{{$pph21->masukan_tarif3}}"
                                                     name="potongantarif3" class="form-control"
                                                     placeholder="Masukkan Tarif">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input autocomplete="off" type="number" id="tarif3" name="tarif3"
+                                                <input autocomplete="off" type="number" id="tarif3" name="tarif3"value="{{$pph21->pkp1}}"
                                                     class="form-control" placeholder="Masukkan PKP">
                                             </div>
                                             <div class="col-sm-3">
@@ -349,12 +349,12 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label"></label>
                                             <div class="col-sm-3">
-                                                <input autocomplete="off" type="number" id="potongantarif4"
+                                                <input autocomplete="off" type="number" id="potongantarif4"value="{{$pph21->masukan_tarif4}}"
                                                     name="potongantarif4" class="form-control"
                                                     placeholder="Masukkan Tarif">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input autocomplete="off" type="number" id="tarif4" name="tarif4"
+                                                <input autocomplete="off" type="number" id="tarif4" name="tarif4"value="{{$pph21->pkp1}}"
                                                     class="form-control" placeholder="Masukkan PKP">
                                             </div>
                                             <div class="col-sm-3">
@@ -403,7 +403,7 @@
         </div>
     </div>
 @endsection
-{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script>
     $(document).ready(function() {
@@ -600,5 +600,5 @@
         });
     }
 </script>
-<script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
-<script src="{{ asset('app-assets/js/custom.min.js') }}"></script>
+{{-- <script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
+<script src="{{ asset('app-assets/js/custom.min.js') }}"></script> --}}

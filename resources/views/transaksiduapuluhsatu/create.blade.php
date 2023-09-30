@@ -257,6 +257,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">PTKP</label>
                                             <div class="col-sm-9">
+                                                {{-- <input readonly id="pilih_ptkp" class="form-control" name="pilih_ptkp" class="form-control"> --}}
                                                 <select id="pilih_ptkp" class="form-control" name="pilih_ptkp">
                                                     {{-- <option value="">Pilih Besaran PTKP</option> --}}
                                                 </select>
@@ -382,20 +383,24 @@
         $('#tanggungan').on('change', function() {
             let tanggungan = $('#tanggungan').val();
             var status = $('#status_pernikahan').val();
-            var url = "/search/resultPtkp/" + status + tanggungan;
+            // var url = "/search/resultPtkp/" + status + tanggungan;
             $.ajax({
                 // url: url,
                 url: "{{ route('get.ptkp') }}",
                 type: 'GET',
                 dataType: 'json',
                 data: {
-                    country_id: tanggungan,
+                    tanggungan: tanggungan,
+                    status: status,
                 },
                 success: function(data) {
-                    var dropdown = $('#pilih_ptkp');
+
+                    $('#pilih_ptkp').empty();
                     $.each(data, function(key, value){
-                        console.log(value.besaran_ptkp);
-                        dropdown.append($('<option>Pilih Besaran PTKP</option>').attr('value',value.besaran_ptkp).text(value.besaran_ptkp));
+                        $('#pilih_ptkp').append($('<option>',{
+                            value:value.besaran_ptkp,
+                            text:value.besaran_ptkp,
+                        }))
                     })
                 }
             });
@@ -409,8 +414,8 @@
         inputElement.addEventListener('input',function(){
             const inputValue = inputElement.value;
             
-            if(inputValue.length > 14){
-                inputElement.value = inputValue.slice(0,14);
+            if(inputValue.length > 15){
+                inputElement.value = inputValue.slice(0,15);
                 errorText.textContent = 'Maksimal 15 digit';
             }else{
                 errorText.textContent = '';

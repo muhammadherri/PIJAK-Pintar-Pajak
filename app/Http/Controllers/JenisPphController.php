@@ -42,7 +42,7 @@ class JenisPphController extends Controller
         $data = array(
             'jenis_pph'=>$request->jenis_pph,
             'attribute1'=>Auth::user()->id,
-            'created_at'=>date('Y-m-d'),
+            'created_at'=>date('Y-m-d H:i:s'),
         );
         Jenispph::create($data);
         $a= \DB::commit();
@@ -69,8 +69,18 @@ class JenisPphController extends Controller
      */
     public function edit($id)
     {
-        $jenispph=Jenispph::where('id',$id)->get()->first();
-        return view('jenispph.edit',compact('jenispph'));   
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $jenispph=Jenispph::where('id',$id)->get()->first();
+        }else{
+            $jenispph=Jenispph::where('attribute1',$iduser)->where('id',$id)->get()->first();
+        }
+
+        if($jenispph==null){
+            return back();
+        }else{
+            return view('jenispph.edit',compact('jenispph'));   
+        }
 
     }
 
@@ -86,7 +96,7 @@ class JenisPphController extends Controller
         Jenispph::where('id',$id)->update([
             'jenis_pph'=>$request->jenis_pph,
             'attribute2'=>Auth::user()->id,
-            'updated_at'=>date('Y-m-d'),
+            'updated_at'=>date('Y-m-d H:i:s'),
         ]);
         $a= \DB::commit();    
         return back();

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Neraca;
+use App\Models\Akun;
 use Illuminate\Support\Facades\Auth;
 
 class NeracaController extends Controller
@@ -26,7 +27,9 @@ class NeracaController extends Controller
      */
     public function create()
     {
-        return view('neraca.create');
+        $akun=Akun::get();
+        // dd($akun);
+        return view('neraca.create',compact('akun'));
         
     }
 
@@ -47,7 +50,7 @@ class NeracaController extends Controller
             'saldo'=>$request->saldo,
             'attribute1'=>Auth::user()->id,
             'attribute3'=>$request->kategori_pajak,
-            'created_at'=>date('Y-m-d'),
+            'created_at'=>date('Y-m-d H:i:s'),
         );
         if($cari==null){
             // dd('masuk');
@@ -81,9 +84,20 @@ class NeracaController extends Controller
      */
     public function edit($id)
     {
-        $neraca=Neraca::where('id',$id)->get()->first();
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $neraca=Neraca::where('id',$id)->get()->first();
+        }else{
+            $neraca=Neraca::where('attribute1',$iduser)->where('id',$id)->get()->first();
+
+        }
+        
+        if($neraca==null){
+            return back();
+        }else{
+            return view('neraca.edit',compact('neraca'));
+        }
         // dd($neraca);
-        return view('neraca.edit',compact('neraca'));
     }
 
     /**
@@ -95,13 +109,13 @@ class NeracaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Neraca::where('id',$id)->update([
+        $neraca=Neraca::where('id',$id)->update([
             'no_akun'=>$request->noakun,
             'nama_akun'=>$request->namaakun,
             'saldo'=>$request->saldo,
             'attribute2'=>Auth::user()->id,
             'attribute3'=>$request->kategori_pajak,
-            'updated_at'=>date('Y-m-d'),
+            'updated_at'=>date('Y-m-d H:i:s'),
         ]);
         $a= \DB::commit();    
         return back();

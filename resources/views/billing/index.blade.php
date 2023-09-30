@@ -44,6 +44,7 @@
                                             <th>Masa Aktif</th>
                                             <th>Jumlah</th>
                                             <th>Dibuat Oleh</th>
+                                            <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -62,6 +63,19 @@
                                                 <td>{{ $row->jumlah }}</td>
                                                 <td>{{ $row->users->name }}</td>
                                                 <td>
+                                                    @if($row->attribute3==NULL)
+                                                    <div class="d-flex">
+                                                        <a class="badge badge-rounded badge-outline-warning">
+                                                            Menunggu Pembayaran
+                                                        </a>
+                                                    </div>
+                                                    @else
+                                                    <a class="badge badge-rounded badge-outline-primary">
+                                                        Sudah Dibayar
+                                                    </a>
+                                                    @endif    
+                                                </td>
+                                                <td>
                                                     <div class="d-flex">
                                                         <form action="billing/{{ $row->id }}" method="POST">
                                                             @csrf
@@ -75,7 +89,7 @@
                                                             <i class="fa fa-pencil"></i>
                                                         </a>
                                                         <a
-                                                            class="btn btn-success shadow btn-xs sharp me-1"href="{{ route('billing/show', $row->id) }}">
+                                                            class="btn btn-success shadow btn-xs sharp me-1" target="_blank" href="{{ route('billing/show', $row->id) }}">
                                                             <i class="fa fa-eye"></i>
                                                         </a>
                                                     </div>
@@ -92,6 +106,6 @@
         </div>
     </div>
 @endsection
-<script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
-<script src="{{ asset('app-assets/js/custom.min.js') }}"></script>
+{{-- <script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
+<script src="{{ asset('app-assets/js/custom.min.js') }}"></script> --}}
 

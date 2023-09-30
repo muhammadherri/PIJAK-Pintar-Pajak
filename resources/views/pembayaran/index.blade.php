@@ -78,7 +78,7 @@
     <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
-                <form action="{{ url('pembayaranpdf') }}" method="POST" enctype="multipart/form-data">
+                <form target="_blank" action="{{ url('pembayaranpdf') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('POST')
                     <div class="modal-header">
@@ -100,5 +100,5 @@
     </div>
     {{-- modal --}}
 @endsection
-<script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
-<script src="{{ asset('app-assets/js/custom.min.js') }}"></script>
+{{-- <script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
+<script src="{{ asset('app-assets/js/custom.min.js') }}"></script> --}}

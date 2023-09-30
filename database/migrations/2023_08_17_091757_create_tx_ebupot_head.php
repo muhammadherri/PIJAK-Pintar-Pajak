@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('tx_ebupot_head', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('ebupot_id');
+            $table->string('trx');
             $table->string('jenis_pph');
             $table->string('pilih_transaksi');
             $table->string('no_tlp');

@@ -19,8 +19,6 @@
     <title>Taxceed</title>
 </head>
 <body>
-    <br>
-    <br>
     <div class="content">
         <div class="container">
             <div class="row">

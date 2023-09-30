@@ -44,7 +44,7 @@ class TopController extends Controller
             'attribute1'=>Auth::user()->id,
             'attribute2'=>'NULL',
             'attribute3'=>'NULL',
-            'created_at'=>date('Y-m-d'),
+            'created_at'=>date('Y-m-d H:i:s'),
         );
         Top::create($data);
         $top=Top::all();
@@ -72,9 +72,17 @@ class TopController extends Controller
      */
     public function edit($id)
     {
-        $top=Top::where('id',$id)->get()->first();
-        // dd($top);
-        return view('top.edit',compact('top'));
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $top=Top::where('id',$id)->get()->first();
+        }else{
+            $top=Top::where('attribute1',$iduser)->where('id',$id)->get()->first();
+        }
+        if($top==null){
+            return back();
+        }else{
+            return view('top.edit',compact('top'));
+        }
     }
 
     /**
@@ -91,7 +99,7 @@ class TopController extends Controller
             'keterangan_termin'=>$request->kettermin,
             'attribute2'=>Auth::user()->id,
             'attribute3'=>'NULL',
-            'updated_at'=>date('Y-m-d'),
+            'updated_at'=>date('Y-m-d H:i:s'),
         ]);
         $a= \DB::commit();    
         return back();

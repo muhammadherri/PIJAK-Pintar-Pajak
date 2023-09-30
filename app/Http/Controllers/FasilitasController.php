@@ -44,7 +44,7 @@ class FasilitasController extends Controller
             'attribute1'=>Auth::user()->id,
             'attribute2'=>'NULL',
             'attribute3'=>'NULL',
-            'created_at'=>date('Y-m-d'),
+            'created_at'=>date('Y-m-d H:i:s'),
         );
         Fasilitas::create($data);
         $a= \DB::commit();
@@ -72,9 +72,20 @@ class FasilitasController extends Controller
      */
     public function edit($id)
     {
-        $fasilitas=Fasilitas::where('id',$id)->get()->first();
+        $iduser=Auth::user()->id;
+
+        if(Auth::user()->status==1){
+            $fasilitas=Fasilitas::where('id',$id)->get()->first();
+        }else{
+            $fasilitas=Fasilitas::where('attribute1',$iduser)->where('id',$id)->get()->first();
+        }
+        if($fasilitas==null)
+        {
+            return back();
+        }else{
+            return view('fasilitas.edit',compact('fasilitas'));   
+        }
         // dd($fasilitas);
-        return view('fasilitas.edit',compact('fasilitas'));   
      }
 
     /**
@@ -92,7 +103,7 @@ class FasilitasController extends Controller
             'sertifikat'=>$request->sertifikat,
             'attribute2'=>Auth::user()->id,
             'attribute3'=>'NULL',
-            'updated_at'=>date('Y-m-d'),
+            'updated_at'=>date('Y-m-d H:i:s'),
         ]);
         $a= \DB::commit();    
         return back();

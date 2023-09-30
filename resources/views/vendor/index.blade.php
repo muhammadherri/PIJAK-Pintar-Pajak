@@ -35,28 +35,34 @@
                                 <table id="example3" class="display" style="min-width: 845px">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
+                                            {{-- <th>No</th> --}}
                                             <th>Vendor ID</th>
                                             <th>Nama Vendor</th>
                                             <th>Alamat Vendor</th>
                                             <th>Kontak Person</th>
                                             <th>Tanggal</th>
                                             <th>No Rekening</th>
+                                            <th>Nama Pembuat</th>
+                                            @if(Auth::user()->status==1)
                                             <th>Action</th>
+                                            @else
+                                            @endif
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($vendor as $key => $row)
                                             <tr>
-                                                <td>
+                                                {{-- <td>
                                                     {{ $no++ }}
-                                                </td>
+                                                </td> --}}
                                                 <td>{{ $row->no_id_vendor }}</td>
                                                 <td>{{ $row->nama_vendor }}</td>
                                                 <td>{{ $row->alamat_vendor }}</td>
                                                 <td>{{ $row->contact_person }}</td>
                                                 <td>{{ date('d-m-Y',strtotime($row->created_at)) }}</td>
                                                 <td>{{ $row->attribute3 }}</td>
+                                                <td>{{ $row->users->name }}</td>
+                                                @if(Auth::user()->status==1)
                                                 <td>
                                                     <div class="d-flex">
 
@@ -77,6 +83,8 @@
                                                         </a>
                                                     </div>
                                                 </td>
+                                                @else
+                                                @endif
                                             </tr>
                                         @endforeach
                                     </tbody>
@@ -89,5 +97,5 @@
         </div>
     </div>
 @endsection
-<script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
-<script src="{{ asset('app-assets/js/custom.min.js') }}"></script>
+{{-- <script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
+<script src="{{ asset('app-assets/js/custom.min.js') }}"></script> --}}

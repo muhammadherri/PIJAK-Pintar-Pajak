@@ -38,6 +38,7 @@ class DokumenReferensiController extends Controller
     public function store(Request $request)
     {
         // dd($request->jenisdokumen);
+        
         DokumenReferensi::updateOrCreate([
             'no'=>$request->no,
             'jenis_dokumen'=>$request->jenisdokumen,
@@ -45,7 +46,7 @@ class DokumenReferensiController extends Controller
             'attribute1'=>Auth::user()->id,
             'attribute2'=>'NULL',
             'attribute3'=>'NULL',
-            'created_at'=>date('Y-m-d'),
+            'created_at'=>date('Y-m-d H:i:s'),
         ]);
         $doc=DokumenReferensi::get();
         $a= \DB::commit();
@@ -74,9 +75,18 @@ class DokumenReferensiController extends Controller
      */
     public function edit($id)
     {
-        $doc=DokumenReferensi::where('id',$id)->get()->first();
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $doc=DokumenReferensi::where('id',$id)->get()->first();
+        }else{
+            $doc=DokumenReferensi::where('attribute1',$iduser)->where('id',$id)->get()->first();
+        }
         // dd($doc);
-        return view('dokumenreferensi.edit',compact('doc'))->with('no',1);
+        if($doc==null){
+            return back();
+        }else{
+            return view('dokumenreferensi.edit',compact('doc'))->with('no',1);
+        }
     }
 
     /**
@@ -93,7 +103,7 @@ class DokumenReferensiController extends Controller
             'jenis_dokumen'=>$request->jenisdokumen,
             'sertifikat'=>$request->sertifikat,
             'attribute2'=>Auth::user()->id,
-            'updated_at'=>date('Y-m-d'),
+            'updated_at'=>date('Y-m-d H:i:s'),
         ]);
         $a= \DB::commit();    
         return back();

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Vendor;
 use App\Models\Billing;
+use App\Models\Ebupot;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use PDF;
@@ -37,7 +38,9 @@ class BillingController extends Controller
     public function create()
     {
         $vendor=Vendor::all();
-        return view('billing.create',compact('vendor'));
+        $trx=Ebupot::whereNotNull('trx')->where('attribute3','NULL')->get();
+        // dd($trx);
+        return view('billing.create',compact('vendor','trx'));
     }
 
     /**
@@ -53,12 +56,15 @@ class BillingController extends Controller
         $header_id = $header_id ?? 0;
         $header_id = $header_id+1;
         $header_id = '00'.$header_id.$date;
-
+        if($request->trx==null){
+            return back();
+        }
         $end_periode_pajak = Carbon::parse($request->start_periode_pajak);
 
         $data = array(
             'kode_billing'=>$header_id,
             'npwp'=>$request->npwp,
+            'trx_bupot'=>$request->trx,
             'nama'=>$request->nama,
             'alamat'=>$request->alamat,
             'jenis_pajak'=>$request->jenis_pajak,
@@ -82,8 +88,12 @@ class BillingController extends Controller
             'stan'=>$request->stan,
             'jenis_pembayaran'=>$request->jenis_pembayaran,
             'attribute1'=>Auth::user()->id,
-            'created_at'=>date('Y-m-d'),
+            'created_at'=>date('Y-m-d H:i:s'),
         );
+        $ebupot=Ebupot::where('id',$request->trx)->update([
+            'attribute2'=>Auth::user()->id,
+            'attribute3'=>1,
+        ]);
         // DD($data);
         $billing=Billing::create($data);
         // dd($billing->id);
@@ -173,7 +183,7 @@ class BillingController extends Controller
             'stan'=>$request->stan,
             'jenis_pembayaran'=>$request->jenis_pembayaran,
             'attribute2'=>Auth::user()->id,
-            'updated_at'=>date('Y-m-d'),
+            'updated_at'=>date('Y-m-d H:i:s'),
         ]);
         $a= \DB::commit();    
         return back();

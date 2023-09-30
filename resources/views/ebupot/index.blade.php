@@ -38,14 +38,16 @@
                                     <thead>
                                         <tr>
                                             <th></th>
-                                            <th>Transaksi</th>
+                                            <th>No Transaksi</th>
                                             <th>Jenis PPh</th>
                                             <th>No Telp</th>
                                             <th>Fasilitas</th>
                                             <th>Kode Objek</th>
+                                            <th>Nama Pembuat</th>
                                             <th>Tgl Bukti Potong</th>
                                             <th>Periode Pajak</th>
                                             <th>Tgl Pembuatan</th>
+                                            <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -55,14 +57,34 @@
                                                 <td>
                                                     {{ $no++ }}
                                                 </td>
-                                                <td>{{ $row->pilih_transaksi }}</td>
+                                                <td>{{ $row->trx }}</td>
                                                 <td>{{ $row->jenis_pph }}</td>
                                                 <td>{{ $row->no_tlp }}</td>
                                                 <td>{{ $row->fasilitas }}</td>
                                                 <td>{{ $row->kode_objek_pajak }}</td>
+                                                <td>{{ $row->users->name }}</td>
                                                 <td>{{ date('d-M-Y',strtotime($row->tanggal_bukti_potong)) }}</td>
                                                 <td>{{ date('d-M-Y',strtotime($row->periode_pajak)) }}</td>
                                                 <td>{{ date('d-M-Y',strtotime($row->created_at)) }}</td>
+                                                <td>
+                                                    @if($row->attribute3=='NULL')
+                                                    <div class="d-flex">
+                                                        <a class="badge badge-rounded badge-outline-danger">
+                                                            Belum Dibayar
+                                                        </a>
+                                                    </div>
+                                                    @elseif($row->attribute3==1)
+                                                    <div class="d-flex">
+                                                        <a class="badge badge-rounded badge-outline-warning">
+                                                            Menunggu Pembayaran
+                                                        </a>
+                                                    </div>
+                                                    @else
+                                                    <a class="badge badge-rounded badge-outline-primary">
+                                                        Sudah Dibayar
+                                                    </a>
+                                                    @endif    
+                                                </td>
                                                 <td>
                                                     <div class="d-flex">
                                                         <form action="ebupot/{{ $row->id }}" method="POST">
@@ -82,6 +104,8 @@
                                                         </a>
                                                     </div>
                                                 </td>
+                                               
+
                                             </tr>
                                         @endforeach
                                     </tbody>
@@ -94,5 +118,5 @@
         </div>
     </div>
 @endsection
-<script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
-<script src="{{ asset('app-assets/js/custom.min.js') }}"></script>
+{{-- <script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
+<script src="{{ asset('app-assets/js/custom.min.js') }}"></script> --}}

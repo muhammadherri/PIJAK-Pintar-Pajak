@@ -115,11 +115,11 @@
                                                                         <option value="1">nama barang</option>
                                                                     </select>
                                                                 </td>
-                                                                <td><input autocomplete="off" type="text" name="angka1[]"
+                                                                <td><input autocomplete="off" type="number" name="angka1[]" min="0"
                                                                         class="form-control" /></td>
-                                                                <td><input autocomplete="off" type="text" name="angka2[]"
+                                                                <td><input autocomplete="off" type="number" name="angka2[]" min="0"
                                                                         class="form-control" /></td>
-                                                                <td><input autocomplete="off" type="text" name="angka3[]"
+                                                                <td><input autocomplete="off" type="number" name="angka3[]" min="0"
                                                                         class="form-control sub_totpot" /></td>
                                                                 <td><input autocomplete="off" type="text" name="hasil[]"
                                                                         class="form-control sub_total"readonly /></td>
@@ -160,7 +160,7 @@
                                                         <label class="col-sm-6 col-form-label"></label>
                                                         <label class="col-sm-3 col-form-label">PPn %</label>
                                                         <div class="col-sm-3">
-                                                            <input readonly id="ppn" name="ppn" type="text"
+                                                            <input step="any" readonly id="ppn" name="ppn" type="text"
                                                                 class="form-control nilai_ppn">
                                                         </div>
                                                     </div>
@@ -288,11 +288,11 @@
                                                                         <option value="1">nama barang</option>
                                                                     </select>
                                                                 </td>
-                                                                <td><input autocomplete="off" type="text" name="angka4[]"
+                                                                <td><input autocomplete="off" type="number" name="angka4[]" min="0"
                                                                         class="form-control" /></td>
-                                                                <td><input autocomplete="off" type="text" name="angka5[]"
+                                                                <td><input autocomplete="off" type="number" name="angka5[]" min="0"
                                                                         class="form-control" /></td>
-                                                                <td><input autocomplete="off" type="text" name="angka6[]"
+                                                                <td><input autocomplete="off" type="number" name="angka6[]" min="0"
                                                                         class="form-control sub_totpot" /></td>
                                                                 <td><input autocomplete="off" type="text" name="hasil2[]"
                                                                         class="form-control"readonly /></td>
@@ -355,9 +355,9 @@
                             <option value="1">nama barang</option>
                         </select>
                     </td>
-                    <td><input autocomplete="off" type="text" name="angka1[]" class="form-control"/></td>
-					<td><input autocomplete="off" type="text" name="angka2[]" class="form-control"/></td>
-					<td><input autocomplete="off" type="text" name="angka3[]" class="form-control sub_totpot"/></td>
+                    <td><input autocomplete="off" type="number" name="angka1[]" min="0" class="form-control"/></td>
+					<td><input autocomplete="off" type="number" name="angka2[]" min="0" class="form-control"/></td>
+					<td><input autocomplete="off" type="number" name="angka3[]" min="0" class="form-control sub_totpot"/></td>
 					<td><input autocomplete="off" type="text" name="hasil[]" class="form-control sub_total"readonly /></td>
                     <td><button type="button" class="btn btn-danger btn-remove"><i class="fa fa-trash"></i></button></td>
 
@@ -415,9 +415,9 @@
                             <option value="1">nama barang</option>
                         </select>
                     </td>
-                    <td><input autocomplete="off" type="text" name="angka4[]" class="form-control"/></td>
-					<td><input autocomplete="off" type="text" name="angka5[]" class="form-control"/></td>
-					<td><input autocomplete="off" type="text" name="angka6[]" class="form-control"/></td>
+                    <td><input autocomplete="off" type="number" name="angka4[]" min="0" class="form-control"/></td>
+					<td><input autocomplete="off" type="number" name="angka5[]" min="0" class="form-control"/></td>
+					<td><input autocomplete="off" type="number" name="angka6[]" min="0" class="form-control"/></td>
 					<td><input autocomplete="off" type="text" name="hasil2[]" class="form-control"readonly /></td>
                     <td><button type="button" class="btn btn-danger btn-remove"><i class="fa fa-trash"></i></button></td>
 
@@ -460,5 +460,6 @@
         });
     });
 </script>
-<script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
-<script src="{{ asset('app-assets/js/custom.min.js') }}"></script>
+{{-- <script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
+<script src="{{ asset('app-assets/js/custom.min.js') }}"></script> --}}
+

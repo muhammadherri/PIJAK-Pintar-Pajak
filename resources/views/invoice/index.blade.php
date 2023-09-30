@@ -37,6 +37,7 @@
                                 <table id="dataInv" class="display" style="min-width: 845px">
                                     <thead>
                                         <tr>
+                                            <th>No</th>
                                             <th>Nama Vendor</th>
                                             <th>No Faktur</th>
                                             <th>Termin Pembayaran</th>
@@ -44,7 +45,7 @@
                                             <th>Potongan Harga</th>
                                             <th>Pembayaran</th>
                                             <th>Tanggal Invoice</th>
-                                            <th>Total</th>
+                                            <th>Total PPN</th>
                                             <th>Dibuat Oleh</th>
                                             <th>Action</th>
                                         </tr>
@@ -61,9 +62,10 @@
                                             <td></td>
                                             <td></td>
                                             <td></td>
-                                            <td><b>TOTAL</b></td>
+                                            <td></td>
+                                            <td><b>TOTAL PPN</b></td>
                                             <td>
-                                                <b>{{ number_format($invcount) }}</b>
+                                                <b>{{ number_format($invcount,2) }}</b>
                                             </td>
                                         </tr>
                                     </tfoot>
@@ -90,20 +92,27 @@
                 [10, 25, 50, "All"]
             ],
             ajax: "{{ route('data.inv') }}",
-            columnDefs: [{
+            columnDefs: [
+                {
                     "targets": 0,
                     "render": function(data, type, row, meta) {
-                        return row.code_vendor;
+                        return row.id;
                     }
                 },
                 {
                     "targets": 1,
                     "render": function(data, type, row, meta) {
-                        return row.no_faktur;
+                        return row.code_vendor;
                     }
                 },
                 {
                     "targets": 2,
+                    "render": function(data, type, row, meta) {
+                        return row.no_faktur;
+                    }
+                },
+                {
+                    "targets": 3,
                     "class": "text-center",
                     render: function(data, type, row, index) {
                         if (row.termin == 0) {
@@ -117,35 +126,28 @@
                     }
                 },
                 {
-                    "targets": 3,
+                    "targets": 4,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
                         return row.trx;
                     }
                 },
                 {
-                    "targets": 4,
+                    "targets": 5,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
                         return row.potongan_harga;
                     }
                 },
                 {
-                    "targets": 7,
-                    "class": "text-center",
-                    "render": function(data, type, row, meta) {
-                        return row.total;
-                    }
-                },
-                {
-                    "targets": 5,
+                    "targets": 6,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
                         return row.informasi;
                     }
                 },
                 {
-                    "targets": 6,
+                    "targets": 7,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
                         return row.tgl_pembuatan;
@@ -155,11 +157,18 @@
                     "targets": 8,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.created_by;
+                        return row.ppn;
                     }
                 },
                 {
                     "targets": 9,
+                    "class": "text-center",
+                    "render": function(data, type, row, meta) {
+                        return row.created_by;
+                    }
+                },
+                {
+                    "targets": 10,
                     "class": "text-center",
                     render: function(data, type, row, index) {
                         content = `
@@ -179,5 +188,5 @@
         })
     })
 </script>
-<script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
-<script src="{{ asset('app-assets/js/custom.min.js') }}"></script>
+{{-- <script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
+<script src="{{ asset('app-assets/js/custom.min.js') }}"></script> --}}

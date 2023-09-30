@@ -45,7 +45,7 @@ class KodeObjekPajakController extends Controller
             'attribute1'=>Auth::user()->id,
             'attribute2'=>'NULL',
             'attribute3'=>'NULL',
-            'created_at'=>date('Y-m-d'),
+            'created_at'=>date('Y-m-d H:i:s'),
         );
         Kodepajak::create($data);
         $a= \DB::commit();
@@ -73,8 +73,19 @@ class KodeObjekPajakController extends Controller
      */
     public function edit($id)
     {
-        $kodepajak=Kodepajak::where('id',$id)->get()->first();
-        return view('kodeobjekpajak.edit',compact('kodepajak'));
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $kodepajak=Kodepajak::where('id',$id)->get()->first();
+        }else{
+            $kodepajak=Kodepajak::where('attribute1',$iduser)->where('id',$id)->get()->first();
+        }
+
+        if($kodepajak==null){
+            return back();
+        }else{
+            return view('kodeobjekpajak.edit',compact('kodepajak'));
+        }
+
     }
 
     /**
@@ -92,7 +103,7 @@ class KodeObjekPajakController extends Controller
             'tarif'=>$request->tarif,
             'attribute2'=>Auth::user()->id,
             'attribute3'=>'NULL',
-            'created_at'=>date('Y-m-d'),
+            'created_at'=>date('Y-m-d H:i:s'),
         ]);
         $a= \DB::commit();    
         return back();

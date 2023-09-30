@@ -22,6 +22,7 @@ class Invoice extends Model
         'termin_pembayaran',
         'nilai_transaksi',
         'potongan_harga',
+        'ppn',
         'total',
         'catatan',
         'informasi_pembayaran',

@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Kode Billing </title>
+        <title>Taxceed</title>
         <style>
 			.invoice-box {
 				max-width: 800px;

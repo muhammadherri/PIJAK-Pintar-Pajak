@@ -41,7 +41,7 @@ class PenandatangananController extends Controller
             'name'=>$request->name,
             'npwp'=>$request->npwp,
             'attribute1'=>Auth::user()->id,
-            'created_at'=>date('Y-m-d'),
+            'created_at'=>date('Y-m-d H:i:s'),
         );
         Penandatanganan::create($data);
         $a= \DB::commit();
@@ -68,8 +68,18 @@ class PenandatangananController extends Controller
      */
     public function edit($id)
     {
-        $penandatanganan=Penandatanganan::where('id',$id)->get()->first();
-        return view('penandatanganan.edit',compact('penandatanganan'));
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $penandatanganan=Penandatanganan::where('id',$id)->get()->first();
+        }else{
+            $penandatanganan=Penandatanganan::where('attribute1',$iduser)->where('id',$id)->get()->first();
+        }
+
+        if($penandatanganan==null){
+            return back();
+        }else{
+            return view('penandatanganan.edit',compact('penandatanganan'));
+        }
     }
 
     /**
@@ -85,7 +95,7 @@ class PenandatangananController extends Controller
             'name'=>$request->name,
             'npwp'=>$request->npwp,
             'attribute2'=>Auth::user()->id,
-            'updated_at'=>date('Y-m-d'),
+            'updated_at'=>date('Y-m-d H:i:s'),
         ]);
         $a= \DB::commit();    
         return back();

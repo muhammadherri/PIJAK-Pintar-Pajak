@@ -10,6 +10,8 @@ use App\Http\Controllers\Auth\LoginController;
 
 Auth::routes();
 
+Route::get('/adminregister/create', [App\Http\Controllers\AdminRegisterController::class, 'create'])->name('adminregister');
+Route::post('/adminregister/store', [App\Http\Controllers\AdminRegisterController::class, 'store'])->name('adminregister/store');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('');
 // transaksipph21
@@ -160,6 +162,17 @@ Route::get('/jenispph/{id}/edit', [App\Http\Controllers\JenisPphController::clas
 Route::put('/jenispph/{id}', [App\Http\Controllers\JenisPphController::class, 'update'])->name('jenispph/update');
 // jenis pph
 
+// prepopulate
+Route::get('/prepopulates', [App\Http\Controllers\PrepopulateController::class, 'index'])->name('prepopulates');
+Route::get('/prepopulates/create', [App\Http\Controllers\PrepopulateController::class, 'create'])->name('prepopulates/create');
+Route::post('/prepopulates/store', [App\Http\Controllers\PrepopulateController::class, 'store'])->name('prepopulates/store');
+
+Route::delete('/prepopulates/{id}', [App\Http\Controllers\PrepopulateController::class, 'destroy']);
+Route::get('/prepopulates/{id}/show', [App\Http\Controllers\PrepopulateController::class, 'show'])->name('prepopulates/show');
+Route::get('/prepopulates/{id}/edit', [App\Http\Controllers\PrepopulateController::class, 'edit'])->name('prepopulates/edit');
+Route::put('/prepopulates/{id}', [App\Http\Controllers\PrepopulateController::class, 'update'])->name('prepopulates/update');
+// prepopulate
+
 // listmahasiswa
 Route::get('/mahasiswa/{id}/show', [App\Http\Controllers\MahasiswaController::class, 'show'])->name('mahasiswa/show');
 // listmahasiswa
@@ -169,24 +182,57 @@ Route::get('/jurnalmanual', [App\Http\Controllers\JurnalManualController::class,
 Route::get('/jurnalmanual/create', [App\Http\Controllers\JurnalManualController::class, 'create'])->name('jurnalmanual/create');
 Route::post('/jurnalmanual/store', [App\Http\Controllers\JurnalManualController::class, 'store'])->name('jurnalmanual/store');
 
-Route::delete('/jurnalmanual/{id}', [App\Http\Controllers\JurnalManualController::class, 'destroy']);
+Route::get('/jurnalmanual/{id}/destroy', [App\Http\Controllers\JurnalManualController::class, 'destroy'])->name('jurnalmanual/destroy');
 Route::get('/jurnalmanual/{id}/show', [App\Http\Controllers\JurnalManualController::class, 'show'])->name('jurnalmanual/show');
 Route::get('/jurnalmanual/{id}/edit', [App\Http\Controllers\JurnalManualController::class, 'edit'])->name('jurnalmanual/edit');
 Route::put('/jurnalmanual/{id}', [App\Http\Controllers\JurnalManualController::class, 'update'])->name('jurnalmanual/update');
 // jurnalmanual
 
+// spttahunan
+Route::get('/spttahunan', [App\Http\Controllers\SptTahunanController::class, 'index'])->name('spttahunan');
+Route::get('/spttahunan/create', [App\Http\Controllers\SptTahunanController::class, 'create'])->name('spttahunan/create');
+Route::post('/spttahunan/store', [App\Http\Controllers\SptTahunanController::class, 'store'])->name('spttahunan/store');
+
+Route::get('/spttahunan/{id}/destroy', [App\Http\Controllers\SptTahunanController::class, 'destroy'])->name('spttahunan/destroy');
+Route::get('/spttahunan/{id}/show', [App\Http\Controllers\SptTahunanController::class, 'show'])->name('spttahunan/show');
+Route::get('/spttahunan/{id}/edit', [App\Http\Controllers\SptTahunanController::class, 'edit'])->name('spttahunan/edit');
+Route::put('/spttahunan/{id}', [App\Http\Controllers\SptTahunanController::class, 'update'])->name('spttahunan/update');
+// spttahunan
+
 // pembayaran
 Route::get('/pembayaran', [App\Http\Controllers\PembayaranController::class, 'index'])->name('pembayaran');
 Route::post('/pembayaran/show', [App\Http\Controllers\PembayaranController::class, 'show'])->name('pembayaran/show');
 // pembayaran
+
+// hutangppn
+Route::get('/hutangppn', [App\Http\Controllers\HutangPpnController::class, 'index'])->name('hutangppn');
+// hutangppn
+
+// laporan
+Route::get('/laporan', [App\Http\Controllers\LaporanController::class, 'index'])->name('laporan');
+Route::get('/laporankeuanganfiskal', [App\Http\Controllers\LaporanController::class, 'laporankeuanganfiskal'])->name('laporankeuanganfiskal');
+Route::get('/laporankeuangankomersil', [App\Http\Controllers\LaporanController::class, 'laporankeuangankomersil'])->name('laporankeuangankomersil');
+Route::get('/laporankeuanganlabarugikomersil', [App\Http\Controllers\LaporanController::class, 'laporankeuanganlabarugikomersil'])->name('laporankeuanganlabarugikomersil');
+Route::get('/laporankeuanganlabarugifiskal', [App\Http\Controllers\LaporanController::class, 'laporankeuanganlabarugifiskal'])->name('laporankeuanganlabarugifiskal');
+// laporan
+
 // ALL IN ONE
 Route::get('/dokref', [App\Http\Controllers\AllInController::class,'dokrefindex'])->name('get.dokref');
-// Route::get('/search/resultPtkp/{status}', [App\Http\Controllers\AllInController::class,'resultPtkp'])->name('get.ptkp');
-Route::get('/search/resultPtkp', [App\Http\Controllers\AllInController::class,'resultPtkp'])->name('get.ptkp');
-Route::get('/search/pphduapuluhsatu', [App\Http\Controllers\AllInController::class,'indexpphduasatu']);
 Route::get('/mahasiswaList', [App\Http\Controllers\AllInController::class,'listMahasiswa'])->name('data.mahasiswa');
 Route::get('/invList', [App\Http\Controllers\AllInController::class,'listInvoice'])->name('data.inv');
+Route::get('/list1771', [App\Http\Controllers\AllInController::class,'listSpt1771'])->name('data.1771');
 Route::get('/pphList', [App\Http\Controllers\AllInController::class,'listPph'])->name('data.pph');
 Route::get('/fiskalList', [App\Http\Controllers\AllInController::class,'listFiskal'])->name('data.fiskal');
+Route::get('/prepopulate', [App\Http\Controllers\AllInController::class,'listPrepopulate'])->name('data.prepopulate');
+// SEARCH
+Route::get('/search/resultPtkp', [App\Http\Controllers\AllInController::class,'resultPtkp'])->name('get.ptkp');
+Route::get('/search/resultNoakun', [App\Http\Controllers\AllInController::class,'akun_kredit'])->name('get.nokredit');
+Route::get('/search/resultnamadebit', [App\Http\Controllers\AllInController::class,'nama_debit'])->name('get.namadebit');
+Route::get('/search/resultnamakreditfirst', [App\Http\Controllers\AllInController::class,'nama_kreditpertama'])->name('get.namakreditfirst');
+Route::get('/search/resultnamakredit', [App\Http\Controllers\AllInController::class,'nama_kredit'])->name('get.namakredit');
+Route::get('/search/pphduapuluhsatu', [App\Http\Controllers\AllInController::class,'indexpphduasatu']);
+Route::get('/search/akun', [App\Http\Controllers\AllInController::class,'cariakun'])->name('get.akun');
 // ALL IN ONE
 Route::post('/pembayaranpdf', [App\Http\Controllers\PDFController::class,'pembarayanPDF']);
+Route::post('/printpdflabarugifiskal', [App\Http\Controllers\PDFController::class,'labarugifiskalPDF']);
+Route::post('/printpdfneracafiskal', [App\Http\Controllers\PDFController::class,'neracafiskalPDF']);

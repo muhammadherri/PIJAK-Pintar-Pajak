@@ -17,8 +17,8 @@ return new class extends Migration
             $table->increments('id');
             $table->integer('no_akun_debit');
             $table->integer('no_akun_kredit');
-            $table->integer('nama_akun_debit');
-            $table->integer('nama_akun_kredit');
+            $table->string('nama_akun_debit');
+            $table->string('nama_akun_kredit');
             $table->string('keterangan');
             $table->float('nilai_debit');
             $table->float('nilai_kredit');

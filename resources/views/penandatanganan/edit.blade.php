@@ -38,10 +38,12 @@
                                         </div>
 
                                         <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">No.NPWP</label>
+                                            <label class="col-sm-3 col-form-label">No NPWP</label>
                                             <div class="col-sm-9">
                                                 <input value="{{$penandatanganan->npwp}}" autocomplete="off" required id="npwp" name="npwp"type="number" class="form-control"
-                                                    placeholder="Masukkan No.NPWP">
+                                                    placeholder="Masukkan No NPWP">
+                                                    <span id="errorText" style="color: red;"></span>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -60,5 +62,21 @@
         </div>
     </div>
 @endsection
-<script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
-<script src="{{ asset('app-assets/js/custom.min.js') }}"></script>
+<script>
+     document.addEventListener('DOMContentLoaded', function() {
+        const inputElement = document.getElementById('npwp');
+        const errorText = document.getElementById('errorText');
+        inputElement.addEventListener('input',function(){
+            const inputValue = inputElement.value;
+            
+            if(inputValue.length > 15){
+                inputElement.value = inputValue.slice(0,15);
+                errorText.textContent = 'Maksimal 15 digit';
+            }else{
+                errorText.textContent = '';
+            }
+        })
+    });
+</script>
+{{-- <script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
+<script src="{{ asset('app-assets/js/custom.min.js') }}"></script> --}}

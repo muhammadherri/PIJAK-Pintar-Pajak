@@ -22,7 +22,11 @@ class EbupotController extends Controller
     public function index()
     {
         $id=Auth::user()->id;
-        $ebupot=Ebupot::where('attribute1',$id)->get();
+        if(Auth::user()->status==1){
+            $ebupot=Ebupot::get();
+        }else{
+            $ebupot=Ebupot::where('attribute1',$id)->get();
+        }
         // dd($ebupot);
         return view('ebupot.index',compact('ebupot'))->with('no',1);
     }
@@ -55,6 +59,8 @@ class EbupotController extends Controller
         $header_id =Ebupot::get()->count();
         $header_id = $header_id ?? 0;
         $header_id = $header_id+1;
+        $date = date('Ymd');
+        $trx = 'TRX'.'0'.$header_id.$date;
 
         $dok_ref = $request->input('column1');
         $no_dok = $request->input('column2');
@@ -62,6 +68,7 @@ class EbupotController extends Controller
 
         $data = array(
             'ebupot_id'=>$header_id,
+            'trx'=>$trx,
             'jenis_pph'=>$request->jenis_pph,
             'pilih_transaksi'=>$request->transaksi_npwp,
             'no_tlp'=>$request->no_telp,
@@ -76,7 +83,7 @@ class EbupotController extends Controller
             'tarif'=>$request->tarif,
             'potongan_pph'=>$request->potongan_pph,
             'penandatanganan'=>$request->penandatanganan,
-            'created_at'=>date('Y-m-d'),
+            'created_at'=>date('Y-m-d H:i:s'),
         );
         Ebupot::create($data);
         $a= \DB::commit();
@@ -86,7 +93,7 @@ class EbupotController extends Controller
                 'dok_ref' => $dok_ref[$key],
                 'no_dok' => $no_dok[$key],
                 'tgl_doc' => $tgl_doc[$key],
-                'created_at'=>date('Y-m-d'),
+                'created_at'=>date('Y-m-d H:i:s'),
             );
             Ebupotlines::create($data);
         }
@@ -179,7 +186,7 @@ class EbupotController extends Controller
                     'tarif'=>$request->tarif,
                     'potongan_pph'=>$request->potongan_pph,
                     'penandatanganan'=>$request->penandatanganan,
-                    'updated_at'=>date('Y-m-d'),
+                    'updated_at'=>date('Y-m-d H:i:s'),
                 ]);
                 $a= \DB::commit(); 
                 
@@ -192,7 +199,7 @@ class EbupotController extends Controller
                         'dok_ref' => $dok_ref[$key],
                         'no_dok' => $no_dok[$key],
                         'tgl_doc' => $tgl_doc[$key],
-                        'created_at'=>date('Y-m-d'),
+                        'created_at'=>date('Y-m-d H:i:s'),
                     );
                     $check=Ebupotlines::where('ebupot_id',$request->ebupot_id)->get();
                     // dd($check);

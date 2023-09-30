@@ -46,7 +46,7 @@ class VendorController extends Controller
             'attribute1'=>Auth::user()->id,
             'attribute2'=>'NULL',
             'attribute3'=>$request->no_rek,
-            'created_at'=>date('Y-m-d'),
+            'created_at'=>date('Y-m-d H:i:s'),
         ]);
         $vendor=Vendor::all();
         $a= \DB::commit();
@@ -73,9 +73,18 @@ class VendorController extends Controller
      */
     public function edit($id)
     {
-        $vendor=Vendor::where('id',$id)->get()->first();
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $vendor=Vendor::where('id',$id)->get()->first();
+        }else{
+            $vendor=Vendor::where('attribute1',$iduser)->where('id',$id)->get()->first();
+        }
         // dd($vendor);
-        return view('vendor.edit',compact('vendor'));
+        if($vendor==null){
+            return back();
+        }else{
+            return view('vendor.edit',compact('vendor'));
+        }
     }
 
     /**
@@ -94,7 +103,7 @@ class VendorController extends Controller
             'contact_person'=>$request->contact_person,
             'attribute2'=>Auth::user()->id,
             'attribute3'=>$request->no_rek,
-            'created_at'=>date('Y-m-d'),
+            'created_at'=>date('Y-m-d H:i:s'),
         ]);
         $a= \DB::commit();    
         return back();

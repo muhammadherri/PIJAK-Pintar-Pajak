@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\User;
 
 class Ebupot extends Model
 {
@@ -13,6 +14,7 @@ class Ebupot extends Model
     protected $fillable = [
         'id',
         'ebupot_id',
+        'trx',
         'jenis_pph',
         'pilih_transaksi',
         'no_tlp',
@@ -31,4 +33,8 @@ class Ebupot extends Model
         'updated_at',
         'deleted_at',
     ];
+    public function users()
+    {
+        return $this->hasOne(User::class,'id','attribute1');
+    }
 }

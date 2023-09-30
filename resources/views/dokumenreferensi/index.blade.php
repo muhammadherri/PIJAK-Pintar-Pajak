@@ -35,22 +35,28 @@
                                 <table id="example3" class="display" style="min-width: 845px">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
+                                            {{-- <th>No</th> --}}
                                             <th>No.Dok</th>
                                             <th>Jenis Dokumen</th>
                                             <th>Sertifikat</th>
+                                            <th>Nama Pembuat</th>
+                                            @if(Auth::user()->status==1)
                                             <th>Action</th>
+                                            @else
+                                            @endif
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($doc as $key => $row)
                                             <tr>
-                                                <td>
+                                                {{-- <td>
                                                     {{ $no++ }}
-                                                </td>
+                                                </td> --}}
                                                 <td>{{ $row->no }}</td>
                                                 <td>{{ $row->jenis_dokumen }}</td>
                                                 <td>{{ $row->sertifikat }}</td>
+                                                <td>{{ $row->users->name }}</td>
+                                                @if(Auth::user()->status==1)
                                                 <td>
                                                     <div class="d-flex">
                                                         <form action="dokumenreferensi/{{ $row->id }}" method="POST">
@@ -70,6 +76,8 @@
                                                         </a>
                                                     </div>
                                                 </td>
+                                                @else
+                                                @endif
                                             </tr>
                                         @endforeach
                                     </tbody>
@@ -82,6 +90,6 @@
         </div>
     </div>
 @endsection
-<script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
-<script src="{{ asset('app-assets/js/custom.min.js') }}"></script>
+{{-- <script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
+<script src="{{ asset('app-assets/js/custom.min.js') }}"></script> --}}
 

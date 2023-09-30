@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{ asset('app-assets/vendor/jquery-nice-select/css/nice-select.css') }}">
     <link rel="stylesheet" href="{{ asset('app-assets/vendor/nouislider/nouislider.min.css') }}">
     <link rel="stylesheet" href="{{ asset('app-assets/vendor/select2/css/select2.min.css') }}">
-    
+
     <!-- Style css -->
     <link href="{{ asset('app-assets/vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('app-assets/css/style.css') }}">
@@ -125,15 +125,15 @@
                         </a>
 
                     </li>
-                   
+
                     <li><a class="has-arrow ai-icon" href="{{ route('home') }}" aria-expanded="false">
-                        <i class="flaticon-025-dashboard"></i>
-                        <span class="nav-text">Dashboard</span>
+                            <i class="flaticon-025-dashboard"></i>
+                            <span class="nav-text">Dashboard</span>
                         </a>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                        <i class="flaticon-022-copy"></i>
-                        <span class="nav-text">Transaksi</span>
+                            <i class="flaticon-022-copy"></i>
+                            <span class="nav-text">Transaksi</span>
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{ route('transaksipph21') }}">PPh 21</a></li>
@@ -153,15 +153,16 @@
                             <span class="nav-text">Pembelian</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./post-details.html">Invoice</a></li>
-                            <li><a href="./post-details.html">Selft Paid E-Bupot</a></li>
+                            <li><a href="{{ route('prepopulates') }}">Prepopulate</a></li>
                         </ul>
+
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                             <i class="flaticon-072-printer"></i>
                             <span class="nav-text">Pembayaran</span>
                         </a>
                         <ul aria-expanded="false">
+                            <li><a href="{{ route('hutangppn') }}">Hutang PPN</a></li>
                             <li><a href="{{ route('billing') }}">ID Billing</a></li>
                             <li><a href="{{ route('pembayaran') }}">Pembayaran</a></li>
                         </ul>
@@ -171,9 +172,39 @@
                             <span class="nav-text">Pelaporan</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./chart-flot.html">SPT Masa</a></li>
-                            <li><a href="./chart-morris.html">SSPT Tahunan</a></li>
-                            <li><a href="./ui-accordion.html">Laporan Keuangan Fiskal</a></li>
+                            <li><a href="{{ route('spttahunan') }}" >SPT Badan
+                            </a>
+                            {{-- <ul aria-expanded="false">
+                                <li><a href="{{ route('spttahunan') }}">&emsp; - 1771</a></li>
+                                <li><a href="{{route('spt1771I')}}">&emsp; - 1771 I</a></li>
+                            </ul> --}}
+                        </li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <i class="flaticon-013-checkmark"></i>
+                            <span class="nav-text">Latihan</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                                    <span class="nav-text">Laporan Keuangan Komersial</span>
+                                </a>
+                                <ul aria-expanded="false">
+                                    <li><a href="{{ route('laporankeuangankomersil') }}">&emsp; - Neraca</a></li>
+                                    <li><a href="{{ route('laporankeuanganlabarugikomersil') }}">&emsp; - Laba
+                                            Rugi</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="{{ route('jurnalmanual') }}">Koreksi Fiskal</a></li>
+                            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                                    <span class="nav-text">Laporan Keuangan Fiskal</span>
+                                </a>
+                                <ul aria-expanded="false">
+                                    <li><a href="{{ route('laporankeuanganfiskal') }}">&emsp; - Neraca</a></li>
+                                    <li><a href="{{ route('laporankeuanganlabarugifiskal') }}">&emsp; - Laba Rugi</a>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
@@ -181,9 +212,25 @@
                             <span class="nav-text">Soal Tes</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./ui-accordion.html">Laporan Neraca Komersial</a></li>
-                            <li><a href="./ui-accordion.html">Koreksi Fiskal</a></li>
-                            <li><a href="{{ route('jurnalmanual') }}">Keuangan Fiskal</a></li>
+                            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                                    <span class="nav-text">Laporan Keuangan Komersial</span>
+                                </a>
+                                <ul aria-expanded="false">
+                                    <li><a href="{{ route('laporankeuangankomersil') }}">&emsp; - Neraca</a></li>
+                                    <li><a href="{{ route('laporankeuanganlabarugikomersil') }}">&emsp; - Laba
+                                            Rugi</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="{{ route('jurnalmanual') }}">Koreksi Fiskal</a></li>
+                            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                                    <span class="nav-text">Laporan Keuangan Fiskal</span>
+                                </a>
+                                <ul aria-expanded="false">
+                                    <li><a href="{{ route('laporankeuanganfiskal') }}">&emsp; - Neraca</a></li>
+                                    <li><a href="{{ route('laporankeuanganlabarugifiskal') }}">&emsp; - Laba Rugi</a>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
@@ -191,10 +238,9 @@
                             <span class="nav-text">Lainnya</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./ui-accordion.html">Impor & Ekspor data</a></li>
                             <li><a href="{{ route('fasilitas') }}">Fasilitas</a></li>
                             <li><a href="{{ route('kodeobjekpajak') }}">Kode Objek Pajak</a></li>
-                            <li><a href="{{ route('neraca') }}">Neraca</a></li>
+                            <li><a href="{{ route('neraca') }}">Akun</a></li>
                             <li><a href="{{ route('top') }}">Top</a></li>
                             <li><a href="{{ route('vendor') }}">Vendor</a></li>
                             <li><a href="{{ route('dokumenreferensi') }}">Dokumen Referensi</a></li>
@@ -202,8 +248,27 @@
                             <li><a href="{{ route('penandatanganan') }}">Penandatanganan</a></li>
                             <li><a href="{{ route('jenispph') }}">Jenis PPh</a></li>
                         </ul>
+
                     </li>
+                    @if (Auth::user()->status == 1)
+                        <li>
+                            <a class="has-arrow ai-icon" href="{{ route('adminregister') }}" aria-expanded="false">
+                                <i>
+                                    <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary"
+                                        width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                </i>
+                                <span class="nav-text">Register</span>
+                            </a>
+                        </li>
+                    @else
+                    @endif
                 </ul>
+
                 <div class="copyright">
                     <p><strong>Taxceed Dashboard</strong> </p>
                 </div>
@@ -244,7 +309,7 @@
     ***********************************-->
     <!-- Required vendors -->
     <script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
-   
+
     <script src="{{ asset('app-assets/chart.js/Chart.bundle.min.js') }}"></script>
     <script src="{{ asset('app-assets/vendor/jquery-nice-select/js/jquery.nice-select.min.js') }}"></script>
     <script src="{{ asset('app-assets/vendor/select2/js/select2.full.min.js') }}"></script>

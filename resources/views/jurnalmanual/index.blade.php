@@ -1,8 +1,5 @@
 
 @extends('layouts.admin')
-<head>
-    <link rel="icon" href="{{ asset('images/umlogo.png') }}">
-</head>
 @section('header')
     <div class="header-left">
         <div class="dashboard_bar">
@@ -10,6 +7,9 @@
         </div>
     </div>
 @endsection
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+<script src="//code.jquery.com/jquery-3.5.1.js"></script>
+<script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 @section('content')    
     <div class="content-body">
         <div class="container-fluid">
@@ -42,7 +42,6 @@
                                                 <th>No Akun Kredit</th>
                                                 <th>Nama Akun Debet</th>
                                                 <th>Nama Akun Kredit</th>
-                                                <th>Keterangan</th>
                                                 <th>Nilai Debet</th>
                                                 <th>Nilai Kredit</th>
                                                 <th>Dibuat Oleh</th>
@@ -74,9 +73,84 @@
                 [10, 25, 50, "All"]
             ],
             ajax: "{{ route('data.fiskal') }}",
+            columnDefs: [{
+                    "targets": 0,
+                    "render": function(data, type, row, meta) {
+                        return row.no_akun_debit;
+                    }
+                },
+                {
+                    "targets": 1,
+                    "render": function(data, type, row, meta) {
+                        return row.no_akun_kredit;
+                    }
+                },
+                {
+                    "targets": 2,
+                    "class": "text-center",
+                    render: function(data, type, row, index) {
+                        return row.nama_akun_debit;
+
+                    }
+                },
+                {
+                    "targets": 3,
+                    "class": "text-center",
+                    "render": function(data, type, row, meta) {
+                        return row.nama_akun_kredit;
+                    }
+                },
+                {
+                    "targets": 4,
+                    "class": "text-center",
+                    "render": function(data, type, row, meta) {
+                        return row.nilai_debit;
+                    }
+                },
+                {
+                    "targets": 5,
+                    "class": "text-center",
+                    "render": function(data, type, row, meta) {
+                        return row.nilai_kredit;
+                    }
+                },
+                {
+                    "targets": 6,
+                    "class": "text-center",
+                    "render": function(data, type, row, meta) {
+                        return row.attribute1;
+                    }
+                },
+                {
+                    "targets": 7,
+                    "class": "text-center",
+                    "render": function(data, type, row, meta) {
+                        return row.created_at;
+                    }
+                },
+                {
+                    "targets": 8,
+                    "class": "text-center",
+                    render: function(data, type, row, index) {
+                        content = `
+                            <div class="d-flex">
+                                <a class="btn btn-danger shadow btn-xs sharp" href="jurnalmanual/${row.id}/destroy">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                                <a class="btn btn-primary shadow btn-xs sharp me-1" href="jurnalmanual/${row.id}/edit">
+                                    <i class="fa fa-pencil"></i>
+                                </a>
+                                <a class="btn btn-success shadow btn-xs sharp me-1" href="jurnalmanual/${row.id}/show">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                            </div>
+                        `;
+                        return content;
+                    }
+                }
+            ]
+
 
         })
     })
 </script>
-<script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
-<script src="{{ asset('app-assets/js/custom.min.js') }}"></script>

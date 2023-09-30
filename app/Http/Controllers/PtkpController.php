@@ -45,7 +45,7 @@ class PtkpController extends Controller
             'attribute1'=>Auth::user()->id,
             'attribute2'=>'NULL',
             'attribute3'=>'NULL',
-            'created_at'=>date('Y-m-d'),
+            'created_at'=>date('Y-m-d H:i:s'),
         );
         Ptkp::create($data);
         $a= \DB::commit();
@@ -72,9 +72,17 @@ class PtkpController extends Controller
      */
     public function edit($id)
     {
-        $ptkp = Ptkp::where('id',$id)->get()->first();
-        return view('ptkp.edit',compact('ptkp'));
-        
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $ptkp = Ptkp::where('id',$id)->get()->first();
+        }else{
+            $ptkp = Ptkp::where('attribute1',$iduser)->where('id',$id)->get()->first();
+        }
+        if($ptkp==null){
+            return back();
+        }else{
+            return view('ptkp.edit',compact('ptkp'));
+        }
     }
 
     /**
@@ -92,7 +100,7 @@ class PtkpController extends Controller
             'besaran_ptkp'=>$request->besaran_ptkp,
             'kode_ptkp'=>$request->kode,
             'attribute2'=>Auth::user()->id,
-            'updated_at'=>date('Y-m-d'),
+            'updated_at'=>date('Y-m-d H:i:s'),
         ]);
         $a= \DB::commit();    
         return back();

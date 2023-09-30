@@ -1,4 +1,16 @@
 @extends('layouts.reg')
+<div class="header">
+    <div class="header-content">
+        <nav class="navbar navbar-expand">
+            <div class="collapse navbar-collapse justify-content-between">
+                <div></div>
+                <ul class="navbar-nav header-right">
+                    <p><a href="{{route('login')}}">Login</a></p>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
 @section('register')
     <div class="col-md-6 contents">
         <div class="row justify-content-center">
@@ -9,7 +21,7 @@
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
                     <div class="form-group first">
-                        <input placeholder="Name"id="name" type="text"
+                        <input placeholder="Name"id="name" type="text"autocomplete="off"
                             class="form-control @error('name') is-invalid @enderror" name="name"
                             value="{{ old('name') }}" required autocomplete="name" autofocus>
                         @error('name')
@@ -19,15 +31,20 @@
                         @enderror
                     </div>
                     <div class="form-group first">
-                        <input placeholder="Email" id="email" type="email"
+                        <input placeholder="NIM" id="email" type="number"
+                            class="form-control" name="email"
+                            required autocomplete="off">
+                    </div>
+                    {{-- <div class="form-group first">
+                        <input placeholder="NIM" id="email" type="number"
                             class="form-control @error('email') is-invalid @enderror" name="email"
                             value="{{ old('email') }}" required autocomplete="email">
-                        @error('email')
+                        @error('email ')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
-                    </div>
+                    </div> --}}
                     <div class="form-group first">
                         <input placeholder="password" id="password" type="password"
                             class="form-control @error('password') is-invalid @enderror" name="password" required

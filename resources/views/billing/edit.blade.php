@@ -191,9 +191,14 @@
                                     </div>
                                     <div class="d-flex justify-content-between">
                                        <div></div>
-                                        <button class="btn btn-primary btn-submit"name='action' value="create"
-                                            id="add_all" type="submit"><i data-feather='save'></i>
-                                            {{ 'Simpan' }}</button>
+                                       @if($billing->attribute3==null)
+                                       <button class="btn btn-primary btn-submit"name='action' value="create"
+                                       id="add_all" type="submit"><i data-feather='save'></i>
+                                       {{ 'Simpan' }}</button>
+                                       @else
+
+                                       @endif
+                                      
                                     </div>
                                 </form>
                             </div>
@@ -233,5 +238,5 @@
 
     });
 </script>
-<script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
-<script src="{{ asset('app-assets/js/custom.min.js') }}"></script>
+{{-- <script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
+<script src="{{ asset('app-assets/js/custom.min.js') }}"></script> --}}

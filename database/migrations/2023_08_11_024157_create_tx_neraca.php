@@ -17,7 +17,7 @@ return new class extends Migration
             $table->increments('id');
             $table->integer('no_akun');
             $table->string('nama_akun');
-            $table->integer('saldo');
+            $table->float('saldo');
             $table->string('attribute1')->nullable();
             $table->string('attribute2')->nullable();
             $table->string('attribute3')->nullable();

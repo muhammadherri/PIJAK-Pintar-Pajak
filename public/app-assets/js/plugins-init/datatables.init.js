@@ -172,6 +172,69 @@ let dataSet = [
 		  }
 		
 	}); 
+	var table = $('#list_1771II').DataTable({
+		searching:false,
+		paging:false,
+		select: false,
+		info: false,  
+		
+	}); 
+	var table = $('#list_1771III').DataTable({
+		searching:false,
+		paging:false,
+		select: false,
+		info: false,  
+		
+	}); 
+	var table = $('#list_1771IV').DataTable({
+		searching:false,
+		paging:false,
+		select: false,
+		info: false,  
+		
+	}); 
+	var table = $('#list_1771IVB').DataTable({
+		searching:false,
+		paging:false,
+		select: false,
+		info: false,  
+		
+	}); 
+	var table = $('#list_1771V').DataTable({
+		searching:false,
+		paging:false,
+		select: false,
+		info: false,  
+		
+	}); 
+	var table = $('#list_1771Vb').DataTable({
+		searching:false,
+		paging:false,
+		select: false,
+		info: false,  
+		
+	}); 
+	var table = $('#list_1771VI').DataTable({
+		searching:false,
+		paging:false,
+		select: false,
+		info: false,  
+		
+	}); 
+	var table = $('#list_1771VIb').DataTable({
+		searching:false,
+		paging:false,
+		select: false,
+		info: false,  
+		
+	}); 
+	var table = $('#list_1771VIc').DataTable({
+		searching:false,
+		paging:false,
+		select: false,
+		info: false,  
+		
+	}); 
 	var table = $('#mahasiswaDatatable').DataTable({
 		"lengthMenu": [
 			[10, 25, 50, -1],
@@ -283,7 +346,13 @@ let dataSet = [
 			[10, 25, 50, "All"]
 		],
 	});
-	
+	var tablefiskal = $('#laporanfiskal').DataTable({
+		searching:false,
+		ordering:false,
+		paging:false,
+		
+	});
+
 	$('#example tbody').on('click', 'tr', function () {
 		var data = table.row( this ).data();
 	});
