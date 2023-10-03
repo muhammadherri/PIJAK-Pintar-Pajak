@@ -1,5 +1,559 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // sptmasapajak
+        const sptpajak_npwp = document.getElementById('id_npwp_1721');
+        const errorerrorid_npwp = document.getElementById('errorid_npwp_1721');
+        sptpajak_npwp.addEventListener('input', function() {
+            const inputValue = sptpajak_npwp.value;
+
+            if (inputValue.length > 15) {
+                sptpajak_npwp.value = inputValue.slice(0, 15);
+                errorerrorid_npwp.textContent = 'Maksimal 15 digit';
+            } else {
+                errorerrorid_npwp.textContent = '';
+            }
+        });
+        const sptnpwppemotong_1721 = document.getElementById('npwppemotong_1721');
+        const erronpwp_pemotong_1721 = document.getElementById('errorid_npwp_pemotong_1721');
+        sptnpwppemotong_1721.addEventListener('input', function() {
+            const inputValue = sptnpwppemotong_1721.value;
+
+            if (inputValue.length > 15) {
+                sptnpwppemotong_1721.value = inputValue.slice(0, 15);
+                erronpwp_pemotong_1721.textContent = 'Maksimal 15 digit';
+            } else {
+                erronpwp_pemotong_1721.textContent = '';
+            }
+        });
+        
+        const tablelist_1721 = document.querySelector('#objekpajak_1721 tbody');
+        const addBtnadd_1721 = document.querySelector('#btn-addobjek_1721');
+        addBtnadd_1721.addEventListener('click', function() {
+            const newRow = `
+            <tr>
+                <td width="auto" class="text-center"value="">
+                    <input required autocomplete="off" type="text"
+                        name="objek_penerima[]" id="objek_penerima[]"
+                        class="form-control" />
+                </td>
+                <td class="text-center">
+                    <input required autocomplete="off" type="date"
+                        name="objek_kodeobjek[]"
+                        id="objek_kodeobjek[]" class="form-control" />
+                </td>
+                <td class="text-center">
+                    <input required autocomplete="off" type="number"
+                        name="objek_jumlahpenerima[]"
+                        id="objek_jumlahpenerima[]" min="0"
+                        class="form-control penerima" />
+                </td>
+                <td class="text-center">
+                    <input required autocomplete="off" type="number"
+                        name="objek_jumlahpenghasilan[]"
+                        id="objek_jumlahpenghasilan[]" min="0"
+                        class="form-control penghasilan" />
+                </td>
+                <td class="text-center">
+                    <input required autocomplete="off" type="number"
+                        name="objek_jumlahpajak[]"
+                        id="objek_jumlahpajak[]" min="0"
+                        class="form-control pajak" />
+                </td>
+                <td><button type="button" class="btn btn-danger btn-remove-1721"><i
+                    class="fa fa-trash"></i>
+                </td>
+            </tr>
+            `;
+            tablelist_1721.insertAdjacentHTML('beforeend', newRow);
+        });
+        tablelist_1721.addEventListener('input', function(event) {
+            const target = event.target;
+            if (target.tagName === 'INPUT' && target.name.startsWith('objek')) {
+
+                var totalpenerima = 0
+                var totalbruto = 0
+                var totalpajakpotong = 0
+
+                $(".penerima").each(function() {
+                    totalpenerima += +$(this).val();
+                });
+                $(".penghasilan").each(function() {
+                    totalbruto += +$(this).val();
+                });
+                $(".pajak").each(function() {
+                    totalpajakpotong += +$(this).val();
+                });
+            
+                $('.totalpenerima').val(totalpenerima);
+                $('.totalbruto').val(totalbruto);
+                $('.totalpajak').val(totalpajakpotong);
+            }
+        });
+        tablelist_1721.addEventListener('click', function(event) {
+            if (event.target.classList.contains('btn-remove-1721')) {
+                const row = event.target.closest('tr');
+                row.remove();
+            }
+        });
+
+        const tablelistobjekpajakfinal_1721 = document.querySelector('#objekpajakfinal_1721 tbody');
+        const addBtnadd_addobjekfinal_1721 = document.querySelector('#btn-addobjekfinal_1721');
+        addBtnadd_addobjekfinal_1721.addEventListener('click', function() {
+            const newRow = `
+            <tr>
+                <td width="auto" class="text-center"value="">
+                    <input required autocomplete="off" type="text"
+                        name="objek_penerima_c[]"
+                        id="objek_penerima_c[]"
+                        class="form-control" />
+                </td>
+                <td class="text-center">
+                    <input required autocomplete="off" type="date"
+                        name="objek_kodeobjek_c[]"
+                        id="objek_kodeobjek_c[]"
+                        class="form-control" />
+                </td>
+                <td class="text-center">
+                    <input required autocomplete="off" type="number"
+                        name="objek_jumlahpenerima_c[]"
+                        id="objek_jumlahpenerima_c[]" min="0"
+                        class="form-control penerima_c" />
+                </td>
+                <td class="text-center">
+                    <input required autocomplete="off" type="number"
+                        name="objek_jumlahpenghasilan_c[]"
+                        id="objek_jumlahpenghasilan_c[]"
+                        min="0" class="form-control penghasilan_c" />
+                </td>
+                <td class="text-center">
+                    <input required autocomplete="off" type="number"
+                        name="objek_jumlahpajak_c[]"
+                        id="objek_jumlahpajak_c[]" min="0"
+                        class="form-control pajak_c" />
+                </td>
+                <td><button type="button" class="btn btn-danger btn-remove-final-1721"><i
+                    class="fa fa-trash"></i>
+                </td>
+            </tr>
+            `;
+            tablelistobjekpajakfinal_1721.insertAdjacentHTML('beforeend', newRow);
+        });
+        tablelistobjekpajakfinal_1721.addEventListener('input', function(event) {
+            const target = event.target;
+            if (target.tagName === 'INPUT' && target.name.startsWith('objek')) {
+
+                var totalpenerima = 0
+                var totalbruto = 0
+                var totalpajakpotong = 0
+
+                $(".penerima_c").each(function() {
+                    totalpenerima += +$(this).val();
+                });
+                $(".penghasilan_c").each(function() {
+                    totalbruto += +$(this).val();
+                });
+                $(".pajak_c").each(function() {
+                    totalpajakpotong += +$(this).val();
+                });
+            
+                $('.totalpenerima_c').val(totalpenerima);
+                $('.totalbruto_c').val(totalbruto);
+                $('.totalpajak_c').val(totalpajakpotong);
+            }
+        });
+        tablelistobjekpajakfinal_1721.addEventListener('click', function(event) {
+            if (event.target.classList.contains('btn-remove-final-1721')) {
+                const row = event.target.closest('tr');
+                row.remove();
+            }
+        });
+
+    // FORMULIR I
+        const npwppemotong_1721_formulirI = document.getElementById('npwppemotong_1721_formulirI');
+        const error_npwppemotong_1721_formulirI = document.getElementById('error_npwppemotong_1721_formulirI');
+        npwppemotong_1721_formulirI.addEventListener('input', function() {
+            const inputValue = npwppemotong_1721_formulirI.value;
     
+            if (inputValue.length > 15) {
+                npwppemotong_1721_formulirI.value = inputValue.slice(0, 15);
+                error_npwppemotong_1721_formulirI.textContent = 'Maksimal 15 digit';
+            } else {
+                error_npwppemotong_1721_formulirI.textContent = '';
+            }
+        });
+        const tablelist_1721i = document.querySelector('#penerimapensiun_1721 tbody');
+        const addBtnadd_1721i = document.querySelector('#btn-adddaftarpotongan_1721');
+        addBtnadd_1721i.addEventListener('click', function() {
+            const newRow = `
+            <tr>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="number"
+                        name="pgt_npwp_1721[]" id="pgt_npwp_1721[]" min="0"
+                        class="form-control" />
+                </td>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="text"
+                        name="pgt_namapegawai_1721[]" id="pgt_namapegawai_1721[]"
+                        class="form-control" />
+                </td>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="number"
+                        name="pgt_nomor_1721[]" id="pgt_nomor_1721[]" min="0"
+                        class="form-control" />
+                </td>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="date"
+                        name="pgt_tglbukti_1721[]" id="pgt_tglbukti_1721[]"
+                        class="form-control" />
+                </td>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="number"
+                        name="pgt_kodeobjek_1721[]" id="pgt_kodeobjek_1721[]" min="0"
+                        class="form-control" />
+                </td>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="number" min="0"
+                        name="pgt_jumlahpenghasilanbruto_1721[]" id="pgt_jumlahpenghasilanbruto_1721[]"
+                        class="form-control bruto" />
+                </td>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="number" min="0"
+                        name="pgt_pphdipotong_1721[]" id="pgt_pphdipotong_1721[]"
+                        class="form-control pph" />
+                </td>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="number" min="0"
+                        name="pgt_masaperolehan_1721[]" id="pgt_masaperolehan_1721[]"
+                        class="form-control" />
+                </td>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="number" min="0"
+                        name="pgt_kodenegara_1721[]" id="pgt_kodenegara_1721[]"
+                        class="form-control" />
+                </td>
+                <td><button type="button" class="btn btn-danger btn-remove-1721i"><i
+                    class="fa fa-trash"></i>
+                </td>
+            </tr>
+            `;
+            tablelist_1721i.insertAdjacentHTML('beforeend', newRow);
+        });
+        tablelist_1721i.addEventListener('input', function(event) {
+            const target = event.target;
+            if (target.tagName === 'INPUT' && target.name.startsWith('pgt')) {
+
+                var totalbruto = 0
+                var totalpph = 0
+
+                $(".bruto").each(function() {
+                    totalbruto += +$(this).val();
+                });
+                $(".pph").each(function() {
+                    totalpph += +$(this).val();
+                });
+             
+                $('.totalbruto').val(totalbruto);
+                $('.totalpph').val(totalpph);
+            }
+        });
+        tablelist_1721i.addEventListener('click', function(event) {
+            if (event.target.classList.contains('btn-remove-1721i')) {
+                const row = event.target.closest('tr');
+                row.remove();
+            }
+        });
+
+    // FORMULIR I
+    // FORMULIR II
+        const pemotong_formulirII_1721 = document.getElementById('npwppemotong_formulirII_1721');
+        const error_npwppemotong_1721_formulirII = document.getElementById('error_npwppemotong_1721_formulirII');
+        pemotong_formulirII_1721.addEventListener('input', function() {
+            const inputValue = pemotong_formulirII_1721.value;
+
+            if (inputValue.length > 15) {
+                pemotong_formulirII_1721.value = inputValue.slice(0, 15);
+                error_npwppemotong_1721_formulirII.textContent = 'Maksimal 15 digit';
+            } else {
+                error_npwppemotong_1721_formulirII.textContent = '';
+            }
+        });
+        const tablelist_1721ii = document.querySelector('#formulir1721-II tbody');
+        const addBtnadd_1721ii = document.querySelector('#btn-adddaftarpotongan_1721_ii');
+        addBtnadd_1721ii.addEventListener('click', function() {
+            const newRow = `
+            <tr>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="number"
+                        name="pgt_npwp_1721_formulirII[]" id="pgt_npwp_1721_formulirII[]" min="0"
+                        class="form-control" />
+                </td>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="text"
+                        name="pgt_namapegawai_1721_formulirII[]" id="pgt_namapegawai_1721_formulirII[]"
+                        class="form-control" />
+                </td>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="number"
+                        name="pgt_nomor_1721_formulirII[]" id="pgt_nomor_1721_formulirII[]" min="0"
+                        class="form-control" />
+                </td>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="date"
+                        name="pgt_tglbukti_1721_formulirII[]" id="pgt_tglbukti_1721_formulirII[]"
+                        class="form-control" />
+                </td>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="number"
+                        name="pgt_kodeobjek_1721_formulirII[]" id="pgt_kodeobjek_1721_formulirII[]" min="0"
+                        class="form-control" />
+                </td>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="number" min="0"
+                        name="pgt_jumlahpenghasilanbruto_1721_formulirII[]" id="pgt_jumlahpenghasilanbruto_1721_formulirII[]"
+                        class="form-control penghasilanbruto" />
+                </td>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="number" min="0"
+                        name="pgt_pphdipotong_1721_formulirII[]" id="pgt_pphdipotong_1721_formulirII[]"
+                        class="form-control potonganpph" />
+                </td>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="number" min="0"
+                        name="pgt_kodenegara_1721_formulirII[]" id="pgt_kodenegara_1721_formulirII[]"
+                        class="form-control" />
+                </td>
+                <td><button type="button" class="btn btn-danger btn-remove-1721ii"><i
+                    class="fa fa-trash"></i>
+                </td>
+            </tr>
+            `;
+            tablelist_1721ii.insertAdjacentHTML('beforeend', newRow);
+        });
+        tablelist_1721ii.addEventListener('input', function(event) {
+            const target = event.target;
+            if (target.tagName === 'INPUT' && target.name.startsWith('pgt')) {
+                var totalbruto = 0
+                var totalpph = 0
+
+                $(".penghasilanbruto").each(function() {
+                    totalbruto += +$(this).val();
+                });
+                $(".potonganpph").each(function() {
+                    totalpph += +$(this).val();
+                });
+             
+                $('.jumlahbruto').val(totalbruto);
+                $('.jumlahpotonganpph').val(totalpph);
+            }
+        });
+        tablelist_1721ii.addEventListener('click', function(event) {
+            if (event.target.classList.contains('btn-remove-1721ii')) {
+                const row = event.target.closest('tr');
+                row.remove();
+            }
+        });
+    // FORMULIR II
+    // FORMULIR III
+        const pemotong_formulirIII_1721 = document.getElementById('npwppemotong_formulirIII_1721');
+        const error_npwppemotong_1721_formulirIII = document.getElementById('error_npwppemotong_1721_formulirIII');
+        pemotong_formulirIII_1721.addEventListener('input', function() {
+            const inputValue = pemotong_formulirIII_1721.value;
+
+            if (inputValue.length > 15) {
+                pemotong_formulirIII_1721.value = inputValue.slice(0, 15);
+                error_npwppemotong_1721_formulirIII.textContent = 'Maksimal 15 digit';
+            } else {
+                error_npwppemotong_1721_formulirIII.textContent = '';
+            }
+        });
+        const tablelist_1721iii = document.querySelector('#formulir1721-III tbody');
+        const addBtnadd_1721iii = document.querySelector('#btn-adddaftarpotongan_1721_iii');
+        addBtnadd_1721iii.addEventListener('click', function() {
+            const newRow = `
+            <tr>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="number"
+                        name="pgt_npwp_1721_formulirIII[]" id="pgt_npwp_1721_formulirIII[]" min="0"
+                        class="form-control" />
+                </td>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="text"
+                        name="pgt_namapegawai_1721_formulirIII[]" id="pgt_namapegawai_1721_formulirIII[]"
+                        class="form-control" />
+                </td>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="number"
+                        name="pgt_nomor_1721_formulirIII[]" id="pgt_nomor_1721_formulirIII[]" min="0"
+                        class="form-control" />
+                </td>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="date"
+                        name="pgt_tglbukti_1721_formulirIII[]" id="pgt_tglbukti_1721_formulirIII[]"
+                        class="form-control" />
+                </td>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="number"
+                        name="pgt_kodeobjek_1721_formulirIII[]" id="pgt_kodeobjek_1721_formulirIII[]" min="0"
+                        class="form-control" />
+                </td>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="number" min="0"
+                        name="pgt_jumlahpenghasilanbruto_1721_formulirIII[]" id="pgt_jumlahpenghasilanbruto_1721_formulirIII[]"
+                        class="form-control penghasilanbruto" />
+                </td>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="number" min="0"
+                        name="pgt_pphdipotong_1721_formulirIII[]" id="pgt_pphdipotong_1721_formulirIII[]"
+                        class="form-control potonganpph" />
+                </td>
+                <td><button type="button" class="btn btn-danger btn-remove-1721iii"><i
+                    class="fa fa-trash"></i>
+                </td>
+            </tr>
+            `;
+            tablelist_1721iii.insertAdjacentHTML('beforeend', newRow);
+        });
+        tablelist_1721iii.addEventListener('input', function(event) {
+            const target = event.target;
+            if (target.tagName === 'INPUT' && target.name.startsWith('pgt')) {
+                var totalbruto = 0
+                var totalpph = 0
+
+                $(".penghasilanbruto").each(function() {
+                    totalbruto += +$(this).val();
+                });
+                $(".potonganpph").each(function() {
+                    totalpph += +$(this).val();
+                });
+             
+                $('.jumlahbruto').val(totalbruto);
+                $('.jumlahpotonganpph').val(totalpph);
+            }
+        });
+        tablelist_1721iii.addEventListener('click', function(event) {   
+            if (event.target.classList.contains('btn-remove-1721iii')) {
+                const row = event.target.closest('tr');
+                row.remove();
+            }
+        });
+    // FORMULIR III
+    // FORMULIR IV
+        const npwppemotong_formulirIV_1721 = document.getElementById('npwppemotong_formulirIV_1721');
+        const error_npwppemotong_1721_formulirIV = document.getElementById('error_npwppemotong_1721_formulirIV');
+        npwppemotong_formulirIV_1721.addEventListener('input', function() {
+            const inputValue = npwppemotong_formulirIV_1721.value;
+
+            if (inputValue.length > 15) {
+                npwppemotong_formulirIV_1721.value = inputValue.slice(0, 15);
+                error_npwppemotong_1721_formulirIV.textContent = 'Maksimal 15 digit';
+            } else {
+                error_npwppemotong_1721_formulirIV.textContent = '';
+            }
+        });
+        const tablelist_1721iv = document.querySelector('#formulir1721-IV tbody');
+        const addBtnadd_1721iv = document.querySelector('#btn-adddaftarpotongan_1721_iv');
+        addBtnadd_1721iv.addEventListener('click', function() {
+            const newRow = `
+            <tr>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="number"
+                        name="ssp_kapIV[]" id="ssp_kapIV[]" min="0"
+                        class="form-control" />
+                </td>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="number"
+                        name="ssp_kjsIV[]" id="ssp_kjsIV[]"
+                        class="form-control" />
+                </td>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="date"
+                        name="ssp_tglIV[]" id="ssp_tglIV[]" min="0"
+                        class="form-control" />
+                </td>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="date"
+                        name="ssp_ntpnIV[]" id="ssp_ntpnIV[]"
+                        class="form-control" />
+                </td>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="number"
+                        name="ssp_pphIV[]" id="ssp_pphIV[]" min="0"
+                        class="form-control jumlahpph" />
+                </td>
+                <td width="auto" class="text-center">
+                    <input required autocomplete="off" type="number" min="0"
+                        name="ssp_ketIV[]" id="ssp_ketIV[]"
+                        class="form-control" />
+                </td>
+                <td><button type="button" class="btn btn-danger btn-remove-1721iv"><i
+                    class="fa fa-trash"></i>
+                </td>
+            </tr>
+            `;
+            tablelist_1721iv.insertAdjacentHTML('beforeend', newRow);
+        });
+        tablelist_1721iv.addEventListener('input', function(event) {
+            const target = event.target;
+            if (target.tagName === 'INPUT' && target.name.startsWith('ssp')) {
+                var totalpph = 0
+             
+                $(".jumlahpph").each(function() {
+                    totalpph += +$(this).val();
+                });
+             
+                $('.totalpph').val(totalpph);
+            }
+        });
+        tablelist_1721iv.addEventListener('click', function(event) {
+            if (event.target.classList.contains('btn-remove-1721iv')) {
+                const row = event.target.closest('tr');
+                row.remove();
+            }
+        });
+    // FORMULIR IV
+        const bruto_1721_I = document.getElementById('jumlahbruto_1721_formulirI');
+        const tht_1721_I = document.getElementById('tht_1721_formulirI');
+        const pokokpajak_b = document.getElementById('pokokpajak_1721');
+        const setorlebih = document.getElementById('kelebihanpenyetor_1721');
+        const totalpajakb = document.getElementById('total_jumlah_pajak1721');
+        const sptbetulan_b = document.getElementById('sptdibetulkan_1721');
+
+        const resultjumlah_1721_I = document.getElementById('totaljumlah_1721_formulirI');
+        const jumlahobjekb = document.getElementById('jumlah_1721');
+        const kuranglebih_b = document.getElementById('kuranglebihsetor_1721');
+        const pembetulan_b = document.getElementById('sptpembetulan_1721');
+        [bruto_1721_I,tht_1721_I,resultjumlah_1721_I,pokokpajak_b,setorlebih,totalpajakb
+        ,sptbetulan_b]
+            .forEach(input => {
+                input.addEventListener('input', updateformuliri);
+            });
+        function updateformuliri() {
+            const jumlahbruto_1721_i = parseFloat(bruto_1721_I.value) || 0;
+            const tht_1721_i = parseFloat(tht_1721_I.value) || 0;
+            resultjumlah_1721_I.value=jumlahbruto_1721_i+tht_1721_i;
+            
+            const lebih = parseFloat(setorlebih.value) || 0;
+            const pajakpokokb = parseFloat(pokokpajak_b.value) || 0;
+            const jumlahobjek_b = lebih+pajakpokokb;
+            jumlahobjekb.value=jumlahobjek_b;
+            
+            const totpajakb = parseFloat(totalpajakb.value) || 0;
+            const kurang = totpajakb-jumlahobjek_b;
+            if(kurang<0){
+                kuranglebih_b.value=0;
+            }else{
+                kuranglebih_b.value=kurang;
+            }
+            const betulan_b = parseFloat(sptbetulan_b.value) || 0;
+            const pembetul_b = kurang-betulan_b;
+            if(pembetul_b<0){
+                pembetulan_b.value=0;
+            }else{
+                pembetulan_b.value=pembetul_b;
+            }
+
+
+        }
+    // sptmasapajak
     // 1771 I
     const input1a = document.getElementById('a1_penghasilan_netto_1771i');
     const input1b = document.getElementById('b1_penghasilan_netto_1771i');

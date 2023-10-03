@@ -172,6 +172,62 @@ let dataSet = [
 		  }
 		
 	}); 
+	var table = $('#sptmasapajakpenghasilan').DataTable({
+		searching: false,
+		paging:false,
+		select: false,
+		info: false,         
+		lengthChange:false ,
+		language: {
+			paginate: {
+			  next: '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
+			  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>' 
+			}
+		  }
+		
+	}); 
+	var table = $('#formulir1721-IV').DataTable({
+		searching:false,
+		paging:false,
+		select: false,
+		info: false,  
+		
+	}); 
+	var table = $('#formulir1721-III').DataTable({
+		searching:false,
+		paging:false,
+		select: false,
+		info: false,  
+		
+	}); 
+	var table = $('#formulir1721-II').DataTable({
+		searching:false,
+		paging:false,
+		select: false,
+		info: false,  
+		
+	}); 
+	var table = $('#penerimapensiun_1721').DataTable({
+		searching:false,
+		paging:false,
+		select: false,
+		info: false,  
+		
+	}); 
+	var table = $('#objekpajakfinal_1721').DataTable({
+		searching:false,
+		paging:false,
+		select: false,
+		info: false,  
+		
+	}); 
+	var table = $('#objekpajak_1721').DataTable({
+		searching:false,
+		paging:false,
+		select: false,
+		info: false,  
+		
+	}); 
 	var table = $('#list_1771II').DataTable({
 		searching:false,
 		paging:false,

@@ -132,7 +132,7 @@
                         </a>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="flaticon-022-copy"></i>
+                            <i class="flaticon-017-clipboard"></i>
                             <span class="nav-text">Transaksi</span>
                         </a>
                         <ul aria-expanded="false">
@@ -172,17 +172,12 @@
                             <span class="nav-text">Pelaporan</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ route('spttahunan') }}" >SPT Badan
-                            </a>
-                            {{-- <ul aria-expanded="false">
-                                <li><a href="{{ route('spttahunan') }}">&emsp; - 1771</a></li>
-                                <li><a href="{{route('spt1771I')}}">&emsp; - 1771 I</a></li>
-                            </ul> --}}
-                        </li>
+                            <li><a href="{{ route('spttahunan') }}" >SPT Badan</a></li>
+                            <li><a href="{{ route('sptmasapajak') }}" >SPT Masa</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="flaticon-013-checkmark"></i>
+                            <i class="flaticon-042-menu"></i>
                             <span class="nav-text">Latihan</span>
                         </a>
                         <ul aria-expanded="false">

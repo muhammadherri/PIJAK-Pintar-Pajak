@@ -199,6 +199,17 @@ Route::get('/spttahunan/{id}/edit', [App\Http\Controllers\SptTahunanController::
 Route::put('/spttahunan/{id}', [App\Http\Controllers\SptTahunanController::class, 'update'])->name('spttahunan/update');
 // spttahunan
 
+// spt1721
+Route::get('/sptmasapajak', [App\Http\Controllers\SptMasaPajakPenghasilanController::class, 'index'])->name('sptmasapajak');
+Route::get('/sptmasapajak/create', [App\Http\Controllers\SptMasaPajakPenghasilanController::class, 'create'])->name('sptmasapajak/create');
+Route::post('/sptmasapajak/store', [App\Http\Controllers\SptMasaPajakPenghasilanController::class, 'store'])->name('sptmasapajak/store');
+
+Route::get('/sptmasapajak/{id}/destroy', [App\Http\Controllers\SptMasaPajakPenghasilanController::class, 'destroy'])->name('sptmasapajak/destroy');
+Route::get('/sptmasapajak/{id}/show', [App\Http\Controllers\SptMasaPajakPenghasilanController::class, 'show'])->name('sptmasapajak/show');
+Route::get('/sptmasapajak/{id}/edit', [App\Http\Controllers\SptMasaPajakPenghasilanController::class, 'edit'])->name('sptmasapajak/edit');
+Route::put('/sptmasapajak/{id}', [App\Http\Controllers\SptMasaPajakPenghasilanController::class, 'update'])->name('sptmasapajak/update');
+// spt1721
+
 // pembayaran
 Route::get('/pembayaran', [App\Http\Controllers\PembayaranController::class, 'index'])->name('pembayaran');
 Route::post('/pembayaran/show', [App\Http\Controllers\PembayaranController::class, 'show'])->name('pembayaran/show');
