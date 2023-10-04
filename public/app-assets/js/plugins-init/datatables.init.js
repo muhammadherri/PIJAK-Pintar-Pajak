@@ -186,6 +186,20 @@ let dataSet = [
 		  }
 		
 	}); 
+	var table = $('#formulir1721-VII').DataTable({
+		searching:false,
+		paging:false,
+		select: false,
+		info: false,  
+		
+	}); 
+	var table = $('#list_1721VI_pasal21').DataTable({
+		searching:false,
+		paging:false,
+		select: false,
+		info: false,  
+		
+	}); 
 	var table = $('#formulir1721-IV').DataTable({
 		searching:false,
 		paging:false,

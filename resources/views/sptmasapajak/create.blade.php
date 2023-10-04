@@ -54,6 +54,30 @@
                                             <span class="bs-stepper-box">1721-IV<i data-feather="shopping-bag"
                                                     class="font-medium-3"></i></span>
                                         </button>
+                                        <button class="nav-link" id="nav-1721V-tab" data-bs-toggle="tab"
+                                            data-bs-target="#nav-1721V" type="button" role="tab"
+                                            aria-controls="nav-1721V" aria-selected="true">
+                                            <span class="bs-stepper-box">1721-V<i data-feather="shopping-bag"
+                                                    class="font-medium-3"></i></span>
+                                        </button>
+                                        <button class="nav-link" id="nav-1721VI-tab" data-bs-toggle="tab"
+                                            data-bs-target="#nav-1721VI" type="button" role="tab"
+                                            aria-controls="nav-1721VI" aria-selected="true">
+                                            <span class="bs-stepper-box">1721-VI<i data-feather="shopping-bag"
+                                                    class="font-medium-3"></i></span>
+                                        </button>
+                                        <button class="nav-link" id="nav-1721VII-tab" data-bs-toggle="tab"
+                                            data-bs-target="#nav-1721VII" type="button" role="tab"
+                                            aria-controls="nav-1721VII" aria-selected="true">
+                                            <span class="bs-stepper-box">1721-VII<i data-feather="shopping-bag"
+                                                    class="font-medium-3"></i></span>
+                                        </button>
+                                        <button class="nav-link" id="nav-1721A1-tab" data-bs-toggle="tab"
+                                            data-bs-target="#nav-1721A1" type="button" role="tab"
+                                            aria-controls="nav-1721A1" aria-selected="true">
+                                            <span class="bs-stepper-box">1721-A1<i data-feather="shopping-bag"
+                                                    class="font-medium-3"></i></span>
+                                        </button>
                                     </div>
                                 </nav>
                             </div>
@@ -508,7 +532,6 @@
                                             </div>
                                         </div>
                                         {{-- 1721 --}}
-
                                         {{-- Formulir-I --}}
                                         <div class="tab-pane fade" id="nav-1721I" role="tabpanel"
                                             aria-labelledby="nav-1721I-tab">
@@ -937,113 +960,755 @@
                                         {{-- Formulir-III --}}
                                         {{-- Formulir-IV --}}
                                         <div class="tab-pane fade" id="nav-1721IV" role="tabpanel"
-                                        aria-labelledby="nav-1721IV-tab">
-                                        <div class="row">
-                                            <h4>Formulir IV</h4>
-                                            <div class="mb-3 row">
-                                                <label class="col-sm-3 col-form-label">Masa Pajak</label>
-                                                <div class="col-sm-9">
-                                                    <input autocomplete="off" id="masapajak_formulirIV_1721" name="masapajak_formulirIV_1721"
-                                                        type="date" class="form-control">
+                                            aria-labelledby="nav-1721IV-tab">
+                                            <div class="row">
+                                                <h4>Formulir IV</h4>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Masa Pajak</label>
+                                                    <div class="col-sm-9">
+                                                        <input autocomplete="off" id="masapajak_formulirIV_1721" name="masapajak_formulirIV_1721"
+                                                            type="date" class="form-control">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="mb-3 row">
-                                                <label class="col-sm-3 col-form-label">NPWP Pemotong</label>
-                                                <div class="col-sm-9">
-                                                    <input placeholder="Masukkan NPWP Pemotong" autocomplete="off"
-                                                        id="npwppemotong_formulirIV_1721" name="npwppemotong_formulirIV_1721"
-                                                        type="number" class="form-control">
-                                                    <span id="error_npwppemotong_1721_formulirIV" style="color: red;"></span>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">NPWP Pemotong</label>
+                                                    <div class="col-sm-9">
+                                                        <input placeholder="Masukkan NPWP Pemotong" autocomplete="off"
+                                                            id="npwppemotong_formulirIV_1721" name="npwppemotong_formulirIV_1721"
+                                                            type="number" class="form-control">
+                                                        <span id="error_npwppemotong_1721_formulirIV" style="color: red;"></span>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="table-responsive">
-                                                    <table id="formulir1721-IV"class="display"
-                                                        style="min-width: 845px">
-                                                        <thead>
-                                                            <tr>
-                                                                <th class="text-center">Kode Akun Pajak</th>
-                                                                <th class="text-center">Kode Jenis Setoran</th>
-                                                                <th class="text-center">Tanggal Bukti</th>
-                                                                <th class="text-center">Nomor Bukti</th>
-                                                                <th class="text-center">Jumlah PPh Disetor</th>
-                                                                <th class="text-center">Keterangan</th>
-                                                                <th class="text-center">Action</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td width="auto" class="text-center">
-                                                                    <input required autocomplete="off" type="number"
-                                                                        name="ssp_kapIV[]" id="ssp_kapIV[]" min="0"
-                                                                        class="form-control" />
-                                                                </td>
-                                                                <td width="auto" class="text-center">
-                                                                    <input required autocomplete="off" type="number"
-                                                                        name="ssp_kjsIV[]" id="ssp_kjsIV[]"
-                                                                        class="form-control" />
-                                                                </td>
-                                                                <td width="auto" class="text-center">
-                                                                    <input required autocomplete="off" type="date"
-                                                                        name="ssp_tglIV[]" id="ssp_tglIV[]" min="0"
-                                                                        class="form-control" />
-                                                                </td>
-                                                                <td width="auto" class="text-center">
-                                                                    <input required autocomplete="off" type="date"
-                                                                        name="ssp_ntpnIV[]" id="ssp_ntpnIV[]"
-                                                                        class="form-control" />
-                                                                </td>
-                                                                <td width="auto" class="text-center">
-                                                                    <input required autocomplete="off" type="number"
-                                                                        name="ssp_pphIV[]" id="ssp_pphIV[]" min="0"
-                                                                        class="form-control jumlahpph" />
-                                                                </td>
-                                                                <td width="auto" class="text-center">
-                                                                    <input required autocomplete="off" type="number" min="0"
-                                                                        name="ssp_ketIV[]" id="ssp_ketIV[]"
-                                                                        class="form-control" />
-                                                                </td>
-                                                                <td><button type="button" class="btn btn-light"><i
-                                                                            class="fa fa-trash"></i>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                        <tfoot>
-                                                            <tr>
-                                                                <td>
-                                                                    <button
-                                                                        class="btn btn-primary btn-submit"name='action'
-                                                                        value="create" id="btn-adddaftarpotongan_1721_iv"
-                                                                        type="button"><i data-feather='save'></i>
-                                                                        {{ 'Tambah Item' }}</button>
-                                                                </td>
-                                                            </tr>
-                                                        </tfoot>
-                                                        <tfoot class="footer">
-                                                            <tr>
-                                                                <td width="auto" class="text-center"><b>JUMLAH</b>
-                                                                </td>
-                                                                <td></td>
-                                                                <td></td>
-                                                                <td></td>
-                                                                <td width="auto" class="text-center">
-                                                                    <input readonly autocomplete="off" type="number"
-                                                                        name="totalpph_1721_iv" id="totalpph_1721_iv" min="0"
-                                                                        class="form-control totalpph" />
-                                                                </td>
-                                                                <td></td>
-                                                                <td></td>
-                                                                <td></td>
-                                                            </tr>
-                                                            
-                                                        </tfoot>
+                                                <div class="card-body">
+                                                    <div class="table-responsive">
+                                                        <table id="formulir1721-IV"class="display"
+                                                            style="min-width: 845px">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="text-center">Kode Akun Pajak</th>
+                                                                    <th class="text-center">Kode Jenis Setoran</th>
+                                                                    <th class="text-center">Tanggal Bukti</th>
+                                                                    <th class="text-center">Nomor Bukti</th>
+                                                                    <th class="text-center">Jumlah PPh Disetor</th>
+                                                                    <th class="text-center">Keterangan</th>
+                                                                    <th class="text-center">Action</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td width="auto" class="text-center">
+                                                                        <input required autocomplete="off" type="number"
+                                                                            name="ssp_kapIV[]" id="ssp_kapIV[]" min="0"
+                                                                            class="form-control" />
+                                                                    </td>
+                                                                    <td width="auto" class="text-center">
+                                                                        <input required autocomplete="off" type="number"
+                                                                            name="ssp_kjsIV[]" id="ssp_kjsIV[]"
+                                                                            class="form-control" />
+                                                                    </td>
+                                                                    <td width="auto" class="text-center">
+                                                                        <input required autocomplete="off" type="date"
+                                                                            name="ssp_tglIV[]" id="ssp_tglIV[]" min="0"
+                                                                            class="form-control" />
+                                                                    </td>
+                                                                    <td width="auto" class="text-center">
+                                                                        <input required autocomplete="off" type="date"
+                                                                            name="ssp_ntpnIV[]" id="ssp_ntpnIV[]"
+                                                                            class="form-control" />
+                                                                    </td>
+                                                                    <td width="auto" class="text-center">
+                                                                        <input required autocomplete="off" type="number"
+                                                                            name="ssp_pphIV[]" id="ssp_pphIV[]" min="0"
+                                                                            class="form-control jumlahpph" />
+                                                                    </td>
+                                                                    <td width="auto" class="text-center">
+                                                                        <input required autocomplete="off" type="number" min="0"
+                                                                            name="ssp_ketIV[]" id="ssp_ketIV[]"
+                                                                            class="form-control" />
+                                                                    </td>
+                                                                    <td><button type="button" class="btn btn-light"><i
+                                                                                class="fa fa-trash"></i>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                            <tfoot>
+                                                                <tr>
+                                                                    <td>
+                                                                        <button
+                                                                            class="btn btn-primary btn-submit"name='action'
+                                                                            value="create" id="btn-adddaftarpotongan_1721_iv"
+                                                                            type="button"><i data-feather='save'></i>
+                                                                            {{ 'Tambah Item' }}</button>
+                                                                    </td>
+                                                                </tr>
+                                                            </tfoot>
+                                                            <tfoot class="footer">
+                                                                <tr>
+                                                                    <td width="auto" class="text-center"><b>JUMLAH</b>
+                                                                    </td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td width="auto" class="text-center">
+                                                                        <input readonly autocomplete="off" type="number"
+                                                                            name="totalpph_1721_iv" id="totalpph_1721_iv" min="0"
+                                                                            class="form-control totalpph" />
+                                                                    </td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                </tr>
+                                                                
+                                                            </tfoot>
 
-                                                    </table>
+                                                        </table>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
                                         {{-- Formulir-IV --}}
+                                        {{-- Formulir-V --}}
+                                        <div class="tab-pane fade" id="nav-1721V" role="tabpanel"
+                                            aria-labelledby="nav-1721V-tab">
+                                            <div class="row">
+                                                <h4>Formulir V</h4>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Masa Pajak</label>
+                                                    <div class="col-sm-9">
+                                                        <input required autocomplete="off" id="masapajak_formulirV_1721" name="masapajak_formulirV_1721"
+                                                            type="date" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">NPWP Pemotong</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan NPWP Pemotong" autocomplete="off"
+                                                            id="npwppemotong_formulirV_1721" name="npwppemotong_formulirV_1721"
+                                                            type="number" class="form-control">
+                                                        <span id="error_npwppemotong_1721_formulirV" style="color: red;"></span>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <h4>Rincian</h4>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Gaji</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Gaji,Upah,Bonus,Gratifikasi,Honorarium,THR dll..." autocomplete="off"
+                                                            id="gaji_formulirV_1721" name="gaji_formulirV_1721" min="0"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Biaya Transportasi</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Biaya Transportasi..." autocomplete="off"
+                                                            id="biayatransportasi_formulirV_1721" name="biayatransportasi_formulirV_1721" min="0"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Biaya Penyusutan</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Biaya Penyusutan Dan Amortasi..." autocomplete="off"
+                                                            id="biayaPenyusutan_formulirV_1721" name="biayaPenyusutan_formulirV_1721" min="0"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Biaya Sewa</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Biaya Sewa..." autocomplete="off"
+                                                            id="biayaSewa_formulirV_1721" name="biayaSewa_formulirV_1721" min="0"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Biaya Bunga Pinjaman</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Biaya Bunga Pinjaman..." autocomplete="off"
+                                                            id="biayaBungaPinjam_formulirV_1721" name="biayaBungaPinjam_formulirV_1721" min="0"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Biaya Jasa</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Biaya Sehubungan Dengan Jasa..." autocomplete="off"
+                                                            id="biayaSehubunganDenganJasa_formulirV_1721" name="biayaSehubunganDenganJasa_formulirV_1721" min="0"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Biaya Piutang</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Biaya Piutang Tak Tertagih..." autocomplete="off"
+                                                            id="biayaPiutangTakTertagih_formulirV_1721" name="biayaPiutangTakTertagih_formulirV_1721" min="0"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Biaya Royalti</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Biaya Royalti..." autocomplete="off"
+                                                            id="biayaRoyalti_formulirV_1721" name="biayaRoyalti_formulirV_1721" min="0"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Biaya Pemasaran</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Biaya Pemasaran / Promosi..." autocomplete="off"
+                                                            id="biayaPemasaran_formulirV_1721" name="biayaPemasaran_formulirV_1721" min="0"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Biaya Lainnya</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Biaya Lain..." autocomplete="off"
+                                                            id="biayaLain_formulirV_1721" name="biayaLain_formulirV_1721" min="0"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Jumlah</label>
+                                                    <div class="col-sm-9">
+                                                        <input readonly autocomplete="off"
+                                                            id="jumlah_formulirV_1721" name="jumlah_formulirV_1721" min="0"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{-- Formulir-V --}}
+                                        {{-- Formulir-VI --}}
+                                        <div class="tab-pane fade" id="nav-1721VI" role="tabpanel"
+                                            aria-labelledby="nav-1721VI-tab">
+                                            <div class="row">
+                                                <h4>Formulir VI</h4>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Nomor</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Nomor" autocomplete="off" id="nomor_formulirVI_1721" name="nomor_formulirVI_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <h4>A.Identitas Penerima Penghasilan Yang Dipotong</h4>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">1. NPWP</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan NPWP" autocomplete="off"
+                                                            id="npwp_formulirVI_1721" name="npwp_formulirVI_1721"
+                                                            type="number" class="form-control">
+                                                        <span id="error_npwp_1721_formulirVI" style="color: red;"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">2. NIK</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan NIK / No.Paspor" autocomplete="off"
+                                                            id="nik_formulirVI_1721" name="nik_formulirVI_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">3. Nama</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Nama" autocomplete="off"
+                                                            id="nama_formulirVI_1721" name="nama_formulirVI_1721"
+                                                            type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">4. Alamat</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Alamat" autocomplete="off"
+                                                            id="alamat_formulirVI_1721" name="alamat_formulirVI_1721"
+                                                            type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">5. Wajib Pajak Luar Negeri</label>
+                                                    <div class="col-sm-9">
+                                                        <select id="wajibpajak_formulirVI_1721" name="wajibpajak_formulirVI_1721"
+                                                            class="dropdown-groups">
+                                                            <option value="0">Ya</option>
+                                                            <option value="1">Tidak</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">6. Kode Negara Domisili</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Kode Negara Domisili" autocomplete="off"
+                                                            id="kodeNegara_formulirVI_1721" name="kodeNegara_formulirVI_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <h4>B. PPh Pasal 21 Dan Pasal 26 Yang Dipotong</h4>
+                                                <div class="card-body">
+                                                    <div class="table-responsive">
+                                                        <table id="list_1721VI_pasal21" class="display"
+                                                            style="min-width: 845px">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="text-center">Kode Objek Pajak</th>
+                                                                    <th class="text-center">Jumlah Penghasilan Bruto</th>
+                                                                    <th class="text-center">Dasar Pengenaan Pajak</th>
+                                                                    <th class="text-center">Tarif Lebih Tinggi</th>
+                                                                    <th class="text-center">Tarif Yang Dipotong</th>
+                                                                    <th class="text-center">PPh Yang Dipotong</th>
+                                                                    <th class="text-center">Action</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="">
+                                                                <tr>
+                                                                    <td class="text-center">
+                                                                        <input required autocomplete="off"
+                                                                            type="text" name="pph_KOPVI[]"
+                                                                            id="pph_KOPVI[]"
+                                                                            class="form-control" />
+                                                                    </td>
+                                                                    <td class="text-center">
+                                                                        <input required autocomplete="off"
+                                                                            type="number" name="pph_JPBVI[]"
+                                                                            id="pph_JPBVI[]"
+                                                                            class="form-control" />
+                                                                    </td>
+                                                                    <td class="text-center">
+                                                                        <input required autocomplete="off"
+                                                                            type="number" name="pph_DPPVI[]"
+                                                                            id="pph_DPPVI[]"
+                                                                            class="form-control" />
+                                                                    </td>
+                                                                    <td class="text-center">
+                                                                        <input required autocomplete="off"
+                                                                            type="number" name="pph_TLTVI[]"
+                                                                            id="pph_TLTVI[]"
+                                                                            class="form-control" />
+                                                                    </td>
+                                                                    <td class="text-center">
+                                                                        <input required autocomplete="off"
+                                                                            type="number" name="pph_tarifVI[]"
+                                                                            id="pph_tarifVI[]"
+                                                                            class="form-control" />
+                                                                    </td>
+                                                                    <td class="text-center">
+                                                                        <input required autocomplete="off"
+                                                                            type="number" name="pph_potongVI[]"
+                                                                            id="pph_potongVI[]"
+                                                                            class="form-control" />
+                                                                    </td>
+                                                                    <td><button type="button" class="btn btn-light"><i
+                                                                        class="fa fa-trash"></i>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                            <tfoot>
+                                                                <tr>
+                                                                    <td>
+                                                                        <button
+                                                                            class="btn btn-primary btn-submit"name='action'
+                                                                            value="create" id="btn-addPphPasal"
+                                                                            type="button"><i
+                                                                                data-feather='save'></i>
+                                                                            {{ 'Tambah Item' }}</button>
+                                                                    </td>
+                                                                </tr>
+                                                            </tfoot>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <h4>C. Identitas Pemotong</h4>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">1. NPWP</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan NPWP Identitas Pemotong" autocomplete="off"
+                                                            id="npwppemotong_formulirVI_1721" name="npwppemotong_formulirVI_1721"
+                                                            type="number" class="form-control">
+                                                        <span id="error_npwppemotong_formulirVI_1721" style="color: red;"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">2. Nama</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Nama Identitas Pemotong" autocomplete="off"
+                                                            id="namapemotong_formulirVI_1721" name="namapemotong_formulirVI_1721"
+                                                            type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">3. Tanggal</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Tanggal Dan Tanda Tangan" autocomplete="off"
+                                                            id="ttdpemotong_formulirVI_1721" name="ttdpemotong_formulirVI_1721"
+                                                            type="date" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{-- Formulir-VI --}}
+                                        {{-- Formulir-VII --}}
+                                        <div class="tab-pane fade" id="nav-1721VII" role="tabpanel"
+                                            aria-labelledby="nav-1721VII-tab">
+                                            <div class="row">
+                                                <h4>Formulir VII</h4>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Nomor</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Nomor" autocomplete="off" id="nomor_formulirVII_1721" name="nomor_formulirVII_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <h4>A. Identitas Penerima Penghasilan Yang Dipotong</h4>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">1. NPWP</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan NPWP" autocomplete="off"
+                                                            id="npwp_formulirVII_1721" name="npwp_formulirVII_1721"
+                                                            type="number" class="form-control">
+                                                        <span id="error_npwp_1721_formulirVII" style="color: red;"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">2. NIK </label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan NIK / No.Paspor" autocomplete="off"
+                                                            id="nik_formulirVII_1721" name="nik_formulirVII_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">3. Nama </label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Nama" autocomplete="off"
+                                                            id="nama_formulirVII_1721" name="nama_formulirVII_1721"
+                                                            type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">4. Alamat </label>
+                                                    <div class="col-sm-9">
+                                                        <textarea required placeholder="Masukkan Alamat" autocomplete="off"
+                                                            id="alamat_formulirVII_1721" name="alamat_formulirVII_1721"
+                                                            type="text" class="form-control"></textarea>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <h4>B. PPh Pasal 21 Yang Dipotong</h4>
+                                                <div class="card-body">
+                                                    <div class="table-responsive">
+                                                        <table id="formulir1721-VII" class="display"
+                                                            style="min-width: 845px">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="text-center">Kode Objek Pajak</th>
+                                                                    <th class="text-center">Jumlah Penghasilan Bruto</th>
+                                                                    <th class="text-center">Tarif Potongan</th>
+                                                                    <th class="text-center">PPh Yang Dipotong</th>
+                                                                    <th class="text-center">Action</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="">
+                                                                <tr>
+                                                                    <td class="text-center">
+                                                                        <input required autocomplete="off"
+                                                                            type="text" name="pph_kop_formulir_Vii[]"
+                                                                            id="pph_kop_formulir_Vii[]"
+                                                                            class="form-control" />
+                                                                    </td>
+                                                                    <td class="text-center">
+                                                                        <input required autocomplete="off"
+                                                                            type="number" name="pph_jpb_formulir_Vii[]"
+                                                                            id="pph_jpb_formulir_Vii[]"
+                                                                            class="form-control" />
+                                                                    </td>
+                                                                    <td class="text-center">
+                                                                        <input required autocomplete="off"
+                                                                            type="number" name="pph_tp_formulir_Vii[]"
+                                                                            id="pph_tp_formulir_Vii[]"
+                                                                            class="form-control" />
+                                                                    </td>
+                                                                    <td class="text-center">
+                                                                        <input required autocomplete="off"
+                                                                            type="number" name="pph_pph_formulir_Vii[]"
+                                                                            id="pph_pph_formulir_Vii[]"
+                                                                            class="form-control" />
+                                                                    </td>
+                                                                    <td><button type="button"
+                                                                        class="btn btn-light btn-submit"><i
+                                                                            class="fa fa-trash"></i>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                            <tfoot>
+                                                                <tr>
+                                                                    <td>
+                                                                        <button
+                                                                            class="btn btn-primary btn-submit"name='action'
+                                                                            value="create" id="btn-addpphformulir1721-vii"
+                                                                            type="button"><i
+                                                                                data-feather='save'></i>
+                                                                            {{ 'Tambah Item' }}</button>
+                                                                    </td>
+                                                                </tr>
+                                                            </tfoot>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <h4>C. Identitas Pemotong</h4>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">1. NPWP</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan NPWP Pemotong" autocomplete="off"
+                                                            id="npwppemotong_formulirVII_1721" name="npwppemotong_formulirVII_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">2. Nama</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Nama Pemotong" autocomplete="off"
+                                                            id="namapemotong_formulirVII_1721" name="namapemotong_formulirVII_1721"
+                                                            type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">3. Tanggal TTD</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Nama Pemotong" autocomplete="off"
+                                                            id="tglpemotong_formulirVII_1721" name="tglpemotong_formulirVII_1721"
+                                                            type="date" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{-- Formulir-VII --}}
+                                        {{-- Formulir-A1 --}}
+                                        <div class="tab-pane fade" id="nav-1721A1" role="tabpanel"
+                                            aria-labelledby="nav-1721A1-tab">
+                                            <div class="row">
+                                                <h4>Formulir A1</h4>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Nomor</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Nomor" autocomplete="off" id="nomor_formulirA1_1721" name="nomor_formulirVII_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Masa Perolehan</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Masa Perolehan" 
+                                                            autocomplete="off" id="masaperolehan_formulirA1_1721" name="masaperolehan_formulirA1_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">NPWP Pemotong</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan NPWP Pemotong" 
+                                                            autocomplete="off" id="npwppemotong_formulirA1_1721" name="npwppemotong_formulirA1_1721"
+                                                            type="number" class="form-control">
+                                                        <span id="error_npwppemotong_formulirA1_1721" style="color: red;"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Nama Pemotong</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Nama Pemotong" 
+                                                            autocomplete="off" id="namapemotong_formulirA1_1721" name="namapemotong_formulirA1_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <h4>A. Identitas Penerima Penghasilan Yang Dipotong</h4>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">1. NPWP</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan NPWP Penerima" min="0"
+                                                            autocomplete="off" id="npwppenerima_formulirA1_1721" name="npwppenerima_formulirA1_1721"
+                                                            type="number" class="form-control">
+                                                        <span id="error_npwppenerima_formulirA1_1721" style="color: red;"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">2. NIK</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan NIK / No Paspor" min="0"
+                                                            autocomplete="off" id="nikpenerima_formulirA1_1721" name="nikpenerima_formulirA1_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">3. Nama</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Nama Penerima" 
+                                                            autocomplete="off" id="namapenerima_formulirA1_1721" name="namapenerima_formulirA1_1721"
+                                                            type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">4. Alamat</label>
+                                                    <div class="col-sm-9">
+                                                        <textarea required placeholder="Masukkan Alamat Penerima" 
+                                                            autocomplete="off" id="alamatpenerima_formulirA1_1721" name="alamatpenerima_formulirA1_1721"
+                                                            type="text" class="form-control"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">5. Jenis Kelamin</label>
+                                                    <div class="col-sm-9">
+                                                        <select id="jenisKelaminPenerima_formulirA1_1721" name="jenisKelaminPenerima_formulirA1_1721"
+                                                            class="dropdown-groups">
+                                                            <option value="0">Laki-laki</option>
+                                                            <option value="1">Perempuan</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">6. Status</label>
+                                                    <div class="col-sm-4">
+                                                        <select id="statuspernikahanPenerima_formulirA1_1721" name="statuspernikahanPenerima_formulirA1_1721"
+                                                            class="dropdown-groups">
+                                                            <option value="0">Kawin</option>
+                                                            <option value="1">Tidak Kawin</option>
+                                                            <option value="2">Kawin Penghasilan Istri Digabung</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <input required min="0"
+                                                            autocomplete="off" id="statuspenerima_formulirA1_1721" name="statuspenerima_formulirA1_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">7. Nama Jabatan</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Nama Jabatan" 
+                                                            autocomplete="off" id="namaJabatan_formulirA1_1721" name="namaJabatan_formulirA1_1721"
+                                                            type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">8. Karyawan Asing</label>
+                                                    <div class="col-sm-9">
+                                                        <select id="karyawanAsing_formulirA1_1721" name="karyawanAsing_formulirA1_1721"
+                                                            class="dropdown-groups">
+                                                            <option value="0">Ya</option>
+                                                            <option value="1">Tidak</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">9. Kode Negara</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Kode Negara" 
+                                                            autocomplete="off" id="kodeNegara_formulirA1_1721" name="kodeNegara_formulirA1_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <h4>B. Rincian Penghasilan Dan Penghitungan PPh Pasal 21</h4>
+                                                <h4>Penghasilan Bruto</h4>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">1. Gaji</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Gaji,Pensiun dan THT" 
+                                                            autocomplete="off" id="gaji_formulirA1_1721" name="gaji_formulirA1_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">2. Tunjangan PPh</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Tunjangan PPh" 
+                                                            autocomplete="off" id="tunjanganPph_formulirA1_1721" name="tunjanganPph_formulirA1_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">3. Tunjangan Lain</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Tunjangan Lain" 
+                                                            autocomplete="off" id="tunjanganlain_formulirA1_1721" name="tunjanganlain_formulirA1_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">4. Honorarium</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Honorarium" 
+                                                            autocomplete="off" id="honorarium_formulirA1_1721" name="honorarium_formulirA1_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">5. Premi Asuransi</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Preim Asuransi" 
+                                                            autocomplete="off" id="premiAsuransi_formulirA1_1721" name="premiAsuransi_formulirA1_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">6. Natura</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Preim Asuransi" 
+                                                            autocomplete="off" id="natura_formulirA1_1721" name="natura_formulirA1_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">7. Tantiem</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Tantiem,Bonus,Gratifikasi,Jasa Produksi dan THR" 
+                                                            autocomplete="off" id="tantiem_formulirA1_1721" name="tantiem_formulirA1_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">8. Jumlah</label>
+                                                    <div class="col-sm-9">
+                                                        <input readonly
+                                                            autocomplete="off" id="jumlahbruto_formulirA1_1721" name="jumlahbruto_formulirA1_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <h4>Pengurangan</h4>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">9. Biaya Jabatan</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Biaya Jabatan / Biaya Pensiun"
+                                                            autocomplete="off" id="biayajabatan_formulirA1_1721" name="biayajabatan_formulirA1_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">10. Iuran Pensiun</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Iuran Pensiun, Iuran JHT/THT"
+                                                            autocomplete="off" id="iuranPensiun_formulirA1_1721" name="iuranPensiun_formulirA1_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">11. Jumlah Pengurangan</label>
+                                                    <div class="col-sm-9">
+                                                        <input readonly placeholder="Masukkan Iuran Pensiun, Iuran JHT/THT"
+                                                            autocomplete="off" id="iuranPensiun_formulirA1_1721" name="iuranPensiun_formulirA1_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{-- Formulir-A1 --}}
                                     </div>
                                 </form>
                             </div>
