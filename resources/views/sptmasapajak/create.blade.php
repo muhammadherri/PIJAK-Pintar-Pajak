@@ -119,7 +119,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Besaran PTKP</label>
                                                     <div class="col-sm-9">
-                                                        <input autocomplete="off" required id="besaran_ptkp"
+                                                        <input min="0" autocomplete="off" required id="besaran_ptkp"
                                                             name="besaran_ptkp" type="number" class="form-control"
                                                             placeholder="Masukkan Besaran PTKP">
                                                     </div>
@@ -144,7 +144,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Alamat</label>
                                                     <div class="col-sm-9">
-                                                        <textarea autocomplete="off" required id="id_alamat_1721" name="id_alamat_1721" type="text" class="form-control"
+                                                        <textarea autocomplete="off" required id="op_alamat_1721" name="op_alamat_1721" type="text" class="form-control"
                                                             placeholder="Masukkan Alamat"></textarea>
                                                     </div>
                                                 </div>
@@ -517,7 +517,7 @@
                                                     <div class="col-sm-9">
                                                         <input placeholder="Masukkan Nama Penandatangan"
                                                             autocomplete="off" id="namattd_1721" name="namattd_1721"
-                                                            type="number" min="0" class="form-control">
+                                                            type="text" min="0" class="form-control">
                                                     </div>
                                                 </div>
 
@@ -564,7 +564,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">NPWP Pemotong</label>
                                                     <div class="col-sm-9">
-                                                        <input placeholder="Masukkan NPWP Pemotong" autocomplete="off"
+                                                        <input min="0" placeholder="Masukkan NPWP Pemotong" autocomplete="off"
                                                             id="npwppemotong_1721_formulirI" name="npwppemotong_1721_formulirI"
                                                             type="number" class="form-control">
                                                         <span id="error_npwppemotong_1721_formulirI" style="color: red;"></span>
@@ -576,8 +576,8 @@
                                                             style="min-width: 845px">
                                                             <thead>
                                                                 <tr>
-                                                                    <th class="text-center">NPWP Pegawai</th>
-                                                                    <th class="text-center">Nama Pegawai</th>
+                                                                    <th class="text-center">Nomor NPWP Pegawai</th>
+                                                                    <th class="text-center">Nama NPWP Pegawai</th>
                                                                     <th class="text-center">Nomor Bukti Pemotongan</th>
                                                                     <th class="text-center">Tanggal Bukti Pemotongan</th>
                                                                     <th class="text-center">Kode Objek Pajak</th>
@@ -731,7 +731,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">NPWP Pemotong</label>
                                                     <div class="col-sm-9">
-                                                        <input placeholder="Masukkan NPWP Pemotong" autocomplete="off"
+                                                        <input min="0" placeholder="Masukkan NPWP Pemotong" autocomplete="off"
                                                             id="npwppemotong_formulirII_1721" name="npwppemotong_formulirII_1721"
                                                             type="number" class="form-control">
                                                         <span id="error_npwppemotong_1721_formulirII" style="color: red;"></span>
@@ -822,13 +822,13 @@
                                                                     <td></td>
                                                                     <td width="auto" class="text-center">
                                                                         <input readonly autocomplete="off" type="number"
-                                                                            name="jumlahbruto" id="jumlahbruto" min="0"
-                                                                            class="form-control jumlahbruto" />
+                                                                            name="jumlahbruto_1721II" id="jumlahbruto_1721II" min="0"
+                                                                            class="form-control jumlahbruto1721II" />
                                                                     </td>
                                                                     <td width="auto" class="text-center">
                                                                         <input readonly autocomplete="off" type="number"
-                                                                            name="potonganpph" id="potonganpph" min="0"
-                                                                            class="form-control jumlahpotonganpph" />
+                                                                            name="potonganpph_1721II" id="potonganpph_1721II" min="0"
+                                                                            class="form-control jumlahpotonganpph1721II" />
                                                                     </td>
                                                                     <td></td>
                                                                     <td></td>
@@ -859,9 +859,9 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">NPWP Pemotong</label>
                                                     <div class="col-sm-9">
-                                                        <input placeholder="Masukkan NPWP Pemotong" autocomplete="off"
+                                                        <input min="0" placeholder="Masukkan NPWP Pemotong" autocomplete="off"
                                                             id="npwppemotong_formulirIII_1721" name="npwppemotong_formulirIII_1721"
-                                                            type="text" class="form-control">
+                                                            type="number" class="form-control">
                                                         <span id="error_npwppemotong_1721_formulirIII" style="color: red;"></span>
                                                     </div>
                                                 </div>
@@ -944,13 +944,13 @@
                                                                     <td></td>
                                                                     <td width="auto" class="text-center">
                                                                         <input readonly autocomplete="off" type="number"
-                                                                            name="jumlahbruto" id="jumlahbruto" min="0"
-                                                                            class="form-control jumlahbruto" />
+                                                                            name="jumlahbruto_1721III" id="jumlahbruto_1721III" min="0"
+                                                                            class="form-control jumlahbruto1721III" />
                                                                     </td>
                                                                     <td width="auto" class="text-center">
                                                                         <input readonly autocomplete="off" type="number"
-                                                                            name="potonganpph" id="potonganpph" min="0"
-                                                                            class="form-control jumlahpotonganpph" />
+                                                                            name="potonganpph_1721III" id="potonganpph_1721III" min="0"
+                                                                            class="form-control jumlahpotonganpph1721III" />
                                                                     </td>
                                                                     <td></td>
                                                                     <td></td>
@@ -979,7 +979,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">NPWP Pemotong</label>
                                                     <div class="col-sm-9">
-                                                        <input placeholder="Masukkan NPWP Pemotong" autocomplete="off"
+                                                        <input min="0" placeholder="Masukkan NPWP Pemotong" autocomplete="off"
                                                             id="npwppemotong_formulirIV_1721" name="npwppemotong_formulirIV_1721"
                                                             type="number" class="form-control">
                                                         <span id="error_npwppemotong_1721_formulirIV" style="color: red;"></span>
@@ -1008,7 +1008,7 @@
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td width="auto" class="text-center">
-                                                                        <input required autocomplete="off" type="number"
+                                                                        <input min="0" required autocomplete="off" type="number"
                                                                             name="ssp_kjsIV[]" id="ssp_kjsIV[]"
                                                                             class="form-control" />
                                                                     </td>
@@ -1018,7 +1018,7 @@
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td width="auto" class="text-center">
-                                                                        <input required autocomplete="off" type="date"
+                                                                        <input required autocomplete="off" type="number"
                                                                             name="ssp_ntpnIV[]" id="ssp_ntpnIV[]"
                                                                             class="form-control" />
                                                                     </td>
@@ -1028,7 +1028,7 @@
                                                                             class="form-control jumlahpph" />
                                                                     </td>
                                                                     <td width="auto" class="text-center">
-                                                                        <input required autocomplete="off" type="number" min="0"
+                                                                        <input required autocomplete="off" type="text" min="0"
                                                                             name="ssp_ketIV[]" id="ssp_ketIV[]"
                                                                             class="form-control" />
                                                                     </td>
@@ -1088,7 +1088,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">NPWP Pemotong</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan NPWP Pemotong" autocomplete="off"
+                                                        <input min="0" required placeholder="Masukkan NPWP Pemotong" autocomplete="off"
                                                             id="npwppemotong_formulirV_1721" name="npwppemotong_formulirV_1721"
                                                             type="number" class="form-control">
                                                         <span id="error_npwppemotong_1721_formulirV" style="color: red;"></span>
@@ -1195,7 +1195,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Nomor</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan Nomor" autocomplete="off" id="nomor_formulirVI_1721" name="nomor_formulirVI_1721"
+                                                        <input min="0" required placeholder="Masukkan Nomor" autocomplete="off" id="nomor_formulirVI_1721" name="nomor_formulirVI_1721"
                                                             type="number" class="form-control">
                                                     </div>
                                                 </div>
@@ -1204,7 +1204,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">1. NPWP</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan NPWP" autocomplete="off"
+                                                        <input min="0" required placeholder="Masukkan NPWP" autocomplete="off"
                                                             id="npwp_formulirVI_1721" name="npwp_formulirVI_1721"
                                                             type="number" class="form-control">
                                                         <span id="error_npwp_1721_formulirVI" style="color: red;"></span>
@@ -1213,7 +1213,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">2. NIK</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan NIK / No.Paspor" autocomplete="off"
+                                                        <input min="0" required placeholder="Masukkan NIK / No.Paspor" autocomplete="off"
                                                             id="nik_formulirVI_1721" name="nik_formulirVI_1721"
                                                             type="number" class="form-control">
                                                     </div>
@@ -1229,9 +1229,9 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">4. Alamat</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan Alamat" autocomplete="off"
+                                                        <textarea required placeholder="Masukkan Alamat" autocomplete="off"
                                                             id="alamat_formulirVI_1721" name="alamat_formulirVI_1721"
-                                                            type="text" class="form-control">
+                                                            type="text" class="form-control"></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="mb-3 row">
@@ -1247,7 +1247,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">6. Kode Negara Domisili</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan Kode Negara Domisili" autocomplete="off"
+                                                        <input min="0" required placeholder="Masukkan Kode Negara Domisili" autocomplete="off"
                                                             id="kodeNegara_formulirVI_1721" name="kodeNegara_formulirVI_1721"
                                                             type="number" class="form-control">
                                                     </div>
@@ -1273,36 +1273,36 @@
                                                                 <tr>
                                                                     <td class="text-center">
                                                                         <input required autocomplete="off"
-                                                                            type="text" name="pph_KOPVI[]"
+                                                                            type="number" name="pph_KOPVI[]"
                                                                             id="pph_KOPVI[]"
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input min="0" required autocomplete="off"
                                                                             type="number" name="pph_JPBVI[]"
                                                                             id="pph_JPBVI[]"
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input min="0" required autocomplete="off"
                                                                             type="number" name="pph_DPPVI[]"
                                                                             id="pph_DPPVI[]"
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input min="0" required autocomplete="off"
                                                                             type="number" name="pph_TLTVI[]"
                                                                             id="pph_TLTVI[]"
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input min="0" required autocomplete="off"
                                                                             type="number" name="pph_tarifVI[]"
                                                                             id="pph_tarifVI[]"
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input min="0" required autocomplete="off"
                                                                             type="number" name="pph_potongVI[]"
                                                                             id="pph_potongVI[]"
                                                                             class="form-control" />
@@ -1331,7 +1331,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">1. NPWP</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan NPWP Identitas Pemotong" autocomplete="off"
+                                                        <input min="0" required placeholder="Masukkan NPWP Identitas Pemotong" autocomplete="off"
                                                             id="npwppemotong_formulirVI_1721" name="npwppemotong_formulirVI_1721"
                                                             type="number" class="form-control">
                                                         <span id="error_npwppemotong_formulirVI_1721" style="color: red;"></span>
@@ -1364,7 +1364,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Nomor</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan Nomor" autocomplete="off" id="nomor_formulirVII_1721" name="nomor_formulirVII_1721"
+                                                        <input min="0" required placeholder="Masukkan Nomor" autocomplete="off" id="nomor_formulirVII_1721" name="nomor_formulirVII_1721"
                                                             type="number" class="form-control">
                                                     </div>
                                                 </div>
@@ -1373,7 +1373,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">1. NPWP</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan NPWP" autocomplete="off"
+                                                        <input min="0" required placeholder="Masukkan NPWP" autocomplete="off"
                                                             id="npwp_formulirVII_1721" name="npwp_formulirVII_1721"
                                                             type="number" class="form-control">
                                                         <span id="error_npwp_1721_formulirVII" style="color: red;"></span>
@@ -1382,7 +1382,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">2. NIK </label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan NIK / No.Paspor" autocomplete="off"
+                                                        <input min="0" required placeholder="Masukkan NIK / No.Paspor" autocomplete="off"
                                                             id="nik_formulirVII_1721" name="nik_formulirVII_1721"
                                                             type="number" class="form-control">
                                                     </div>
@@ -1422,24 +1422,24 @@
                                                                 <tr>
                                                                     <td class="text-center">
                                                                         <input required autocomplete="off"
-                                                                            type="text" name="pph_kop_formulir_Vii[]"
+                                                                            type="number" name="pph_kop_formulir_Vii[]"
                                                                             id="pph_kop_formulir_Vii[]"
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input min="0" required autocomplete="off"
                                                                             type="number" name="pph_jpb_formulir_Vii[]"
                                                                             id="pph_jpb_formulir_Vii[]"
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input min="0" required autocomplete="off"
                                                                             type="number" name="pph_tp_formulir_Vii[]"
                                                                             id="pph_tp_formulir_Vii[]"
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input min="0" required autocomplete="off"
                                                                             type="number" name="pph_pph_formulir_Vii[]"
                                                                             id="pph_pph_formulir_Vii[]"
                                                                             class="form-control" />
@@ -1470,7 +1470,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">1. NPWP</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan NPWP Pemotong" autocomplete="off"
+                                                        <input min="0" required placeholder="Masukkan NPWP Pemotong" autocomplete="off"
                                                             id="npwppemotong_formulirVII_1721" name="npwppemotong_formulirVII_1721"
                                                             type="number" class="form-control">
                                                     </div>
@@ -1502,7 +1502,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Nomor</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan Nomor" autocomplete="off" id="nomor_formulirA1_1721" name="nomor_formulirA1_1721"
+                                                        <input min="0" required placeholder="Masukkan Nomor" autocomplete="off" id="nomor_formulirA1_1721" name="nomor_formulirA1_1721"
                                                             type="number" class="form-control">
                                                     </div>
                                                 </div>
@@ -1518,7 +1518,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">NPWP Pemotong</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan NPWP Pemotong" 
+                                                        <input min="0" required placeholder="Masukkan NPWP Pemotong" 
                                                             autocomplete="off" id="npwppemotong_formulirA1_1721" name="npwppemotong_formulirA1_1721"
                                                             type="number" class="form-control">
                                                         <span id="error_npwppemotong_formulirA1_1721" style="color: red;"></span>
@@ -1527,9 +1527,9 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Nama Pemotong</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan Nama Pemotong" 
+                                                        <input min="0" required placeholder="Masukkan Nama Pemotong" 
                                                             autocomplete="off" id="namapemotong_formulirA1_1721" name="namapemotong_formulirA1_1721"
-                                                            type="number" class="form-control">
+                                                            type="text" class="form-control">
                                                     </div>
                                                 </div>
                                                 <hr>
@@ -1614,7 +1614,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">9. Kode Negara</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan Kode Negara" 
+                                                        <input min="0" required placeholder="Masukkan Kode Negara" 
                                                             autocomplete="off" id="kodeNegara_formulirA1_1721" name="kodeNegara_formulirA1_1721"
                                                             type="number" class="form-control">
                                                     </div>
@@ -1625,7 +1625,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">1. Gaji</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan Gaji,Pensiun dan THT" 
+                                                        <input min="0" required placeholder="Masukkan Gaji,Pensiun dan THT" 
                                                             autocomplete="off" id="gaji_formulirA1_1721" name="gaji_formulirA1_1721"
                                                             type="number" class="form-control">
                                                     </div>
@@ -1633,7 +1633,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">2. Tunjangan PPh</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan Tunjangan PPh" 
+                                                        <input min="0" required placeholder="Masukkan Tunjangan PPh" 
                                                             autocomplete="off" id="tunjanganPph_formulirA1_1721" name="tunjanganPph_formulirA1_1721"
                                                             type="number" class="form-control">
                                                     </div>
@@ -1641,7 +1641,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">3. Tunjangan Lain</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan Tunjangan Lain" 
+                                                        <input min="0" required placeholder="Masukkan Tunjangan Lain" 
                                                             autocomplete="off" id="tunjanganlain_formulirA1_1721" name="tunjanganlain_formulirA1_1721"
                                                             type="number" class="form-control">
                                                     </div>
@@ -1649,7 +1649,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">4. Honorarium</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan Honorarium" 
+                                                        <input min="0" required placeholder="Masukkan Honorarium" 
                                                             autocomplete="off" id="honorarium_formulirA1_1721" name="honorarium_formulirA1_1721"
                                                             type="number" class="form-control">
                                                     </div>
@@ -1657,7 +1657,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">5. Premi Asuransi</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan Preim Asuransi" 
+                                                        <input min="0" required placeholder="Masukkan Preim Asuransi" 
                                                             autocomplete="off" id="premiAsuransi_formulirA1_1721" name="premiAsuransi_formulirA1_1721"
                                                             type="number" class="form-control">
                                                     </div>
@@ -1665,7 +1665,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">6. Natura</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan Preim Asuransi" 
+                                                        <input min="0" required placeholder="Masukkan Preim Asuransi" 
                                                             autocomplete="off" id="natura_formulirA1_1721" name="natura_formulirA1_1721"
                                                             type="number" class="form-control">
                                                     </div>
@@ -1673,7 +1673,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">7. Tantiem</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan Tantiem,Bonus,Gratifikasi,Jasa Produksi dan THR" 
+                                                        <input min="0" required placeholder="Masukkan Tantiem,Bonus,Gratifikasi,Jasa Produksi dan THR" 
                                                             autocomplete="off" id="tantiem_formulirA1_1721" name="tantiem_formulirA1_1721"
                                                             type="number" class="form-control">
                                                     </div>
@@ -1681,7 +1681,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">8. Jumlah</label>
                                                     <div class="col-sm-9">
-                                                        <input readonly
+                                                        <input min="0" readonly
                                                             autocomplete="off" id="jumlahbruto_formulirA1_1721" name="jumlahbruto_formulirA1_1721"
                                                             type="number" class="form-control">
                                                     </div>
@@ -1691,7 +1691,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">9. Biaya Jabatan</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan Biaya Jabatan / Biaya Pensiun"
+                                                        <input min="0" required placeholder="Masukkan Biaya Jabatan / Biaya Pensiun"
                                                             autocomplete="off" id="biayajabatan_formulirA1_1721" name="biayajabatan_formulirA1_1721"
                                                             type="number" class="form-control">
                                                     </div>
@@ -1699,7 +1699,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">10. Iuran Pensiun</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan Iuran Pensiun, Iuran JHT/THT"
+                                                        <input min="0" required placeholder="Masukkan Iuran Pensiun, Iuran JHT/THT"
                                                             autocomplete="off" id="iuranPensiun_formulirA1_1721" name="iuranPensiun_formulirA1_1721"
                                                             type="number" class="form-control">
                                                     </div>
@@ -1723,21 +1723,21 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">13. Penghasilan Neto Masa Sebelumnya</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan Penghasilan Neto Masa" autocomplete="off" id="penghasilanNetoMasa_formulirA1_1721" name="penghasilanNetoMasa_formulirA1_1721"
+                                                        <input min="0" required placeholder="Masukkan Penghasilan Neto Masa" autocomplete="off" id="penghasilanNetoMasa_formulirA1_1721" name="penghasilanNetoMasa_formulirA1_1721"
                                                             type="number" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">14. Jumlah Penghasilan Neto</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan Jumlah Penghasilan Neto" autocomplete="off" id="jumlahPenghasilanNetoSetaun_formulirA1_1721" name="jumlahPenghasilanNetoSetaun_formulirA1_1721"
+                                                        <input min="0" required placeholder="Masukkan Jumlah Penghasilan Neto" autocomplete="off" id="jumlahPenghasilanNetoSetaun_formulirA1_1721" name="jumlahPenghasilanNetoSetaun_formulirA1_1721"
                                                             type="number" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">15. PTKP</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan PTKP" autocomplete="off" id="ptkp_formulirA1_1721" name="ptkp_formulirA1_1721"
+                                                        <input min="0" required placeholder="Masukkan PTKP" autocomplete="off" id="ptkp_formulirA1_1721" name="ptkp_formulirA1_1721"
                                                             type="number" class="form-control">
                                                     </div>
                                                 </div>
@@ -1751,28 +1751,28 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">17. Atas PKP</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan PKP" autocomplete="off" id="ataspkp_formulirA1_1721" name="ataspkp_formulirA1_1721"
+                                                        <input min="0" required placeholder="Masukkan PKP" autocomplete="off" id="ataspkp_formulirA1_1721" name="ataspkp_formulirA1_1721"
                                                             type="number" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">18. Masa Yang Dipotong</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan Masa Yang Dipotong" autocomplete="off" id="masayngDipotong_formulirA1_1721" name="masayngDipotong_formulirA1_1721"
+                                                        <input min="0" required placeholder="Masukkan Masa Yang Dipotong" autocomplete="off" id="masayngDipotong_formulirA1_1721" name="masayngDipotong_formulirA1_1721"
                                                             type="number" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">19. Terutang</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan Terutang" autocomplete="off" id="terutang_formulirA1_1721" name="terutang_formulirA1_1721"
+                                                        <input min="0" required placeholder="Masukkan Terutang" autocomplete="off" id="terutang_formulirA1_1721" name="terutang_formulirA1_1721"
                                                             type="number" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">20. Terlunasi</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan Terlunasi" autocomplete="off" id="terlunasi_formulirA1_1721" name="terlunasi_formulirA1_1721"
+                                                        <input min="0" required placeholder="Masukkan Terlunasi" autocomplete="off" id="terlunasi_formulirA1_1721" name="terlunasi_formulirA1_1721"
                                                             type="number" class="form-control">
                                                     </div>
                                                 </div>
@@ -1811,7 +1811,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Nomor</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan Nomor" autocomplete="off" id="nomor_formulirA2_1721" name="nomor_formulirA2_1721"
+                                                        <input min="0" required placeholder="Masukkan Nomor" autocomplete="off" id="nomor_formulirA2_1721" name="nomor_formulirA2_1721"
                                                             type="number" class="form-control">
                                                     </div>
                                                 </div>
@@ -1843,7 +1843,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">NPWP Bendahara</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan NPWP Bendahara" 
+                                                        <input min="0" required placeholder="Masukkan NPWP Bendahara" 
                                                             autocomplete="off" id="npwpBendahara_formulirA2_1721" name="npwpBendahara_formulirA2_1721"
                                                             type="number" class="form-control">
                                                         <span id="error_npwpBendahara_formulirA2_1721" style="color: red;"></span>
@@ -1905,9 +1905,9 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">7. NIK</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan NIK Penerima" 
+                                                        <input min="0" required placeholder="Masukkan NIK Penerima" 
                                                             autocomplete="off" id="nik_formulirA2_1721" name="nik_formulirA2_1721"
-                                                            type="text" class="form-control">
+                                                            type="number" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="mb-3 row">
@@ -2145,7 +2145,7 @@
                                                 </div>
                                                 <hr>
                                                 <h4>C. Pegawai Tersebut</h4>
-                                                <div class="col-sm-9">
+                                                <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Status Pegawai</label>
                                                     <div class="col-sm-9">
                                                         <select id="statusPernikahan_formulirA2_1721" name="statusPernikahan_formulirA2_1721"
@@ -2156,7 +2156,9 @@
                                                             <option value="3">Pensiun</option>
                                                         </select>
                                                     </div>
+                                                   
                                                 </div>
+                                               
                                                 <hr>
                                                 <h4>D. Tanda Tangan Bendahara</h4>
                                                 <div class="mb-3 row">

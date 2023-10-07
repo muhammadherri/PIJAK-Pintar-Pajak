@@ -18,6 +18,7 @@ class SptMasa extends Model
         'ptkp',
         'alamat',
         'no_telp',
+        'alamat_objekpajak',
         'jumlah_penerima_penghasilan_b',
         'jumlah_penghasilan_bruto_b',
         'jumlah_pajak_dipotong_b',

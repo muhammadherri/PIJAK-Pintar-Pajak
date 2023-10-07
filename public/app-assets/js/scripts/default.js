@@ -341,8 +341,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     totalpph += +$(this).val();
                 });
              
-                $('.jumlahbruto').val(totalbruto);
-                $('.jumlahpotonganpph').val(totalpph);
+                $('.jumlahbruto1721II').val(totalbruto);
+                $('.jumlahpotonganpph1721II').val(totalpph);
             }
         });
         tablelist_1721ii.addEventListener('click', function(event) {
@@ -425,8 +425,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     totalpph += +$(this).val();
                 });
              
-                $('.jumlahbruto').val(totalbruto);
-                $('.jumlahpotonganpph').val(totalpph);
+                $('.jumlahbruto1721III').val(totalbruto);
+                $('.jumlahpotonganpph1721III').val(totalpph);
             }
         });
         tablelist_1721iii.addEventListener('click', function(event) {   
@@ -460,7 +460,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         class="form-control" />
                 </td>
                 <td width="auto" class="text-center">
-                    <input required autocomplete="off" type="number"
+                    <input min="0" required autocomplete="off" type="number"
                         name="ssp_kjsIV[]" id="ssp_kjsIV[]"
                         class="form-control" />
                 </td>
@@ -470,7 +470,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         class="form-control" />
                 </td>
                 <td width="auto" class="text-center">
-                    <input required autocomplete="off" type="date"
+                    <input required autocomplete="off" type="number"
                         name="ssp_ntpnIV[]" id="ssp_ntpnIV[]"
                         class="form-control" />
                 </td>
@@ -480,7 +480,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         class="form-control jumlahpph" />
                 </td>
                 <td width="auto" class="text-center">
-                    <input required autocomplete="off" type="number" min="0"
+                    <input required autocomplete="off" type="text" min="0"
                         name="ssp_ketIV[]" id="ssp_ketIV[]"
                         class="form-control" />
                 </td>
@@ -555,36 +555,36 @@ document.addEventListener('DOMContentLoaded', function() {
             <tr>
                 <td class="text-center">
                     <input required autocomplete="off"
-                        type="text" name="pph_KOPVI[]"
+                        type="number" name="pph_KOPVI[]"
                         id="pph_KOPVI[]"
                         class="form-control" />
                 </td>
                 <td class="text-center">
-                    <input required autocomplete="off"
+                    <input min="0" required autocomplete="off"
                         type="number" name="pph_JPBVI[]"
                         id="pph_JPBVI[]"
                         class="form-control" />
                 </td>
                 <td class="text-center">
-                    <input required autocomplete="off"
+                    <input min="0" required autocomplete="off"
                         type="number" name="pph_DPPVI[]"
                         id="pph_DPPVI[]"
                         class="form-control" />
                 </td>
                 <td class="text-center">
-                    <input required autocomplete="off"
+                    <input min="0" required autocomplete="off"
                         type="number" name="pph_TLTVI[]"
                         id="pph_TLTVI[]"
                         class="form-control" />
                 </td>
                 <td class="text-center">
-                    <input required autocomplete="off"
+                    <input min="0" required autocomplete="off"
                         type="number" name="pph_tarifVI[]"
                         id="pph_tarifVI[]"
                         class="form-control" />
                 </td>
                 <td class="text-center">
-                    <input required autocomplete="off"
+                    <input min="0" required autocomplete="off"
                         type="number" name="pph_potongVI[]"
                         id="pph_potongVI[]"
                         class="form-control" />
@@ -628,24 +628,24 @@ document.addEventListener('DOMContentLoaded', function() {
             <tr>
                 <td class="text-center">
                     <input required autocomplete="off"
-                        type="text" name="pph_kop_formulir_Vii[]"
+                        type="number" name="pph_kop_formulir_Vii[]"
                         id="pph_kop_formulir_Vii[]"
                         class="form-control" />
                 </td>
                 <td class="text-center">
-                    <input required autocomplete="off"
+                    <input min="0" required autocomplete="off"
                         type="number" name="pph_jpb_formulir_Vii[]"
                         id="pph_jpb_formulir_Vii[]"
                         class="form-control" />
                 </td>
                 <td class="text-center">
-                    <input required autocomplete="off"
+                    <input min="0" required autocomplete="off"
                         type="number" name="pph_tp_formulir_Vii[]"
                         id="pph_tp_formulir_Vii[]"
                         class="form-control" />
                 </td>
                 <td class="text-center">
-                    <input required autocomplete="off"
+                    <input min="0" required autocomplete="off"
                         type="number" name="pph_pph_formulir_Vii[]"
                         id="pph_pph_formulir_Vii[]"
                         class="form-control" />
