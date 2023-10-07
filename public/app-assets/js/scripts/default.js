@@ -693,7 +693,53 @@ document.addEventListener('DOMContentLoaded', function() {
                 error_npwppenerima_formulirA1_1721.textContent = '';
             }
         });
+        const npwpIdPem_formulirA1_1721 = document.getElementById('npwpIdPem_formulirA1_1721');
+        const error_npwpIdPem_formulirA1_1721 = document.getElementById('error_npwpIdPem_formulirA1_1721');
+        npwpIdPem_formulirA1_1721.addEventListener('input', function() {
+            const inputValue = npwpIdPem_formulirA1_1721.value;
+            if (inputValue.length > 15) {
+                npwpIdPem_formulirA1_1721.value = inputValue.slice(0, 15);
+                error_npwpIdPem_formulirA1_1721.textContent = 'Maksimal 15 digit';
+            } else {
+                error_npwpIdPem_formulirA1_1721.textContent = '';
+            }
+        });
     // FORMULIR A1
+    // FORMULIR A2
+    const npwpBendahara_formulirA2_1721 = document.getElementById('npwpBendahara_formulirA2_1721');
+    const error_npwpBendahara_formulirA2_1721 = document.getElementById('error_npwpBendahara_formulirA2_1721');
+    npwpBendahara_formulirA2_1721.addEventListener('input', function() {
+        const inputValue = npwpBendahara_formulirA2_1721.value;
+        if (inputValue.length > 15) {
+            npwpBendahara_formulirA2_1721.value = inputValue.slice(0, 15);
+            error_npwpBendahara_formulirA2_1721.textContent = 'Maksimal 15 digit';
+        } else {
+            error_npwpBendahara_formulirA2_1721.textContent = '';
+        }
+    });
+    const npwpPenerima_formulirA2_1721 = document.getElementById('npwpPenerima_formulirA2_1721');
+    const error_npwpPenerima_formulirA2_1721 = document.getElementById('error_npwpPenerima_formulirA2_1721');
+    npwpPenerima_formulirA2_1721.addEventListener('input', function() {
+        const inputValue = npwpPenerima_formulirA2_1721.value;
+        if (inputValue.length > 15) {
+            npwpPenerima_formulirA2_1721.value = inputValue.slice(0, 15);
+            error_npwpPenerima_formulirA2_1721.textContent = 'Maksimal 15 digit';
+        } else {
+            error_npwpPenerima_formulirA2_1721.textContent = '';
+        }
+    });
+    const npwpttdben_formulirA2_1721 = document.getElementById('npwpttdben_formulirA2_1721');
+    const error_npwpttdben_formulirA2_1721 = document.getElementById('error_npwpttdben_formulirA2_1721');
+    npwpttdben_formulirA2_1721.addEventListener('input', function() {
+        const inputValue = npwpttdben_formulirA2_1721.value;
+        if (inputValue.length > 15) {
+            npwpttdben_formulirA2_1721.value = inputValue.slice(0, 15);
+            error_npwpttdben_formulirA2_1721.textContent = 'Maksimal 15 digit';
+        } else {
+            error_npwpttdben_formulirA2_1721.textContent = '';
+        }
+    });
+    // FORMULIR A2
         const bruto_1721_I = document.getElementById('jumlahbruto_1721_formulirI');
         const tht_1721_I = document.getElementById('tht_1721_formulirI');
         const pokokpajak_b = document.getElementById('pokokpajak_1721');
@@ -727,9 +773,36 @@ document.addEventListener('DOMContentLoaded', function() {
         const inputnatura_formulirA1_1721 = document.getElementById('natura_formulirA1_1721');
         const inputtantiem_formulirA1_1721 = document.getElementById('tantiem_formulirA1_1721');
         
+        const inputbiayajabatan_formulirA1_1721 = document.getElementById('biayajabatan_formulirA1_1721');
+        const inputiuranPensiun_formulirA1_1721 = document.getElementById('iuranPensiun_formulirA1_1721');
+        const inputjumlahPenghasilanNetoSetaun_formulirA1_1721 = document.getElementById('jumlahPenghasilanNetoSetaun_formulirA1_1721');
+        const inputiuranptkp_formulirA1_1721 = document.getElementById('ptkp_formulirA1_1721');
+        const inputgajiPokok_formulirA2_1721 = document.getElementById('gajiPokok_formulirA2_1721');
+        const inputtunjanganIsteri_formulirA2_1721 = document.getElementById('tunjanganIsteri_formulirA2_1721');
+        const inputtunjanganAnak_formulirA2_1721 = document.getElementById('tunjanganAnak_formulirA2_1721');
+        
+        const inputtunjanganPerbaikan_formulirA2_1721 = document.getElementById('tunjanganPerbaikan_formulirA2_1721');
+        const inputtunjanganStruktural_formulirA2_1721 = document.getElementById('tunjanganStruktural_formulirA2_1721');
+        const inputtunjanganBeras_formulirA2_1721 = document.getElementById('tunjanganBeras_formulirA2_1721');
+        const inputtunjanganKhusus_formulirA2_1721 = document.getElementById('tunjanganKhusus_formulirA2_1721');
+        const inputtunjanganLain_formulirA2_1721 = document.getElementById('tunjanganLain_formulirA2_1721');
+        const inputpenghasilanTetap_formulirA2_1721 = document.getElementById('penghasilanTetap_formulirA2_1721');
+        const inputbiayaJabatan_formulirA2_1721 = document.getElementById('biayaJabatan_formulirA2_1721');
+        const inputiuranPensi_formulirA2_1721 = document.getElementById('iuranPensi_formulirA2_1721');
+        const inputjumlahPenghasilanPenghitungan_formulirA2_1721 = document.getElementById('jumlahPenghasilanPenghitungan_formulirA2_1721');
+        const inputptkp_formulirA2_1721 = document.getElementById('ptkp_formulirA2_1721');
+        
         const resultjumlahbruto_formulirA1_1721 = document.getElementById('jumlahbruto_formulirA1_1721');
+        const resultjumlahpengurangan_formulirA1_1721 = document.getElementById('jumlahpengurangan_formulirA1_1721');
+        const resultjumlahPenghasilanNeto_formulirA1_1721 = document.getElementById('jumlahPenghasilanNeto_formulirA1_1721');
+        const resultpkp_formulirA1_1721 = document.getElementById('pkp_formulirA1_1721');
+        const resultkeluarga_formulirA2_1721 = document.getElementById('keluarga_formulirA2_1721');
+        const resultpenghasilanBruto_formulirA2_1721 = document.getElementById('penghasilanBruto_formulirA2_1721');
+        const resultjumlahPengurangan_formulirA2_1721 = document.getElementById('jumlahPengurangan_formulirA2_1721');
+        const resultjumlahPenghasilan_formulirA2_1721 = document.getElementById('jumlahPenghasilan_formulirA2_1721');
+        const resultpkp_formulirA2_1721 = document.getElementById('pkp_formulirA2_1721');
 
-        [inputtantiem_formulirA1_1721,inputnatura_formulirA1_1721,inputpremiAsuransi_formulirA1_1721,inputhonorarium_formulirA1_1721,inputtunjanganlain_formulirA1_1721,inputtunjanganPph_formulirA1_1721,inputgaji_formulirA1_1721,inputbiayaLain_formulirV_1721,inputbiayaPemasaran_formulirV_1721,inputbiayaRoyalti_formulirV_1721,inputbiayaPiutangTakTertagih_formulirV_1721,inputbiayaSehubunganDenganJasa_formulirV_1721,inputbiayaBungaPinjam_formulirV_1721,inputbiayaSewa_formulirV_1721,inputbiayaPenyusutan_formulirV_1721,inputgaji_formulirV_1721,inputbiayatransportasi_formulirV_1721,bruto_1721_I,tht_1721_I,resultjumlah_1721_I,pokokpajak_b,setorlebih,totalpajakb
+        [inputptkp_formulirA2_1721,inputjumlahPenghasilanPenghitungan_formulirA2_1721,inputiuranPensi_formulirA2_1721,inputbiayaJabatan_formulirA2_1721,inputpenghasilanTetap_formulirA2_1721,inputtunjanganLain_formulirA2_1721,inputtunjanganKhusus_formulirA2_1721,inputtunjanganBeras_formulirA2_1721,inputtunjanganStruktural_formulirA2_1721,inputtunjanganPerbaikan_formulirA2_1721,inputtunjanganAnak_formulirA2_1721,inputtunjanganIsteri_formulirA2_1721,inputgajiPokok_formulirA2_1721,inputiuranptkp_formulirA1_1721,inputjumlahPenghasilanNetoSetaun_formulirA1_1721,inputiuranPensiun_formulirA1_1721,inputbiayajabatan_formulirA1_1721,inputtantiem_formulirA1_1721,inputnatura_formulirA1_1721,inputpremiAsuransi_formulirA1_1721,inputhonorarium_formulirA1_1721,inputtunjanganlain_formulirA1_1721,inputtunjanganPph_formulirA1_1721,inputgaji_formulirA1_1721,inputbiayaLain_formulirV_1721,inputbiayaPemasaran_formulirV_1721,inputbiayaRoyalti_formulirV_1721,inputbiayaPiutangTakTertagih_formulirV_1721,inputbiayaSehubunganDenganJasa_formulirV_1721,inputbiayaBungaPinjam_formulirV_1721,inputbiayaSewa_formulirV_1721,inputbiayaPenyusutan_formulirV_1721,inputgaji_formulirV_1721,inputbiayatransportasi_formulirV_1721,bruto_1721_I,tht_1721_I,resultjumlah_1721_I,pokokpajak_b,setorlebih,totalpajakb
         ,sptbetulan_b]
             .forEach(input => {
                 input.addEventListener('input', updateformuliri);
@@ -777,7 +850,61 @@ document.addEventListener('DOMContentLoaded', function() {
             const formulirA1premiasuransi= parseFloat(inputpremiAsuransi_formulirA1_1721.value) || 0;
             const formulirA1natura= parseFloat(inputnatura_formulirA1_1721.value) || 0;
             const formulirA1tantiem= parseFloat(inputtantiem_formulirA1_1721.value) || 0;
-            resultjumlahbruto_formulirA1_1721.value=formulirA1Gaji+formulirA1tunjanganpph+formulirA1tunlain+formulirA1honorarium+formulirA1premiasuransi+formulirA1natura+formulirA1tantiem;
+            const brutoA1= formulirA1Gaji+formulirA1tunjanganpph+formulirA1tunlain+formulirA1honorarium+formulirA1premiasuransi+formulirA1natura+formulirA1tantiem;
+            resultjumlahbruto_formulirA1_1721.value=brutoA1;
+            
+            const formulirA1biayajabatan= parseFloat(inputbiayajabatan_formulirA1_1721.value) || 0;
+            const formulirA1iuran= parseFloat(inputiuranPensiun_formulirA1_1721.value) || 0;
+            const jumlahformulirA1iuran= formulirA1biayajabatan+formulirA1iuran;
+            resultjumlahpengurangan_formulirA1_1721.value=jumlahformulirA1iuran;
+            
+            const jumlahPenghasilanNettoA1= brutoA1-jumlahformulirA1iuran;
+            if(jumlahPenghasilanNettoA1<0){
+                resultjumlahPenghasilanNeto_formulirA1_1721.value=0;
+            }else{
+                resultjumlahPenghasilanNeto_formulirA1_1721.value=jumlahPenghasilanNettoA1;
+            }
+            const formulirA1penghasilannetto= parseFloat(inputjumlahPenghasilanNetoSetaun_formulirA1_1721.value) || 0;
+            const formulirA1ptkp= parseFloat(inputiuranptkp_formulirA1_1721.value) || 0;
+            const jumlahpkpA1= formulirA1penghasilannetto-formulirA1ptkp;
+            if(jumlahpkpA1<0){
+                resultpkp_formulirA1_1721.value=0;
+            }else{
+                resultpkp_formulirA1_1721.value=jumlahpkpA1;
+            }
+            const formulirA2gapok= parseFloat(inputgajiPokok_formulirA2_1721.value) || 0;
+            const formulirA2tunjangan= parseFloat(inputtunjanganIsteri_formulirA2_1721.value) || 0;
+            const formulirA2tunjangananak= parseFloat(inputtunjanganAnak_formulirA2_1721.value) || 0;
+            const jumlahgaji = formulirA2gapok+formulirA2tunjangan+formulirA2tunjangananak;
+            resultkeluarga_formulirA2_1721.value=jumlahgaji;
+
+            const formulirA2tunper= parseFloat(inputtunjanganPerbaikan_formulirA2_1721.value) || 0;
+            const formulirA2tunstruk= parseFloat(inputtunjanganStruktural_formulirA2_1721.value) || 0;
+            const formulirA2tunberas= parseFloat(inputtunjanganBeras_formulirA2_1721.value) || 0;
+            const formulirA2tunkhus= parseFloat(inputtunjanganKhusus_formulirA2_1721.value) || 0;
+            const formulirA2tunlain= parseFloat(inputtunjanganLain_formulirA2_1721.value) || 0;
+            const formulirA2pengtep= parseFloat(inputpenghasilanTetap_formulirA2_1721.value) || 0;
+            const jumbruto = jumlahgaji+formulirA2tunper+formulirA2tunstruk+formulirA2tunberas+formulirA2tunkhus+formulirA2tunlain+formulirA2pengtep;
+            resultpenghasilanBruto_formulirA2_1721.value=jumbruto;
+            
+            const formulirA2biayajab= parseFloat(inputbiayaJabatan_formulirA2_1721.value) || 0;
+            const formulirA2iuranpens= parseFloat(inputiuranPensi_formulirA2_1721.value) || 0;
+            const jumpeng = formulirA2biayajab+formulirA2iuranpens;
+            resultjumlahPengurangan_formulirA2_1721.value=jumpeng;
+            const jumpengnetto = jumbruto-jumpeng
+            if(jumpengnetto<0){
+                resultjumlahPenghasilan_formulirA2_1721.value=0;
+            }else{
+                resultjumlahPenghasilan_formulirA2_1721.value=jumpengnetto;
+            }
+            const formulirA2jumpeng= parseFloat(inputjumlahPenghasilanPenghitungan_formulirA2_1721.value) || 0;
+            const formulirA2ptkp= parseFloat(inputptkp_formulirA2_1721.value) || 0;
+            const pkp =formulirA2jumpeng-formulirA2ptkp;
+            if(pkp<0){
+                resultpkp_formulirA2_1721.value=0;
+            }else{
+                resultpkp_formulirA2_1721.value=pkp;
+            }
         }
     // sptmasapajak
     // 1771 I

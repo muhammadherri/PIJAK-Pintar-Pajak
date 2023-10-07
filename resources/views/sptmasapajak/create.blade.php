@@ -78,6 +78,12 @@
                                             <span class="bs-stepper-box">1721-A1<i data-feather="shopping-bag"
                                                     class="font-medium-3"></i></span>
                                         </button>
+                                        <button class="nav-link" id="nav-1721A2-tab" data-bs-toggle="tab"
+                                            data-bs-target="#nav-1721A2" type="button" role="tab"
+                                            aria-controls="nav-1721A2" aria-selected="true">
+                                            <span class="bs-stepper-box">1721-A2<i data-feather="shopping-bag"
+                                                    class="font-medium-3"></i></span>
+                                        </button>
                                     </div>
                                 </nav>
                             </div>
@@ -311,8 +317,8 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Kompensasi</label>
                                                     <div class="col-sm-9">
-                                                        <input autocomplete="off" id="sptpembetulan_1721"
-                                                            name="sptpembetulan_1721" type="date"
+                                                        <input autocomplete="off" id="kompensasi_1721"
+                                                            name="kompensasi_1721" type="date"
                                                             class="form-control">
                                                     </div>
                                                 </div>
@@ -727,7 +733,7 @@
                                                     <div class="col-sm-9">
                                                         <input placeholder="Masukkan NPWP Pemotong" autocomplete="off"
                                                             id="npwppemotong_formulirII_1721" name="npwppemotong_formulirII_1721"
-                                                            type="text" class="form-control">
+                                                            type="number" class="form-control">
                                                         <span id="error_npwppemotong_1721_formulirII" style="color: red;"></span>
                                                     </div>
                                                 </div>
@@ -1496,7 +1502,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Nomor</label>
                                                     <div class="col-sm-9">
-                                                        <input required placeholder="Masukkan Nomor" autocomplete="off" id="nomor_formulirA1_1721" name="nomor_formulirVII_1721"
+                                                        <input required placeholder="Masukkan Nomor" autocomplete="off" id="nomor_formulirA1_1721" name="nomor_formulirA1_1721"
                                                             type="number" class="form-control">
                                                     </div>
                                                 </div>
@@ -1506,7 +1512,7 @@
                                                     <div class="col-sm-9">
                                                         <input required placeholder="Masukkan Masa Perolehan" 
                                                             autocomplete="off" id="masaperolehan_formulirA1_1721" name="masaperolehan_formulirA1_1721"
-                                                            type="number" class="form-control">
+                                                            type="date" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="mb-3 row">
@@ -1701,14 +1707,502 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">11. Jumlah Pengurangan</label>
                                                     <div class="col-sm-9">
-                                                        <input readonly placeholder="Masukkan Iuran Pensiun, Iuran JHT/THT"
-                                                            autocomplete="off" id="iuranPensiun_formulirA1_1721" name="iuranPensiun_formulirA1_1721"
+                                                        <input readonly autocomplete="off" id="jumlahpengurangan_formulirA1_1721" name="jumlahpengurangan_formulirA1_1721"
                                                             type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <h4>Penghitungan PPh Pasal 21:</h4>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">12. Jumlah Penghasilan Neto</label>
+                                                    <div class="col-sm-9">
+                                                        <input readonly autocomplete="off" id="jumlahPenghasilanNeto_formulirA1_1721" name="jumlahPenghasilanNeto_formulirA1_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">13. Penghasilan Neto Masa Sebelumnya</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Penghasilan Neto Masa" autocomplete="off" id="penghasilanNetoMasa_formulirA1_1721" name="penghasilanNetoMasa_formulirA1_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">14. Jumlah Penghasilan Neto</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Jumlah Penghasilan Neto" autocomplete="off" id="jumlahPenghasilanNetoSetaun_formulirA1_1721" name="jumlahPenghasilanNetoSetaun_formulirA1_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">15. PTKP</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan PTKP" autocomplete="off" id="ptkp_formulirA1_1721" name="ptkp_formulirA1_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">16. PKP</label>
+                                                    <div class="col-sm-9">
+                                                        <input readonly autocomplete="off" id="pkp_formulirA1_1721" name="pkp_formulirA1_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">17. Atas PKP</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan PKP" autocomplete="off" id="ataspkp_formulirA1_1721" name="ataspkp_formulirA1_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">18. Masa Yang Dipotong</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Masa Yang Dipotong" autocomplete="off" id="masayngDipotong_formulirA1_1721" name="masayngDipotong_formulirA1_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">19. Terutang</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Terutang" autocomplete="off" id="terutang_formulirA1_1721" name="terutang_formulirA1_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">20. Terlunasi</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Terlunasi" autocomplete="off" id="terlunasi_formulirA1_1721" name="terlunasi_formulirA1_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <h4>C. Identitas Pemotong</h4>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">1. NPWP</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan NPWP Pemotong" autocomplete="off" id="npwpIdPem_formulirA1_1721" name="npwpIdPem_formulirA1_1721"
+                                                            type="number" class="form-control" min="0">
+                                                        <span id="error_npwpIdPem_formulirA1_1721" style="color: red;"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">2. Nama</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Nama Pemotong" autocomplete="off" id="namaIdPem_formulirA1_1721" name="namaIdPem_formulirA1_1721"
+                                                            type="text" class="form-control" min="0">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">3. Tgl-TTD</label>
+                                                    <div class="col-sm-9">
+                                                        <input required autocomplete="off" id="tglIdPem_formulirA1_1721" name="tglIdPem_formulirA1_1721"
+                                                            type="date" class="form-control" min="0">
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         {{-- Formulir-A1 --}}
+                                        {{-- Formulir-A2 --}}
+                                        <div class="tab-pane fade" id="nav-1721A2" role="tabpanel"
+                                            aria-labelledby="nav-1721A2-tab">
+                                            <div class="row">
+                                                <h4>Formulir A2</h4>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Nomor</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Nomor" autocomplete="off" id="nomor_formulirA2_1721" name="nomor_formulirA2_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Masa Perolehan</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Masa Perolehan" 
+                                                            autocomplete="off" id="masaperolehan_formulirA2_1721" name="masaperolehan_formulirA2_1721"
+                                                            type="date" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Nama Instansi</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Nama Instansi" 
+                                                            autocomplete="off" id="namaInstansi_formulirA2_1721" name="namaInstansi_formulirA2_1721"
+                                                            type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Nama Bendahara</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Nama Bendahara" 
+                                                            autocomplete="off" id="namaBendahara_formulirA2_1721" name="namaBendahara_formulirA2_1721"
+                                                            type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">NPWP Bendahara</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan NPWP Bendahara" 
+                                                            autocomplete="off" id="npwpBendahara_formulirA2_1721" name="npwpBendahara_formulirA2_1721"
+                                                            type="number" class="form-control">
+                                                        <span id="error_npwpBendahara_formulirA2_1721" style="color: red;"></span>
+                                                    </div>
+                                                </div>
+                                                <hr>     
+                                                <h4>A. Identitas Penerima</h4>                                       
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">1. NPWP Penerima</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan NPWP Penerima" 
+                                                            autocomplete="off" id="npwpPenerima_formulirA2_1721" name="npwpPenerima_formulirA2_1721"
+                                                            type="number" class="form-control" min="0">
+                                                        <span id="error_npwpPenerima_formulirA2_1721" style="color: red;"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">2. NIP/NRP</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan NIP/NRP" min="0"
+                                                            autocomplete="off" id="nip_formulirA2_1721" name="nip_formulirA2_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">3. Nama Penerima</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Nama Penerima" 
+                                                            autocomplete="off" id="namaPenerima_formulirA2_1721" name="namaPenerima_formulirA2_1721"
+                                                            type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">4. Pangkat / Golongan</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Pangkat / Golongan" 
+                                                            autocomplete="off" id="pangkat_formulirA2_1721" name="pangkat_formulirA2_1721"
+                                                            type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">5. Alamat</label>
+                                                    <div class="col-sm-9">
+                                                        <textarea required placeholder="Masukkan Alamat" 
+                                                            autocomplete="off" id="alamat_formulirA2_1721" name="alamat_formulirA2_1721"
+                                                            type="text" class="form-control"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">6. Jenis Kelamin</label>
+                                                    <div class="col-sm-9">
+                                                        <select id="jeniskelamin_formulirA2_1721" name="jeniskelamin_formulirA2_1721"
+                                                            class="dropdown-groups">
+                                                            <option value="0">Laki-laki</option>
+                                                            <option value="1">Perempuan</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">7. NIK</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan NIK Penerima" 
+                                                            autocomplete="off" id="nik_formulirA2_1721" name="nik_formulirA2_1721"
+                                                            type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">8. Status</label>
+                                                    <div class="col-sm-5">
+                                                        <select id="statusIdentitasPernikahan_formulirA2_1721" name="statusIdentitasPernikahan_formulirA2_1721"
+                                                            class="dropdown-groups">
+                                                            <option value="0">Kawin</option>
+                                                            <option value="1">Tidak Kawin</option>
+                                                            <option value="2">Kawin Penghasilan Istri Digabung</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <input required placeholder="Masukkan Jumlah" min="0" 
+                                                            autocomplete="off" id="statusJumlah_formulirA2_1721" name="statusJumlah_formulirA2_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">9. Nama Jabatan</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Nama Jabatan" 
+                                                            autocomplete="off" id="namaJabatan_formulirA2_1721" name="namaJabatan_formulirA2_1721"
+                                                            type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <h4>B. Rincian Penghasilan Dan Penghitungan PPh Pasal 21</h4>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Kode Objek</label>
+                                                    <div class="col-sm-9">
+                                                        <select id="kode_objek_formulirA2_1721" name="kode_objek_formulirA2_1721"
+                                                            class="dropdown-groups">
+                                                            <option value="0">21-100-01</option>
+                                                            <option value="1">21-100-02</option>
+                                                        </select>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">1. Gaji Pokok</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Gaji Pokok" min="0" 
+                                                            autocomplete="off" id="gajiPokok_formulirA2_1721" name="gajiPokok_formulirA2_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">2. Tunjangan Isteri</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Tunjangan Isteri" min="0" 
+                                                            autocomplete="off" id="tunjanganIsteri_formulirA2_1721" name="tunjanganIsteri_formulirA2_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">3. Tunjangan Anak</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Tunjangan Isteri" min="0" 
+                                                            autocomplete="off" id="tunjanganAnak_formulirA2_1721" name="tunjanganAnak_formulirA2_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">4. Tunjangan Keluarga</label>
+                                                    <div class="col-sm-9">
+                                                        <input readonly placeholder="Masukkan Tunjangan Keluarga" min="0" 
+                                                            autocomplete="off" id="keluarga_formulirA2_1721" name="keluarga_formulirA2_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">5. Tunjangan Perbaikan Penghasilan</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Tunjangan Perbaikan" min="0" 
+                                                            autocomplete="off" id="tunjanganPerbaikan_formulirA2_1721" name="tunjanganPerbaikan_formulirA2_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">6. Tunjangan Struktural</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Tunjangan Struktural" min="0" 
+                                                            autocomplete="off" id="tunjanganStruktural_formulirA2_1721" name="tunjanganStruktural_formulirA2_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">7. Tunjangan Beras</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Tunjangan Beras" min="0" 
+                                                            autocomplete="off" id="tunjanganBeras_formulirA2_1721" name="tunjanganBeras_formulirA2_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">8. Tunjangan Khusus</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Tunjangan Khusus" min="0" 
+                                                            autocomplete="off" id="tunjanganKhusus_formulirA2_1721" name="tunjanganKhusus_formulirA2_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">9. Tunjangan Lain-lain</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Tunjangan Lain-lain" min="0" 
+                                                            autocomplete="off" id="tunjanganLain_formulirA2_1721" name="tunjanganLain_formulirA2_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">10. Penghasilan Tetap</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Tunjangan Lain-lain" min="0" 
+                                                            autocomplete="off" id="penghasilanTetap_formulirA2_1721" name="penghasilanTetap_formulirA2_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">11. Jumlah Penghasilan Bruto</label>
+                                                    <div class="col-sm-9">
+                                                        <input readonly placeholder="Masukkan Jumlah Penghasilan Bruto" min="0" 
+                                                            autocomplete="off" id="penghasilanBruto_formulirA2_1721" name="penghasilanBruto_formulirA2_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <h4>Pengurangan</h4>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">12. Biaya Jabatan</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Biaya Jabatan/Biaya Pensiun" min="0" 
+                                                            autocomplete="off" id="biayaJabatan_formulirA2_1721" name="biayaJabatan_formulirA2_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">13. Iuran Pensiun</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Iuran Pensiun/Iuran THT" min="0" 
+                                                            autocomplete="off" id="iuranPensi_formulirA2_1721" name="iuranPensi_formulirA2_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">14. Jumlah Pengurangan</label>
+                                                    <div class="col-sm-9">
+                                                        <input readonly min="0" 
+                                                            autocomplete="off" id="jumlahPengurangan_formulirA2_1721" name="jumlahPengurangan_formulirA2_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <h4>Penghitungan PPh Pasal 21</h4>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">15. Jumlah Penghasilan Neto</label>
+                                                    <div class="col-sm-9">
+                                                        <input readonly min="0" 
+                                                            autocomplete="off" id="jumlahPenghasilan_formulirA2_1721" name="jumlahPenghasilan_formulirA2_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">16. Jumlah Penghasilan Neto Masa</label>
+                                                    <div class="col-sm-9">
+                                                        <input required min="0" placeholder="Masukkan Jumlah Penghasilan Neto Masa"
+                                                            autocomplete="off" id="jumlahPenghasilanMasa_formulirA2_1721" name="jumlahPenghasilanMasa_formulirA2_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">17. Jumlah Penghasilan Penghitungan</label>
+                                                    <div class="col-sm-9">
+                                                        <input required min="0" placeholder="Masukkan Jumlah Penghasilan Penghitungan"
+                                                            autocomplete="off" id="jumlahPenghasilanPenghitungan_formulirA2_1721" name="jumlahPenghasilanPenghitungan_formulirA2_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">18. PTKP</label>
+                                                    <div class="col-sm-9">
+                                                        <input required min="0" placeholder="Masukkan Jumlah PTKP"
+                                                            autocomplete="off" id="ptkp_formulirA2_1721" name="ptkp_formulirA2_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">19. PKP</label>
+                                                    <div class="col-sm-9">
+                                                        <input readonly min="0" 
+                                                            autocomplete="off" id="pkp_formulirA2_1721" name="pkp_formulirA2_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">20. PKP Setahun</label>
+                                                    <div class="col-sm-9">
+                                                        <input required min="0" placeholder="Masukkan PKP Setahun"
+                                                            autocomplete="off" id="pkpSetahun_formulirA2_1721" name="pkpSetahun_formulirA2_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">21. Potongan Masa Sebelumnya</label>
+                                                    <div class="col-sm-9">
+                                                        <input required min="0" placeholder="Masukkan Potongan Masa Sebelumnya"
+                                                            autocomplete="off" id="potonganMasaSebelumnya_formulirA2_1721" name="potonganMasaSebelumnya_formulirA2_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">22. Terutang</label>
+                                                    <div class="col-sm-9">
+                                                        <input required min="0" placeholder="Masukkan Terutang"
+                                                            autocomplete="off" id="terutang_formulirA2_1721" name="terutang_formulirA2_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">23. Dilunasi</label>
+                                                    <div class="col-sm-3">
+                                                        <input required min="0" placeholder="Masukkan Gaji"
+                                                            autocomplete="off" id="gaji_formulirA2_1721" name="gaji_formulirA2_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <input required min="0" placeholder="Masukkan Penghasilan"
+                                                            autocomplete="off" id="pengtetap_formulirA2_1721" name="pengtetap_formulirA2_1721"
+                                                            type="number" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <h4>C. Pegawai Tersebut</h4>
+                                                <div class="col-sm-9">
+                                                    <label class="col-sm-3 col-form-label">Status Pegawai</label>
+                                                    <div class="col-sm-9">
+                                                        <select id="statusPernikahan_formulirA2_1721" name="statusPernikahan_formulirA2_1721"
+                                                            class="dropdown-groups">
+                                                            <option value="0">Dipindahkan</option>
+                                                            <option value="1">Pindahan</option>
+                                                            <option value="2">Baru</option>
+                                                            <option value="3">Pensiun</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <h4>D. Tanda Tangan Bendahara</h4>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">1. NPWP</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan NPWP Penandatangan" 
+                                                            autocomplete="off" id="npwpttdben_formulirA2_1721" name="npwpttdben_formulirA2_1721"
+                                                            type="number" class="form-control" min="0">
+                                                        <span id="error_npwpttdben_formulirA2_1721" style="color: red;"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">2. Nama</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan Nama Penandatangan" 
+                                                            autocomplete="off" id="namapttdben_formulirA2_1721" name="namattdben_formulirA2_1721"
+                                                            type="text" class="form-control" min="0">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">3. NIP/NRP</label>
+                                                    <div class="col-sm-9">
+                                                        <input required placeholder="Masukkan NIP/NRP" 
+                                                            autocomplete="off" id="nipnrppttdben_formulirA2_1721" name="nipnrppttdben_formulirA2_1721"
+                                                            type="number" class="form-control" min="0">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">4. Tanggal</label>
+                                                    <div class="col-sm-9">
+                                                        <input required
+                                                            autocomplete="off" id="tglrppttdben_formulirA2_1721" name="tglrppttdben_formulirA2_1721"
+                                                            type="date" class="form-control" min="0">
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="d-flex justify-content-between">
+                                                    <div></div>
+                                                    <button class="btn btn-primary btn-submit" id="add_all"
+                                                        type="submit"><i data-feather='save'></i>
+                                                        {{ 'Simpan' }}</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        {{-- Formulir-A2 --}}
                                     </div>
                                 </form>
                             </div>

@@ -228,6 +228,8 @@
                             </li>
                         </ul>
                     </li>
+                    @if (Auth::user()->status == 1)
+
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                             <i class="flaticon-043-menu"></i>
                             <span class="nav-text">Lainnya</span>
@@ -245,6 +247,8 @@
                         </ul>
 
                     </li>
+                    @else
+                    @endif
                     @if (Auth::user()->status == 1)
                         <li>
                             <a class="has-arrow ai-icon" href="{{ route('adminregister') }}" aria-expanded="false">

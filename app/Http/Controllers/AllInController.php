@@ -51,7 +51,7 @@ class AllInController extends Controller
         $data_arr = array();
         foreach ($data as $record) {
             $data_arr[] = array(
-                "besaran_ptkp" => $record->besaran_ptkp,q
+                "besaran_ptkp" => $record->besaran_ptkp,
             );
         }
         // dd($data_arr);
