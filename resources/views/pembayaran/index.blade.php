@@ -6,11 +6,9 @@
         </div>
     </div>
 @endsection
-@if(Session::has('success'))
-<div class="alert alert-success">
-    {{Session::get('success')}}
-</div>
-@endif
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+<script src="//code.jquery.com/jquery-3.5.1.js"></script>
+<script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 @section('content')
     <div class="content-body">
         <div class="container-fluid">
@@ -35,37 +33,23 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table id="example3" class="display" style="min-width: 845px">
+                                <table id="listBilling" class="display" style="min-width: 845px">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
+                                            <th></th>
                                             <th>ID Billing</th>
-                                            <th>NPWP</th>
+                                            <th>Nomor NPWP Terdaftar</th>
                                             <th>Jenis Pajak</th>
                                             <th>Jenis Setoran</th>
                                             <th>Masa Pajak</th>
-                                            <th>Masa Aktif</th>
-                                            <th>Dibuat Oleh</th>
+                                            <th>Tanggal Masa Aktif</th>
                                             <th>Jumlah</th>
+                                            <th>Dibuat Oleh</th>
+                                            <th>Status</th>
+                                            <th>Tanggal Pembuatan</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        @foreach ($billing as $key => $row)
-                                            <tr>
-                                                <td>
-                                                    {{ $no++ }}
-                                                </td>
-                                                <td>{{ $row->kode_billing }}</td>
-                                                <td>{{ $row->npwp }}</td>
-                                                <td>{{ $row->jenis_pajak }}</td>
-                                                <td>{{ $row->kode_jenis_setoran }}</td>
-                                                <td>{{ $row->masa_pajak }}</td>
-                                                <td>{{ date('d-M',strtotime($row->end_periode_pajak)) }}</td>
-                                                <td>{{ $row->users->name }}</td>
-                                                <td>{{ $row->jumlah }}</td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
+                                    
                                 </table>
                             </div>
                         </div>
@@ -100,5 +84,108 @@
     </div>
     {{-- modal --}}
 @endsection
-{{-- <script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
-<script src="{{ asset('app-assets/js/custom.min.js') }}"></script> --}}
+<script>
+    $(document).ready(function() {
+        $('#listBilling').DataTable({
+            language: {
+                paginate: {
+                    next: '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
+                    previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>'
+                }
+            },
+            "lengthMenu": [
+                [10, 25, 50, -1],
+                [10, 25, 50, "All"]
+            ],
+            pageLength:10,
+            "order":[[0,'desc']],
+            ajax: "{{ route('data.billing') }}",
+            columnDefs: [
+                {
+                    "targets": 0,
+                    "visible":false,
+                    "searchable":false,
+                    "render": function(data, type, row, meta) {
+                        return row.id;
+                    }
+                },
+                {
+                    "targets": 1,
+                    "render": function(data, type, row, meta) {
+                        return row.trxbilling;
+                    }
+                },
+                {
+                    "targets": 2,
+                    "class": "text-center",
+                    render: function(data, type, row, index) {
+                        return row.npwp;
+
+                    }
+                },
+                {
+                    "targets": 3,
+                    "class": "text-center",
+                    "render": function(data, type, row, meta) {
+                        return row.jenispajak;
+                    }
+                },
+                {
+                    "targets": 4,
+                    "class": "text-center",
+                    "render": function(data, type, row, meta) {
+                        return row.jenis_setoran;
+                    }
+                },
+                {
+                    "targets": 5,
+                    "class": "text-center",
+                    "render": function(data, type, row, meta) {
+                        return row.masapajak;
+                    }
+                },
+                {
+                    "targets": 6,
+                    "class": "text-center",
+                    "render": function(data, type, row, meta) {
+                        return row.masaaktif;
+                    }
+                },
+                {
+                    "targets": 7,
+                    "class": "text-center",
+                    "render": function(data, type, row, meta) {
+                        return row.jumlah;
+                    }
+                },
+                {
+                    "targets": 8,
+                    "class": "text-center",
+                    "render": function(data, type, row, meta) {
+                        return row.created_by;
+                    }
+                },
+                {
+                    "targets": 9,
+                    "class": "text-center",
+                    render: function(data, type, row, index) {
+                        if (row.status == null) {
+                            var info = `<a class="badge badge-rounded badge-outline-warning">
+                                Menunggu Pembayaran</a>`;
+                        } else {
+                            var info = `<a class="badge badge-rounded badge-outline-primary">Sudah Dibayar</a>`;
+                        }
+                        return info;
+                    }
+                },
+                {
+                    "targets": 10,
+                    "class": "text-center",
+                    "render": function(data, type, row, meta) {
+                        return row.created_at;
+                    }
+                },
+            ]
+        })
+    })
+</script>

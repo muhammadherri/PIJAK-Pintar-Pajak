@@ -33,14 +33,12 @@
                                             <label class="col-sm-3 col-form-label">Jenis PPH</label>
                                             <div class="col-sm-9">
                                                 <select id="jenis_pph" name="jenis_pph"
-                                                    class="default-select form-control wide">
-                                                    <option value="0">PPh 22</option>
-                                                    <option value="1">PPh 23</option>
-                                                    <option value="2">PPh 4 Ayat 2</option>
-                                                    <option value="3">PPh 24</option>
-                                                    <option value="4">PPh 26</option>
-                                                    <option value="5">PPh 28/29</option>
-                                                    <option value="6">PPh 28/29</option>
+                                                    class="dropdown-groups">
+                                                    @foreach ($jenispph as $row)
+                                                        <option value="{{ $row->id }}"{{ $ebupot->jenis_pph == $row->id ? 'selected' : '' }}>
+                                                            {{ $row->jenis_pph }}
+                                                        </option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
@@ -106,7 +104,7 @@
                                             <label class="col-sm-3 col-form-label">Pilih Fasilitas</label>
                                             <div class="col-sm-9">
                                                 <select id="fasilitas"
-                                                    name="fasilitas"class="default-select form-control wide">
+                                                    name="fasilitas"class="dropdown-groups">
                                                     @foreach ($fasilitas as $row)
                                                         <option value="{{ $row->id }}"{{ $ebupot->fasilitas == $row->id ? 'selected' : '' }}>
                                                             {{ $row->no }}-{{ $row->jenis_fasilitas }}</option>
@@ -134,7 +132,7 @@
                                             <label class="col-sm-3 col-form-label">Kode Objek Pajak</label>
                                             <div class="col-sm-9">
                                                 <select id="kode_objek_pajak" name="kode_objek_pajak"
-                                                    class="default-select form-control wide">
+                                                    class="dropdown-groups">
                                                     @foreach ($kodepajak as $row)
                                                         <option value="{{ $row->id }}"{{ $ebupot->kode_objek_pajak == $row->id ? 'selected' : '' }}>{{ $row->kode_objek_pajak }}
                                                         </option>
@@ -169,7 +167,7 @@
                                             <label class="col-sm-3 col-form-label">Penandatanganan</label>
                                             <div class="col-sm-9">
                                                 <select id="penandatanganan" name="penandatanganan"
-                                                    class="default-select form-control wide">
+                                                    class="dropdown-groups">
                                                     @foreach ($penandatanganan as $row)
                                                         <option value="{{ $row->name }}"{{ $ebupot->penandatanganan == $row->id ? 'selected' : '' }}>{{ $row->npwp }}
                                                         </option>

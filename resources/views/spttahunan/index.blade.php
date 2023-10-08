@@ -37,17 +37,18 @@
                                 <table id="data1771" class="display" style="min-width: 845px">
                                     <thead>
                                         <tr>
-                                            <th>Nama</th>
-                                            <th>No NPWP</th>
-                                            <th>Jenis Usaha</th>
-                                            <th>No Telp</th>
+                                            <th>Nama NPWP SPT Badan</th>
+                                            <th>Nomor NPWP SPT Badan</th>
+                                            <th>Nama Jenis Usaha SPT Badan</th>
+                                            <th>Nomor Telepon</th>
                                             <th>Tahun Pajak</th>
-                                            <th>Pembukuan</th>
+                                            <th>Tanggal Pembukuan</th>
                                             <th>Laporan Keuangan</th>
-                                            <th>Negara</th>
+                                            <th>Nama Negara Domisili</th>
                                             <th>Dibuat Oleh</th>
                                             <th>Tanggal Pembuatan</th>
                                             <th>Action</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -77,6 +78,7 @@
                 [10, 25, 50, -1],
                 [10, 25, 50, "All"]
             ],
+            "order":[[11,'desc']],
             ajax: "{{ route('data.1771') }}",
             columnDefs: [
                 {
@@ -165,7 +167,15 @@
                         `;
                         return content;
                     }
-                }
+                },
+                {
+                    "targets": 11,
+                    "visible":false,
+                    "searchable":false,
+                    "render": function(data, type, row, meta) {
+                        return row.id;
+                    }
+                },
             ]
         })
     })

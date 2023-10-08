@@ -6,7 +6,9 @@
         </div>
     </div>
 @endsection
-
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+<script src="//code.jquery.com/jquery-3.5.1.js"></script>
+<script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 @section('content')
     <div class="content-body">
         <div class="container-fluid">
@@ -25,23 +27,20 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <a class="btn btn-primary" href="{{ route('ebupot/create') }}">
-
                                         {{ __('Create') }}
-
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table id="example3" class="display" style="min-width: 845px">
+                                <table id="ebupotList" class="display" style="min-width: 845px">
                                     <thead>
                                         <tr>
-                                            <th></th>
-                                            <th>No Transaksi</th>
+                                            <th>Nomor Transaksi</th>
                                             <th>Jenis PPh</th>
-                                            <th>No Telp</th>
-                                            <th>Fasilitas</th>
+                                            <th>Nomor Telepone</th>
+                                            <th>Nama Jenis Fasilitas</th>
                                             <th>Kode Objek</th>
                                             <th>Nama Pembuat</th>
                                             <th>Tgl Bukti Potong</th>
@@ -52,62 +51,6 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($ebupot as $key => $row)
-                                            <tr>
-                                                <td>
-                                                    {{ $no++ }}
-                                                </td>
-                                                <td>{{ $row->trx }}</td>
-                                                <td>{{ $row->jenis_pph }}</td>
-                                                <td>{{ $row->no_tlp }}</td>
-                                                <td>{{ $row->fasilitas }}</td>
-                                                <td>{{ $row->kode_objek_pajak }}</td>
-                                                <td>{{ $row->users->name }}</td>
-                                                <td>{{ date('d-M-Y',strtotime($row->tanggal_bukti_potong)) }}</td>
-                                                <td>{{ date('d-M-Y',strtotime($row->periode_pajak)) }}</td>
-                                                <td>{{ date('d-M-Y',strtotime($row->created_at)) }}</td>
-                                                <td>
-                                                    @if($row->attribute3=='NULL')
-                                                    <div class="d-flex">
-                                                        <a class="badge badge-rounded badge-outline-danger">
-                                                            Belum Dibayar
-                                                        </a>
-                                                    </div>
-                                                    @elseif($row->attribute3==1)
-                                                    <div class="d-flex">
-                                                        <a class="badge badge-rounded badge-outline-warning">
-                                                            Menunggu Pembayaran
-                                                        </a>
-                                                    </div>
-                                                    @else
-                                                    <a class="badge badge-rounded badge-outline-primary">
-                                                        Sudah Dibayar
-                                                    </a>
-                                                    @endif    
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex">
-                                                        <form action="ebupot/{{ $row->id }}" method="POST">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit"
-                                                                class="btn btn-danger shadow btn-xs sharp"><i
-                                                                    class="fa fa-trash"></i></button>
-                                                        </form>
-                                                        <a
-                                                            class="btn btn-primary shadow btn-xs sharp me-1"href="{{ route('ebupot/edit', $row->id) }}">
-                                                            <i class="fa fa-pencil"></i>
-                                                        </a>
-                                                        <a
-                                                            class="btn btn-success shadow btn-xs sharp me-1"href="{{ route('ebupot/show', $row->id) }}">
-                                                            <i class="fa fa-eye"></i>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                               
-
-                                            </tr>
-                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -118,5 +61,124 @@
         </div>
     </div>
 @endsection
-{{-- <script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
-<script src="{{ asset('app-assets/js/custom.min.js') }}"></script> --}}
+<script>
+    $(document).ready(function() {
+        $('#ebupotList').DataTable({
+            language: {
+                paginate: {
+                    next: '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
+                    previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>'
+                }
+            },
+            "lengthMenu": [
+                [10, 25, 50, -1],
+                [10, 25, 50, "All"]
+            ],
+            // serverSide:true,
+            // processing:true,
+
+            ajax: "{{ route('data.ebupot') }}",
+            "order":[[0,'desc']],
+            columnDefs: [
+                {
+                    "targets": 0,
+                    "render": function(data, type, row, meta) {
+                        return row.trx;
+                    }
+                },
+                {
+                    "targets": 1,
+                    "render": function(data, type, row, meta) {
+                        return row.jenis_pph;
+                    }
+                },
+                {
+                    "targets": 2,
+                    "render": function(data, type, row, meta) {
+                        return row.no_tlp;
+                    }
+                },
+                {
+                    "targets": 3,
+                    "class": "text-center",
+                    "render": function(data, type, row, meta) {
+                        return row.fasilitas;
+                    }
+                },
+                {
+                    "targets": 4,
+                    "class": "text-center",
+                    "render": function(data, type, row, meta) {
+                        return row.kop;
+                    }
+                },
+                {
+                    "targets": 5,
+                    "class": "text-center",
+                    "render": function(data, type, row, meta) {
+                        return row.created_by;
+                    }
+                },
+                {
+                    "targets": 6,
+                    "class": "text-center",
+                    "render": function(data, type, row, meta) {
+                        return row.tgl_buktiPotong;
+                    }
+                },
+                {
+                    "targets": 7,
+                    "class": "text-center",
+                    "render": function(data, type, row, meta) {
+                        return row.tgl_periodePajak;
+                    }
+                },
+                {
+                    "targets": 8,
+                    "class": "text-center",
+                    "render": function(data, type, row, meta) {
+                        return row.tgl_pembuat;
+                    }
+                },
+                {
+                    "targets": 9,
+                    "class": "text-center",
+                    render: function(data, type, row, index) {
+                        if (row.status == 'NULL') {
+                            var info = `<div class="d-flex"><a class="badge badge-rounded badge-outline-danger">
+                                Belum Dibayar</a></div>`
+                            ;
+                        } else if (row.status == 1) {
+                            var info = `<div class="d-flex">
+                                <a class="badge badge-rounded badge-outline-warning">
+		                        Menunggu Pembayaran</a></div>`;
+                        } else {
+                            var info = `<a class="badge badge-rounded badge-outline-primary">Sudah Dibayar</a>`;
+                        }
+                        return info;
+                    }
+                },
+                {
+                    "targets": 10,
+                    "class": "text-center",
+                    render: function(data, type, row, index) {
+                        content = `
+                            <div class="d-flex">
+                                <a class="btn btn-primary shadow btn-xs sharp" href="ebupot/${row.id}/edit">
+                                    <i class="fa fa-pencil"></i>
+                                </a>
+                                <a class="btn btn-danger shadow btn-xs sharp" href="ebupot/${row.id}/destroy">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                                <a class="btn btn-success shadow btn-xs sharp" href="ebupot/${row.id}/show">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                            </div>
+                        `;
+                        return content;
+                    }
+                }
+            ]
+        })
+    })
+</script>

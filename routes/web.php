@@ -231,10 +231,13 @@ Route::get('/laporankeuanganlabarugifiskal', [App\Http\Controllers\LaporanContro
 Route::get('/dokref', [App\Http\Controllers\AllInController::class,'dokrefindex'])->name('get.dokref');
 Route::get('/mahasiswaList', [App\Http\Controllers\AllInController::class,'listMahasiswa'])->name('data.mahasiswa');
 Route::get('/invList', [App\Http\Controllers\AllInController::class,'listInvoice'])->name('data.inv');
+Route::get('/bupotList', [App\Http\Controllers\AllInController::class,'listBupot'])->name('data.ebupot');
 Route::get('/list1771', [App\Http\Controllers\AllInController::class,'listSpt1771'])->name('data.1771');
+Route::get('/list1721', [App\Http\Controllers\AllInController::class,'listSpt1721'])->name('data.1721');
 Route::get('/pphList', [App\Http\Controllers\AllInController::class,'listPph'])->name('data.pph');
 Route::get('/fiskalList', [App\Http\Controllers\AllInController::class,'listFiskal'])->name('data.fiskal');
 Route::get('/prepopulate', [App\Http\Controllers\AllInController::class,'listPrepopulate'])->name('data.prepopulate');
+Route::get('/ebilling', [App\Http\Controllers\AllInController::class,'listBilling'])->name('data.billing');
 // SEARCH
 Route::get('/search/resultPtkp', [App\Http\Controllers\AllInController::class,'resultPtkp'])->name('get.ptkp');
 Route::get('/search/resultNoakun', [App\Http\Controllers\AllInController::class,'akun_kredit'])->name('get.nokredit');

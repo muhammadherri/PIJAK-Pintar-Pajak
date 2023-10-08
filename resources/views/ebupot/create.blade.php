@@ -33,7 +33,7 @@
                                             <label class="col-sm-3 col-form-label">Jenis PPH</label>
                                             <div class="col-sm-9">
                                                 <select id="jenis_pph" name="jenis_pph"
-                                                    class="default-select form-control wide">
+                                                    class="dropdown-groups">
                                                     @foreach ($jenispph as $row)
                                                         <option value="{{ $row->id }}">
                                                             {{ $row->jenis_pph }}</option>
@@ -103,7 +103,7 @@
                                             <label class="col-sm-3 col-form-label">Pilih Fasilitas</label>
                                             <div class="col-sm-9">
                                                 <select id="fasilitas"
-                                                    name="fasilitas"class="default-select form-control wide">
+                                                    name="fasilitas"class="dropdown-groups">
                                                     @foreach ($fasilitas as $row)
                                                         <option value="{{ $row->id }}">
                                                             {{ $row->no }}-{{ $row->jenis_fasilitas }}</option>
@@ -166,7 +166,7 @@
                                             <label class="col-sm-3 col-form-label">Penandatanganan</label>
                                             <div class="col-sm-9">
                                                 <select id="penandatanganan" name="penandatanganan"
-                                                    class="default-select form-control wide">
+                                                    class="dropdown-groups">
                                                     @foreach ($penandatanganan as $row)
                                                         <option value="{{ $row->id }}">{{ $row->npwp }}
                                                         </option>

@@ -172,20 +172,7 @@ let dataSet = [
 		  }
 		
 	}); 
-	var table = $('#sptmasapajakpenghasilan').DataTable({
-		searching: false,
-		paging:false,
-		select: false,
-		info: false,         
-		lengthChange:false ,
-		language: {
-			paginate: {
-			  next: '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
-			  previous: '<i class="fa fa-angle-double-left" aria-hidden="true"></i>' 
-			}
-		  }
-		
-	}); 
+	
 	var table = $('#formulir1721-VII').DataTable({
 		searching:false,
 		paging:false,

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\User;
+use App\Models\MasaBulan;
 class SptMasa extends Model
 {
     use HasFactory,SoftDeletes;
@@ -57,5 +58,9 @@ class SptMasa extends Model
     public function users()
     {
         return $this->hasOne(User::class,'id','attribute1');
+    }
+    public function bulan()
+    {
+        return $this->hasOne(MasaBulan::class,'value','masa_pajak_bulan');
     }
 }

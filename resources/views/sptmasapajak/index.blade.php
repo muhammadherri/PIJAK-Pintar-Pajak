@@ -37,14 +37,16 @@
                                 <table id="sptmasapajakpenghasilan" class="display" style="min-width: 845px">
                                     <thead>
                                         <tr>
-                                            <th>Nama</th>
-                                            <th>No NPWP</th>
-                                            <th>Alamat</th>
-                                            <th>No Telp</th>
-                                            <th>Email</th>
+                                            <th>Nama NPWP SPT Badan</th>
+                                            <th>Nomor NPWP SPT Badan</th>
+                                            <th>Alamat Lengkap SPT Badan</th>
+                                            <th>Masa Pajak Bulan</th>
+                                            <th>Masa Pajak Tahun</th>
+                                            <th>Tempat Tinggal SPT Badan</th>
                                             <th>Dibuat Oleh</th>
                                             <th>Tanggal Pembuatan</th>
                                             <th>Action</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -61,9 +63,9 @@
         </div>
     </div>
 @endsection
-{{-- <script>
+<script>
     $(document).ready(function() {
-        $('#data1771').DataTable({
+        $('#sptmasapajakpenghasilan').DataTable({
             language: {
                 paginate: {
                     next: '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
@@ -74,7 +76,8 @@
                 [10, 25, 50, -1],
                 [10, 25, 50, "All"]
             ],
-            ajax: "{{ route('data.1771') }}",
+            "order":[[9,'desc']],
+            ajax: "{{ route('data.1721') }}",
             columnDefs: [
                 {
                     "targets": 0,
@@ -91,13 +94,13 @@
                 {
                     "targets": 2,
                     "render": function(data, type, row, meta) {
-                        return row.jenis_usaha;
+                        return row.alamat;
                     }
                 },
                 {
                     "targets": 3,
                     "render": function(data, type, row, meta) {
-                        return row.no_telp;
+                        return row.masapajak;
                     }
                 },
                 
@@ -112,58 +115,53 @@
                     "targets": 5,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.pembukuan_terakhir;
+                        return row.tempat;
                     }
                 },
+                
                 {
                     "targets": 6,
-                    "class": "text-center",
-                    "render": function(data, type, row, meta) {
-                        return row.laporan_keuangan;
-                    }
-                },
-                {
-                    "targets": 7,
-                    "class": "text-center",
-                    "render": function(data, type, row, meta) {
-                        return row.negara;
-                    }
-                },
-                {
-                    "targets": 8,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
                         return row.created_by;
                     }
                 },
                 {
-                    "targets": 9,
+                    "targets": 7,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
                         return row.tgl_pembuatan;
                     }
                 },
                 {
-                    "targets": 10,
+                    "targets": 8,
                     "class": "text-center",
                     render: function(data, type, row, index) {
                         content = `
                             <div class="d-flex">
-                                <a class="btn btn-danger shadow btn-xs sharp" href="spttahunan/${row.id}/destroy">
+                                <a class="btn btn-danger shadow btn-xs sharp" href="sptmasapajak/${row.id}/destroy">
                                     <i class="fa fa-trash"></i>
                                 </a>
-                                <a class="btn btn-primary shadow btn-xs sharp me-1" href="spttahunan/${row.id}/edit">
+                                <a class="btn btn-primary shadow btn-xs sharp me-1" href="sptmasapajak/${row.id}/edit">
                                     <i class="fa fa-pencil"></i>
                                 </a>
-                                <a class="btn btn-success shadow btn-xs sharp" href="spttahunan/${row.id}/show">
+                                <a class="btn btn-success shadow btn-xs sharp" href="sptmasapajak/${row.id}/show">
                                     <i class="fa fa-eye"></i>
                                 </a>
                             </div>
                         `;
                         return content;
                     }
-                }
+                },
+                {
+                    "targets": 9,
+                    "visible":false,
+                    "searchable":false,
+                    "render": function(data, type, row, meta) {
+                        return row.id;
+                    }
+                },
             ]
         })
     })
-</script> --}}
+</script>

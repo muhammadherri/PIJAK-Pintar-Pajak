@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\User;
+use App\Models\Fasilitas;
 
 class Ebupot extends Model
 {
@@ -36,5 +37,9 @@ class Ebupot extends Model
     public function users()
     {
         return $this->hasOne(User::class,'id','attribute1');
+    }
+    public function fasilitases()
+    {
+        return $this->hasOne(Fasilitas::class,'id','fasilitas');
     }
 }

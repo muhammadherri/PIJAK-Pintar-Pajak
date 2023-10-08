@@ -37,13 +37,13 @@
                                 <table id="dataInv" class="display" style="min-width: 845px">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
-                                            <th>Nama Vendor</th>
-                                            <th>No Faktur</th>
+                                            <th></th>
+                                            <th>Nama Vendor Terdaftar</th>
+                                            <th>Nomor Faktur Terdaftar</th>
                                             <th>Termin Pembayaran</th>
                                             <th>Nilai Transaksi</th>
                                             <th>Potongan Harga</th>
-                                            <th>Pembayaran</th>
+                                            <th>Jenis Pembayaran</th>
                                             <th>Tanggal Invoice</th>
                                             <th>Total PPN</th>
                                             <th>Dibuat Oleh</th>
@@ -91,11 +91,15 @@
                 [10, 25, 50, -1],
                 [10, 25, 50, "All"]
             ],
+            "order":[[0,'desc']],
             ajax: "{{ route('data.inv') }}",
             columnDefs: [
                 {
                     "targets": 0,
-                    "render": function(data, type, row, meta) {
+                    "visible":false,
+                    "searchable":false,
+                    "class": "text-center"
+                    , "render": function(data, type, row, meta) {
                         return row.id;
                     }
                 },
@@ -173,17 +177,19 @@
                     render: function(data, type, row, index) {
                         content = `
                             <div class="d-flex">
-                                <a class="btn btn-primary shadow btn-xs sharp me-1" href="invoice/${row.id}/edit">
-                                    <i class="fa fa-pencil"></i>
-                                </a>
+                              
                                 <a class="btn btn-danger shadow btn-xs sharp" href="invoice/${row.id}/destroy">
                                     <i class="fa fa-trash"></i>
+                                </a>
+                                <a class="btn btn-success shadow btn-xs sharp" href="invoice/${row.id}/show">
+                                    <i class="fa fa-eye"></i>
                                 </a>
                             </div>
                         `;
                         return content;
                     }
-                }
+                },
+                
             ]
         })
     })

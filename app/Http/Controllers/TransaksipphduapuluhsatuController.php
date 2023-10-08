@@ -36,6 +36,7 @@ class TransaksipphduapuluhsatuController extends Controller
         $ptkp=Ptkp::all();
         $status_pernikahan=Ptkp::select('status_pernikahan','kode_ptkp')->groupBy('status_pernikahan','kode_ptkp')->get();
         $tanggungan=Ptkp::select('tanggungan')->groupBy('tanggungan')->get();
+
         return view('transaksiduapuluhsatu.create',compact('ptkp','status_pernikahan','tanggungan'));
     }
 
@@ -96,7 +97,7 @@ class TransaksipphduapuluhsatuController extends Controller
                 'attribute3'=>'NULL',
                 'created_at'=>date('Y-m-d H:i:s'),
             );
-            TransaksiPphDuapuluhSatu::create($data);
+            $tf=TransaksiPphDuapuluhSatu::create($data);
             $a= \DB::commit();
         }else{
             $data = array(
@@ -146,10 +147,11 @@ class TransaksipphduapuluhsatuController extends Controller
                 'attribute3'=>'NULL',
                 'created_at'=>date('Y-m-d H:i:s'),
             );
-            TransaksiPphDuapuluhSatu::create($data);
+            $tf=TransaksiPphDuapuluhSatu::create($data);
             $a= \DB::commit();
         }
-        return back();
+        return redirect()->route('transaksipph21');
+
     }
 
     /**
@@ -309,7 +311,8 @@ class TransaksipphduapuluhsatuController extends Controller
             ]);
             $a= \DB::commit();    
         }
-        return back();
+        return redirect()->route('transaksipph21');
+
     }
 
     /**

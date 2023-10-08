@@ -1610,7 +1610,7 @@
                                                     <div class="col-sm-9">
                                                         <select id="karyawanAsing_formulirA1_1721" name="karyawanAsing_formulirA1_1721"
                                                             class="dropdown-groups">
-                                                            @if($sptA->karyawan)
+                                                            @if($sptA->karyawan==0)
                                                             <option value="0">Ya</option>
                                                             <option value="1">Tidak</option>
                                                             @else

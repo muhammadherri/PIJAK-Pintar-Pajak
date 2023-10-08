@@ -11,7 +11,8 @@
         <div class="container-fluid">
             <div class="row page-titles">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item active"><a href="{{ route('jurnalmanual') }}">Keuangan Fiskal</a></li>
+                    <li class="breadcrumb-item active"><a href="{{ route('jurnalmanual') }}">Soal Tes</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('jurnalmanual') }}">Keuangan Fiskal</a></li>
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Edit</a></li>
                 </ol>
             </div>
@@ -35,7 +36,7 @@
                                                 <select id="no_akun_debet" name="no_akun_debet"
                                                 class="dropdown-groups">
                                                     @foreach ($neraca as $row)
-                                                        <option value="{{ $row->no_akun }}">{{ $row->no_akun }}
+                                                        <option value="{{ $row->no_akun }}"{{ $jurnalmanual->no_akun_debit == $row->no_akun ? 'selected' : '' }}>{{ $row->no_akun }} - {{ $row->nama_akun }}
                                                         </option>
                                                     @endforeach
                                                 </select>
@@ -45,6 +46,7 @@
                                             <label class="col-sm-3 col-form-label">No Akun Kredit</label>
                                             <div class="col-sm-9">
                                                 <select required id="no_akun_kredit" class="dropdown-groups" name="no_akun_kredit">
+                                                    
                                                 </select>
                                             </div>
                                         </div>

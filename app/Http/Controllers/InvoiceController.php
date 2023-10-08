@@ -82,7 +82,7 @@ class InvoiceController extends Controller
         $data_faktur = array(
             'faktur_id'=>$header_id,
             'pembeli'=>$request->vendor_efaktur,
-            'jenis_dok'=>$request->fakturpajaknormal,
+            'jenis_dok'=>$request->jenisdokumen,
             'dok_lain'=>$request->dokumenlainlain,
             'no_seri'=>$request->no_seri,
             'no_dok'=>$request->no_dokumen,
@@ -90,7 +90,7 @@ class InvoiceController extends Controller
             'attribute1'=>Auth::user()->id,
             'created_at'=>date('Y-m-d H:i:s'),
         );
-        // dd($data_inv);
+        // dd($data_faktur);
         Invoice::create($data_inv);
         Faktur::create($data_faktur);
         $a= \DB::commit();
@@ -119,7 +119,8 @@ class InvoiceController extends Controller
             InvoiceLine::create($data_inv);
             FakturLine::create($data_faktur);
         }
-        return back();
+        return redirect()->route('invoice');
+
     }
 
     /**
@@ -130,7 +131,26 @@ class InvoiceController extends Controller
      */
     public function show($id)
     {
-        //
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $inv=Invoice::where('invoice_id',$id)->get()->first();
+            $faktur=Faktur::where('faktur_id',$id)->get()->first();
+            $invline=InvoiceLine::where('invoice_id',$id)->get();
+            $fktrline=FakturLine::where('faktur_id',$id)->get();
+            $vendor=Vendor::get();
+        }else{
+            $inv=Invoice::where('attribute1',$iduser)->where('invoice_id',$id)->get()->first();
+            $faktur=Faktur::where('attribute1',$iduser)->where('faktur_id',$id)->get()->first();
+            $invline=InvoiceLine::where('attribute1',$iduser)->where('invoice_id',$id)->get();
+            $fktrline=FakturLine::where('attribute1',$iduser)->where('faktur_id',$id)->get();
+            $vendor=Vendor::get();
+        }
+        if($inv==null){
+            return back();
+        }
+        return view('invoice.show',compact(
+            'inv','faktur','invline','fktrline','vendor'
+        ));
     }
 
     /**

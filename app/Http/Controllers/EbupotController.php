@@ -23,9 +23,9 @@ class EbupotController extends Controller
     {
         $id=Auth::user()->id;
         if(Auth::user()->status==1){
-            $ebupot=Ebupot::get();
+            $ebupot=Ebupot::orderBy('id','desc')->get();
         }else{
-            $ebupot=Ebupot::where('attribute1',$id)->get();
+            $ebupot=Ebupot::orderBy('id','desc')->where('attribute1',$id)->get();
         }
         // dd($ebupot);
         return view('ebupot.index',compact('ebupot'))->with('no',1);
@@ -85,7 +85,7 @@ class EbupotController extends Controller
             'penandatanganan'=>$request->penandatanganan,
             'created_at'=>date('Y-m-d H:i:s'),
         );
-        Ebupot::create($data);
+        $ebupt=Ebupot::create($data);
         $a= \DB::commit();
         foreach ($dok_ref as $key => $ebupot_id) {
             $data = array(
@@ -97,7 +97,8 @@ class EbupotController extends Controller
             );
             Ebupotlines::create($data);
         }
-        return back();
+        return redirect()->route('ebupot');
+
     }
 
     /**
@@ -160,6 +161,7 @@ class EbupotController extends Controller
     {
         switch ($request->input('action')) {
             case 'hapus_dasar_pemotongan':
+                // dd('masuk hapus');
 
                 // dd($request->hapus_id);
                 $delete=Ebupotlines::find($request->hapus_id);
@@ -167,6 +169,7 @@ class EbupotController extends Controller
                 return back();
             break;
             case 'update_trx_ebupot':
+
                 // dd($request->ebupot_id);
 
                 $dok_ref = $request->input('column1');
@@ -201,17 +204,18 @@ class EbupotController extends Controller
                         'tgl_doc' => $tgl_doc[$key],
                         'created_at'=>date('Y-m-d H:i:s'),
                     );
-                    $check=Ebupotlines::where('ebupot_id',$request->ebupot_id)->get();
+                    // $check=Ebupotlines::where('ebupot_id',$request->ebupot_id)->get();
                     // dd($check);
-                    if(!$check){
+                    // if(!$check){
                         // dd('buat');
-                        Ebupotlines::create($data);
-                    }else{
+                    Ebupotlines::create($data);
+                    // }else{
                         // dd('update');
-                        Ebupotlines::updateOrCreate($data);
-                    }
+                    //     Ebupotlines::updateOrCreate($data);
+                    // }
                 }
-                return back();  
+                return redirect()->route('ebupot');
+
             break;
         }
     }

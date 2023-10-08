@@ -39,14 +39,14 @@
                                 <table id="pphduasatu" class="display" style="min-width: 845px">
                                     <thead>
                                         <tr>
-                                            {{-- <th>No</th> --}}
-                                            <th>Nama</th>
-                                            <th>No NPWP</th>
+                                            <th></th>
+                                            <th>Nama NPWP Terdaftar</th>
+                                            <th>Nomor NPWP Terdaftar</th>
                                             <th>Masa Penghasilan</th>
-                                            <th>Tunjangan</th>
-                                            <th>Ketentuan PTKP</th>
-                                            <th>Ketentuan Tarif</th>
-                                            <th>Gaji Pensiun</th>
+                                            <th>Jumlah Tunjangan</th>
+                                            <th>Jumlah Ketentuan PTKP</th>
+                                            <th>Jumlah Ketentuan Tarif</th>
+                                            <th>Jumlah Gaji Pensiun</th>
                                             <th>Tanggal Pembuatan</th>
                                             <th>Status</th>
                                             <th>Dibuat Oleh</th>
@@ -125,17 +125,30 @@
                 [10, 25, 50, -1],
                 [10, 25, 50, 300]
             ],
+            // serverSide:true,
+            // processing:true,
+            "order":[[0,'desc']],
+
             ajax:"{{route('data.pph')}}",
             columnDefs:[
                 {
                     "targets": 0,
+                    "visible":false,
+                    "searchable":false,
+                    "class": "text-center"
+                    , "render": function(data, type, row, meta) {
+                        return row.id;
+                    }
+                },
+                {
+                    "targets": 1,
                     "class": "text-center"
                     , "render": function(data, type, row, meta) {
                         return row.nama_wajib_pajak;
                     }
                 },
                 {
-                    "targets": 1,
+                    "targets": 2,
                     "class": "text-center"
                     , "render": function(data, type, row, meta) {
                         if(row.no_npwp==null ){
@@ -147,7 +160,7 @@
                     }
                 },
                 {
-                    "targets": 2
+                    "targets": 3
                     , "class": "text-center"
                     , render: function(data, type, row, index) {
                         
@@ -155,42 +168,42 @@
                     }
                 },
                 {
-                    "targets": 3
+                    "targets": 4
                     , "class": "text-center"
                     , "render": function(data, type, row, meta) {
                         return row.tunjangan_pajak;
                     }
                 },
                 {
-                    "targets": 4
+                    "targets": 5
                     , "class": "text-center"
                     , "render": function(data, type, row, meta) {
                         return row.ketentuan_ptkp;
                     }
                 },
                 {
-                    "targets": 5
+                    "targets": 6
                     , "class": "text-center"
                     , "render": function(data, type, row, meta) {
                         return row.ketentuan_tarif;
                     }
                 },
                 {
-                    "targets": 6
+                    "targets": 7
                     , "class": "text-center"
                     , "render": function(data, type, row, meta) {
                         return row.gaji_pensiun;
                     }
                 },
                 {
-                    "targets": 7
+                    "targets": 8
                     , "class": "text-center"
                     , "render": function(data, type, row, meta) {
                         return row.created_at;
                     }
                 },
                 {
-                    "targets": 8
+                    "targets": 9
                     , "class": "text-center"
                     , "render": function(data, type, row, meta) {
                         if(row.status_npwp==0 ){
@@ -202,7 +215,7 @@
                     }
                 },
                 {
-                    "targets": 9
+                    "targets": 10
                     , "class": "text-center"
                     , "render": function(data, type, row, meta) {
                         return row.created_by;
@@ -210,7 +223,7 @@
                 },
                 
                 {
-                    "targets": 10
+                    "targets": 11
                     , "class": "text-center"
                     , render: function(data, type, row, index) {
                         content = `
@@ -220,6 +233,9 @@
                                 </a>
                                 <a class="btn btn-danger shadow btn-xs sharp" href="transaksipph21/${row.id}/destroy">
                                     <i class="fa fa-trash"></i>
+                                </a>
+                                <a class="btn btn-success shadow btn-xs sharp" href="transaksipph21/${row.id}/show">
+                                    <i class="fa fa-eye"></i>
                                 </a>
                             </div>
                         `;

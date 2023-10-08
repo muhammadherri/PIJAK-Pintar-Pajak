@@ -47,6 +47,7 @@
                                                 <th>Dibuat Oleh</th>
                                                 <th>Tanggal Dibuat</th>
                                                 <th>Action</th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                     </table>
@@ -72,6 +73,7 @@
                 [10, 25, 50, -1],
                 [10, 25, 50, "All"]
             ],
+            "order":[[9,'desc']],
             ajax: "{{ route('data.fiskal') }}",
             columnDefs: [{
                     "targets": 0,
@@ -147,7 +149,15 @@
                         `;
                         return content;
                     }
-                }
+                },
+                {
+                    "targets": 9,
+                    "visible":false,
+                    "searchable":false,
+                    "render": function(data, type, row, meta) {
+                        return row.id;
+                    }
+                },
             ]
 
 

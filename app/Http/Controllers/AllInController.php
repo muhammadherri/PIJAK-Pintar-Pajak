@@ -29,6 +29,8 @@ use App\Models\SptTahunanVILinesB;
 use App\Models\SptTahunanVILinesC;
 use App\Models\SptTahunanVLinesA;
 use App\Models\SptTahunanVLinesB;
+use App\Models\SptMasa;
+use App\Models\Ebupot;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\Facades\DataTables;
@@ -92,15 +94,15 @@ class AllInController extends Controller
         // $invcount = Invoice::where('attribute1',$id)->sum('total');
         if(Auth::user()->status==1){
 
-            $inv = Invoice::orderBy('id','ASC')->get();
+            $inv = Invoice::orderBy('id','desc')->get();
         }else{
-            $inv = Invoice::where('attribute1',$id)->get();
+            $inv = Invoice::orderBy('id','desc')->where('attribute1',$id)->get();
         }
         $data_arr = array();
         // dd($inv);
         foreach ($inv as $record) {
             $data_arr[] = array(
-                "id" => $record->id,
+                "id" => $record->invoice_id,
                 "code_vendor" => $record->vendor->no_id_vendor,
                 "nama_vendor" => $record->vendor->nama_vendor,
                 "no_faktur" => $record->no_faktur,
@@ -119,12 +121,44 @@ class AllInController extends Controller
         );
         return json_encode($response);
     }
+    public function listBupot(Request $request){
+        // dd('masuk');
+        $id=Auth::user()->id;
+        // $invcount = Invoice::where('attribute1',$id)->sum('total');
+        if(Auth::user()->status==1){
+            $bupot = Ebupot::orderBy('id','desc')->get();
+        }else{
+            $bupot = Ebupot::orderBy('id','desc')->where('attribute1',$id)->get();
+        }
+        $data_arr = array();
+        // dd($inv);
+        foreach ($bupot as $record) {
+            $data_arr[] = array(
+                "id" => $record->id,
+                "trx" => $record->trx,
+                "jenis_pph" => $record->jenis_pph,
+                "no_tlp" => $record->no_tlp,
+                "fasilitas" => $record->fasilitases->jenis_fasilitas,
+                "kop" => $record->kode_objek_pajak,
+                "created_by" => $record->users->name,
+                "tgl_buktiPotong" => Carbon::parse($record->tanggal_bukti_potong)->format('d-M-Y'),
+                "tgl_periodePajak" => Carbon::parse($record->periode_pajak)->format('d-M-Y'),
+                "tgl_pembuat" => Carbon::parse($record->created_at)->format('d-M-Y'),
+                "status" => $record->attribute3,
+            );
+        }
+        // dd($data_arr);
+        $response = array(
+            "aaData" => $data_arr,
+        );
+        return json_encode($response);
+    }
     public function listPph(Request $request){
         $id=Auth::user()->id;
         if(Auth::user()->status==1){
-            $pph21 = TransaksiPphDuapuluhSatu::get();
+            $pph21 = TransaksiPphDuapuluhSatu::orderBy('id','desc')->get();
         }else{
-            $pph21 = TransaksiPphDuapuluhSatu::where('attribute1',$id)->get();
+            $pph21 = TransaksiPphDuapuluhSatu::orderBy('id','desc')->where('attribute1',$id)->get();
         }
         $data_arr = array();
         foreach ($pph21 as $record) {
@@ -177,6 +211,70 @@ class AllInController extends Controller
             "aaData" => $data_arr,
         );
         return json_encode($response);  
+    }
+    public function listPrepopulate(Request $request){
+        $id=Auth::user()->id;
+        // $invcount = Invoice::where('attribute1',$id)->sum('total');
+        if(Auth::user()->status==1){
+
+            $ppr = Prepopulate::get();
+        }else{
+            $ppr = Prepopulate::where('attribute1',$id)->get();
+        }
+        $data_arr = array();
+        // dd($inv);
+        foreach ($ppr as $record) {
+            $data_arr[] = array(
+                "id" => $record->id,
+                "masa_ppn" =>Carbon::parse($record->masa_ppn)->format('d-M-Y'),
+                "tahun" => $record->tahun,
+                "npwp" => $record->npwp,
+                "nama_npwp" => $record->nama_npwp,
+                "alamat_npwp" => $record->alamat_npwp,
+                "no_faktur" => $record->no_faktur,
+                "jumlah_dpp" => number_format($record->jumlah_dpp,2),
+                "jumlah_ppn" => number_format($record->jumlah_ppn,2),
+                "keterangan" => $record->keterangan,
+                "created_by" => $record->users->name,
+                "created_at" => $record->created_at->format('d-M-Y'),
+            );
+        }
+        // dd($data_arr);
+        $response = array(
+            "aaData" => $data_arr,
+        );
+        return json_encode($response);
+    }
+    public function listBilling(Request $request){
+        $id=Auth::user()->id;
+        // $invcount = Invoice::where('attribute1',$id)->sum('total');
+        if(Auth::user()->status==1){
+            $billing = Billing::get();
+        }else{
+            $billing = Billing::where('attribute1',$id)->get();
+        }
+        $data_arr = array();
+        // dd($inv);
+        foreach ($billing as $record) {
+            $data_arr[] = array(
+                "id" => $record->id,
+                "trxbilling" =>$record->kode_billing,
+                "npwp" => $record->npwp,
+                "jenispajak" => $record->jenis_pajak,
+                "jenis_setoran" => $record->kode_jenis_setoran,
+                "masapajak" => $record->masa_pajak,
+                "masaaktif" => Carbon::parse($record->end_periode_pajak)->format('d-M-Y'),
+                "jumlah" => number_format($record->jumlah,2),
+                "created_by" => $record->users->name,
+                "status" => $record->attribute3,
+                "created_at" => $record->created_at->format('d-M-Y'),
+            );
+        }
+        // dd($data_arr);
+        $response = array(
+            "aaData" => $data_arr,
+        );
+        return json_encode($response);
     }
     public function akun_kredit(Request $request){
         $debet = $request->input('akundebet'); 
@@ -237,38 +335,7 @@ class AllInController extends Controller
         // dd($data_arr);
         return response()->json($data_arr);
     }
-    public function listPrepopulate(Request $request){
-        $id=Auth::user()->id;
-        // $invcount = Invoice::where('attribute1',$id)->sum('total');
-        if(Auth::user()->status==1){
-
-            $ppr = Prepopulate::get();
-        }else{
-            $ppr = Prepopulate::where('attribute1',$id)->get();
-        }
-        $data_arr = array();
-        // dd($inv);
-        foreach ($ppr as $record) {
-            $data_arr[] = array(
-                "id" => $record->id,
-                "masa_ppn" =>Carbon::parse($record->masa_ppn)->format('d-M-Y'),
-                "tahun" => $record->tahun,
-                "npwp" => $record->npwp,
-                "nama_npwp" => $record->nama_npwp,
-                "alamat_npwp" => $record->alamat_npwp,
-                "no_faktur" => $record->no_faktur,
-                "jumlah_dpp" => number_format($record->jumlah_dpp,2),
-                "jumlah_ppn" => number_format($record->jumlah_ppn,2),
-                "keterangan" => $record->keterangan,
-                "created_by" => $record->users->name,
-            );
-        }
-        // dd($data_arr);
-        $response = array(
-            "aaData" => $data_arr,
-        );
-        return json_encode($response);
-    }
+   
     public function cariakun(Request $request){
         $akun = $request->input('akun'); 
         // $statuses = $request->input('status'); 
@@ -306,6 +373,35 @@ class AllInController extends Controller
                 "pembukuan_terakhir" =>  Carbon::parse($record->end_periode_pembukuan)->format('d-M-Y'),
                 "negara" => $record->negara_domisili,
                 "laporan_keuangan" => number_format($record->laporan_keuangan,2),
+                "created_by" => $record->users->name,
+                "tgl_pembuatan" => $record->created_at->format('d-M-Y'),
+            );
+        }
+        // dd($data_arr);
+        $response = array(
+            "aaData" => $data_arr,
+        );
+        return json_encode($response);
+    }
+    public function listSpt1721(Request $request){
+        // dd('masauk');
+        $id=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $spt = SptMasa::get();
+        }else{
+            $spt = SptMasa::where('attribute1',$id)->get();
+        }
+        $data_arr = array();
+        // dd($spt);
+        foreach ($spt as $record) {
+            $data_arr[] = array(
+                "id" => $record->id,
+                "nama" => $record->nama,
+                "no_npwp" => $record->npwp,
+                "alamat" => $record->alamat,
+                "masapajak" => $record->bulan->nama_bulan,
+                "tahun_pajak" => $record->masa_pajak_tahun,
+                "tempat" =>  $record->tempat_ttd,
                 "created_by" => $record->users->name,
                 "tgl_pembuatan" => $record->created_at->format('d-M-Y'),
             );

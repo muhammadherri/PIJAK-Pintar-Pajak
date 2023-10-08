@@ -34,10 +34,9 @@
                                             <label class="col-sm-3 col-form-label">Jenis PPH</label>
                                             <div class="col-sm-9">
                                                 <select id="jenis_pph" name="jenis_pph"
-                                                    class="default-select form-control wide">
+                                                    class="dropdown-groups">
                                                     @foreach ($jenispph as $row)
-                                                        <option value="{{ $row->id }}"
-                                                            {{ $ebupot->jenis_pph == $row->id ? 'selected' : '' }}>
+                                                        <option value="{{ $row->id }}"{{ $ebupot->jenis_pph == $row->id ? 'selected' : '' }}>
                                                             {{ $row->jenis_pph }}
                                                         </option>
                                                     @endforeach
@@ -78,7 +77,7 @@
                                                     <tr>
                                                         <td>
                                                             <select readonly id="status_pernikahan" 
-                                                                class="form-control">
+                                                                class="dropdown-groups">
                                                                 @foreach ($dokref as $row)
                                                                     <option value="{{ $row->id }}"
                                                                         {{ $line->dok_ref == $row->id ? 'selected' : '' }}>
@@ -122,7 +121,7 @@
                                             <label class="col-sm-3 col-form-label">Pilih Fasilitas</label>
                                             <div class="col-sm-9">
                                                 <select id="fasilitas"
-                                                    name="fasilitas"class="default-select form-control wide">
+                                                    name="fasilitas"class="dropdown-groups">
                                                     @foreach ($fasilitas as $row)
                                                         <option
                                                             value="{{ $row->id }}"{{ $ebupot->fasilitas == $row->id ? 'selected' : '' }}>
@@ -151,7 +150,7 @@
                                             <label class="col-sm-3 col-form-label">Kode Objek Pajak</label>
                                             <div class="col-sm-9">
                                                 <select id="kode_objek_pajak" name="kode_objek_pajak"
-                                                    class="default-select form-control wide">
+                                                    class="dropdown-groups">
                                                     @foreach ($kodepajak as $row)
                                                         <option
                                                             value="{{ $row->id }}"{{ $ebupot->kode_objek_pajak == $row->id ? 'selected' : '' }}>
@@ -191,7 +190,7 @@
                                             <label class="col-sm-3 col-form-label">Penandatanganan</label>
                                             <div class="col-sm-9">
                                                 <select id="penandatanganan" name="penandatanganan"
-                                                    class="default-select form-control wide">
+                                                    class="dropdown-groups">
                                                     @foreach ($penandatanganan as $row)
                                                         <option value="{{ $row->id }}"
                                                             {{ $ebupot->penandatanganan == $row->id ? 'selected' : '' }}>
@@ -204,14 +203,14 @@
                                     </div>
                                     <div class="d-flex justify-content-between">
                                         <div></div>
-                                        @if($ebupot->attribute3==NULL)
-                                            <button class="btn btn-primary btn-submit"name='action'
-                                            value="update_trx_ebupot" id="add_all" type="submit"><i
-                                                data-feather='save'></i>
-                                            {{ 'Simpan' }}</button>
-                                        @else
-                                       
-                                        @endif
+                                        {{-- @if($ebupot->attribute3!==NULL)
+                                            
+                                        @else --}}
+                                        <button class="btn btn-primary btn-submit"name='action'
+                                        value="update_trx_ebupot" id="add_all" type="submit"><i
+                                            data-feather='save'></i>
+                                        {{ 'Simpan' }}</button>
+                                        {{-- @endif --}}
                                     </div>
                                 </form>
                             </div>

@@ -58,7 +58,7 @@ class PrepopulateController extends Controller
         );
         Prepopulate::create($data);
         $a= \DB::commit();
-        return redirect()->back()->with('alert','Berhasil');
+        return redirect()->route('prepopulates');
     }
 
     /**

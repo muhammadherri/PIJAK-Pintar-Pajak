@@ -109,8 +109,8 @@ class SptMasaPajakPenghasilanController extends Controller
                 'jumlah_penghasilan_bruto' => $request->objek_jumlahpenghasilan[$key],
                 'jumlah_pajak_dipotong' => $request->objek_jumlahpajak[$key],
             );
-        dd($data1721lines);
-        // SptMasaLineB::create($data1721lines);
+        // dd($data1721lines);
+        SptMasaLineB::create($data1721lines);
         }
         foreach ($objek_penerimac_1721 as $key => $row) {
             $data1721lines = array(
@@ -121,11 +121,11 @@ class SptMasaPajakPenghasilanController extends Controller
                 'jumlah_penghasilan_bruto' => $request->objek_jumlahpenghasilan_c[$key],
                 'jumlah_pajak_dipotong' => $request->objek_jumlahpajak_c[$key],
             );
-        dd($data1721lines);
-        // SptMasaLineC::create($data1721lines);
+        // dd($data1721lines);
+        SptMasaLineC::create($data1721lines);
         }
-        dd($data1721);
-        // $spt=SptMasa::create($data1721);
+        // dd($data1721);
+        $spt=SptMasa::create($data1721);
         // 1721
 
         // 1721I

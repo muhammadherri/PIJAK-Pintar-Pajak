@@ -12,8 +12,8 @@
             <div class="row page-titles">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item active"><a href="{{ route('invoice') }}">Penjualan</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('invoice') }}">Invoice</a></li>
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">Buat</a></li>
+                    <li class="breadcrumb-item active"><a href="{{ route('invoice') }}">Invoice</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">View</a></li>
                 </ol>
             </div>
             <div class="row">
@@ -40,9 +40,7 @@
                             </div>
                             <hr>
                             <div class="card-body">
-                                <form action="{{ route('invoice/store') }}" method="POST" enctype="multipart/form-data">
-                                    @csrf
-                                    @method('POST')
+                               
                                     <div class="tab-content" id="nav-tabContent">
                                         {{-- TAB INVOICE --}}
                                         <div class="tab-pane fade show active" id="nav-sales" role="tabpanel"
@@ -52,9 +50,9 @@
                                                         <label class="col-sm-3 col-form-label">Pembeli</label>
                                                         <div class="col-sm-9">
                                                             <select id="vendor_invoice" name="vendor_invoice"
-                                                                class="dropdown-groups">
+                                                                class="default-select form-control wide">
                                                                 @foreach ($vendor as $row)
-                                                                    <option value="{{ $row->id }}">
+                                                                    <option value="{{ $row->id }}" {{ $inv->pembeli == $row->id ? 'selected' : '' }}>
                                                                         {{ $row->no_id_vendor }} - {{ $row->nama_vendor }}
                                                                     </option>
                                                                 @endforeach
@@ -65,7 +63,7 @@
                                                     <div class="mb-3 row">
                                                         <label class="col-sm-3 col-form-label">No. Faktur Komersial</label>
                                                         <div class="col-sm-9">
-                                                            <input required autocomplete="off" id="faktur_komersial"
+                                                            <input readonly value="{{$inv->no_faktur}}" autocomplete="off" id="faktur_komersial"
                                                                 name="faktur_komersial" type="text" class="form-control"
                                                                 placeholder="Masukkan No. Faktur Komersial">
                                                         </div>
@@ -73,13 +71,13 @@
                                                     <div class="mb-3 row">
                                                         <label class="col-sm-3 col-form-label">Tanggal Faktur</label>
                                                         <div class="col-sm-3">
-                                                            <input required id="tgl_faktur" name="tgl_faktur" type="date"
+                                                            <input readonly value="{{date('d-M-Y',strtotime($inv->tgl_faktur))}}" id="tgl_faktur" name="tgl_faktur" type="text"
                                                                 class="form-control"
                                                                 placeholder="Masukkan No. Faktur Komersial">
                                                         </div>
                                                         <label class="col-sm-3 col-form-label">Jatuh Tempo</label>
                                                         <div class="col-sm-3">
-                                                            <input required id="tgl_jatuh_tempo" name="tgl_jatuh_tempo" type="date"
+                                                            <input readonly value="{{date('d-M-Y',strtotime($inv->tgl_faktur))}}" id="tgl_jatuh_tempo" name="tgl_jatuh_tempo" type="text"
                                                                 class="form-control"
                                                                 placeholder="Masukkan No. Faktur Komersial">
                                                         </div>
@@ -88,10 +86,20 @@
                                                         <label class="col-sm-3 col-form-label">Termin Pembayaran</label>
                                                         <div class="col-sm-9">
                                                             <select id="termin_pembayaran" name="termin_pembayaran"
-                                                                class="dropdown-groups">
-                                                                <option value="0">Normal</option>
-                                                                <option value="1">Uang Muka</option>
-                                                                <option value="2">Pelunasan</option>
+                                                                class="default-select form-control wide">
+                                                                @if($inv->termin_pembayaran==0)
+                                                                    <option value="0">Normal</option>
+                                                                    <option value="1">Uang Muka</option>
+                                                                    <option value="2">Pelunasan</option>
+                                                                @elseif($inv->termin_pembayaran==1)
+                                                                    <option value="1">Uang Muka</option>
+                                                                    <option value="0">Normal</option>
+                                                                    <option value="2">Pelunasan</option>
+                                                                @else
+                                                                    <option value="2">Pelunasan</option>
+                                                                    <option value="1">Uang Muka</option>
+                                                                    <option value="0">Normal</option>
+                                                                @endif
                                                             </select>
                                                         </div>
                                                     </div>
@@ -108,6 +116,7 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody class="sales_order_detail_container">
+                                                            @foreach($invline as $key =>$row)
                                                             <tr>
                                                                 <td width="auto">
                                                                     <select name="namabarang_inv[]" id="namabarang"
@@ -116,26 +125,27 @@
                                                                         <option value="1">nama barang</option>
                                                                     </select>
                                                                 </td>
-                                                                <td><input autocomplete="off" type="number" name="angka1[]" min="0"
+                                                                <td><input readonly value="{{$row->kuantitas}}" autocomplete="off" type="number" name="angka1[]" min="0"
                                                                         class="form-control" /></td>
-                                                                <td><input autocomplete="off" type="number" name="angka2[]" min="0"
+                                                                <td><input readonly value="{{$row->harga_satuan}}" autocomplete="off" type="number" name="angka2[]" min="0"
                                                                         class="form-control" /></td>
-                                                                <td><input autocomplete="off" type="number" name="angka3[]" min="0"
+                                                                <td><input readonly value="{{$row->total_diskon}}" autocomplete="off" type="number" name="angka3[]" min="0"
                                                                         class="form-control sub_totpot" /></td>
-                                                                <td><input autocomplete="off" type="text" name="hasil[]"
+                                                                <td><input readonly value="{{$row->total_harga}}" autocomplete="off" type="text" name="hasil[]"
                                                                         class="form-control sub_total"readonly /></td>
                                                                 <td><button type="button" class="btn btn-light btn-submit"><i
                                                                             class="fa fa-trash"></i></td>
                                                             </tr>
+                                                            @endforeach
                                                         </tbody>
                                                         <tfoot>
                                                             <tr>
-                                                                <td colspan="3">
+                                                                {{-- <td colspan="3">
                                                                     <button class="btn btn-primary btn-submit"name='action'
                                                                         value="create" id="btn-add" type="button"><i
                                                                             data-feather='save'></i>
                                                                         {{ 'Tambah Item' }}</button>
-                                                                </td>
+                                                                </td> --}}
                                                             </tr>
                                                         </tfoot>
                                                     </table>
@@ -144,7 +154,7 @@
                                                         <label class="col-sm-6 col-form-label"></label>
                                                         <label class="col-sm-3 col-form-label">Nilai Transaksi</label>
                                                         <div class="col-sm-3">
-                                                            <input readonly id="nilaitransaksi" type="number"
+                                                            <input readonly value="{{$inv->nilai_transaksi}}" id="nilaitransaksi" type="number"
                                                                 name="nilaitransaksi" class="form-control nilaitrx">
                                                             </span>
                                                         </div>
@@ -153,7 +163,7 @@
                                                         <label class="col-sm-6 col-form-label"></label>
                                                         <label class="col-sm-3 col-form-label">Potongan Harga</label>
                                                         <div class="col-sm-3">
-                                                            <input readonly id="potonganharga" name="potonganharga"
+                                                            <input readonly value="{{$inv->potongan_harga}}" id="potonganharga" name="potonganharga"
                                                                 type="text" class="form-control nilaihargapot">
                                                         </div>
                                                     </div>
@@ -161,7 +171,7 @@
                                                         <label class="col-sm-6 col-form-label"></label>
                                                         <label class="col-sm-3 col-form-label">PPn %</label>
                                                         <div class="col-sm-3">
-                                                            <input step="any" readonly id="ppn" name="ppn" type="text"
+                                                            <input step="any" readonly value="{{$inv->ppn}}" id="ppn" name="ppn" type="text"
                                                                 class="form-control nilai_ppn">
                                                         </div>
                                                     </div>
@@ -169,7 +179,7 @@
                                                         <label class="col-sm-6 col-form-label"></label>
                                                         <label class="col-sm-3 col-form-label">Total</label>
                                                         <div class="col-sm-3">
-                                                            <input readonly id="totaltrx" name="totaltrx" type="text"
+                                                            <input readonly readonly value="{{$inv->total}}" id="totaltrx" name="totaltrx" type="text"
                                                                 class="form-control total_trx">
                                                         </div>
                                                     </div>
@@ -177,16 +187,16 @@
                                                     <div class="mb-3 row">
                                                         <div class="col-sm-12">
                                                             <label class="col-sm-3 col-form-label">Catatan</label>
-                                                            <textarea required autocomplete="off" placeholder="Silakan masukkan catatan untuk pembeli Anda..." class="form-control"
-                                                                rows="4" id="catatan" name="catatan"></textarea>
+                                                            <textarea readonly value="" autocomplete="off" placeholder="Silakan masukkan catatan untuk pembeli Anda..." class="form-control"
+                                                                rows="4" id="catatan" name="catatan">{{$inv->catatan}}</textarea>
                                                         </div>
 
                                                     </div>
                                                     <div class="mb-3 row">
                                                         <div class="col-sm-12">
                                                             <label class="col-sm-3 col-form-label">Informasi Pembayaran</label>
-                                                            <textarea required autocomplete="off" placeholder="Contoh:Harap pembayaran dilakukan ke Rekening BCA..." class="form-control"
-                                                                rows="4" id="informasi_pembayaran" name="informasi_pembayaran"></textarea>
+                                                            <textarea readonly value="" autocomplete="off" placeholder="Contoh:Harap pembayaran dilakukan ke Rekening BCA..." class="form-control"
+                                                                rows="4" id="informasi_pembayaran" name="informasi_pembayaran">{{$inv->informasi_pembayaran}}</textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -200,9 +210,9 @@
                                                         <label class="col-sm-3 col-form-label">Pembeli</label>
                                                         <div class="col-sm-9">
                                                             <select id="vendor_efaktur"name="vendor_efaktur"
-                                                                class="dropdown-groups">
+                                                                class="default-select form-control wide">
                                                                 @foreach ($vendor as $row)
-                                                                    <option value="{{ $row->id }}">
+                                                                    <option value="{{ $row->id }}" {{ $faktur->pembeli == $row->id ? 'selected' : '' }}>
                                                                         {{ $row->no_id_vendor }} - {{ $row->nama_vendor }}
                                                                     </option>
                                                                 @endforeach
@@ -212,59 +222,101 @@
                                                     <h5 class="card-title">Pengaturan Faktur Pajak</h5>
                                                     <div class="mb-3 row">
                                                         <label class="col-sm-3 col-form-label">Jenis Dokumen</label>
-                                                        <div class="col-sm-3">
-                                                            <div class="form-check">
-                                                                <input id="jenisdokumen" class="form-check-input"
-                                                                    type="radio" name="jenisdokumen" value="1"
-                                                                    checked>
-                                                                <label class="form-check-label">
-                                                                    Faktur Pajak Normal
-                                                                </label>
+                                                        @if($faktur->jenis_dok==1)
+                                                            <div class="col-sm-3">
+                                                                <div class="form-check">
+                                                                    <input id="jenisdokumen" class="form-check-input"
+                                                                        type="radio" name="jenisdokumen" value="1"
+                                                                        checked>
+                                                                    <label class="form-check-label">
+                                                                        Faktur Pajak Normal
+                                                                    </label>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="col-sm-3">
-                                                            <div class="form-check">
-                                                                <input id="dokumenlainlain" class="form-check-input"
-                                                                    type="radio" name="jenisdokumen" value="0">
-                                                                <label class="form-check-label">
-                                                                    Dokumen Lain
-                                                                </label>
+                                                            <div class="col-sm-3">
+                                                                <div class="form-check">
+                                                                    <input id="dokumenlainlain" class="form-check-input"
+                                                                        type="radio" name="jenisdokumen" value="0">
+                                                                    <label class="form-check-label">
+                                                                        Dokumen Lain
+                                                                    </label>
+                                                                </div>
                                                             </div>
-                                                        </div>
+                                                        @else
+                                                            <div class="col-sm-3">
+                                                                <div class="form-check">
+                                                                    <input id="jenisdokumen" class="form-check-input"
+                                                                        type="radio" name="jenisdokumen" value="1">
+                                                                    <label class="form-check-label">
+                                                                        Faktur Pajak Normal
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <div class="form-check">
+                                                                    <input id="dokumenlainlain" class="form-check-input"
+                                                                        type="radio" name="jenisdokumen" value="0" checked>
+                                                                    <label class="form-check-label">
+                                                                        Dokumen Lain
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        @endif
                                                     </div>
                                                     <div id="hiddendokumen" style="display:none;" class="mb-3 row">
-                                                        <div class="col-sm-3">
-                                                            <div class="form-check">
-                                                                <input id="dokumenlainlain" class="form-check-input"
-                                                                    type="radio" name="dokumenlainlain" value="1"
-                                                                    checked>
-                                                                <label class="form-check-label">
-                                                                    Faktur Pajak
-                                                                </label>
+                                                        @if($faktur->dok_lain==1)
+                                                            <div class="col-sm-3">
+                                                                <div class="form-check">
+                                                                    <input id="dokumenlainlain" class="form-check-input"
+                                                                        type="radio" name="dokumenlainlain" value="1"
+                                                                        checked>
+                                                                    <label class="form-check-label">
+                                                                        Faktur Pajak
+                                                                    </label>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="col-sm-3">
-                                                            <div class="form-check">
-                                                                <input id="dokumenlainlain" class="form-check-input"
-                                                                    type="radio" name="dokumenlainlain" value="0">
-                                                                <label class="form-check-label">
-                                                                    Ekspor Barang (PEB)
-                                                                </label>
+                                                            <div class="col-sm-3">
+                                                                <div class="form-check">
+                                                                    <input id="dokumenlainlain" class="form-check-input"
+                                                                        type="radio" name="dokumenlainlain" value="0">
+                                                                    <label class="form-check-label">
+                                                                        Ekspor Barang (PEB)
+                                                                    </label>
+                                                                </div>
                                                             </div>
-                                                        </div>
+                                                        @else
+                                                            <div class="col-sm-3">
+                                                                <div class="form-check">
+                                                                    <input id="dokumenlainlain" class="form-check-input"
+                                                                        type="radio" name="dokumenlainlain" value="1">
+                                                                    <label class="form-check-label">
+                                                                        Faktur Pajak
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <div class="form-check">
+                                                                    <input id="dokumenlainlain" class="form-check-input"
+                                                                        type="radio" name="dokumenlainlain" value="0" checked>
+                                                                    <label class="form-check-label">
+                                                                        Ekspor Barang (PEB)
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        @endif
                                                     </div>
                                                     <div class="mb-3 row">
                                                         <label class="col-sm-3 col-form-label">No Seri Faktur</label>
                                                         <div class="col-sm-3">
                                                             <select id="no_seri" name="no_seri"
-                                                                class="dropdown-groups">
+                                                                class="default-select form-control wide">
                                                                 <option value="0">Seri 1</option>
                                                                 <option value="1">Seri 2</option>
                                                                 <option value="2">Seri 3</option>
                                                             </select>
                                                         </div>
                                                         <div class="col-sm-6">
-                                                            <input autocomplete="off" required type="text" id="no_dokumen" name="no_dokumen"
+                                                            <input autocomplete="off" readonly value="{{$faktur->no_dok}}" type="text" id="no_dokumen" name="no_dokumen"
                                                                 class="form-control" placeholder="Masukkan No Dokumen...">
                                                         </div>
                                                     </div>
@@ -281,6 +333,7 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody class="sales_order_detail_container">
+                                                            @foreach($fktrline as $key => $row)
                                                             <tr>
                                                                 <td width="auto">
                                                                     <select name="namabarang_fktr[]" id="namabarang_fktr"
@@ -289,25 +342,26 @@
                                                                         <option value="1">nama barang</option>
                                                                     </select>
                                                                 </td>
-                                                                <td><input autocomplete="off" type="number" name="angka4[]" min="0"
+                                                                <td><input readonly value="{{$row->kuantitas}}" autocomplete="off" type="number" name="angka4[]" min="0"
                                                                         class="form-control" /></td>
-                                                                <td><input autocomplete="off" type="number" name="angka5[]" min="0"
+                                                                <td><input readonly value="{{$row->harga_satuan}}" autocomplete="off" type="number" name="angka5[]" min="0"
                                                                         class="form-control" /></td>
-                                                                <td><input autocomplete="off" type="number" name="angka6[]" min="0"
+                                                                <td><input readonly value="{{$row->total_diskon}}" autocomplete="off" type="number" name="angka6[]" min="0"
                                                                         class="form-control sub_totpot" /></td>
-                                                                <td><input autocomplete="off" type="text" name="hasil2[]"
+                                                                <td><input readonly value="{{$row->total_harga}}" autocomplete="off" type="text" name="hasil2[]"
                                                                         class="form-control"readonly /></td>
                                                                 <td><button type="button" class="btn btn-light btn-submit"><i
                                                                             class="fa fa-trash"></i></td>
                                                             </tr>
+                                                            @endforeach
                                                         </tbody>
                                                         <tfoot>
                                                             <tr>
                                                                 <td>
-                                                                    <button class="btn btn-primary btn-submit"name='action'
+                                                                    {{-- <button class="btn btn-primary btn-submit"name='action'
                                                                         value="create" id="addRowefaktur" type="button"><i
                                                                             data-feather='save'></i>
-                                                                        {{ 'Tambah Item' }}</button>
+                                                                        {{ 'Tambah Item' }}</button> --}}
                                                                 </td>
                                                             </tr>
                                                         </tfoot>
@@ -317,21 +371,14 @@
                                                         <div class="col-sm-12">
                                                             <label required class="col-sm-3 col-form-label">Catatan</label>
                                                             <textarea placeholder="Silakan masukkan catatan untuk pembeli Anda..." class="form-control" rows="4"
-                                                                id="catatan_efaktur" name="catatan_efaktur"></textarea>
+                                                                id="catatan_efaktur" name="catatan_efaktur">{{$faktur->catatan}}</textarea>
                                                         </div>
-                                                    </div>
-                                                    <div class="d-flex justify-content-between">
-                                                        <div></div>
-                                                        <button class="btn btn-primary btn-submit"name='action'
-                                                            value="create" id="add_all" type="submit"><i
-                                                                data-feather='save'></i>
-                                                            {{ 'Simpan' }}</button>
                                                     </div>
                                                 </div>
                                             </div>
                                         {{-- TAB E-FAKTUR --}}
                                     </div>
-                                </form>
+                               
                             </div>
                         </div>
                     </div>

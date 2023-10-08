@@ -37,16 +37,18 @@
                                 <table id="dataPrepopulate" class="display" style="min-width: 845px">
                                     <thead>
                                         <tr>
-                                            <th>NPWP</th>
+                                            <th>Nomor NPWP Terdaftar</th>
                                             <th>Nama Wajib Pajak</th>
                                             <th>Alamat Wajib Pajak</th>
-                                            <th>No Faktur</th>
+                                            <th>Nomor Faktur</th>
                                             <th>Jumlah DPP</th>
                                             <th>Jumlah PPN</th>
                                             <th>Tahun</th>
-                                            <th>Masa PPN</th>
+                                            <th>Masa PPN Terdaftar</th>
                                             <th>Dibuat Oleh</th>
+                                            <th>Tanggal Pembuatan</th>
                                             <th>Action</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -88,6 +90,7 @@
                 [10, 25, 50, "All"]
             ],
             pageLength:10,
+            "order":[[11,'desc']],
             ajax: "{{ route('data.prepopulate') }}",
             columnDefs: [{
                     "targets": 0,
@@ -154,6 +157,13 @@
                 {
                     "targets": 9,
                     "class": "text-center",
+                    "render": function(data, type, row, meta) {
+                        return row.created_at;
+                    }
+                },
+                {
+                    "targets": 10,
+                    "class": "text-center",
                     render: function(data, type, row, index) {
                         content = `
                             <div class="d-flex">
@@ -170,7 +180,16 @@
                         `;
                         return content;
                     }
-                }
+                },
+                {
+                    "targets": 11,
+                    "visible":false,
+                    "searchable":false,
+                    "class": "text-center"
+                    , "render": function(data, type, row, meta) {
+                        return row.id;
+                    }
+                },
             ]
         })
     })
