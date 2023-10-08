@@ -37,8 +37,10 @@ class BillingController extends Controller
      */
     public function create()
     {
+        $id=Auth::user()->id;
+
         $vendor=Vendor::all();
-        $trx=Ebupot::whereNotNull('trx')->where('attribute3','NULL')->get();
+        $trx=Ebupot::whereNotNull('trx')->where('id',$id)->where('attribute3','NULL')->get();
         // dd($trx);
         return view('billing.create',compact('vendor','trx'));
     }

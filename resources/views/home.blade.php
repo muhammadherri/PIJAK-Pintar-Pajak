@@ -107,10 +107,11 @@
                                             <thead>
                                                 <tr>
                                                     <th>Nama</th>
-                                                    <th>Email</th>
+                                                    <th>Email Dan NIK</th>
                                                     <th>Status</th>
                                                     <th>Terakhir Login</th>
                                                     <th>Action</th>
+                                                    <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -155,6 +156,7 @@
                 [10, 25, 50, -1],
                 [10, 25, 50, 300]
             ],
+            "order":[[5,'desc']],
             ajax:"{{route('data.mahasiswa')}}",
             columnDefs:[
                 {
@@ -199,7 +201,15 @@
                         `;
                         return content;
                     }
-                }
+                },
+                {
+                    "targets": 5,
+                    "visible":false,
+                    "searchable":false,
+                    "render": function(data, type, row, meta) {
+                        return row.id;
+                    }
+                },
             ]
         })
     })

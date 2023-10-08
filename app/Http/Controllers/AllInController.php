@@ -81,7 +81,7 @@ class AllInController extends Controller
                 "id" => $record->id,
                 "name" => $record->name,
                 "email" => $record->email,
-                "created_at" => $record->created_at->format('d-M-Y'),
+                "created_at" => $record->updated_at->format('d-M-Y'),
             );
         }
         $response = array(
