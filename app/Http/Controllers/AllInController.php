@@ -364,7 +364,7 @@ class AllInController extends Controller
         // dd($spt);
         foreach ($spt as $record) {
             $data_arr[] = array(
-                "id" => $record->id,
+                "id" => $record->formulir_id,
                 "nama" => $record->nama_npwp,
                 "no_npwp" => $record->npwp,
                 "jenis_usaha" => $record->jenis_usaha,

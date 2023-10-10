@@ -74,8 +74,6 @@
                 [10, 25, 50, -1],
                 [10, 25, 50, "All"]
             ],
-            // serverSide:true,
-            // processing:true,
 
             ajax: "{{ route('data.ebupot') }}",
             "order":[[0,'desc']],

@@ -54,54 +54,6 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {{-- @foreach ($pph21 as $key => $row)
-                                            <tr>
-                                                <td>
-                                                    {{ $no++ }}
-                                                </td>
-                                                <td>{{ $row->nama_wajib_pajak }}</td>
-                                                <td>
-                                                    @if($row->no_npwp==0 )
-                                                        <span class="badge light badge-danger">Kosong</span>
-                                                    @else
-                                                        {{ $row->no_npwp }}
-                                                    @endif
-                                                </td>
-                                                <td>{{ date('d-m-Y',strtotime($row->masa_penghasilan_start))}}</td>
-                                                <td>{{ $row->tunjangan_pajak }}</td>
-                                                <td>{{ $row->ketentuan_ptkp }}</td>
-                                                <td>{{ $row->ketentuan_tarif }}</td>
-                                                <td>{{ $row->gaji_pensiun }}</td>
-                                                <td>{{ date('d-m-Y',strtotime($row->created_at)) }}</td>
-                                                <td >
-                                                    @if($row->status_npwp==0)
-                                                    <span class="badge light badge-success">NPWP</span>
-                                                    @else
-                                                    <span class="badge light badge-warning">Non NPWP</span>
-                                                    @endif
-                                                </td>
-                                                <td>{{ $row->users->name }}</td>
-                                                <td>
-                                                    <div class="d-flex">
-                                                        <form action="transaksipph21/{{ $row->id }}" method="POST">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit"
-                                                                class="btn btn-danger shadow btn-xs sharp"><i
-                                                                    class="fa fa-trash"></i></button>
-                                                        </form>
-                                                        <a
-                                                            class="btn btn-primary shadow btn-xs sharp me-1"href="{{ route('transaksipph21/edit', $row->id) }}">
-                                                            <i class="fa fa-pencil"></i>
-                                                        </a>
-                                                        <a
-                                                            class="btn btn-success shadow btn-xs sharp me-1"href="{{ route('transaksipph21/show', $row->id) }}">
-                                                            <i class="fa fa-eye"></i>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        @endforeach --}}
                                     </tbody>
                                 </table>
                             </div>
@@ -125,8 +77,6 @@
                 [10, 25, 50, -1],
                 [10, 25, 50, 300]
             ],
-            // serverSide:true,
-            // processing:true,
             "order":[[0,'desc']],
 
             ajax:"{{route('data.pph')}}",

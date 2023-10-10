@@ -157,9 +157,6 @@
                                 <a class="btn btn-danger shadow btn-xs sharp" href="spttahunan/${row.id}/destroy">
                                     <i class="fa fa-trash"></i>
                                 </a>
-                                <a class="btn btn-primary shadow btn-xs sharp me-1" href="spttahunan/${row.id}/edit">
-                                    <i class="fa fa-pencil"></i>
-                                </a>
                                 <a class="btn btn-success shadow btn-xs sharp" href="spttahunan/${row.id}/show">
                                     <i class="fa fa-eye"></i>
                                 </a>

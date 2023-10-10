@@ -112,7 +112,8 @@ class SptTahunanController extends Controller
         $penyertaan_modal = $request->input('penyertaan_modal');
         $penyertaan_persen = $request->input('penyertaan_persen');
         // 1771Vi a 
-
+        $npwpvib = $request->input('penyertaan_npwpb');
+        $npwpvic = $request->input('penyertaan_npwpc');
         $data1771 = array(
             'formulir_id'=>$header_id,
             'jenis_spt'=>$request->jenis_spt,
@@ -355,7 +356,7 @@ class SptTahunanController extends Controller
             'attribute1'=>Auth::user()->id,
         );
         SptTahunanVIHead::create($data1771vihead);
-        foreach ($npwp_pemegang_sh as $key => $row) {
+        foreach ($penyertaan_npwp as $key => $row) {
             $data1771vilines_a = array(
                 'formulir_id' => $header_id,
                 'nama_perusahaan_afiliasi' => $penyertaan_nama[$key],
@@ -364,6 +365,11 @@ class SptTahunanController extends Controller
                 'modal_setor' => $penyertaan_modal[$key],
                 'persen' => $penyertaan_persen[$key],
             );
+            
+            // dd($data1771vilines_a);
+            SptTahunanVILinesA::create($data1771vilines_a);
+        }
+        foreach ($npwpvib as $key => $row) {
             $data1771vilines_b = array(
                 'formulir_id' => $header_id,
                 'nama_peminjam_saham' => $request->penyertaan_namab[$key],
@@ -372,6 +378,10 @@ class SptTahunanController extends Controller
                 'tahun_pinjaman' => $request->penyertaan_thnpinjamanb[$key],
                 'bunga_pinjaman' => $request->penyertaan_bungapinjamanb[$key],
             );
+            SptTahunanVILinesB::create($data1771vilines_b);
+            
+        }
+        foreach ($npwpvic as $key => $row) {
             $data1771vilines_c = array(
                 'formulir_id' => $header_id,
                 'nama_peminjam_saham' => $request->penyertaan_namac[$key],
@@ -380,10 +390,7 @@ class SptTahunanController extends Controller
                 'tahun_pinjaman' => $request->penyertaan_thnpinjamanc[$key],
                 'bunga_pinjaman' => $request->penyertaan_bungapinjamanc[$key],
             );
-            // dd($data1771vilines_a);
-        SptTahunanVILinesA::create($data1771vilines_a);
-        SptTahunanVILinesB::create($data1771vilines_b);
-        SptTahunanVILinesC::create($data1771vilines_c);
+            SptTahunanVILinesC::create($data1771vilines_c);
         }
         $a= \DB::commit();
         return redirect()->route('spttahunan/show',['id'=>$spt->formulir_id]);

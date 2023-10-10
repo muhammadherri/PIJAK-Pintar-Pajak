@@ -48,7 +48,7 @@ class FasilitasController extends Controller
         );
         Fasilitas::create($data);
         $a= \DB::commit();
-        return redirect()->back()->with('alert','Berhasil');
+        return redirect()->route('fasilitas');
     }
 
     /**
@@ -106,7 +106,7 @@ class FasilitasController extends Controller
             'updated_at'=>date('Y-m-d H:i:s'),
         ]);
         $a= \DB::commit();    
-        return back();
+        return redirect()->route('fasilitas');
     }
 
     /**

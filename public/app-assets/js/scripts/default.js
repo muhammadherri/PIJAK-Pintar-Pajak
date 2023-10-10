@@ -1046,765 +1046,765 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     // 1771 I
 
-    // 1771 II
-        const nama_npwp_1771IIInput = document.getElementById('nama_npwp_1771II');
-        const errornamaNpwp_1771IIText = document.getElementById('errornamaNpwp_1771II');
-        nama_npwp_1771IIInput.addEventListener('input', function() {
-            const inputValue = nama_npwp_1771IIInput.value;
+    // // 1771 II
+    //     const nama_npwp_1771IIInput = document.getElementById('nama_npwp_1771II');
+    //     const errornamaNpwp_1771IIText = document.getElementById('errornamaNpwp_1771II');
+    //     nama_npwp_1771IIInput.addEventListener('input', function() {
+    //         const inputValue = nama_npwp_1771IIInput.value;
 
-            if (inputValue.length > 30) {
-                nama_npwp_1771IIInput.value = inputValue.slice(0, 30);
-                errornamaNpwp_1771IIText.textContent = 'Maksimal 30 digit';
-            } else {
-                errornamaNpwp_1771IIText.textContent = '';
-            }
-        });
-        const npwp_1771IIInput = document.getElementById('npwp_1771II');
-        const errornpwp_1771IIText = document.getElementById('errornpwp_1771II');
-        npwp_1771IIInput.addEventListener('input', function() {
-            const inputValue = npwp_1771IIInput.value;
+    //         if (inputValue.length > 30) {
+    //             nama_npwp_1771IIInput.value = inputValue.slice(0, 30);
+    //             errornamaNpwp_1771IIText.textContent = 'Maksimal 30 digit';
+    //         } else {
+    //             errornamaNpwp_1771IIText.textContent = '';
+    //         }
+    //     });
+    //     const npwp_1771IIInput = document.getElementById('npwp_1771II');
+    //     const errornpwp_1771IIText = document.getElementById('errornpwp_1771II');
+    //     npwp_1771IIInput.addEventListener('input', function() {
+    //         const inputValue = npwp_1771IIInput.value;
 
-            if (inputValue.length > 15) {
-                npwp_1771IIInput.value = inputValue.slice(0, 15);
-                errornpwp_1771IIText.textContent = 'Maksimal 15 digit';
-            } else {
-                errornpwp_1771IIText.textContent = '';
-            }
-        });
+    //         if (inputValue.length > 15) {
+    //             npwp_1771IIInput.value = inputValue.slice(0, 15);
+    //             errornpwp_1771IIText.textContent = 'Maksimal 15 digit';
+    //         } else {
+    //             errornpwp_1771IIText.textContent = '';
+    //         }
+    //     });
 
-        const tablelist_1771II = document.querySelector('#list_1771II tbody');
-        const addBtnadd1771ii = document.querySelector('#btn-add1771ii');
-        addBtnadd1771ii.addEventListener('click', function() {
-            const newRow = `
-            <tr>
-                <td width="auto" class="text-center" value="">
-                    <input required autocomplete="off"
-                        type="text" name="angkapembelianbarang[]"
-                        id="angkapembelianbarang[]" min="0"
-                        class="form-control" />
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off"
-                        type="number" name="angkaharpok1[]"
-                        id="angkaharpok1[]" min="0"
-                        class="form-control sub_harpok" />
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off"
-                        type="number" name="angkabiaya_usaha1[]"
-                        id="angkabiaya_usaha1[]" min="0"
-                        class="form-control sub_biaya_usaha" />
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off"
-                        type="number" name="angkabiaya_luar1[]"
-                        id="angkabiaya_luar1[]" min="0"
-                        class="form-control sub_biaya_luar" />
-                </td>
-                <td class="text-center">
-                    <input readonly autocomplete="off"
-                        type="number" name="subjum1[]"
-                        id="subjum1[]" min="0"
-                        class="form-control jumlahtotal" />
-                </td>
-                <td><button type="button" class="btn btn-danger btn-remove-1771ii"><i
-                    class="fa fa-trash"></i>
-                </td>
-            </tr>
-            `;
-            tablelist_1771II.insertAdjacentHTML('beforeend', newRow);
-        });
-        tablelist_1771II.addEventListener('input', function(event) {
-            const target = event.target;
-            if (target.tagName === 'INPUT' && target.name.startsWith('angka')) {
-                const row = target.closest('tr');
-                const harpok1 = parseFloat(row.querySelector('input[name="angkaharpok1[]"]').value) || 0;
-                const biaya_usaha1 = parseFloat(row.querySelector('input[name="angkabiaya_usaha1[]"]').value) || 0;
-                const biaya_luar1 = parseFloat(row.querySelector('input[name="angkabiaya_luar1[]"]').value) || 0;
-                const hasiljumlah1 = row.querySelector('input[name="subjum1[]"]');
-                const sum = harpok1 + biaya_usaha1 + biaya_luar1;
-                hasiljumlah1.value = sum;
+    //     const tablelist_1771II = document.querySelector('#list_1771II tbody');
+    //     const addBtnadd1771ii = document.querySelector('#btn-add1771ii');
+    //     addBtnadd1771ii.addEventListener('click', function() {
+    //         const newRow = `
+    //         <tr>
+    //             <td width="auto" class="text-center" value="">
+    //                 <input required autocomplete="off"
+    //                     type="text" name="angkapembelianbarang[]"
+    //                     id="angkapembelianbarang[]" min="0"
+    //                     class="form-control" />
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off"
+    //                     type="number" name="angkaharpok1[]"
+    //                     id="angkaharpok1[]" min="0"
+    //                     class="form-control sub_harpok" />
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off"
+    //                     type="number" name="angkabiaya_usaha1[]"
+    //                     id="angkabiaya_usaha1[]" min="0"
+    //                     class="form-control sub_biaya_usaha" />
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off"
+    //                     type="number" name="angkabiaya_luar1[]"
+    //                     id="angkabiaya_luar1[]" min="0"
+    //                     class="form-control sub_biaya_luar" />
+    //             </td>
+    //             <td class="text-center">
+    //                 <input readonly autocomplete="off"
+    //                     type="number" name="subjum1[]"
+    //                     id="subjum1[]" min="0"
+    //                     class="form-control jumlahtotal" />
+    //             </td>
+    //             <td><button type="button" class="btn btn-danger btn-remove-1771ii"><i
+    //                 class="fa fa-trash"></i>
+    //             </td>
+    //         </tr>
+    //         `;
+    //         tablelist_1771II.insertAdjacentHTML('beforeend', newRow);
+    //     });
+    //     tablelist_1771II.addEventListener('input', function(event) {
+    //         const target = event.target;
+    //         if (target.tagName === 'INPUT' && target.name.startsWith('angka')) {
+    //             const row = target.closest('tr');
+    //             const harpok1 = parseFloat(row.querySelector('input[name="angkaharpok1[]"]').value) || 0;
+    //             const biaya_usaha1 = parseFloat(row.querySelector('input[name="angkabiaya_usaha1[]"]').value) || 0;
+    //             const biaya_luar1 = parseFloat(row.querySelector('input[name="angkabiaya_luar1[]"]').value) || 0;
+    //             const hasiljumlah1 = row.querySelector('input[name="subjum1[]"]');
+    //             const sum = harpok1 + biaya_usaha1 + biaya_luar1;
+    //             hasiljumlah1.value = sum;
 
-                var totalharpok = 0
-                var totalbiaya_usaha = 0
-                var totalbiaya_luar = 0
-                var totalsub_jumlah = 0
+    //             var totalharpok = 0
+    //             var totalbiaya_usaha = 0
+    //             var totalbiaya_luar = 0
+    //             var totalsub_jumlah = 0
 
-                var pengurangharpok = 0
-                var pengurangbiaya_usaha = 0
-                var pengurangbiaya_luar = 0
-                var pengurangsub_jumlah = 0
+    //             var pengurangharpok = 0
+    //             var pengurangbiaya_usaha = 0
+    //             var pengurangbiaya_luar = 0
+    //             var pengurangsub_jumlah = 0
 
-                $(".sub_harpok").each(function() {
-                    totalharpok += +$(this).val();
-                });
-                $(".sub_biaya_usaha").each(function() {
-                    totalbiaya_usaha += +$(this).val();
-                });
-                $(".sub_biaya_luar").each(function() {
-                    totalbiaya_luar += +$(this).val();
-                });
-                $(".jumlahtotal").each(function() {
-                    totalsub_jumlah += +$(this).val();
-                });
+    //             $(".sub_harpok").each(function() {
+    //                 totalharpok += +$(this).val();
+    //             });
+    //             $(".sub_biaya_usaha").each(function() {
+    //                 totalbiaya_usaha += +$(this).val();
+    //             });
+    //             $(".sub_biaya_luar").each(function() {
+    //                 totalbiaya_luar += +$(this).val();
+    //             });
+    //             $(".jumlahtotal").each(function() {
+    //                 totalsub_jumlah += +$(this).val();
+    //             });
 
-                $(".pengurangan_harpok").each(function() {
-                    pengurangharpok += +$(this).val();
-                });
-                $(".pengurangan_biayausaha").each(function() {
-                    pengurangbiaya_usaha += +$(this).val();
-                });
-                $(".pengurangan_biayaluar").each(function() {
-                    pengurangbiaya_luar += +$(this).val();
-                });
-                $(".pengurangan_subjum").each(function() {
-                    pengurangsub_jumlah += +$(this).val();
-                });
+    //             $(".pengurangan_harpok").each(function() {
+    //                 pengurangharpok += +$(this).val();
+    //             });
+    //             $(".pengurangan_biayausaha").each(function() {
+    //                 pengurangbiaya_usaha += +$(this).val();
+    //             });
+    //             $(".pengurangan_biayaluar").each(function() {
+    //                 pengurangbiaya_luar += +$(this).val();
+    //             });
+    //             $(".pengurangan_subjum").each(function() {
+    //                 pengurangsub_jumlah += +$(this).val();
+    //             });
 
-                const totalharpoknol = totalharpok-pengurangharpok;
-                if(totalharpoknol<0){
-                    $('.total_harpok').val(0);
-                }else{
-                    $('.total_harpok').val(totalharpoknol);
-                }
+    //             const totalharpoknol = totalharpok-pengurangharpok;
+    //             if(totalharpoknol<0){
+    //                 $('.total_harpok').val(0);
+    //             }else{
+    //                 $('.total_harpok').val(totalharpoknol);
+    //             }
                 
-                const totalbiayausahanol = totalbiaya_usaha-pengurangbiaya_usaha;
-                if(totalbiayausahanol<0){
-                    $('.total_biayausaha').val(0);
-                }else{
-                    $('.total_biayausaha').val(totalbiayausahanol);
-                }
+    //             const totalbiayausahanol = totalbiaya_usaha-pengurangbiaya_usaha;
+    //             if(totalbiayausahanol<0){
+    //                 $('.total_biayausaha').val(0);
+    //             }else{
+    //                 $('.total_biayausaha').val(totalbiayausahanol);
+    //             }
                 
-                const totalbiayaluarnol = totalbiaya_luar-pengurangbiaya_luar;
-                if(totalbiayaluarnol<0){
-                    $('.total_biayaluar').val(0);
-                }else{
-                    $('.total_biayaluar').val(totalbiayaluarnol);
-                }
+    //             const totalbiayaluarnol = totalbiaya_luar-pengurangbiaya_luar;
+    //             if(totalbiayaluarnol<0){
+    //                 $('.total_biayaluar').val(0);
+    //             }else{
+    //                 $('.total_biayaluar').val(totalbiayaluarnol);
+    //             }
                 
-                const totalnol = totalsub_jumlah-pengurangsub_jumlah;
-                if(totalnol<0){
-                    $('.total').val(0);
-                }else{
-                    $('.total').val(totalnol);
-                }
-            }
-        });
-        tablelist_1771II.addEventListener('click', function(event) {
-            if (event.target.classList.contains('btn-remove-1771ii')) {
-                const row = event.target.closest('tr');
-                row.remove();
-            }
-        });
-    // 1771 II
+    //             const totalnol = totalsub_jumlah-pengurangsub_jumlah;
+    //             if(totalnol<0){
+    //                 $('.total').val(0);
+    //             }else{
+    //                 $('.total').val(totalnol);
+    //             }
+    //         }
+    //     });
+    //     tablelist_1771II.addEventListener('click', function(event) {
+    //         if (event.target.classList.contains('btn-remove-1771ii')) {
+    //             const row = event.target.closest('tr');
+    //             row.remove();
+    //         }
+    //     });
+    // // 1771 II
 
-    // 1771 III
-        const tablekredit = document.querySelector('#list_1771III tbody');
-        const addBtnaddkredit = document.querySelector('#btn-addkredit');
-        addBtnaddkredit.addEventListener('click', function() {
-            const newRow = `
-            <tr>
-                <td class="text-center">
-                    <input required autocomplete="off" type="text" name="kreditnama[]" id="kreditnama[]"
-                        class="form-control" />
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off" type="number" name="kreditnpwp[]" id="kreditnpwp[]" min="0"
-                        class="form-control" />
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off" type="text" name="kredittrx[]" id="kredittrx[]"
-                        class="form-control" />
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off" type="number" name="kreditrp[]" id="kreditrp[]" min="0"
-                        class="form-control subrupiah" />
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off" type="number" name="kreditpajak[]" id="kreditpajak[]" min="0"
-                        class="form-control subpajak" />
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off" type="number" name="kreditnomor[]" id="kreditnomor[]" min="0"
-                        class="form-control" />
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off" type="date" name="kredittgl[]" id="kredittgl[]"
-                        class="form-control" />
-                </td>
-                <td><button type="button" class="btn btn-danger btn-remove-kredit"><i
-                    class="fa fa-trash"></i>
-                </td>
-            </tr>
-            `;
-            tablekredit.insertAdjacentHTML('beforeend', newRow);
-        });
-        tablekredit.addEventListener('input', function(event) {
-            const target = event.target;
-            if (target.tagName === 'INPUT' && target.name.startsWith('kredit')) {
-                var totalrupiah= 0
-                var totalpenghasilan= 0
+    // // 1771 III
+    //     const tablekredit = document.querySelector('#list_1771III tbody');
+    //     const addBtnaddkredit = document.querySelector('#btn-addkredit');
+    //     addBtnaddkredit.addEventListener('click', function() {
+    //         const newRow = `
+    //         <tr>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off" type="text" name="kreditnama[]" id="kreditnama[]"
+    //                     class="form-control" />
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off" type="number" name="kreditnpwp[]" id="kreditnpwp[]" min="0"
+    //                     class="form-control" />
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off" type="text" name="kredittrx[]" id="kredittrx[]"
+    //                     class="form-control" />
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off" type="number" name="kreditrp[]" id="kreditrp[]" min="0"
+    //                     class="form-control subrupiah" />
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off" type="number" name="kreditpajak[]" id="kreditpajak[]" min="0"
+    //                     class="form-control subpajak" />
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off" type="number" name="kreditnomor[]" id="kreditnomor[]" min="0"
+    //                     class="form-control" />
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off" type="date" name="kredittgl[]" id="kredittgl[]"
+    //                     class="form-control" />
+    //             </td>
+    //             <td><button type="button" class="btn btn-danger btn-remove-kredit"><i
+    //                 class="fa fa-trash"></i>
+    //             </td>
+    //         </tr>
+    //         `;
+    //         tablekredit.insertAdjacentHTML('beforeend', newRow);
+    //     });
+    //     tablekredit.addEventListener('input', function(event) {
+    //         const target = event.target;
+    //         if (target.tagName === 'INPUT' && target.name.startsWith('kredit')) {
+    //             var totalrupiah= 0
+    //             var totalpenghasilan= 0
 
-                $(".subrupiah").each(function() {
-                    totalrupiah += +$(this).val();
-                });
-                $(".subpajak").each(function() {
-                    totalpenghasilan += +$(this).val();
-                });
+    //             $(".subrupiah").each(function() {
+    //                 totalrupiah += +$(this).val();
+    //             });
+    //             $(".subpajak").each(function() {
+    //                 totalpenghasilan += +$(this).val();
+    //             });
                 
-                $('.jumlahrupiah').val(totalrupiah);
-                $('.jumlahpenghasilan').val(totalpenghasilan);
+    //             $('.jumlahrupiah').val(totalrupiah);
+    //             $('.jumlahpenghasilan').val(totalpenghasilan);
                 
-            }
-        });
-        tablekredit.addEventListener('click', function(event) {
-            if (event.target.classList.contains('btn-remove-kredit')) {
-                const row = event.target.closest('tr');
-                row.remove();
-            }
-        });
+    //         }
+    //     });
+    //     tablekredit.addEventListener('click', function(event) {
+    //         if (event.target.classList.contains('btn-remove-kredit')) {
+    //             const row = event.target.closest('tr');
+    //             row.remove();
+    //         }
+    //     });
 
-        const nama_npwp_1771IIIInput = document.getElementById('nama_npwp_1771III');
-        const errornamaNpwp_1771IIIText = document.getElementById('errornamaNpwp_1771III');
-        nama_npwp_1771IIIInput.addEventListener('input', function() {
-            const inputValue = nama_npwp_1771IIIInput.value;
+    //     const nama_npwp_1771IIIInput = document.getElementById('nama_npwp_1771III');
+    //     const errornamaNpwp_1771IIIText = document.getElementById('errornamaNpwp_1771III');
+    //     nama_npwp_1771IIIInput.addEventListener('input', function() {
+    //         const inputValue = nama_npwp_1771IIIInput.value;
 
-            if (inputValue.length > 30) {
-                nama_npwp_1771IIIInput.value = inputValue.slice(0, 30);
-                errornamaNpwp_1771IIIText.textContent = 'Maksimal 30 digit';
-            } else {
-                errornamaNpwp_1771IIIText.textContent = '';
-            }
-        });
-        const npwp_1771IIIInput = document.getElementById('npwp_1771III');
-        const errornpwp_1771IIIText = document.getElementById('errornpwp_1771III');
-        npwp_1771IIIInput.addEventListener('input', function() {
-            const inputValue = npwp_1771IIIInput.value;
+    //         if (inputValue.length > 30) {
+    //             nama_npwp_1771IIIInput.value = inputValue.slice(0, 30);
+    //             errornamaNpwp_1771IIIText.textContent = 'Maksimal 30 digit';
+    //         } else {
+    //             errornamaNpwp_1771IIIText.textContent = '';
+    //         }
+    //     });
+    //     const npwp_1771IIIInput = document.getElementById('npwp_1771III');
+    //     const errornpwp_1771IIIText = document.getElementById('errornpwp_1771III');
+    //     npwp_1771IIIInput.addEventListener('input', function() {
+    //         const inputValue = npwp_1771IIIInput.value;
 
-            if (inputValue.length > 15) {
-                npwp_1771IIIInput.value = inputValue.slice(0, 15);
-                errornpwp_1771IIIText.textContent = 'Maksimal 15 digit';
-            } else {
-                errornpwp_1771IIIText.textContent = '';
-            }
-        });
-    // 1771 III
-    // 1771 IV
-        const nama_npwp_1771IVInput = document.getElementById('nama_npwp_1771IV');
-        const errornamaNpwp_1771IVText = document.getElementById('errornamaNpwp_1771IV');
-        nama_npwp_1771IVInput.addEventListener('input', function() {
-            const inputValue = nama_npwp_1771IVInput.value;
+    //         if (inputValue.length > 15) {
+    //             npwp_1771IIIInput.value = inputValue.slice(0, 15);
+    //             errornpwp_1771IIIText.textContent = 'Maksimal 15 digit';
+    //         } else {
+    //             errornpwp_1771IIIText.textContent = '';
+    //         }
+    //     });
+    // // 1771 III
+    // // 1771 IV
+    //     const nama_npwp_1771IVInput = document.getElementById('nama_npwp_1771IV');
+    //     const errornamaNpwp_1771IVText = document.getElementById('errornamaNpwp_1771IV');
+    //     nama_npwp_1771IVInput.addEventListener('input', function() {
+    //         const inputValue = nama_npwp_1771IVInput.value;
 
-            if (inputValue.length > 30) {
-                nama_npwp_1771IVInput.value = inputValue.slice(0, 30);
-                errornamaNpwp_1771IVText.textContent = 'Maksimal 30 digit';
-            } else {
-                errornamaNpwp_1771IVText.textContent = '';
-            }
-        });
-        const npwp_1771IVInput = document.getElementById('npwp_1771IV');
-        const errornpwp_1771IVText = document.getElementById('errornpwp_1771IV');
-        npwp_1771IVInput.addEventListener('input', function() {
-            const inputValue = npwp_1771IVInput.value;
+    //         if (inputValue.length > 30) {
+    //             nama_npwp_1771IVInput.value = inputValue.slice(0, 30);
+    //             errornamaNpwp_1771IVText.textContent = 'Maksimal 30 digit';
+    //         } else {
+    //             errornamaNpwp_1771IVText.textContent = '';
+    //         }
+    //     });
+    //     const npwp_1771IVInput = document.getElementById('npwp_1771IV');
+    //     const errornpwp_1771IVText = document.getElementById('errornpwp_1771IV');
+    //     npwp_1771IVInput.addEventListener('input', function() {
+    //         const inputValue = npwp_1771IVInput.value;
 
-            if (inputValue.length > 15) {
-                npwp_1771IVInput.value = inputValue.slice(0, 15);
-                errornpwp_1771IVText.textContent = 'Maksimal 15 digit';
-            } else {
-                errornpwp_1771IVText.textContent = '';
-            }
-        });
+    //         if (inputValue.length > 15) {
+    //             npwp_1771IVInput.value = inputValue.slice(0, 15);
+    //             errornpwp_1771IVText.textContent = 'Maksimal 15 digit';
+    //         } else {
+    //             errornpwp_1771IVText.textContent = '';
+    //         }
+    //     });
 
-        const tablelist_1771IV = document.querySelector('#list_1771IV tbody');
-        const addBtnadd1771iva = document.querySelector('#btn-add1771iva');
-        addBtnadd1771iva.addEventListener('click', function() {
-            const newRow = `
-            <tr>
-                <td width="auto" class="text-center">
-                    <input required autocomplete="off"
-                    type="text"
-                    name="jenispenghasilan[]"
-                    id="jenispenghasilan[]"
-                    class="form-control" />
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off"
-                        type="number"
-                        name="angka_pengenaan_pajak[]"
-                        id="angka_pengenaan_pajak[]"
-                        min="0"
-                        class="form-control sub_pengenaanpajak" />
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off"
-                        type="number"
-                        name="angka_tarif_potongan[]"
-                        id="angka_tarif_potongan[]"
-                        min="0"
-                        class="form-control sub_tarifpotongan" />
-                </td>
-                <td class="text-center">
-                    <input readonly autocomplete="off"
-                        type="number"
-                        name="angka_pph_terutang[]"
-                        id="angka_pph_terutang[]" min="0"
-                        class="form-control sub_terutang" />
-                </td>
-                <td><button type="button" class="btn btn-danger btn-remove-1771iva"><i
-                    class="fa fa-trash"></i>
-                </td>
-            </tr>
-            `;
-            tablelist_1771IV.insertAdjacentHTML('beforeend', newRow);
-        });
-        tablelist_1771IV.addEventListener('input', function(event) {
-            const target = event.target;
-            if (target.tagName === 'INPUT' && target.name.startsWith('angka')) {
-                const row = target.closest('tr');
-                const pengenaanpajak = parseFloat(row.querySelector('input[name="angka_pengenaan_pajak[]"]').value) || 0;
-                const tarif = parseFloat(row.querySelector('input[name="angka_tarif_potongan[]"]').value) || 0;
-                const hasiljumlah1 = row.querySelector('input[name="angka_pph_terutang[]"]');
-                const sum = pengenaanpajak * tarif/100;
-                hasiljumlah1.value = sum;
+    //     const tablelist_1771IV = document.querySelector('#list_1771IV tbody');
+    //     const addBtnadd1771iva = document.querySelector('#btn-add1771iva');
+    //     addBtnadd1771iva.addEventListener('click', function() {
+    //         const newRow = `
+    //         <tr>
+    //             <td width="auto" class="text-center">
+    //                 <input required autocomplete="off"
+    //                 type="text"
+    //                 name="jenispenghasilan[]"
+    //                 id="jenispenghasilan[]"
+    //                 class="form-control" />
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off"
+    //                     type="number"
+    //                     name="angka_pengenaan_pajak[]"
+    //                     id="angka_pengenaan_pajak[]"
+    //                     min="0"
+    //                     class="form-control sub_pengenaanpajak" />
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off"
+    //                     type="number"
+    //                     name="angka_tarif_potongan[]"
+    //                     id="angka_tarif_potongan[]"
+    //                     min="0"
+    //                     class="form-control sub_tarifpotongan" />
+    //             </td>
+    //             <td class="text-center">
+    //                 <input readonly autocomplete="off"
+    //                     type="number"
+    //                     name="angka_pph_terutang[]"
+    //                     id="angka_pph_terutang[]" min="0"
+    //                     class="form-control sub_terutang" />
+    //             </td>
+    //             <td><button type="button" class="btn btn-danger btn-remove-1771iva"><i
+    //                 class="fa fa-trash"></i>
+    //             </td>
+    //         </tr>
+    //         `;
+    //         tablelist_1771IV.insertAdjacentHTML('beforeend', newRow);
+    //     });
+    //     tablelist_1771IV.addEventListener('input', function(event) {
+    //         const target = event.target;
+    //         if (target.tagName === 'INPUT' && target.name.startsWith('angka')) {
+    //             const row = target.closest('tr');
+    //             const pengenaanpajak = parseFloat(row.querySelector('input[name="angka_pengenaan_pajak[]"]').value) || 0;
+    //             const tarif = parseFloat(row.querySelector('input[name="angka_tarif_potongan[]"]').value) || 0;
+    //             const hasiljumlah1 = row.querySelector('input[name="angka_pph_terutang[]"]');
+    //             const sum = pengenaanpajak * tarif/100;
+    //             hasiljumlah1.value = sum;
 
-                var total_pengenaanpajak = 0
-                var total_tarifpotongan = 0
-                var totalterutang = 0
+    //             var total_pengenaanpajak = 0
+    //             var total_tarifpotongan = 0
+    //             var totalterutang = 0
 
-                $(".sub_pengenaanpajak").each(function() {
-                    total_pengenaanpajak += +$(this).val();
-                });
-                $(".sub_tarifpotongan").each(function() {
-                    total_tarifpotongan += +$(this).val();
-                });
+    //             $(".sub_pengenaanpajak").each(function() {
+    //                 total_pengenaanpajak += +$(this).val();
+    //             });
+    //             $(".sub_tarifpotongan").each(function() {
+    //                 total_tarifpotongan += +$(this).val();
+    //             });
                 
-                $(".sub_terutang").each(function() {
-                    totalterutang += +$(this).val();
-                });
+    //             $(".sub_terutang").each(function() {
+    //                 totalterutang += +$(this).val();
+    //             });
 
-                $('.total_kena_pajak').val(total_pengenaanpajak);
-                $('.total_tarif_potongan').val(total_tarifpotongan);
-                $('.total_terutang').val(totalterutang);
+    //             $('.total_kena_pajak').val(total_pengenaanpajak);
+    //             $('.total_tarif_potongan').val(total_tarifpotongan);
+    //             $('.total_terutang').val(totalterutang);
 
-            }
-        });
-        tablelist_1771IV.addEventListener('click', function(event) {
-            if (event.target.classList.contains('btn-remove-1771iva')) {
-                const row = event.target.closest('tr');
-                row.remove();
-            }
-        });
+    //         }
+    //     });
+    //     tablelist_1771IV.addEventListener('click', function(event) {
+    //         if (event.target.classList.contains('btn-remove-1771iva')) {
+    //             const row = event.target.closest('tr');
+    //             row.remove();
+    //         }
+    //     });
 
-        const tablelist_1771IVB = document.querySelector('#list_1771IVB tbody');
-        const addBtnadd1771ivb = document.querySelector('#btn-add1771ivb');
-        addBtnadd1771ivb.addEventListener('click', function() {
-            const newRow = `
-            <tr>
-                <td width="auto" class="text-center">
-                    <input required autocomplete="off"
-                        type="text"
-                        name="jenis_penghasilan[]"
-                        id="jenis_penghasilan[]"
-                        class="form-control" />
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off"
-                        type="number"
-                        name="angka_penghasilan_bruto[]"
-                        id="angka_penghasilan_bruto[]"
-                        min="0"
-                        class="form-control sub_penghasilan_bruto" />
-                </td>
-                <td><button type="button" class="btn btn-danger btn-remove-1771ivb"><i
-                    class="fa fa-trash"></i>
-                </td>
-            </tr>
-            `;
-            tablelist_1771IVB.insertAdjacentHTML('beforeend', newRow);
-        });
-        tablelist_1771IVB.addEventListener('input', function(event) {
-            const target = event.target;
-            if (target.tagName === 'INPUT' && target.name.startsWith('angka')) {
+    //     const tablelist_1771IVB = document.querySelector('#list_1771IVB tbody');
+    //     const addBtnadd1771ivb = document.querySelector('#btn-add1771ivb');
+    //     addBtnadd1771ivb.addEventListener('click', function() {
+    //         const newRow = `
+    //         <tr>
+    //             <td width="auto" class="text-center">
+    //                 <input required autocomplete="off"
+    //                     type="text"
+    //                     name="jenis_penghasilan[]"
+    //                     id="jenis_penghasilan[]"
+    //                     class="form-control" />
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off"
+    //                     type="number"
+    //                     name="angka_penghasilan_bruto[]"
+    //                     id="angka_penghasilan_bruto[]"
+    //                     min="0"
+    //                     class="form-control sub_penghasilan_bruto" />
+    //             </td>
+    //             <td><button type="button" class="btn btn-danger btn-remove-1771ivb"><i
+    //                 class="fa fa-trash"></i>
+    //             </td>
+    //         </tr>
+    //         `;
+    //         tablelist_1771IVB.insertAdjacentHTML('beforeend', newRow);
+    //     });
+    //     tablelist_1771IVB.addEventListener('input', function(event) {
+    //         const target = event.target;
+    //         if (target.tagName === 'INPUT' && target.name.startsWith('angka')) {
 
-                var total_bruto = 0
+    //             var total_bruto = 0
 
-                $(".sub_penghasilan_bruto").each(function() {
-                    total_bruto += +$(this).val();
-                });
+    //             $(".sub_penghasilan_bruto").each(function() {
+    //                 total_bruto += +$(this).val();
+    //             });
             
-                $('.total_bruto').val(total_bruto);
+    //             $('.total_bruto').val(total_bruto);
 
-            }
-        });
-        tablelist_1771IVB.addEventListener('click', function(event) {
-            if (event.target.classList.contains('btn-remove-1771ivb')) {
-                const row = event.target.closest('tr');
-                row.remove();
-            }
-        });
-    // 1771 IV
-    // 1771 V
-        const nama_npwp_1771VInput = document.getElementById('nama_npwp_1771V');
-        const errornamaNpwp_1771VText = document.getElementById('errornamaNpwp_1771V');
-        nama_npwp_1771VInput.addEventListener('input', function() {
-            const inputValue = nama_npwp_1771VInput.value;
+    //         }
+    //     });
+    //     tablelist_1771IVB.addEventListener('click', function(event) {
+    //         if (event.target.classList.contains('btn-remove-1771ivb')) {
+    //             const row = event.target.closest('tr');
+    //             row.remove();
+    //         }
+    //     });
+    // // 1771 IV
+    // // 1771 V
+    //     const nama_npwp_1771VInput = document.getElementById('nama_npwp_1771V');
+    //     const errornamaNpwp_1771VText = document.getElementById('errornamaNpwp_1771V');
+    //     nama_npwp_1771VInput.addEventListener('input', function() {
+    //         const inputValue = nama_npwp_1771VInput.value;
 
-            if (inputValue.length > 30) {
-                nama_npwp_1771VInput.value = inputValue.slice(0, 30);
-                errornamaNpwp_1771VText.textContent = 'Maksimal 30 digit';
-            } else {
-                errornamaNpwp_1771VText.textContent = '';
-            }
-        });
-        const npwp_1771VInput = document.getElementById('npwp_1771V');
-        const errornpwp_1771VText = document.getElementById('errornpwp_1771V');
-        npwp_1771VInput.addEventListener('input', function() {
-            const inputValue = npwp_1771VInput.value;
+    //         if (inputValue.length > 30) {
+    //             nama_npwp_1771VInput.value = inputValue.slice(0, 30);
+    //             errornamaNpwp_1771VText.textContent = 'Maksimal 30 digit';
+    //         } else {
+    //             errornamaNpwp_1771VText.textContent = '';
+    //         }
+    //     });
+    //     const npwp_1771VInput = document.getElementById('npwp_1771V');
+    //     const errornpwp_1771VText = document.getElementById('errornpwp_1771V');
+    //     npwp_1771VInput.addEventListener('input', function() {
+    //         const inputValue = npwp_1771VInput.value;
 
-            if (inputValue.length > 15) {
-                npwp_1771VInput.value = inputValue.slice(0, 15);
-                errornpwp_1771VText.textContent = 'Maksimal 15 digit';
-            } else {
-                errornpwp_1771VText.textContent = '';
-            }
-        });
-        const tablelist1771V = document.querySelector('#list_1771V tbody');
-        const addBtnaddlist1771V = document.querySelector('#btn-add1771V');
-        addBtnaddlist1771V.addEventListener('click', function() {
-            const newRow = `
-            <tr>
-                <td width="auto" class="text-center">
-                    <input required autocomplete="off"
-                        type="text"
-                        name="pemegangsh_nama_1771V[]"
-                        id="pemegangsh_nama_1771V[]" min="0"
-                        class="form-control" />
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off"
-                        type="text"
-                        name="pemegangsh_alamat_nama_1771V[]"
-                        id="pemegangsh_alamat_nama_1771V[]"
-                        min="0" class="form-control" />
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off"
-                        type="number"
-                        name="pemegangsh_npwp_1771V[]"
-                        id="pemegangsh_npwp_1771V[]" min="0"
-                        class="form-control" />
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off"
-                        type="number"
-                        name="pemegangsh_modalsetor_1771V[]"
-                        id="pemegangsh_modalsetor_1771V[]"
-                        min="0"
-                        class="form-control submodalsetor1771v_a" />
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off"
-                        type="number"
-                        name="pemegangsh_persen_1771V[]"
-                        id="pemegangsh_persen_1771V[]"
-                        min="0" class="form-control" />
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off"
-                        type="number"
-                        name="pemegangsh_dividen_1771V[]"
-                        id="pemegangsh_dividen_1771V[]"
-                        min="0" class="form-control subdividen177v_a" />
-                </td>
-                <td><button type="button" class="btn btn-danger btn-remove-1771V"><i
-                    class="fa fa-trash"></i>
-                </td>
-            </tr>
-            `;
-            tablelist1771V.insertAdjacentHTML('beforeend', newRow);
-        });
-        tablelist1771V.addEventListener('input', function(event) {
-            const target = event.target;
-            if (target.tagName === 'INPUT' && target.name.startsWith('pemegangsh')) {
-                const row = target.closest('tr');
+    //         if (inputValue.length > 15) {
+    //             npwp_1771VInput.value = inputValue.slice(0, 15);
+    //             errornpwp_1771VText.textContent = 'Maksimal 15 digit';
+    //         } else {
+    //             errornpwp_1771VText.textContent = '';
+    //         }
+    //     });
+    //     const tablelist1771V = document.querySelector('#list_1771V tbody');
+    //     const addBtnaddlist1771V = document.querySelector('#btn-add1771V');
+    //     addBtnaddlist1771V.addEventListener('click', function() {
+    //         const newRow = `
+    //         <tr>
+    //             <td width="auto" class="text-center">
+    //                 <input required autocomplete="off"
+    //                     type="text"
+    //                     name="pemegangsh_nama_1771V[]"
+    //                     id="pemegangsh_nama_1771V[]" min="0"
+    //                     class="form-control" />
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off"
+    //                     type="text"
+    //                     name="pemegangsh_alamat_nama_1771V[]"
+    //                     id="pemegangsh_alamat_nama_1771V[]"
+    //                     min="0" class="form-control" />
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off"
+    //                     type="number"
+    //                     name="pemegangsh_npwp_1771V[]"
+    //                     id="pemegangsh_npwp_1771V[]" min="0"
+    //                     class="form-control" />
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off"
+    //                     type="number"
+    //                     name="pemegangsh_modalsetor_1771V[]"
+    //                     id="pemegangsh_modalsetor_1771V[]"
+    //                     min="0"
+    //                     class="form-control submodalsetor1771v_a" />
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off"
+    //                     type="number"
+    //                     name="pemegangsh_persen_1771V[]"
+    //                     id="pemegangsh_persen_1771V[]"
+    //                     min="0" class="form-control" />
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off"
+    //                     type="number"
+    //                     name="pemegangsh_dividen_1771V[]"
+    //                     id="pemegangsh_dividen_1771V[]"
+    //                     min="0" class="form-control subdividen177v_a" />
+    //             </td>
+    //             <td><button type="button" class="btn btn-danger btn-remove-1771V"><i
+    //                 class="fa fa-trash"></i>
+    //             </td>
+    //         </tr>
+    //         `;
+    //         tablelist1771V.insertAdjacentHTML('beforeend', newRow);
+    //     });
+    //     tablelist1771V.addEventListener('input', function(event) {
+    //         const target = event.target;
+    //         if (target.tagName === 'INPUT' && target.name.startsWith('pemegangsh')) {
+    //             const row = target.closest('tr');
 
-                var totalmodalsetor = 0
-                $(".submodalsetor1771v_a").each(function() {
-                    totalmodalsetor += +$(this).val();
-                });
-                var totaldividen = 0
-                $(".subdividen177v_a").each(function() {
-                    totaldividen += +$(this).val();
-                });
+    //             var totalmodalsetor = 0
+    //             $(".submodalsetor1771v_a").each(function() {
+    //                 totalmodalsetor += +$(this).val();
+    //             });
+    //             var totaldividen = 0
+    //             $(".subdividen177v_a").each(function() {
+    //                 totaldividen += +$(this).val();
+    //             });
 
-                $('.total_modalsetor').val(totalmodalsetor);
-                $('.total_dividen').val(totaldividen);
-            }
-        });
-        tablelist1771V.addEventListener('click', function(event) {
-            if (event.target.classList.contains('btn-remove-1771V')) {
-                const row = event.target.closest('tr');
-                row.remove();
-            }
-        });
-        const tablelist1771Vb = document.querySelector('#list_1771Vb tbody');
-        const addBtnaddlist1771Vb = document.querySelector('#btn-add1771Vb');
-        addBtnaddlist1771Vb.addEventListener('click', function() {
-            const newRow = `
-            <tr>
-                <td width="auto" class="text-center">
-                    <input required autocomplete="off" type="text"
-                        name="pemegangshb_nama_1771V[]" id="pemegangshb_nama_1771V[]"
-                        min="0"
-                        class="form-control"/>
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off" type="text"
-                        name="pemegangshb_alamat_nama_1771V[]" id="pemegangshb_alamat_nama_1771V[]"
-                        min="0"
-                        class="form-control"/>
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off" type="number"
-                        name="pemegangshb_npwp_1771V[]"
-                        id="pemegangsh_npwpb_1771V[]" min="0"
-                        class="form-control"/>
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off" type="text"
-                        name="pemegangshb_jabatan_1771V[]"
-                        id="pemegangshb_jabatan_1771V[]" min="0"
-                        class="form-control submodalsetor"/>
-                </td>
-                <td><button type="button" class="btn btn-danger btn-remove-1771Vb"><i
-                    class="fa fa-trash"></i>
-                </td>
-            </tr>
-            `;
-            tablelist1771Vb.insertAdjacentHTML('beforeend', newRow);
-        });
-        tablelist1771Vb.addEventListener('input', function(event) {
-            const target = event.target;
-            if (target.tagName === 'INPUT' && target.name.startsWith('pemegangshb')) {
-                const row = target.closest('tr');
-                // const pengenaanpajak = parseFloat(row.querySelector('input[name="pemegangsh_modalsetor_1771V[]"]').value) || 0;
-                // const tarif = parseFloat(row.querySelector('input[name="pemegangsh_dividen_1771V[]"]').value) || 0;
-                // const hasiljumlah1 = row.querySelector('input[name="angka_pph_terutang[]"]');
-                // const sum = pengenaanpajak * tarif/100;
-                // hasiljumlah1.value = sum;
-            }
-        });
-        tablelist1771Vb.addEventListener('click', function(event) {
-            if (event.target.classList.contains('btn-remove-1771Vb')) {
-                const row = event.target.closest('tr');
-                row.remove();
-            }
-        });
-    // 1771 V
+    //             $('.total_modalsetor').val(totalmodalsetor);
+    //             $('.total_dividen').val(totaldividen);
+    //         }
+    //     });
+    //     tablelist1771V.addEventListener('click', function(event) {
+    //         if (event.target.classList.contains('btn-remove-1771V')) {
+    //             const row = event.target.closest('tr');
+    //             row.remove();
+    //         }
+    //     });
+    //     const tablelist1771Vb = document.querySelector('#list_1771Vb tbody');
+    //     const addBtnaddlist1771Vb = document.querySelector('#btn-add1771Vb');
+    //     addBtnaddlist1771Vb.addEventListener('click', function() {
+    //         const newRow = `
+    //         <tr>
+    //             <td width="auto" class="text-center">
+    //                 <input required autocomplete="off" type="text"
+    //                     name="pemegangshb_nama_1771V[]" id="pemegangshb_nama_1771V[]"
+    //                     min="0"
+    //                     class="form-control"/>
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off" type="text"
+    //                     name="pemegangshb_alamat_nama_1771V[]" id="pemegangshb_alamat_nama_1771V[]"
+    //                     min="0"
+    //                     class="form-control"/>
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off" type="number"
+    //                     name="pemegangshb_npwp_1771V[]"
+    //                     id="pemegangsh_npwpb_1771V[]" min="0"
+    //                     class="form-control"/>
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off" type="text"
+    //                     name="pemegangshb_jabatan_1771V[]"
+    //                     id="pemegangshb_jabatan_1771V[]" min="0"
+    //                     class="form-control submodalsetor"/>
+    //             </td>
+    //             <td><button type="button" class="btn btn-danger btn-remove-1771Vb"><i
+    //                 class="fa fa-trash"></i>
+    //             </td>
+    //         </tr>
+    //         `;
+    //         tablelist1771Vb.insertAdjacentHTML('beforeend', newRow);
+    //     });
+    //     tablelist1771Vb.addEventListener('input', function(event) {
+    //         const target = event.target;
+    //         if (target.tagName === 'INPUT' && target.name.startsWith('pemegangshb')) {
+    //             const row = target.closest('tr');
+    //             // const pengenaanpajak = parseFloat(row.querySelector('input[name="pemegangsh_modalsetor_1771V[]"]').value) || 0;
+    //             // const tarif = parseFloat(row.querySelector('input[name="pemegangsh_dividen_1771V[]"]').value) || 0;
+    //             // const hasiljumlah1 = row.querySelector('input[name="angka_pph_terutang[]"]');
+    //             // const sum = pengenaanpajak * tarif/100;
+    //             // hasiljumlah1.value = sum;
+    //         }
+    //     });
+    //     tablelist1771Vb.addEventListener('click', function(event) {
+    //         if (event.target.classList.contains('btn-remove-1771Vb')) {
+    //             const row = event.target.closest('tr');
+    //             row.remove();
+    //         }
+    //     });
+    // // 1771 V
 
-    // 1771 VI
-        const nama_npwp_1771VIInput = document.getElementById('nama_npwp_1771VI');
-        const errornamaNpwp_1771VIText = document.getElementById('errornamaNpwp_1771VI');
-        nama_npwp_1771VIInput.addEventListener('input', function() {
-            const inputValue = nama_npwp_1771VIInput.value;
+    // // 1771 VI
+    //     const nama_npwp_1771VIInput = document.getElementById('nama_npwp_1771VI');
+    //     const errornamaNpwp_1771VIText = document.getElementById('errornamaNpwp_1771VI');
+    //     nama_npwp_1771VIInput.addEventListener('input', function() {
+    //         const inputValue = nama_npwp_1771VIInput.value;
 
-            if (inputValue.length > 30) {
-                nama_npwp_1771VIInput.value = inputValue.slice(0, 30);
-                errornamaNpwp_1771VIText.textContent = 'Maksimal 30 digit';
-            } else {
-                errornamaNpwp_1771VIText.textContent = '';
-            }
-        });
-        const npwp_1771VIInput = document.getElementById('npwp_1771VI');
-        const errornpwp_1771VIText = document.getElementById('errornpwp_1771VI');
-        npwp_1771VIInput.addEventListener('input', function() {
-            const inputValue = npwp_1771VIInput.value;
+    //         if (inputValue.length > 30) {
+    //             nama_npwp_1771VIInput.value = inputValue.slice(0, 30);
+    //             errornamaNpwp_1771VIText.textContent = 'Maksimal 30 digit';
+    //         } else {
+    //             errornamaNpwp_1771VIText.textContent = '';
+    //         }
+    //     });
+    //     const npwp_1771VIInput = document.getElementById('npwp_1771VI');
+    //     const errornpwp_1771VIText = document.getElementById('errornpwp_1771VI');
+    //     npwp_1771VIInput.addEventListener('input', function() {
+    //         const inputValue = npwp_1771VIInput.value;
 
-            if (inputValue.length > 15) {
-                npwp_1771VIInput.value = inputValue.slice(0, 15);
-                errornpwp_1771VIText.textContent = 'Maksimal 15 digit';
-            } else {
-                errornpwp_1771VIText.textContent = '';
-            }
-        });
-        const tablelist1771VI = document.querySelector('#list_1771VI tbody');
-        const addBtnaddlist1771VI = document.querySelector('#btn-add1771VI');
-        addBtnaddlist1771VI.addEventListener('click', function() {
-            const newRow = `
-            <tr>
-                <td width="auto" class="text-center">
-                    <input required autocomplete="off" type="text"
-                        name="penyertaan_nama[]" id="penyertaan_nama[]"
-                        min="0"
-                        class="form-control"/>
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off" type="text"
-                        name="penyertaan_alamat[]" id="penyertaan_alamat[]"
-                        min="0"
-                        class="form-control"/>
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off" type="number"
-                        name="penyertaan_npwp[]"
-                        id="penyertaan_npwp[]" min="0"
-                        class="form-control"/>
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off" type="number"
-                        name="penyertaan_modal[]"
-                        id="penyertaan_modal[]" min="0"
-                        class="form-control submodalafiliasi"/>
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off" type="number"
-                        name="penyertaan_persen[]"
-                        id="penyertaan_persen[]" min="0"
-                        class="form-control"/>
-                </td>
-                <td><button type="button" class="btn btn-danger btn-remove-1771VI"><i
-                    class="fa fa-trash"></i>
-                </td>
-            </tr>
-            `;
-            tablelist1771VI.insertAdjacentHTML('beforeend', newRow);
-        });
-        tablelist1771VI.addEventListener('input', function(event) {
-            const target = event.target;
-            if (target.tagName === 'INPUT' && target.name.startsWith('penyertaan')) {
-                const row = target.closest('tr');
-                // const pengenaanpajak = parseFloat(row.querySelector('input[name="pemegangsh_modalsetor_1771V[]"]').value) || 0;
-                // const tarif = parseFloat(row.querySelector('input[name="pemegangsh_dividen_1771V[]"]').value) || 0;
-                // const hasiljumlah1 = row.querySelector('input[name="angka_pph_terutang[]"]');
-                // const sum = pengenaanpajak * tarif/100;
-                // hasiljumlah1.value = sum;
-                var totalmodalafiliasi = 0
-                $(".submodalafiliasi").each(function() {
-                    totalmodalafiliasi += +$(this).val();
-                });
+    //         if (inputValue.length > 15) {
+    //             npwp_1771VIInput.value = inputValue.slice(0, 15);
+    //             errornpwp_1771VIText.textContent = 'Maksimal 15 digit';
+    //         } else {
+    //             errornpwp_1771VIText.textContent = '';
+    //         }
+    //     });
+    //     const tablelist1771VI = document.querySelector('#list_1771VI tbody');
+    //     const addBtnaddlist1771VI = document.querySelector('#btn-add1771VI');
+    //     addBtnaddlist1771VI.addEventListener('click', function() {
+    //         const newRow = `
+    //         <tr>
+    //             <td width="auto" class="text-center">
+    //                 <input required autocomplete="off" type="text"
+    //                     name="penyertaan_nama[]" id="penyertaan_nama[]"
+    //                     min="0"
+    //                     class="form-control"/>
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off" type="text"
+    //                     name="penyertaan_alamat[]" id="penyertaan_alamat[]"
+    //                     min="0"
+    //                     class="form-control"/>
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off" type="number"
+    //                     name="penyertaan_npwp[]"
+    //                     id="penyertaan_npwp[]" min="0"
+    //                     class="form-control"/>
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off" type="number"
+    //                     name="penyertaan_modal[]"
+    //                     id="penyertaan_modal[]" min="0"
+    //                     class="form-control submodalafiliasi"/>
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off" type="number"
+    //                     name="penyertaan_persen[]"
+    //                     id="penyertaan_persen[]" min="0"
+    //                     class="form-control"/>
+    //             </td>
+    //             <td><button type="button" class="btn btn-danger btn-remove-1771VI"><i
+    //                 class="fa fa-trash"></i>
+    //             </td>
+    //         </tr>
+    //         `;
+    //         tablelist1771VI.insertAdjacentHTML('beforeend', newRow);
+    //     });
+    //     tablelist1771VI.addEventListener('input', function(event) {
+    //         const target = event.target;
+    //         if (target.tagName === 'INPUT' && target.name.startsWith('penyertaan')) {
+    //             const row = target.closest('tr');
+    //             // const pengenaanpajak = parseFloat(row.querySelector('input[name="pemegangsh_modalsetor_1771V[]"]').value) || 0;
+    //             // const tarif = parseFloat(row.querySelector('input[name="pemegangsh_dividen_1771V[]"]').value) || 0;
+    //             // const hasiljumlah1 = row.querySelector('input[name="angka_pph_terutang[]"]');
+    //             // const sum = pengenaanpajak * tarif/100;
+    //             // hasiljumlah1.value = sum;
+    //             var totalmodalafiliasi = 0
+    //             $(".submodalafiliasi").each(function() {
+    //                 totalmodalafiliasi += +$(this).val();
+    //             });
 
-                $('.total_modalafiliasi').val(totalmodalafiliasi);
-            }
-        });
-        tablelist1771VI.addEventListener('click', function(event) {
-            if (event.target.classList.contains('btn-remove-1771VI')) {
-                const row = event.target.closest('tr');
-                row.remove();
-            }
-        });
+    //             $('.total_modalafiliasi').val(totalmodalafiliasi);
+    //         }
+    //     });
+    //     tablelist1771VI.addEventListener('click', function(event) {
+    //         if (event.target.classList.contains('btn-remove-1771VI')) {
+    //             const row = event.target.closest('tr');
+    //             row.remove();
+    //         }
+    //     });
 
-        const tablelist1771VIb = document.querySelector('#list_1771VIb tbody');
-        const addBtnaddlist1771VIb = document.querySelector('#btn-add1771VIb');
-        addBtnaddlist1771VIb.addEventListener('click', function() {
-            const newRow = `
-            <tr>
-                <td width="auto" class="text-center">
-                    <input required autocomplete="off" type="text"
-                        name="penyertaan_namab[]" id="penyertaan_namab[]"
-                        min="0"
-                        class="form-control"/>
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off" type="number"
-                        name="penyertaan_npwpb[]"
-                        id="penyertaan_npwpb[]" min="0"
-                        class="form-control"/>
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off" type="number"
-                        name="penyertaan_jumlahpinjamanb[]"
-                        id="penyertaan_jumlahpinjamanb[]" min="0"
-                        class="form-control"/>
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off" type="date"
-                        name="penyertaan_thnpinjamanb[]"
-                        id="penyertaan_thnpinjamanb[]" min="0"
-                        class="form-control"/>
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off" type="number"
-                        name="penyertaan_bungapinjamanb[]"
-                        id="penyertaan_bungapinjamanb[]" min="0"
-                        class="form-control"/>
-                </td>
-                <td><button type="button" class="btn btn-danger btn-remove-1771VIb"><i
-                    class="fa fa-trash"></i>
-                </td>
-            </tr>
-            `;
-            tablelist1771VIb.insertAdjacentHTML('beforeend', newRow);
-        });
-        tablelist1771VIb.addEventListener('input', function(event) {
-            const target = event.target;
-            if (target.tagName === 'INPUT' && target.name.startsWith('penyertaan')) {
-                const row = target.closest('tr');
+    //     const tablelist1771VIb = document.querySelector('#list_1771VIb tbody');
+    //     const addBtnaddlist1771VIb = document.querySelector('#btn-add1771VIb');
+    //     addBtnaddlist1771VIb.addEventListener('click', function() {
+    //         const newRow = `
+    //         <tr>
+    //             <td width="auto" class="text-center">
+    //                 <input required autocomplete="off" type="text"
+    //                     name="penyertaan_namab[]" id="penyertaan_namab[]"
+    //                     min="0"
+    //                     class="form-control"/>
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off" type="number"
+    //                     name="penyertaan_npwpb[]"
+    //                     id="penyertaan_npwpb[]" min="0"
+    //                     class="form-control"/>
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off" type="number"
+    //                     name="penyertaan_jumlahpinjamanb[]"
+    //                     id="penyertaan_jumlahpinjamanb[]" min="0"
+    //                     class="form-control"/>
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off" type="date"
+    //                     name="penyertaan_thnpinjamanb[]"
+    //                     id="penyertaan_thnpinjamanb[]" min="0"
+    //                     class="form-control"/>
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off" type="number"
+    //                     name="penyertaan_bungapinjamanb[]"
+    //                     id="penyertaan_bungapinjamanb[]" min="0"
+    //                     class="form-control"/>
+    //             </td>
+    //             <td><button type="button" class="btn btn-danger btn-remove-1771VIb"><i
+    //                 class="fa fa-trash"></i>
+    //             </td>
+    //         </tr>
+    //         `;
+    //         tablelist1771VIb.insertAdjacentHTML('beforeend', newRow);
+    //     });
+    //     tablelist1771VIb.addEventListener('input', function(event) {
+    //         const target = event.target;
+    //         if (target.tagName === 'INPUT' && target.name.startsWith('penyertaan')) {
+    //             const row = target.closest('tr');
                 
-            }
-        });
-        tablelist1771VIb.addEventListener('click', function(event) {
-            if (event.target.classList.contains('btn-remove-1771VIb')) {
-                const row = event.target.closest('tr');
-                row.remove();
-            }
-        });
-        const tablelist1771VIc = document.querySelector('#list_1771VIc tbody');
-        const addBtnaddlist1771VIc = document.querySelector('#btn-add1771VIc');
-        addBtnaddlist1771VIc.addEventListener('click', function() {
-            const newRow = `
-            <tr>
-                <td width="auto" class="text-center">
-                    <input required autocomplete="off" type="text"
-                        name="penyertaan_namac[]" id="penyertaan_namac[]"
-                        min="0"
-                        class="form-control"/>
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off" type="number"
-                        name="penyertaan_npwpc[]"
-                        id="penyertaan_npwpc[]" min="0"
-                        class="form-control"/>
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off" type="number"
-                        name="penyertaan_jumlahpinjamanc[]"
-                        id="penyertaan_jumlahpinjamanc[]" min="0"
-                        class="form-control"/>
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off" type="date"
-                        name="penyertaan_thnpinjamanc[]"
-                        id="penyertaan_thnpinjamanc[]" min="0"
-                        class="form-control"/>
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off" type="number"
-                        name="penyertaan_bungapinjamanc[]"
-                        id="penyertaan_bungapinjamanc[]" min="0"
-                        class="form-control"/>
-                </td>
-                <td><button type="button" class="btn btn-danger btn-remove-1771VIc"><i
-                    class="fa fa-trash"></i>
-                </td>
-            </tr>
-            `;
-            tablelist1771VIc.insertAdjacentHTML('beforeend', newRow);
-        });
-        tablelist1771VIc.addEventListener('input', function(event) {
-            const target = event.target;
-            if (target.tagName === 'INPUT' && target.name.startsWith('penyertaan')) {
-                const row = target.closest('tr');
+    //         }
+    //     });
+    //     tablelist1771VIb.addEventListener('click', function(event) {
+    //         if (event.target.classList.contains('btn-remove-1771VIb')) {
+    //             const row = event.target.closest('tr');
+    //             row.remove();
+    //         }
+    //     });
+    //     const tablelist1771VIc = document.querySelector('#list_1771VIc tbody');
+    //     const addBtnaddlist1771VIc = document.querySelector('#btn-add1771VIc');
+    //     addBtnaddlist1771VIc.addEventListener('click', function() {
+    //         const newRow = `
+    //         <tr>
+    //             <td width="auto" class="text-center">
+    //                 <input required autocomplete="off" type="text"
+    //                     name="penyertaan_namac[]" id="penyertaan_namac[]"
+    //                     min="0"
+    //                     class="form-control"/>
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off" type="number"
+    //                     name="penyertaan_npwpc[]"
+    //                     id="penyertaan_npwpc[]" min="0"
+    //                     class="form-control"/>
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off" type="number"
+    //                     name="penyertaan_jumlahpinjamanc[]"
+    //                     id="penyertaan_jumlahpinjamanc[]" min="0"
+    //                     class="form-control"/>
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off" type="date"
+    //                     name="penyertaan_thnpinjamanc[]"
+    //                     id="penyertaan_thnpinjamanc[]" min="0"
+    //                     class="form-control"/>
+    //             </td>
+    //             <td class="text-center">
+    //                 <input required autocomplete="off" type="number"
+    //                     name="penyertaan_bungapinjamanc[]"
+    //                     id="penyertaan_bungapinjamanc[]" min="0"
+    //                     class="form-control"/>
+    //             </td>
+    //             <td><button type="button" class="btn btn-danger btn-remove-1771VIc"><i
+    //                 class="fa fa-trash"></i>
+    //             </td>
+    //         </tr>
+    //         `;
+    //         tablelist1771VIc.insertAdjacentHTML('beforeend', newRow);
+    //     });
+    //     tablelist1771VIc.addEventListener('input', function(event) {
+    //         const target = event.target;
+    //         if (target.tagName === 'INPUT' && target.name.startsWith('penyertaan')) {
+    //             const row = target.closest('tr');
                 
-            }
-        });
-        tablelist1771VIc.addEventListener('click', function(event) {
-            if (event.target.classList.contains('btn-remove-1771VIc')) {
-                const row = event.target.closest('tr');
-                row.remove();
-            }
-        });
+    //         }
+    //     });
+    //     tablelist1771VIc.addEventListener('click', function(event) {
+    //         if (event.target.classList.contains('btn-remove-1771VIc')) {
+    //             const row = event.target.closest('tr');
+    //             row.remove();
+    //         }
+    //     });
         
-    // 1771 VI
+    // // 1771 VI
 });
 
 
