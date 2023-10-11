@@ -31,6 +31,24 @@ use App\Models\SptTahunanVLinesA;
 use App\Models\SptTahunanVLinesB;
 use App\Models\SptMasa;
 use App\Models\Ebupot;
+use App\Models\SptMasaLineB;
+use App\Models\SptMasaLineC;
+use App\Models\SptMasaA;
+use App\Models\SptMasaB;
+use App\Models\SptMasaI;
+use App\Models\SptMasaILine;
+use App\Models\SptMasaII;
+use App\Models\SptMasaIILine;
+use App\Models\SptMasaIII;
+use App\Models\SptMasaIIILine;
+use App\Models\SptMasaIV;
+use App\Models\SptMasaIVLine;
+use App\Models\SptMasaV;
+use App\Models\SptMasaVI;
+use App\Models\SptMasaVILine;
+use App\Models\SptMasaVII;
+use App\Models\SptMasaVIILine;
+use App\Models\MasaBulan;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\Facades\DataTables;
@@ -518,5 +536,169 @@ class AllInController extends Controller
         return view('spttahunan.formulirenam',compact('spt','sptlinesa','sptlinesb','sptlinesc'))->with('no',1)->with('nob',1)->with('noc',1);
 
     }
-   
+    public function masanext(Request $request){
+        // dd($request);
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $spt=SptMasa::where('formulir_id',$request->formulir_id)->get()->first();
+            // dd($sptI);
+            $sptLineC=SptMasaLineC::where('formulir_id',$request->formulir_id)->get();
+
+        }else{
+            $spt=SptMasa::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
+            $sptLineC=SptMasaLineC::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get();
+        }
+
+        if($spt==null){
+            return back();
+        }
+        return view('sptmasapajak.formulirsatu',compact('spt','sptLineC'));
+    }
+    public function masapertama(Request $request){
+        // dd($request);
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $spt=SptMasaI::where('formulir_id',$request->formulir_id)->get()->first();
+            $sptLine=SptMasaILine::where('formulir_id',$request->formulir_id)->get();
+
+        }else{
+            $spt=SptMasaI::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
+            $sptLine=SptMasaILine::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get();
+        }
+
+        if($spt==null){
+            return back();
+        }
+        return view('sptmasapajak.sptmaspertama',compact('spt','sptLine'));
+    }
+    public function masakedua(Request $request){
+        // dd($request);
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $spt=SptMasaII::where('formulir_id',$request->formulir_id)->get()->first();
+            $sptLine=SptMasaIILine::where('formulir_id',$request->formulir_id)->get();
+
+        }else{
+            $spt=SptMasaII::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
+            $sptLine=SptMasaIILine::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get();
+        }
+
+        if($spt==null){
+            return back();
+        }
+        return view('sptmasapajak.sptmaskedua',compact('spt','sptLine'));
+    }
+    public function masaketiga(Request $request){
+        // dd($request);
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $spt=SptMasaIII::where('formulir_id',$request->formulir_id)->get()->first();
+            $sptLine=SptMasaIIILine::where('formulir_id',$request->formulir_id)->get();
+
+        }else{
+            $spt=SptMasaIII::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
+            $sptLine=SptMasaIIILine::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get();
+        }
+
+        if($spt==null){
+            return back();
+        }
+        return view('sptmasapajak.sptmasketiga',compact('spt','sptLine'));
+    }
+    public function masakeempat(Request $request){
+        // dd($request);
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $spt=SptMasaIV::where('formulir_id',$request->formulir_id)->get()->first();
+            $sptLine=SptMasaIVLine::where('formulir_id',$request->formulir_id)->get();
+
+        }else{
+            $spt=SptMasaIV::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
+            $sptLine=SptMasaIVLine::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get();
+        }
+
+        if($spt==null){
+            return back();
+        }
+        return view('sptmasapajak.sptmaskeempat',compact('spt','sptLine'));
+    }
+    public function masakelima(Request $request){
+        // dd($request);
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $spt=SptMasaV::where('formulir_id',$request->formulir_id)->get()->first();
+
+        }else{
+            $spt=SptMasaV::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
+        }
+
+        if($spt==null){
+            return back();
+        }
+        return view('sptmasapajak.sptmaskelima',compact('spt',));
+    }
+    public function masakeenam(Request $request){
+        // dd($request);
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $spt=SptMasaVI::where('formulir_id',$request->formulir_id)->get()->first();
+            $sptLine=SptMasaVILine::where('formulir_id',$request->formulir_id)->get();
+
+        }else{
+            $spt=SptMasaVI::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
+            $sptLine=SptMasaVILine::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get();
+        }
+
+        if($spt==null){
+            return back();
+        }
+        return view('sptmasapajak.sptmaskeenam',compact('spt','sptLine'));
+    }
+    public function masaketujuh(Request $request){
+        // dd($request);
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $spt=SptMasaVII::where('formulir_id',$request->formulir_id)->get()->first();
+            $sptLine=SptMasaVIILine::where('formulir_id',$request->formulir_id)->get();
+
+        }else{
+            $spt=SptMasaVII::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
+            $sptLine=SptMasaVIILine::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get();
+        }
+
+        if($spt==null){
+            return back();
+        }
+        return view('sptmasapajak.sptmasketujuh',compact('spt','sptLine'));
+    }
+    public function masakeasatu(Request $request){
+        // dd($request);
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $spt=SptMasaA::where('formulir_id',$request->formulir_id)->get()->first();
+
+        }else{
+            $spt=SptMasaA::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
+        }
+
+        if($spt==null){
+            return back();
+        }
+        return view('sptmasapajak.sptmaskeasatu',compact('spt'));
+    }
+    public function masakeadua(Request $request){
+        // dd($request);
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $spt=SptMasaB::where('formulir_id',$request->formulir_id)->get()->first();
+
+        }else{
+            $spt=SptMasaB::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
+        }
+
+        if($spt==null){
+            return back();
+        }
+        return view('sptmasapajak.sptmaskeadua',compact('spt'));
+    }
 }

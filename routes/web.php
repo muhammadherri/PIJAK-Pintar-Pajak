@@ -257,3 +257,14 @@ Route::post('/formulirketiga', [App\Http\Controllers\AllInController::class,'for
 Route::post('/formulirkeempat', [App\Http\Controllers\AllInController::class,'formulirkeempat']);
 Route::post('/formulirkelima', [App\Http\Controllers\AllInController::class,'formulirkelima']);
 Route::post('/formulirkeenam', [App\Http\Controllers\AllInController::class,'formulirkeenam']);
+
+Route::post('/masanext', [App\Http\Controllers\AllInController::class,'masanext']);
+Route::post('/masapertama', [App\Http\Controllers\AllInController::class,'masapertama']);
+Route::post('/masakedua', [App\Http\Controllers\AllInController::class,'masakedua']);
+Route::post('/masaketiga', [App\Http\Controllers\AllInController::class,'masaketiga']);
+Route::post('/masakeempat', [App\Http\Controllers\AllInController::class,'masakeempat']);
+Route::post('/masakelima', [App\Http\Controllers\AllInController::class,'masakelima']);
+Route::post('/masakeenam', [App\Http\Controllers\AllInController::class,'masakeenam']);
+Route::post('/masaketujuh', [App\Http\Controllers\AllInController::class,'masaketujuh']);
+Route::post('/masakeasatu', [App\Http\Controllers\AllInController::class,'masakeasatu']);
+Route::post('/masakeadua', [App\Http\Controllers\AllInController::class,'masakeadua']);

@@ -133,10 +133,15 @@
                                                 </div>
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">No Telp</label>
-                                                    <div class="col-sm-9">
+                                                    <div class="col-sm-4">
                                                         <input autocomplete="off" required id="id_no_telp_1721"
                                                             name="id_no_telp_1721" type="number" min="0"
                                                             class="form-control" placeholder="Masukkan Alamat">
+                                                    </div>
+                                                    <div class="col-sm-5">
+                                                        <input autocomplete="off" required id="id_email_1721"
+                                                            name="id_email_1721" type="email"
+                                                            class="form-control" placeholder="Masukkan Email">
                                                     </div>
                                                 </div>
                                                 <hr>
@@ -173,7 +178,7 @@
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off" type="date"
+                                                                        <input required autocomplete="off" type="number"
                                                                             name="objek_kodeobjek[]"
                                                                             id="objek_kodeobjek[]" class="form-control" />
                                                                     </td>
@@ -181,19 +186,19 @@
                                                                         <input required autocomplete="off" type="number"
                                                                             name="objek_jumlahpenerima[]"
                                                                             id="objek_jumlahpenerima[]" min="0"
-                                                                            class="form-control penerima" />
+                                                                            class="form-control penerima1771" />
                                                                     </td>
                                                                     <td class="text-center">
                                                                         <input required autocomplete="off" type="number"
                                                                             name="objek_jumlahpenghasilan[]"
                                                                             id="objek_jumlahpenghasilan[]" min="0"
-                                                                            class="form-control penghasilan" />
+                                                                            class="form-control penghasilan1771" />
                                                                     </td>
                                                                     <td class="text-center">
                                                                         <input required autocomplete="off" type="number"
                                                                             name="objek_jumlahpajak[]"
                                                                             id="objek_jumlahpajak[]" min="0"
-                                                                            class="form-control pajak" />
+                                                                            class="form-control pajak1771" />
                                                                     </td>
                                                                     <td><button type="button" class="btn btn-light"><i
                                                                                 class="fa fa-trash"></i>
@@ -218,17 +223,17 @@
                                                                     <td>
                                                                         <input readonly autocomplete="off" type="text"
                                                                             name="total_jumlah_penerima1721" id="total_jumlah_penerima1721"
-                                                                            class="form-control totalpenerima" />
+                                                                            class="form-control totalpenerima1771" />
                                                                     </td>
                                                                     <td>
                                                                         <input readonly autocomplete="off" type="text"
                                                                             name="total_jumlah_bruto1721" id="total_jumlah_bruto1721"
-                                                                            class="form-control totalbruto" />
+                                                                            class="form-control totalbruto1771" />
                                                                     </td>
                                                                     <td>
                                                                         <input readonly autocomplete="off" type="text"
                                                                             name="total_jumlah_pajak1721" id="total_jumlah_pajak1721"
-                                                                            class="form-control totalpajak" />
+                                                                            class="form-control totalpajak1771" />
                                                                     </td>
                                                                     <td></td>
                                                                 </tr>
@@ -361,7 +366,7 @@
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off" type="date"
+                                                                        <input required autocomplete="off" type="number"
                                                                             name="objek_kodeobjek_c[]"
                                                                             id="objek_kodeobjek_c[]"
                                                                             class="form-control" />
@@ -911,12 +916,12 @@
                                                                     <td width="auto" class="text-center">
                                                                         <input required autocomplete="off" type="number" min="0"
                                                                             name="pgt_jumlahpenghasilanbruto_1721_formulirIII[]" id="pgt_jumlahpenghasilanbruto_1721_formulirIII[]"
-                                                                            class="form-control penghasilanbruto" />
+                                                                            class="form-control penghasilanbruto1721iii" />
                                                                     </td>
                                                                     <td width="auto" class="text-center">
                                                                         <input required autocomplete="off" type="number" min="0"
                                                                             name="pgt_pphdipotong_1721_formulirIII[]" id="pgt_pphdipotong_1721_formulirIII[]"
-                                                                            class="form-control potonganpph" />
+                                                                            class="form-control potonganpph1721iii" />
                                                                     </td>
                                                                     <td><button type="button" class="btn btn-light"><i
                                                                                 class="fa fa-trash"></i>

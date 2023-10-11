@@ -66,6 +66,7 @@ class SptMasaPajakPenghasilanController extends Controller
             'ptkp'=>$request->besaran_ptkp,
             'alamat'=>$request->id_alamat_1721,
             'no_telp'=>$request->id_no_telp_1721,
+            'email'=>$request->id_email_1721,
             'alamat_objekpajak'=>$request->op_alamat_1721,
             'jumlah_penerima_penghasilan_b'=>$request->total_jumlah_penerima1721,
             'jumlah_penghasilan_bruto_b'=>$request->total_jumlah_bruto1721,
@@ -182,7 +183,7 @@ class SptMasaPajakPenghasilanController extends Controller
                 'kode_objek_pajak' => $request->pgt_kodeobjek_1721_formulirII[$key],
                 'jumlah_penghasilan_bruto' => $request->pgt_jumlahpenghasilanbruto_1721_formulirII[$key],
                 'jumlah_pph_yang_dipotong' => $request->pgt_pphdipotong_1721_formulirII[$key],
-                'kode_negara' => $request->pgt_kodenegara_1721[$key],
+                'kode_negara' => $request->pgt_kodenegara_1721_formulirII[$key],
             );
             // dd($data1721IIlines);
         SptMasaIILine::create($data1721IIlines);
