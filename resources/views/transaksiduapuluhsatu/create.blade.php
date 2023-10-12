@@ -99,7 +99,14 @@
                                         <h5>Konfigurasi</h5>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Tunjangan Pajak</label>
-                                            <div class="col-sm-3">
+                                            <div class="col-sm-9">
+                                                <select onchange="tunjangan()" id="tunjangan_pajak"name="tunjangan_pajak"
+                                                    class="default-select form-control wide">
+                                                    <option value="0">Non Gross-up</option>
+                                                    <option value="1">Gross-up</option>
+                                                </select>
+                                            </div>
+                                            {{-- <div class="col-sm-3">
                                                 <div class="form-check">
                                                     <input onchange="grossup()" id="gross_up" class="form-check-input"
                                                         type="radio" name="gross" value="1">
@@ -116,7 +123,7 @@
                                                         Non Gross-Up
                                                     </label>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Ketentuan PTKP</label>
@@ -669,6 +676,18 @@
             no_npwp.value = '';
         } else {
             no_npwp.disabled = false;
+        }
+    }
+    function tunjangan() {
+        var tunjangan_pajak = document.getElementById("tunjangan_pajak");
+        var tunjangan_pph = document.getElementById("tunjangan_pph");
+        console.log(npwp.value);
+
+        if (tunjangan_pajak.value === "1") {
+            tunjangan_pph.disabled = true;
+            tunjangan_pph.value = '';
+        } else {
+            tunjangan_pph.disabled = false;
         }
     }
 

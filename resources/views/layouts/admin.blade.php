@@ -174,6 +174,7 @@
                         <ul aria-expanded="false">
                             <li><a href="{{ route('spttahunan') }}" >SPT Badan</a></li>
                             <li><a href="{{ route('sptmasapajak') }}" >SPT Masa</a></li>
+                            <li><a href="{{ route('sptmasapajak') }}" >SPT PPN</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
@@ -181,7 +182,7 @@
                             <span class="nav-text">Latihan</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            {{-- <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                                     <span class="nav-text">Laporan Keuangan Komersial</span>
                                 </a>
                                 <ul aria-expanded="false">
@@ -189,14 +190,14 @@
                                     <li><a href="{{ route('laporankeuanganlabarugikomersil') }}">&emsp; - Laba
                                             Rugi</a></li>
                                 </ul>
-                            </li>
-                            <li><a href="{{ route('jurnalmanual') }}">Koreksi Fiskal</a></li>
+                            </li> --}}
+                            <li><a href="{{ route('latihan') }}">Latihan Fiskal</a></li>
                             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                                    <span class="nav-text">Laporan Keuangan Fiskal</span>
+                                    <span class="nav-text">Latihan Laporan Keuangan Fiskal</span>
                                 </a>
                                 <ul aria-expanded="false">
-                                    <li><a href="{{ route('laporankeuanganfiskal') }}">&emsp; - Neraca</a></li>
-                                    <li><a href="{{ route('laporankeuanganlabarugifiskal') }}">&emsp; - Laba Rugi</a>
+                                    <li><a href="{{ route('latihankeuanganfiskal') }}">&emsp; - Neraca</a></li>
+                                    <li><a href="{{ route('latihankeuanganlabarugifiskal') }}">&emsp; - Laba Rugi</a>
                                     </li>
                                 </ul>
                             </li>

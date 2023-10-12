@@ -198,7 +198,7 @@
                                                     <label class="col-sm-3 col-form-label">Pembukuan / Laporan
                                                         Keuangan</label>
                                                     <div class="col-sm-9">
-                                                        <select id="laporan_keuangan" name="laporan_keuangan"
+                                                        <select onchange="laporankeuangan()" id="laporan_keuangan" name="laporan_keuangan"
                                                             class="dropdown-groups">
                                                             <option value="0">Diaudit</option>
                                                             <option value="1">Opini Akuntan</option>
@@ -212,7 +212,7 @@
                                                     <div class="col-sm-9">
                                                         <input type="text"
                                                             placeholder="Masukkan Nama Kantor Akuntan Publik..."
-                                                            autocomplete="off" required
+                                                            autocomplete="off"
                                                             class="form-control"id="kantor_akuntan"
                                                             name="kantor_akuntan">
                                                         <span id="errorkantor_akuntan" style="color: red;"></span>
@@ -224,7 +224,7 @@
                                                     <div class="col-sm-9">
                                                         <input type="number" min="0"
                                                             placeholder="Masukkan NPWP Kantor Akuntan Publik..."
-                                                            autocomplete="off" required
+                                                            autocomplete="off" 
                                                             class="form-control"id="npwp_kantor_akuntan"
                                                             name="npwp_kantor_akuntan">
                                                         <span id="errornpwp_kantor_akuntan" style="color: red;"></span>
@@ -235,7 +235,7 @@
                                                     <div class="col-sm-9">
                                                         <input type="text"
                                                             placeholder="Masukkan Nama Akuntan Publik..."
-                                                            autocomplete="off" required
+                                                            autocomplete="off" 
                                                             class="form-control"id="akuntan_publik"
                                                             name="akuntan_publik">
                                                         <span id="errorakuntan_publik" style="color: red;"></span>
@@ -246,7 +246,7 @@
                                                     <div class="col-sm-9">
                                                         <input type="number" min="0"
                                                             placeholder="Masukkan NPWP Akuntan Publik..."
-                                                            autocomplete="off" required
+                                                            autocomplete="off" 
                                                             class="form-control"id="nama_akuntan_publik"
                                                             name="nama_akuntan_publik">
                                                         <span id="errornama_akuntan_publik" style="color: red;"></span>
@@ -258,7 +258,7 @@
                                                     <div class="col-sm-9">
                                                         <input type="text"
                                                             placeholder="Masukkan Nama Kantor Konsultan Pajak..."
-                                                            autocomplete="off" required
+                                                            autocomplete="off" 
                                                             class="form-control"id="nama_kantor_konsultan_pajak"
                                                             name="nama_kantor_konsultan_pajak">
                                                         <span id="errornama_kantor_konsultan_pajak"
@@ -271,7 +271,7 @@
                                                     <div class="col-sm-9">
                                                         <input type="number" min="0"
                                                             placeholder="Masukkan NPWP Kantor Konsultan Pajak..."
-                                                            autocomplete="off" required
+                                                            autocomplete="off" 
                                                             class="form-control"id="npwp_kantor_konsultan_pajak"
                                                             name="npwp_kantor_konsultan_pajak">
                                                         <span id="errorpwp_kantor_konsultan_pajak"
@@ -283,7 +283,7 @@
                                                     <div class="col-sm-9">
                                                         <input type="text"
                                                             placeholder="Masukkan Nama Konsultan Pajak..."
-                                                            autocomplete="off" required
+                                                            autocomplete="off" 
                                                             class="form-control"id="nama_konsultan_pajak"
                                                             name="nama_konsultan_pajak">
                                                         <span id="errornama_konsultan_pajak" style="color: red;"></span>
@@ -294,7 +294,7 @@
                                                     <div class="col-sm-9">
                                                         <input type="number" min="0"
                                                             placeholder="Masukkan NPWP Konsultan Pajak..."
-                                                            autocomplete="off" required
+                                                            autocomplete="off" 
                                                             class="form-control"id="npwp_konsultan_pajak"
                                                             name="npwp_konsultan_pajak">
                                                         <span id="errornpwp_konsultan_pajak" style="color: red;"></span>
@@ -680,6 +680,13 @@
                                                 </div>
                                                 <div class="mb-3 row">
                                                     <p>F.1.1.32.14</p>
+                                                </div>
+                                                <hr>
+                                                <div class="d-flex justify-content-between">
+                                                    <div></div>
+                                                    <button class="btn btn-primary btn-submit" id="add_all"
+                                                        type="submit"><i data-feather='save'></i>
+                                                        {{ 'Simpan' }}</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -2150,13 +2157,7 @@
                                                         </table>
                                                     </div>
                                                 </div>
-                                                <hr>
-                                                <div class="d-flex justify-content-between">
-                                                    <div></div>
-                                                    <button class="btn btn-primary btn-submit" id="add_all"
-                                                        type="submit"><i data-feather='save'></i>
-                                                        {{ 'Simpan' }}</button>
-                                                </div>
+                                                
                                             </div>
                                            
                                         </div>

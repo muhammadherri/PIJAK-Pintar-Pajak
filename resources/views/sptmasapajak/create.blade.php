@@ -540,6 +540,13 @@
                                                             type="text" class="form-control"></textarea>
                                                     </div>
                                                 </div>
+                                                <hr>
+                                                <div class="d-flex justify-content-between">
+                                                    <div></div>
+                                                    <button class="btn btn-primary btn-submit" id="add_all"
+                                                        type="submit"><i data-feather='save'></i>
+                                                        {{ 'Simpan' }}</button>
+                                                </div>
                                             </div>
                                         </div>
                                         {{-- 1721 --}}
@@ -2199,13 +2206,7 @@
                                                             type="date" class="form-control" min="0">
                                                     </div>
                                                 </div>
-                                                <hr>
-                                                <div class="d-flex justify-content-between">
-                                                    <div></div>
-                                                    <button class="btn btn-primary btn-submit" id="add_all"
-                                                        type="submit"><i data-feather='save'></i>
-                                                        {{ 'Simpan' }}</button>
-                                                </div>
+                                               
                                             </div>
 
                                         </div>

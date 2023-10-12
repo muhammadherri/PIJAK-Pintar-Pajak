@@ -1,60 +1,57 @@
+
 @extends('layouts.admin')
 @section('header')
     <div class="header-left">
         <div class="dashboard_bar">
-            Pelaporan
+            Latihan
         </div>
     </div>
 @endsection
 <link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
 <script src="//code.jquery.com/jquery-3.5.1.js"></script>
 <script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-@section('content')
+@section('content')    
     <div class="content-body">
         <div class="container-fluid">
             <div class="row page-titles">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Pelaporan</a></li>
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">SPT Masa Pajak</a></li>
+                    <li class="breadcrumb-item active"><a href="{{ route('latihan') }}">Latihan</a></li>
+                    <li class="breadcrumb-item"><a href="">Keuangan Fiskal</a></li>
                 </ol>
             </div>
-            <!-- row -->
             <div class="row">
-                <div class="col-12">
+                <div class="col-xl-6">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Daftar SPT Masa Pajak</h4>
+                            <h4 class="card-title">Daftar Keuangan Fiskal</h4>
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <a class="btn btn-primary" href="{{ route('sptmasapajak/create') }}">
+                                    <a class="btn btn-primary" href="{{ route('latihan/create') }}">
                                         {{ __('Create') }}
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <div class="card-body">
-                            <div class="table-responsive">
-                                <table id="sptmasapajakpenghasilan" class="display" style="min-width: 845px">
-                                    <thead>
-                                        <tr>
-                                            <th>Nama NPWP SPT Badan</th>
-                                            <th>Nomor NPWP SPT Badan</th>
-                                            <th>Alamat Lengkap SPT Badan</th>
-                                            <th>Masa Pajak Bulan</th>
-                                            <th>Masa Pajak Tahun</th>
-                                            <th>Tempat Tinggal SPT Badan</th>
-                                            <th>Dibuat Oleh</th>
-                                            <th>Tanggal Pembuatan</th>
-                                            <th>Action</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-
-                                    </tbody>
-                                    <br>
-                                   
-                                </table>
+                            <div class="basic-form">
+                                <div class="table-responsive">
+                                    <table id="fiskalTable" class="display" style="min-width: 845px">
+                                        <thead>
+                                            <tr>
+                                                <th>No Akun Debet</th>
+                                                <th>No Akun Kredit</th>
+                                                <th>Nama Akun Debet</th>
+                                                <th>Nama Akun Kredit</th>
+                                                <th>Nilai Debet</th>
+                                                <th>Nilai Kredit</th>
+                                                <th>Dibuat Oleh</th>
+                                                <th>Tanggal Dibuat</th>
+                                                <th>Action</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -65,7 +62,7 @@
 @endsection
 <script>
     $(document).ready(function() {
-        $('#sptmasapajakpenghasilan').DataTable({
+        $('#fiskalTable').DataTable({
             language: {
                 paginate: {
                     next: '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
@@ -77,60 +74,60 @@
                 [10, 25, 50, "All"]
             ],
             "order":[[9,'desc']],
-            ajax: "{{ route('data.1721') }}",
-            columnDefs: [
-                {
+            ajax: "{{ route('data.latihan') }}",
+            columnDefs: [{
                     "targets": 0,
                     "render": function(data, type, row, meta) {
-                        return row.nama;
+                        return row.no_akun_debit;
                     }
                 },
                 {
                     "targets": 1,
                     "render": function(data, type, row, meta) {
-                        return row.no_npwp;
+                        return row.no_akun_kredit;
                     }
                 },
                 {
                     "targets": 2,
-                    "render": function(data, type, row, meta) {
-                        return row.alamat;
+                    "class": "text-center",
+                    render: function(data, type, row, index) {
+                        return row.nama_akun_debit;
+
                     }
                 },
                 {
                     "targets": 3,
+                    "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.masapajak;
+                        return row.nama_akun_kredit;
                     }
                 },
-                
                 {
                     "targets": 4,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.tahun_pajak;
+                        return row.nilai_debit;
                     }
                 },
                 {
                     "targets": 5,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.tempat;
+                        return row.nilai_kredit;
                     }
                 },
-                
                 {
                     "targets": 6,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.created_by;
+                        return row.attribute1;
                     }
                 },
                 {
                     "targets": 7,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.tgl_pembuatan;
+                        return row.created_at;
                     }
                 },
                 {
@@ -139,10 +136,13 @@
                     render: function(data, type, row, index) {
                         content = `
                             <div class="d-flex">
-                                <a class="btn btn-danger shadow btn-xs sharp" href="sptmasapajak/${row.id}/destroy">
+                                <a class="btn btn-danger shadow btn-xs sharp" href="latihan/${row.id}/destroy">
                                     <i class="fa fa-trash"></i>
                                 </a>
-                                <a class="btn btn-success shadow btn-xs sharp" href="sptmasapajak/${row.id}/show">
+                                <a class="btn btn-primary shadow btn-xs sharp me-1" href="latihan/${row.id}/edit">
+                                    <i class="fa fa-pencil"></i>
+                                </a>
+                                <a class="btn btn-success shadow btn-xs sharp me-1" href="latihan/${row.id}/show">
                                     <i class="fa fa-eye"></i>
                                 </a>
                             </div>
@@ -159,6 +159,8 @@
                     }
                 },
             ]
+
+
         })
     })
 </script>

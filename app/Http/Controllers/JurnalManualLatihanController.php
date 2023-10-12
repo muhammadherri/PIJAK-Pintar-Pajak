@@ -1,13 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use App\Models\Neraca;
 use App\Models\JurnalManual;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
-class JurnalManualController extends Controller
+class JurnalManualLatihanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,7 @@ class JurnalManualController extends Controller
      */
     public function index()
     {
-        return view('jurnalmanual.index');
+        return view('latihan.index');
     }
 
     /**
@@ -27,7 +26,7 @@ class JurnalManualController extends Controller
     public function create()
     {
         $neraca=Neraca::whereNot('saldo',0)->get();
-        return view('jurnalmanual.create',compact('neraca'));
+        return view('latihan.create',compact('neraca'));
     }
 
     /**
@@ -39,6 +38,8 @@ class JurnalManualController extends Controller
     public function store(Request $request)
     {
         $kredit = preg_replace('/[^0-9]/','',$request->input('no_akun_kredit')); 
+
+        // DD($kredit);
         $data = array(
             'no_akun_debit'=>$request->no_akun_debet,
             'no_akun_kredit'=>$kredit,
@@ -48,11 +49,12 @@ class JurnalManualController extends Controller
             'nilai_kredit'=>$request->nilai_kredit,
             'keterangan'=>$request->keterangan,
             'attribute1'=>Auth::user()->id,
+            'attribute3'=>1,
         );
         // dd($data);
         JurnalManual::create($data);
         $a= \DB::commit();
-        return redirect()->route('jurnalmanual');
+        return redirect()->route('latihan');
     }
 
     /**
@@ -64,15 +66,15 @@ class JurnalManualController extends Controller
     public function show($id)
     {
         $iduser=Auth::user()->id;
-        $jurnalmanual = JurnalManual::where('attribute3',NULL)->where('attribute1',$iduser)->where('id',$id)->get()->first();
+        $jurnalmanual = JurnalManual::where('attribute3',1)->where('attribute1',$iduser)->where('id',$id)->get()->first();
         if(Auth::user()->status==1){
-            $jurnalmanual = JurnalManual::where('attribute3',NULL)->where('id',$id)->get()->first();
-            return view('jurnalmanual.show',compact('jurnalmanual'));
+            $jurnalmanual = JurnalManual::where('attribute3',1)->where('id',$id)->get()->first();
+            return view('latihan.show',compact('jurnalmanual'));
         }
         if($jurnalmanual==null){
             return back();
         }else{
-            return view('jurnalmanual.show',compact('jurnalmanual'));
+            return view('latihan.show',compact('jurnalmanual'));
         }
     }
 
@@ -85,8 +87,8 @@ class JurnalManualController extends Controller
     public function edit($id)
     {
         $neraca=Neraca::whereNot('saldo',0)->get();
-        $jurnalmanual = JurnalManual::where('attribute3',NULL)->where('id',$id)->get()->first();
-        return view('jurnalmanual.edit',compact('jurnalmanual','neraca'));
+        $jurnalmanual = JurnalManual::where('attribute3',1)->where('id',$id)->get()->first();
+        return view('latihan.edit',compact('jurnalmanual','neraca'));
     }
 
     /**
@@ -98,7 +100,6 @@ class JurnalManualController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // dd($id);
         JurnalManual::where('id',$id)->update([
             'no_akun_debit'=>$request->no_akun_debet,
             'no_akun_kredit'=>$request->no_akun_kredit,
@@ -113,7 +114,6 @@ class JurnalManualController extends Controller
         
         $a= \DB::commit();    
         return redirect()->route('latihan');
-
     }
 
     /**

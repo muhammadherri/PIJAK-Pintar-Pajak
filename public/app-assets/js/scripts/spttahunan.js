@@ -1,5 +1,5 @@
+
 document.addEventListener('DOMContentLoaded', function() {
-    
     // 1771 I
     const input1a = document.getElementById('a1_penghasilan_netto_1771i');
     const input1b = document.getElementById('b1_penghasilan_netto_1771i');
@@ -897,3 +897,43 @@ tablelist1771VIc.addEventListener('click', function(event) {
 // 1771 VI
 
 });
+function laporankeuangan() {
+    var laporan_keuangan = document.getElementById("laporan_keuangan");
+    var kantor_akuntan = document.getElementById("kantor_akuntan");
+    var npwp_kantor_akuntan = document.getElementById("npwp_kantor_akuntan");
+    var akuntan_publik = document.getElementById("akuntan_publik");
+    var nama_akuntan_publik = document.getElementById("nama_akuntan_publik");
+    var nama_kantor_konsultan_pajak = document.getElementById("nama_kantor_konsultan_pajak");
+    var npwp_kantor_konsultan_pajak = document.getElementById("npwp_kantor_konsultan_pajak");
+    var nama_konsultan_pajak = document.getElementById("nama_konsultan_pajak");
+    var npwp_konsultan_pajak = document.getElementById("npwp_konsultan_pajak");
+    console.log(npwp.value);
+
+    if (laporan_keuangan.value === "2") {
+        kantor_akuntan.disabled = true;
+        kantor_akuntan.value = '';
+        npwp_kantor_akuntan.disabled = true;
+        npwp_kantor_akuntan.value = '';
+        akuntan_publik.disabled = true;
+        akuntan_publik.value = '';
+        nama_akuntan_publik.disabled = true;
+        nama_akuntan_publik.value = '';
+        nama_kantor_konsultan_pajak.disabled = true;
+        nama_kantor_konsultan_pajak.value = '';
+        npwp_kantor_konsultan_pajak.disabled = true;
+        npwp_kantor_konsultan_pajak.value = '';
+        nama_konsultan_pajak.disabled = true;
+        nama_konsultan_pajak.value = '';
+        npwp_konsultan_pajak.disabled = true;
+        npwp_konsultan_pajak.value = '';
+    } else {
+        kantor_akuntan.disabled = false;
+        npwp_kantor_akuntan.disabled = false;
+        akuntan_publik.disabled = false;
+        nama_akuntan_publik.disabled = false;
+        nama_kantor_konsultan_pajak.disabled = false;
+        npwp_kantor_konsultan_pajak.disabled = false;
+        nama_konsultan_pajak.disabled = false;
+        npwp_konsultan_pajak.disabled = false;
+    }
+}
