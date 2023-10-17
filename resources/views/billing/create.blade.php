@@ -32,13 +32,35 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Transaksi</label>
                                             <div class="col-sm-9">
-                                                <select id="trx" name="trx"
-                                                class="default-select form-control wide">
-                                                @foreach ($trx as $row)
-                                                    <option value="{{ $row->id }}">
-                                                        {{ $row->trx }}</option>
-                                                @endforeach
-                                            </select>                                            </div>
+                                                <select onchange="toggletrx()" id="trx_wan"name="trx_wan"
+                                                    class="default-select form-control wide">
+                                                    <option value="0">Pilih Transaksi</option>
+                                                    <option value="1">Transaksih E-Bupot</option>
+                                                    <option value="2">Transaksih PPn</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div id=hidden_bupot_trx style="display:none;" class="mb-3 row">
+                                            <div class="col-sm-12">
+                                                    <select id="trx" name="trx"
+                                                    class="dropdown-groups">
+                                                    @foreach ($trx as $row)
+                                                        <option value="{{ $row->id }}">
+                                                            {{ $row->trx }}</option>
+                                                    @endforeach
+                                                </select>                                            
+                                            </div>
+                                        </div>
+                                        <div id=hidden_ppn_trx style="display:none;" class="mb-3 row">
+                                            <div class="col-sm-12">
+                                                    <select id="trx_ppn" name="trx_ppn"
+                                                    class="dropdown-groups">
+                                                    @foreach ($trxppn as $row)
+                                                        <option value="{{ $row->id }}">
+                                                            {{ $row->trx }}</option>
+                                                    @endforeach
+                                                </select>                                            
+                                            </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">NPWP</label>
@@ -94,7 +116,6 @@
                                                     type="number" class="form-control"value="{{$tahunsekarang}}" placeholder="{{$tahunsekarang}}">
                                             </div>
                                         </div>
-                                       
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Periode Pajak</label>
                                             <div class="col-sm-9">
@@ -143,7 +164,7 @@
                                             <label class="col-sm-3 col-form-label">No Rekening</label>
                                             <div class="col-sm-9">
                                                 <select id="no_rek" name="no_rek"
-                                                class="default-select form-control wide">
+                                                class="dropdown-groups">
                                                 @foreach ($vendor as $row)
                                                     <option value="{{ $row->id }}">
                                                         {{ $row->attribute3 }} - {{ $row->nama_vendor }}</option>
@@ -271,5 +292,24 @@
         keterangan.value = '';
         npwp_penyetor.value = '';
         nama_penyetor.value = '';
+    };
+    function toggletrx() {
+        var trx_wan = document.getElementById("trx_wan");
+        var trx_bupot = document.getElementById("trx");
+        var trx_ppn = document.getElementById("trx_ppn");
+        var hiden_bupot = document.getElementById("hidden_bupot_trx");
+        var hiden_ppn = document.getElementById("hidden_ppn_trx");
+
+        if (trx_wan.value === "1") {
+            hiden_bupot.style.display = 'block';
+            hiden_ppn.style.display = 'none';
+        } else if(trx_wan.value === "2") {
+            hiden_bupot.style.display = 'none';
+            hiden_ppn.style.display = 'block';
+        }else{
+            hiden_bupot.style.display = 'none';
+            hiden_ppn.style.display = 'none';
+        }
     }
+    
 </script>

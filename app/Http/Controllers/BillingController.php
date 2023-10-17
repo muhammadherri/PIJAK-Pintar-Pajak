@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Models\Vendor;
 use App\Models\Billing;
 use App\Models\Ebupot;
+use App\Models\HutangPpn;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use PDF;
@@ -40,9 +41,10 @@ class BillingController extends Controller
         $id=Auth::user()->id;
 
         $vendor=Vendor::all();
-        $trx=Ebupot::whereNotNull('trx')->where('id',$id)->where('attribute3','NULL')->get();
-        // dd($trx);
-        return view('billing.create',compact('vendor','trx'));
+        $trx=Ebupot::whereNotNull('trx')->where('attribute1',$id)->where('attribute3','NULL')->get();
+        $trxppn=HutangPpn::where('attribute1',$id)->where('attribute3',null)->get();
+        // dd($trxppn);
+        return view('billing.create',compact('vendor','trx','trxppn'));
     }
 
     /**
@@ -58,46 +60,93 @@ class BillingController extends Controller
         $header_id = $header_id ?? 0;
         $header_id = $header_id+1;
         $header_id = '00'.$header_id.$date;
-        if($request->trx==null){
+
+        $end_periode_pajak = Carbon::parse($request->start_periode_pajak);
+        if($request->trx_wan==1){
+            if($request->trx==null){
+                return back();
+            }
+            $data = array(
+                'kode_billing'=>$header_id,
+                'npwp'=>$request->npwp,
+                'trx_bupot'=>$request->trx,
+                'nama'=>$request->nama,
+                'alamat'=>$request->alamat,
+                'jenis_pajak'=>$request->jenis_pajak,
+                'kode_jenis_setoran'=>$request->kode_jenis_setoran,
+                'masa_pajak'=>$request->masa_pajak,
+                'tahun_pajak'=>date('Y'),
+                'start_periode_pajak'=>$request->start_periode_pajak,
+                'end_periode_pajak'=>$end_periode_pajak->addDays(30),
+                'jumlah'=>$request->jumlah,
+                'keterangan'=>$request->keterangan,
+                'npwp_penyetor'=>$request->npwp_penyetor,
+                'nama_penyetor'=>$request->nama_penyetor,
+                'no_ref'=>$request->no_ref,
+                'no_rek'=>$request->no_rek,
+                'perusahaan'=>$request->no_rek,
+                'akun'=>$request->akun,
+                'no_sk'=>$request->no_sk,
+                'nop'=>$request->nop,
+                'ntpn'=>$request->ntpn,
+                'ntb'=>$request->ntb,
+                'stan'=>$request->stan,
+                'jenis_pembayaran'=>$request->jenis_pembayaran,
+                'jenis_transaksi'=>$request->trx_wan,
+                'attribute1'=>Auth::user()->id,
+                'created_at'=>date('Y-m-d H:i:s'),
+            );
+            $ebupot=Ebupot::where('id',$request->trx)->update([
+                'attribute2'=>Auth::user()->id,
+                'attribute3'=>1,
+            ]);
+            $billing=Billing::create($data);
+
+        }elseif($request->trx_wan==2){
+            if($request->trx_ppn==null){
+                return back();
+            }
+            $data = array(
+                'kode_billing'=>$header_id,
+                'npwp'=>$request->npwp,
+                'trx_bupot'=>$request->trx_ppn,
+                'nama'=>$request->nama,
+                'alamat'=>$request->alamat,
+                'jenis_pajak'=>$request->jenis_pajak,
+                'kode_jenis_setoran'=>$request->kode_jenis_setoran,
+                'masa_pajak'=>$request->masa_pajak,
+                'tahun_pajak'=>date('Y'),
+                'start_periode_pajak'=>$request->start_periode_pajak,
+                'end_periode_pajak'=>$end_periode_pajak->addDays(30),
+                'jumlah'=>$request->jumlah,
+                'keterangan'=>$request->keterangan,
+                'npwp_penyetor'=>$request->npwp_penyetor,
+                'nama_penyetor'=>$request->nama_penyetor,
+                'no_ref'=>$request->no_ref,
+                'no_rek'=>$request->no_rek,
+                'perusahaan'=>$request->no_rek,
+                'akun'=>$request->akun,
+                'no_sk'=>$request->no_sk,
+                'nop'=>$request->nop,
+                'ntpn'=>$request->ntpn,
+                'ntb'=>$request->ntb,
+                'stan'=>$request->stan,
+                'jenis_pembayaran'=>$request->jenis_pembayaran,
+                'jenis_transaksi'=>$request->trx_wan,
+                'attribute1'=>Auth::user()->id,
+                'created_at'=>date('Y-m-d H:i:s'),
+            );
+            $ebupot=HutangPpn::where('id',$request->trx_ppn)->update([
+                'attribute2'=>Auth::user()->id,
+                'attribute3'=>1,
+            ]);
+            $billing=Billing::create($data);
+
+        }else{
             return back();
         }
-        $end_periode_pajak = Carbon::parse($request->start_periode_pajak);
-
-        $data = array(
-            'kode_billing'=>$header_id,
-            'npwp'=>$request->npwp,
-            'trx_bupot'=>$request->trx,
-            'nama'=>$request->nama,
-            'alamat'=>$request->alamat,
-            'jenis_pajak'=>$request->jenis_pajak,
-            'kode_jenis_setoran'=>$request->kode_jenis_setoran,
-            'masa_pajak'=>$request->masa_pajak,
-            'tahun_pajak'=>date('Y'),
-            'start_periode_pajak'=>$request->start_periode_pajak,
-            'end_periode_pajak'=>$end_periode_pajak->addDays(30),
-            'jumlah'=>$request->jumlah,
-            'keterangan'=>$request->keterangan,
-            'npwp_penyetor'=>$request->npwp_penyetor,
-            'nama_penyetor'=>$request->nama_penyetor,
-            'no_ref'=>$request->no_ref,
-            'no_rek'=>$request->no_rek,
-            'perusahaan'=>$request->no_rek,
-            'akun'=>$request->akun,
-            'no_sk'=>$request->no_sk,
-            'nop'=>$request->nop,
-            'ntpn'=>$request->ntpn,
-            'ntb'=>$request->ntb,
-            'stan'=>$request->stan,
-            'jenis_pembayaran'=>$request->jenis_pembayaran,
-            'attribute1'=>Auth::user()->id,
-            'created_at'=>date('Y-m-d H:i:s'),
-        );
-        $ebupot=Ebupot::where('id',$request->trx)->update([
-            'attribute2'=>Auth::user()->id,
-            'attribute3'=>1,
-        ]);
+        
         // DD($data);
-        $billing=Billing::create($data);
         // dd($billing->id);
         $a= \DB::commit();
         return redirect()->route('billing/show',['id'=>$billing->id]);

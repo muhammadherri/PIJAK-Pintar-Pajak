@@ -39,6 +39,7 @@ class Billing extends Model
         'ntb',
         'stan',
         'jenis_pembayaran',
+        'jenis_transaksi',
         'attribute1',
         'attribute2',
         'attribute3',

@@ -13,7 +13,8 @@ class SptPpnController extends Controller
      */
     public function index()
     {
-        //
+        return view('sptPPN.index');
+        
     }
 
     /**
@@ -23,7 +24,8 @@ class SptPpnController extends Controller
      */
     public function create()
     {
-        //
+        return view('sptPPN.create');
+        
     }
 
     /**
@@ -34,7 +36,18 @@ class SptPpnController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = array(
+            'status_pernikahan'=>$request->status,
+            'tanggungan'=>$request->tanggungan,
+            'besaran_ptkp'=>$request->besaran_ptkp,
+            'kode_ptkp'=>$request->kode,
+            'attribute1'=>Auth::user()->id,
+            'attribute2'=>'NULL',
+            'attribute3'=>'NULL',
+            'created_at'=>date('Y-m-d H:i:s'),
+        );
+        Ptkp::create($data);
+        $a= \DB::commit();
     }
 
     /**

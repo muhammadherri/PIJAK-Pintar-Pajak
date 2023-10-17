@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Billing;
 use App\Models\Ebupot;
 use App\Models\Neraca;
+use App\Models\HutangPpn;
 use App\Models\JurnalManual;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -22,24 +23,52 @@ class PDFController extends Controller
         ];
         if(Auth::user()->status==1){
             $billing = Billing::where('kode_billing',$idbilling)->get()->first();
-            $ebupot=Ebupot::where('id',$billing->trx_bupot)->update([
-                'attribute2'=>Auth::user()->id,
-                'attribute3'=>2,
-            ]);
-            $billingupdate = Billing::where('kode_billing',$idbilling)->update([
-                'attribute2'=>Auth::user()->id,
-                'attribute3'=>1,
-            ]);
+            if($billing->jenis_transaksi==1){
+                dd('masukbupto');
+                $ebupot=Ebupot::where('id',$billing->trx_bupot)->update([
+                    'attribute2'=>Auth::user()->id,
+                    'attribute3'=>2,
+                ]);
+                $billingupdate = Billing::where('kode_billing',$idbilling)->update([
+                    'attribute2'=>Auth::user()->id,
+                    'attribute3'=>1,
+                ]);
+            }else{
+                // dd('hutang');
+
+                $ebupot=HutangPpn::where('id',$billing->trx_bupot)->update([
+                    'attribute2'=>Auth::user()->id,
+                    'attribute3'=>2,
+                ]);
+                $billingupdate = Billing::where('kode_billing',$idbilling)->update([
+                    'attribute2'=>Auth::user()->id,
+                    'attribute3'=>1,
+                ]);
+            }
+            
         }else{
             $billing = Billing::where('attribute1',$id)->where('kode_billing',$idbilling)->get()->first();
-            $ebupot=Ebupot::where('id',$billing->trx_bupot)->update([
-                'attribute2'=>Auth::user()->id,
-                'attribute3'=>2,
-            ]);
-            $billingupdate = Billing::where('kode_billing',$idbilling)->update([
-                'attribute2'=>Auth::user()->id,
-                'attribute3'=>1,
-            ]);
+            if($billing->jenis_transaksi==1){
+                $ebupot=Ebupot::where('id',$billing->trx_bupot)->update([
+                    'attribute2'=>Auth::user()->id,
+                    'attribute3'=>2,
+                ]);
+                $billingupdate = Billing::where('kode_billing',$idbilling)->update([
+                    'attribute2'=>Auth::user()->id,
+                    'attribute3'=>1,
+                ]);
+            }elseif($billing->jenis_transaksi==2){
+                $ebupot=HutangPpn::where('id',$billing->trx_bupot)->update([
+                    'attribute2'=>Auth::user()->id,
+                    'attribute3'=>2,
+                ]);
+                $billingupdate = Billing::where('kode_billing',$idbilling)->update([
+                    'attribute2'=>Auth::user()->id,
+                    'attribute3'=>1,
+                ]);
+            }else{
+                return back();
+            }
         }
         if($billing==null){
             // Session::flash('success','Data Yang Dicari Salah');

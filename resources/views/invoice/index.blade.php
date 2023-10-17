@@ -54,19 +54,21 @@
 
                                     </tbody>
                                     <br>
-                                    <tfoot>
+                                    <tfoot class="footer">
                                         <tr>
                                             <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
                                             <td><b>TOTAL PPN</b></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td>
                                                 <b>{{ number_format($invcount,2) }}</b>
                                             </td>
+                                            <td></td>
+                                            <td></td>
                                         </tr>
                                     </tfoot>
                                 </table>

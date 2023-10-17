@@ -408,48 +408,45 @@ class SptTahunanController extends Controller
         $iduser=Auth::user()->id;
         if(Auth::user()->status==1){
             $spt=SptTahunan::where('formulir_id',$id)->get()->first();
-            $sptI=SptTahunanI::where('formulir_id',$id)->get()->first();
+            // $sptI=SptTahunanI::where('formulir_id',$id)->get()->first();
             // dd($spt);
-            $sptIIhead=SptTahunanIIHead::where('formulir_id',$id)->get()->first();
-            $sptIIline=SptTahunanIILines::where('formulir_id',$id)->get()->first();
-            $sptIIIhead=SptTahunanIIIHead::where('formulir_id',$id)->get()->first();
-            $sptIIIline=SptTahunanIIILines::where('formulir_id',$id)->get()->first();
-            $sptIVhead=SptTahunanIVHead::where('formulir_id',$id)->get()->first();
-            $sptIVlinea=SptTahunanIVLinesA::where('formulir_id',$id)->get()->first();
-            $sptIVlineb=SptTahunanIVLinesB::where('formulir_id',$id)->get()->first();
-            $sptVhead=SptTahunanVHead::where('formulir_id',$id)->get()->first();
-            $sptVlinea=SptTahunanVLinesA::where('formulir_id',$id)->get()->first();
-            $sptVlineb=SptTahunanVLinesB::where('formulir_id',$id)->get()->first();
-            $sptVIhead=SptTahunanVIHead::where('formulir_id',$id)->get()->first();
-            $sptVIlinea=SptTahunanVILinesA::where('formulir_id',$id)->get()->first();
-            $sptVIlineb=SptTahunanVILinesB::where('formulir_id',$id)->get()->first();
-            $sptVIlinec=SptTahunanVILinesC::where('formulir_id',$id)->get()->first();
+            // $sptIIhead=SptTahunanIIHead::where('formulir_id',$id)->get()->first();
+            // $sptIIline=SptTahunanIILines::where('formulir_id',$id)->get()->first();
+            // $sptIIIhead=SptTahunanIIIHead::where('formulir_id',$id)->get()->first();
+            // $sptIIIline=SptTahunanIIILines::where('formulir_id',$id)->get()->first();
+            // $sptIVhead=SptTahunanIVHead::where('formulir_id',$id)->get()->first();
+            // $sptIVlinea=SptTahunanIVLinesA::where('formulir_id',$id)->get()->first();
+            // $sptIVlineb=SptTahunanIVLinesB::where('formulir_id',$id)->get()->first();
+            // $sptVhead=SptTahunanVHead::where('formulir_id',$id)->get()->first();
+            // $sptVlinea=SptTahunanVLinesA::where('formulir_id',$id)->get()->first();
+            // $sptVlineb=SptTahunanVLinesB::where('formulir_id',$id)->get()->first();
+            // $sptVIhead=SptTahunanVIHead::where('formulir_id',$id)->get()->first();
+            // $sptVIlinea=SptTahunanVILinesA::where('formulir_id',$id)->get()->first();
+            // $sptVIlineb=SptTahunanVILinesB::where('formulir_id',$id)->get()->first();
+            // $sptVIlinec=SptTahunanVILinesC::where('formulir_id',$id)->get()->first();
         }else{
             $spt=SptTahunan::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
-            $sptI=SptTahunanI::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
-            $sptIIhead=SptTahunanIIHead::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
-            $sptIIline=SptTahunanIILines::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
-            $sptIIIhead=SptTahunanIIIHead::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
-            $sptIIIline=SptTahunanIIILines::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
-            $sptIVhead=SptTahunanIVHead::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
-            $sptIVlinea=SptTahunanIVLinesA::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
-            $sptIVlineb=SptTahunanIVLinesB::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
-            $sptVhead=SptTahunanVHead::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
-            $sptVlinea=SptTahunanVLinesA::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
-            $sptVlineb=SptTahunanVLinesB::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
-            $sptVIhead=SptTahunanVIHead::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
-            $sptVIlinea=SptTahunanVILinesA::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
-            $sptVIlineb=SptTahunanVILinesB::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
-            $sptVIlinec=SptTahunanVILinesC::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
+            // $sptI=SptTahunanI::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
+            // $sptIIhead=SptTahunanIIHead::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
+            // $sptIIline=SptTahunanIILines::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
+            // $sptIIIhead=SptTahunanIIIHead::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
+            // $sptIIIline=SptTahunanIIILines::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
+            // $sptIVhead=SptTahunanIVHead::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
+            // $sptIVlinea=SptTahunanIVLinesA::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
+            // $sptIVlineb=SptTahunanIVLinesB::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
+            // $sptVhead=SptTahunanVHead::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
+            // $sptVlinea=SptTahunanVLinesA::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
+            // $sptVlineb=SptTahunanVLinesB::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
+            // $sptVIhead=SptTahunanVIHead::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
+            // $sptVIlinea=SptTahunanVILinesA::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
+            // $sptVIlineb=SptTahunanVILinesB::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
+            // $sptVIlinec=SptTahunanVILinesC::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
         }
         if($spt==null){
             return back();
         }
         $split_npwp=str_split($spt->npwp);
-        return view('spttahunan.show',compact('spt','sptI','sptIIhead'
-        ,'sptIIline','split_npwp','sptIIIhead','sptIIIline','sptIVhead'
-        ,'sptIVlinea','sptIVlineb','sptVhead','sptVlinea','sptVlineb'
-        ,'sptVIhead','sptVIlinea','sptVIlineb','sptVIlinec'));
+        return view('spttahunan.show',compact('spt'));
     }
 
     /**

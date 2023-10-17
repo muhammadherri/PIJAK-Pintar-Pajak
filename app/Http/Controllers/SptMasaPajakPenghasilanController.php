@@ -439,54 +439,54 @@ class SptMasaPajakPenghasilanController extends Controller
         $iduser=Auth::user()->id;
         if(Auth::user()->status==1){
             $spt=SptMasa::where('formulir_id',$id)->get()->first();
-            $sptI=SptMasaI::where('formulir_id',$id)->get()->first();
-            $sptII=SptMasaII::where('formulir_id',$id)->get()->first();
-            $sptIII=SptMasaIII::where('formulir_id',$id)->get()->first();
-            $sptIV=SptMasaIV::where('formulir_id',$id)->get()->first();
-            $sptV=SptMasaV::where('formulir_id',$id)->get()->first();
-            $sptVI=SptMasaVI::where('formulir_id',$id)->get()->first();
-            $sptVII=SptMasaVII::where('formulir_id',$id)->get()->first();
-            $sptA=SptMasaA::where('formulir_id',$id)->get()->first();
-            $sptA2=SptMasaB::where('formulir_id',$id)->get()->first();
+            // $sptI=SptMasaI::where('formulir_id',$id)->get()->first();
+            // $sptII=SptMasaII::where('formulir_id',$id)->get()->first();
+            // $sptIII=SptMasaIII::where('formulir_id',$id)->get()->first();
+            // $sptIV=SptMasaIV::where('formulir_id',$id)->get()->first();
+            // $sptV=SptMasaV::where('formulir_id',$id)->get()->first();
+            // $sptVI=SptMasaVI::where('formulir_id',$id)->get()->first();
+            // $sptVII=SptMasaVII::where('formulir_id',$id)->get()->first();
+            // $sptA=SptMasaA::where('formulir_id',$id)->get()->first();
+            // $sptA2=SptMasaB::where('formulir_id',$id)->get()->first();
             
             $sptLineB=SptMasaLineB::where('formulir_id',$id)->get();
             $sptLineC=SptMasaLineC::where('formulir_id',$id)->get();
-            $sptLineI=SptMasaILine::where('formulir_id',$id)->get();
-            $sptLineII=SptMasaIILine::where('formulir_id',$id)->get();
-            $sptLineIII=SptMasaIIILine::where('formulir_id',$id)->get();
-            $sptLineIV=SptMasaIVLine::where('formulir_id',$id)->get();
-            $sptLineVI=SptMasaVILine::where('formulir_id',$id)->get();
-            $sptLineVII=SptMasaVIILine::where('formulir_id',$id)->get();
+            // $sptLineI=SptMasaILine::where('formulir_id',$id)->get();
+            // $sptLineII=SptMasaIILine::where('formulir_id',$id)->get();
+            // $sptLineIII=SptMasaIIILine::where('formulir_id',$id)->get();
+            // $sptLineIV=SptMasaIVLine::where('formulir_id',$id)->get();
+            // $sptLineVI=SptMasaVILine::where('formulir_id',$id)->get();
+            // $sptLineVII=SptMasaVIILine::where('formulir_id',$id)->get();
             $masa=MasaBulan::all();
 
         }else{
             $spt=SptMasa::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
-            $sptI=SptMasaI::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
-            $sptII=SptMasaII::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
-            $sptIII=SptMasaIII::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
-            $sptIV=SptMasaIV::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
-            $sptV=SptMasaV::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
-            $sptVI=SptMasaVI::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
-            $sptVII=SptMasaVII::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
-            $sptA=SptMasaA::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
-            $sptA2=SptMasaB::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
+            // $sptI=SptMasaI::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
+            // $sptII=SptMasaII::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
+            // $sptIII=SptMasaIII::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
+            // $sptIV=SptMasaIV::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
+            // $sptV=SptMasaV::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
+            // $sptVI=SptMasaVI::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
+            // $sptVII=SptMasaVII::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
+            // $sptA=SptMasaA::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
+            // $sptA2=SptMasaB::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
             
-            $sptLineB=SptMasaLineB::where('attribute1',$iduser)->where('formulir_id',$id)->get();
-            $sptLineC=SptMasaLineC::where('attribute1',$iduser)->where('formulir_id',$id)->get();
-            $sptLineI=SptMasaILine::where('attribute1',$iduser)->where('formulir_id',$id)->get();
-            $sptLineII=SptMasaIILine::where('attribute1',$iduser)->where('formulir_id',$id)->get();
-            $sptLineIII=SptMasaIIILine::where('attribute1',$iduser)->where('formulir_id',$id)->get();
-            $sptLineIV=SptMasaIVLine::where('attribute1',$iduser)->where('formulir_id',$id)->get();
-            $sptLineVI=SptMasaVILine::where('attribute1',$iduser)->where('formulir_id',$id)->get();
-            $sptLineVII=SptMasaVIILine::where('attribute1',$iduser)->where('formulir_id',$id)->get();
+            $sptLineB=SptMasaLineB::where('formulir_id',$id)->get();
+            $sptLineC=SptMasaLineC::where('formulir_id',$id)->get();
+            // $sptLineI=SptMasaILine::where('attribute1',$iduser)->where('formulir_id',$id)->get();
+            // $sptLineII=SptMasaIILine::where('attribute1',$iduser)->where('formulir_id',$id)->get();
+            // $sptLineIII=SptMasaIIILine::where('attribute1',$iduser)->where('formulir_id',$id)->get();
+            // $sptLineIV=SptMasaIVLine::where('attribute1',$iduser)->where('formulir_id',$id)->get();
+            // $sptLineVI=SptMasaVILine::where('attribute1',$iduser)->where('formulir_id',$id)->get();
+            // $sptLineVII=SptMasaVIILine::where('attribute1',$iduser)->where('formulir_id',$id)->get();
             $masa=MasaBulan::all();
         }
         if($spt==null){
             return back();
         }
         return view('sptmasapajak.show',compact(
-            'spt','sptI','sptII','sptIII','sptIV','sptV','sptVI','sptVII','sptA','sptA2'
-            ,'sptLineB','sptLineC','sptLineI','sptLineII','sptLineIII','sptLineIV','sptLineVI','sptLineVII','masa'
+            'spt'
+            ,'sptLineB','sptLineC'
         ));
     }
 

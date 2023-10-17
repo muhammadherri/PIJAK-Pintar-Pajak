@@ -13,6 +13,7 @@ use App\Models\JurnalManual;
 use App\Models\Neraca;
 use App\Models\Prepopulate;
 use App\Models\Akun;
+use App\Models\HutangPpn;
 use App\Models\SptTahunan;
 use App\Models\SptTahunanI;
 use App\Models\SptTahunanIIHead;
@@ -144,9 +145,9 @@ class AllInController extends Controller
         $id=Auth::user()->id;
         // $invcount = Invoice::where('attribute1',$id)->sum('total');
         if(Auth::user()->status==1){
-            $bupot = Ebupot::orderBy('id','desc')->get();
+            $bupot = Ebupot::whereNotNull('trx')->orderBy('id','desc')->get();
         }else{
-            $bupot = Ebupot::orderBy('id','desc')->where('attribute1',$id)->get();
+            $bupot = Ebupot::whereNotNull('trx')->orderBy('id','desc')->where('attribute1',$id)->get();
         }
         $data_arr = array();
         // dd($inv);
@@ -323,6 +324,34 @@ class AllInController extends Controller
         );
         return json_encode($response);
     }
+    public function listHutangppn(Request $request){
+        $id=Auth::user()->id;
+        // $invcount = Invoice::where('attribute1',$id)->sum('total');
+        if(Auth::user()->status==1){
+            $hutangppn = HutangPpn::get();
+        }else{
+            $hutangppn = HutangPpn::where('attribute1',$id)->get();
+        }
+        $data_arr = array();
+        // dd($inv);
+        foreach ($hutangppn as $record) {
+            $data_arr[] = array(
+                "id" => $record->id,
+                "trx" =>$record->trx,
+                "ppn_masuk" => number_format($record->jumlah_ppn_masuk,2),
+                "ppn_keluar" => number_format($record->jumlah_ppn_keluar,2),
+                "hutang_ppn" => number_format($record->hutang_ppn,2),
+                "created_by" => $record->users->name,
+                "status" => $record->attribute3,
+                "created_at" => $record->created_at->format('d-M-Y'),
+            );
+        }
+        // dd($data_arr);
+        $response = array(
+            "aaData" => $data_arr,
+        );
+        return json_encode($response);
+    }
     public function akun_kredit(Request $request){
         $debet = $request->input('akundebet'); 
         // dd($debet);
@@ -430,6 +459,35 @@ class AllInController extends Controller
         return json_encode($response);
     }
     public function listSpt1721(Request $request){
+        // dd('masauk');
+        $id=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $spt = SptMasa::get();
+        }else{
+            $spt = SptMasa::where('attribute1',$id)->get();
+        }
+        $data_arr = array();
+        // dd($spt);
+        foreach ($spt as $record) {
+            $data_arr[] = array(
+                "id" => $record->formulir_id,
+                "nama" => $record->nama,
+                "no_npwp" => $record->npwp,
+                "alamat" => $record->alamat,
+                "masapajak" => $record->bulan->nama_bulan,
+                "tahun_pajak" => $record->masa_pajak_tahun,
+                "tempat" =>  $record->tempat_ttd,
+                "created_by" => $record->users->name,
+                "tgl_pembuatan" => $record->created_at->format('d-M-Y'),
+            );
+        }
+        // dd($data_arr);
+        $response = array(
+            "aaData" => $data_arr,
+        );
+        return json_encode($response);
+    }
+    public function listSptPPN(Request $request){
         // dd('masauk');
         $id=Auth::user()->id;
         if(Auth::user()->status==1){
@@ -574,7 +632,7 @@ class AllInController extends Controller
 
         }else{
             $spt=SptMasa::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
-            $sptLineC=SptMasaLineC::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get();
+            $sptLineC=SptMasaLineC::where('formulir_id',$request->formulir_id)->get();
         }
 
         if($spt==null){
@@ -591,7 +649,7 @@ class AllInController extends Controller
 
         }else{
             $spt=SptMasaI::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
-            $sptLine=SptMasaILine::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get();
+            $sptLine=SptMasaILine::where('formulir_id',$request->formulir_id)->get();
         }
 
         if($spt==null){
@@ -608,7 +666,7 @@ class AllInController extends Controller
 
         }else{
             $spt=SptMasaII::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
-            $sptLine=SptMasaIILine::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get();
+            $sptLine=SptMasaIILine::where('formulir_id',$request->formulir_id)->get();
         }
 
         if($spt==null){
@@ -625,7 +683,7 @@ class AllInController extends Controller
 
         }else{
             $spt=SptMasaIII::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
-            $sptLine=SptMasaIIILine::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get();
+            $sptLine=SptMasaIIILine::where('formulir_id',$request->formulir_id)->get();
         }
 
         if($spt==null){
@@ -642,7 +700,7 @@ class AllInController extends Controller
 
         }else{
             $spt=SptMasaIV::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
-            $sptLine=SptMasaIVLine::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get();
+            $sptLine=SptMasaIVLine::where('formulir_id',$request->formulir_id)->get();
         }
 
         if($spt==null){
@@ -674,7 +732,7 @@ class AllInController extends Controller
 
         }else{
             $spt=SptMasaVI::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
-            $sptLine=SptMasaVILine::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get();
+            $sptLine=SptMasaVILine::where('formulir_id',$request->formulir_id)->get();
         }
 
         if($spt==null){
@@ -691,7 +749,7 @@ class AllInController extends Controller
 
         }else{
             $spt=SptMasaVII::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
-            $sptLine=SptMasaVIILine::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get();
+            $sptLine=SptMasaVIILine::where('formulir_id',$request->formulir_id)->get();
         }
 
         if($spt==null){

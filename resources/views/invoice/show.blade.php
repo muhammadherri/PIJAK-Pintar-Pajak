@@ -119,11 +119,8 @@
                                                             @foreach($invline as $key =>$row)
                                                             <tr>
                                                                 <td width="auto">
-                                                                    <select name="namabarang_inv[]" id="namabarang"
-                                                                        class="form-control">
-                                                                        <option value="0">nama barang</option>
-                                                                        <option value="1">nama barang</option>
-                                                                    </select>
+                                                                    <input readonly value="{{$row->nama_barang}}" autocomplete="off" type="text" name="angka0[]" min="0"
+                                                                    class="form-control" />
                                                                 </td>
                                                                 <td><input readonly value="{{$row->kuantitas}}" autocomplete="off" type="number" name="angka1[]" min="0"
                                                                         class="form-control" /></td>
@@ -310,9 +307,10 @@
                                                         <div class="col-sm-3">
                                                             <select id="no_seri" name="no_seri"
                                                                 class="default-select form-control wide">
-                                                                <option value="0">Seri 1</option>
-                                                                <option value="1">Seri 2</option>
-                                                                <option value="2">Seri 3</option>
+                                                                @foreach ($noseri as $row)
+                                                                    <option value="{{ $row->id }}"{{ $faktur->no_seri == $row->id ? 'selected' : '' }}>
+                                                                        {{ $row->no_seri }}</option>
+                                                                @endforeach
                                                             </select>
                                                         </div>
                                                         <div class="col-sm-6">
@@ -336,11 +334,7 @@
                                                             @foreach($fktrline as $key => $row)
                                                             <tr>
                                                                 <td width="auto">
-                                                                    <select name="namabarang_fktr[]" id="namabarang_fktr"
-                                                                        class="form-control">
-                                                                        <option value="0">nama barang</option>
-                                                                        <option value="1">nama barang</option>
-                                                                    </select>
+                                                                    <input readonly value="{{$row->nama_barang}}" autocomplete="off" type="text" name="angka7[]" class="form-control" />
                                                                 </td>
                                                                 <td><input readonly value="{{$row->kuantitas}}" autocomplete="off" type="number" name="angka4[]" min="0"
                                                                         class="form-control" /></td>

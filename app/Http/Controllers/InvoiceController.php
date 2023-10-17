@@ -8,6 +8,7 @@ use App\Models\Invoice;
 use App\Models\InvoiceLine;
 use App\Models\Faktur;
 use App\Models\FakturLine;
+use App\Models\NoSeri;
 use Illuminate\Support\Facades\Auth;
 
 class InvoiceController extends Controller
@@ -36,7 +37,8 @@ class InvoiceController extends Controller
     public function create()
     {
         $vendor = Vendor::all();
-        return view('invoice.create',compact('vendor'));
+        $noseri = NoSeri::all();
+        return view('invoice.create',compact('vendor','noseri'));
     }
 
     /**
@@ -51,13 +53,13 @@ class InvoiceController extends Controller
         $header_id = $header_id ?? 0;
         $header_id = $header_id+1;
 
-        $barang_inv = $request->input('namabarang_inv');
+        $barang_inv = $request->input('angka0');
         $kuantitas_inv = $request->input('angka1');
         $harga_satuan_inv = $request->input('angka2');
         $total_diskon_inv = $request->input('angka3');
         $total_harga_inv = $request->input('hasil');
 
-        $barang_faktur = $request->input('namabarang_fktr');
+        $barang_faktur = $request->input('angka7');
         $kuantitas_faktur = $request->input('angka4');
         $harga_satuan_faktur = $request->input('angka5');
         $total_diskon_faktur = $request->input('angka6');
@@ -137,19 +139,21 @@ class InvoiceController extends Controller
             $faktur=Faktur::where('faktur_id',$id)->get()->first();
             $invline=InvoiceLine::where('invoice_id',$id)->get();
             $fktrline=FakturLine::where('faktur_id',$id)->get();
+            $noseri = NoSeri::all();
             $vendor=Vendor::get();
         }else{
             $inv=Invoice::where('attribute1',$iduser)->where('invoice_id',$id)->get()->first();
             $faktur=Faktur::where('attribute1',$iduser)->where('faktur_id',$id)->get()->first();
             $invline=InvoiceLine::where('attribute1',$iduser)->where('invoice_id',$id)->get();
             $fktrline=FakturLine::where('attribute1',$iduser)->where('faktur_id',$id)->get();
+            $noseri = NoSeri::all();
             $vendor=Vendor::get();
         }
         if($inv==null){
             return back();
         }
         return view('invoice.show',compact(
-            'inv','faktur','invline','fktrline','vendor'
+            'inv','faktur','invline','fktrline','vendor','noseri'
         ));
     }
 
@@ -184,9 +188,10 @@ class InvoiceController extends Controller
      */
     public function destroy($id)
     {
-        // dd($id);
-        // $delete=Invoice::find($id);
-        // $delete->delete();
-        // return redirect()->back()->with('alert','Berhasil Dihapus');
+        $delete=Invoice::find($id);
+        $deletefaktur=Faktur::find($id);
+        $delete->delete();
+        $deletefaktur->delete();
+        return redirect()->back()->with('alert','Berhasil Dihapus');
     }
 }

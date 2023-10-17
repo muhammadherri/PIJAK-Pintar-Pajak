@@ -162,7 +162,7 @@
                             <span class="nav-text">Pembayaran</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ route('hutangppn') }}">Hutang PPN</a></li>
+                            <li><a href="{{ route('hutangppn') }}">Hutang PPn</a></li>
                             <li><a href="{{ route('billing') }}">ID Billing</a></li>
                             <li><a href="{{ route('pembayaran') }}">Pembayaran</a></li>
                         </ul>
@@ -174,7 +174,7 @@
                         <ul aria-expanded="false">
                             <li><a href="{{ route('spttahunan') }}" >SPT Badan</a></li>
                             <li><a href="{{ route('sptmasapajak') }}" >SPT Masa</a></li>
-                            <li><a href="{{ route('sptmasapajak') }}" >SPT PPN</a></li>
+                            <li><a href="{{ route('sptPPN') }}" >SPT PPN</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
@@ -245,6 +245,7 @@
                             <li><a href="{{ route('ptkp') }}">PTKP</a></li>
                             <li><a href="{{ route('penandatanganan') }}">Penandatanganan</a></li>
                             <li><a href="{{ route('jenispph') }}">Jenis PPh</a></li>
+                            <li><a href="{{ route('noseri') }}">No Seri</a></li>
                         </ul>
 
                     </li>
@@ -293,7 +294,7 @@
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by <a href="" target="_blank">TAXCEED</a> 2023</p>
+                <p>Copyright © Designed &amp; Developed by <a href="" target="_blank">TAXCEED</a> 2023 <p style="color:#f3f3f3">MASHER</p></p>
             </div>
         </div>
         <!--**********************************

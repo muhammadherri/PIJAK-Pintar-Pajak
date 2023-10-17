@@ -162,6 +162,18 @@ Route::get('/jenispph/{id}/edit', [App\Http\Controllers\JenisPphController::clas
 Route::put('/jenispph/{id}', [App\Http\Controllers\JenisPphController::class, 'update'])->name('jenispph/update');
 // jenis pph
 
+// nomorseri
+Route::get('/noseri', [App\Http\Controllers\NoSeriController::class, 'index'])->name('noseri');
+Route::get('/noseri/create', [App\Http\Controllers\NoSeriController::class, 'create'])->name('noseri/create');
+Route::post('/noseri/store', [App\Http\Controllers\NoSeriController::class, 'store'])->name('noseri/store');
+
+Route::delete('/noseri/{id}', [App\Http\Controllers\NoSeriController::class, 'destroy']);
+Route::get('/noseri/{id}/show', [App\Http\Controllers\NoSeriController::class, 'show'])->name('noseri/show');
+Route::get('/noseri/{id}/edit', [App\Http\Controllers\NoSeriController::class, 'edit'])->name('noseri/edit');
+Route::put('/noseri/{id}', [App\Http\Controllers\NoSeriController::class, 'update'])->name('noseri/update');
+
+// nomorseri
+
 // prepopulate
 Route::get('/prepopulates', [App\Http\Controllers\PrepopulateController::class, 'index'])->name('prepopulates');
 Route::get('/prepopulates/create', [App\Http\Controllers\PrepopulateController::class, 'create'])->name('prepopulates/create');
@@ -199,6 +211,17 @@ Route::get('/latihan/{id}/edit', [App\Http\Controllers\JurnalManualLatihanContro
 Route::put('/latihan/{id}', [App\Http\Controllers\JurnalManualLatihanController::class, 'update'])->name('latihan/update');
 // jurnalmanualLatihan
 
+// sptppn
+Route::get('/sptPPN', [App\Http\Controllers\SptPpnController::class, 'index'])->name('sptPPN');
+Route::get('/sptPPN/create', [App\Http\Controllers\SptPpnController::class, 'create'])->name('sptPPN/create');
+Route::post('/sptPPN/store', [App\Http\Controllers\SptPpnController::class, 'store'])->name('sptPPN/store');
+
+Route::get('/sptPPN/{id}/destroy', [App\Http\Controllers\SptPpnController::class, 'destroy'])->name('sptPPN/destroy');
+Route::get('/sptPPN/{id}/show', [App\Http\Controllers\SptPpnController::class, 'show'])->name('sptPPN/show');
+Route::get('/sptPPN/{id}/edit', [App\Http\Controllers\SptPpnController::class, 'edit'])->name('sptPPN/edit');
+Route::put('/sptPPN/{id}', [App\Http\Controllers\SptPpnController::class, 'update'])->name('sptPPN/update');
+// sptppn
+
 // spttahunan
 Route::get('/spttahunan', [App\Http\Controllers\SptTahunanController::class, 'index'])->name('spttahunan');
 Route::get('/spttahunan/create', [App\Http\Controllers\SptTahunanController::class, 'create'])->name('spttahunan/create');
@@ -228,6 +251,9 @@ Route::post('/pembayaran/show', [App\Http\Controllers\PembayaranController::clas
 
 // hutangppn
 Route::get('/hutangppn', [App\Http\Controllers\HutangPpnController::class, 'index'])->name('hutangppn');
+Route::get('/hutangppn/create', [App\Http\Controllers\HutangPpnController::class, 'create'])->name('hutangppn/create');
+Route::post('/hutangppn/store', [App\Http\Controllers\HutangPpnController::class, 'store'])->name('hutangppn/store');
+
 // hutangppn
 
 // laporan
@@ -245,11 +271,13 @@ Route::get('/invList', [App\Http\Controllers\AllInController::class,'listInvoice
 Route::get('/bupotList', [App\Http\Controllers\AllInController::class,'listBupot'])->name('data.ebupot');
 Route::get('/list1771', [App\Http\Controllers\AllInController::class,'listSpt1771'])->name('data.1771');
 Route::get('/list1721', [App\Http\Controllers\AllInController::class,'listSpt1721'])->name('data.1721');
+Route::get('/listPPN', [App\Http\Controllers\AllInController::class,'listSptPPN'])->name('data.sptppn');
 Route::get('/pphList', [App\Http\Controllers\AllInController::class,'listPph'])->name('data.pph');
 Route::get('/fiskalList', [App\Http\Controllers\AllInController::class,'listFiskal'])->name('data.fiskal');
 Route::get('/latihanList', [App\Http\Controllers\AllInController::class,'listLatihan'])->name('data.latihan');
 Route::get('/prepopulate', [App\Http\Controllers\AllInController::class,'listPrepopulate'])->name('data.prepopulate');
 Route::get('/ebilling', [App\Http\Controllers\AllInController::class,'listBilling'])->name('data.billing');
+Route::get('/hutangppnlist', [App\Http\Controllers\AllInController::class,'listHutangppn'])->name('data.hutangppn');
 // SEARCH
 Route::get('/search/resultPtkp', [App\Http\Controllers\AllInController::class,'resultPtkp'])->name('get.ptkp');
 Route::get('/search/resultNoakun', [App\Http\Controllers\AllInController::class,'akun_kredit'])->name('get.nokredit');

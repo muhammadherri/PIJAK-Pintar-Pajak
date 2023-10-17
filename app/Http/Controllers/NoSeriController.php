@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Invoice;
-use App\Models\Prepopulate;
-use App\Models\HutangPpn;
+use App\Models\NoSeri;
 use Illuminate\Support\Facades\Auth;
 
-class HutangPpnController extends Controller
+class NoSeriController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,15 +15,8 @@ class HutangPpnController extends Controller
      */
     public function index()
     {
-        $id=Auth::user()->id;
-        if(Auth::user()->status==1){
-            $ppnmasuk = Prepopulate::sum('jumlah_ppn');
-            $ppnkeluar = Invoice::sum('ppn');
-        }else{
-            $ppnmasuk = Prepopulate::where('attribute1',$id)->sum('jumlah_ppn');
-            $ppnkeluar = Invoice::where('attribute1',$id)->sum('ppn');
-        }
-        return view('hutangppn.index',compact('ppnmasuk','ppnkeluar'));
+        $noseri=NoSeri::all();
+        return view('nomorseri.index',compact('noseri'))->with('no',1);
     }
 
     /**
@@ -35,15 +26,7 @@ class HutangPpnController extends Controller
      */
     public function create()
     {
-        $id=Auth::user()->id;
-        if(Auth::user()->status==1){
-            $ppnmasuk = Prepopulate::sum('jumlah_ppn');
-            $ppnkeluar = Invoice::sum('ppn');
-        }else{
-            $ppnmasuk = Prepopulate::where('attribute1',$id)->sum('jumlah_ppn');
-            $ppnkeluar = Invoice::where('attribute1',$id)->sum('ppn');
-        }
-        return view('hutangppn.create',compact('ppnmasuk','ppnkeluar'));
+        return view('nomorseri.create');
     }
 
     /**
@@ -54,22 +37,15 @@ class HutangPpnController extends Controller
      */
     public function store(Request $request)
     {
-        $header_id =HutangPpn::get()->count();
-        $header_id = $header_id ?? 0;
-        $header_id = $header_id+1;
-        $date = date('Ymd');
-        $trx = 'TRX'.'0'.$header_id.$date;
-
         $data = array(
-            'trx'=>$trx,
-            'jumlah_ppn_masuk'=>$request->ppn_masuk,
-            'jumlah_ppn_keluar'=>$request->ppn_keluar,
-            'hutang_ppn'=>$request->jumlah,
+            'no_seri'=>$request->noseri,
+            'serial_name'=>$request->tanggungan,
+            'besaran_ptkp'=>$request->nama_serial,
             'attribute1'=>Auth::user()->id,
         );
-        HutangPpn::create($data);
+        NoSeri::create($data);
         $a= \DB::commit();
-        return redirect()->route('hutangppn');
+        return redirect()->route('noseri');
     }
 
     /**
@@ -80,7 +56,8 @@ class HutangPpnController extends Controller
      */
     public function show($id)
     {
-        //
+        $noseri = NoSeri::where('id',$id)->get()->first();
+        return view('nomorseri.show',compact('noseri'));
     }
 
     /**
@@ -91,7 +68,17 @@ class HutangPpnController extends Controller
      */
     public function edit($id)
     {
-        //
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $noseri = NoSeri::where('id',$id)->get()->first();
+        }else{
+            $noseri = NoSeri::where('attribute1',$iduser)->where('id',$id)->get()->first();
+        }
+        if($noseri==null){
+            return back();
+        }else{
+            return view('nomorseri.edit',compact('noseri'));
+        }
     }
 
     /**
@@ -103,7 +90,14 @@ class HutangPpnController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        NoSeri::where('id',$id)->update([
+            'no_seri'=>$request->noseri,
+            'serial_name'=>$request->nama_serial,
+            'attribute2'=>Auth::user()->id,
+            'updated_at'=>date('Y-m-d H:i:s'),
+        ]);
+        $a= \DB::commit();    
+        return redirect()->route('noseri');
     }
 
     /**
@@ -114,6 +108,8 @@ class HutangPpnController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete=NoSeri::find($id);
+        $delete->delete();
+        return redirect()->back()->with('alert','Berhasil Dihapus');
     }
 }

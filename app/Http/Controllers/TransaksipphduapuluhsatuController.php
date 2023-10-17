@@ -48,7 +48,12 @@ class TransaksipphduapuluhsatuController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
+        $header_id =TransaksiPphDuapuluhSatu::get()->count();
+        $header_id = $header_id ?? 0;
+        $header_id = $header_id+1;
+        $date = date('Ymd');
+        $trx = 'TRXPPh'.'0'.$header_id.$date;
+
         if($request->gross==0){
             $data = array(
                 'status_npwp'=>$request->npwp,

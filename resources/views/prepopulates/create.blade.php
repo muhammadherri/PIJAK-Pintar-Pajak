@@ -44,9 +44,14 @@
                                             <label class="col-sm-3 col-form-label">Tahun</label>
                                             <div class="col-sm-9">
                                                 <select id="tahun" name="tahun"
-                                                    class="default-select form-control wide">
-                                                    <option value="{{ $tahunsekarang }}">Sekarang - {{ $tahunsekarang }}
-                                                    </option>
+                                                    class="dropdown-groups">
+                                                    @php
+                                                        $tahunsekarang = date('Y');
+                                                    @endphp
+                                                    @for ($tahunsekarang = date('Y'); $tahunsekarang >= date('Y') - 9; $tahunsekarang--)
+                                                        <option value="{{ $tahunsekarang }}">{{ $tahunsekarang }}
+                                                        </option>
+                                                    @endfor
                                                 </select>
                                             </div>
                                         </div>

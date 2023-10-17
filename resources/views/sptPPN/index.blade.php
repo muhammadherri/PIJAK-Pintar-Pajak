@@ -2,7 +2,7 @@
 @section('header')
     <div class="header-left">
         <div class="dashboard_bar">
-            Transaksi
+            Pelaporan
         </div>
     </div>
 @endsection
@@ -14,8 +14,8 @@
         <div class="container-fluid">
             <div class="row page-titles">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Transaksi</a></li>
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">E-Bupot</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Pelaporan</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">SPT PPn</a></li>
                 </ol>
             </div>
             <!-- row -->
@@ -23,10 +23,10 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">E-Bupot</h4>
+                            <h4 class="card-title">Daftar SPT PPn</h4>
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <a class="btn btn-primary" href="{{ route('ebupot/create') }}">
+                                    <a class="btn btn-primary" href="{{ route('sptPPN/create') }}">
                                         {{ __('Create') }}
                                     </a>
                                 </div>
@@ -34,25 +34,26 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table id="ebupotList" class="display" style="min-width: 845px">
+                                <table id="sptPPN" class="display" style="min-width: 845px">
                                     <thead>
                                         <tr>
-                                            <th>Nomor Transaksi</th>
-                                            <th>Jenis PPh</th>
-                                            <th>Nomor Telepone</th>
-                                            <th>Nama Jenis Fasilitas</th>
-                                            <th>Kode Objek</th>
-                                            <th>Nama Pembuat</th>
-                                            <th>Tgl Bukti Potong</th>
-                                            <th>Periode Pajak</th>
-                                            <th>Tgl Pembuatan</th>
-                                            <th>Status</th>
+                                            <th>Nama NPWP SPT Badan</th>
+                                            <th>Nomor NPWP SPT Badan</th>
+                                            <th>Alamat Lengkap SPT Badan</th>
+                                            <th>Masa Pajak Bulan</th>
+                                            <th>Masa Pajak Tahun</th>
+                                            <th>Tempat Tinggal SPT Badan</th>
+                                            <th>Dibuat Oleh</th>
+                                            <th>Tanggal Pembuatan</th>
                                             <th>Action</th>
-                                            <th>id</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
+
                                     </tbody>
+                                    <br>
+                                   
                                 </table>
                             </div>
                         </div>
@@ -64,7 +65,7 @@
 @endsection
 <script>
     $(document).ready(function() {
-        $('#ebupotList').DataTable({
+        $('#sptPPN').DataTable({
             language: {
                 paginate: {
                     next: '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
@@ -75,100 +76,73 @@
                 [10, 25, 50, -1],
                 [10, 25, 50, "All"]
             ],
-
-            ajax: "{{ route('data.ebupot') }}",
-            "order":[[11,'desc']],
+            "order":[[9,'desc']],
+            ajax: "{{ route('data.1721') }}",
             columnDefs: [
                 {
                     "targets": 0,
                     "render": function(data, type, row, meta) {
-                        return row.trx;
+                        return row.nama;
                     }
                 },
                 {
                     "targets": 1,
                     "render": function(data, type, row, meta) {
-                        return row.jenis_pph;
+                        return row.no_npwp;
                     }
                 },
                 {
                     "targets": 2,
                     "render": function(data, type, row, meta) {
-                        return row.no_tlp;
+                        return row.alamat;
                     }
                 },
                 {
                     "targets": 3,
-                    "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.fasilitas;
+                        return row.masapajak;
                     }
                 },
+                
                 {
                     "targets": 4,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.kop;
+                        return row.tahun_pajak;
                     }
                 },
                 {
                     "targets": 5,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.created_by;
+                        return row.tempat;
                     }
                 },
+                
                 {
                     "targets": 6,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.tgl_buktiPotong;
+                        return row.created_by;
                     }
                 },
                 {
                     "targets": 7,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.tgl_periodePajak;
+                        return row.tgl_pembuatan;
                     }
                 },
                 {
                     "targets": 8,
                     "class": "text-center",
-                    "render": function(data, type, row, meta) {
-                        return row.tgl_pembuat;
-                    }
-                },
-                {
-                    "targets": 9,
-                    render: function(data, type, row, index) {
-                        if (row.status == 'NULL') {
-                            var info = `<div class="d-flex"><a class="badge badge-rounded badge-outline-danger">
-                                Belum Dibayar</a></div>`
-                            ;
-                        } else if (row.status == 1) {
-                            var info = `<div class="d-flex">
-                                <a class="badge badge-rounded badge-outline-warning">
-		                        Menunggu Pembayaran</a></div>`;
-                        } else {
-                            var info = `<a class="badge badge-rounded badge-outline-primary">Sudah Dibayar</a>`;
-                        }
-                        return info;
-                    }
-                },
-                {
-                    "targets": 10,
-                    "class": "text-center",
                     render: function(data, type, row, index) {
                         content = `
                             <div class="d-flex">
-                                <a class="btn btn-primary shadow btn-xs sharp" href="ebupot/${row.id}/edit">
-                                    <i class="fa fa-pencil"></i>
-                                </a>
-                                <a class="btn btn-danger shadow btn-xs sharp" href="ebupot/${row.id}/destroy">
+                                <a class="btn btn-danger shadow btn-xs sharp" href="sptmasapajak/${row.id}/destroy">
                                     <i class="fa fa-trash"></i>
                                 </a>
-                                <a class="btn btn-success shadow btn-xs sharp" href="ebupot/${row.id}/show">
+                                <a class="btn btn-success shadow btn-xs sharp" href="sptmasapajak/${row.id}/show">
                                     <i class="fa fa-eye"></i>
                                 </a>
                             </div>
@@ -177,7 +151,7 @@
                     }
                 },
                 {
-                    "targets": 11,
+                    "targets": 9,
                     "visible":false,
                     "searchable":false,
                     "render": function(data, type, row, meta) {
