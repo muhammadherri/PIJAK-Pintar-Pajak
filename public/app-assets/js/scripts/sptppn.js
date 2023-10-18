@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const inputdua_e_pajak_keluaran_ppn_1111 = document.getElementById('dua_e_pajak_keluaran_ppn_1111');
     
     const inputlima_a_ppn_terutang_1111 = document.getElementById('lima_a_ppn_terutang_1111');
-    const inputempat_b_ppn_terutang_1111 = document.getElementById('empat_b_ppn_terutang_1111');
-    const inputempat_d_ppn_terutang_1111 = document.getElementById('empat_d_ppn_terutang_1111');
+    const inputlima_b_ppn_terutang_1111 = document.getElementById('lima_b_ppn_terutang_1111');
+    const inputlima_d_ppn_terutang_1111 = document.getElementById('lima_d_ppn_terutang_1111');
 
     const resulta2_ppn_1111 = document.getElementById('a2_ppn_1111');
     const resulta3_ppn_1111 = document.getElementById('a3_ppn_1111');
@@ -36,9 +36,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const resultdua_a_pajak_keluaran_ppn_1111 = document.getElementById('dua_a_pajak_keluaran_ppn_1111');
     const resultdua_d_pajak_keluaran_ppn_1111 = document.getElementById('dua_d_pajak_keluaran_ppn_1111');
     const resultdua_f_pajak_keluaran_ppn_1111 = document.getElementById('dua_f_pajak_keluaran_ppn_1111');
-    const resultempat_c_ppn_terutang_1111 = document.getElementById('empat_c_ppn_terutang_1111');
-    const resultempat_e_ppn_terutang_1111= document.getElementById('empat_e_ppn_terutang_1111');
-    [inputempat_d_ppn_terutang_1111,inputempat_b_ppn_terutang_1111,inputlima_a_ppn_terutang_1111,inputdua_e_pajak_keluaran_ppn_1111,inputdua_c_pajak_keluaran_ppn_1111,inputdua_b_pajak_keluaran_ppn_1111,inputb_tidak_terutang_dpp_1111,inputekspor_1111,inputa5_dpp_1111,inputa2_dpp_1111,inputa3_dpp_1111,inputa4_dpp_1111]
+    const resultlima_c_ppn_terutang_1111 = document.getElementById('lima_c_ppn_terutang_1111');
+    const resultlima_e_ppn_terutang_1111= document.getElementById('lima_e_ppn_terutang_1111');
+    [inputlima_d_ppn_terutang_1111,inputlima_b_ppn_terutang_1111,inputlima_a_ppn_terutang_1111,inputdua_e_pajak_keluaran_ppn_1111,inputdua_c_pajak_keluaran_ppn_1111,inputdua_b_pajak_keluaran_ppn_1111,inputb_tidak_terutang_dpp_1111,inputekspor_1111,inputa5_dpp_1111,inputa2_dpp_1111,inputa3_dpp_1111,inputa4_dpp_1111]
     .forEach(input => {
         input.addEventListener('input', update1111);
     });
@@ -84,19 +84,19 @@ document.addEventListener('DOMContentLoaded', function() {
             resultdua_f_pajak_keluaran_ppn_1111.value=jumlahppnIIf_1111;
         }
         const lima_a_ppn_terutang_1111 = parseFloat(inputlima_a_ppn_terutang_1111.value) || 0;
-        const empat_b_ppn_terutang_1111 = parseFloat(inputempat_b_ppn_terutang_1111.value) || 0;
-        const jumlahppnc = lima_a_ppn_terutang_1111-empat_b_ppn_terutang_1111;
+        const lima_b_ppn_terutang_1111 = parseFloat(inputlima_b_ppn_terutang_1111.value) || 0;
+        const jumlahppnc = lima_a_ppn_terutang_1111-lima_b_ppn_terutang_1111;
         if(jumlahppnc<0){
-            resultempat_c_ppn_terutang_1111.value=0;
+            resultlima_c_ppn_terutang_1111.value=0;
         }else{
-            resultempat_c_ppn_terutang_1111.value=jumlahppnc;
+            resultlima_c_ppn_terutang_1111.value=jumlahppnc;
         }
-        const empat_d_ppn_terutang_1111 = parseFloat(inputempat_d_ppn_terutang_1111.value) || 0;
-        const jumlahppne = jumlahppnc-empat_d_ppn_terutang_1111;
+        const lima_d_ppn_terutang_1111 = parseFloat(inputlima_d_ppn_terutang_1111.value) || 0;
+        const jumlahppne = jumlahppnc-lima_d_ppn_terutang_1111;
         if(jumlahppne<0){
-            resultempat_e_ppn_terutang_1111.value=0;
+            resultlima_e_ppn_terutang_1111.value=0;
         }else{
-            resultempat_e_ppn_terutang_1111.value=jumlahppne;
+            resultlima_e_ppn_terutang_1111.value=jumlahppne;
         }
     }
     // 1111
@@ -321,8 +321,8 @@ document.addEventListener('DOMContentLoaded', function() {
             </td>
             <td class="text-center">
                 <input required  autocomplete="off" type="number"
-                    name="pajak_ppnBM_1111B3[]"
-                    id="pajak_ppnBM_1111B3[]" min="0"
+                    name="pajak_ppnBM_1111A2[]"
+                    id="pajak_ppnBM_1111A2[]" min="0"
                     class="form-control subppnbm_1111A2" />
             </td>
             <td class="text-center">
@@ -530,8 +530,8 @@ document.addEventListener('DOMContentLoaded', function() {
             </td>
             <td class="text-center">
                 <input required  autocomplete="off" type="number"
-                    name="pajak_ppnBM_1111B3[]"
-                    id="pajak_ppnBM_1111B3[]" min="0"
+                    name="pajak_ppnBM_1111B2[]"
+                    id="pajak_ppnBM_1111B2[]" min="0"
                     class="form-control subppnbm_1111B2" />
             </td>
             <td class="text-center">

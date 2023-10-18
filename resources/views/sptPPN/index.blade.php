@@ -37,23 +37,21 @@
                                 <table id="sptPPN" class="display" style="min-width: 845px">
                                     <thead>
                                         <tr>
-                                            <th>Nama NPWP SPT Badan</th>
-                                            <th>Nomor NPWP SPT Badan</th>
-                                            <th>Alamat Lengkap SPT Badan</th>
-                                            <th>Masa Pajak Bulan</th>
-                                            <th>Masa Pajak Tahun</th>
-                                            <th>Tempat Tinggal SPT Badan</th>
+                                            <th></th>
+                                            <th>Nama Tertera PKP</th>
+                                            <th>Alamat Lengkap Tertera</th>
+                                            <th>Nomor Telp</th>
+                                            <th>Nomor KLU</th>
+                                            <th>Nomor NPWP</th>
+                                            <th>Tanggal Mulai Masa</th>
+                                            <th>Tanggal Akhir Masa</th>
                                             <th>Dibuat Oleh</th>
                                             <th>Tanggal Pembuatan</th>
                                             <th>Action</th>
-                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-
                                     </tbody>
-                                    <br>
-                                   
                                 </table>
                             </div>
                         </div>
@@ -76,19 +74,21 @@
                 [10, 25, 50, -1],
                 [10, 25, 50, "All"]
             ],
-            "order":[[9,'desc']],
-            ajax: "{{ route('data.1721') }}",
+            "order":[[0,'desc']],
+            ajax: "{{ route('data.spt1111') }}",
             columnDefs: [
                 {
                     "targets": 0,
+                    "visible":false,
+                    "searchable":false,
                     "render": function(data, type, row, meta) {
-                        return row.nama;
+                        return row.id;
                     }
                 },
                 {
                     "targets": 1,
                     "render": function(data, type, row, meta) {
-                        return row.no_npwp;
+                        return row.nama;
                     }
                 },
                 {
@@ -100,7 +100,7 @@
                 {
                     "targets": 3,
                     "render": function(data, type, row, meta) {
-                        return row.masapajak;
+                        return row.notelpon;
                     }
                 },
                 
@@ -108,14 +108,14 @@
                     "targets": 4,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.tahun_pajak;
+                        return row.klu;
                     }
                 },
                 {
                     "targets": 5,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.tempat;
+                        return row.npwp;
                     }
                 },
                 
@@ -123,39 +123,45 @@
                     "targets": 6,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.created_by;
+                        return row.start;
                     }
                 },
                 {
                     "targets": 7,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.tgl_pembuatan;
+                        return row.end;
                     }
                 },
                 {
                     "targets": 8,
                     "class": "text-center",
+                    "render": function(data, type, row, meta) {
+                        return row.created_by;
+                    }
+                },
+                {
+                    "targets": 9,
+                    "class": "text-center",
+                    "render": function(data, type, row, meta) {
+                        return row.created_at;
+                    }
+                },
+                {
+                    "targets": 10,
+                    "class": "text-center",
                     render: function(data, type, row, index) {
                         content = `
                             <div class="d-flex">
-                                <a class="btn btn-danger shadow btn-xs sharp" href="sptmasapajak/${row.id}/destroy">
+                                <a class="btn btn-danger shadow btn-xs sharp" href="sptPPN/${row.id}/destroy">
                                     <i class="fa fa-trash"></i>
                                 </a>
-                                <a class="btn btn-success shadow btn-xs sharp" href="sptmasapajak/${row.id}/show">
+                                <a class="btn btn-success shadow btn-xs sharp" href="sptPPN/${row.id}/show">
                                     <i class="fa fa-eye"></i>
                                 </a>
                             </div>
                         `;
                         return content;
-                    }
-                },
-                {
-                    "targets": 9,
-                    "visible":false,
-                    "searchable":false,
-                    "render": function(data, type, row, meta) {
-                        return row.id;
                     }
                 },
             ]

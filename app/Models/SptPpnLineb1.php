@@ -1,0 +1,27 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class SptPpnLineb1 extends Model
+{
+    use HasFactory,SoftDeletes;
+    public $table = 'tx_spt_ppn_line_b1';
+    protected $fillable = [
+        'id' ,
+        'formulir_id' ,
+        'nama_penjual_bkp' ,
+        'no_dok' ,
+        'tgl_dok' ,
+        'dpp' ,
+        'ppn' ,
+        'ppnbm' ,
+        'keterangan' ,
+        'created_at' ,
+        'updated_at' ,
+        'deleted_at' ,
+    ];
+}

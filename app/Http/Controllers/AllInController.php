@@ -50,6 +50,12 @@ use App\Models\SptMasaVILine;
 use App\Models\SptMasaVII;
 use App\Models\SptMasaVIILine;
 use App\Models\MasaBulan;
+use App\Models\SptPpn;
+use App\Models\SptPpnLinea1;
+use App\Models\SptPpnLinea2;
+use App\Models\SptPpnLineb1;
+use App\Models\SptPpnLineb2;
+use App\Models\SptPpnLineb3;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\Facades\DataTables;
@@ -1832,5 +1838,127 @@ class AllInController extends Controller
             'asetlancar8110','debit8110','kredit8110',
             'asetlancar8120','debit8120','kredit8120',
         ));
+    }
+    public function listSpt1111(Request $request){
+        $id=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $sptppn = SptPpn::get();
+        }else{
+            $sptppn = SptPpn::where('attribute1',$id)->get();
+        }
+        $data_arr = array();
+        foreach ($sptppn as $record) {
+            $data_arr[] = array(
+                "id" => $record->formulir_id,
+                "nama" =>$record->nama_ptkp_1111,
+                "alamat" =>$record->alamat_1111,
+                "notelpon" =>$record->no_telp_1111,
+                "klu" =>$record->no_klu_1111,
+                "npwp" =>$record->no_npwp_1111,
+                "start" => Carbon::parse($record->start_masa_1111)->format('d-M-Y'),
+                "end" => Carbon::parse($record->end_masa_1111)->format('d-M-Y'),
+                "created_by" => $record->users->name,
+                "created_at" => $record->created_at->format('d-M-Y'),
+            );
+        }
+        // dd($data_arr);
+        $response = array(
+            "aaData" => $data_arr,
+        );
+        return json_encode($response);
+    }
+    public function formulirAB(Request $request){
+        // dd($request);
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $spt=SptPpn::where('formulir_id',$request->formulir_id)->get()->first();
+
+        }else{
+            $spt=SptPpn::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
+        }
+        if($spt==null){
+            return back();
+        }
+        return view('sptPPN.formulirAB',compact('spt'));
+    }
+    public function formulirA1(Request $request){
+        // dd($request);
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $spt=SptPpn::where('formulir_id',$request->formulir_id)->get()->first();
+            $sptline=SptPpnLinea1::where('formulir_id',$request->formulir_id)->get();
+        }else{
+            $spt=SptPpn::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
+            $sptline=SptPpnLinea1::where('formulir_id',$request->formulir_id)->get();
+        
+        }
+        if($spt==null){
+            return back();
+        }
+        return view('sptPPN.formulirA1',compact('spt','sptline'))->with('no',1);
+    }
+    public function formulirA2(Request $request){
+        // dd($request);
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $spt=SptPpn::where('formulir_id',$request->formulir_id)->get()->first();
+            $sptline=SptPpnLinea2::where('formulir_id',$request->formulir_id)->get();
+        }else{
+            $spt=SptPpn::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
+            $sptline=SptPpnLinea2::where('formulir_id',$request->formulir_id)->get();
+        
+        }
+        if($spt==null){
+            return back();
+        }
+        return view('sptPPN.formulirA2',compact('spt','sptline'))->with('no',1);
+    }
+    public function formulirB1(Request $request){
+        // dd($request);
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $spt=SptPpn::where('formulir_id',$request->formulir_id)->get()->first();
+            $sptline=SptPpnLineb1::where('formulir_id',$request->formulir_id)->get();
+        }else{
+            $spt=SptPpn::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
+            $sptline=SptPpnLineb1::where('formulir_id',$request->formulir_id)->get();
+        
+        }
+        if($spt==null){
+            return back();
+        }
+        return view('sptPPN.formulirB1',compact('spt','sptline'))->with('no',1);
+    }
+    public function formulirB2(Request $request){
+        // dd($request);
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $spt=SptPpn::where('formulir_id',$request->formulir_id)->get()->first();
+            $sptline=SptPpnLineb2::where('formulir_id',$request->formulir_id)->get();
+        }else{
+            $spt=SptPpn::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
+            $sptline=SptPpnLineb2::where('formulir_id',$request->formulir_id)->get();
+        
+        }
+        if($spt==null){
+            return back();
+        }
+        return view('sptPPN.formulirB2',compact('spt','sptline'))->with('no',1);
+    }
+    public function formulirB3(Request $request){
+        // dd($request);
+        $iduser=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $spt=SptPpn::where('formulir_id',$request->formulir_id)->get()->first();
+            $sptline=SptPpnLineb3::where('formulir_id',$request->formulir_id)->get();
+        }else{
+            $spt=SptPpn::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
+            $sptline=SptPpnLineb3::where('formulir_id',$request->formulir_id)->get();
+        
+        }
+        if($spt==null){
+            return back();
+        }
+        return view('sptPPN.formulirB3',compact('spt','sptline'))->with('no',1);
     }
 }

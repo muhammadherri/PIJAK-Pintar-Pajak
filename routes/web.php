@@ -278,6 +278,7 @@ Route::get('/latihanList', [App\Http\Controllers\AllInController::class,'listLat
 Route::get('/prepopulate', [App\Http\Controllers\AllInController::class,'listPrepopulate'])->name('data.prepopulate');
 Route::get('/ebilling', [App\Http\Controllers\AllInController::class,'listBilling'])->name('data.billing');
 Route::get('/hutangppnlist', [App\Http\Controllers\AllInController::class,'listHutangppn'])->name('data.hutangppn');
+Route::get('/sptppnlist', [App\Http\Controllers\AllInController::class,'listSpt1111'])->name('data.spt1111');
 // SEARCH
 Route::get('/search/resultPtkp', [App\Http\Controllers\AllInController::class,'resultPtkp'])->name('get.ptkp');
 Route::get('/search/resultNoakun', [App\Http\Controllers\AllInController::class,'akun_kredit'])->name('get.nokredit');
@@ -310,3 +311,10 @@ Route::post('/masakeenam', [App\Http\Controllers\AllInController::class,'masakee
 Route::post('/masaketujuh', [App\Http\Controllers\AllInController::class,'masaketujuh']);
 Route::post('/masakeasatu', [App\Http\Controllers\AllInController::class,'masakeasatu']);
 Route::post('/masakeadua', [App\Http\Controllers\AllInController::class,'masakeadua']);
+
+Route::post('/formulirAB', [App\Http\Controllers\AllInController::class,'formulirAB']);
+Route::post('/formulirA1', [App\Http\Controllers\AllInController::class,'formulirA1']);
+Route::post('/formulirA2', [App\Http\Controllers\AllInController::class,'formulirA2']);
+Route::post('/formulirB1', [App\Http\Controllers\AllInController::class,'formulirB1']);
+Route::post('/formulirB2', [App\Http\Controllers\AllInController::class,'formulirB2']);
+Route::post('/formulirB3', [App\Http\Controllers\AllInController::class,'formulirB3']);
