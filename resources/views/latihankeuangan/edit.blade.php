@@ -14,8 +14,8 @@
         <div class="container-fluid">
             <div class="row page-titles">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item active"><a href="{{ route('neraca') }}">Lainnya</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('neraca') }}">Akun</a></li>
+                    <li class="breadcrumb-item active"><a href="{{ route('latihankeuangan') }}">Lainnya</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('latihankeuangan') }}">Akun</a></li>
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Edit</a></li>
                 </ol>
             </div>
@@ -28,14 +28,14 @@
                         </div>
                         <div class="card-body">
                             <div class="basic-form">
-                                <form action="{{ route('neraca/update',[$neraca->id]) }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('latihankeuangan/update',[$latihankeuangan->id]) }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
                                     <div class="row">
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">No Akun</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" readonly value="{{$neraca->no_akun}}" required id="noakun" name="noakun" type="number" class="form-control"
+                                                <input autocomplete="off" readonly value="{{$latihankeuangan->no_akun}}" required id="noakun" name="noakun" type="number" class="form-control"
                                                     placeholder="Masukkan No Akun">
                                             </div>
                                         </div>
@@ -43,14 +43,14 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Nama Akun</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" readonly value="{{$neraca->nama_akun}}" required id="namaakun" name="namaakun" type="text" class="form-control"
+                                                <input autocomplete="off" readonly value="{{$latihankeuangan->nama_akun}}" required id="namaakun" name="namaakun" type="text" class="form-control"
                                                     placeholder="Masukkan Nama Akun">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Saldo</label>
                                             <div class="col-sm-9">
-                                                <input step="any" autocomplete="off" value="{{$neraca->saldo}}" required id="saldo" name="saldo" type="number" class="form-control"
+                                                <input step="any" autocomplete="off" value="{{$latihankeuangan->saldo}}" required id="saldo" name="saldo" type="number" class="form-control"
                                                     placeholder="Masukkan saldo">
                                             </div>
                                         </div>
@@ -59,7 +59,7 @@
                                             <div class="col-sm-9">
                                                 <select id="kategori_pajak" name="kategori_pajak" class="dropdown-groups">
                                                     <optgroup label="Kategori">
-                                                        <option value="{{$neraca->attribute3}}">{{$neraca->attribute3}}</option>
+                                                        <option value="{{$latihankeuangan->attribute3}}">{{$latihankeuangan->attribute3}}</option>
                                                     </optgroup>
                                                     {{-- <optgroup label="Kategori Laporan Pajak">
                                                         <option value="KAS DAN SETARA KAS">KAS DAN SETARA KAS</option>
@@ -96,5 +96,3 @@
         </div>
     </div>
 @endsection
-{{-- <script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
-<script src="{{ asset('app-assets/js/custom.min.js') }}"></script> --}}

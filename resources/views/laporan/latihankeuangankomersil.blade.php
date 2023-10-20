@@ -2,7 +2,7 @@
 @section('header')
     <div class="header-left">
         <div class="dashboard_bar">
-            Pelaporan Keuangan Komersial
+            Latihan Pelaporan Keuangan Komersial
         </div>
     </div>
 @endsection

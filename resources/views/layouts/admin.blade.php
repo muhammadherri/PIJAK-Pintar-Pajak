@@ -137,6 +137,8 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{ route('transaksipph21') }}">PPh 21</a></li>
+                            <li><a href="{{ route('pphfinal') }}">PPh Final</a></li>
+                            <li><a href="{{ route('pphtidakfinal') }}">PPh Tidak Final</a></li>
                             <li><a href="{{ route('ebupot') }}">E-Bupot</a></li>
                         </ul>
                     </li>
@@ -182,15 +184,15 @@
                             <span class="nav-text">Latihan</span>
                         </a>
                         <ul aria-expanded="false">
-                            {{-- <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                                     <span class="nav-text">Laporan Keuangan Komersial</span>
                                 </a>
                                 <ul aria-expanded="false">
-                                    <li><a href="{{ route('laporankeuangankomersil') }}">&emsp; - Neraca</a></li>
-                                    <li><a href="{{ route('laporankeuanganlabarugikomersil') }}">&emsp; - Laba
+                                    <li><a href="{{ route('latihankeuangankomersil') }}">&emsp; - Neraca</a></li>
+                                    <li><a href="{{ route('latihankeuanganlabarugikomersil') }}">&emsp; - Laba
                                             Rugi</a></li>
                                 </ul>
-                            </li> --}}
+                            </li>
                             <li><a href="{{ route('latihan') }}">Latihan Fiskal</a></li>
                             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                                     <span class="nav-text">Latihan Laporan Keuangan Fiskal</span>
@@ -238,7 +240,8 @@
                         <ul aria-expanded="false">
                             <li><a href="{{ route('fasilitas') }}">Fasilitas</a></li>
                             <li><a href="{{ route('kodeobjekpajak') }}">Kode Objek Pajak</a></li>
-                            <li><a href="{{ route('neraca') }}">Akun</a></li>
+                            <li><a href="{{ route('neraca') }}">Akun Tes</a></li>
+                            <li><a href="{{ route('latihankeuangan') }}">Akun Latihan</a></li>
                             <li><a href="{{ route('top') }}">Top</a></li>
                             <li><a href="{{ route('vendor') }}">Vendor</a></li>
                             <li><a href="{{ route('dokumenreferensi') }}">Dokumen Referensi</a></li>
@@ -246,6 +249,7 @@
                             <li><a href="{{ route('penandatanganan') }}">Penandatanganan</a></li>
                             <li><a href="{{ route('jenispph') }}">Jenis PPh</a></li>
                             <li><a href="{{ route('noseri') }}">No Seri</a></li>
+                            <li><a href="{{ route('penerimapenghasilan') }}">Penerima Penghasilan</a></li>
                         </ul>
 
                     </li>

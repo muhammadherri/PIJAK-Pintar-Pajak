@@ -83,6 +83,16 @@ Route::get('/neraca/{id}/edit', [App\Http\Controllers\NeracaController::class, '
 Route::put('/neraca/{id}', [App\Http\Controllers\NeracaController::class, 'update'])->name('neraca/update');
 // neraca
 
+//akunlatihan
+Route::get('/latihankeuangan', [App\Http\Controllers\AkunLatihanController::class, 'index'])->name('latihankeuangan');
+Route::get('/latihankeuangan/create', [App\Http\Controllers\AkunLatihanController::class, 'create'])->name('latihankeuangan/create');
+Route::post('/latihankeuangan/store', [App\Http\Controllers\AkunLatihanController::class, 'store'])->name('latihankeuangan/store');
+
+Route::delete('/latihankeuangan/{id}', [App\Http\Controllers\AkunLatihanController::class, 'destroy']);
+Route::get('/latihankeuangan/{id}/show', [App\Http\Controllers\AkunLatihanController::class, 'show'])->name('latihankeuangan/show');
+Route::get('/latihankeuangan/{id}/edit', [App\Http\Controllers\AkunLatihanController::class, 'edit'])->name('latihankeuangan/edit');
+Route::put('/latihankeuangan/{id}', [App\Http\Controllers\AkunLatihanController::class, 'update'])->name('latihankeuangan/update');
+//akunlatihan
 // top
 Route::get('/top', [App\Http\Controllers\TopController::class, 'index'])->name('top');
 Route::get('/top/create', [App\Http\Controllers\TopController::class, 'create'])->name('top/create');
@@ -244,6 +254,40 @@ Route::get('/sptmasapajak/{id}/edit', [App\Http\Controllers\SptMasaPajakPenghasi
 Route::put('/sptmasapajak/{id}', [App\Http\Controllers\SptMasaPajakPenghasilanController::class, 'update'])->name('sptmasapajak/update');
 // spt1721
 
+// pphfinal
+Route::get('/pphfinal', [App\Http\Controllers\PphFinalController::class, 'index'])->name('pphfinal');
+Route::get('/pphfinal/create', [App\Http\Controllers\PphFinalController::class, 'create'])->name('pphfinal/create');
+Route::post('/pphfinal/store', [App\Http\Controllers\PphFinalController::class, 'store'])->name('pphfinal/store');
+
+Route::get('/pphfinal/{id}/destroy', [App\Http\Controllers\PphFinalController::class, 'destroy'])->name('pphfinal/destroy');
+Route::get('/pphfinal/{id}/show', [App\Http\Controllers\PphFinalController::class, 'show'])->name('pphfinal/show');
+Route::get('/pphfinal/{id}/edit', [App\Http\Controllers\PphFinalController::class, 'edit'])->name('pphfinal/edit');
+Route::put('/pphfinal/{id}', [App\Http\Controllers\PphFinalController::class, 'update'])->name('pphfinal/update');
+// pphfinal
+
+// pphtidakfinal
+Route::get('/pphtidakfinal', [App\Http\Controllers\PphTidakFinalController::class, 'index'])->name('pphtidakfinal');
+Route::get('/pphtidakfinal/create', [App\Http\Controllers\PphTidakFinalController::class, 'create'])->name('pphtidakfinal/create');
+Route::post('/pphtidakfinal/store', [App\Http\Controllers\PphTidakFinalController::class, 'store'])->name('pphtidakfinal/store');
+
+Route::get('/pphtidakfinal/{id}/destroy', [App\Http\Controllers\PphTidakFinalController::class, 'destroy'])->name('pphtidakfinal/destroy');
+Route::get('/pphtidakfinal/{id}/show', [App\Http\Controllers\PphTidakFinalController::class, 'show'])->name('pphtidakfinal/show');
+Route::get('/pphtidakfinal/{id}/edit', [App\Http\Controllers\PphTidakFinalController::class, 'edit'])->name('pphtidakfinal/edit');
+Route::put('/pphtidakfinal/{id}', [App\Http\Controllers\PphTidakFinalController::class, 'update'])->name('pphtidakfinal/update');
+// pphtidakfinal
+
+// penerimapenghasilan
+Route::get('/penerimapenghasilan', [App\Http\Controllers\PenerimaHasilController::class, 'index'])->name('penerimapenghasilan');
+Route::get('/penerimapenghasilan/create', [App\Http\Controllers\PenerimaHasilController::class, 'create'])->name('penerimapenghasilan/create');
+Route::post('/penerimapenghasilan/store', [App\Http\Controllers\PenerimaHasilController::class, 'store'])->name('penerimapenghasilan/store');
+
+Route::get('/penerimapenghasilan/{id}/destroy', [App\Http\Controllers\PenerimaHasilController::class, 'destroy'])->name('penerimapenghasilan/destroy');
+Route::get('/penerimapenghasilan/{id}/show', [App\Http\Controllers\PenerimaHasilController::class, 'show'])->name('penerimapenghasilan/show');
+Route::get('/penerimapenghasilan/{id}/edit', [App\Http\Controllers\PenerimaHasilController::class, 'edit'])->name('penerimapenghasilan/edit');
+Route::put('/penerimapenghasilan/{id}', [App\Http\Controllers\PenerimaHasilController::class, 'update'])->name('penerimapenghasilan/update');
+
+// penerimapenghasilan
+
 // pembayaran
 Route::get('/pembayaran', [App\Http\Controllers\PembayaranController::class, 'index'])->name('pembayaran');
 Route::post('/pembayaran/show', [App\Http\Controllers\PembayaranController::class, 'show'])->name('pembayaran/show');
@@ -279,6 +323,8 @@ Route::get('/prepopulate', [App\Http\Controllers\AllInController::class,'listPre
 Route::get('/ebilling', [App\Http\Controllers\AllInController::class,'listBilling'])->name('data.billing');
 Route::get('/hutangppnlist', [App\Http\Controllers\AllInController::class,'listHutangppn'])->name('data.hutangppn');
 Route::get('/sptppnlist', [App\Http\Controllers\AllInController::class,'listSpt1111'])->name('data.spt1111');
+Route::get('/pphfinallist', [App\Http\Controllers\AllInController::class,'listPphfinal'])->name('data.pphfinal');
+Route::get('/pphtidakfinallist', [App\Http\Controllers\AllInController::class,'listPphtidakfinal'])->name('data.pphtidakfinal');
 // SEARCH
 Route::get('/search/resultPtkp', [App\Http\Controllers\AllInController::class,'resultPtkp'])->name('get.ptkp');
 Route::get('/search/resultNoakun', [App\Http\Controllers\AllInController::class,'akun_kredit'])->name('get.nokredit');
@@ -289,6 +335,12 @@ Route::get('/search/pphduapuluhsatu', [App\Http\Controllers\AllInController::cla
 Route::get('/search/akun', [App\Http\Controllers\AllInController::class,'cariakun'])->name('get.akun');
 Route::get('/latihankeuanganfiskal', [App\Http\Controllers\AllInController::class,'latihankeuanganfiskal'])->name('latihankeuanganfiskal');
 Route::get('/latihankeuanganlabarugifiskal', [App\Http\Controllers\AllInController::class,'latihankeuanganlabarugifiskal'])->name('latihankeuanganlabarugifiskal');
+Route::get('/latihankeuangankomersil', [App\Http\Controllers\AllInController::class,'latihankeuangankomersil'])->name('latihankeuangankomersil');
+Route::get('/latihankeuanganlabarugikomersil', [App\Http\Controllers\AllInController::class,'latihankeuanganlabarugikomersil'])->name('latihankeuanganlabarugikomersil');
+Route::get('/search/resultNoakunlatihan', [App\Http\Controllers\AllInController::class,'latihanakun_kredit'])->name('get.latihannokredit');
+Route::get('/search/resultnamadebitlatihan', [App\Http\Controllers\AllInController::class,'latihannama_debit'])->name('get.latihannamadebit');
+Route::get('/search/resultnamakreditfirstlatihan', [App\Http\Controllers\AllInController::class,'latihannama_kreditpertama'])->name('get.latihannamakreditfirst');
+Route::get('/search/resultnamakreditlatihan', [App\Http\Controllers\AllInController::class,'latihannama_kredit'])->name('get.latihannamakredit');
 // ALL IN ONE
 Route::post('/pembayaranpdf', [App\Http\Controllers\PDFController::class,'pembarayanPDF']);
 Route::post('/printpdflabarugifiskal', [App\Http\Controllers\PDFController::class,'labarugifiskalPDF']);

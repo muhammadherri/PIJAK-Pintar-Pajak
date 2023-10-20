@@ -115,7 +115,7 @@
         $('#no_akun_debet').on('change', function() {
             let akundebet = $('#no_akun_debet').val();
             $.ajax({
-                url: "{{ route('get.nokredit') }}",
+                url: "{{ route('get.latihannokredit') }}",
                 type: 'GET',
                 dataType: 'json',
                 data: {
@@ -133,7 +133,7 @@
                 }
             });
             $.ajax({
-                url: "{{ route('get.namadebit') }}",
+                url: "{{ route('get.latihannamadebit') }}",
                 type: 'GET',
                 dataType: 'json',
                 data: {
@@ -147,7 +147,7 @@
                 }
             });
             $.ajax({
-                url: "{{ route('get.namakreditfirst') }}",
+                url: "{{ route('get.latihannamakreditfirst') }}",
                 type: 'GET',
                 dataType: 'json',
                 data: {
@@ -164,7 +164,7 @@
         $('#no_akun_kredit').on('change', function() {
             let akunkredit = $('#no_akun_kredit').val();
             $.ajax({
-                url: "{{ route('get.namakredit') }}",
+                url: "{{ route('get.latihannamakredit') }}",
                 type: 'GET',
                 dataType: 'json',
                 data: {

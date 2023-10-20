@@ -153,6 +153,343 @@
                                                             placeholder="Masukkan Alamat"></textarea>
                                                     </div>
                                                 </div>
+                                                {{-- <h6>1. Pegawai Tetap | 21-100-01</h6>
+                                                <div class="mb-3 row">
+                                                    <div class="col-sm-4">
+                                                        <label>Penerima Penghasilan</label>
+                                                        <input autocomplete="off" required id="b1_penerima_penghasilan_1721"
+                                                            name="b1_penerima_penghasilan_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Penerima Penghasilan" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Penghasilan Bruto</label>
+                                                        <input autocomplete="off" required id="b1_penghasilan_bruto_1721"
+                                                            name="b1_penghasilan_bruto_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Penghasilan Bruto" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Pajak Dipotong</label>
+                                                        <input autocomplete="off" required id="b1_jumlahpajak_1721"
+                                                            name="b1_jumlahpajak_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Pajak Dipotong" min="0">
+                                                    </div>
+                                                </div>
+                                                <h6>2. Penerima Pensiunan Berkala | 21-100-02</h6>
+                                                <div class="mb-3 row">
+                                                    <div class="col-sm-4">
+                                                        <label>Penerima Penghasilan</label>
+                                                        <input autocomplete="off" required id="b2_penerima_penghasilan_1721"
+                                                            name="b2_penerima_penghasilan_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Penerima Penghasilan" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Penghasilan Bruto</label>
+                                                        <input autocomplete="off" required id="b2_penghasilan_bruto_1721"
+                                                            name="b2_penghasilan_bruto_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Penghasilan Bruto" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Pajak Dipotong</label>
+                                                        <input autocomplete="off" required id="b2_jumlahpajak_1721"
+                                                            name="b2_jumlahpajak_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Pajak Dipotong" min="0">
+                                                    </div>
+                                                </div>
+                                                <h6>3. Penerima Pensiunan Berkala | 21-100-02</h6>
+                                                <div class="mb-3 row">
+                                                    <div class="col-sm-4">
+                                                        <label>Penerima Penghasilan</label>
+                                                        <input autocomplete="off" required id="b3_penerima_penghasilan_1721"
+                                                            name="b3_penerima_penghasilan_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Penerima Penghasilan" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Penghasilan Bruto</label>
+                                                        <input autocomplete="off" required id="b3_penghasilan_bruto_1721"
+                                                            name="b3_penghasilan_bruto_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Penghasilan Bruto" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Pajak Dipotong</label>
+                                                        <input autocomplete="off" required id="b3_jumlahpajak_1721"
+                                                            name="b3_jumlahpajak_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Pajak Dipotong" min="0">
+                                                    </div>
+                                                </div>
+                                                <h6>4. Bukan Pegawai</h6>
+                                                <h6>4a. Distributor MLM | 21-100-04</h6>
+                                                <div class="mb-3 row">
+                                                    <div class="col-sm-4">
+                                                        <label>Penerima Penghasilan</label>
+                                                        <input autocomplete="off" required id="b4a_penerima_penghasilan_1721"
+                                                            name="b4a_penerima_penghasilan_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Penerima Penghasilan" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Penghasilan Bruto</label>
+                                                        <input autocomplete="off" required id="b4a_penghasilan_bruto_1721"
+                                                            name="b4a_penghasilan_bruto_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Penghasilan Bruto" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Pajak Dipotong</label>
+                                                        <input autocomplete="off" required id="b4a_jumlahpajak_1721"
+                                                            name="b4a_jumlahpajak_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Pajak Dipotong" min="0">
+                                                    </div>
+                                                </div>
+                                                <h6>4b. Petugas Dinas Asuransi | 21-100-05</h6>
+                                                <div class="mb-3 row">
+                                                    <div class="col-sm-4">
+                                                        <label>Penerima Penghasilan</label>
+                                                        <input autocomplete="off" required id="b4b_penerima_penghasilan_1721"
+                                                            name="b4b_penerima_penghasilan_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Penerima Penghasilan" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Penghasilan Bruto</label>
+                                                        <input autocomplete="off" required id="b4b_penghasilan_bruto_1721"
+                                                            name="b4b_penghasilan_bruto_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Penghasilan Bruto" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Pajak Dipotong</label>
+                                                        <input autocomplete="off" required id="b4b_jumlahpajak_1721"
+                                                            name="b4b_jumlahpajak_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Pajak Dipotong" min="0">
+                                                    </div>
+                                                </div>
+                                                <h6>4c. Penjaja Barang Dagangan | 21-100-06</h6>
+                                                <div class="mb-3 row">
+                                                    <div class="col-sm-4">
+                                                        <label>Penerima Penghasilan</label>
+                                                        <input autocomplete="off" required id="b4c_penerima_penghasilan_1721"
+                                                            name="b4c_penerima_penghasilan_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Penerima Penghasilan" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Penghasilan Bruto</label>
+                                                        <input autocomplete="off" required id="b4c_penghasilan_bruto_1721"
+                                                            name="b4c_penghasilan_bruto_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Penghasilan Bruto" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Pajak Dipotong</label>
+                                                        <input autocomplete="off" required id="b4c_jumlahpajak_1721"
+                                                            name="b4c_jumlahpajak_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Pajak Dipotong" min="0">
+                                                    </div>
+                                                </div>
+                                                <h6>4d. Tenaga Ahli | 21-100-07</h6>
+                                                <div class="mb-3 row">
+                                                    <div class="col-sm-4">
+                                                        <label>Penerima Penghasilan</label>
+                                                        <input autocomplete="off" required id="b4d_penerima_penghasilan_1721"
+                                                            name="b4d_penerima_penghasilan_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Penerima Penghasilan" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Penghasilan Bruto</label>
+                                                        <input autocomplete="off" required id="b4d_penghasilan_bruto_1721"
+                                                            name="b4d_penghasilan_bruto_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Penghasilan Bruto" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Pajak Dipotong</label>
+                                                        <input autocomplete="off" required id="b4d_jumlahpajak_1721"
+                                                            name="b4d_jumlahpajak_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Pajak Dipotong" min="0">
+                                                    </div>
+                                                </div>
+                                                <h6>4e. Bukan Pegawai Yang Menerima Imbalan Yang Bersifat Berkesinambungan | 21-100-08</h6>
+                                                <div class="mb-3 row">
+                                                    <div class="col-sm-4">
+                                                        <label>Penerima Penghasilan</label>
+                                                        <input autocomplete="off" required id="b4e_penerima_penghasilan_1721"
+                                                            name="b4e_penerima_penghasilan_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Penerima Penghasilan" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Penghasilan Bruto</label>
+                                                        <input autocomplete="off" required id="b4e_penghasilan_bruto_1721"
+                                                            name="b4e_penghasilan_bruto_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Penghasilan Bruto" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Pajak Dipotong</label>
+                                                        <input autocomplete="off" required id="b4e_jumlahpajak_1721"
+                                                            name="b4e_jumlahpajak_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Pajak Dipotong" min="0">
+                                                    </div>
+                                                </div>
+                                                <h6>4f. Bukan Pegawai Yang Menerima Imbalan Yang Tidak Bersifat Berkesinambungan | 21-100-09</h6>
+                                                <div class="mb-3 row">
+                                                    <div class="col-sm-4">
+                                                        <label>Penerima Penghasilan</label>
+                                                        <input autocomplete="off" required id="b4f_penerima_penghasilan_1721"
+                                                            name="b4f_penerima_penghasilan_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Penerima Penghasilan" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Penghasilan Bruto</label>
+                                                        <input autocomplete="off" required id="b4f_penghasilan_bruto_1721"
+                                                            name="b4f_penghasilan_bruto_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Penghasilan Bruto" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Pajak Dipotong</label>
+                                                        <input autocomplete="off" required id="b4f_jumlahpajak_1721"
+                                                            name="b4f_jumlahpajak_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Pajak Dipotong" min="0">
+                                                    </div>
+                                                </div>
+                                                <h6>5. Anggota Dewan Komisaris Atau Dewan Pengawas Yang Tidak Merangkap Sebagai Pegawai Tetap | 21-100-10</h6>
+                                                <div class="mb-3 row">
+                                                    <div class="col-sm-4">
+                                                        <label>Penerima Penghasilan</label>
+                                                        <input autocomplete="off" required id="b5_penerima_penghasilan_1721"
+                                                            name="b5_penerima_penghasilan_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Penerima Penghasilan" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Penghasilan Bruto</label>
+                                                        <input autocomplete="off" required id="b5_penghasilan_bruto_1721"
+                                                            name="b5_penghasilan_bruto_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Penghasilan Bruto" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Pajak Dipotong</label>
+                                                        <input autocomplete="off" required id="b5_jumlahpajak_1721"
+                                                            name="b5_jumlahpajak_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Pajak Dipotong" min="0">
+                                                    </div>
+                                                </div>
+                                                <h6>6. Mantan Pegawai Yang Menerima Jasa Produksi, Tantiem, Bonus Atau Imbalan Lain | 21-100-11</h6>
+                                                <div class="mb-3 row">
+                                                    <div class="col-sm-4">
+                                                        <label>Penerima Penghasilan</label>
+                                                        <input autocomplete="off" required id="b6_penerima_penghasilan_1721"
+                                                            name="b6_penerima_penghasilan_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Penerima Penghasilan" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Penghasilan Bruto</label>
+                                                        <input autocomplete="off" required id="b6_penghasilan_bruto_1721"
+                                                            name="b6_penghasilan_bruto_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Penghasilan Bruto" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Pajak Dipotong</label>
+                                                        <input autocomplete="off" required id="b6_jumlahpajak_1721"
+                                                            name="b6_jumlahpajak_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Pajak Dipotong" min="0">
+                                                    </div>
+                                                </div>
+                                                <h6>7. Pegawai Yang Melakukan Penarikan Dana Pensiun | 21-100-12</h6>
+                                                <div class="mb-3 row">
+                                                    <div class="col-sm-4">
+                                                        <label>Penerima Penghasilan</label>
+                                                        <input autocomplete="off" required id="b7_penerima_penghasilan_1721"
+                                                            name="b7_penerima_penghasilan_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Penerima Penghasilan" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Penghasilan Bruto</label>
+                                                        <input autocomplete="off" required id="b7_penghasilan_bruto_1721"
+                                                            name="b7_penghasilan_bruto_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Penghasilan Bruto" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Pajak Dipotong</label>
+                                                        <input autocomplete="off" required id="b7_jumlahpajak_1721"
+                                                            name="b7_jumlahpajak_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Pajak Dipotong" min="0">
+                                                    </div>
+                                                </div>
+                                                <h6>8. Peserta Kegiatan | 21-100-13</h6>
+                                                <div class="mb-3 row">
+                                                    <div class="col-sm-4">
+                                                        <label>Penerima Penghasilan</label>
+                                                        <input autocomplete="off" required id="b8_penerima_penghasilan_1721"
+                                                            name="b8_penerima_penghasilan_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Penerima Penghasilan" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Penghasilan Bruto</label>
+                                                        <input autocomplete="off" required id="b8_penghasilan_bruto_1721"
+                                                            name="b8_penghasilan_bruto_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Penghasilan Bruto" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Pajak Dipotong</label>
+                                                        <input autocomplete="off" required id="b8_jumlahpajak_1721"
+                                                            name="b8_jumlahpajak_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Pajak Dipotong" min="0">
+                                                    </div>
+                                                </div>
+                                                <h6>9. Penerima Penghasilan Yang Dipotong PPh Pasal 21 Tidak Final Lainnya | 21-100-99</h6>
+                                                <div class="mb-3 row">
+                                                    <div class="col-sm-4">
+                                                        <label>Penerima Penghasilan</label>
+                                                        <input autocomplete="off" required id="b9_penerima_penghasilan_1721"
+                                                            name="b9_penerima_penghasilan_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Penerima Penghasilan" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Penghasilan Bruto</label>
+                                                        <input autocomplete="off" required id="b9_penghasilan_bruto_1721"
+                                                            name="b9_penghasilan_bruto_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Penghasilan Bruto" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Pajak Dipotong</label>
+                                                        <input autocomplete="off" required id="b9_jumlahpajak_1721"
+                                                            name="b9_jumlahpajak_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Pajak Dipotong" min="0">
+                                                    </div>
+                                                </div>
+                                                <h6>10. Pegawai/Pemberi Jasa/Peserta Kegiatan/Penrima Pensiun Berkala Sebagai Wajib Pajak Luar Negeri | 27-100-99</h6>
+                                                <div class="mb-3 row">
+                                                    <div class="col-sm-4">
+                                                        <label>Penerima Penghasilan</label>
+                                                        <input autocomplete="off" required id="b10_penerima_penghasilan_1721"
+                                                            name="b10_penerima_penghasilan_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Penerima Penghasilan" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Penghasilan Bruto</label>
+                                                        <input autocomplete="off" required id="b10_penghasilan_bruto_1721"
+                                                            name="b10_penghasilan_bruto_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Penghasilan Bruto" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Pajak Dipotong</label>
+                                                        <input autocomplete="off" required id="b10_jumlahpajak_1721"
+                                                            name="b10_jumlahpajak_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Pajak Dipotong" min="0">
+                                                    </div>
+                                                </div>
+                                                <h6>11. Jumlah</h6>
+                                                <div class="mb-3 row">
+                                                    <div class="col-sm-4">
+                                                        <label>Penerima Penghasilan</label>
+                                                        <input autocomplete="off" readonly required id="b11_penerima_penghasilan_1721"
+                                                            name="b11_penerima_penghasilan_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Penerima Penghasilan" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Penghasilan Bruto</label>
+                                                        <input autocomplete="off" readonly required id="b11_penghasilan_bruto_1721"
+                                                            name="b11_penghasilan_bruto_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Penghasilan Bruto" min="0">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label>Jumlah Pajak Dipotong</label>
+                                                        <input autocomplete="off" readonly required id="b11_jumlahpajak_1721"
+                                                            name="b11_jumlahpajak_1721" type="number" class="form-control"
+                                                            placeholder="Masukkan Jumlah Pajak Dipotong" min="0">
+                                                    </div>
+                                                </div> --}}
                                                 <div class="card-body">
                                                     <div class="table-responsive">
                                                         <table id="objekpajak_1721"class="display"

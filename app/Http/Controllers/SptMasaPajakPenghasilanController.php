@@ -20,6 +20,7 @@ use App\Models\SptMasaVILine;
 use App\Models\SptMasaVII;
 use App\Models\SptMasaVIILine;
 use App\Models\MasaBulan;
+use App\Models\PenerimaHasil;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -43,7 +44,10 @@ class SptMasaPajakPenghasilanController extends Controller
      */
     public function create()
     {
-        return view('sptmasapajak.create');
+        $penerimahasilb=PenerimaHasil::where('id','<',16)->get();
+        $penerimahasilc=PenerimaHasil::where('id','>',15)->get();
+        // dd($penerimahasilc);
+        return view('sptmasapajak.create',compact('penerimahasilb','penerimahasilc'));
     }
 
     /**

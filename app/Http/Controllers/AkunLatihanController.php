@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Neraca;
+use App\Models\LatihanKeuangan;
 use App\Models\Akun;
 use Illuminate\Support\Facades\Auth;
 
-class NeracaController extends Controller
+class AkunLatihanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class NeracaController extends Controller
      */
     public function index()
     {
-        $neraca=Neraca::all();
-        return view('neraca.index',compact('neraca'))->with('no',1);
+        $latihankeuangan=LatihanKeuangan::all();
+        return view('latihankeuangan.index',compact('latihankeuangan'))->with('no',1);
     }
 
     /**
@@ -29,8 +29,7 @@ class NeracaController extends Controller
     {
         $akun=Akun::get();
         // dd($akun);
-        return view('neraca.create',compact('akun'));
-        
+        return view('latihankeuangan.create',compact('akun'));
     }
 
     /**
@@ -41,8 +40,7 @@ class NeracaController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
-        $cari = Neraca::where('no_akun',$request->noakun)->first();
+        $cari = LatihanKeuangan::where('no_akun',$request->noakun)->first();
         // dd($cari);
         $data = array(
             'no_akun'=>$request->noakun,
@@ -54,13 +52,12 @@ class NeracaController extends Controller
         );
         if($cari==null){
             // dd('masuk');
-            Neraca::create($data);
+            LatihanKeuangan::create($data);
             $a= \DB::commit();
-            return redirect()->route('neraca');
+            return redirect()->route('latihankeuangan');
         }
         // dd('keluar');
         return redirect()->back()->with('alert','Berhasil');
-        // dd($data);
     }
 
     /**
@@ -71,9 +68,9 @@ class NeracaController extends Controller
      */
     public function show($id)
     {
-        $neraca=Neraca::where('id',$id)->get()->first();
+        $latihankeuangan=LatihanKeuangan::where('id',$id)->get()->first();
         // dd($neraca);
-        return view('neraca.show',compact('neraca'));
+        return view('latihankeuangan.show',compact('latihankeuangan'));
     }
 
     /**
@@ -86,18 +83,17 @@ class NeracaController extends Controller
     {
         $iduser=Auth::user()->id;
         if(Auth::user()->status==1){
-            $neraca=Neraca::where('id',$id)->get()->first();
+            $latihankeuangan=LatihanKeuangan::where('id',$id)->get()->first();
         }else{
-            $neraca=Neraca::where('attribute1',$iduser)->where('id',$id)->get()->first();
+            $latihankeuangan=LatihanKeuangan::where('attribute1',$iduser)->where('id',$id)->get()->first();
 
         }
         
-        if($neraca==null){
+        if($latihankeuangan==null){
             return back();
         }else{
-            return view('neraca.edit',compact('neraca'));
+            return view('latihankeuangan.edit',compact('latihankeuangan'));
         }
-        // dd($neraca);
     }
 
     /**
@@ -109,7 +105,7 @@ class NeracaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $neraca=Neraca::where('id',$id)->update([
+        $neraca=LatihanKeuangan::where('id',$id)->update([
             'no_akun'=>$request->noakun,
             'nama_akun'=>$request->namaakun,
             'saldo'=>$request->saldo,
@@ -118,7 +114,7 @@ class NeracaController extends Controller
             'updated_at'=>date('Y-m-d H:i:s'),
         ]);
         $a= \DB::commit();    
-        return redirect()->route('neraca');
+        return redirect()->route('latihankeuangan');
 
     }
 
@@ -130,7 +126,7 @@ class NeracaController extends Controller
      */
     public function destroy($id)
     {
-        $delete=Neraca::find($id);
+        $delete=LatihanKeuangan::find($id);
         $delete->delete();
         return redirect()->back()->with('alert','Berhasil Dihapus');
     }

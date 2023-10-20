@@ -9,6 +9,8 @@ use App\Models\Ebupot;
 use App\Models\Neraca;
 use App\Models\HutangPpn;
 use App\Models\JurnalManual;
+use App\Models\Pphfinal;
+use App\Models\PphTidakFinal;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use PDF;
@@ -23,8 +25,9 @@ class PDFController extends Controller
         ];
         if(Auth::user()->status==1){
             $billing = Billing::where('kode_billing',$idbilling)->get()->first();
+            // dd($billing->jenis_transaksi);
             if($billing->jenis_transaksi==1){
-                dd('masukbupto');
+                // dd('masukbupto');
                 $ebupot=Ebupot::where('id',$billing->trx_bupot)->update([
                     'attribute2'=>Auth::user()->id,
                     'attribute3'=>2,
@@ -33,9 +36,8 @@ class PDFController extends Controller
                     'attribute2'=>Auth::user()->id,
                     'attribute3'=>1,
                 ]);
-            }else{
+            }elseif($billing->jenis_transaksi==2){
                 // dd('hutang');
-
                 $ebupot=HutangPpn::where('id',$billing->trx_bupot)->update([
                     'attribute2'=>Auth::user()->id,
                     'attribute3'=>2,
@@ -44,6 +46,26 @@ class PDFController extends Controller
                     'attribute2'=>Auth::user()->id,
                     'attribute3'=>1,
                 ]);
+            }elseif($billing->jenis_transaksi==3){
+                $ebupot=Pphfinal::where('id',$billing->trx_bupot)->update([
+                    'attribute2'=>Auth::user()->id,
+                    'attribute3'=>2,
+                ]);
+                $billingupdate = Billing::where('kode_billing',$idbilling)->update([
+                    'attribute2'=>Auth::user()->id,
+                    'attribute3'=>1,
+                ]);
+            }elseif($billing->jenis_transaksi==4){
+                $ebupot=PphTidakFinal::where('id',$billing->trx_bupot)->update([
+                    'attribute2'=>Auth::user()->id,
+                    'attribute3'=>2,
+                ]);
+                $billingupdate = Billing::where('kode_billing',$idbilling)->update([
+                    'attribute2'=>Auth::user()->id,
+                    'attribute3'=>1,
+                ]);
+            }else{
+                return back();
             }
             
         }else{
@@ -59,6 +81,26 @@ class PDFController extends Controller
                 ]);
             }elseif($billing->jenis_transaksi==2){
                 $ebupot=HutangPpn::where('id',$billing->trx_bupot)->update([
+                    'attribute2'=>Auth::user()->id,
+                    'attribute3'=>2,
+                ]);
+                $billingupdate = Billing::where('kode_billing',$idbilling)->update([
+                    'attribute2'=>Auth::user()->id,
+                    'attribute3'=>1,
+                ]);
+            }
+            elseif($billing->jenis_transaksi==3){
+                // dd('hutang');
+                $ebupot=Pphfinal::where('id',$billing->trx_bupot)->update([
+                    'attribute2'=>Auth::user()->id,
+                    'attribute3'=>2,
+                ]);
+                $billingupdate = Billing::where('kode_billing',$idbilling)->update([
+                    'attribute2'=>Auth::user()->id,
+                    'attribute3'=>1,
+                ]);
+            }elseif($billing->jenis_transaksi==4){
+                $ebupot=PphTidakFinal::where('id',$billing->trx_bupot)->update([
                     'attribute2'=>Auth::user()->id,
                     'attribute3'=>2,
                 ]);

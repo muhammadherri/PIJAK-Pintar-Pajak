@@ -33,10 +33,12 @@
                                             <label class="col-sm-3 col-form-label">Transaksi</label>
                                             <div class="col-sm-9">
                                                 <select onchange="toggletrx()" id="trx_wan"name="trx_wan"
-                                                    class="default-select form-control wide">
+                                                    class="dropdown-groups">
                                                     <option value="0">Pilih Transaksi</option>
                                                     <option value="1">Transaksih E-Bupot</option>
                                                     <option value="2">Transaksih PPn</option>
+                                                    <option value="3">PPh Final</option>
+                                                    <option value="4">PPh Tidak Final</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -56,6 +58,28 @@
                                                     <select id="trx_ppn" name="trx_ppn"
                                                     class="dropdown-groups">
                                                     @foreach ($trxppn as $row)
+                                                        <option value="{{ $row->id }}">
+                                                            {{ $row->trx }}</option>
+                                                    @endforeach
+                                                </select>                                            
+                                            </div>
+                                        </div>
+                                        <div id=hidden_pphfinal_trx style="display:none;" class="mb-3 row">
+                                            <div class="col-sm-12">
+                                                    <select id="trx_pphfinal" name="trx_pphfinal"
+                                                    class="dropdown-groups">
+                                                    @foreach ($trxpphfinal as $row)
+                                                        <option value="{{ $row->id }}">
+                                                            {{ $row->transaksi }}</option>
+                                                    @endforeach
+                                                </select>                                            
+                                            </div>
+                                        </div>
+                                        <div id=hidden_pphtidakfinal_trx style="display:none;" class="mb-3 row">
+                                            <div class="col-sm-12">
+                                                    <select id="trx_pphtidakfinal" name="trx_pphtidakfinal"
+                                                    class="dropdown-groups">
+                                                    @foreach ($trxpphtidakfinal as $row)
                                                         <option value="{{ $row->id }}">
                                                             {{ $row->trx }}</option>
                                                     @endforeach
@@ -295,20 +319,37 @@
     };
     function toggletrx() {
         var trx_wan = document.getElementById("trx_wan");
-        var trx_bupot = document.getElementById("trx");
-        var trx_ppn = document.getElementById("trx_ppn");
+        var trx_pphfinal = document.getElementById("trx_pphfinal");
         var hiden_bupot = document.getElementById("hidden_bupot_trx");
         var hiden_ppn = document.getElementById("hidden_ppn_trx");
+        var hidden_pphfinal = document.getElementById("hidden_pphfinal_trx");
+        var hidden_pphtidakfinal = document.getElementById("hidden_pphtidakfinal_trx");
 
         if (trx_wan.value === "1") {
             hiden_bupot.style.display = 'block';
             hiden_ppn.style.display = 'none';
+            hidden_pphfinal.style.display = 'none';
+            hidden_pphtidakfinal.style.display = 'none';
         } else if(trx_wan.value === "2") {
             hiden_bupot.style.display = 'none';
             hiden_ppn.style.display = 'block';
+            hidden_pphfinal.style.display = 'none';
+            hidden_pphtidakfinal.style.display = 'none';
+        }else if(trx_wan.value === "3") {
+            hiden_bupot.style.display = 'none';
+            hiden_ppn.style.display = 'none';
+            hidden_pphfinal.style.display = 'block';
+            hidden_pphtidakfinal.style.display = 'none';
+        }else if(trx_wan.value === "4") {
+            hiden_bupot.style.display = 'none';
+            hiden_ppn.style.display = 'none';
+            hidden_pphfinal.style.display = 'none';
+            hidden_pphtidakfinal.style.display = 'block';
         }else{
             hiden_bupot.style.display = 'none';
             hiden_ppn.style.display = 'none';
+            hidden_pphfinal.style.display = 'none';
+            hidden_pphtidakfinal.style.display = 'none';
         }
     }
     

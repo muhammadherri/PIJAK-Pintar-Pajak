@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Neraca;
-use App\Models\Akun;
+use App\Models\PenerimaHasil;
 use Illuminate\Support\Facades\Auth;
 
-class NeracaController extends Controller
+class PenerimaHasilController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,8 @@ class NeracaController extends Controller
      */
     public function index()
     {
-        $neraca=Neraca::all();
-        return view('neraca.index',compact('neraca'))->with('no',1);
+        $penerimahasil=PenerimaHasil::all();
+        return view('penerimapenghasilan.index',compact('penerimahasil'))->with('no',1);
     }
 
     /**
@@ -27,10 +26,7 @@ class NeracaController extends Controller
      */
     public function create()
     {
-        $akun=Akun::get();
-        // dd($akun);
-        return view('neraca.create',compact('akun'));
-        
+        return view('penerimapenghasilan.create');
     }
 
     /**
@@ -41,26 +37,14 @@ class NeracaController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
-        $cari = Neraca::where('no_akun',$request->noakun)->first();
-        // dd($cari);
         $data = array(
-            'no_akun'=>$request->noakun,
-            'nama_akun'=>$request->namaakun,
-            'saldo'=>$request->saldo,
+            'penerima_penghasilan'=>$request->penerima_penghasilan,
+            'kode_objek_pajak'=>$request->kop,
             'attribute1'=>Auth::user()->id,
-            'attribute3'=>$request->kategori_pajak,
-            'created_at'=>date('Y-m-d H:i:s'),
         );
-        if($cari==null){
-            // dd('masuk');
-            Neraca::create($data);
-            $a= \DB::commit();
-            return redirect()->route('neraca');
-        }
-        // dd('keluar');
-        return redirect()->back()->with('alert','Berhasil');
-        // dd($data);
+        PenerimaHasil::create($data);
+        $a= \DB::commit();
+        return redirect()->route('penerimapenghasilan');
     }
 
     /**
@@ -71,9 +55,8 @@ class NeracaController extends Controller
      */
     public function show($id)
     {
-        $neraca=Neraca::where('id',$id)->get()->first();
-        // dd($neraca);
-        return view('neraca.show',compact('neraca'));
+        $penerimahasil=PenerimaHasil::where('id',$id)->get()->first();
+        return view('penerimapenghasilan.show',compact('penerimahasil'));
     }
 
     /**
@@ -86,18 +69,16 @@ class NeracaController extends Controller
     {
         $iduser=Auth::user()->id;
         if(Auth::user()->status==1){
-            $neraca=Neraca::where('id',$id)->get()->first();
+            $penerimahasil=PenerimaHasil::where('id',$id)->get()->first();
         }else{
-            $neraca=Neraca::where('attribute1',$iduser)->where('id',$id)->get()->first();
-
+            $penerimahasil=PenerimaHasil::where('attribute1',$iduser)->where('id',$id)->get()->first();
         }
-        
-        if($neraca==null){
+
+        if($penerimahasil==null){
             return back();
         }else{
-            return view('neraca.edit',compact('neraca'));
+            return view('penerimapenghasilan.edit',compact('penerimahasil'));
         }
-        // dd($neraca);
     }
 
     /**
@@ -109,17 +90,14 @@ class NeracaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $neraca=Neraca::where('id',$id)->update([
-            'no_akun'=>$request->noakun,
-            'nama_akun'=>$request->namaakun,
-            'saldo'=>$request->saldo,
+        PenerimaHasil::where('id',$id)->update([
+            'penerima_penghasilan'=>$request->penerima_penghasilan,
+            'kode_objek_pajak'=>$request->kop,
             'attribute2'=>Auth::user()->id,
-            'attribute3'=>$request->kategori_pajak,
             'updated_at'=>date('Y-m-d H:i:s'),
         ]);
         $a= \DB::commit();    
-        return redirect()->route('neraca');
-
+        return redirect()->route('penerimapenghasilan');
     }
 
     /**
@@ -130,7 +108,7 @@ class NeracaController extends Controller
      */
     public function destroy($id)
     {
-        $delete=Neraca::find($id);
+        $delete=PenerimaHasil::find($id);
         $delete->delete();
         return redirect()->back()->with('alert','Berhasil Dihapus');
     }

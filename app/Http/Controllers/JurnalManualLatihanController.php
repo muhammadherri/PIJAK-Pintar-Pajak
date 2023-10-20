@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Neraca;
+use App\Models\LatihanKeuangan;
 use App\Models\JurnalManual;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -25,7 +25,7 @@ class JurnalManualLatihanController extends Controller
      */
     public function create()
     {
-        $neraca=Neraca::whereNot('saldo',0)->get();
+        $neraca=LatihanKeuangan::whereNot('saldo',0)->get();
         return view('latihan.create',compact('neraca'));
     }
 
@@ -86,7 +86,7 @@ class JurnalManualLatihanController extends Controller
      */
     public function edit($id)
     {
-        $neraca=Neraca::whereNot('saldo',0)->get();
+        $neraca=LatihanKeuangan::whereNot('saldo',0)->get();
         $jurnalmanual = JurnalManual::where('attribute3',1)->where('id',$id)->get()->first();
         return view('latihan.edit',compact('jurnalmanual','neraca'));
     }

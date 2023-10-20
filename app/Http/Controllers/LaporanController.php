@@ -587,7 +587,7 @@ class LaporanController extends Controller
     {
         $asetlancar=Neraca::where('attribute3','KAS DAN SETARA KAS')->whereNot('saldo',0)->get();
         $piutang=Neraca::where('attribute3','PIUTANG USAHA PIHAK KETIGA')->whereNot('saldo',0)->get();
-        $pajak=Neraca::where('attribute3','AKTIVA LANCAR LAINNYA')->whereNot('saldo',0)->get();
+        $pajakaktiva=Neraca::where('attribute3','AKTIVA LANCAR LAINNYA')->whereNot('saldo',0)->get();
         $persediaan=Neraca::where('attribute3','PERSEDIAAN')->whereNot('saldo',0)->get();
         $pengeluarandibayar=Neraca::where('attribute3','BEBAN DIBAYAR DI MUKA')->whereNot('saldo',0)->get();
         $asettetap=Neraca::where('attribute3','AKTIVA TETAP LAINNYA')->whereNot('saldo',0)->get();
@@ -596,20 +596,23 @@ class LaporanController extends Controller
         $pengeluarandibayar=Neraca::where('attribute3','UANG MUKA PELANGGAN')->whereNot('saldo',0)->get();
         $pajak=Neraca::where('attribute3','HUTANG PAJAK')->whereNot('saldo',0)->get();
         $liabilitisjangkapanjang=Neraca::where('attribute3','HUTANG BANK JANGKA PANJANG')->whereNot('saldo',0)->get();
-        $modalpemilik=Neraca::where('attribute3','MODAL SAHAM')->whereNot('saldo',0)->get();
+        // $modalpemilik=Neraca::where('attribute3','MODAL SAHAM')->whereNot('saldo',0)->get();
+        $modalpemilik=Neraca::where('no_akun','>','3000')->where('no_akun','<','3400')->whereNot('saldo',0)->get();
         
         $totalaktivalancar=Neraca::where('no_akun','<','1510')->sum('saldo');
         $nilaiaktivatetap=Neraca::where('attribute3','AKTIVA TETAP LAINNYA')->sum('saldo');
         $nilaipenyusutan=Neraca::where('attribute3','AKUMULASI PENYUSUTAN')->sum('saldo');
         $totalliabilitislancar=Neraca::where('no_akun','>','2100')->where('no_akun','<','2710')->sum('saldo');
         $totalliabilitisjangkapanjang=Neraca::where('attribute3','HUTANG BANK JANGKA PANJANG')->sum('saldo');
-        $totalmodal=Neraca::where('attribute3','MODAL SAHAM')->sum('saldo');
+        // $totalmodal=Neraca::where('attribute3','MODAL SAHAM')->sum('saldo');
+        $totalmodal=Neraca::where('no_akun','>','3000')->where('no_akun','<','3400')->sum('saldo');
         
+        // dd($totalaktivalancar);
         $totalaktivatetap=$nilaiaktivatetap+$nilaipenyusutan;
         $totalaktiva=$totalaktivatetap+$totalaktivalancar;
         $totalliabilitasmodal=$totalliabilitislancar+$totalliabilitisjangkapanjang+$totalmodal;
         // dd($penyusutan);
-        return view('laporan.laporankeuangankomersil',compact('totalliabilitasmodal','totalmodal','modalpemilik','liabilitisjangkapanjang','totalliabilitisjangkapanjang','totalliabilitislancar','pajak','pengeluarandibayar','liabilitaslancar','totalaktiva','totalaktivatetap','nilaipenyusutan','penyusutan','nilaiaktivatetap','asettetap','totalaktivalancar','pengeluarandibayar','persediaan','pajak','asetlancar','piutang'));
+        return view('laporan.laporankeuangankomersil',compact('totalliabilitasmodal','totalmodal','modalpemilik','liabilitisjangkapanjang','totalliabilitisjangkapanjang','totalliabilitislancar','pajakaktiva','pajak','pengeluarandibayar','liabilitaslancar','totalaktiva','totalaktivatetap','nilaipenyusutan','penyusutan','nilaiaktivatetap','asettetap','totalaktivalancar','pengeluarandibayar','persediaan','pajak','asetlancar','piutang'));
     }
     public function laporankeuanganlabarugikomersil(Request $request){
         $pendapatan=Neraca::where('attribute3','PENJUALAN BERSIH')->whereNot('saldo',0)->get();

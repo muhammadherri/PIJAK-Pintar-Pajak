@@ -328,6 +328,8 @@ class SptPpnController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete=SptPpn::find($id);
+        $delete->delete();
+        return redirect()->back()->with('alert','Berhasil Dihapus');
     }
 }
