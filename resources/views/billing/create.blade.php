@@ -90,7 +90,7 @@
                                             <label class="col-sm-3 col-form-label">NPWP</label>
                                             <div class="col-sm-9">
                                                 <input min="0" maxlength="15" autocomplete="off" required id="npwp" name="npwp"
-                                                    type="number" class="form-control" placeholder="Masukkan NPWP">
+                                                    type="text" class="form-control" placeholder="Masukkan NPWP">
                                                 <span id="errorText" style="color: red;"></span>
                                             </div>
                                         </div>
@@ -112,14 +112,14 @@
                                             <label class="col-sm-3 col-form-label">Jenis Pajak</label>
                                             <div class="col-sm-9">
                                                 <input autocomplete="off" required id="jenis_pajak" name="jenis_pajak"
-                                                    type="number" class="form-control" placeholder="Masukkan Jenis Pajak">
+                                                    type="text" class="form-control" placeholder="Masukkan Jenis Pajak">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Kode Jenis Setoran</label>
                                             <div class="col-sm-9">
                                                 <input autocomplete="off" required id="kode_jenis_setoran"
-                                                    name="kode_jenis_setoran" type="number" class="form-control"
+                                                    name="kode_jenis_setoran" type="text" class="form-control"
                                                     placeholder="Masukkan Kode Jenis Setoran">
                                             </div>
                                         </div>
@@ -137,7 +137,7 @@
                                                     $tahunsekarang = date('Y');
                                                 @endphp
                                                 <input autocomplete="off" readonly required id="tahun_pajak" name="tahun_pajak"
-                                                    type="number" class="form-control"value="{{$tahunsekarang}}" placeholder="{{$tahunsekarang}}">
+                                                    type="text" class="form-control"value="{{$tahunsekarang}}" placeholder="{{$tahunsekarang}}">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
@@ -166,7 +166,7 @@
                                             <label class="col-sm-3 col-form-label">NPWP Penyetor</label>
                                             <div class="col-sm-9">
                                                 <input min="0" maxlength="15" autocomplete="off" required id="npwp_penyetor" name="npwp_penyetor"
-                                                    type="number" class="form-control" placeholder="Masukkan NPWP Penyetor">
+                                                    type="text" class="form-control" placeholder="Masukkan NPWP Penyetor">
                                                 <span id="errorpenyetor" style="color: red;"></span>
                                             </div>
                                         </div>
@@ -181,7 +181,7 @@
                                             <label class="col-sm-3 col-form-label">No.Ref Tagihan</label>
                                             <div class="col-sm-9">
                                                 <input autocomplete="off" required id="no_ref" name="no_ref"
-                                                    type="number" min="0" class="form-control" placeholder="Masukkan No Referensi Tagihan">
+                                                    type="text" min="0" class="form-control" placeholder="Masukkan No Referensi Tagihan">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
@@ -199,21 +199,21 @@
                                             <label class="col-sm-3 col-form-label">Akun</label>
                                             <div class="col-sm-9">
                                                 <input autocomplete="off" required id="akun" name="akun"
-                                                    type="number" min="0" class="form-control" placeholder="Masukkan Kode Akun">
+                                                    type="text" min="0" class="form-control" placeholder="Masukkan Kode Akun">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">No SK</label>
                                             <div class="col-sm-9">
                                                 <input autocomplete="off" required id="no_sk" name="no_sk"
-                                                    type="number" min="0" class="form-control" placeholder="Masukkan Nomor SK">
+                                                    type="text" min="0" class="form-control" placeholder="Masukkan Nomor SK">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">NOP</label>
                                             <div class="col-sm-9">
                                                 <input autocomplete="off" required id="nop" name="nop"
-                                                    type="number" min="0" class="form-control" placeholder="Masukkan Kode NOP">
+                                                    type="text" min="0" class="form-control" placeholder="Masukkan Kode NOP">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
@@ -227,14 +227,14 @@
                                             <label class="col-sm-3 col-form-label">NTB</label>
                                             <div class="col-sm-9">
                                                 <input autocomplete="off" required id="ntb" name="ntb"
-                                                    type="number" min="0" class="form-control" placeholder="Masukkan Kode NTB">
+                                                    type="text" min="0" class="form-control" placeholder="Masukkan Kode NTB">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">STAN</label>
                                             <div class="col-sm-9">
                                                 <input autocomplete="off" required id="stan" name="stan"
-                                                    type="number" min="0" class="form-control" placeholder="Masukkan Kode STAN">
+                                                    type="text" min="0" class="form-control" placeholder="Masukkan Kode STAN">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">

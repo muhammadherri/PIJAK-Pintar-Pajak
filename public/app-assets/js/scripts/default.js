@@ -31,15 +31,25 @@ document.addEventListener('DOMContentLoaded', function() {
             const newRow = `
             <tr>
                 <td width="auto" class="text-center"value="">
-                    <input required autocomplete="off" type="text"
-                        name="objek_penerima[]" id="objek_penerima[]"
-                        class="form-control" />
+                    <select id="objek_penerima[]" name="objek_penerima[]" class="dropdown-groups">
+                        <option value="PEGAWAI TETAP - 21-100-01">1. PEGAWAI TETAP - 21-100-01</option>
+                        <option value="PENERIMA PENSIUN - BERKALA 21-100-02">2. PENERIMA PENSIUN BERKALA - 21-100-02</option>
+                        <option value="PEGAWAI TIDAK TETAP ATAU TENAGA KERJA LEPAS - 21-100-03">3. PEGAWAI TIDAK TETAP ATAU... - 21-100-03</option>
+                        <option value="DISTRIBUTOR MLM - 21-100-04">4a. DISTRIBUTOR MLM - 21-100-04</option>
+                        <option value="PETUGAS DINAS LUAR ASURANSI - 21-100-05">4b. PETUGAS DINAS LUAR ASURAN... - 21-100-05</option>
+                        <option value="PENJAJA BARANG DAGANGAN - 21-100-06">4c. PENJAJA BARANG DAGANGAN - 21-100-06</option>
+                        <option value="TENAGA AHLI - 21-100-07">4d. TENAGA AHLI - 21-100-07</option>
+                        <option value="BUKAN PEGAWAI YANG MENERIMA IMBALAN YANG BERSIFAT BERKESINAMBUNGAN - 21-100-08">4e. BUKAN PEGAWAI YANG MENERI ... - 21-100-08</option>
+                        <option value="BUKAN PEGAWAI YANG MENERIMA IMBALAN YANG TIDAK BERSIFAT BERKESINAMBUNGAN - 21-100-09">4f. BUKAN PEGAWAI YANG MENERI... - 21-100-09</option>
+                        <option value="ANGGOTA DEWAN KOMISARIS ATAU DEWAN PENGAWAS YANG TIDAK MERANGKAP SEBAGAI PEGAWAI TETAP - 21-100-10">5. ANGGOTA DEWAN KOMISARIS A... - 21-100-10</option>
+                        <option value="MANTAN PEGAWAI YANG MENERIMA JASA PRODUKSI, TANTIEM, BONUS ATAU IMBALAN LAIN - 21-100-11">6. MANTAN PEGAWAI YANG MENERI... - 21-100-11</option>
+                        <option value="PEGAWAI YANG MELAKUKAN PENARIKAN DANA PENSIUN - 21-100-12">7. PEGAWAI YANG MELAKUKAN PE... - 21-100-12</option>
+                        <option value="PESERTA KEGIATAN - 21-100-13">8. PESERTA KEGIATAN - 21-100-13</option>
+                        <option value="PENERIMA PENGHASILAN YANG DIPOTONG PPh PASAL 21 TIDAK FINAL LAINNYA - 21-100-99">9. PENERIMA PENGHASILAN YANG... - 21-100-99</option>
+                        <option value="PEGAWAI/PEMBERI JASA/PESERTA KEGIATAN/PENERIMA PENSIUN BERKALA SEBAGAI WAJIB PAJAK LUAR NEGERI - 27-100-99">10. PEGAWAI/PEMBERI JASA/PESE... - 27-100-99</option>
+                    </select>  
                 </td>
-                <td class="text-center">
-                    <input required autocomplete="off" type="number"
-                        name="objek_kodeobjek[]"
-                        id="objek_kodeobjek[]" class="form-control" />
-                </td>
+              
                 <td class="text-center">
                     <input required autocomplete="off" type="number"
                         name="objek_jumlahpenerima[]"
@@ -101,17 +111,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const newRow = `
             <tr>
                 <td width="auto" class="text-center"value="">
-                    <input required autocomplete="off" type="text"
-                        name="objek_penerima_c[]"
-                        id="objek_penerima_c[]"
-                        class="form-control" />
+                    <select id="objek_penerima_c[]" name="objek_penerima_c[]" class="dropdown-groups">
+                        <option value="PENERIMA UANG PESANGON YANG DIBAYARKAN SEKALIGUS - 21-401-01">1. PENERIMA UANG PESANGON YA... -  21-401-01</option>
+                        <option value="PENERIMA UANG MANFAAT PENSIUN, TUNJANGAN HARI TUA ATAU JAMINAN HARI TUA DAN PEMBAYARAN SEJENIS YANG DIBAYARKAN SEKALIGUS - 21-401-02">2. PENERIMA UANG MANFAAT PEN... -  21-401-02</option>
+                        <option value="PEJABAT NEGARA, PEGAWAI NEGERI SIPIL, ANGGOTA TNI/POLRI DAN PENSIUNAN YANG MENERIMA HONORARIUM DAN IMBALAN LAIN YANG DIBEBANKAN KEPADA KEUANGAN NEGARA/DAERAH - 21-402-01">3. PEJABAT NEGARA, PEGAWAI N... -  21-402-01</option>
+                        <option value="PENERIMA PENGHASILAN YANG DIPOTONG PPh PASAL 21 FINAL LAINNYA - 21-499-99">4. PENERIMA PENGHASILAN YANG... -  21-499-99</option>
+                        
+                    </select>
                 </td>
-                <td class="text-center">
-                    <input required autocomplete="off" type="number"
-                        name="objek_kodeobjek_c[]"
-                        id="objek_kodeobjek_c[]"
-                        class="form-control" />
-                </td>
+               
                 <td class="text-center">
                     <input required autocomplete="off" type="number"
                         name="objek_jumlahpenerima_c[]"

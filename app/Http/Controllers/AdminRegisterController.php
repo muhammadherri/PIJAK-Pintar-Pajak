@@ -46,6 +46,9 @@ class AdminRegisterController extends Controller
         if($users==null){
             // dd('masuk');
             $data = array(
+                'nama_lengkap'=>$request->nama_lengkap,
+                'dosen_pembimbing'=>$request->dosen_pembimbing,
+                'kelas'=>$request->kelas,
                 'name'=>$request->name,
                 'email'=>$request->nim,
                 'status'=>$request->status,

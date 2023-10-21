@@ -110,15 +110,15 @@
                                                         <tbody class="sales_order_detail_container">
                                                             <tr>
                                                                 <td width="auto">
-                                                                    <input autocomplete="off" type="text" name="angka0[]" class="form-control" />
+                                                                    <input required autocomplete="off" type="text" name="angka0[]" class="form-control" />
                                                                 </td>
-                                                                <td><input autocomplete="off" type="number" name="angka1[]" min="0"
+                                                                <td><input required autocomplete="off" type="number" name="angka1[]" min="0"
                                                                         class="form-control" /></td>
-                                                                <td><input autocomplete="off" type="number" name="angka2[]" min="0"
+                                                                <td><input required autocomplete="off" type="number" name="angka2[]" min="0"
                                                                         class="form-control" /></td>
-                                                                <td><input autocomplete="off" type="number" name="angka3[]" min="0"
+                                                                <td><input required autocomplete="off" type="number" name="angka3[]" min="0"
                                                                         class="form-control sub_totpot" /></td>
-                                                                <td><input autocomplete="off" type="text" name="hasil[]"
+                                                                <td><input required autocomplete="off" type="text" name="hasil[]"
                                                                         class="form-control sub_total"readonly /></td>
                                                                 <td><button type="button" class="btn btn-light btn-submit"><i
                                                                             class="fa fa-trash"></i></td>
@@ -280,16 +280,16 @@
                                                         <tbody class="sales_order_detail_container">
                                                             <tr>
                                                                 <td width="auto">
-                                                                    <input autocomplete="off" type="text" name="angka7[]" 
+                                                                    <input required autocomplete="off" type="text" name="angka7[]" 
                                                                         class="form-control" />
                                                                 </td>
-                                                                <td><input autocomplete="off" type="number" name="angka4[]" min="0"
+                                                                <td><input required autocomplete="off" type="number" name="angka4[]" min="0"
                                                                         class="form-control" /></td>
-                                                                <td><input autocomplete="off" type="number" name="angka5[]" min="0"
+                                                                <td><input required autocomplete="off" type="number" name="angka5[]" min="0"
                                                                         class="form-control" /></td>
-                                                                <td><input autocomplete="off" type="number" name="angka6[]" min="0"
+                                                                <td><input required autocomplete="off" type="number" name="angka6[]" min="0"
                                                                         class="form-control sub_totpot" /></td>
-                                                                <td><input autocomplete="off" type="text" name="hasil2[]"
+                                                                <td><input required autocomplete="off" type="text" name="hasil2[]"
                                                                         class="form-control"readonly /></td>
                                                                 <td><button type="button" class="btn btn-light btn-submit"><i
                                                                             class="fa fa-trash"></i></td>
@@ -309,8 +309,8 @@
                                                     <p></p>
                                                     <div class="mb-3 row">
                                                         <div class="col-sm-12">
-                                                            <label required class="col-sm-3 col-form-label">Catatan</label>
-                                                            <textarea placeholder="Silakan masukkan catatan untuk pembeli Anda..." class="form-control" rows="4"
+                                                            <label class="col-sm-3 col-form-label">Catatan</label>
+                                                            <textarea required placeholder="Silakan masukkan catatan untuk pembeli Anda..." class="form-control" rows="4"
                                                                 id="catatan_efaktur" name="catatan_efaktur"></textarea>
                                                         </div>
                                                     </div>
@@ -344,12 +344,12 @@
             const newRow = `
                 <tr>
                     <td width="auto">
-                        <input autocomplete="off" type="text" name="angka0[]" min="0" class="form-control"/>
+                        <input required autocomplete="off" type="text" name="angka0[]" min="0" class="form-control"/>
                     </td>
-                    <td><input autocomplete="off" type="number" name="angka1[]" min="0" class="form-control"/></td>
-					<td><input autocomplete="off" type="number" name="angka2[]" min="0" class="form-control"/></td>
-					<td><input autocomplete="off" type="number" name="angka3[]" min="0" class="form-control sub_totpot"/></td>
-					<td><input autocomplete="off" type="text" name="hasil[]" class="form-control sub_total"readonly /></td>
+                    <td><input required autocomplete="off" type="number" name="angka1[]" min="0" class="form-control"/></td>
+					<td><input required autocomplete="off" type="number" name="angka2[]" min="0" class="form-control"/></td>
+					<td><input required  autocomplete="off" type="number" name="angka3[]" min="0" class="form-control sub_totpot"/></td>
+					<td><input required autocomplete="off" type="text" name="hasil[]" class="form-control sub_total"readonly /></td>
                     <td><button type="button" class="btn btn-danger btn-remove"><i class="fa fa-trash"></i></button></td>
 
                 </tr>
@@ -400,12 +400,12 @@
             const newRow = `
                 <tr>
                     <td width="auto">
-                        <input autocomplete="off" type="text" name="angka7[]"class="form-control"/>
+                        <input required autocomplete="off" type="text" name="angka7[]"class="form-control"/>
                     </td>
-                    <td><input autocomplete="off" type="number" name="angka4[]" min="0" class="form-control"/></td>
-					<td><input autocomplete="off" type="number" name="angka5[]" min="0" class="form-control"/></td>
-					<td><input autocomplete="off" type="number" name="angka6[]" min="0" class="form-control"/></td>
-					<td><input autocomplete="off" type="text" name="hasil2[]" class="form-control"readonly /></td>
+                    <td><input required autocomplete="off" type="number" name="angka4[]" min="0" class="form-control"/></td>
+					<td><input required autocomplete="off" type="number" name="angka5[]" min="0" class="form-control"/></td>
+					<td><input required autocomplete="off" type="number" name="angka6[]" min="0" class="form-control"/></td>
+					<td><input required autocomplete="off" type="text" name="hasil2[]" class="form-control"readonly /></td>
                     <td><button type="button" class="btn btn-danger btn-remove"><i class="fa fa-trash"></i></button></td>
 
                 </tr>

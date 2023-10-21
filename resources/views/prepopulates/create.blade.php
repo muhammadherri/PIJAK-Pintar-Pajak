@@ -80,7 +80,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Nomor Faktur</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" required id="nomor_faktur" name="nomor_faktur" type="number" min="0" class="form-control"
+                                                <input autocomplete="off" required id="nomor_faktur" name="nomor_faktur" type="text" min="0" class="form-control"
                                                     placeholder="Masukkan Nomor Faktur">
                                             </div>
                                         </div>

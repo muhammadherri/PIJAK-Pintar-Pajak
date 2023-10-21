@@ -223,11 +223,11 @@ class BillingController extends Controller
                 'attribute1'=>Auth::user()->id,
                 'created_at'=>date('Y-m-d H:i:s'),
             );
+            $billing=Billing::create($data);
             $ebupot=PphTidakFinal::where('id',$request->trx_pphtidakfinal)->update([
                 'attribute2'=>Auth::user()->id,
                 'attribute3'=>1,
             ]);
-            $billing=Billing::create($data);
 
         }else{
             return back();
@@ -236,7 +236,9 @@ class BillingController extends Controller
         // DD($data);
         // dd($billing->id);
         $a= \DB::commit();
-        return redirect()->route('billing/show',['id'=>$billing->id]);
+        // return redirect()->route('billing/show',['id'=>$billing->id]);
+        return redirect()->route('billing');
+
     }
 
     /**

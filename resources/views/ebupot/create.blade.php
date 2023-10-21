@@ -131,9 +131,9 @@
                                             <label class="col-sm-3 col-form-label">Kode Objek Pajak</label>
                                             <div class="col-sm-9">
                                                 <select id="kode_objek_pajak" name="kode_objek_pajak"
-                                                    class="default-select form-control wide">
+                                                    class="dropdown-groups">
                                                     @foreach ($kodepajak as $row)
-                                                        <option value="{{ $row->id }}">{{ $row->kode_objek_pajak }}
+                                                        <option value="{{ $row->id }}">{{ $row->kode_objek_pajak }}-{{$row->keterangan}}
                                                         </option>
                                                     @endforeach
                                                 </select>

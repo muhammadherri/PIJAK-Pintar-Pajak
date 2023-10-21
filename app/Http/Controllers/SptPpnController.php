@@ -287,7 +287,7 @@ class SptPpnController extends Controller
         if(Auth::user()->status==1){
             $spt=SptPpn::where('formulir_id',$id)->get()->first();
         }else{
-            $spt=SptPpn::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
+            $spt=SptPpn::where('attribute_1',$iduser)->where('formulir_id',$id)->get()->first();
         }
         if($spt==null){
             return back();

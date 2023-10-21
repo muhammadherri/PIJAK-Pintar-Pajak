@@ -58,6 +58,8 @@ class SptMasaPajakPenghasilanController extends Controller
      */
     public function store(Request $request)
     {
+        // $kredit = preg_replace('/[^0-9]/','',$request->input('akunkredit')); 
+
         // dd($request);
         $header_id =SptMasa::get()->count();
         $header_id = $header_id ?? 0;
@@ -104,12 +106,13 @@ class SptMasaPajakPenghasilanController extends Controller
             'attribute1'=>Auth::user()->id,
         );
         $objek_penerima_1721 = $request->input('objek_penerima');
+        // dd(preg_replace('/[^0-9]/','',$objek_penerima_1721));
         $objek_penerimac_1721 = $request->input('objek_penerima_c');
         foreach ($objek_penerima_1721 as $key => $row) {
             $data1721lines = array(
                 'formulir_id' => $header_id,
                 'penerima_penghasilan' => $objek_penerima_1721[$key],
-                'kode_objek' => $request->objek_kodeobjek[$key],
+                'kode_objek' => preg_replace('/[^0-9]/','',$objek_penerima_1721[$key]),
                 'jumlah_penerima_penghasilan' => $request->objek_jumlahpenerima[$key],
                 'jumlah_penghasilan_bruto' => $request->objek_jumlahpenghasilan[$key],
                 'jumlah_pajak_dipotong' => $request->objek_jumlahpajak[$key],
@@ -121,7 +124,7 @@ class SptMasaPajakPenghasilanController extends Controller
             $data1721lines = array(
                 'formulir_id' => $header_id,
                 'penerima_penghasilan' => $objek_penerimac_1721[$key],
-                'kode_objek' => $request->objek_kodeobjek_c[$key],
+                'kode_objek' => preg_replace('/[^0-9]/','',$objek_penerimac_1721[$key]),
                 'jumlah_penerima_penghasilan' => $request->objek_jumlahpenerima_c[$key],
                 'jumlah_penghasilan_bruto' => $request->objek_jumlahpenghasilan_c[$key],
                 'jumlah_pajak_dipotong' => $request->objek_jumlahpajak_c[$key],

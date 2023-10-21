@@ -21,7 +21,12 @@
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
                     <div class="form-group first">
-                        <input placeholder="Name"id="name" type="text"autocomplete="off"
+                        <input placeholder="Nama Lengkap" id="nama_lengkap" type="text"
+                            class="form-control" name="nama_lengkap"
+                            required autocomplete="off">
+                    </div>
+                    <div class="form-group first">
+                        <input placeholder="Nama Panggilan"id="name" type="text"autocomplete="off"
                             class="form-control @error('name') is-invalid @enderror" name="name"
                             value="{{ old('name') }}" required autocomplete="name" autofocus>
                         @error('name')
@@ -33,6 +38,16 @@
                     <div class="form-group first">
                         <input placeholder="NIM" id="email" type="number"
                             class="form-control" name="email"
+                            required autocomplete="off">
+                    </div>
+                    <div class="form-group first">
+                        <input placeholder="Kelas" id="kelas" type="text"
+                            class="form-control" name="kelas"
+                            required autocomplete="off">
+                    </div>
+                    <div class="form-group first">
+                        <input placeholder="Dosen Pembimbing" id="dosen_pembimbing" type="text"
+                            class="form-control" name="dosen_pembimbing"
                             required autocomplete="off">
                     </div>
                     {{-- <div class="form-group first">

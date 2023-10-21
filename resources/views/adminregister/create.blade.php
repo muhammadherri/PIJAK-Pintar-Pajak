@@ -29,10 +29,17 @@
                                     @method('POST')
                                     <div class="row">
                                         <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">Nama</label>
+                                            <label class="col-sm-3 col-form-label">Nama Lengkap</label>
+                                            <div class="col-sm-9">
+                                                <input autocomplete="off" required id="nama_lengkap" name="nama_lengkap"
+                                                    type="text" class="form-control" placeholder="Masukkan Lengkap">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Nama Panggilan</label>
                                             <div class="col-sm-9">
                                                 <input autocomplete="off" required id="name" name="name"
-                                                    type="text" class="form-control" placeholder="Masukkan Nama">
+                                                    type="text" class="form-control" placeholder="Masukkan Panggilan">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
@@ -40,6 +47,20 @@
                                             <div class="col-sm-9">
                                                 <input autocomplete="off" required id="nim" name="nim"
                                                     type="text" class="form-control" placeholder="Masukkan Nomo Induk Mahasiswa">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Kelas</label>
+                                            <div class="col-sm-9">
+                                                <input autocomplete="off" required id="kelas" name="kelas"
+                                                    type="text" class="form-control" placeholder="Masukkan Kelas">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">Dosen Pembimbing</label>
+                                            <div class="col-sm-9">
+                                                <input autocomplete="off" required id="dosen_pembimbing" name="dosen_pembimbing"
+                                                    type="text" class="form-control" placeholder="Masukkan Dosen Pembimbing">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">

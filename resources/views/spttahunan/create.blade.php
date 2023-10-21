@@ -400,7 +400,27 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">9a.PPh Yang Harus Dibayar
                                                         Sendiri</label>
-                                                    <div class="col-sm-4">
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-3">
+                                                            <div class="form-check">
+                                                                <input id="wajib_pajak" class="form-check-input"
+                                                                    type="radio" name="wajib_pajak" value="0" checked>
+                                                                <label class="form-check-label">
+                                                                    Wajib Pajak
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <div class="form-check">
+                                                                <input id="wajib_pajak" class="form-check-input"
+                                                                    type="radio" name="wajib_pajak" value="1">
+                                                                <label class="form-check-label">
+                                                                    Kuasa
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {{-- <div class="col-sm-4">
                                                         <input type="number" autocomplete="off" min="0"
                                                             placeholder="Masukkan PPh Yang Harus Dibayar Sendiri" required
                                                             class="form-control"id="c9a_kredit_pajak"
@@ -413,7 +433,7 @@
                                                             class="form-control"id="c9b_kredit_pajak"
                                                             name="c9b_kredit_pajak">
                                                     </div>
-                                                    <label class="col-sm-1 col-form-label">k</label>
+                                                    <label class="col-sm-1 col-form-label"></label> --}}
                                                 </div>
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label"></label>
@@ -2249,10 +2269,10 @@
             const hasilpembagianc9 = c9a / c9b;
             const potonganc9 = hasilb6 - c7 - hasilc8c;
             const hasilc9 = hasilpembagianc9 * potonganc9;
-            if (hasilc9 < 0) {
+            if (potonganc9 < 0) {
                 resultc9.value = 0;
             } else {
-                resultc9.value = hasilc9;
+                resultc9.value = potonganc9;
             }
 
             const c10a = parseFloat(inputc10a.value) || 0;

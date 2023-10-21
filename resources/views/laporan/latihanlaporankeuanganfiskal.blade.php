@@ -1027,7 +1027,8 @@
                                         <th class="text-center">{{number_format($totalliabilitasmodal)}}</th>
                                         <th class="text-center">{{number_format($totaldebit)}}</th>
                                         <th class="text-center">{{number_format($totalkredit)}}</th>
-                                        <th colspan="3" class="text-center"></th>
+                                        <th class="text-center">{{number_format($totalkomersial)}}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                 </table>
                             </div>

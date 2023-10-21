@@ -8,14 +8,11 @@
     <link rel="stylesheet" href="{{ asset('app-assets/fonts/icomoon/style.css') }}">
     <link rel="stylesheet" href="{{ asset('app-assets/css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('app-assets/css/bootstrap.min.css') }}">
-
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('app-assets/css/bootstrap.min.css') }}">
-
     <!-- Style -->
     <link rel="stylesheet" href="{{ asset('app-assets/css/style.css') }}">
-
+    <link rel="icon" href="{{ asset('images/umlogo.png') }}">
     <title>Taxceed</title>
 </head>
 <body>
