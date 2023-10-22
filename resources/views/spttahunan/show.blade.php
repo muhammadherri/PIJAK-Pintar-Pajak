@@ -7730,7 +7730,11 @@
             <tr class=xl679897 height=16 style='mso-height-source:userset;height:12.0pt'>
                 <td height=16 class=xl949897 style='height:12.0pt'>9.</td>
                 <td class=xl909897><span style='mso-spacerun:yes'>  </span>a.</td>
+                @if($spt->c9a_kredit_pajak==0)
+                <td class=xl1399897>&nbsp;X</td>
+                @else
                 <td class=xl1399897>&nbsp;</td>
+                @endif
                 <td class=xl909897 colspan=10><span style='mso-spacerun:yes'>  </span>PPh
                     YANG HARUS DIBAYAR SENDIRI</td>
                 <td class=xl909897></td>
@@ -7780,8 +7784,12 @@
             <tr class=xl679897 height=17 style='mso-height-source:userset;height:12.75pt'>
                 <td height=17 class=xl949897 style='height:12.75pt'><span style='mso-spacerun:yes'>  </span></td>
                 <td class=xl909897><span style='mso-spacerun:yes'>  </span>b.</td>
+                @if($spt->c9a_kredit_pajak==1)
+                <td class=xl1399897>&nbsp;X</td>
+                @else
                 <td class=xl1399897>&nbsp;</td>
-                <td class=xl909897>k<span style='mso-spacerun:yes'> </span></td>
+                @endif
+                <td class=xl909897> &nbsp; PPh YANG LEBIH DIPOTONG / DIPUNGUT<span style='mso-spacerun:yes'> </span></td>
                 <td class=xl789897></td>
                 <td class=xl789897></td>
                 <td class=xl909897></td>
@@ -8219,7 +8227,11 @@
             <tr class=xl679897 height=17 style='mso-height-source:userset;height:12.75pt'>
                 <td height=17 class=xl949897 style='height:12.75pt'>11.</td>
                 <td class=xl909897><span style='mso-spacerun:yes'>  </span>a.</td>
+                @if($spt->d11a_pph_kurang==0)
+                <td class=xl1399897>&nbsp;X</td>
+                @else
                 <td class=xl1399897>&nbsp;</td>
+                @endif
                 <td class=xl909897 colspan=12><span style='mso-spacerun:yes'>  </span>PPh
                     YANG KURANG DIBAYAR (PPh Ps. 29)</td>
                 <td colspan=4 rowspan=4 class=xl949897><span style='mso-spacerun:yes'> </span>(9 – 10c)…..</td>
@@ -8266,7 +8278,11 @@
             <tr class=xl679897 height=16 style='mso-height-source:userset;height:12.0pt'>
                 <td height=16 class=xl949897 style='height:12.0pt'><span style='mso-spacerun:yes'>  </span></td>
                 <td class=xl909897><span style='mso-spacerun:yes'>  </span>b.</td>
+                @if($spt->d11a_pph_kurang==1)
+                <td class=xl1399897>&nbsp;X</td>
+                @else
                 <td class=xl1399897>&nbsp;</td>
+                @endif
                 <td class=xl909897 colspan=11><span style='mso-spacerun:yes'>  </span>PPh
                     YANG LEBIH DIBAYAR (PPh Ps. 28A)</td>
                 <td class=xl979897></td>

@@ -107,7 +107,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>Nama</th>
-                                                    <th>Email Dan NIK</th>
+                                                    <th>Nomor Induk Mahasiswa</th>
                                                     <th>Status</th>
                                                     <th>Terakhir Login</th>
                                                     <th>Action</th>

@@ -87,6 +87,9 @@
                                         {{-- TAB 1771 --}}
                                         <div class="tab-pane fade show active" id="nav-1771" role="tabpanel"
                                             aria-labelledby="nav-1771-tab">
+                                            <h4 align="center">SPT TAHUNAN </p>
+                                                PAJAK PENGHASILAN WAJIB PAJAK BADAN</h4>
+                                            <hr>
                                             <div class="row">
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Jenis SPT</label>
@@ -198,8 +201,8 @@
                                                     <label class="col-sm-3 col-form-label">Pembukuan / Laporan
                                                         Keuangan</label>
                                                     <div class="col-sm-9">
-                                                        <select onchange="laporankeuangan()" id="laporan_keuangan" name="laporan_keuangan"
-                                                            class="dropdown-groups">
+                                                        <select onchange="laporankeuangan()" id="laporan_keuangan"
+                                                            name="laporan_keuangan" class="dropdown-groups">
                                                             <option value="0">Diaudit</option>
                                                             <option value="1">Opini Akuntan</option>
                                                             <option value="2">Tidak Diaudit</option>
@@ -212,8 +215,7 @@
                                                     <div class="col-sm-9">
                                                         <input type="text"
                                                             placeholder="Masukkan Nama Kantor Akuntan Publik..."
-                                                            autocomplete="off"
-                                                            class="form-control"id="kantor_akuntan"
+                                                            autocomplete="off" class="form-control"id="kantor_akuntan"
                                                             name="kantor_akuntan">
                                                         <span id="errorkantor_akuntan" style="color: red;"></span>
                                                     </div>
@@ -224,7 +226,7 @@
                                                     <div class="col-sm-9">
                                                         <input type="number" min="0"
                                                             placeholder="Masukkan NPWP Kantor Akuntan Publik..."
-                                                            autocomplete="off" 
+                                                            autocomplete="off"
                                                             class="form-control"id="npwp_kantor_akuntan"
                                                             name="npwp_kantor_akuntan">
                                                         <span id="errornpwp_kantor_akuntan" style="color: red;"></span>
@@ -235,8 +237,7 @@
                                                     <div class="col-sm-9">
                                                         <input type="text"
                                                             placeholder="Masukkan Nama Akuntan Publik..."
-                                                            autocomplete="off" 
-                                                            class="form-control"id="akuntan_publik"
+                                                            autocomplete="off" class="form-control"id="akuntan_publik"
                                                             name="akuntan_publik">
                                                         <span id="errorakuntan_publik" style="color: red;"></span>
                                                     </div>
@@ -246,7 +247,7 @@
                                                     <div class="col-sm-9">
                                                         <input type="number" min="0"
                                                             placeholder="Masukkan NPWP Akuntan Publik..."
-                                                            autocomplete="off" 
+                                                            autocomplete="off"
                                                             class="form-control"id="nama_akuntan_publik"
                                                             name="nama_akuntan_publik">
                                                         <span id="errornama_akuntan_publik" style="color: red;"></span>
@@ -258,7 +259,7 @@
                                                     <div class="col-sm-9">
                                                         <input type="text"
                                                             placeholder="Masukkan Nama Kantor Konsultan Pajak..."
-                                                            autocomplete="off" 
+                                                            autocomplete="off"
                                                             class="form-control"id="nama_kantor_konsultan_pajak"
                                                             name="nama_kantor_konsultan_pajak">
                                                         <span id="errornama_kantor_konsultan_pajak"
@@ -271,7 +272,7 @@
                                                     <div class="col-sm-9">
                                                         <input type="number" min="0"
                                                             placeholder="Masukkan NPWP Kantor Konsultan Pajak..."
-                                                            autocomplete="off" 
+                                                            autocomplete="off"
                                                             class="form-control"id="npwp_kantor_konsultan_pajak"
                                                             name="npwp_kantor_konsultan_pajak">
                                                         <span id="errorpwp_kantor_konsultan_pajak"
@@ -283,7 +284,7 @@
                                                     <div class="col-sm-9">
                                                         <input type="text"
                                                             placeholder="Masukkan Nama Konsultan Pajak..."
-                                                            autocomplete="off" 
+                                                            autocomplete="off"
                                                             class="form-control"id="nama_konsultan_pajak"
                                                             name="nama_konsultan_pajak">
                                                         <span id="errornama_konsultan_pajak" style="color: red;"></span>
@@ -294,7 +295,7 @@
                                                     <div class="col-sm-9">
                                                         <input type="number" min="0"
                                                             placeholder="Masukkan NPWP Konsultan Pajak..."
-                                                            autocomplete="off" 
+                                                            autocomplete="off"
                                                             class="form-control"id="npwp_konsultan_pajak"
                                                             name="npwp_konsultan_pajak">
                                                         <span id="errornpwp_konsultan_pajak" style="color: red;"></span>
@@ -320,7 +321,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="mb-3 row">
-                                                    <label class="col-sm-3 col-form-label">3.Penghasilan Kena Pajak</label>
+                                                    <label class="col-sm-3 col-form-label">3.Penghasilan Kena Pajak
+                                                        (1-2)</label>
                                                     <div class="col-sm-9">
                                                         <input type="number" min="0" readonly autocomplete="off"
                                                             required class="form-control"id="a3_kena_pajak"
@@ -348,7 +350,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="mb-3 row">
-                                                    <label class="col-sm-3 col-form-label">6.Jumlah PPh Terutang</label>
+                                                    <label class="col-sm-3 col-form-label">6.Jumlah PPh Terutang
+                                                        (4+5)</label>
                                                     <div class="col-sm-9">
                                                         <input type="text" readonly autocomplete="off" required
                                                             class="form-control"id="b6_pph_terutang"
@@ -390,7 +393,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="mb-3 row">
-                                                    <label class="col-sm-3 col-form-label">8c.Jumlah</label>
+                                                    <label class="col-sm-3 col-form-label">8c.Jumlah (8a +8b)</label>
                                                     <div class="col-sm-9">
                                                         <input type="text" readonly autocomplete="off" required
                                                             class="form-control"id="c8c_kredit_pajak"
@@ -398,24 +401,25 @@
                                                     </div>
                                                 </div>
                                                 <div class="mb-3 row">
-                                                    <label class="col-sm-3 col-form-label">9a.PPh Yang Harus Dibayar
-                                                        Sendiri</label>
                                                     <div class="mb-3 row">
-                                                        <div class="col-sm-3">
+                                                        <label class="col-sm-3 col-form-label"></label>
+                                                        <div class="col-sm-4">
                                                             <div class="form-check">
-                                                                <input id="wajib_pajak" class="form-check-input"
-                                                                    type="radio" name="wajib_pajak" value="0" checked>
+                                                                <input id="c9a_kredit_pajak" class="form-check-input"
+                                                                    type="radio" name="c9a_kredit_pajak" value="0"
+                                                                    checked>
                                                                 <label class="form-check-label">
-                                                                    Wajib Pajak
+                                                                    PPh Yang Harus Dibayar Sendiri
                                                                 </label>
                                                             </div>
                                                         </div>
-                                                        <div class="col-sm-3">
+                                                        <div class="col-sm-5">
                                                             <div class="form-check">
-                                                                <input id="wajib_pajak" class="form-check-input"
-                                                                    type="radio" name="wajib_pajak" value="1">
+                                                                <input id="c9a_kredit_pajak" class="form-check-input"
+                                                                    type="radio" name="c9a_kredit_pajak"
+                                                                    value="1">
                                                                 <label class="form-check-label">
-                                                                    Kuasa
+                                                                    PPh Yang Lebih Dipotong / Dipungut
                                                                 </label>
                                                             </div>
                                                         </div>
@@ -436,7 +440,7 @@
                                                     <label class="col-sm-1 col-form-label"></label> --}}
                                                 </div>
                                                 <div class="mb-3 row">
-                                                    <label class="col-sm-3 col-form-label"></label>
+                                                    <label class="col-sm-3 col-form-label">9. Jumlah (6-7-8c)</label>
                                                     <div class="col-sm-9">
                                                         <input type="number" autocomplete="off" min="0" readonly
                                                             class="form-control"id="c9_kredit_pajak"
@@ -464,7 +468,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="mb-3 row">
-                                                    <label class="col-sm-3 col-form-label">10c.Jumlah</label>
+                                                    <label class="col-sm-3 col-form-label">10c.Jumlah (10a + 10b)</label>
                                                     <div class="col-sm-9">
                                                         <input type="text" readonly autocomplete="off" required
                                                             class="form-control"id="c10c_kredit_pajak"
@@ -473,16 +477,38 @@
                                                 </div>
                                                 <h4>D.PPh Kurang Lebih Bayar</h4>
                                                 <div class="mb-3 row">
-                                                    <label class="col-sm-3 col-form-label">11a.PPh Kurang Di Bayar</label>
+                                                    <div class="mb-3 row">
+                                                        <label class="col-sm-3 col-form-label"></label>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-check">
+                                                                <input id="d11a_pph_kurang" class="form-check-input"
+                                                                    type="radio" name="d11a_pph_kurang" value="0"
+                                                                    checked>
+                                                                <label class="form-check-label">
+                                                                    PPh YANG KURANG DIBAYAR (PPh Ps. 29)
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-5">
+                                                            <div class="form-check">
+                                                                <input id="d11a_pph_kurang" class="form-check-input"
+                                                                    type="radio" name="d11a_pph_kurang" value="1">
+                                                                <label class="form-check-label">
+                                                                    PPh YANG LEBIH DIBAYAR (PPh Ps. 28A)
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {{-- <label class="col-sm-3 col-form-label">11a.PPh Kurang Di Bayar</label>
                                                     <div class="col-sm-9">
                                                         <input type="number" min="0"
                                                             placeholder="Masukkan PPh Kurang Di Bayar..."
                                                             autocomplete="off" required
                                                             class="form-control"id="d11a_pph_kurang"
                                                             name="d11a_pph_kurang">
-                                                    </div>
+                                                    </div> --}}
                                                 </div>
-                                                <div class="mb-3 row">
+                                                {{-- <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">11b.PPh Lebih Di Bayar</label>
                                                     <div class="col-sm-9">
                                                         <input type="number" min="0"
@@ -491,21 +517,19 @@
                                                             class="form-control"id="d11b_pph_kurang"
                                                             name="d11b_pph_kurang">
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                                 <div class="mb-3 row">
-                                                    <label class="col-sm-3 col-form-label"></label>
+                                                    <label class="col-sm-3 col-form-label">11. Jumlah (9 - 10c)</label>
                                                     <div class="col-sm-9">
                                                         <input type="number" min="0" autocomplete="off" readonly
-                                                            class="form-control"id="d11_pph_kurang"
-                                                            name="d11_pph_kurang">
+                                                            class="form-control"id="d11_pph_kurang" name="d11_pph_kurang">
                                                     </div>
                                                 </div>
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">12.Tanggal Setor</label>
                                                     <div class="col-sm-9">
                                                         <input type="date" required
-                                                            class="form-control"id="d12_pph_kurang"
-                                                            name="d12_pph_kurang">
+                                                            class="form-control"id="d12_pph_kurang" name="d12_pph_kurang">
                                                     </div>
                                                 </div>
                                                 <div class="mb-3 row">
@@ -543,7 +567,7 @@
                                                 </div>
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">14c. Penghasilan Kena
-                                                        Pajak</label>
+                                                        Pajak (14a - 14b)</label>
                                                     <div class="col-sm-9">
                                                         <input type="number" readonly
                                                             class="form-control"id="e14c_angsuran_pph"
@@ -551,7 +575,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="mb-3 row">
-                                                    <label class="col-sm-3 col-form-label">14d. PPh Yang Terutang</label>
+                                                    <label class="col-sm-3 col-form-label">14d. PPh Yang Terutang (Tarif
+                                                        PPh dari Bagian B Nomor 4 X 14c)</label>
                                                     <div class="col-sm-9">
                                                         <input type="number" readonly
                                                             class="form-control"id="e14d_angsuran_pph"
@@ -570,7 +595,7 @@
                                                 </div>
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">14f. PPh Yang Harus Dibayar
-                                                        Sendiri</label>
+                                                        Sendiri (1/2 x 14f)</label>
                                                     <div class="col-sm-9">
                                                         <input type="number" readonly
                                                             class="form-control"id="e14f_angsuran_pph"
@@ -591,8 +616,7 @@
                                                     <div class="col-sm-9">
                                                         <input type="number" required min="0"
                                                             placeholder="Masukkan PPh Final..."
-                                                            class="form-control"id="f15a_pph_final"
-                                                            name="f15a_pph_final">
+                                                            class="form-control"id="f15a_pph_final" name="f15a_pph_final">
                                                     </div>
                                                 </div>
                                                 <div class="mb-3 row">
@@ -600,8 +624,7 @@
                                                     <div class="col-sm-9">
                                                         <input type="number" required min="0"
                                                             placeholder="Masukkan Penghasilan Bruto..."
-                                                            class="form-control"id="f15b_pph_final"
-                                                            name="f15b_pph_final">
+                                                            class="form-control"id="f15b_pph_final" name="f15b_pph_final">
                                                     </div>
                                                 </div>
                                                 <h4>G. Pernyataan Transaksi Dalam Hubungan Istimewa</h4>
@@ -711,14 +734,18 @@
                                             </div>
                                         </div>
                                         {{-- TAB 1771 --}}
-                                        {{-- TAB 1771 I--}}
+                                        {{-- TAB 1771 I --}}
                                         <div class="tab-pane fade" id="nav-1771I" role="tabpanel"
                                             aria-labelledby="nav-1771I-tab">
+                                            <h4 align="center">LAMPIRAN - I</p>
+                                                SPT TAHUNAN PAJAK PENGHASILAN WAJIB PAJAK BADAN</h4>
+                                            <hr>
                                             <div class="row">
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Jenis SPT</label>
                                                     <div class="col-sm-9">
-                                                        <select id="jenis_sptI" name="jenis_sptI" class="dropdown-groups">
+                                                        <select id="jenis_sptI" name="jenis_sptI"
+                                                            class="dropdown-groups">
                                                             <option value="1771I">1771 I</option>
                                                         </select>
                                                     </div>
@@ -753,7 +780,8 @@
                                                     <div class="col-sm-9">
                                                         <input type="text" autocomplete="off" required
                                                             placeholder="Masukkan Nama Wajib Pajak"
-                                                            class="form-control"id="nama_npwp_1771i" name="nama_npwp_1771i">
+                                                            class="form-control"id="nama_npwp_1771i"
+                                                            name="nama_npwp_1771i">
                                                         <span id="errornamaNpwp_1771i" style="color: red;"></span>
                                                     </div>
                                                 </div>
@@ -874,7 +902,8 @@
                                                     <div class="col-sm-9">
                                                         <input type="number" min="0" autocomplete="off" required
                                                             placeholder="Masukkan Penghasilan Yand Dikanakan PPh..."
-                                                            class="form-control"id="penghasilan_1771i" name="penghasilan_1771i">
+                                                            class="form-control"id="penghasilan_1771i"
+                                                            name="penghasilan_1771i">
                                                     </div>
                                                 </div>
                                                 <hr>
@@ -1054,10 +1083,10 @@
                                                     <label class="col-sm-3 col-form-label">Pengurangan Penghasilan
                                                         Netto</label>
                                                     <div class="col-sm-9">
-                                                        <input type="number" min="0" autocomplete="off"
-                                                            required
+                                                        <input type="number" min="0" autocomplete="off" required
                                                             placeholder="Masukkan Pengurangan Penghasilan Netto..."
-                                                            class="form-control"id="fasilitas_1771i" name="fasilitas_1771i">
+                                                            class="form-control"id="fasilitas_1771i"
+                                                            name="fasilitas_1771i">
                                                     </div>
                                                 </div>
                                                 <hr>
@@ -1065,8 +1094,8 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Netto Fiskal</label>
                                                     <div class="col-sm-9">
-                                                        <input type="number" min="0" autocomplete="off"
-                                                            readonly class="form-control"id="netto_fiskal_1771i"
+                                                        <input type="number" min="0" autocomplete="off" readonly
+                                                            class="form-control"id="netto_fiskal_1771i"
                                                             name="netto_fiskal_1771i">
                                                     </div>
                                                 </div>
@@ -1077,11 +1106,16 @@
 
                                             </div>
                                         </div>
-                                        {{-- TAB 1771 I--}}
+                                        {{-- TAB 1771 I --}}
 
                                         {{-- TAB 1771 II --}}
                                         <div class="tab-pane fade " id="nav-1771II" role="tabpanel"
                                             aria-labelledby="nav-1771II-tab">
+                                            <h4 align="center">LAMPIRAN - II</p>
+                                                SPT TAHUNAN PAJAK PENGHASILAN WAJIB PAJAK BADAN</p>
+                                                PERINCIAN HARGA POKOK PENJUALAN, BIAYA USAHA LAINNYA DAN BIAYA DARI LUAR
+                                                USAHA SECARA KOMERSIAL</h4>
+                                            <hr>
                                             <div class="row">
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Jenis SPT</label>
@@ -1109,8 +1143,8 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">N P W P</label>
                                                     <div class="col-sm-9">
-                                                        <input type="number" min="0" autocomplete="off"
-                                                            required placeholder="Masukkan No N P W P"
+                                                        <input type="number" min="0" autocomplete="off" required
+                                                            placeholder="Masukkan No N P W P"
                                                             class="form-control"id="npwp_1771II" name="npwp_1771II">
                                                         <span id="errornpwp_1771II" style="color: red;"></span>
                                                     </div>
@@ -1142,8 +1176,7 @@
                                                 <hr>
                                                 <div class="card-body">
                                                     <div class="table-responsive">
-                                                        <table id="list_1771II"class="display"
-                                                            style="min-width: 845px">
+                                                        <table id="list_1771II"class="display" style="min-width: 845px">
                                                             <thead>
                                                                 <tr>
                                                                     <th class="text-center">Perincian Pembelian Barang
@@ -1157,7 +1190,8 @@
                                                             </thead>
                                                             <tbody>
                                                                 <tr>
-                                                                    <td width="auto" class="text-center" value="">
+                                                                    <td width="auto" class="text-center"
+                                                                        value="">
                                                                         <input required autocomplete="off"
                                                                             type="text" name="angkapembelianbarang[]"
                                                                             id="angkapembelianbarang[]" min="0"
@@ -1188,7 +1222,7 @@
                                                                             class="form-control jumlahtotal" />
                                                                     </td>
                                                                     <td><button type="button" class="btn btn-light"><i
-                                                                        class="fa fa-trash"></i>
+                                                                                class="fa fa-trash"></i>
                                                                     </td>
                                                                 </tr>
                                                             </tbody>
@@ -1198,8 +1232,7 @@
                                                                         <button
                                                                             class="btn btn-primary btn-submit"name='action'
                                                                             value="create" id="btn-add1771ii"
-                                                                            type="button"><i
-                                                                                data-feather='save'></i>
+                                                                            type="button"><i data-feather='save'></i>
                                                                             {{ 'Tambah Item' }}</button>
                                                                     </td>
                                                                 </tr>
@@ -1245,6 +1278,10 @@
                                         {{-- TAB 1771 III --}}
                                         <div class="tab-pane fade " id="nav-1771III" role="tabpanel"
                                             aria-labelledby="nav-1771III-tab">
+                                            <h4 align="center">LAMPIRAN - III</p>
+                                                SPT TAHUNAN PAJAK PENGHASILAN WAJIB PAJAK BADAN</p>
+                                                KREDIT PAJAK DALAM NEGERI</h4>
+                                            <hr>
                                             <div class="row">
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Jenis SPT</label>
@@ -1395,8 +1432,7 @@
                                                                         </td>
                                                                         <td class="text-center">
                                                                             <input readonly autocomplete="off"
-                                                                                type="number"
-                                                                                name="kreditpenghasilan"
+                                                                                type="number" name="kreditpenghasilan"
                                                                                 id="kreditpenghasilan" min="0"
                                                                                 class="form-control jumlahpenghasilan" />
                                                                         </td>
@@ -1417,6 +1453,10 @@
                                         {{-- TAB 1771 IV --}}
                                         <div class="tab-pane fade " id="nav-1771IV" role="tabpanel"
                                             aria-labelledby="nav-1771IV-tab">
+                                            <h4 align="center">LAMPIRAN - IV</p>
+                                                SPT TAHUNAN PAJAK PENGHASILAN WAJIB PAJAK BADAN</p>
+                                                PPh FINAL DAN PENGHASILAN YANG TIDAK TERMASUK OBJEK PAJAK</h4>
+                                            <hr>
                                             <div class="row">
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Jenis SPT</label>
@@ -1493,10 +1533,9 @@
                                                                     <tr>
                                                                         <td width="auto" class="text-center">
                                                                             <input required autocomplete="off"
-                                                                            type="text"
-                                                                            name="jenispenghasilan[]"
-                                                                            id="jenispenghasilan[]"
-                                                                            class="form-control" />
+                                                                                type="text" name="jenispenghasilan[]"
+                                                                                id="jenispenghasilan[]"
+                                                                                class="form-control" />
                                                                         </td>
                                                                         <td class="text-center">
                                                                             <input required autocomplete="off"
@@ -1521,8 +1560,9 @@
                                                                                 id="angka_pph_terutang[]" min="0"
                                                                                 class="form-control sub_terutang" />
                                                                         </td>
-                                                                        <td><button type="button" class="btn btn-light "><i
-                                                                            class="fa fa-trash"></i>
+                                                                        <td><button type="button"
+                                                                                class="btn btn-light "><i
+                                                                                    class="fa fa-trash"></i>
                                                                         </td>
                                                                     </tr>
                                                                 </tbody>
@@ -1601,8 +1641,9 @@
                                                                                 min="0"
                                                                                 class="form-control sub_penghasilan_bruto" />
                                                                         </td>
-                                                                        <td><button type="button" class="btn btn-light "><i
-                                                                            class="fa fa-trash"></i>
+                                                                        <td><button type="button"
+                                                                                class="btn btn-light "><i
+                                                                                    class="fa fa-trash"></i>
                                                                         </td>
                                                                     </tr>
                                                                 </tbody>
@@ -1625,9 +1666,9 @@
                                                                         </td>
                                                                         <td class="text-center">
                                                                             <input readonly autocomplete="off"
-                                                                            type="number" name="totalbruto"
-                                                                            id="totalbruto" min="0"
-                                                                            class="form-control total_bruto" />
+                                                                                type="number" name="totalbruto"
+                                                                                id="totalbruto" min="0"
+                                                                                class="form-control total_bruto" />
                                                                         </td>
                                                                         <td width="auto"></td>
                                                                     </tr>
@@ -1644,6 +1685,11 @@
                                         {{-- TAB 1771 V --}}
                                         <div class="tab-pane fade " id="nav-1771V" role="tabpanel"
                                             aria-labelledby="nav-1771V-tab">
+                                            <h4 align="center">LAMPIRAN - V</p>
+                                                SPT TAHUNAN PAJAK PENGHASILAN WAJIB PAJAK BADAN</p>
+                                                - DAFTAR PEMEGANG SAHAM/PEMILIK MODAL DAN JUMLAH DIVIDEN YANG DIBAGIKAN</p>
+                                                - DAFTAR SUSUNAN PENGURUS DAN KOMISARIS</h4>
+                                            <hr>
                                             <div class="row">
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Jenis SPT</label>
@@ -1706,8 +1752,7 @@
                                                 <h4>Bagian A : Daftar Pemegang Saham</h4>
                                                 <div class="card-body">
                                                     <div class="table-responsive">
-                                                        <table id="list_1771V"class="display"
-                                                            style="min-width: 845px">
+                                                        <table id="list_1771V"class="display" style="min-width: 845px">
                                                             <thead>
                                                                 <tr>
                                                                     <th class="text-center">Nama Pemegang Saham</th>
@@ -1762,7 +1807,8 @@
                                                                             type="number"
                                                                             name="pemegangsh_dividen_1771V[]"
                                                                             id="pemegangsh_dividen_1771V[]"
-                                                                            min="0" class="form-control subdividen177v_a" />
+                                                                            min="0"
+                                                                            class="form-control subdividen177v_a" />
                                                                     </td>
                                                                     <td><button type="button"
                                                                             class="btn btn-light btn-submit"><i
@@ -1800,7 +1846,7 @@
                                                                         <input readonly autocomplete="off"
                                                                             type="number" name="jumlahdividen"
                                                                             id="jumlahdividen" min="0"
-                                                                            class="form-control total_dividen"/>
+                                                                            class="form-control total_dividen" />
                                                                     </td>
                                                                     <td></td>
                                                                 </tr>
@@ -1814,8 +1860,7 @@
                                                 <h4>Bagian B : Daftar Susunan Pengurus Dan Komisaris</h4>
                                                 <div class="card-body">
                                                     <div class="table-responsive">
-                                                        <table id="list_1771Vb"class="display"
-                                                            style="min-width: 845px">
+                                                        <table id="list_1771Vb"class="display" style="min-width: 845px">
                                                             <thead>
                                                                 <tr>
                                                                     <th class="text-center">Nama Pengurus Saham</th>
@@ -1883,6 +1928,12 @@
                                         {{-- TAB 1771 VI --}}
                                         <div class="tab-pane fade " id="nav-1771VI" role="tabpanel"
                                             aria-labelledby="nav-1771VI-tab">
+                                            <h4 align="center">LAMPIRAN - VI</p>
+                                                SPT TAHUNAN PAJAK PENGHASILAN WAJIB PAJAK BADAN</p>
+                                                - DAFTAR PENYERTAAN MODAL PADA PERUSAHAAN AFILIASI</p>
+                                                - DAFTAR UTANG DARI PEMEGANG SAHAM DAN/ATAU PERUSAHAAN AFILIASI </p>
+                                                - DAFTAR PIUTANG KEPADA PEMEGANG SAHAM DAN/ATAU PERUSAHAAN AFILIASI </h4>
+                                            <hr>
                                             <div class="row">
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Jenis SPT</label>
@@ -1945,8 +1996,7 @@
                                                 <h4>Bagian A : Daftar Penyertaan Modal Afiliasi</h4>
                                                 <div class="card-body">
                                                     <div class="table-responsive">
-                                                        <table id="list_1771VI"class="display"
-                                                            style="min-width: 845px">
+                                                        <table id="list_1771VI"class="display" style="min-width: 845px">
                                                             <thead>
                                                                 <tr>
                                                                     <th class="text-center">Nama Perusahaan Afiliasi</th>
@@ -2177,9 +2227,9 @@
                                                         </table>
                                                     </div>
                                                 </div>
-                                                
+
                                             </div>
-                                           
+
                                         </div>
                                         {{-- TAB 1771 VI --}}
                                     </div>
@@ -2209,15 +2259,15 @@
         const resultc8c = document.getElementById('c8c_kredit_pajak');
 
         const inputc9a = document.getElementById('c9a_kredit_pajak');
-        const inputc9b = document.getElementById('c9b_kredit_pajak');
+        // const inputc9b = document.getElementById('c9b_kredit_pajak');
         const resultc9 = document.getElementById('c9_kredit_pajak');
 
         const inputc10a = document.getElementById('c10a_kredit_pajak');
         const inputc10b = document.getElementById('c10b_kredit_pajak');
         const resultc10c = document.getElementById('c10c_kredit_pajak');
 
-        const inputd11a = document.getElementById('d11a_pph_kurang');
-        const inputd11b = document.getElementById('d11b_pph_kurang');
+        // const inputd11a = document.getElementById('d11a_pph_kurang');
+        // const inputd11b = document.getElementById('d11b_pph_kurang');
         const resultd11 = document.getElementById('d11_pph_kurang');
 
         const inpute14a = document.getElementById('e14a_angsuran_pph');
@@ -2228,8 +2278,8 @@
         const resulte14f = document.getElementById('e14f_angsuran_pph');
         const resulte14g = document.getElementById('e14g_angsuran_pph');
 
-        [inputa1, inputa2, inputb5, inputc7, inputc8a, inputc8b, inputc9a, inputc9b,
-            inputc10a, inputc10b, inputd11a, inputd11b, inpute14a, inpute14b, inpute14e
+        [inputa1, inputa2, inputb5, inputc7, inputc8a, inputc8b, inputc9a,
+            inputc10a, inputc10b, inpute14a, inpute14b, inpute14e
         ]
         .forEach(input => {
             input.addEventListener('input', updateResult);
@@ -2265,14 +2315,14 @@
 
             const c7 = parseFloat(inputc7.value) || 0;
             const c9a = parseFloat(inputc9a.value) || 0;
-            const c9b = parseFloat(inputc9b.value) || 0;
-            const hasilpembagianc9 = c9a / c9b;
+            // const c9b = parseFloat(inputc9b.value) || 0;
+            // const hasilpembagianc9 = c9a / c9b;
             const potonganc9 = hasilb6 - c7 - hasilc8c;
-            const hasilc9 = hasilpembagianc9 * potonganc9;
-            if (potonganc9 < 0) {
+            const hasilc9 = potonganc9;
+            if (hasilc9 < 0) {
                 resultc9.value = 0;
             } else {
-                resultc9.value = potonganc9;
+                resultc9.value = hasilc9;
             }
 
             const c10a = parseFloat(inputc10a.value) || 0;
@@ -2280,11 +2330,11 @@
             const hasilc10c = c10a + c10b;
             resultc10c.value = hasilc10c;
 
-            const d11a = parseFloat(inputd11a.value) || 0;
-            const d11b = parseFloat(inputd11b.value) || 0;
-            const hasilpembagiand11 = d11a / d11b;
+            // const d11a = parseFloat(inputd11a.value) || 0;
+            // const d11b = parseFloat(inputd11b.value) || 0;
+            // const hasilpembagiand11 = d11a / d11b;
             const potongand11 = hasilc9 - hasilc10c;
-            const hasild11 = hasilpembagiand11 * potongand11;
+            const hasild11 = potongand11;
             if (hasild11 < 0) {
                 resultd11.value = 0;
             } else {
@@ -2299,7 +2349,7 @@
             } else {
                 resulte14c.value = hasile14c;
             }
-            const hasile14d = 4 * hasile14c;
+            const hasile14d = hasilb4 * hasile14c;
             if (hasile14d < 0) {
                 resulte14d.value = 0;
             } else {

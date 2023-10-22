@@ -38,7 +38,7 @@
                                                 <select id="noakun" name="noakun"
                                                 class="dropdown-groups">
                                                 @foreach ($akun as $row)
-                                                    <option value="{{ $row->no_akun }}">{{ $row->no_akun }}
+                                                    <option value="{{ $row->no_akun }}">{{ $row->no_akun }} - {{$row->nama_akun}}
                                                     </option>
                                                 @endforeach
                                                 </select>
