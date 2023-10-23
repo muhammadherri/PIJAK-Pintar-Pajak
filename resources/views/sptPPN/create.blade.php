@@ -303,7 +303,7 @@
                                                 <label class="col-sm-7 col-form-label"></label>
                                                 <label class="col-sm-1 col-form-label">PPN</label>
                                                 <div class="col-sm-4">
-                                                    <input autocomplete="off" required id="dua_c_pajak_keluaran_ppn_1111"
+                                                    <input onchange="pembayaran()" autocomplete="off" required id="dua_c_pajak_keluaran_ppn_1111"
                                                         name="dua_c_pajak_keluaran_ppn_1111"type="number" min="0"
                                                         class="form-control" placeholder="Masukkan PPN">
                                                 </div>
@@ -353,64 +353,70 @@
                                                         class="form-control" placeholder="Masukkan NTPP">
                                                 </div>
                                             </div>
-                                            <h6>H. PPN lebih bayar pada</h6>
-                                            <div class="mb-3 row">
-                                                <label class="col-sm-3 col-form-label">PPN Lebih</label>
-                                                <div class="col-sm-9">
-                                                    <select  id="dua_h_ppn_lebih_1111" name="dua_h_ppn_lebih_1111"
-                                                        class="dropdown-groups">
-                                                        <option value="0">Butir II.D Diisi dalam hal SPT Bukan Pembetulan</option>
-                                                        <option value="1">Butir II.D</option>
-                                                        <option value="2">Butir II.F Diisi dalam hal SPT Pembetulan</option>
-                                                    </select>
+                                            <div id=hidden_lebih_bayar style="display:none;" class="mb-3 row">
+                                                <h6>H. PPN lebih bayar pada</h6>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">PPN Lebih</label>
+                                                    <div class="col-sm-9">
+                                                        <select  id="dua_h_ppn_lebih_1111" name="dua_h_ppn_lebih_1111"
+                                                            class="dropdown-groups">
+                                                            <option value="10">Pilih</option>
+                                                            <option value="0">Butir II.D Diisi dalam hal SPT Bukan Pembetulan</option>
+                                                            <option value="1">Butir II.D</option>
+                                                            <option value="2">Butir II.F Diisi dalam hal SPT Pembetulan</option>
+                                                        </select>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="mb-3 row">
-                                                <label class="col-sm-3 col-form-label">Oleh</label>
-                                                <div class="col-sm-9">
-                                                    <select  id="dua_h_oleh_1111" name="dua_h_oleh_1111"
-                                                        class="dropdown-groups">
-                                                        <option value="0">PKP Pasal 9 ayat (4b) PPN</option>
-                                                        <option value="1">Selain PKP Pasal 9 ayat (4b) PPN</option>
-                                                    </select>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Oleh</label>
+                                                    <div class="col-sm-9">
+                                                        <select  id="dua_h_oleh_1111" name="dua_h_oleh_1111"
+                                                            class="dropdown-groups">
+                                                            <option value="10">Pilih</option>
+                                                            <option value="0">PKP Pasal 9 ayat (4b) PPN</option>
+                                                            <option value="1">Selain PKP Pasal 9 ayat (4b) PPN</option>
+                                                        </select>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="mb-3 row">
-                                                <label class="col-sm-3 col-form-label">Diminta Untuk</label>
-                                                <div class="col-sm-9">
-                                                    <select onchange="togglediminta()" id="dua_h_diminta_untuk_1111" name="dua_h_diminta_untuk_1111"
-                                                        class="dropdown-groups">
-                                                        <option value="0">Dikompensasikan ke Masa Pajak  berikutnya</option>
-                                                        <option value="1">Dikembalikan (Restitusi)</option>
-                                                        <option value="2">Dikompensasikan ke Masa Pajak</option>
-                                                    </select>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Diminta Untuk</label>
+                                                    <div class="col-sm-9">
+                                                        <select onchange="togglediminta()" id="dua_h_diminta_untuk_1111" name="dua_h_diminta_untuk_1111"
+                                                            class="dropdown-groups">
+                                                            <option value="10">Pilih</option>
+                                                            <option value="0">Dikompensasikan ke Masa Pajak  berikutnya</option>
+                                                            <option value="1">Dikembalikan (Restitusi)</option>
+                                                            <option value="2">Dikompensasikan ke Masa Pajak</option>
+                                                        </select>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div id=hidden_diminta_untuk style="display:none;" class="mb-3 row">
-                                                <div class="col-sm-12">
-                                                    <input autocomplete="off" id="dua_h_diminta_untuk_date_1111"
-                                                        name="dua_h_diminta_untuk_date_1111"type="date" min="0"
-                                                        class="form-control">
+                                                <div id=hidden_diminta_untuk style="display:none;" class="mb-3 row">
+                                                    <div class="col-sm-12">
+                                                        <input autocomplete="off" id="dua_h_diminta_untuk_date_1111"
+                                                            name="dua_h_diminta_untuk_date_1111"type="date" min="0"
+                                                            class="form-control">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="mb-3 row">
-                                                <label class="col-sm-3 col-form-label">Khusus Restitusi untuk PKP</label>
-                                                <div class="col-sm-9">
-                                                    <select onchange="togglePasal()" id="dua_h_khusus_1111" name="dua_h_khusus_1111"
-                                                        class="dropdown-groups">
-                                                        <option value="0">Pasal 9 ayat (4C) PPN dilakukan dengan Pengembalian Pendahuluan</option>
-                                                        <option value="1">Pasal 17C KUP</option>
-                                                        <option value="2">Pasal 17D KUP</option>
-                                                    </select>
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Khusus Restitusi untuk PKP</label>
+                                                    <div class="col-sm-9">
+                                                        <select onchange="togglePasal()" id="dua_h_khusus_1111" name="dua_h_khusus_1111"
+                                                            class="dropdown-groups">
+                                                            <option value="10">Pilih</option>
+                                                            <option value="0">Pasal 9 ayat (4C) PPN dilakukan dengan Pengembalian Pendahuluan</option>
+                                                            <option value="1">Pasal 17C KUP</option>
+                                                            <option value="2">Pasal 17D KUP</option>
+                                                        </select>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div id=hidden_h_pasal style="display:none;" class="mb-3 row">
-                                                <div class="col-sm-12">
-                                                    <select id="dua_h_pasal_1111" name="dua_h_pasal_1111"
-                                                        class="dropdown-groups">
-                                                        <option value="0">Prosedur biasa</option>
-                                                        <option value="1">Pengembalian Pendahuluan </option>
-                                                    </select>
+                                                <div id=hidden_h_pasal style="display:none;" class="mb-3 row">
+                                                    <div class="col-sm-12">
+                                                        <select id="dua_h_pasal_1111" name="dua_h_pasal_1111"
+                                                            class="dropdown-groups">
+                                                            <option value="0">Prosedur biasa</option>
+                                                            <option value="1">Pengembalian Pendahuluan </option>
+                                                        </select>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <br>
@@ -683,7 +689,7 @@
                                             <div class="mb-3 row">
                                                 <label class="col-sm-1 col-form-label">DPP</label>
                                                 <div class="col-sm-3">
-                                                    <input min="0" placeholder="Masukkan DPP" autocomplete="off" required id="digunggung_dpp_1111_AB"
+                                                    <input min="0" onchange="kurang()" placeholder="Masukkan DPP" autocomplete="off" required id="digunggung_dpp_1111_AB"
                                                     name="digunggung_dpp_1111_AB"type="number" class="form-control">
                                                 </div>
                                                 <label class="col-sm-1 col-form-label">PPN</label>

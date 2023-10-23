@@ -86,7 +86,7 @@
 @endsection
 <script>
     $(document).ready(function() {
-        $('#listBilling').DataTable({
+        var data = $('#listBilling').DataTable({
             language: {
                 paginate: {
                     next: '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
@@ -186,6 +186,12 @@
                     }
                 },
             ]
-        })
-    })
+        });      
+        function refresh(){
+            data.ajax.reload(null,false);
+        }
+        setInterval(function(){
+            refresh();
+        },2000);
+    });
 </script>

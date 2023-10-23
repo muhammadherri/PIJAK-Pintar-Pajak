@@ -67,6 +67,12 @@ class HutangPpnController extends Controller
             'hutang_ppn'=>$request->jumlah,
             'attribute1'=>Auth::user()->id,
         );
+        Invoice::where('attribute1',Auth::user()->id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        Prepopulate::where('attribute1',Auth::user()->id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
         HutangPpn::create($data);
         $a= \DB::commit();
         return redirect()->route('hutangppn');

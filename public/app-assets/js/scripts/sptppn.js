@@ -99,6 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
             resultlima_e_ppn_terutang_1111.value=jumlahppne;
         }
     }
+
     // 1111
     // 1111AB
     const npwp_1111_AB = document.getElementById('npwp_1111_AB');
@@ -696,6 +697,31 @@ $(document).ready(function(){
         var inputValue = $(activeTab + ' input ').val();
     })
 });
+function pembayaran() {
+    var nomorsatu = document.getElementById("dua_a_pajak_keluaran_ppn_1111");
+    var nomorlima = document.getElementById("dua_c_pajak_keluaran_ppn_1111");
+    var hidden_lebih_bayar = document.getElementById("hidden_lebih_bayar");
+
+    if (nomorsatu.value > nomorlima.value) {
+        hidden_lebih_bayar.style.display = 'none';
+      
+    } else {
+        hidden_lebih_bayar.style.display = 'block';
+       
+    }
+}
+function kurang() {
+    var nomorsatu = document.getElementById("digunggung_dpp_1111_AB");
+    var nomorlima = document.getElementById("dua_c_pajak_keluaran_ppn_1111");
+    var hidden_lebih_bayar = document.getElementById("hidden_lebih_bayar");
+    var kurang = nomorsatu*11/100;
+    if (kurang > nomorlima.value) {
+        hidden_lebih_bayar.style.display = 'none';
+    } else {
+        hidden_lebih_bayar.style.display = 'block';
+       
+    }
+}
 function togglePasal() {
     var dua_h_khusus_1111 = document.getElementById("dua_h_khusus_1111");
     var hidden_h_pasal = document.getElementById("hidden_h_pasal");
