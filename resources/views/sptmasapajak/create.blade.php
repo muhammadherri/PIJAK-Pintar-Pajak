@@ -96,6 +96,10 @@
                                         {{-- 1721 --}}
                                         <div class="tab-pane fade show active" id="nav-1721" role="tabpanel"
                                             aria-labelledby="nav-1721-tab">
+                                            <h4 align="center">SURAT PEMBERITAHUAN (SPT) MASA 
+                                                PAJAK PENGHASILAN </p>
+                                                PASAL 21 DAN/ATAU PASAL 26 </h4>
+                                            <hr>
                                             <div class="row">
                                                 <h4>A. Identitas Pemotong</h4>
                                                 <div class="mb-3 row">
@@ -912,6 +916,10 @@
                                         {{-- Formulir-I --}}
                                         <div class="tab-pane fade" id="nav-1721I" role="tabpanel"
                                             aria-labelledby="nav-1721I-tab">
+                                            <h4 align="center">DAFTAR PEMOTONGAN PAJAK PENGHASILAN PASAL 21 BAGI PEGAWAI TETAP DAN PENERIMA PENSIUN ATAU
+                                                TUNJANGAN HARI TUA/JAMINAN HARI TUA BERKALA SERTA BAGI PEGAWAI NEGERI SIPIL, ANGGOTA TENTARA NASIONAL
+                                                INDONESIA, ANGGOTA POLISI REPUBLIK INDONESIA, PEJABAT NEGARA DAN PENSIUNANNYA</h4>
+                                            <hr>
                                             <div class="row">
                                                 <h4>Formulir I</h4>
                                                 <div class="mb-3 row">
@@ -1089,6 +1097,10 @@
                                         {{-- Formulir-II --}}
                                         <div class="tab-pane fade" id="nav-1721II" role="tabpanel"
                                             aria-labelledby="nav-1721II-tab">
+                                            <h4 align="center">DAFTAR BUKTI PEMOTONGAN PAJAK PENGHASILAN PASAL 21 (TIDAK FINAL)
+                                                DAN/ATAU PASAL 26</h4>
+                                            <hr>
+                                            
                                             <div class="row">
                                                 <h4>Formulir II</h4>
                                                 <div class="mb-3 row">
@@ -1217,6 +1229,9 @@
                                         {{-- Formulir-III --}}
                                         <div class="tab-pane fade" id="nav-1721III" role="tabpanel"
                                             aria-labelledby="nav-1721III-tab">
+                                            <h4 align="center">DAFTAR BUKTI PEMOTONGAN PAJAK PENGHASILAN PASAL 21
+                                                (FINAL)</h4>
+                                            <hr>
                                             <div class="row">
                                                 <h4>Formulir III</h4>
                                                 <div class="mb-3 row">
@@ -1338,6 +1353,12 @@
                                         {{-- Formulir-IV --}}
                                         <div class="tab-pane fade" id="nav-1721IV" role="tabpanel"
                                             aria-labelledby="nav-1721IV-tab">
+                                            <h4 align="center">DAFTAR SURAT SETORAN PAJAK (SSP)
+                                                DAN/ATAU BUKTI PEMINDAHBUKUAN (Pbk)
+                                                UNTUK PEMOTONGAN PAJAK
+                                                PENGHASILAN PASAL 21
+                                                DAN/ATAU PASAL 26</h4>
+                                            <hr>
                                             <div class="row">
                                                 <h4>Formulir IV</h4>
                                                 <div class="mb-3 row">
@@ -1447,6 +1468,8 @@
                                         {{-- Formulir-V --}}
                                         <div class="tab-pane fade" id="nav-1721V" role="tabpanel"
                                             aria-labelledby="nav-1721V-tab">
+                                            <h4 align="center">DAFTAR BIAYA</h4>
+                                            <hr>
                                             <div class="row">
                                                 <h4>Formulir V</h4>
                                                 <div class="mb-3 row">
@@ -1561,6 +1584,10 @@
                                         {{-- Formulir-VI --}}
                                         <div class="tab-pane fade" id="nav-1721VI" role="tabpanel"
                                             aria-labelledby="nav-1721VI-tab">
+                                            <h4 align="center">BUKTI PEMOTONGAN PAJAK
+                                                PENGHASILAN PASAL 21 (TIDAK FINAL)
+                                                ATAU PASAL 26</h4>
+                                            <hr>
                                             <div class="row">
                                                 <h4>Formulir VI</h4>
                                                 <div class="mb-3 row">
@@ -1730,6 +1757,10 @@
                                         {{-- Formulir-VII --}}
                                         <div class="tab-pane fade" id="nav-1721VII" role="tabpanel"
                                             aria-labelledby="nav-1721VII-tab">
+                                            <h4 align="center">BUKTI PEMOTONGAN PAJAK
+                                                PENGHASILAN PASAL 21
+                                                (FINAL)</h4>
+                                            <hr>
                                             <div class="row">
                                                 <h4>Formulir VII</h4>
                                                 <div class="mb-3 row">
@@ -1868,6 +1899,11 @@
                                         {{-- Formulir-A1 --}}
                                         <div class="tab-pane fade" id="nav-1721A1" role="tabpanel"
                                             aria-labelledby="nav-1721A1-tab">
+                                            <h4 align="center">BUKTI PEMOTONGAN PAJAK PENGHASILAN
+                                                PASAL 21 BAGI PEGAWAI TETAP ATAU
+                                                PENERIMA PENSIUN ATAU TUNJANGAN HARI
+                                                TUA/JAMINAN HARI TUA BERKALA</h4>
+                                            <hr>
                                             <div class="row">
                                                 <h4>Formulir A1</h4>
                                                 <div class="mb-3 row">
@@ -2177,6 +2213,12 @@
                                         {{-- Formulir-A2 --}}
                                         <div class="tab-pane fade" id="nav-1721A2" role="tabpanel"
                                             aria-labelledby="nav-1721A2-tab">
+                                            <h4 align="center">BUKTI PEMOTONGAN PAJAK PENGHASILAN
+                                                PASAL 21 BAGI PEGAWAI NEGERI SIPIL ATAU
+                                                ANGGOTA TENTARA NASIONAL INDONESIA
+                                                ATAU ANGGOTA POLISI REPUBLIK INDONESIA
+                                                ATAU PEJABAT NEGARA ATAU PENSIUNANNYA</h4>
+                                            <hr>
                                             <div class="row">
                                                 <h4>Formulir A2</h4>
                                                 <div class="mb-3 row">

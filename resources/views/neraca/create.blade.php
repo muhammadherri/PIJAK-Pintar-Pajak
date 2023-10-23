@@ -55,7 +55,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Saldo</label>
                                             <div class="col-sm-9">
-                                                <input min="0" step="any" autocomplete="off" required id="saldo" name="saldo" type="number" class="form-control"
+                                                <input step="any" autocomplete="off" required id="saldo" name="saldo" type="number" class="form-control"
                                                     placeholder="Masukkan saldo">
                                             </div>
                                         </div>

@@ -58,7 +58,7 @@
                                                 </td> --}}
                                                 <td>{{ $row->no_akun }}</td>
                                                 <td>{{ $row->nama_akun }}</td>
-                                                <td>{{ $row->saldo }}</td>
+                                                <td>{{ number_format($row->saldo,2) }}</td>
                                                 <td>{{ $row->attribute3 }}</td>
                                                 <td>{{ $row->users->name }}</td>
                                                 <td>{{ date('d-M-Y',strtotime($row->created_at)) }}</td>

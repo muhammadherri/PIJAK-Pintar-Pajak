@@ -36,13 +36,13 @@ class HutangPpnController extends Controller
     public function create()
     {
         $id=Auth::user()->id;
-        if(Auth::user()->status==1){
-            $ppnmasuk = Prepopulate::sum('jumlah_ppn');
-            $ppnkeluar = Invoice::sum('ppn');
-        }else{
-            $ppnmasuk = Prepopulate::where('attribute1',$id)->sum('jumlah_ppn');
-            $ppnkeluar = Invoice::where('attribute1',$id)->sum('ppn');
-        }
+        // if(Auth::user()->status==1){
+        //     $ppnmasuk = Prepopulate::sum('jumlah_ppn');
+        //     $ppnkeluar = Invoice::sum('ppn');
+        // }else{
+        $ppnmasuk = Prepopulate::where('attribute1',$id)->sum('jumlah_ppn');
+        $ppnkeluar = Invoice::where('attribute1',$id)->sum('ppn');
+        // }
         return view('hutangppn.create',compact('ppnmasuk','ppnkeluar'));
     }
 
