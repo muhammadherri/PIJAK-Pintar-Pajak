@@ -61,7 +61,7 @@
                                             <label class="col-sm-3 col-form-label">Tarif Lebih Tinggi</label>
                                             <div class="col-xl-4 col-xxl-6 col-6">
                                                 <div class="form-check custom-checkbox mb-3">
-                                                    <input type="checkbox" required class="form-check-input" id="customCheckBox1" required>
+                                                    <input type="checkbox" class="form-check-input" id="customCheckBox1">
                                                     <label class="form-check-label" for="customCheckBox1">Klik Centang</label>
                                                 </div>
                                             </div>

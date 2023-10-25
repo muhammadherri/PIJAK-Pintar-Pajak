@@ -16,7 +16,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="mb-4">
-                    <h3><strong>{{ __('TAXCEED') }}</strong></h3>
+                    <h3><strong>{{ __('LOGIN') }}</strong></h3>
                 </div>
                 <form method="POST" action="{{ route('login') }}">
                     @csrf

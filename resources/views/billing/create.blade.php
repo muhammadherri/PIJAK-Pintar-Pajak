@@ -35,8 +35,8 @@
                                                 <select onchange="toggletrx()" id="trx_wan"name="trx_wan"
                                                     class="dropdown-groups">
                                                     <option value="0">Pilih Transaksi</option>
-                                                    <option value="1">Transaksih E-Bupot</option>
-                                                    <option value="2">Transaksih PPn</option>
+                                                    <option value="1">Transaksi E-Bupot</option>
+                                                    <option value="2">Transaksi PPn</option>
                                                     <option value="3">PPh Final</option>
                                                     <option value="4">PPh Tidak Final</option>
                                                 </select>

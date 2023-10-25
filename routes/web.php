@@ -189,6 +189,7 @@ Route::get('/prepopulates', [App\Http\Controllers\PrepopulateController::class, 
 Route::get('/prepopulates/create', [App\Http\Controllers\PrepopulateController::class, 'create'])->name('prepopulates/create');
 Route::post('/prepopulates/store', [App\Http\Controllers\PrepopulateController::class, 'store'])->name('prepopulates/store');
 
+Route::get('/prepopulates/{id}/destroy', [App\Http\Controllers\PrepopulateController::class, 'destroy'])->name('prepopulates/destroy');
 Route::delete('/prepopulates/{id}', [App\Http\Controllers\PrepopulateController::class, 'destroy']);
 Route::get('/prepopulates/{id}/show', [App\Http\Controllers\PrepopulateController::class, 'show'])->name('prepopulates/show');
 Route::get('/prepopulates/{id}/edit', [App\Http\Controllers\PrepopulateController::class, 'edit'])->name('prepopulates/edit');
@@ -231,6 +232,28 @@ Route::get('/sptPPN/{id}/show', [App\Http\Controllers\SptPpnController::class, '
 Route::get('/sptPPN/{id}/edit', [App\Http\Controllers\SptPpnController::class, 'edit'])->name('sptPPN/edit');
 Route::put('/sptPPN/{id}', [App\Http\Controllers\SptPpnController::class, 'update'])->name('sptPPN/update');
 // sptppn
+
+// spt1770s
+Route::get('/sptS', [App\Http\Controllers\Spt1770SController::class, 'index'])->name('sptS');
+Route::get('/sptS/create', [App\Http\Controllers\Spt1770SController::class, 'create'])->name('sptS/create');
+Route::post('/sptS/store', [App\Http\Controllers\Spt1770SController::class, 'store'])->name('sptS/store');
+
+Route::get('/sptS/{id}/destroy', [App\Http\Controllers\Spt1770SController::class, 'destroy'])->name('sptS/destroy');
+Route::get('/sptS/{id}/show', [App\Http\Controllers\Spt1770SController::class, 'show'])->name('sptS/show');
+Route::get('/sptS/{id}/edit', [App\Http\Controllers\Spt1770SController::class, 'edit'])->name('sptS/edit');
+Route::put('/sptS/{id}', [App\Http\Controllers\Spt1770SController::class, 'update'])->name('sptS/update');
+// spt1770s
+
+// spt1770ss
+Route::get('/sptSS', [App\Http\Controllers\Spt1770SSController::class, 'index'])->name('sptSS');
+Route::get('/sptSS/create', [App\Http\Controllers\Spt1770SSController::class, 'create'])->name('sptSS/create');
+Route::post('/sptSS/store', [App\Http\Controllers\Spt1770SSController::class, 'store'])->name('sptSS/store');
+
+Route::get('/sptSS/{id}/destroy', [App\Http\Controllers\Spt1770SSController::class, 'destroy'])->name('sptSS/destroy');
+Route::get('/sptSS/{id}/show', [App\Http\Controllers\Spt1770SSController::class, 'show'])->name('sptSS/show');
+Route::get('/sptSS/{id}/edit', [App\Http\Controllers\Spt1770SSController::class, 'edit'])->name('sptSS/edit');
+Route::put('/sptSS/{id}', [App\Http\Controllers\Spt1770SSController::class, 'update'])->name('sptSS/update');
+// spt1770ss
 
 // spttahunan
 Route::get('/spttahunan', [App\Http\Controllers\SptTahunanController::class, 'index'])->name('spttahunan');
@@ -325,6 +348,7 @@ Route::get('/hutangppnlist', [App\Http\Controllers\AllInController::class,'listH
 Route::get('/sptppnlist', [App\Http\Controllers\AllInController::class,'listSpt1111'])->name('data.spt1111');
 Route::get('/pphfinallist', [App\Http\Controllers\AllInController::class,'listPphfinal'])->name('data.pphfinal');
 Route::get('/pphtidakfinallist', [App\Http\Controllers\AllInController::class,'listPphtidakfinal'])->name('data.pphtidakfinal');
+Route::get('/spt1770sllist', [App\Http\Controllers\AllInController::class,'listspt1770s'])->name('data.spt1770s');
 // SEARCH
 Route::get('/search/resultPtkp', [App\Http\Controllers\AllInController::class,'resultPtkp'])->name('get.ptkp');
 Route::get('/search/resultNoakun', [App\Http\Controllers\AllInController::class,'akun_kredit'])->name('get.nokredit');

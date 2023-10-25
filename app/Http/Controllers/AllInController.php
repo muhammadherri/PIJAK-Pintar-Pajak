@@ -59,6 +59,7 @@ use App\Models\SptPpnLineb3;
 use App\Models\Pphfinal;
 use App\Models\PphTidakFinal;
 use App\Models\LatihanKeuangan;
+use App\Models\Spt1770S;
 use App\Models\AkunTest;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -516,6 +517,36 @@ class AllInController extends Controller
                 "masapajak" => $record->bulan->nama_bulan,
                 "tahun_pajak" => $record->masa_pajak_tahun,
                 "tempat" =>  $record->tempat_ttd,
+                "created_by" => $record->users->name,
+                "tgl_pembuatan" => $record->created_at->format('d-M-Y'),
+            );
+        }
+        // dd($data_arr);
+        $response = array(
+            "aaData" => $data_arr,
+        );
+        return json_encode($response);
+    }
+    public function listspt1770s(Request $request){
+        // dd('masuk');
+        $id=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $spt = Spt1770S::get();
+        }else{
+            $spt = Spt1770S::where('attribute1',$id)->get();
+        }
+        $data_arr = array();
+        // dd($spt);
+        foreach ($spt as $record) {
+            $data_arr[] = array(
+                "id" => $record->formulir_id,
+                "no_npwp" => $record->npwp,
+                "nama_npwp" => $record->nama_npwp,
+                "pekerjaan" => $record->pekerjaan,
+                "klu" => $record->klu,
+                "notelp" =>  $record->no_telp,
+                "statuskewajiban" =>  $record->status_kewajiban,
+                "npwppasangan" =>  $record->npwp_pasangan,
                 "created_by" => $record->users->name,
                 "tgl_pembuatan" => $record->created_at->format('d-M-Y'),
             );
@@ -1988,7 +2019,7 @@ class AllInController extends Controller
             $spt=SptPpn::where('formulir_id',$request->formulir_id)->get()->first();
 
         }else{
-            $spt=SptPpn::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
+            $spt=SptPpn::where('attribute_1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
         }
         if($spt==null){
             return back();
@@ -2002,7 +2033,7 @@ class AllInController extends Controller
             $spt=SptPpn::where('formulir_id',$request->formulir_id)->get()->first();
             $sptline=SptPpnLinea1::where('formulir_id',$request->formulir_id)->get();
         }else{
-            $spt=SptPpn::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
+            $spt=SptPpn::where('attribute_1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
             $sptline=SptPpnLinea1::where('formulir_id',$request->formulir_id)->get();
         
         }
@@ -2018,7 +2049,7 @@ class AllInController extends Controller
             $spt=SptPpn::where('formulir_id',$request->formulir_id)->get()->first();
             $sptline=SptPpnLinea2::where('formulir_id',$request->formulir_id)->get();
         }else{
-            $spt=SptPpn::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
+            $spt=SptPpn::where('attribute_1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
             $sptline=SptPpnLinea2::where('formulir_id',$request->formulir_id)->get();
         
         }
@@ -2034,7 +2065,7 @@ class AllInController extends Controller
             $spt=SptPpn::where('formulir_id',$request->formulir_id)->get()->first();
             $sptline=SptPpnLineb1::where('formulir_id',$request->formulir_id)->get();
         }else{
-            $spt=SptPpn::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
+            $spt=SptPpn::where('attribute_1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
             $sptline=SptPpnLineb1::where('formulir_id',$request->formulir_id)->get();
         
         }
@@ -2050,7 +2081,7 @@ class AllInController extends Controller
             $spt=SptPpn::where('formulir_id',$request->formulir_id)->get()->first();
             $sptline=SptPpnLineb2::where('formulir_id',$request->formulir_id)->get();
         }else{
-            $spt=SptPpn::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
+            $spt=SptPpn::where('attribute_1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
             $sptline=SptPpnLineb2::where('formulir_id',$request->formulir_id)->get();
         
         }
@@ -2066,7 +2097,7 @@ class AllInController extends Controller
             $spt=SptPpn::where('formulir_id',$request->formulir_id)->get()->first();
             $sptline=SptPpnLineb3::where('formulir_id',$request->formulir_id)->get();
         }else{
-            $spt=SptPpn::where('attribute1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
+            $spt=SptPpn::where('attribute_1',$iduser)->where('formulir_id',$request->formulir_id)->get()->first();
             $sptline=SptPpnLineb3::where('formulir_id',$request->formulir_id)->get();
         
         }

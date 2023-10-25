@@ -870,15 +870,17 @@
                                                 </div>
                                             </div>
                                             <h6>B. Pajak Masukan Lainnya</h6>
+                                            <label class="col-sm-12 col-form-label">1. Kompensasi kelebihan PPN Masa Pajak sebelumnya</label>
                                             <div class="mb-3 row">
-                                                <label class="col-sm-3 col-form-label">Pajak Sebelumnya</label>
+                                                <label class="col-sm-3 col-form-label"></label>
                                                 <div class="col-sm-9">
                                                     <input autocomplete="off" placeholder="Masukkan Nilai Pajak Sebelumnya" min="0"required required id="ppn_masa_pajak_sebelumnya_1111_AB"
                                                     name="ppn_masa_pajak_sebelumnya_1111_AB"type="number" class="form-control">
                                                 </div>
                                             </div>
+                                            <label class="col-sm-12 col-form-label">2. Kompensasi kelebihan PPN karena pembetulan SPT PPN Masa Pajak</label>
                                             <div class="mb-3 row">
-                                                <label class="col-sm-3 col-form-label">SPT PPN</label>
+                                                <label class="col-sm-3 col-form-label"></label>
                                                 <div class="col-sm-4">
                                                     <input autocomplete="off" required required id="spt_ppn_date_1111_AB"
                                                     name="spt_ppn_date_1111_AB"type="date" class="form-control">
@@ -889,22 +891,25 @@
                                                     name="spt_ppn_1111_AB"type="number" class="form-control">
                                                 </div>
                                             </div>
+                                            <label class="col-sm-12 col-form-label">3. Hasil Penghitungan Kembali Pajak Masukan yang telah dikreditkan sebagai penambah (pengurang) Pajak Masukan</label>
                                             <div class="mb-3 row">
-                                                <label class="col-sm-3 col-form-label">Pajak Masukan</label>
+                                                <label class="col-sm-3 col-form-label"></label>
                                                 <div class="col-sm-9">
                                                     <input placeholder="Masukkan Jumlah Pajak Masukan" min="0" autocomplete="off" required required id="pajak_masukan_1111_AB"
                                                     name="pajak_masukan_1111_AB"type="number" class="form-control">
                                                 </div>
                                             </div>
+                                            <label class="col-sm-12 col-form-label">Jumlah (III.B.1 + III.B.2 + III.B.3)</label>
                                             <div class="mb-3 row">
-                                                <label class="col-sm-3 col-form-label">Jumlah</label>
+                                                <label class="col-sm-3 col-form-label"></label>
                                                 <div class="col-sm-9">
                                                     <input autocomplete="off" readonly required id="jumlah_pajak_masukan_1111_AB"
                                                     name="jumlah_pajak_masukan_1111_AB"type="number" class="form-control">
                                                 </div>
                                             </div>
+                                            <label class="col-sm-12 col-form-label">Jumlah Pajak Masukan yang Dapat Diperhitungkan( III.A + III.B.4)</label>
                                             <div class="mb-3 row">
-                                                <label class="col-sm-3 col-form-label">Jumlah Pajak Masukan</label>
+                                                <label class="col-sm-3 col-form-label"></label>
                                                 <div class="col-sm-9">
                                                     <input autocomplete="off" readonly required id="totaljumlah_pajak_masukan_1111_AB"
                                                     name="totaljumlah_pajak_masukan_1111_AB"type="number" class="form-control">

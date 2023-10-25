@@ -231,6 +231,15 @@
                             </li>
                         </ul>
                     </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                        <i class="flaticon-022-copy"></i>
+                        <span class="nav-text">SPT Orang Pribadi</span>
+                    </a>
+                    <ul aria-expanded="false">
+                        <li><a href="{{ route('sptS') }}" >1770S</a></li>
+                        <li><a href="{{ route('sptSS') }}" >1770SS</a></li>
+                    </ul>
+                </li>
                     @if (Auth::user()->status == 1)
 
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">

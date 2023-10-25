@@ -120,6 +120,7 @@ class PrepopulateController extends Controller
      */
     public function destroy($id)
     {
+        // dd('masuk');
         $delete=Prepopulate::find($id);
         $delete->delete();
         return redirect()->back()->with('alert','Berhasil Dihapus');

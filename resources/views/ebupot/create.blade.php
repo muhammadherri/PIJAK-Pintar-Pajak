@@ -12,7 +12,7 @@
             <div class="row page-titles">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item active"><a href="{{ route('ebupot') }}">Transaksi</a></li>
-                    <li class="breadcrumb-item active"><a href="{{ route('ebupot') }}">PPH 22</a></li>
+                    <li class="breadcrumb-item active"><a href="{{ route('ebupot') }}">e-Bupot</a></li>
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Buat</a></li>
                 </ol>
             </div>
