@@ -2,7 +2,7 @@
 @section('header')
     <div class="header-left">
         <div class="dashboard_bar">
-            Pelaporan
+            SPT Orang Pribadi
         </div>
     </div>
 @endsection
@@ -14,8 +14,8 @@
         <div class="container-fluid">
             <div class="row page-titles">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Pelaporan</a></li>
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">SPT PPn</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">SPT Orang Pribadi</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">SPT 1770s</a></li>
                 </ol>
             </div>
             <!-- row -->
@@ -23,7 +23,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Daftar SPT PPn</h4>
+                            <h4 class="card-title">Daftar SPT 1770s</h4>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <a class="btn btn-primary" href="{{ route('sptS/create') }}">

@@ -349,6 +349,7 @@ Route::get('/sptppnlist', [App\Http\Controllers\AllInController::class,'listSpt1
 Route::get('/pphfinallist', [App\Http\Controllers\AllInController::class,'listPphfinal'])->name('data.pphfinal');
 Route::get('/pphtidakfinallist', [App\Http\Controllers\AllInController::class,'listPphtidakfinal'])->name('data.pphtidakfinal');
 Route::get('/spt1770sllist', [App\Http\Controllers\AllInController::class,'listspt1770s'])->name('data.spt1770s');
+Route::get('/spt1770ssllist', [App\Http\Controllers\AllInController::class,'listspt1770ss'])->name('data.spt1770ss');
 // SEARCH
 Route::get('/search/resultPtkp', [App\Http\Controllers\AllInController::class,'resultPtkp'])->name('get.ptkp');
 Route::get('/search/resultNoakun', [App\Http\Controllers\AllInController::class,'akun_kredit'])->name('get.nokredit');

@@ -60,6 +60,7 @@ use App\Models\Pphfinal;
 use App\Models\PphTidakFinal;
 use App\Models\LatihanKeuangan;
 use App\Models\Spt1770S;
+use App\Models\Spt1770SS;
 use App\Models\AkunTest;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -547,6 +548,33 @@ class AllInController extends Controller
                 "notelp" =>  $record->no_telp,
                 "statuskewajiban" =>  $record->status_kewajiban,
                 "npwppasangan" =>  $record->npwp_pasangan,
+                "created_by" => $record->users->name,
+                "tgl_pembuatan" => $record->created_at->format('d-M-Y'),
+            );
+        }
+        // dd($data_arr);
+        $response = array(
+            "aaData" => $data_arr,
+        );
+        return json_encode($response);
+    }
+    public function listspt1770ss(Request $request){
+        // dd('masuk');
+        $id=Auth::user()->id;
+        if(Auth::user()->status==1){
+            $spt = Spt1770SS::get();
+        }else{
+            $spt = Spt1770SS::where('attribute1',$id)->get();
+        }
+        $data_arr = array();
+        // dd($spt);
+        foreach ($spt as $record) {
+            $data_arr[] = array(
+                "id" => $record->formulir_id,
+                "no_npwp" => $record->id_npwp,
+                "nama_npwp" => $record->id_nama_npwp,
+                "penghasilankenapajak" => $record->a4_pajak,
+                "jumlahpajak" => $record->a7_jumlah_pajak,
                 "created_by" => $record->users->name,
                 "tgl_pembuatan" => $record->created_at->format('d-M-Y'),
             );

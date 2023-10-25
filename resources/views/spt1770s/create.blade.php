@@ -13,8 +13,8 @@
         <div class="container-fluid">
             <div class="row page-titles">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item active"><a href="{{ route('sptS') }}">Laporan</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('sptS') }}">SPT PPN</a></li>
+                    <li class="breadcrumb-item active"><a href="{{ route('sptS') }}">SPT Orang Pribadi</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('sptS') }}">SPT 1770s</a></li>
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Buat</a></li>
                 </ol>
             </div>

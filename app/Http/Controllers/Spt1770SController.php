@@ -145,6 +145,8 @@ class Spt1770SController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete=Spt1770S::find($id);
+        $delete->delete();
+        return redirect()->back()->with('alert','Berhasil Dihapus');
     }
 }
