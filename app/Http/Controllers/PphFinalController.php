@@ -118,8 +118,11 @@ class PphFinalController extends Controller
      */
     public function destroy($id)
     {
-        $delete=Pphfinal::find($id);
-        $delete->delete();
+        $search=Pphfinal::where('id',$id)->get()->first();
+        if($search->attribute3==null){
+            $delete=Pphfinal::find($id);
+            $delete->delete();
+        }
         return redirect()->back()->with('alert','Berhasil Dihapus');
     }
 }

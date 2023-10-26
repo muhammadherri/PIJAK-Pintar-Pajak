@@ -30,7 +30,7 @@ Route::get('/ebupot', [App\Http\Controllers\EbupotController::class, 'index'])->
 Route::get('/ebupot/create', [App\Http\Controllers\EbupotController::class, 'create'])->name('ebupot/create');
 Route::post('/ebupot/store', [App\Http\Controllers\EbupotController::class, 'store'])->name('ebupot/store');
 
-Route::delete('/ebupot/{id}', [App\Http\Controllers\EbupotController::class, 'destroy']);
+Route::get('/ebupot/{id}/destroy', [App\Http\Controllers\EbupotController::class, 'destroy']);
 Route::get('/ebupot/{id}/show', [App\Http\Controllers\EbupotController::class, 'show'])->name('ebupot/show');
 Route::get('/ebupot/{id}/edit', [App\Http\Controllers\EbupotController::class, 'edit'])->name('ebupot/edit');
 Route::put('/ebupot/{id}', [App\Http\Controllers\EbupotController::class, 'update'])->name('ebupot/update');

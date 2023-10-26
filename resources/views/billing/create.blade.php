@@ -133,11 +133,16 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Tahun Pajak</label>
                                             <div class="col-sm-9">
-                                                @php
-                                                    $tahunsekarang = date('Y');
-                                                @endphp
-                                                <input autocomplete="off" readonly required id="tahun_pajak" name="tahun_pajak"
-                                                    type="text" class="form-control"value="{{$tahunsekarang}}" placeholder="{{$tahunsekarang}}">
+                                                <select id="tahun_pajak" name="tahun_pajak"
+                                                        class="dropdown-groups">
+                                                    @php
+                                                        $tahunsekarang = date('Y');
+                                                    @endphp
+                                                    @for ($tahunsekarang = date('Y'); $tahunsekarang >= date('Y') - 15; $tahunsekarang--)
+                                                        <option value="{{ $tahunsekarang }}">{{ $tahunsekarang }}
+                                                        </option>
+                                                    @endfor
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="mb-3 row">

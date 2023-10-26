@@ -49,7 +49,7 @@ class TopController extends Controller
         Top::create($data);
         $top=Top::all();
         $a= \DB::commit();
-        return back();
+        return redirect()->route('top');
     }
 
     /**
@@ -102,7 +102,8 @@ class TopController extends Controller
             'updated_at'=>date('Y-m-d H:i:s'),
         ]);
         $a= \DB::commit();    
-        return back();
+        return redirect()->route('top');
+
     }
 
     /**

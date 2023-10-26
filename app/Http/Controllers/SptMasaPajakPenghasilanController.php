@@ -73,7 +73,7 @@ class SptMasaPajakPenghasilanController extends Controller
             'alamat'=>$request->id_alamat_1721,
             'no_telp'=>$request->id_no_telp_1721,
             'email'=>$request->id_email_1721,
-            'alamat_objekpajak'=>$request->op_alamat_1721,
+            'alamat_objekpajak'=>'NULL',
             'jumlah_penerima_penghasilan_b'=>$request->total_jumlah_penerima1721,
             'jumlah_penghasilan_bruto_b'=>$request->total_jumlah_bruto1721,
             'jumlah_pajak_dipotong_b'=>$request->total_jumlah_pajak1721,
@@ -528,6 +528,62 @@ class SptMasaPajakPenghasilanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        SptMasa::where('formulir_id',$id)->update([
+            'attribute2'=>Auth::user()->id,
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptMasaLineB::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptMasaLineC::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptMasaA::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptMasaB::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptMasaI::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptMasaILine::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptMasaII::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptMasaIILine::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptMasaIII::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptMasaIIILine::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptMasaIV::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptMasaIVLine::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptMasaV::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptMasaVI::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptMasaVILine::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptMasaVII::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptMasaVIILine::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        $a= \DB::commit();    
+        return redirect()->back()->with('alert','Berhasil Dihapus');
     }
 }

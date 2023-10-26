@@ -50,7 +50,7 @@ class VendorController extends Controller
         ]);
         $vendor=Vendor::all();
         $a= \DB::commit();
-        return back();
+        return redirect()->route('vendor');
     }
     /**
      * Display the specified resource.
@@ -106,7 +106,7 @@ class VendorController extends Controller
             'created_at'=>date('Y-m-d H:i:s'),
         ]);
         $a= \DB::commit();    
-        return back();
+        return redirect()->route('vendor');
     }
 
     /**

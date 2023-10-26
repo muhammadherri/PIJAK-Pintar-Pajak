@@ -164,7 +164,7 @@
                                             <label class="col-sm-3 col-form-label">NTPN</label>
                                             <div class="col-sm-9">
                                                 <input value="{{$billing->ntpn}}" autocomplete="off" required id="ntpn" name="ntpn"
-                                                    type="number" min="0" class="form-control" placeholder="Masukkan Kode NTPN">
+                                                    type="text" min="0" class="form-control" placeholder="Masukkan Kode NTPN">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">

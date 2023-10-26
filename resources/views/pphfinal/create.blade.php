@@ -61,7 +61,8 @@
                                             <label class="col-sm-3 col-form-label">Potongan PPH</label>
                                             <div class="col-sm-9">
                                                 <input required autocomplete="off" id="potongan_pph" name="potongan_pph"
-                                                    type="number" min="0" class="form-control" placeholder="Masukkan Jumlah Potongan PPH">
+                                                {{-- <input required onkeyup="this.value=addcommas(this.value);" autocomplete="off" id="potongan_pph" name="potongan_pph" --}}
+                                                    type="text" min="0" class="form-control" placeholder="Masukkan Jumlah Potongan PPH">
                                             </div>
                                         </div>
                                     </div>
@@ -84,6 +85,13 @@
     </div>
 @endsection
 <script>
+    function addcommas(x) {
+        //remove commas
+        retVal = x ? parseFloat(x.replace(/,/g, '')) : 0;
+
+        //apply formatting
+        return retVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
     function resetForm() {
         var kop = document.getElementById("kop");
         var bruto = document.getElementById("bruto");

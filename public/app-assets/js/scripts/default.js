@@ -300,7 +300,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         class="form-control" />
                 </td>
                 <td width="auto" class="text-center">
-                    <input required autocomplete="off" type="number"
+                    <input required autocomplete="off" type="text"
                         name="pgt_nomor_1721_formulirII[]" id="pgt_nomor_1721_formulirII[]" min="0"
                         class="form-control" />
                 </td>
@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         class="form-control" />
                 </td>
                 <td width="auto" class="text-center">
-                    <input required autocomplete="off" type="number"
+                    <input required autocomplete="off" type="text"
                         name="pgt_kodeobjek_1721_formulirII[]" id="pgt_kodeobjek_1721_formulirII[]" min="0"
                         class="form-control" />
                 </td>
@@ -389,7 +389,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         class="form-control" />
                 </td>
                 <td width="auto" class="text-center">
-                    <input required autocomplete="off" type="number"
+                    <input required autocomplete="off" type="text"
                         name="pgt_nomor_1721_formulirIII[]" id="pgt_nomor_1721_formulirIII[]" min="0"
                         class="form-control" />
                 </td>
@@ -399,7 +399,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         class="form-control" />
                 </td>
                 <td width="auto" class="text-center">
-                    <input required autocomplete="off" type="number"
+                    <input required autocomplete="off" type="text"
                         name="pgt_kodeobjek_1721_formulirIII[]" id="pgt_kodeobjek_1721_formulirIII[]" min="0"
                         class="form-control" />
                 </td>

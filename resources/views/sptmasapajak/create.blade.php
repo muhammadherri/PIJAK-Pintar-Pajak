@@ -106,7 +106,7 @@
                                                     <label class="col-sm-3 col-form-label">NPWP</label>
                                                     <div class="col-sm-9">
                                                         <input autocomplete="off" required id="id_npwp_1721"
-                                                            name="id_npwp_1721"type="number" min="0"
+                                                            name="id_npwp_1721"type="text" min="0"
                                                             class="form-control" placeholder="Masukkan No NPWP">
                                                         <span id="errorid_npwp_1721" style="color: red;"></span>
                                                     </div>
@@ -140,7 +140,7 @@
                                                     <div class="col-sm-4">
                                                         <input autocomplete="off" required id="id_no_telp_1721"
                                                             name="id_no_telp_1721" type="number" min="0"
-                                                            class="form-control" placeholder="Masukkan Alamat">
+                                                            class="form-control" placeholder="Masukkan No.Telp">
                                                     </div>
                                                     <div class="col-sm-5">
                                                         <input autocomplete="off" required id="id_email_1721"
@@ -150,13 +150,13 @@
                                                 </div>
                                                 <hr>
                                                 <h4>B. Objek Pajak</h4>
-                                                <div class="mb-3 row">
+                                                {{-- <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Alamat</label>
                                                     <div class="col-sm-9">
                                                         <textarea autocomplete="off" required id="op_alamat_1721" name="op_alamat_1721" type="text" class="form-control"
                                                             placeholder="Masukkan Alamat"></textarea>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                                 {{-- <h6>1. Pegawai Tetap | 21-100-01</h6>
                                                 <div class="mb-3 row">
                                                     <div class="col-sm-4">
@@ -689,7 +689,7 @@
                                                     <label class="col-sm-3 col-form-label">NPWP Pemotong</label>
                                                     <div class="col-sm-9">
                                                         <input autocomplete="off" id="npwppemotong_1721"
-                                                            name="npwppemotong_1721" type="number" min="0"
+                                                            name="npwppemotong_1721" type="text" min="0"
                                                             class="form-control">
                                                         <span id="errorid_npwp_pemotong_1721" style="color: red;"></span>
 
@@ -877,7 +877,7 @@
                                                     <div class="col-sm-9">
                                                         <input placeholder="Masukkan NPWP Penandatangan"
                                                             autocomplete="off" id="npwpttd_1721" name="npwpttd_1721"
-                                                            type="number" min="0" class="form-control">
+                                                            type="text" min="0" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="mb-3 row">
@@ -945,10 +945,11 @@
                                                     <div class="col-sm-9">
                                                         <input min="0" placeholder="Masukkan NPWP Pemotong" autocomplete="off"
                                                             id="npwppemotong_1721_formulirI" name="npwppemotong_1721_formulirI"
-                                                            type="number" class="form-control">
+                                                            type="text" class="form-control">
                                                         <span id="error_npwppemotong_1721_formulirI" style="color: red;"></span>
                                                     </div>
                                                 </div>
+                                                <h6>A. Pegawai Tetap Dan Penerima Pensiun Atau THT/JHT Sert PNS, Anggota TNI/POLRI, Pejabat Negara Dan Pensiunannya Yang Penghasilannya Melebihi Penghasilan Tidak Kena Pajak (PTKP)</h6>
                                                 <div class="card-body">
                                                     <div class="table-responsive">
                                                         <table id="penerimapensiun_1721"class="display"
@@ -970,7 +971,7 @@
                                                             <tbody>
                                                                 <tr>
                                                                     <td width="auto" class="text-center">
-                                                                        <input required autocomplete="off" type="number"
+                                                                        <input required autocomplete="off" type="text"
                                                                             name="pgt_npwp_1721[]" id="pgt_npwp_1721[]" min="0"
                                                                             class="form-control" />
                                                                     </td>
@@ -1032,7 +1033,7 @@
                                                             </tfoot>
                                                             <tfoot class="footer">
                                                                 <tr>
-                                                                    <td width="auto" class="text-center"><b>JUMLAH</b>
+                                                                    <td width="auto" class="text-left"><b>JUMLAH</b>
                                                                     </td>
                                                                     <td></td>
                                                                     <td></td>
@@ -1053,12 +1054,9 @@
                                                                     <td></td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td width="auto" class="text-center"><b>THT / JHT</b>
+                                                                    <td colspan="5" class="text-left"><b>PEGAWAI TETAP DAN PENERIMA PENSIUN ATAU THT/JHT SERTA PNS, ANGGOTA TNI/POLRI, PEJABAT NEGARA</b>
                                                                     </td>
-                                                                    <td></td>
-                                                                    <td></td>
-                                                                    <td></td>
-                                                                    <td></td>
+                                                                  
                                                                     <td width="auto" class="text-center">
                                                                         <input required autocomplete="off" type="number"
                                                                             name="tht_1721_formulirI" id="tht_1721_formulirI" min="0"
@@ -1070,7 +1068,7 @@
                                                                     <td></td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td width="auto" class="text-center"><b>Total Jumlah A+B</b>
+                                                                    <td width="auto" class="text-left"><b>Total Jumlah A+B</b>
                                                                     </td>
                                                                     <td></td>
                                                                     <td></td>
@@ -1116,7 +1114,7 @@
                                                     <div class="col-sm-9">
                                                         <input min="0" placeholder="Masukkan NPWP Pemotong" autocomplete="off"
                                                             id="npwppemotong_formulirII_1721" name="npwppemotong_formulirII_1721"
-                                                            type="number" class="form-control">
+                                                            type="text" class="form-control">
                                                         <span id="error_npwppemotong_1721_formulirII" style="color: red;"></span>
                                                     </div>
                                                 </div>
@@ -1126,8 +1124,8 @@
                                                             style="min-width: 845px">
                                                             <thead>
                                                                 <tr>
-                                                                    <th class="text-center">Nomor NPWP Pemotong</th>
-                                                                    <th class="text-center">Nama NPWP Pemotong</th>
+                                                                    <th class="text-center">Nomor NPWP Pegawai</th>
+                                                                    <th class="text-center">Nama NPWP Pegawai</th>
                                                                     <th class="text-center">Nomor Bukti Pemotongan</th>
                                                                     <th class="text-center">Tanggal Bukti Pemotongan</th>
                                                                     <th class="text-center">Kode Objek Pajak</th>
@@ -1140,7 +1138,7 @@
                                                             <tbody>
                                                                 <tr>
                                                                     <td width="auto" class="text-center">
-                                                                        <input required autocomplete="off" type="number"
+                                                                        <input required autocomplete="off" type="text"
                                                                             name="pgt_npwp_1721_formulirII[]" id="pgt_npwp_1721_formulirII[]" min="0"
                                                                             class="form-control" />
                                                                     </td>
@@ -1150,7 +1148,7 @@
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td width="auto" class="text-center">
-                                                                        <input required autocomplete="off" type="number"
+                                                                        <input required autocomplete="off" type="text"
                                                                             name="pgt_nomor_1721_formulirII[]" id="pgt_nomor_1721_formulirII[]" min="0"
                                                                             class="form-control" />
                                                                     </td>
@@ -1160,7 +1158,7 @@
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td width="auto" class="text-center">
-                                                                        <input required autocomplete="off" type="number"
+                                                                        <input required autocomplete="off" type="text"
                                                                             name="pgt_kodeobjek_1721_formulirII[]" id="pgt_kodeobjek_1721_formulirII[]" min="0"
                                                                             class="form-control" />
                                                                     </td>
@@ -1247,7 +1245,7 @@
                                                     <div class="col-sm-9">
                                                         <input min="0" placeholder="Masukkan NPWP Pemotong" autocomplete="off"
                                                             id="npwppemotong_formulirIII_1721" name="npwppemotong_formulirIII_1721"
-                                                            type="number" class="form-control">
+                                                            type="text" class="form-control">
                                                         <span id="error_npwppemotong_1721_formulirIII" style="color: red;"></span>
                                                     </div>
                                                 </div>
@@ -1257,8 +1255,8 @@
                                                             style="min-width: 845px">
                                                             <thead>
                                                                 <tr>
-                                                                    <th class="text-center">Nomor NPWP Bukti Potong</th>
-                                                                    <th class="text-center">Nama Bukti Potong</th>
+                                                                    <th class="text-center">Nomor NPWP Pegawai</th>
+                                                                    <th class="text-center">Nama Pegawai</th>
                                                                     <th class="text-center">Nomor Bukti Pemotongan</th>
                                                                     <th class="text-center">Tanggal Bukti Pemotongan</th>
                                                                     <th class="text-center">Kode Objek Pajak</th>
@@ -1270,7 +1268,7 @@
                                                             <tbody>
                                                                 <tr>
                                                                     <td width="auto" class="text-center">
-                                                                        <input required autocomplete="off" type="number"
+                                                                        <input required autocomplete="off" type="text"
                                                                             name="pgt_npwp_1721_formulirIII[]" id="pgt_npwp_1721_formulirIII[]" min="0"
                                                                             class="form-control" />
                                                                     </td>
@@ -1280,7 +1278,7 @@
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td width="auto" class="text-center">
-                                                                        <input required autocomplete="off" type="number"
+                                                                        <input required autocomplete="off" type="text"
                                                                             name="pgt_nomor_1721_formulirIII[]" id="pgt_nomor_1721_formulirIII[]" min="0"
                                                                             class="form-control" />
                                                                     </td>
@@ -1290,7 +1288,7 @@
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td width="auto" class="text-center">
-                                                                        <input required autocomplete="off" type="number"
+                                                                        <input required autocomplete="off" type="text"
                                                                             name="pgt_kodeobjek_1721_formulirIII[]" id="pgt_kodeobjek_1721_formulirIII[]" min="0"
                                                                             class="form-control" />
                                                                     </td>
@@ -1373,7 +1371,7 @@
                                                     <div class="col-sm-9">
                                                         <input min="0" placeholder="Masukkan NPWP Pemotong" autocomplete="off"
                                                             id="npwppemotong_formulirIV_1721" name="npwppemotong_formulirIV_1721"
-                                                            type="number" class="form-control">
+                                                            type="text" class="form-control">
                                                         <span id="error_npwppemotong_1721_formulirIV" style="color: red;"></span>
                                                     </div>
                                                 </div>
@@ -1484,7 +1482,7 @@
                                                     <div class="col-sm-9">
                                                         <input min="0" required placeholder="Masukkan NPWP Pemotong" autocomplete="off"
                                                             id="npwppemotong_formulirV_1721" name="npwppemotong_formulirV_1721"
-                                                            type="number" class="form-control">
+                                                            type="text" class="form-control">
                                                         <span id="error_npwppemotong_1721_formulirV" style="color: red;"></span>
                                                     </div>
                                                 </div>
@@ -1604,7 +1602,7 @@
                                                     <div class="col-sm-9">
                                                         <input min="0" required placeholder="Masukkan NPWP" autocomplete="off"
                                                             id="npwp_formulirVI_1721" name="npwp_formulirVI_1721"
-                                                            type="number" class="form-control">
+                                                            type="text" class="form-control">
                                                         <span id="error_npwp_1721_formulirVI" style="color: red;"></span>
                                                     </div>
                                                 </div>
@@ -1731,7 +1729,7 @@
                                                     <div class="col-sm-9">
                                                         <input min="0" required placeholder="Masukkan NPWP Identitas Pemotong" autocomplete="off"
                                                             id="npwppemotong_formulirVI_1721" name="npwppemotong_formulirVI_1721"
-                                                            type="number" class="form-control">
+                                                            type="text" class="form-control">
                                                         <span id="error_npwppemotong_formulirVI_1721" style="color: red;"></span>
                                                     </div>
                                                 </div>
@@ -1777,7 +1775,7 @@
                                                     <div class="col-sm-9">
                                                         <input min="0" required placeholder="Masukkan NPWP" autocomplete="off"
                                                             id="npwp_formulirVII_1721" name="npwp_formulirVII_1721"
-                                                            type="number" class="form-control">
+                                                            type="text" class="form-control">
                                                         <span id="error_npwp_1721_formulirVII" style="color: red;"></span>
                                                     </div>
                                                 </div>
@@ -1874,7 +1872,7 @@
                                                     <div class="col-sm-9">
                                                         <input min="0" required placeholder="Masukkan NPWP Pemotong" autocomplete="off"
                                                             id="npwppemotong_formulirVII_1721" name="npwppemotong_formulirVII_1721"
-                                                            type="number" class="form-control">
+                                                            type="text" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="mb-3 row">
@@ -1927,7 +1925,7 @@
                                                     <div class="col-sm-9">
                                                         <input min="0" required placeholder="Masukkan NPWP Pemotong" 
                                                             autocomplete="off" id="npwppemotong_formulirA1_1721" name="npwppemotong_formulirA1_1721"
-                                                            type="number" class="form-control">
+                                                            type="text" class="form-control">
                                                         <span id="error_npwppemotong_formulirA1_1721" style="color: red;"></span>
                                                     </div>
                                                 </div>
@@ -1946,7 +1944,7 @@
                                                     <div class="col-sm-9">
                                                         <input required placeholder="Masukkan NPWP Penerima" min="0"
                                                             autocomplete="off" id="npwppenerima_formulirA1_1721" name="npwppenerima_formulirA1_1721"
-                                                            type="number" class="form-control">
+                                                            type="text" class="form-control">
                                                         <span id="error_npwppenerima_formulirA1_1721" style="color: red;"></span>
                                                     </div>
                                                 </div>
@@ -2189,7 +2187,7 @@
                                                     <label class="col-sm-3 col-form-label">1. NPWP</label>
                                                     <div class="col-sm-9">
                                                         <input required placeholder="Masukkan NPWP Pemotong" autocomplete="off" id="npwpIdPem_formulirA1_1721" name="npwpIdPem_formulirA1_1721"
-                                                            type="number" class="form-control" min="0">
+                                                            type="text" class="form-control" min="0">
                                                         <span id="error_npwpIdPem_formulirA1_1721" style="color: red;"></span>
                                                     </div>
                                                 </div>
@@ -2258,7 +2256,7 @@
                                                     <div class="col-sm-9">
                                                         <input min="0" required placeholder="Masukkan NPWP Bendahara" 
                                                             autocomplete="off" id="npwpBendahara_formulirA2_1721" name="npwpBendahara_formulirA2_1721"
-                                                            type="number" class="form-control">
+                                                            type="text" class="form-control">
                                                         <span id="error_npwpBendahara_formulirA2_1721" style="color: red;"></span>
                                                     </div>
                                                 </div>
@@ -2269,7 +2267,7 @@
                                                     <div class="col-sm-9">
                                                         <input required placeholder="Masukkan NPWP Penerima" 
                                                             autocomplete="off" id="npwpPenerima_formulirA2_1721" name="npwpPenerima_formulirA2_1721"
-                                                            type="number" class="form-control" min="0">
+                                                            type="text" class="form-control" min="0">
                                                         <span id="error_npwpPenerima_formulirA2_1721" style="color: red;"></span>
                                                     </div>
                                                 </div>
@@ -2579,7 +2577,7 @@
                                                     <div class="col-sm-9">
                                                         <input required placeholder="Masukkan NPWP Penandatangan" 
                                                             autocomplete="off" id="npwpttdben_formulirA2_1721" name="npwpttdben_formulirA2_1721"
-                                                            type="number" class="form-control" min="0">
+                                                            type="text" class="form-control" min="0">
                                                         <span id="error_npwpttdben_formulirA2_1721" style="color: red;"></span>
                                                     </div>
                                                 </div>

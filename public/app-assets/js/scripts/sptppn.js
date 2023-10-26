@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     class="form-control" />
             </td>
             <td class="text-center">
-                <input required autocomplete="off" type="number"
+                <input required autocomplete="off" type="text"
                     name="pajak_no_doc_1111A1[]" min="0"
                     id="pajak_no_doc_1111A1[]"
                     class="form-control"/>
@@ -292,12 +292,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     class="form-control" />
             </td>
             <td class="text-center">
-                <input required autocomplete="off" type="number"
+                <input required autocomplete="off" type="text"
                     name="pajak_no_npwp_1111A2[]" min="0"
                     id="pajak_no_npwp_1111A2[]" class="form-control" />
             </td>
             <td class="text-center">
-                <input required autocomplete="off" type="number"
+                <input required autocomplete="off" type="text"
                     name="pajak_kode_dan_no_seri_1111A2[]"
                     id="pajak_kode_dan_no_seri_1111A2[]" min="0"
                     class="form-control"/>
@@ -327,7 +327,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     class="form-control subppnbm_1111A2" />
             </td>
             <td class="text-center">
-                <input required autocomplete="off" type="number"
+                <input required autocomplete="off" type="text"
                     name="pajak_no_seri_1111A2[]"
                     id="pajak_no_seri_1111A2[]" min="0"
                     class="form-control" />
@@ -399,7 +399,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     class="form-control" />
             </td>
             <td class="text-center">
-                <input required autocomplete="off" type="number"
+                <input required autocomplete="off" type="text"
                     name="pajak_no_doc_1111b1[]" min="0"
                     id="pajak_no_doc_1111b1[]"
                     class="form-control" />
@@ -501,12 +501,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     class="form-control" />
             </td>
             <td class="text-center">
-                <input required autocomplete="off" type="number"
+                <input required autocomplete="off" type="text"
                     name="pajak_no_npwp_1111B2[]" min="0"
                     id="pajak_no_npwp_1111B2[]" class="form-control" />
             </td>
             <td class="text-center">
-                <input required autocomplete="off" type="number"
+                <input required autocomplete="off" type="text"
                     name="pajak_kode_dan_no_seri_1111B2[]"
                     id="pajak_kode_dan_no_seri_1111B2[]" min="0"
                     class="form-control"/>
@@ -608,12 +608,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     class="form-control" />
             </td>
             <td class="text-center">
-                <input required autocomplete="off" type="number"
+                <input required autocomplete="off" type="text"
                     name="pajak_no_npwp_1111B3[]" min="0"
                     id="pajak_no_npwp_1111B3[]" class="form-control" />
             </td>
             <td class="text-center">
-                <input required autocomplete="off" type="number"
+                <input required autocomplete="off" type="text"
                     name="pajak_kode_dan_no_seri_1111B3[]"
                     id="pajak_kode_dan_no_seri_1111B3[]" min="0"
                     class="form-control"/>
@@ -643,7 +643,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     class="form-control subppnbm_1111B3" />
             </td>
             <td class="text-center">
-                <input required autocomplete="off" type="number"
+                <input required autocomplete="off" type="text"
                     name="pajak_no_seri_1111B3[]"
                     id="pajak_no_seri_1111B3[]" min="0"
                     class="form-control" />

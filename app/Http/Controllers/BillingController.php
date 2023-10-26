@@ -326,7 +326,8 @@ class BillingController extends Controller
             'updated_at'=>date('Y-m-d H:i:s'),
         ]);
         $a= \DB::commit();    
-        return back();
+        return redirect()->route('billing');
+
     }
 
     /**

@@ -105,9 +105,13 @@ class InvoiceController extends Controller
                 'harga_satuan' => $harga_satuan_inv[$key],
                 'total_diskon' => $total_diskon_inv[$key],
                 'total_harga' => $total_harga_inv[$key],
+                'attribute1' => Auth::user()->id,
                 'created_at'=>date('Y-m-d H:i:s'),
             );
-            // dd($data_inv);
+        //   dd($data_inv);
+            InvoiceLine::create($data_inv);
+        }
+        foreach ($barang_faktur as $key => $barang) {
             $data_faktur = array(
                 'faktur_id' => $header_id,
                 'nama_barang' => $barang_faktur[$key],
@@ -115,10 +119,9 @@ class InvoiceController extends Controller
                 'harga_satuan' => $harga_satuan_faktur[$key],
                 'total_diskon' => $total_diskon_faktur[$key],
                 'total_harga' => $total_harga_faktur[$key],
+                'attribute1' => Auth::user()->id,
                 'created_at'=>date('Y-m-d H:i:s'),
             );
-            // dd($data_inv);
-            InvoiceLine::create($data_inv);
             FakturLine::create($data_faktur);
         }
         return redirect()->route('invoice');
@@ -138,8 +141,8 @@ class InvoiceController extends Controller
         }else{
             $inv=Invoice::where('attribute1',$iduser)->where('invoice_id',$id)->get()->first();
             $faktur=Faktur::where('attribute1',$iduser)->where('faktur_id',$id)->get()->first();
-            $invline=InvoiceLine::where('attribute1',$iduser)->where('invoice_id',$id)->get();
-            $fktrline=FakturLine::where('attribute1',$iduser)->where('faktur_id',$id)->get();
+            $invline=InvoiceLine::where('invoice_id',$id)->get();
+            $fktrline=FakturLine::where('faktur_id',$id)->get();
             $noseri = NoSeri::all();
             $vendor=Vendor::get();
         }

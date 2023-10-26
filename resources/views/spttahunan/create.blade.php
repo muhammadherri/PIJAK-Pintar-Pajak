@@ -2353,7 +2353,7 @@
             if (hasile14d < 0) {
                 resulte14d.value = 0;
             } else {
-                resulte14d.value = hasile14d;
+                resulte14d.value = e14a*22/100;
             }
             const hasile14f = hasile14d - e14e;
             if (hasile14f < 0) {

@@ -46,6 +46,7 @@ class NoSeriController extends Controller
         NoSeri::create($data);
         $a= \DB::commit();
         return redirect()->route('noseri');
+
     }
 
     /**

@@ -138,7 +138,7 @@
                                     <tr>
                                         <th></th>
                                         <th width="auto" class="text-center">JUMLAH PENDAPATAN</th>
-                                        <th class="text-center">{{number_format($labaoperasional)}}</th>
+                                        <th class="text-center">{{number_format($jumlahpendapatanlain)}}</th>
                                         <th colspan="5" class="text-center"></th>
                                     </tr>
                                     <tr>

@@ -142,16 +142,16 @@
                 {
                     "targets": 9,
                     render: function(data, type, row, index) {
-                        if (row.status == 'NULL') {
-                            var info = `<div class="d-flex"><a class="badge badge-rounded badge-outline-danger">
-                                Belum Dibayar</a></div>`
+                        if (row.status == 1) {
+                            var info = `<div class="d-flex"><a class="badge badge-rounded badge-outline-warning">
+                                Menunggu Pembayaran</a></div>`
                             ;
-                        } else if (row.status == 1) {
+                        } else if (row.status == 2) {
                             var info = `<div class="d-flex">
-                                <a class="badge badge-rounded badge-outline-warning">
-		                        Menunggu Pembayaran</a></div>`;
+                                <a class="badge badge-rounded badge-outline-primary">
+                                    Sudah Dibayar</a></div>`;
                         } else {
-                            var info = `<a class="badge badge-rounded badge-outline-primary">Sudah Dibayar</a>`;
+                            var info = `<a class="badge badge-rounded badge-outline-danger">Belum Dibayar</a>`;
                         }
                         return info;
                     }

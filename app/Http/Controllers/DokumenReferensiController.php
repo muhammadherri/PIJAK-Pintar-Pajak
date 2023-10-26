@@ -51,7 +51,8 @@ class DokumenReferensiController extends Controller
         $doc=DokumenReferensi::get();
         $a= \DB::commit();
 
-        return view('dokumenreferensi.index',compact('doc'))->with('no',1);
+        return redirect()->route('dokumenreferensi');
+
     }
 
     /**
@@ -106,7 +107,7 @@ class DokumenReferensiController extends Controller
             'updated_at'=>date('Y-m-d H:i:s'),
         ]);
         $a= \DB::commit();    
-        return back();
+        return redirect()->route('dokumenreferensi');
     }
 
     /**

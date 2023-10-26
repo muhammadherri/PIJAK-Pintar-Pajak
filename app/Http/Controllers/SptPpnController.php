@@ -47,6 +47,7 @@ class SptPpnController extends Controller
         $header_id =SptPpn::get()->count();
         $header_id = $header_id ?? 0;
         $header_id = $header_id+1;
+
         $data = array(
             'formulir_id'=>$header_id,
             'nama_ptkp_1111'=>$request->nama_pkp_1111,
@@ -328,8 +329,32 @@ class SptPpnController extends Controller
      */
     public function destroy($id)
     {
-        $delete=SptPpn::find($id);
-        $delete->delete();
+        // dd('masuk');
+        SptPpn::where('formulir_id',$id)->update([
+            'attribute_2'=>Auth::user()->id,
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptPpnLinea1::where('formulir_id',$id)->update([
+            'attribute_2'=>Auth::user()->id,
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptPpnLinea2::where('formulir_id',$id)->update([
+            'attribute_2'=>Auth::user()->id,
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptPpnLineb1::where('formulir_id',$id)->update([
+            'attribute_2'=>Auth::user()->id,
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptPpnLineb2::where('formulir_id',$id)->update([
+            'attribute_2'=>Auth::user()->id,
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptPpnLineb3::where('formulir_id',$id)->update([
+            'attribute_2'=>Auth::user()->id,
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        $a= \DB::commit();    
         return redirect()->back()->with('alert','Berhasil Dihapus');
     }
 }

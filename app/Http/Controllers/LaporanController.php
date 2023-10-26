@@ -1087,7 +1087,7 @@ class LaporanController extends Controller
         $totalbiayaoperasional=Neraca::where('no_akun','>','5600')->where('no_akun','<','7100')->sum('saldo');
         $jumlahpendapatanlain=Neraca::where('attribute3','PENDAPATAN LAIN-LAIN')->sum('saldo');
         $jumlahbebanlain=Neraca::where('no_akun','>','7110')->where('no_akun','<','8130')->sum('saldo');
-        
+        // dd($jumlahpendapatanlain);
         $labakotor = $totalpenjualan-$totalharpok;
         $labaoperasional = $labakotor-$totalbiayaoperasional;
         $totalpendapatandanbebanlain = $jumlahpendapatanlain-$jumlahbebanlain;

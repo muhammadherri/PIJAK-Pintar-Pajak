@@ -122,8 +122,11 @@ class PphTidakFinalController extends Controller
      */
     public function destroy($id)
     {
+        $search=PphTidakFinal::where('id',$id)->get()->first();
+        if($search->attribute3==null){
         $delete=PphTidakFinal::find($id);
         $delete->delete();
+        }
         return redirect()->back()->with('alert','Berhasil Dihapus');
     }
 }

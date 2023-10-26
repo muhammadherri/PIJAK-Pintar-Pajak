@@ -219,7 +219,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Biaya Jabatan</label>
                                             <div class="col-sm-9">
-                                                <input required min="0" readonly type="" id="biaya_jabatan" name="biaya_jabatan"
+                                                <input required min="0" type="" id="biaya_jabatan" name="biaya_jabatan"
                                                     class="form-control" placeholder="Masukkan Biaya Jabatan">
                                             </div>
                                         </div>
@@ -242,7 +242,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Penghasilan Netto</label>
                                             <div class="col-sm-9">
-                                                <input placeholder="Masukkan Penghasilan Netto" readonly type="number" id="penghasilan_netto"
+                                                <input placeholder="Masukkan Penghasilan Netto" type="number" id="penghasilan_netto"
                                                     name="penghasilan_netto" class="form-control">
                                             </div>
                                         </div>
@@ -257,7 +257,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Netto Pertahun</label>
                                             <div class="col-sm-9">
-                                                <input placeholder="Masukkan Netto Pertahun" readonly type="number" id="netto_pertahun" name="netto_pertahun"
+                                                <input placeholder="Masukkan Netto Pertahun" type="number" id="netto_pertahun" name="netto_pertahun"
                                                     class="form-control">
                                             </div>
                                         </div>
@@ -273,7 +273,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">PKP</label>
                                             <div class="col-sm-9">
-                                                <input placeholder="Masukkan Nilai PKP" readonly type="text" id="input_pkp" name="input_pkp"
+                                                <input placeholder="Masukkan Nilai PKP" type="text" id="input_pkp" name="input_pkp"
                                                 class="form-control">
                                             </div>
                                         </div>
@@ -483,11 +483,11 @@
 
             const gaji = parseFloat(inputgajipensiun.value) || 0;
             const biayajabatan = gaji * 5 / 100;
-            if (biayajabatan >= '500000') {
-                resultbiaya_jabatan.value = '500000';
-            } else {
-                resultbiaya_jabatan.value = biayajabatan;
-            }
+            // if (biayajabatan >= '500000') {
+            //     resultbiaya_jabatan.value = '500000';
+            // } else {
+            //     resultbiaya_jabatan.value = biayajabatan;
+            // }
 
             const inputbiaya_jabatan = parseFloat(biaya_jabatan.value) || 0;
             const inputiuran_pensiun = parseFloat(iuran_pensiun.value) || 0;
@@ -542,21 +542,21 @@
             const resultnetto = penghasilan_bruto - resulttotpeng;
             const pilih_ptkp = parseFloat(inputpilih_ptkp.value) || 0;
 
-            if (resultnetto <= '0') {
-                resultpenghasilan_netto.value = '0';
-                resultnetto_pertahun.value = '0';
-            } else {
-                resultpenghasilan_netto.value = resultnetto;
-                resultnetto_pertahun.value = resultnetto * 12;
-            }
+            // if (resultnetto <= '0') {
+            //     resultpenghasilan_netto.value = '0';
+            //     resultnetto_pertahun.value = '0';
+            // } else {
+            //     resultpenghasilan_netto.value = resultnetto;
+            //     resultnetto_pertahun.value = resultnetto * 12;
+            // }
             const nettopertahun = resultnetto * 12;
 
             const resultPTKP = nettopertahun - pilih_ptkp;
-            if(resultPTKP<=0){
-                resultinput_pkp.value = '0';
-            }else{
-                resultinput_pkp.value = nettopertahun - pilih_ptkp;
-            }
+            // if(resultPTKP<=0){
+            //     resultinput_pkp.value = '0';
+            // }else{
+            //     resultinput_pkp.value = nettopertahun - pilih_ptkp;
+            // }
 
             const pph21potongan = parseFloat(inputpph21potongan.value) || 0;
             const resultpphterutang = hasilperhitungantarif - pph21potongan;

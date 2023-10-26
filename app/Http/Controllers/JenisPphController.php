@@ -46,7 +46,8 @@ class JenisPphController extends Controller
         );
         Jenispph::create($data);
         $a= \DB::commit();
-        return redirect()->back()->with('alert','Berhasil');
+        return redirect()->route('jenispph');
+
     }
 
     /**
@@ -99,7 +100,7 @@ class JenisPphController extends Controller
             'updated_at'=>date('Y-m-d H:i:s'),
         ]);
         $a= \DB::commit();    
-        return back();
+        return redirect()->route('jenispph');
     }
 
     /**

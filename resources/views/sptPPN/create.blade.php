@@ -127,7 +127,7 @@
                                                 <label class="col-sm-3 col-form-label">NPWP</label>
                                                 <div class="col-sm-9">
                                                     <input autocomplete="off" required id="npwp_1111"
-                                                        name="npwp_1111"type="number" min="0"
+                                                        name="npwp_1111"type="text" min="0"
                                                         class="form-control" placeholder="Masukkan NPWP">
                                                         <span id="errornpwp_1111" style="color: red;"></span>
 
@@ -629,7 +629,7 @@
                                                 <label class="col-sm-3 col-form-label">NPWP</label>
                                                 <div class="col-sm-9">
                                                     <input autocomplete="off" required id="npwp_1111_AB"
-                                                        name="npwp_1111_AB"type="number" min="0" class="form-control"
+                                                        name="npwp_1111_AB"type="text" min="0" class="form-control"
                                                         placeholder="Masukkan NPWP">
                                                     <span id="errornpwp_1111_AB" style="color: red;"></span>
                                                 </div>
@@ -934,7 +934,7 @@
                                                 <label class="col-sm-3 col-form-label">NPWP</label>
                                                 <div class="col-sm-9">
                                                     <input autocomplete="off" required id="npwp_1111_A1"
-                                                        name="npwp_1111_A1"type="number" min="0" class="form-control"
+                                                        name="npwp_1111_A1"type="text" min="0" class="form-control"
                                                         placeholder="Masukkan NPWP">
                                                     <span id="errornpwp_1111_A1" style="color: red;"></span>
                                                 </div>
@@ -983,7 +983,7 @@
                                                                         class="form-control" />
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <input required autocomplete="off" type="number"
+                                                                    <input required autocomplete="off" type="text"
                                                                         name="pajak_no_doc_1111A1[]" min="0"
                                                                         id="pajak_no_doc_1111A1[]"
                                                                         class="form-control"/>
@@ -1061,7 +1061,7 @@
                                                 <label class="col-sm-3 col-form-label">NPWP</label>
                                                 <div class="col-sm-9">
                                                     <input autocomplete="off" required id="npwp_1111_A2"
-                                                        name="npwp_1111_A2"type="number" min="0" class="form-control"
+                                                        name="npwp_1111_A2"type="text" min="0" class="form-control"
                                                         placeholder="Masukkan NPWP">
                                                     <span id="errornpwp_1111_A2" style="color: red;"></span>
                                                 </div>
@@ -1095,12 +1095,12 @@
                                                             <tr>
                                                                 <th class="text-center">Nama Penjual BKP</th>
                                                                 <th class="text-center">Nomor NPWP</th>
-                                                                <th class="text-center">Kode Dan No.Seri</th>
+                                                                <th class="text-center">Kode Dan No.Seri Faktur Pajak</th>
                                                                 <th class="text-center">Tanggal</th>
                                                                 <th class="text-center">DPP Dalam Bentuk Rupiah</th>
                                                                 <th class="text-center">PPN Dalam Bentuk Rupiah</th>
                                                                 <th class="text-center">PPnBM Dalam Bentuk Rupiah</th>
-                                                                <th class="text-center">Kode dan No.Seri Faktur Pajak</th>
+                                                                <th class="text-center">Kode dan NSFP Diganti</th>
                                                                 <th class="text-center">Action</th>
                                                             </tr>
                                                         </thead>
@@ -1113,13 +1113,13 @@
                                                                         class="form-control" />
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <input required autocomplete="off" type="number"
+                                                                    <input required autocomplete="off" type="text"
                                                                         name="pajak_no_npwp_1111A2[]" min="0"
                                                                         id="pajak_no_npwp_1111A2[]"
                                                                         class="form-control" />
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <input required autocomplete="off" type="number"
+                                                                    <input required autocomplete="off" type="text"
                                                                         name="pajak_kode_dan_no_seri_1111A2[]"
                                                                         id="pajak_kode_dan_no_seri_1111A2[]"
                                                                         min="0" class="form-control" />
@@ -1149,7 +1149,7 @@
                                                                         class="form-control subppnbm_1111A2" />
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <input required autocomplete="off" type="number"
+                                                                    <input required autocomplete="off" type="text"
                                                                         name="pajak_no_seri_1111A2[]"
                                                                         id="pajak_no_seri_1111A2[]" min="0"
                                                                         class="form-control" />
@@ -1214,7 +1214,7 @@
                                                 <label class="col-sm-3 col-form-label">NPWP</label>
                                                 <div class="col-sm-9">
                                                     <input autocomplete="off" required id="npwp_1111_b1"
-                                                        name="npwp_1111_b1"type="number" min="0" class="form-control"
+                                                        name="npwp_1111_b1"type="text" min="0" class="form-control"
                                                         placeholder="Masukkan NPWP">
                                                     <span id="errornpwp_1111_b1" style="color: red;"></span>
                                                 </div>
@@ -1265,7 +1265,7 @@
                                                                         class="form-control" />
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <input required autocomplete="off" type="number"
+                                                                    <input required autocomplete="off" type="text"
                                                                         name="pajak_no_doc_1111b1[]" min="0"
                                                                         id="pajak_no_doc_1111b1[]"
                                                                         class="form-control" />
@@ -1361,7 +1361,7 @@
                                                 <label class="col-sm-3 col-form-label">NPWP</label>
                                                 <div class="col-sm-9">
                                                     <input autocomplete="off" required id="npwp_1111_b2"
-                                                        name="npwp_1111_b2"type="number" min="0" class="form-control"
+                                                        name="npwp_1111_b2"type="text" min="0" class="form-control"
                                                         placeholder="Masukkan NPWP">
                                                     <span id="errornpwp_1111_b2" style="color: red;"></span>
                                                 </div>
@@ -1395,12 +1395,12 @@
                                                             <tr>
                                                                 <th class="text-center">Nama Penjual BKP</th>
                                                                 <th class="text-center">Nomor NPWP</th>
-                                                                <th class="text-center">Kode Dan No.Seri</th>
+                                                                <th class="text-center">Kode Dan No.Seri Faktur Pajak</th>
                                                                 <th class="text-center">Tanggal</th>
                                                                 <th class="text-center">DPP Dalam Bentuk Rupiah</th>
                                                                 <th class="text-center">PPN Dalam Bentuk Rupiah</th>
                                                                 <th class="text-center">PPnBM Dalam Bentuk Rupiah</th>
-                                                                <th class="text-center">Kode dan No.Seri Faktur Pajak</th>
+                                                                <th class="text-center">Kode dan NSFP Diganti</th>
                                                                 <th class="text-center">Action</th>
                                                             </tr>
                                                         </thead>
@@ -1413,13 +1413,13 @@
                                                                         class="form-control" />
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <input required autocomplete="off" type="number"
+                                                                    <input required autocomplete="off" type="text"
                                                                         name="pajak_no_npwp_1111B2[]" min="0"
                                                                         id="pajak_no_npwp_1111B2[]"
                                                                         class="form-control" />
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <input required autocomplete="off" type="number"
+                                                                    <input required autocomplete="off" type="text"
                                                                         name="pajak_kode_dan_no_seri_1111B2[]"
                                                                         id="pajak_kode_dan_no_seri_1111B2[]"
                                                                         min="0" class="form-control" />
@@ -1514,7 +1514,7 @@
                                                 <label class="col-sm-3 col-form-label">NPWP</label>
                                                 <div class="col-sm-9">
                                                     <input autocomplete="off" required id="npwp_1111_b3"
-                                                        name="npwp_1111_b3"type="number" min="0"
+                                                        name="npwp_1111_b3"type="text" min="0"
                                                         class="form-control" placeholder="Masukkan NPWP">
                                                     <span id="errornpwp_1111_b3" style="color: red;"></span>
                                                 </div>
@@ -1548,12 +1548,12 @@
                                                             <tr>
                                                                 <th class="text-center">Nama Penjual BKP</th>
                                                                 <th class="text-center">Nomor NPWP</th>
-                                                                <th class="text-center">Kode Dan No.Seri</th>
+                                                                <th class="text-center">Kode Dan No.Seri Faktur Pajak</th>
                                                                 <th class="text-center">Tanggal</th>
                                                                 <th class="text-center">DPP Dalam Bentuk Rupiah</th>
                                                                 <th class="text-center">PPN Dalam Bentuk Rupiah</th>
                                                                 <th class="text-center">PPnBM Dalam Bentuk Rupiah</th>
-                                                                <th class="text-center">Kode dan No.Seri Faktur Pajak</th>
+                                                                <th class="text-center">Kode Dan NSFP Diganti </th>
                                                                 <th class="text-center">Action</th>
                                                             </tr>
                                                         </thead>
@@ -1566,13 +1566,13 @@
                                                                         class="form-control" />
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <input required autocomplete="off" type="number"
+                                                                    <input required autocomplete="off" type="text"
                                                                         name="pajak_no_npwp_1111B3[]" min="0"
                                                                         id="pajak_no_npwp_1111B3[]"
                                                                         class="form-control" />
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <input required autocomplete="off" type="number"
+                                                                    <input required autocomplete="off" type="text"
                                                                         name="pajak_kode_dan_no_seri_1111B3[]"
                                                                         id="pajak_kode_dan_no_seri_1111B3[]"
                                                                         min="0" class="form-control" />
@@ -1602,7 +1602,7 @@
                                                                         class="form-control subppnbm_1111B3" />
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <input required autocomplete="off" type="number"
+                                                                    <input required autocomplete="off" type="text"
                                                                         name="pajak_no_seri_1111B3[]"
                                                                         id="pajak_no_seri_1111B3[]" min="0"
                                                                         class="form-control" />

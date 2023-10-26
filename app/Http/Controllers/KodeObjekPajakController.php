@@ -49,7 +49,8 @@ class KodeObjekPajakController extends Controller
         );
         Kodepajak::create($data);
         $a= \DB::commit();
-        return redirect()->back()->with('alert','Berhasil');
+        return redirect()->route('kodeobjekpajak');
+
 
     }
 
@@ -106,7 +107,7 @@ class KodeObjekPajakController extends Controller
             'created_at'=>date('Y-m-d H:i:s'),
         ]);
         $a= \DB::commit();    
-        return back();
+        return redirect()->route('kodeobjekpajak');
     }
 
     /**

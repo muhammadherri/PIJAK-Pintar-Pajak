@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Invoice;
+use App\Models\Faktur;
+use App\Models\InvoiceLine;
+use App\Models\FakturLine;
 use App\Models\Prepopulate;
 use App\Models\HutangPpn;
 use Illuminate\Support\Facades\Auth;
@@ -68,6 +71,15 @@ class HutangPpnController extends Controller
             'attribute1'=>Auth::user()->id,
         );
         Invoice::where('attribute1',Auth::user()->id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        Faktur::where('attribute1',Auth::user()->id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        InvoiceLine::where('attribute1',Auth::user()->id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        FakturLine::where('attribute1',Auth::user()->id)->update([
             'deleted_at'=>date('Y-m-d H:i:s'),
         ]);
         Prepopulate::where('attribute1',Auth::user()->id)->update([

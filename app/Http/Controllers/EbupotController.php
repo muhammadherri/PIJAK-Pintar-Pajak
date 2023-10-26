@@ -73,8 +73,6 @@ class EbupotController extends Controller
             'pilih_transaksi'=>$request->transaksi_npwp,
             'no_tlp'=>$request->no_telp,
             'attribute1'=>Auth::user()->id,
-            'attribute2'=>'NULL',
-            'attribute3'=>'NULL',
             'fasilitas'=>$request->fasilitas,
             'tanggal_bukti_potong'=>$request->tgl_bukti_potong,
             'periode_pajak'=>$request->periode_pajak,
@@ -194,7 +192,7 @@ class EbupotController extends Controller
                 $a= \DB::commit(); 
                 
                 if($dok_ref==null){
-                    return back();  
+                    return redirect()->route('ebupot');
                 }
                 foreach ($dok_ref as $key => $ebupot_id) {
                     $data = array(
@@ -228,8 +226,19 @@ class EbupotController extends Controller
      */
     public function destroy($id)
     {
-        $delete=Ebupot::find($id);
-        $delete->delete();
+        $search=Ebupot::where('id',$id)->get()->first();
+        // dd($search->attribute3);
+        if($search->attribute3==null){
+            $bupot_id=Ebupot::where('id',$id)->get()->first();
+            // dd($bupot_id->ebupot_id);
+            Ebupot::where('id',$id)->update([
+                'attribute2'=>Auth::user()->id,
+                'deleted_at'=>date('Y-m-d H:i:s'),
+            ]);
+            Ebupotlines::where('ebupot_id',$bupot_id->ebupot_id)->update([
+                'deleted_at'=>date('Y-m-d H:i:s'),
+            ]);
+        }
         return redirect()->back()->with('alert','Berhasil Dihapus');
     }
 }

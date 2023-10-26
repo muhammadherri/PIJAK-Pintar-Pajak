@@ -24,33 +24,17 @@ use PDF;
 
 class SptTahunanController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         return view('spttahunan.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('spttahunan.create');
 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $header_id =SptTahunan::get()->count();
@@ -396,12 +380,6 @@ class SptTahunanController extends Controller
         return redirect()->route('spttahunan/show',['id'=>$spt->formulir_id]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         // dd($id);
@@ -449,38 +427,67 @@ class SptTahunanController extends Controller
         return view('spttahunan.show',compact('spt'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        SptTahunan::where('formulir_id',$id)->update([
+            'attribute2'=>Auth::user()->id,
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptTahunanI::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptTahunanIIHead::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptTahunanIIIHead::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptTahunanIIILines::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptTahunanIILines::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptTahunanIILines::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptTahunanIVHead::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptTahunanIVLinesA::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptTahunanIVLinesB::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptTahunanVHead::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptTahunanVIHead::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptTahunanVILinesA::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptTahunanVILinesB::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptTahunanVILinesC::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptTahunanVLinesA::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        SptTahunanVLinesB::where('formulir_id',$id)->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        $a= \DB::commit();    
+        return redirect()->back()->with('alert','Berhasil Dihapus');
     }
    
 }

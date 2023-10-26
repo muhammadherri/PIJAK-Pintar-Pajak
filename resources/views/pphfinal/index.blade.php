@@ -157,8 +157,19 @@
                     "targets": 9
                     , "class": "text-center"
                     , render: function(data, type, row, index) {
-                        content = `
-                            <div class="d-flex">
+                        if (row.attribute3 == 1) {
+                            var info = `<div class="d-flex">
+                                <a class="btn btn-primary shadow btn-xs sharp me-1" href="pphfinal/${row.id}/edit">
+                                    <i class="fa fa-pencil"></i>
+                                </a>
+                             
+                                <a class="btn btn-success shadow btn-xs sharp" href="pphfinal/${row.id}/show">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                            </div>`
+                            ;
+                        } else {
+                            var info = `<div class="d-flex">
                                 <a class="btn btn-primary shadow btn-xs sharp me-1" href="pphfinal/${row.id}/edit">
                                     <i class="fa fa-pencil"></i>
                                 </a>
@@ -168,9 +179,9 @@
                                 <a class="btn btn-success shadow btn-xs sharp" href="pphfinal/${row.id}/show">
                                     <i class="fa fa-eye"></i>
                                 </a>
-                            </div>
-                        `;
-                        return content;
+                            </div>`;
+                        }
+                        return info;
                     }
                 }
             ]

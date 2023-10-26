@@ -203,14 +203,14 @@
                                     </div>
                                     <div class="d-flex justify-content-between">
                                         <div></div>
-                                        {{-- @if($ebupot->attribute3!==NULL)
+                                        @if($ebupot->attribute3==2)
                                             
-                                        @else --}}
+                                        @else
                                         <button class="btn btn-primary btn-submit"name='action'
                                         value="update_trx_ebupot" id="add_all" type="submit"><i
                                             data-feather='save'></i>
                                         {{ 'Simpan' }}</button>
-                                        {{-- @endif --}}
+                                        @endif
                                     </div>
                                 </form>
                             </div>

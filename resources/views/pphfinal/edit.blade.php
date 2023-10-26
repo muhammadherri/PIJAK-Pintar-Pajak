@@ -76,9 +76,12 @@
                                     </div>
                                     <div class="d-flex justify-content-between">
                                         <div></div>
+                                        @if($pphfinal->attribute3==2)
+                                        @else
                                         <button class="btn btn-primary btn-submit"name='action' value="create"
                                             id="add_all" type="submit"><i data-feather='save'></i>
                                             {{ 'Simpan' }}</button>
+                                        @endif
                                     </div>
                                 </form>
                             </div>
