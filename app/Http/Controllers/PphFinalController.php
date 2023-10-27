@@ -41,13 +41,13 @@ class PphFinalController extends Controller
         $header_id = $header_id+1;
         $date = date('Ymd');
         $trx = 'TRX'.'0'.$header_id.$date;
-
+      
         $data = array(
             'transaksi'=>$trx,
             'kode_objek_pajak'=>$request->kop,
             'bruto'=>$request->bruto,
             'tarif'=>$request->tarif,
-            'potongan_pph'=>$request->potongan_pph,
+            'potongan_pph'=>preg_replace('/[^0-9]/','',$request->input('potongan_pph')),
             'attribute1'=>Auth::user()->id
         );
         Pphfinal::create($data);

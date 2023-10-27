@@ -358,7 +358,15 @@
 
     <script src="{{ asset('app-assets/js/dlabnav-init.js') }}"></script>
     <script src="{{ asset('app-assets/js/plugins-init/material-date-picker-init.js') }}"></script>
+<script>
+    function addcommas(x) {
+        //remove commas
+        retVal = x ? parseFloat(x.replace(/,/g, '')) : 0;
 
+        //apply formatting
+        return retVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+</script>
 </body>
 
 </html>

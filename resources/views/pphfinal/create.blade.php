@@ -62,7 +62,7 @@
                                             <div class="col-sm-9">
                                                 <input required autocomplete="off" id="potongan_pph" name="potongan_pph"
                                                 {{-- <input required onkeyup="this.value=addcommas(this.value);" autocomplete="off" id="potongan_pph" name="potongan_pph" --}}
-                                                    type="text" min="0" class="form-control" placeholder="Masukkan Jumlah Potongan PPH">
+                                                    type="text" min="0" class="form-control separator" placeholder="Masukkan Jumlah Potongan PPH">
                                             </div>
                                         </div>
                                     </div>
@@ -84,7 +84,16 @@
         </div>
     </div>
 @endsection
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+    $(document).ready(function(){
+        $("#potongan_pph").on("input",function(){
+            var value = $(this).val();
+            value =value.replace(/\D/g,"");
+            value = Number(value).toLocaleString();
+            $(this).val(value);
+        });
+    });
     function addcommas(x) {
         //remove commas
         retVal = x ? parseFloat(x.replace(/,/g, '')) : 0;
