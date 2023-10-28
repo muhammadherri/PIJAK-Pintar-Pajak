@@ -96,51 +96,54 @@
                                                         </div>
                                                     </div>
                                                     <p></p>
-                                                    <table id="invoicedataTable">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>Nama Barang</th>
-                                                                <th>Kuantitas</th>
-                                                                <th>Harga Satuan</th>
-                                                                <th>Total Diskon</th>
-                                                                <th>Total Harga</th>
-                                                                <th>Action</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody class="sales_order_detail_container">
-                                                            <tr>
-                                                                <td width="auto">
-                                                                    <input required autocomplete="off" type="text" name="angka0[]" class="form-control" />
-                                                                </td>
-                                                                <td><input required autocomplete="off" type="number" name="angka1[]" min="0"
-                                                                        class="form-control" /></td>
-                                                                <td><input required autocomplete="off" type="number" name="angka2[]" min="0"
-                                                                        class="form-control" /></td>
-                                                                <td><input required autocomplete="off" type="number" name="angka3[]" min="0"
-                                                                        class="form-control sub_totpot" /></td>
-                                                                <td><input required autocomplete="off" type="text" name="hasil[]"
-                                                                        class="form-control sub_total"readonly /></td>
-                                                                <td><button type="button" class="btn btn-light btn-submit"><i
-                                                                            class="fa fa-trash"></i></td>
-                                                            </tr>
-                                                        </tbody>
-                                                        <tfoot>
-                                                            <tr>
-                                                                <td colspan="3">
-                                                                    <button class="btn btn-primary btn-submit"name='action'
-                                                                        value="create" id="btn-add" type="button"><i
-                                                                            data-feather='save'></i>
-                                                                        {{ 'Tambah Item' }}</button>
-                                                                </td>
-                                                            </tr>
-                                                        </tfoot>
-                                                    </table>
-
+                                                    <div class="card-body">
+                                                        <div class="table-responsive">
+                                                            <table id="invoicedataTable" class="display" style="min-width: 845px">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Nama Barang</th>
+                                                                        <th>Kuantitas Barang</th>
+                                                                        <th>Harga Barang Satuan</th>
+                                                                        <th>Total Diskon</th>
+                                                                        <th>Total Harga Barang</th>
+                                                                        <th>Action</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody class="sales_order_detail_container">
+                                                                    <tr>
+                                                                        <td width="auto">
+                                                                            <input required autocomplete="off" type="text" name="angka0[]" class="form-control" />
+                                                                        </td>
+                                                                        <td><input onkeyup="this.value=sprator(this.value);" required autocomplete="off" type="text" name="angka1[]" min="0"
+                                                                                class="form-control" /></td>
+                                                                        <td><input onkeyup="this.value=sprator(this.value);" required autocomplete="off" type="text" name="angka2[]" min="0"
+                                                                                class="form-control" /></td>
+                                                                        <td><input onkeyup="this.value=sprator(this.value);" required autocomplete="off" type="text" name="angka3[]" min="0"
+                                                                                class="form-control sub_totpot" /></td>
+                                                                        <td><input required autocomplete="off" type="text" name="hasil[]"
+                                                                                class="form-control sub_total"readonly /></td>
+                                                                        <td><button type="button" class="btn btn-light btn-submit"><i
+                                                                                    class="fa fa-trash"></i></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                                <tfoot>
+                                                                    <tr>
+                                                                        <td colspan="3">
+                                                                            <button class="btn btn-primary btn-submit"name='action'
+                                                                                value="create" id="btn-add" type="button"><i
+                                                                                    data-feather='save'></i>
+                                                                                {{ 'Tambah Item' }}</button>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tfoot>
+                                                            </table>
+                                                        </div>
+                                                    </div>
                                                     <div class="mb-3 row">
                                                         <label class="col-sm-6 col-form-label"></label>
                                                         <label class="col-sm-3 col-form-label">Nilai Transaksi</label>
                                                         <div class="col-sm-3">
-                                                            <input readonly id="nilaitransaksi" type="number"
+                                                            <input readonly id="nilaitransaksi" type="text"
                                                                 name="nilaitransaksi" class="form-control nilaitrx">
                                                             </span>
                                                         </div>
@@ -208,7 +211,7 @@
                                                     <h5 class="card-title">Pengaturan Faktur Pajak</h5>
                                                     <div class="mb-3 row">
                                                         <label class="col-sm-3 col-form-label">Jenis Dokumen</label>
-                                                        <div class="col-sm-3">
+                                                        <div class="col-sm-4">
                                                             <div class="form-check">
                                                                 <input id="jenisdokumen" class="form-check-input"
                                                                     type="radio" name="jenisdokumen" value="1"
@@ -239,7 +242,7 @@
                                                                 </label>
                                                             </div>
                                                         </div>
-                                                        <div class="col-sm-3">
+                                                        <div class="col-sm-4">
                                                             <div class="form-check">
                                                                 <input id="dokumenlainlain" class="form-check-input"
                                                                     type="radio" name="dokumenlainlain" value="0">
@@ -266,46 +269,53 @@
                                                         </div>
                                                     </div>
                                                     <p></p>
-                                                    <table id="efakturtable">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>Nama Barang</th>
-                                                                <th>Kuantitas</th>
-                                                                <th>Harga Satuan</th>
-                                                                <th>Total Diskon</th>
-                                                                <th>Total Harga</th>
-                                                                <th>Action</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody class="sales_order_detail_container">
-                                                            <tr>
-                                                                <td width="auto">
-                                                                    <input required autocomplete="off" type="text" name="angka7[]" 
-                                                                        class="form-control" />
-                                                                </td>
-                                                                <td><input required autocomplete="off" type="number" name="angka4[]" min="0"
-                                                                        class="form-control" /></td>
-                                                                <td><input required autocomplete="off" type="number" name="angka5[]" min="0"
-                                                                        class="form-control" /></td>
-                                                                <td><input required autocomplete="off" type="number" name="angka6[]" min="0"
-                                                                        class="form-control sub_totpot" /></td>
-                                                                <td><input required autocomplete="off" type="text" name="hasil2[]"
-                                                                        class="form-control"readonly /></td>
-                                                                <td><button type="button" class="btn btn-light btn-submit"><i
-                                                                            class="fa fa-trash"></i></td>
-                                                            </tr>
-                                                        </tbody>
-                                                        <tfoot>
-                                                            <tr>
-                                                                <td>
-                                                                    <button class="btn btn-primary btn-submit"name='action'
-                                                                        value="create" id="addRowefaktur" type="button"><i
-                                                                            data-feather='save'></i>
-                                                                        {{ 'Tambah Item' }}</button>
-                                                                </td>
-                                                            </tr>
-                                                        </tfoot>
-                                                    </table>
+                                                    <div class="card-body">
+                                                        <div class="table-responsive">
+                                                            <table id="efakturtable">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Nama Barang</th>
+                                                                        <th>Kuantitas Barang</th>
+                                                                        <th>Harga Barang Satuan</th>
+                                                                        <th>Total Diskon</th>
+                                                                        <th>Total Harga Barang</th>
+                                                                        <th>Action</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody class="sales_order_detail_container">
+                                                                    <tr>
+                                                                        <td width="auto">
+                                                                            <input required autocomplete="off" type="text" name="angka7[]" 
+                                                                                class="form-control" />
+                                                                        </td>
+                                                                        <td><input onkeyup="this.value=sprator(this.value);" 
+                                                                            required autocomplete="off" type="text" name="angka4[]" min="0"
+                                                                                class="form-control" /></td>
+                                                                        <td><input onkeyup="this.value=sprator(this.value);"
+                                                                            required autocomplete="off" type="text" name="angka5[]" min="0"
+                                                                                class="form-control" /></td>
+                                                                        <td><input onkeyup="this.value=sprator(this.value);"
+                                                                            required autocomplete="off" type="text" name="angka6[]" min="0"
+                                                                                class="form-control sub_totpot" /></td>
+                                                                        <td><input required autocomplete="off" type="text" name="hasil2[]"
+                                                                                class="form-control"readonly /></td>
+                                                                        <td><button type="button" class="btn btn-light btn-submit"><i
+                                                                                    class="fa fa-trash"></i></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                                <tfoot>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <button class="btn btn-primary btn-submit"name='action'
+                                                                                value="create" id="addRowefaktur" type="button"><i
+                                                                                    data-feather='save'></i>
+                                                                                {{ 'Tambah Item' }}</button>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tfoot>
+                                                            </table>
+                                                        </div>
+                                                    </div>
                                                     <p></p>
                                                     <div class="mb-3 row">
                                                         <div class="col-sm-12">
@@ -336,6 +346,12 @@
 @endsection
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+     function sprator(x) {
+        //remove commas
+        retVal = x ? parseFloat(x.replace(/,/g, '')) : 0;
+        // console.log(retVal);
+        return retVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
     document.addEventListener('DOMContentLoaded', function() {
         const tableInv = document.querySelector('#invoicedataTable tbody');
         const addInvBtn = document.querySelector('#btn-add');
@@ -346,9 +362,9 @@
                     <td width="auto">
                         <input required autocomplete="off" type="text" name="angka0[]" min="0" class="form-control"/>
                     </td>
-                    <td><input required autocomplete="off" type="number" name="angka1[]" min="0" class="form-control"/></td>
-					<td><input required autocomplete="off" type="number" name="angka2[]" min="0" class="form-control"/></td>
-					<td><input required  autocomplete="off" type="number" name="angka3[]" min="0" class="form-control sub_totpot"/></td>
+                    <td><input onkeyup="this.value=sprator(this.value);" required autocomplete="off" type="text" name="angka1[]" min="0" class="form-control"/></td>
+					<td><input onkeyup="this.value=sprator(this.value);" required autocomplete="off" type="text" name="angka2[]" min="0" class="form-control"/></td>
+					<td><input onkeyup="this.value=sprator(this.value);" required  autocomplete="off" type="text" name="angka3[]" min="0" class="form-control sub_totpot"/></td>
 					<td><input required autocomplete="off" type="text" name="hasil[]" class="form-control sub_total"readonly /></td>
                     <td><button type="button" class="btn btn-danger btn-remove"><i class="fa fa-trash"></i></button></td>
 
@@ -361,27 +377,39 @@
             const target = event.target;
             if (target.tagName === 'INPUT' && target.name.startsWith('angka')) {
                 const row = target.closest('tr');
-                const angka1 = parseFloat(row.querySelector('input[name="angka1[]"]').value) || 0;
-                const angka2 = parseFloat(row.querySelector('input[name="angka2[]"]').value) || 0;
-                const angka3 = parseFloat(row.querySelector('input[name="angka3[]"]').value) || 0;
+                // const angka1 = parseFloat(row.querySelector('input[name="angka1[]"]').value) || 0;
+                const angka1 = $(row.querySelector('[name="angka1[]"]')).val();
+                retValangka1=angka1 ? parseFloat(angka1.replace(/,/g, '')) : 0;
+                
+                // const angka2 = parseFloat(row.querySelector('input[name="angka2[]"]').value) || 0;
+                const angka2 = $(row.querySelector('[name="angka2[]"]')).val();
+                retValangka2=angka2 ? parseFloat(angka2.replace(/,/g, '')) : 0;
+                
+                // const angka3 = parseFloat(row.querySelector('input[name="angka3[]"]').value) || 0;
+                const angka3 = $(row.querySelector('[name="angka3[]"]')).val();
+                retValangka3=angka3 ? parseFloat(angka3.replace(/,/g, '')) : 0;
+
                 const hasilInput = row.querySelector('input[name="hasil[]"]');
-                const sum = angka1 * angka2 - angka3;
-                hasilInput.value = sum;
+                const sum = retValangka1 * retValangka2 - retValangka3;
+                hasilInput.value = sum.toLocaleString();
+                
                 var totalhar = 0
                 var totalpot = 0
 
                 $(".sub_total").each(function() {
-                    totalhar += +$(this).val();
+                    var total = $(this).val().replace(/,/g, '');
+                    totalhar +=+total;
                 });
                 $(".sub_totpot").each(function() {
-                    totalpot += +$(this).val();
+                    totalpot += +$(this).val().replace(/,/g, '');
                 });
              
-                $('.nilaitrx').val(totalhar);
-                $('.nilaihargapot').val(totalpot);
-                $('.nilai_ppn').val((totalhar-totalpot)*11/100);
-                var totalall =(totalhar-totalpot)*11/100;
-                $('.total_trx').val((totalhar-totalpot)+totalall);
+                $('.nilaitrx').val(totalhar.toLocaleString());
+                $('.nilaihargapot').val(totalpot.toLocaleString());
+                var ppn = ((totalhar-totalpot)*11/100);
+                $('.nilai_ppn').val(ppn.toLocaleString());
+                var trx = ((totalhar-totalpot)+ppn);
+                $('.total_trx').val(trx.toLocaleString());
             }
         });
 
@@ -402,9 +430,12 @@
                     <td width="auto">
                         <input required autocomplete="off" type="text" name="angka7[]"class="form-control"/>
                     </td>
-                    <td><input required autocomplete="off" type="number" name="angka4[]" min="0" class="form-control"/></td>
-					<td><input required autocomplete="off" type="number" name="angka5[]" min="0" class="form-control"/></td>
-					<td><input required autocomplete="off" type="number" name="angka6[]" min="0" class="form-control"/></td>
+                    <td><input onkeyup="this.value=sprator(this.value);" 
+                        required autocomplete="off" type="text" name="angka4[]" min="0" class="form-control"/></td>
+					<td><input onkeyup="this.value=sprator(this.value);"
+                        required autocomplete="off" type="text" name="angka5[]" min="0" class="form-control"/></td>
+					<td><input onkeyup="this.value=sprator(this.value);"
+                        required autocomplete="off" type="text" name="angka6[]" min="0" class="form-control"/></td>
 					<td><input required autocomplete="off" type="text" name="hasil2[]" class="form-control"readonly /></td>
                     <td><button type="button" class="btn btn-danger btn-remove"><i class="fa fa-trash"></i></button></td>
 
@@ -417,12 +448,21 @@
             const target = event.target;
             if (target.tagName === 'INPUT' && target.name.startsWith('angka')) {
                 const row = target.closest('tr');
-                const angka1 = parseFloat(row.querySelector('input[name="angka4[]"]').value) || 0;
-                const angka2 = parseFloat(row.querySelector('input[name="angka5[]"]').value) || 0;
-                const angka3 = parseFloat(row.querySelector('input[name="angka6[]"]').value) || 0;
+                // const angka1 = parseFloat(row.querySelector('input[name="angka4[]"]').value) || 0;
+                const angka1 = $(row.querySelector('[name="angka4[]"]')).val();
+                retValangka1=angka1 ? parseFloat(angka1.replace(/,/g, '')) : 0;
+
+                // const angka2 = parseFloat(row.querySelector('input[name="angka5[]"]').value) || 0;
+                const angka2 = $(row.querySelector('[name="angka5[]"]')).val();
+                retValangka2=angka2 ? parseFloat(angka2.replace(/,/g, '')) : 0;
+
+                // const angka3 = parseFloat(row.querySelector('input[name="angka6[]"]').value) || 0;
+                const angka3 = $(row.querySelector('[name="angka6[]"]')).val();
+                retValangka3=angka3 ? parseFloat(angka3.replace(/,/g, '')) : 0;
+
                 const hasilInput = row.querySelector('input[name="hasil2[]"]');
-                const sum = angka1 * angka2 - angka3;
-                hasilInput.value = sum;
+                const sum = retValangka1 * retValangka2 - retValangka3;
+                hasilInput.value = sum.toLocaleString();
             }
         });
 

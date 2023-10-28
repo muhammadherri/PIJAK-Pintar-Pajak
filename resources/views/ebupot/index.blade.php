@@ -27,7 +27,7 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <a class="btn btn-primary" href="{{ route('ebupot/create') }}">
-                                        {{ __('Create') }}
+                                        {{ __('Tambah') }}
                                     </a>
                                 </div>
                             </div>
@@ -42,9 +42,11 @@
                                             <th>Nomor Telepone</th>
                                             <th>Nama Jenis Fasilitas</th>
                                             <th>Kode Objek</th>
-                                            <th>Nama Pembuat</th>
                                             <th>Tgl Bukti Potong</th>
                                             <th>Periode Pajak</th>
+                                            <th>Potongan PPh</th>
+                                            <th>Penandatangan</th>
+                                            <th>Nama Pembuat</th>
                                             <th>Tgl Pembuatan</th>
                                             <th>Status</th>
                                             <th>Action</th>
@@ -77,7 +79,7 @@
             ],
 
             ajax: "{{ route('data.ebupot') }}",
-            "order":[[11,'desc']],
+            "order":[[13,'desc']],
             columnDefs: [
                 {
                     "targets": 0,
@@ -115,32 +117,46 @@
                     "targets": 5,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.created_by;
+                        return row.tgl_buktiPotong;
                     }
                 },
                 {
                     "targets": 6,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.tgl_buktiPotong;
+                        return row.tgl_periodePajak;
                     }
                 },
                 {
                     "targets": 7,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.tgl_periodePajak;
+                        return row.potongan;
                     }
                 },
                 {
                     "targets": 8,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.tgl_pembuat;
+                        return row.ttd;
                     }
                 },
                 {
                     "targets": 9,
+                    "class": "text-center",
+                    "render": function(data, type, row, meta) {
+                        return row.created_by;
+                    }
+                },
+                {
+                    "targets": 10,
+                    "class": "text-center",
+                    "render": function(data, type, row, meta) {
+                        return row.tgl_pembuat;
+                    }
+                },
+                {
+                    "targets": 11,
                     render: function(data, type, row, index) {
                         if (row.status == 1) {
                             var info = `<div class="d-flex"><a class="badge badge-rounded badge-outline-warning">
@@ -157,7 +173,7 @@
                     }
                 },
                 {
-                    "targets": 10,
+                    "targets": 12,
                     "class": "text-center",
                     render: function(data, type, row, index) {
                         content = `
@@ -177,7 +193,7 @@
                     }
                 },
                 {
-                    "targets": 11,
+                    "targets": 13,
                     "visible":false,
                     "searchable":false,
                     "render": function(data, type, row, meta) {

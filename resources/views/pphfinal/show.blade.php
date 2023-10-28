@@ -47,8 +47,8 @@
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Jumlah Penghasilan Bruto</label>
                                         <div class="col-sm-9">
-                                            <input required autocomplete="off" id="bruto" name="bruto" value="{{$pphfinal->bruto}}"
-                                                type="number" min="0" class="form-control" placeholder="Masukkan Jumlah Penghasilan Bruto">
+                                            <input required autocomplete="off" id="bruto" name="bruto" value="{{number_format($pphfinal->bruto)}}"
+                                                type="text" min="0" class="form-control" placeholder="Masukkan Jumlah Penghasilan Bruto">
                                         </div>
                                     </div>
                                 </div>
@@ -56,8 +56,8 @@
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Tarif</label>
                                         <div class="col-sm-9">
-                                            <input required autocomplete="off" id="tarif" name="tarif" value="{{$pphfinal->tarif}}"
-                                                type="number" min="0" class="form-control" placeholder="Masukkan Jumlah Tarif">
+                                            <input required autocomplete="off" id="tarif" name="tarif" value="{{number_format($pphfinal->tarif)}}"
+                                                type="text" min="0" class="form-control" placeholder="Masukkan Jumlah Tarif">
                                         </div>
                                     </div>
                                 </div>
@@ -65,8 +65,8 @@
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Potongan PPH</label>
                                         <div class="col-sm-9">
-                                            <input required autocomplete="off" id="potongan_pph" name="potongan_pph" value="{{$pphfinal->potongan_pph}}"
-                                                type="number" min="0" class="form-control" placeholder="Masukkan Jumlah Potongan PPH">
+                                            <input required autocomplete="off" id="potongan_pph" name="potongan_pph" value="{{number_format($pphfinal->potongan_pph)}}"
+                                                type="text" min="0" class="form-control" placeholder="Masukkan Jumlah Potongan PPH">
                                         </div>
                                     </div>
                                 </div>

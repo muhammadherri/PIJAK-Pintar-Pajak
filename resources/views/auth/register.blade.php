@@ -46,7 +46,7 @@
                             required autocomplete="off">
                     </div>
                     <div class="form-group first">
-                        <input placeholder="Dosen Pembimbing" id="dosen_pembimbing" type="text"
+                        <input placeholder="Kode Dosen" id="dosen_pembimbing" type="text"
                             class="form-control" name="dosen_pembimbing"
                             required autocomplete="off">
                     </div>

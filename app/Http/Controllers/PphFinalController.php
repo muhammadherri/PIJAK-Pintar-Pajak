@@ -45,8 +45,8 @@ class PphFinalController extends Controller
         $data = array(
             'transaksi'=>$trx,
             'kode_objek_pajak'=>$request->kop,
-            'bruto'=>$request->bruto,
-            'tarif'=>$request->tarif,
+            'bruto'=>preg_replace('/[^0-9]/','',$request->bruto),
+            'tarif'=>preg_replace('/[^0-9]/','',$request->tarif),
             'potongan_pph'=>preg_replace('/[^0-9]/','',$request->input('potongan_pph')),
             'attribute1'=>Auth::user()->id
         );
@@ -100,9 +100,9 @@ class PphFinalController extends Controller
     {
         Pphfinal::where('id',$id)->update([
             'kode_objek_pajak'=>$request->kop,
-            'bruto'=>$request->bruto,
-            'tarif'=>$request->tarif,
-            'potongan_pph'=>$request->potongan_pph,
+            'bruto'=>preg_replace('/[^0-9]/','',$request->bruto),
+            'tarif'=>preg_replace('/[^0-9]/','',$request->tarif),
+            'potongan_pph'=>preg_replace('/[^0-9]/','',$request->input('potongan_pph')),
             'attribute2'=>Auth::user()->id,
             'updated_at'=>date('Y-m-d H:i:s'),
         ]);

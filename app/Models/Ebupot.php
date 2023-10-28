@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\User;
 use App\Models\Fasilitas;
+use App\Models\Jenispph;
+use App\Models\Kodepajak;
+use App\Models\Penandatanganan;
 
 class Ebupot extends Model
 {
@@ -41,5 +44,17 @@ class Ebupot extends Model
     public function fasilitases()
     {
         return $this->hasOne(Fasilitas::class,'id','fasilitas');
+    }
+    public function jenispph()
+    {
+        return $this->hasOne(Jenispph::class,'id','jenis_pph');
+    }
+    public function kodeobjek()
+    {
+        return $this->hasOne(Kodepajak::class,'id','kode_objek_pajak');
+    }
+    public function ttd()
+    {
+        return $this->hasOne(Penandatanganan::class,'id','penandatanganan');
     }
 }

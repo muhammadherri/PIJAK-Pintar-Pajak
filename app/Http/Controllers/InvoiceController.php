@@ -54,16 +54,16 @@ class InvoiceController extends Controller
         $header_id = $header_id+1;
 
         $barang_inv = $request->input('angka0');
-        $kuantitas_inv = $request->input('angka1');
-        $harga_satuan_inv = $request->input('angka2');
-        $total_diskon_inv = $request->input('angka3');
-        $total_harga_inv = $request->input('hasil');
+        $kuantitas_inv = preg_replace('/[^0-9]/','',$request->input('angka1'));
+        $harga_satuan_inv = preg_replace('/[^0-9]/','',$request->input('angka2'));
+        $total_diskon_inv = preg_replace('/[^0-9]/','',$request->input('angka3'));
+        $total_harga_inv = preg_replace('/[^0-9]/','',$request->input('hasil'));
 
         $barang_faktur = $request->input('angka7');
-        $kuantitas_faktur = $request->input('angka4');
-        $harga_satuan_faktur = $request->input('angka5');
-        $total_diskon_faktur = $request->input('angka6');
-        $total_harga_faktur = $request->input('hasil2');
+        $kuantitas_faktur = preg_replace('/[^0-9]/','',$request->input('angka4'));
+        $harga_satuan_faktur = preg_replace('/[^0-9]/','',$request->input('angka5'));
+        $total_diskon_faktur = preg_replace('/[^0-9]/','',$request->input('angka6'));
+        $total_harga_faktur = preg_replace('/[^0-9]/','',$request->input('hasil2'));
 
         $data_inv = array(
             'invoice_id'=>$header_id,
@@ -72,10 +72,10 @@ class InvoiceController extends Controller
             'tgl_faktur'=>$request->tgl_faktur,
             'jatuh_tempo'=>$request->tgl_jatuh_tempo,
             'termin_pembayaran'=>$request->termin_pembayaran,
-            'nilai_transaksi'=>$request->nilaitransaksi,
-            'potongan_harga'=>$request->potonganharga,
-            'ppn'=>$request->ppn,
-            'total'=>$request->totaltrx,
+            'nilai_transaksi'=>preg_replace('/[^0-9]/','',$request->nilaitransaksi),
+            'potongan_harga'=>preg_replace('/[^0-9]/','',$request->potonganharga),
+            'ppn'=>preg_replace('/[^0-9]/','',$request->ppn),
+            'total'=>preg_replace('/[^0-9]/','',$request->totaltrx),
             'catatan'=>$request->catatan,
             'informasi_pembayaran'=>$request->informasi_pembayaran,
             'attribute1'=>Auth::user()->id,

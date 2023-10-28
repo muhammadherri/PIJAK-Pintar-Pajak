@@ -28,7 +28,7 @@
                                 <div class="col-lg-6">
                                     <a class="btn btn-primary" href="{{ route('transaksipph21/create') }}">
 
-                                        {{ __('Create') }}
+                                        {{ __('Tambah') }}
 
                                     </a>
                                 </div>
@@ -43,10 +43,13 @@
                                             <th>Nama NPWP Terdaftar</th>
                                             <th>Nomor NPWP Terdaftar</th>
                                             <th>Masa Penghasilan</th>
-                                            <th>Jumlah Tunjangan</th>
-                                            <th>Jumlah Ketentuan PTKP</th>
-                                            <th>Jumlah Ketentuan Tarif</th>
-                                            <th>Jumlah Gaji Pensiun</th>
+                                            <th>Gaji Pensiun</th>
+                                            <th>Penghasilan Bruto</th>
+                                            <th>Total Pengurang</th>
+                                            <th>Nilai PTKP</th>
+                                            <th>PPh 21 PKP</th>
+                                            <th>PPh 21 Potongan</th>
+                                            <th>PPh 21 Terutang</th>
                                             <th>Tanggal Pembuatan</th>
                                             <th>Status</th>
                                             <th>Dibuat Oleh</th>
@@ -121,39 +124,60 @@
                     "targets": 4
                     , "class": "text-center"
                     , "render": function(data, type, row, meta) {
-                        return row.tunjangan_pajak;
+                        return row.gaji_pensiun;
                     }
                 },
                 {
                     "targets": 5
                     , "class": "text-center"
                     , "render": function(data, type, row, meta) {
-                        return row.ketentuan_ptkp;
+                        return row.bruto;
                     }
                 },
                 {
                     "targets": 6
                     , "class": "text-center"
                     , "render": function(data, type, row, meta) {
-                        return row.ketentuan_tarif;
+                        return row.total_pengurang;
                     }
                 },
                 {
                     "targets": 7
                     , "class": "text-center"
                     , "render": function(data, type, row, meta) {
-                        return row.gaji_pensiun;
+                        return row.ptkp;
                     }
                 },
                 {
                     "targets": 8
                     , "class": "text-center"
                     , "render": function(data, type, row, meta) {
-                        return row.created_at;
+                        return row.pph21pkp;
                     }
                 },
                 {
                     "targets": 9
+                    , "class": "text-center"
+                    , "render": function(data, type, row, meta) {
+                        return row.pph21potongan;
+                    }
+                },
+                {
+                    "targets": 10
+                    , "class": "text-center"
+                    , "render": function(data, type, row, meta) {
+                        return row.pph21terutang;
+                    }
+                },
+                {
+                    "targets": 11
+                    , "class": "text-center"
+                    , "render": function(data, type, row, meta) {
+                        return row.created_at;
+                    }
+                },
+                {
+                    "targets": 12
                     , "class": "text-center"
                     , "render": function(data, type, row, meta) {
                         if(row.status_npwp==0 ){
@@ -165,7 +189,7 @@
                     }
                 },
                 {
-                    "targets": 10
+                    "targets": 13
                     , "class": "text-center"
                     , "render": function(data, type, row, meta) {
                         return row.created_by;
@@ -173,7 +197,7 @@
                 },
                 
                 {
-                    "targets": 11
+                    "targets": 14
                     , "class": "text-center"
                     , render: function(data, type, row, index) {
                         content = `

@@ -40,7 +40,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">No NPWP</label>
                                             <div class="col-sm-9">
-                                                <input value="{{$penandatanganan->npwp}}" autocomplete="off" required id="npwp" name="npwp"type="number" class="form-control"
+                                                <input value="{{$penandatanganan->npwp}}" autocomplete="off" required id="npwp" name="npwp"type="text" class="form-control"
                                                     placeholder="Masukkan No NPWP">
                                                     <span id="errorText" style="color: red;"></span>
                                                 

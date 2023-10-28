@@ -45,11 +45,11 @@ class PphTidakFinalController extends Controller
         $data = array(
             'trx'=>$trx,
             'kode_objek_pajak'=>$request->kop,
-            'bruto'=>$request->bruto,
-            'dasar_pengenaan_pajak'=>$request->pengenaan_pajak,
+            'bruto'=>preg_replace('/[^0-9]/','',$request->bruto),
+            'dasar_pengenaan_pajak'=>preg_replace('/[^0-9]/','',$request->pengenaan_pajak),
             'tarif_lebih_tinggi'=>1,
-            'tarif'=>$request->tarif,
-            'potongan_pph'=>$request->potongan_pph,
+            'tarif'=>preg_replace('/[^0-9]/','',$request->tarif),
+            'potongan_pph'=>preg_replace('/[^0-9]/','',$request->potongan_pph),
             'attribute1'=>Auth::user()->id
         );
         PphTidakFinal::create($data);
@@ -102,11 +102,11 @@ class PphTidakFinalController extends Controller
     {
         PphTidakFinal::where('id',$id)->update([
             'kode_objek_pajak'=>$request->kop,
-            'bruto'=>$request->bruto,
-            'dasar_pengenaan_pajak'=>$request->pengenaan_pajak,
+            'bruto'=>preg_replace('/[^0-9]/','',$request->bruto),
+            'dasar_pengenaan_pajak'=>preg_replace('/[^0-9]/','',$request->pengenaan_pajak),
             'tarif_lebih_tinggi'=>1,
-            'tarif'=>$request->tarif,
-            'potongan_pph'=>$request->potongan_pph,
+            'tarif'=>preg_replace('/[^0-9]/','',$request->tarif),
+            'potongan_pph'=>preg_replace('/[^0-9]/','',$request->potongan_pph),
             'attribute2'=>Auth::user()->id,
             'updated_at'=>date('Y-m-d H:i:s'),
         ]);

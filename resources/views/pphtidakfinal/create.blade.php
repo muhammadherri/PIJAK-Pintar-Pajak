@@ -11,8 +11,8 @@
         <div class="container-fluid">
             <div class="row page-titles">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('pphfinal') }}">Transaksi</a></li>
-                    <li class="breadcrumb-item active"><a href="{{ route('pphfinal') }}">PPH 21 Tidak Final</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('pphtidakfinal') }}">Transaksi</a></li>
+                    <li class="breadcrumb-item active"><a href="{{ route('pphtidakfinal') }}">PPH 21 Tidak Final</a></li>
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Buat</a></li>
                 </ol>
             </div>
@@ -42,8 +42,9 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Jumlah Penghasilan Bruto</label>
                                             <div class="col-sm-9">
-                                                <input required autocomplete="off" id="bruto" name="bruto"
-                                                    type="number" min="0" class="form-control" placeholder="Masukkan Jumlah Penghasilan Bruto">
+                                                <input onkeyup="this.value=addcommas(this.value);"
+                                                 required autocomplete="off" id="bruto" name="bruto"
+                                                    type="text" min="0" class="form-control" placeholder="Masukkan Jumlah Penghasilan Bruto">
                                             </div>
                                         </div>
                                     </div>
@@ -51,8 +52,8 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Dasar Pengenaan Pajak</label>
                                             <div class="col-sm-9">
-                                                <input required autocomplete="off" id="pengenaan_pajak" name="pengenaan_pajak"
-                                                    type="number" min="0" class="form-control" placeholder="Masukkan Dasar Pengenaan Pajak">
+                                                <input required onkeyup="this.value=addcommas(this.value);" required autocomplete="off" id="pengenaan_pajak" name="pengenaan_pajak"
+                                                    type="text" min="0" class="form-control" placeholder="Masukkan Dasar Pengenaan Pajak">
                                             </div>
                                         </div>
                                     </div>
@@ -72,8 +73,9 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Tarif</label>
                                             <div class="col-sm-9">
-                                                <input required autocomplete="off" id="tarif" name="tarif"
-                                                    type="number" min="0" class="form-control" placeholder="Masukkan Jumlah Tarif">
+                                                <input required onkeyup="this.value=addcommas(this.value);"  
+                                                autocomplete="off" id="tarif" name="tarif"
+                                                    type="text" min="0" class="form-control" placeholder="Masukkan Jumlah Tarif">
                                             </div>
                                         </div>
                                     </div>
@@ -81,8 +83,9 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Potongan PPH</label>
                                             <div class="col-sm-9">
-                                                <input required autocomplete="off" id="potongan_pph" name="potongan_pph"
-                                                    type="number" min="0" class="form-control" placeholder="Masukkan Jumlah Potongan PPH">
+                                                <input required onkeyup="this.value=addcommas(this.value);"  
+                                                autocomplete="off" id="potongan_pph" name="potongan_pph"
+                                                    type="text" min="0" class="form-control" placeholder="Masukkan Jumlah Potongan PPH">
                                             </div>
                                         </div>
                                     </div>

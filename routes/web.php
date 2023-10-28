@@ -19,7 +19,7 @@ Route::get('/transaksipph21', [App\Http\Controllers\TransaksipphduapuluhsatuCont
 Route::get('/transaksipph21/create', [App\Http\Controllers\TransaksipphduapuluhsatuController::class, 'create'])->name('transaksipph21/create');
 Route::post('/transaksipph21/store', [App\Http\Controllers\TransaksipphduapuluhsatuController::class, 'store'])->name('transaksipph21/store');
 
-Route::delete('/transaksipph21/{id}', [App\Http\Controllers\TransaksipphduapuluhsatuController::class, 'destroy']);
+Route::get('/transaksipph21/{id}/destroy', [App\Http\Controllers\TransaksipphduapuluhsatuController::class, 'destroy']);
 Route::get('/transaksipph21/{id}/show', [App\Http\Controllers\TransaksipphduapuluhsatuController::class, 'show'])->name('transaksipph21/show');
 Route::get('/transaksipph21/{id}/edit', [App\Http\Controllers\TransaksipphduapuluhsatuController::class, 'edit'])->name('transaksipph21/edit');
 Route::put('/transaksipph21/{id}', [App\Http\Controllers\TransaksipphduapuluhsatuController::class, 'update'])->name('transaksipph21/update');

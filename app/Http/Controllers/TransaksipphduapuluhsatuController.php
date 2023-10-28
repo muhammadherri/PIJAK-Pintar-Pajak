@@ -53,7 +53,7 @@ class TransaksipphduapuluhsatuController extends Controller
         $header_id = $header_id+1;
         $date = date('Ymd');
         $trx = 'TRXPPh'.'0'.$header_id.$date;
-        dd($request);
+        // dd($request);
         $data = array(
             'status_npwp'=>$request->npwp,
             'nama_wajib_pajak'=>$request->input_wajib_pajak,
@@ -97,8 +97,8 @@ class TransaksipphduapuluhsatuController extends Controller
             'pph21_dipotong_sebelumnya'=>preg_replace('/[^0-9]/','',$request->pph21potongan),
             'pph21_terutang'=>preg_replace('/[^0-9]/','',$request->pph21terutang),
             'attribute1'=>Auth::user()->id,
-            'attribute2'=>'NULL',
-            'attribute3'=>'NULL',
+            'attribute2'=>NULL,
+            'attribute3'=>NULL,
             'created_at'=>date('Y-m-d H:i:s'),
         );
         // dd($data);
@@ -162,17 +162,9 @@ class TransaksipphduapuluhsatuController extends Controller
         }
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        if($request->gross==0){
-            TransaksiPphDuapuluhSatu::where('id',$id)->update([
+            $tes=TransaksiPphDuapuluhSatu::where('id',$id)->update([
                 'status_npwp'=>$request->npwp,
                 'nama_wajib_pajak'=>$request->input_wajib_pajak,
                 'no_npwp'=>$request->no_npwp,
@@ -183,89 +175,43 @@ class TransaksipphduapuluhsatuController extends Controller
                 'tunjangan_pajak'=>$request->gross,
                 'ketentuan_ptkp'=>$request->ketentuan_ptkp,
                 'ketentuan_tarif'=>$request->ketentuan_tarif,
-                'gaji_pensiun'=>$request->gajidanpensiun,
-                'tunjangan_pph'=>$request->tunjangan_pph,
-                'tunjangan_lain'=>$request->tunjanganlain,
-                'honorarium'=>$request->honorarium,
-                'premi_asuransi'=>$request->premi_asuransi,
-                'natura'=>$request->natura,
-                'tantiem'=>$request->tantiem,
-                'penghasilan_bruto'=>$request->penghasilan_bruto,
-                'biaya_jabatan'=>$request->biaya_jabatan,
-                'tht_jht'=>$request->iuran_pensiun,
-                'total_pengurangan'=>$request->total_pengurang,
-                'penghasilan_netto'=>$request->penghasilan_netto,
-                'netto_massa'=>$request->penghasilan_netto_ms,
-                'netto_setahun'=>$request->netto_pertahun,
-                'ptkp'=>$request->pilih_ptkp,
-                'pkp'=>$request->input_pkp,
-                'masukan_tarif1'=>$request->potongantarif1,
-                'masukan_tarif2'=>$request->potongantarif2,
-                'masukan_tarif3'=>$request->potongantarif3,
-                'masukan_tarif4'=>$request->potongantarif4,
-                'pkp1'=>$request->tarif1,
-                'pkp2'=>$request->tarif2,
-                'pkp3'=>$request->tarif3,
-                'pkp4'=>$request->tarif4,
-                'tarif1'=>$request->totaltarif1,
-                'tarif2'=>$request->totaltarif2,
-                'tarif3'=>$request->totaltarif3,
-                'tarif4'=>$request->totaltarif4,
-                'pph21ataspkp'=>$request->jumlahtotal,
-                'pph21_dipotong_sebelumnya'=>$request->pph21potongan,
-                'pph21_terutang'=>$request->pph21terutang,
+                'gaji_pensiun'=>preg_replace('/[^0-9]/','',$request->gajidanpensiun),
+                'tunjangan_pph'=>preg_replace('/[^0-9]/','',$request->tunjangan_pph),
+                'tunjangan_lain'=>preg_replace('/[^0-9]/','',$request->tunjanganlain),
+                'honorarium'=>preg_replace('/[^0-9]/','',$request->honorarium),
+                'premi_asuransi'=>preg_replace('/[^0-9]/','',$request->premi_asuransi),
+                'natura'=>preg_replace('/[^0-9]/','',$request->natura),
+                'tantiem'=>preg_replace('/[^0-9]/','',$request->tantiem),
+                'penghasilan_bruto'=>preg_replace('/[^0-9]/','',$request->penghasilan_bruto),
+                'biaya_jabatan'=>preg_replace('/[^0-9]/','',$request->biaya_jabatan),
+                'tht_jht'=>preg_replace('/[^0-9]/','',$request->iuran_pensiun),
+                'total_pengurangan'=>preg_replace('/[^0-9]/','',$request->total_pengurang),
+                'penghasilan_netto'=>preg_replace('/[^0-9]/','',$request->penghasilan_netto),
+                'netto_massa'=>preg_replace('/[^0-9]/','',$request->penghasilan_netto_ms),
+                'netto_setahun'=>preg_replace('/[^0-9]/','',$request->netto_pertahun),
+                'ptkp'=>preg_replace('/[^0-9]/','',$request->pilih_ptkp),
+                'pkp'=>preg_replace('/[^0-9]/','',$request->input_pkp),
+                'masukan_tarif1'=>preg_replace('/[^0-9]/','',$request->potongantarif1),
+                'masukan_tarif2'=>preg_replace('/[^0-9]/','',$request->potongantarif2),
+                'masukan_tarif3'=>preg_replace('/[^0-9]/','',$request->potongantarif3),
+                'masukan_tarif4'=>preg_replace('/[^0-9]/','',$request->potongantarif4),
+                'pkp1'=>preg_replace('/[^0-9]/','',$request->tarif1),
+                'pkp2'=>preg_replace('/[^0-9]/','',$request->tarif2),
+                'pkp3'=>preg_replace('/[^0-9]/','',$request->tarif3),
+                'pkp4'=>preg_replace('/[^0-9]/','',$request->tarif4),
+                'tarif1'=>preg_replace('/[^0-9]/','',$request->totaltarif1),
+                'tarif2'=>preg_replace('/[^0-9]/','',$request->totaltarif2),
+                'tarif3'=>preg_replace('/[^0-9]/','',$request->totaltarif3),
+                'tarif4'=>preg_replace('/[^0-9]/','',$request->totaltarif4),
+                'pph21ataspkp'=>preg_replace('/[^0-9]/','',$request->jumlahtotal),
+                'pph21_dipotong_sebelumnya'=>preg_replace('/[^0-9]/','',$request->pph21potongan),
+                'pph21_terutang'=>preg_replace('/[^0-9]/','',$request->pph21terutang),
                 'attribute2'=>Auth::user()->id,
                 'updated_at'=>date('Y-m-d H:i:s'),
             ]);
+            // dd($tes);
             $a= \DB::commit();    
-        }else{
-            TransaksiPphDuapuluhSatu::where('id',$id)->update([
-                'status_npwp'=>$request->npwp,
-                'nama_wajib_pajak'=>$request->input_wajib_pajak,
-                'no_npwp'=>$request->no_npwp,
-                'status_pernikahan'=>$request->status_pernikahan,
-                'tanggungan'=>$request->tanggungan,
-                'masa_penghasilan_start'=>$request->masa_penghasilan,
-                'masa_penghasilan_end'=>$request->masa_penghasilan_end,
-                'tunjangan_pajak'=>$request->gross,
-                'ketentuan_ptkp'=>$request->ketentuan_ptkp,
-                'ketentuan_tarif'=>$request->ketentuan_tarif,
-                'gaji_pensiun'=>$request->gajidanpensiun,
-                // 'tunjangan_pph'=>$request->tunjangan_pph,
-                'tunjangan_lain'=>$request->tunjanganlain,
-                'honorarium'=>$request->honorarium,
-                'premi_asuransi'=>$request->premi_asuransi,
-                'natura'=>$request->natura,
-                'tantiem'=>$request->tantiem,
-                'penghasilan_bruto'=>$request->penghasilan_bruto,
-                'biaya_jabatan'=>$request->biaya_jabatan,
-                'tht_jht'=>$request->iuran_pensiun,
-                'total_pengurangan'=>$request->total_pengurang,
-                'penghasilan_netto'=>$request->penghasilan_netto,
-                'netto_massa'=>$request->penghasilan_netto_ms,
-                'netto_setahun'=>$request->netto_pertahun,
-                'ptkp'=>$request->pilih_ptkp,
-                'pkp'=>$request->input_pkp,
-                'masukan_tarif1'=>$request->potongantarif1,
-                'masukan_tarif2'=>$request->potongantarif2,
-                'masukan_tarif3'=>$request->potongantarif3,
-                'masukan_tarif4'=>$request->potongantarif4,
-                'pkp1'=>$request->tarif1,
-                'pkp2'=>$request->tarif2,
-                'pkp3'=>$request->tarif3,
-                'pkp4'=>$request->tarif4,
-                'tarif1'=>$request->totaltarif1,
-                'tarif2'=>$request->totaltarif2,
-                'tarif3'=>$request->totaltarif3,
-                'tarif4'=>$request->totaltarif4,
-                'pph21ataspkp'=>$request->jumlahtotal,
-                'pph21_dipotong_sebelumnya'=>$request->pph21potongan,
-                'pph21_terutang'=>$request->pph21terutang,
-                'attribute2'=>Auth::user()->id,
-                'updated_at'=>date('Y-m-d H:i:s'),
-            ]);
-            $a= \DB::commit();    
-        }
+     
         return redirect()->route('transaksipph21');
 
     }

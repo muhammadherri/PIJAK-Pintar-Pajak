@@ -63,7 +63,7 @@
                                                 <select id="status_pernikahan" name="status_pernikahan"
                                                     class="default-select form-control wide">
                                                     @foreach ($status_pernikahan as $row)
-                                                        <option value="{{ $row->kode_ptkp }}">
+                                                        <option value="{{ $row->kode_ptkp }}" {{ $pph21->status_pernikahan == $row->kode_ptkp ? 'selected' : '' }}>
                                                             {{ $row->status_pernikahan }}</option>
                                                     @endforeach
                                                 </select>
@@ -76,7 +76,7 @@
                                                 <select id="tanggungan" name="tanggungan"
                                                     class="default-select form-control wide">
                                                     @foreach ($tanggungan as $row)
-                                                        <option value="{{ $row->tanggungan }}">{{ $row->tanggungan }}
+                                                        <option value="{{ $row->tanggungan }}"{{ $pph21->tanggungan == $row->tanggungan ? 'selected' : '' }}>{{ $row->tanggungan }}
                                                         </option>
                                                     @endforeach
                                                 </select>
@@ -182,7 +182,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Tantiem</label>
                                             <div class="col-sm-9">
-                                                <input required min="0" onkeyup="this.value=sprator(this.value);" autocomplete="off" type="text" id="tantiem" name="tantiem"
+                                                <input value="{{$pph21->tantiem}}"  required min="0" onkeyup="this.value=sprator(this.value);" autocomplete="off" type="text" id="tantiem" name="tantiem"
                                                     class="form-control"
                                                     placeholder="Masukkan Tantiem, Bonus, Gratifikasi, Jasa Produksi dan THR">
                                             </div>
@@ -190,7 +190,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Penghasilan Bruto</label>
                                             <div class="col-sm-9">
-                                                <input required min="0" readonly autocomplete="off" type="text" id="penghasilan_bruto"
+                                                <input value="{{$pph21->penghasilan_bruto}}" value="{{$pph21->penghasilan_bruto}}" required min="0" readonly autocomplete="off" type="text" id="penghasilan_bruto"
                                                     name="penghasilan_bruto" class="form-control"
                                                     placeholder="Masukkan Penghasilan Bruto">
                                             </div>
@@ -200,14 +200,14 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Biaya Jabatan</label>
                                             <div class="col-sm-9">
-                                                <input required min="0" autocomplete="off" onkeyup="this.value=sprator(this.value);" type="text" id="biaya_jabatan" name="biaya_jabatan"
+                                                <input  value="{{$pph21->biaya_jabatan}}" required min="0" autocomplete="off" onkeyup="this.value=sprator(this.value);" type="text" id="biaya_jabatan" name="biaya_jabatan"
                                                     class="form-control" placeholder="Masukkan Biaya Jabatan">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Iuran Pensiun</label>
                                             <div class="col-sm-9">
-                                                <input required min="0" onkeyup="this.value=sprator(this.value);" autocomplete="off" type="text" id="iuran_pensiun"
+                                                <input  value="{{$pph21->tht_jht}}"  required min="0" onkeyup="this.value=sprator(this.value);" autocomplete="off" type="text" id="iuran_pensiun"
                                                     name="iuran_pensiun" class="form-control"
                                                     placeholder="Masukkan Iuran Pensiun atau Iuran THT/JHT">
                                             </div>
@@ -215,7 +215,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Total Pengurang</label>
                                             <div class="col-sm-9">
-                                                <input placeholder="Masukkan Total Pengurang" readonly type="text" id="total_pengurang"
+                                                <input value="{{$pph21->total_pengurangan}}" placeholder="Masukkan Total Pengurang" readonly type="text" id="total_pengurang"
                                                     name="total_pengurang" class="form-control">
                                             </div>
                                         </div>
@@ -223,7 +223,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Penghasilan Netto</label>
                                             <div class="col-sm-9">
-                                                <input placeholder="Masukkan Penghasilan Netto" autocomplete="off" onkeyup="this.value=sprator(this.value);" type="text" id="penghasilan_netto"
+                                                <input value="{{$pph21->penghasilan_netto}}" placeholder="Masukkan Penghasilan Netto" autocomplete="off" onkeyup="this.value=sprator(this.value);" type="text" id="penghasilan_netto"
                                                     name="penghasilan_netto" class="form-control">
                                             </div>
                                         </div>
@@ -231,7 +231,7 @@
                                             <label class="col-sm-3 col-form-label">Penghasilan Netto Masa
                                                 Sebelumnya</label>
                                             <div class="col-sm-9">
-                                                <input required min="0" onkeyup="this.value=sprator(this.value);" 
+                                                <input value="{{$pph21->netto_massa}}" required min="0" onkeyup="this.value=sprator(this.value);" 
                                                 placeholder="Masukkan Penghasilan Netto Masa Sebelumnya" autocomplete="off" 
                                                 type="text" id="penghasilan_netto_ms"
                                                     name="penghasilan_netto_ms" class="form-control">
@@ -240,7 +240,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Netto Pertahun</label>
                                             <div class="col-sm-9">
-                                                <input placeholder="Masukkan Netto Pertahun" autocomplete="off" 
+                                                <input value="{{$pph21->netto_setahun}}" placeholder="Masukkan Netto Pertahun" autocomplete="off" 
                                                 onkeyup="this.value=sprator(this.value);"
                                                  type="text" id="netto_pertahun" name="netto_pertahun"
                                                     class="form-control">
@@ -249,16 +249,15 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">PTKP</label>
                                             <div class="col-sm-9">
-                                                {{-- <input readonly id="pilih_ptkp" class="form-control" name="pilih_ptkp" class="form-control"> --}}
                                                 <select id="pilih_ptkp" class="form-control" name="pilih_ptkp">
-                                                    {{-- <option value="">Pilih Besaran PTKP</option> --}}
+                                                    <option value="">Pilih Besaran PTKP</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">PKP</label>
                                             <div class="col-sm-9">
-                                                <input placeholder="Masukkan Nilai PKP" onkeyup="this.value=sprator(this.value);"
+                                                <input value="{{$pph21->pkp}}" placeholder="Masukkan Nilai PKP" onkeyup="this.value=sprator(this.value);"
                                                  autocomplete="off" type="text" id="input_pkp" name="input_pkp"
                                                 class="form-control">
                                             </div>
@@ -267,83 +266,84 @@
                                             <label class="col-sm-3 col-form-label">Tarif</label>
                                             <div class="col-sm-3">
                                                 <input required min="0" onkeyup="this.value=sprator(this.value);"
-                                                 autocomplete="off" type="text" id="potongantarif1"
+                                                 autocomplete="off" type="text" id="potongantarif1" value="{{$pph21->masukan_tarif1}}"
                                                     name="potongantarif1" class="form-control"
                                                     placeholder="Masukkan Tarif">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input required min="0" autocomplete="off" onkeyup="this.value=sprator(this.value);" type="text" id="tarif1" name="tarif1"
+                                                <input required min="0" autocomplete="off" value="{{$pph21->pkp1}}"
+                                                onkeyup="this.value=sprator(this.value);" type="text" id="tarif1" name="tarif1"
                                                     class="form-control" placeholder="Masukkan PKP">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input autocomplete="off" readonly type="text" id="totaltarif1"
+                                                <input value="{{$pph21->tarif1}}" autocomplete="off" readonly type="text" id="totaltarif1"
                                                     name="totaltarif1" class="form-control">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label"></label>
                                             <div class="col-sm-3">
-                                                <input required min="0" onkeyup="this.value=sprator(this.value);" autocomplete="off" type="text" id="potongantarif2"
+                                                <input required min="0" value="{{$pph21->masukan_tarif2}}" onkeyup="this.value=sprator(this.value);" autocomplete="off" type="text" id="potongantarif2"
                                                     name="potongantarif2" class="form-control"
                                                     placeholder="Masukkan Tarif">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input required min="0" autocomplete="off" onkeyup="this.value=sprator(this.value);"
+                                                <input required min="0" value="{{$pph21->pkp2}}" autocomplete="off" onkeyup="this.value=sprator(this.value);"
                                                  type="text" id="tarif2" name="tarif2"
                                                     class="form-control" placeholder="Masukkan PKP">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input autocomplete="off" readonly type="text" id="totaltarif2"
+                                                <input autocomplete="off" value="{{$pph21->tarif2}}" readonly type="text" id="totaltarif2"
                                                     name="totaltarif2" class="form-control">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label"></label>
                                             <div class="col-sm-3">
-                                                <input required min="0" autocomplete="off" onkeyup="this.value=sprator(this.value);"
+                                                <input required min="0" value="{{$pph21->masukan_tarif3}}" autocomplete="off" onkeyup="this.value=sprator(this.value);"
                                                  type="text" id="potongantarif3"
                                                     name="potongantarif3" class="form-control"
                                                     placeholder="Masukkan Tarif">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input required min="0" autocomplete="off" onkeyup="this.value=sprator(this.value);"
+                                                <input required min="0" value="{{$pph21->pkp3}}" autocomplete="off" onkeyup="this.value=sprator(this.value);"
                                                  type="text" id="tarif3" name="tarif3"
                                                     class="form-control" placeholder="Masukkan PKP">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input autocomplete="off" readonly type="text" id="totaltarif3"
+                                                <input autocomplete="off" value="{{$pph21->tarif3}}" readonly type="text" id="totaltarif3"
                                                     name="totaltarif3" class="form-control">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label"></label>
                                             <div class="col-sm-3">
-                                                <input required min="0" autocomplete="off" onkeyup="this.value=sprator(this.value);"
+                                                <input required min="0" value="{{$pph21->masukan_tarif4}}" autocomplete="off" onkeyup="this.value=sprator(this.value);"
                                                  type="text" id="potongantarif4"
                                                     name="potongantarif4" class="form-control"
                                                     placeholder="Masukkan Tarif">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input required min="0" autocomplete="off" onkeyup="this.value=sprator(this.value);"
+                                                <input required min="0" value="{{$pph21->pkp4}}" autocomplete="off" onkeyup="this.value=sprator(this.value);"
                                                  type="text" id="tarif4" name="tarif4"
                                                     class="form-control" placeholder="Masukkan PKP">
                                             </div>
                                             <div class="col-sm-3">
-                                                <input autocomplete="off" readonly type="text" id="totaltarif4"
+                                                <input autocomplete="off" value="{{$pph21->tarif4}}" readonly type="text" id="totaltarif4"
                                                     name="totaltarif4" class="form-control">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">PPH 21 PKP</label>
                                             <div class="col-sm-9">
-                                                <input placeholder="Masukkan Nilai PPH 21 PKP" autocomplete="off" readonly type="text" id="jumlahtotal"
+                                                <input value="{{$pph21->pph21ataspkp}}" placeholder="Masukkan Nilai PPH 21 PKP" autocomplete="off" readonly type="text" id="jumlahtotal"
                                                     name="jumlahtotal" class="form-control">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">PPH 21 Potongan</label>
                                             <div class="col-sm-9">
-                                                <input required min="0" placeholder="Masukkan Nilai PPH 21 Potongan" onkeyup="this.value=sprator(this.value);"
+                                                <input required min="0" value="{{$pph21->pph21_dipotong_sebelumnya}}" placeholder="Masukkan Nilai PPH 21 Potongan" onkeyup="this.value=sprator(this.value);"
                                                  autocomplete="off" type="text" id="pph21potongan"
                                                     name="pph21potongan" class="form-control">
                                             </div>
@@ -351,7 +351,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">PPH 21 Terutang</label>
                                             <div class="col-sm-9">
-                                                <input placeholder="Masukkan Nilai PPH 21 Terutang" autocomplete="off" readonly type="text" id="pph21terutang"
+                                                <input value="{{$pph21->pph21_terutang}}" placeholder="Masukkan Nilai PPH 21 Terutang" autocomplete="off" readonly type="text" id="pph21terutang"
                                                     name="pph21terutang" class="form-control">
                                             </div>
                                         </div>

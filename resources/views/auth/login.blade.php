@@ -22,7 +22,7 @@
                     @csrf
                     <div class="form-group first">
                         <label for="username"><strong>NIM</strong></label>
-                        <input id="email" type="text" class="form-control"
+                        <input id="email"  type="text" class="form-control"
                             name="email" required autocomplete="on" autofocus>
                         {{-- <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
                             name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
