@@ -33,7 +33,7 @@
                                             <label class="col-sm-3 col-form-label">NPWP</label>
                                             <div class="col-sm-9">
                                                 <input min="0" maxlength="15" autocomplete="off" required id="npwp" name="npwp"
-                                                   value="{{$billing->npwp}}" type="number" class="form-control" placeholder="Masukkan NPWP">
+                                                   value="{{$billing->npwp}}" type="text" class="form-control" placeholder="Masukkan NPWP">
                                                 <span id="errorText" style="color: red;"></span>
                                             </div>
                                         </div>
@@ -55,14 +55,14 @@
                                             <label class="col-sm-3 col-form-label">Jenis Pajak</label>
                                             <div class="col-sm-9">
                                                 <input value="{{$billing->jenis_pajak}}" autocomplete="off" required id="jenis_pajak" name="jenis_pajak"
-                                                    type="number" class="form-control" placeholder="Masukkan Jenis Pajak">
+                                                    type="text" class="form-control" placeholder="Masukkan Jenis Pajak">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Kode Jenis Setoran</label>
                                             <div class="col-sm-9">
                                                 <input value="{{$billing->kode_jenis_setoran}}" autocomplete="off" required id="kode_jenis_setoran"
-                                                    name="kode_jenis_setoran" type="number" class="form-control"
+                                                    name="kode_jenis_setoran" type="text" class="form-control"
                                                     placeholder="Masukkan Kode Jenis Setoran">
                                             </div>
                                         </div>
@@ -70,7 +70,7 @@
                                             <label class="col-sm-3 col-form-label">Masa Pajak</label>
                                             <div class="col-sm-9">
                                                 <input value="{{$billing->kode_jenis_setoran}}" autocomplete="off" required id="masa_pajak" name="masa_pajak"
-                                                    type="number" class="form-control" placeholder="Masukkan Masa Pajak">
+                                                    type="text" class="form-control" placeholder="Masukkan Masa Pajak">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
@@ -94,8 +94,8 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Jumlah Setor</label>
                                             <div class="col-sm-9">
-                                                <input value="{{$billing->jumlah}}" min="0" autocomplete="off" required id="jumlah" name="jumlah"
-                                                type="number" class="form-control" placeholder="Masukkan Jumlah Setor">
+                                                <input value="{{number_format($billing->jumlah)}}" min="0" autocomplete="off" required id="jumlah" name="jumlah"
+                                                type="text" onkeyup="this.value=addcommas(this.value);" class="form-control" placeholder="Masukkan Jumlah Setor">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">

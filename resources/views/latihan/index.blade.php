@@ -139,7 +139,7 @@
                                 <a class="btn btn-primary shadow btn-xs sharp me-1" href="latihan/${row.id}/edit">
                                     <i class="fa fa-pencil"></i>
                                 </a>
-                                <a class="btn btn-danger shadow btn-xs sharp" href="latihan/${row.id}/destroy">
+                                <a class="btn btn-danger shadow btn-xs sharp me-1" href="latihan/${row.id}/destroy">
                                     <i class="fa fa-trash"></i>
                                 </a>
                                 <a class="btn btn-success shadow btn-xs sharp me-1" href="latihan/${row.id}/show">

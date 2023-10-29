@@ -43,7 +43,7 @@
                                             <th>Sertifikat</th>
                                             <th>Nama Pembuat</th>
                                             <th>Tanggal</th>
-                                            @if(Auth::user()->status==1)
+                                            @if (Auth::user()->status == 1)
                                                 <th>Action</th>
                                             @else
                                             @endif
@@ -59,21 +59,21 @@
                                                 <td>{{ $row->jenis_fasilitas }}</td>
                                                 <td>{{ $row->sertifikat }}</td>
                                                 <td>{{ $row->users->name }}</td>
-                                                <td>{{  date('d-M-Y',strtotime($row->created_at)) }}</td>
-                                                @if(Auth::user()->status==1)
+                                                <td>{{ date('d-M-Y', strtotime($row->created_at)) }}</td>
+                                                @if (Auth::user()->status == 1)
                                                     <td>
                                                         <div class="d-flex">
-                                                            <form action="fasilitas/{{ $row->id }}" method="POST">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <button type="submit"
-                                                                    class="btn btn-danger shadow btn-xs sharp"><i
-                                                                        class="fa fa-trash"></i></button>
-                                                            </form>
                                                             <a
                                                                 class="btn btn-primary shadow btn-xs sharp me-1"href="{{ route('fasilitas/edit', $row->id) }}">
                                                                 <i class="fa fa-pencil"></i>
                                                             </a>
+                                                            <form action="fasilitas/{{ $row->id }}" method="POST">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit"
+                                                                    class="btn btn-danger shadow btn-xs sharp me-1"><i
+                                                                        class="fa fa-trash"></i></button>
+                                                            </form>
                                                             <a
                                                                 class="btn btn-success shadow btn-xs sharp me-1"href="{{ route('fasilitas/show', $row->id) }}">
                                                                 <i class="fa fa-eye"></i>
@@ -94,5 +94,3 @@
         </div>
     </div>
 @endsection
-{{-- <script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
-<script src="{{ asset('app-assets/js/custom.min.js') }}"></script> --}}

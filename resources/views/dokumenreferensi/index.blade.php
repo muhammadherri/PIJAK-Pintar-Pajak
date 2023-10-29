@@ -59,17 +59,17 @@
                                                 @if(Auth::user()->status==1)
                                                 <td>
                                                     <div class="d-flex">
-                                                        <form action="dokumenreferensi/{{ $row->id }}" method="POST">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit"
-                                                                class="btn btn-danger shadow btn-xs sharp"><i
-                                                                    class="fa fa-trash"></i></button>
-                                                        </form>
                                                         <a
                                                             class="btn btn-primary shadow btn-xs sharp me-1"href="{{ route('dokumenreferensi/edit', $row->id) }}">
                                                             <i class="fa fa-pencil"></i>
                                                         </a>
+                                                        <form action="dokumenreferensi/{{ $row->id }}" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit"
+                                                                class="btn btn-danger shadow btn-xs sharp me-1"><i
+                                                                    class="fa fa-trash"></i></button>
+                                                        </form>
                                                         <a
                                                             class="btn btn-success shadow btn-xs sharp me-1"href="{{ route('dokumenreferensi/show', $row->id) }}">
                                                             <i class="fa fa-eye"></i>

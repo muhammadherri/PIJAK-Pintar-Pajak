@@ -52,53 +52,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {{-- @foreach ($billing as $key => $row)
-                                            <tr>
-                                                <td>
-                                                    {{ $no++ }}
-                                                </td>
-                                                <td>{{ $row->kode_billing }}</td>
-                                                <td>{{ $row->npwp }}</td>
-                                                <td>{{ $row->jenis_pajak }}</td>
-                                                <td>{{ $row->kode_jenis_setoran }}</td>
-                                                <td>{{ $row->masa_pajak }}</td>
-                                                <td>{{ date('d-M',strtotime($row->end_periode_pajak)) }}</td>
-                                                <td>{{ $row->jumlah }}</td>
-                                                <td>{{ $row->users->name }}</td>
-                                                <td>
-                                                    @if($row->attribute3==NULL)
-                                                    <div class="d-flex">
-                                                        <a class="badge badge-rounded badge-outline-warning">
-                                                            Menunggu Pembayaran
-                                                        </a>
-                                                    </div>
-                                                    @else
-                                                    <a class="badge badge-rounded badge-outline-primary">
-                                                        Sudah Dibayar
-                                                    </a>
-                                                    @endif    
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex">
-                                                        <form action="billing/{{ $row->id }}" method="POST">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit"
-                                                                class="btn btn-danger shadow btn-xs sharp"><i
-                                                                    class="fa fa-trash"></i></button>
-                                                        </form>
-                                                        <a
-                                                            class="btn btn-primary shadow btn-xs sharp me-1"href="{{ route('billing/edit', $row->id) }}">
-                                                            <i class="fa fa-pencil"></i>
-                                                        </a>
-                                                        <a
-                                                            class="btn btn-success shadow btn-xs sharp me-1" target="_blank" href="{{ route('billing/show', $row->id) }}">
-                                                            <i class="fa fa-eye"></i>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        @endforeach --}}
+                                    
                                     </tbody>
                                 </table>
                             </div>
@@ -219,10 +173,10 @@
                                 <a class="btn btn-primary shadow btn-xs sharp me-1" href="billing/${row.id}/edit">
                                     <i class="fa fa-pencil"></i>
                                 </a>
-                                <a class="btn btn-danger shadow btn-xs sharp" href="billing/${row.id}/destroy">
+                                <a class="btn btn-danger shadow btn-xs sharp me-1" href="billing/${row.id}/destroy">
                                     <i class="fa fa-trash"></i>
                                 </a>
-                                <a class="btn btn-success shadow btn-xs sharp" href="billing/${row.id}/show">
+                                <a class="btn btn-success shadow btn-xs sharp me-1" href="billing/${row.id}/show">
                                     <i class="fa fa-eye"></i>
                                 </a>
                             </div>

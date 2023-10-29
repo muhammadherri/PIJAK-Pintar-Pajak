@@ -171,10 +171,10 @@
                                 <a class="btn btn-primary shadow btn-xs sharp me-1" href="prepopulates/${row.id}/edit">
                                     <i class="fa fa-pencil"></i>
                                 </a>
-                                <a class="btn btn-danger shadow btn-xs sharp" href="prepopulates/${row.id}/destroy">
+                                <a class="btn btn-danger shadow btn-xs sharp me-1" href="prepopulates/${row.id}/destroy">
                                     <i class="fa fa-trash"></i>
                                 </a>
-                                <a class="btn btn-success shadow btn-xs sharp" href="prepopulates/${row.id}/show">
+                                <a class="btn btn-success shadow btn-xs sharp me-1" href="prepopulates/${row.id}/show">
                                     <i class="fa fa-eye"></i>
                                 </a>
                             </div>

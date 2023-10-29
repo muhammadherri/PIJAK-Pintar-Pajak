@@ -179,11 +179,10 @@
                     render: function(data, type, row, index) {
                         content = `
                             <div class="d-flex">
-                              
-                                <a class="btn btn-danger shadow btn-xs sharp" href="invoice/${row.id}/destroy">
+                                <a class="btn btn-danger shadow btn-xs sharp me-1" href="invoice/${row.id}/destroy">
                                     <i class="fa fa-trash"></i>
                                 </a>
-                                <a class="btn btn-success shadow btn-xs sharp" href="invoice/${row.id}/show">
+                                <a class="btn btn-success shadow btn-xs sharp me-1" href="invoice/${row.id}/show">
                                     <i class="fa fa-eye"></i>
                                 </a>
                             </div>
