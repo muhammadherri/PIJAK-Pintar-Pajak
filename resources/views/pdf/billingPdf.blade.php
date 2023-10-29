@@ -1,5 +1,6 @@
 <html>
     <head>
+		<link rel="icon" href="{{ asset('images/umlogo.png') }}">
         <title>Taxceed</title>
         <style>
 			.invoice-box {

@@ -143,23 +143,23 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Jumlah Bruto</label>
                                             <div class="col-sm-9">
-                                                <input readonly value="{{$ebupot->jumlah_bruto}}" placeholder="Masukkan Jumlah Bruto" autocomplete="off"
-                                                    id="jumlah_bruto" name="jumlah_bruto" type="number"
+                                                <input readonly value="{{number_format($ebupot->jumlah_bruto)}}" placeholder="Masukkan Jumlah Bruto" autocomplete="off"
+                                                    id="jumlah_bruto" name="jumlah_bruto" type="text"
                                                     class="form-control">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Tarif</label>
                                             <div class="col-sm-3">
-                                                <input readonly value="{{$ebupot->tarif}}"  placeholder="Masukkan Tarif" autocomplete="off" id="tarif"
-                                                    name="tarif" type="number" class="form-control">
+                                                <input readonly value="{{number_format($ebupot->tarif)}}"  placeholder="Masukkan Tarif" autocomplete="off" id="tarif"
+                                                    name="tarif" type="text" class="form-control">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Potongan PPH</label>
                                             <div class="col-sm-9">
-                                                <input value="{{$ebupot->potongan_pph}}"  placeholder="Masukkan Potongan PPh" readonly autocomplete="off"
-                                                    id="potongan_pph" name="potongan_pph" type="number"
+                                                <input value="{{number_format($ebupot->potongan_pph)}}"  placeholder="Masukkan Potongan PPh" readonly autocomplete="off"
+                                                    id="potongan_pph" name="potongan_pph" type="text"
                                                     class="form-control">
                                             </div>
                                         </div>

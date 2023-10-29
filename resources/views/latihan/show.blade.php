@@ -31,15 +31,15 @@
                                     <div class="row">
                                         <h5>Neraca</h5>
                                         <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">No Akun Debet</label>
+                                            <label class="col-sm-3 col-form-label">Akun Debet</label>
                                             <div class="col-sm-9">
-                                                <input type="text" readonly class="form-control" value="{{$jurnalmanual->no_akun_debit}}">
+                                                <input type="text" value="{{$jurnalmanual->no_akun_debit}} - {{$jurnalmanual->nama_akun_debit}}" id="no_akun_debet" readonly class="form-control" name="no_akun_debet">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">No Akun Kredit</label>
                                             <div class="col-sm-9">
-                                                <input type="text" readonly class="form-control" value="{{$jurnalmanual->no_akun_kredit}}">
+                                                <input type="text" value="{{$jurnalmanual->no_akun_kredit}} - {{$jurnalmanual->nama_akun_kredit}}" id="no_akun_kredit" readonly class="form-control" name="no_akun_kredit">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
@@ -62,7 +62,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Nilai Debet</label>
                                             <div class="col-sm-9">
-                                                <input required min="0" readonly value="{{$jurnalmanual->nilai_debit}}" autocomplete="off" type="number" id="nilai_debet"
+                                                <input required min="0" readonly value="{{number_format($jurnalmanual->nilai_debit)}}" autocomplete="off" type="text" id="nilai_debet"
                                                     name="nilai_debet" class="form-control"
                                                     placeholder="Masukkan Nilai Debet">
                                             </div>
@@ -70,7 +70,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Nilai Kredit</label>
                                             <div class="col-sm-9">
-                                                <input required min="0" readonly value="{{$jurnalmanual->nilai_kredit}}" autocomplete="off" type="number" id="nilai_kredit"
+                                                <input required min="0" readonly value="{{number_format($jurnalmanual->nilai_kredit)}}" autocomplete="off" type="text" id="nilai_kredit"
                                                     name="nilai_kredit" class="form-control"
                                                     placeholder="Masukkan Nilai Kredit">
                                             </div>

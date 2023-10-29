@@ -80,14 +80,18 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Jumlah DPP</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" value="{{$prep->jumlah_dpp}}" required id="jumlah_dpp" name="jumlah_dpp" type="number" min="0" class="form-control"
+                                                <input autocomplete="off" onkeyup="this.value=sprator(this.value);"
+                                                value="{{number_format($prep->jumlah_dpp)}}" required id="jumlah_dpp" 
+                                                name="jumlah_dpp" type="text" min="0" class="form-control"
                                                     placeholder="Masukkan Jumlah DPP">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Jumlah PPN</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" value="{{$prep->jumlah_ppn}}" required id="jumlah_ppn" name="jumlah_ppn" type="number" min="0" class="form-control"
+                                                <input autocomplete="off" onkeyup="this.value=sprator(this.value);" 
+                                                value="{{number_format($prep->jumlah_ppn)}}" required id="jumlah_ppn" 
+                                                name="jumlah_ppn" type="text" min="0" class="form-control"
                                                     placeholder="Masukkan Jumlah PPN">
                                             </div>
                                         </div>
@@ -109,6 +113,13 @@
     </div>
 @endsection
 <script>
+    function sprator(x) {
+        //remove commas
+        retVal = x ? parseFloat(x.replace(/,/g, '')) : 0;
+        
+        return retVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+    }
     document.addEventListener('DOMContentLoaded', function() {
         const inputElement = document.getElementById('npwp');
         const errorText = document.getElementById('errorText');

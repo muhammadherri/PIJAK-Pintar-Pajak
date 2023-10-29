@@ -44,16 +44,21 @@
                                             <label class="col-sm-3 col-form-label">Tahun</label>
                                             <div class="col-sm-9">
                                                 <select id="tahun" name="tahun"
-                                                    class="default-select form-control wide">
-                                                    <option value="{{ $tahunsekarang }}">Sekarang - {{ $tahunsekarang }}
+                                                class="dropdown-groups">
+                                                @php
+                                                    $tahunsekarang = date('Y');
+                                                @endphp
+                                                @for ($tahunsekarang = date('Y'); $tahunsekarang >= date('Y') - 9; $tahunsekarang--)
+                                                    <option value="{{ $tahunsekarang }}">{{ $tahunsekarang }}
                                                     </option>
-                                                </select>
+                                                @endfor
+                                            </select>
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">NPWP</label>
                                             <div class="col-sm-9">
-                                                <input value="{{$prep->npwp}}" autocomplete="off" min="0" required id="npwp" name="npwp" type="number" class="form-control"
+                                                <input value="{{$prep->npwp}}" autocomplete="off" min="0" required id="npwp" name="npwp" type="text" class="form-control"
                                                     placeholder="Masukkan NPWP">
                                                     <span id="errorText" style="color: red;"></span>
                                             </div>
@@ -75,21 +80,21 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Nomor Faktur</label>
                                             <div class="col-sm-9">
-                                                <input value="{{$prep->no_faktur}}" autocomplete="off" required id="nomor_faktur" name="nomor_faktur" type="number" min="0" class="form-control"
+                                                <input value="{{$prep->no_faktur}}" autocomplete="off" required id="nomor_faktur" name="nomor_faktur" type="text" min="0" class="form-control"
                                                     placeholder="Masukkan Nomor Faktur">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Jumlah DPP</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" value="{{$prep->jumlah_dpp}}" required id="jumlah_dpp" name="jumlah_dpp" type="number" min="0" class="form-control"
+                                                <input autocomplete="off" onkeyup="this.value=sprator(this.value);" value="{{number_format($prep->jumlah_dpp)}}" required id="jumlah_dpp" name="jumlah_dpp" type="text" min="0" class="form-control"
                                                     placeholder="Masukkan Jumlah DPP">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Jumlah PPN</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" value="{{$prep->jumlah_ppn}}" required id="jumlah_ppn" name="jumlah_ppn" type="number" min="0" class="form-control"
+                                                <input autocomplete="off" onkeyup="this.value=sprator(this.value);" value="{{number_format($prep->jumlah_ppn)}}" required id="jumlah_ppn" name="jumlah_ppn" type="text" min="0" class="form-control"
                                                     placeholder="Masukkan Jumlah PPN">
                                             </div>
                                         </div>
@@ -116,3 +121,10 @@
         </div>
     </div>
 @endsection
+<script>
+     function sprator(x) {
+        //remove commas
+        retVal = x ? parseFloat(x.replace(/,/g, '')) : 0;
+        return retVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+</script>

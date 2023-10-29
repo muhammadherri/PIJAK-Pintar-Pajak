@@ -51,8 +51,8 @@ class PrepopulateController extends Controller
             'nama_npwp'=>$request->nama_wajib_pajak,
             'alamat_npwp'=>$request->alamat_wajib_pajak,
             'no_faktur'=>$request->nomor_faktur,
-            'jumlah_dpp'=>$request->jumlah_dpp,
-            'jumlah_ppn'=>$request->jumlah_ppn,
+            'jumlah_dpp'=>preg_replace('/[^0-9]/','',$request->jumlah_dpp),
+            'jumlah_ppn'=>preg_replace('/[^0-9]/','',$request->jumlah_ppn),
             'keterangan'=>$request->keterangan,
             'attribute1'=>Auth::user()->id
         );
@@ -102,14 +102,15 @@ class PrepopulateController extends Controller
             'nama_npwp'=>$request->nama_wajib_pajak,
             'alamat_npwp'=>$request->alamat_wajib_pajak,
             'no_faktur'=>$request->nomor_faktur,
-            'jumlah_dpp'=>$request->jumlah_dpp,
-            'jumlah_ppn'=>$request->jumlah_ppn,
+            'jumlah_dpp'=>preg_replace('/[^0-9]/','',$request->jumlah_dpp),
+            'jumlah_ppn'=>preg_replace('/[^0-9]/','',$request->jumlah_ppn),
             'keterangan'=>$request->keterangan,
             'attribute2'=>Auth::user()->id,
             'updated_at'=>date('Y-m-d H:i:s'),
         ]);
         $a= \DB::commit();    
-        return back();
+        return redirect()->route('prepopulates');
+
     }
 
     /**

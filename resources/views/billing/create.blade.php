@@ -42,48 +42,68 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div id=hidden_bupot_trx style="display:none;" class="mb-3 row">
-                                            <div class="col-sm-12">
-                                                    <select id="trx" name="trx"
-                                                    class="dropdown-groups">
-                                                    @foreach ($trx as $row)
-                                                        <option value="{{ $row->id }}">
-                                                            {{ $row->trx }}</option>
-                                                    @endforeach
-                                                </select>                                            
+                                        <div id=hidden_bupot_trx style="display:none;">
+                                            <div class="row">
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Transaksi e-Bupot</label>
+                                                    <div class="col-sm-6">
+                                                            <select id="trx" name="trx"
+                                                            class="dropdown-groups">
+                                                            @foreach ($trx as $row)
+                                                                <option value="{{ $row->id }}">
+                                                                    {{ $row->trx }}</option>
+                                                            @endforeach
+                                                        </select>                                            
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div id=hidden_ppn_trx style="display:none;" class="mb-3 row">
-                                            <div class="col-sm-12">
-                                                    <select id="trx_ppn" name="trx_ppn"
-                                                    class="dropdown-groups">
-                                                    @foreach ($trxppn as $row)
-                                                        <option value="{{ $row->id }}">
-                                                            {{ $row->trx }}</option>
-                                                    @endforeach
-                                                </select>                                            
+                                        <div id=hidden_ppn_trx style="display:none;">
+                                            <div class="row">
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Transaksi PPn</label>
+                                                    <div class="col-sm-6">
+                                                            <select id="trx_ppn" name="trx_ppn"
+                                                            class="dropdown-groups">
+                                                            @foreach ($trxppn as $row)
+                                                                <option value="{{ $row->id }}">
+                                                                    {{ $row->trx }}</option>
+                                                            @endforeach
+                                                        </select>                                            
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div id=hidden_pphfinal_trx style="display:none;" class="mb-3 row">
-                                            <div class="col-sm-12">
-                                                    <select id="trx_pphfinal" name="trx_pphfinal"
-                                                    class="dropdown-groups">
-                                                    @foreach ($trxpphfinal as $row)
-                                                        <option value="{{ $row->id }}">
-                                                            {{ $row->transaksi }}</option>
-                                                    @endforeach
-                                                </select>                                            
+                                        <div id=hidden_pphfinal_trx style="display:none;">
+                                            <div class="row">
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Transaksi PPh Final</label>
+                                                    <div class="col-sm-6">
+                                                            <select id="trx_pphfinal" name="trx_pphfinal"
+                                                            class="dropdown-groups">
+                                                            @foreach ($trxpphfinal as $row)
+                                                                <option value="{{ $row->id }}">
+                                                                    {{ $row->transaksi }}</option>
+                                                            @endforeach
+                                                        </select>                                            
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div id=hidden_pphtidakfinal_trx style="display:none;" class="mb-3 row">
-                                            <div class="col-sm-12">
-                                                    <select id="trx_pphtidakfinal" name="trx_pphtidakfinal"
-                                                    class="dropdown-groups">
-                                                    @foreach ($trxpphtidakfinal as $row)
-                                                        <option value="{{ $row->id }}">
-                                                            {{ $row->trx }}</option>
-                                                    @endforeach
-                                                </select>                                            
+                                        <div id=hidden_pphtidakfinal_trx style="display:none;">
+                                            <div class="row">
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Transaksi PPh Tidak Final</label>
+                                                    <div class="col-sm-6">
+                                                        <select id="trx_pphtidakfinal" name="trx_pphtidakfinal"
+                                                        class="dropdown-groups">
+                                                            @foreach ($trxpphtidakfinal as $row)
+                                                                <option value="{{ $row->id }}">
+                                                                    {{ $row->trx }}</option>
+                                                            @endforeach
+                                                        </select>                                            
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
@@ -156,8 +176,8 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Jumlah Setor</label>
                                             <div class="col-sm-9">
-                                                <input min="0" autocomplete="off" required id="jumlah" name="jumlah"
-                                                type="number" class="form-control" placeholder="Masukkan Jumlah">
+                                                <input min="0" onkeyup="this.value=addcommas(this.value);" autocomplete="off" required id="jumlah" name="jumlah"
+                                                type="text" class="form-control" placeholder="Masukkan Jumlah">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">

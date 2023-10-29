@@ -68,7 +68,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Nilai Debet</label>
                                             <div class="col-sm-9">
-                                                <input required min="0" autocomplete="off" type="number" id="nilai_debet"
+                                                <input required min="0" onkeyup="this.value=addcommas(this.value);" autocomplete="off" type="text" id="nilai_debet"
                                                     name="nilai_debet" class="form-control"
                                                     placeholder="Masukkan Nilai Debet">
                                             </div>
@@ -76,7 +76,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Nilai Kredit</label>
                                             <div class="col-sm-9">
-                                                <input required min="0" autocomplete="off" type="number" id="nilai_kredit"
+                                                <input onkeyup="this.value=addcommas(this.value);" required min="0" autocomplete="off" type="text" id="nilai_kredit"
                                                     name="nilai_kredit" class="form-control"
                                                     placeholder="Masukkan Nilai Kredit">
                                             </div>
@@ -111,6 +111,7 @@
 @endsection
 <script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
 <script>
+   
     $(document).ready(function() {
         $('#no_akun_debet').on('change', function() {
             let akundebet = $('#no_akun_debet').val();

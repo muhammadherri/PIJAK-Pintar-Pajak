@@ -108,7 +108,8 @@ class EbupotController extends Controller
     public function show($id)
     {
         $iduser=Auth::user()->id;
-        $ebupot=Ebupot::where('id',$id)->where('attribute1',$iduser)->get()->first();
+        $ebupot=Ebupot::where('id',$id)->get()->first();
+        // dd($id);
         $ebupotline=Ebupotlines::where('ebupot_id',$ebupot->ebupot_id)->get();
         // dd($ebupotline);
         $fasilitas=Fasilitas::all();
@@ -133,7 +134,11 @@ class EbupotController extends Controller
     public function edit($id)
     {
         $iduser=Auth::user()->id;
-        $ebupot=Ebupot::where('id',$id)->where('attribute1',$iduser)->get()->first();
+        if(Auth::user()->status==1){
+            $ebupot=Ebupot::where('id',$id)->get()->first();
+        }else{
+            $ebupot=Ebupot::where('id',$id)->where('attribute1',$iduser)->get()->first();
+        }
         $ebupotline=Ebupotlines::where('ebupot_id',$ebupot->ebupot_id)->get();
         // dd($ebupotline);
         $fasilitas=Fasilitas::all();
@@ -185,7 +190,6 @@ class EbupotController extends Controller
                     'jumlah_bruto'=>preg_replace('/[^0-9]/','',$request->jumlah_bruto),
                     'tarif'=>preg_replace('/[^0-9]/','',$request->tarif),
                     'potongan_pph'=>preg_replace('/[^0-9]/','',$request->potongan_pph),
-                    'potongan_pph'=>$request->potongan_pph,
                     'penandatanganan'=>$request->penandatanganan,
                     'updated_at'=>date('Y-m-d H:i:s'),
                 ]);

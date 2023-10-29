@@ -65,11 +65,12 @@ class HutangPpnController extends Controller
 
         $data = array(
             'trx'=>$trx,
-            'jumlah_ppn_masuk'=>$request->ppn_masuk,
-            'jumlah_ppn_keluar'=>$request->ppn_keluar,
-            'hutang_ppn'=>$request->jumlah,
+            'jumlah_ppn_masuk'=>preg_replace('/[^0-9]/','',$request->ppn_masuk),
+            'jumlah_ppn_keluar'=>preg_replace('/[^0-9]/','',$request->ppn_keluar),
+            'hutang_ppn'=>preg_replace('/[^0-9]/','',$request->jumlah),
             'attribute1'=>Auth::user()->id,
         );
+        // dd($data);
         Invoice::where('attribute1',Auth::user()->id)->update([
             'deleted_at'=>date('Y-m-d H:i:s'),
         ]);

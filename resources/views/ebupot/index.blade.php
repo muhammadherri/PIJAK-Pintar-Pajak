@@ -44,6 +44,8 @@
                                             <th>Kode Objek</th>
                                             <th>Tgl Bukti Potong</th>
                                             <th>Periode Pajak</th>
+                                            <th>Jumlah Bruto</th>
+                                            <th>Tarif %</th>
                                             <th>Potongan PPh</th>
                                             <th>Penandatangan</th>
                                             <th>Nama Pembuat</th>
@@ -79,7 +81,7 @@
             ],
 
             ajax: "{{ route('data.ebupot') }}",
-            "order":[[13,'desc']],
+            "order":[[15,'desc']],
             columnDefs: [
                 {
                     "targets": 0,
@@ -131,32 +133,46 @@
                     "targets": 7,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.potongan;
+                        return row.bruto;
                     }
                 },
                 {
                     "targets": 8,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.ttd;
+                        return row.tarif;
                     }
                 },
                 {
                     "targets": 9,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.created_by;
+                        return row.potongan;
                     }
                 },
                 {
                     "targets": 10,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.tgl_pembuat;
+                        return row.ttd;
                     }
                 },
                 {
                     "targets": 11,
+                    "class": "text-center",
+                    "render": function(data, type, row, meta) {
+                        return row.created_by;
+                    }
+                },
+                {
+                    "targets": 12,
+                    "class": "text-center",
+                    "render": function(data, type, row, meta) {
+                        return row.tgl_pembuat;
+                    }
+                },
+                {
+                    "targets": 13,
                     render: function(data, type, row, index) {
                         if (row.status == 1) {
                             var info = `<div class="d-flex"><a class="badge badge-rounded badge-outline-warning">
@@ -173,7 +189,7 @@
                     }
                 },
                 {
-                    "targets": 12,
+                    "targets": 14,
                     "class": "text-center",
                     render: function(data, type, row, index) {
                         content = `
@@ -193,7 +209,7 @@
                     }
                 },
                 {
-                    "targets": 13,
+                    "targets": 15,
                     "visible":false,
                     "searchable":false,
                     "render": function(data, type, row, meta) {

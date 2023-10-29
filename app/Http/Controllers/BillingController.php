@@ -43,11 +43,11 @@ class BillingController extends Controller
         $id=Auth::user()->id;
 
         $vendor=Vendor::all();
-        $trx=Ebupot::orderBy('id','DESC')->whereNotNull('trx')->where('attribute1',$id)->where('attribute3','NULL')->get();
+        $trx=Ebupot::orderBy('id','DESC')->whereNotNull('trx')->where('attribute1',$id)->where('attribute3',null)->get();
         $trxppn=HutangPpn::orderBy('id','DESC')->where('attribute1',$id)->where('attribute3',null)->get();
         $trxpphfinal=Pphfinal::orderBy('id','DESC')->whereNotNull('transaksi')->where('attribute1',$id)->where('attribute3',null)->get();
         $trxpphtidakfinal=PphTidakFinal::orderBy('id','DESC')->where('attribute1',$id)->where('attribute3',null)->get();
-        // dd($trxpphfinal);
+        // dd($trx);
         return view('billing.create',compact('vendor','trx','trxppn','trxpphfinal','trxpphtidakfinal'));
     }
 
@@ -82,7 +82,7 @@ class BillingController extends Controller
                 'tahun_pajak'=>date('Y'),
                 'start_periode_pajak'=>$request->start_periode_pajak,
                 'end_periode_pajak'=>$end_periode_pajak->addDays(30),
-                'jumlah'=>$request->jumlah,
+                'jumlah'=>preg_replace('/[^0-9]/','',$request->jumlah),
                 'keterangan'=>$request->keterangan,
                 'npwp_penyetor'=>$request->npwp_penyetor,
                 'nama_penyetor'=>$request->nama_penyetor,
@@ -123,7 +123,7 @@ class BillingController extends Controller
                 'tahun_pajak'=>date('Y'),
                 'start_periode_pajak'=>$request->start_periode_pajak,
                 'end_periode_pajak'=>$end_periode_pajak->addDays(30),
-                'jumlah'=>$request->jumlah,
+                'jumlah'=>preg_replace('/[^0-9]/','',$request->jumlah),
                 'keterangan'=>$request->keterangan,
                 'npwp_penyetor'=>$request->npwp_penyetor,
                 'nama_penyetor'=>$request->nama_penyetor,
@@ -164,7 +164,7 @@ class BillingController extends Controller
                 'tahun_pajak'=>date('Y'),
                 'start_periode_pajak'=>$request->start_periode_pajak,
                 'end_periode_pajak'=>$end_periode_pajak->addDays(30),
-                'jumlah'=>$request->jumlah,
+                'jumlah'=>preg_replace('/[^0-9]/','',$request->jumlah),
                 'keterangan'=>$request->keterangan,
                 'npwp_penyetor'=>$request->npwp_penyetor,
                 'nama_penyetor'=>$request->nama_penyetor,
@@ -205,7 +205,7 @@ class BillingController extends Controller
                 'tahun_pajak'=>date('Y'),
                 'start_periode_pajak'=>$request->start_periode_pajak,
                 'end_periode_pajak'=>$end_periode_pajak->addDays(30),
-                'jumlah'=>$request->jumlah,
+                'jumlah'=>preg_replace('/[^0-9]/','',$request->jumlah),
                 'keterangan'=>$request->keterangan,
                 'npwp_penyetor'=>$request->npwp_penyetor,
                 'nama_penyetor'=>$request->nama_penyetor,
@@ -308,7 +308,7 @@ class BillingController extends Controller
             'tahun_pajak'=>date('Y'),
             'start_periode_pajak'=>$request->start_periode_pajak,
             'end_periode_pajak'=>$end_periode_pajak->addDays(30),
-            'jumlah'=>$request->jumlah,
+            'jumlah'=>preg_replace('/[^0-9]/','',$request->jumlah),
             'keterangan'=>$request->keterangan,
             'npwp_penyetor'=>$request->npwp_penyetor,
             'nama_penyetor'=>$request->nama_penyetor,
@@ -327,7 +327,6 @@ class BillingController extends Controller
         ]);
         $a= \DB::commit();    
         return redirect()->route('billing');
-
     }
 
     /**
@@ -338,8 +337,14 @@ class BillingController extends Controller
      */
     public function destroy($id)
     {
-        $delete=Billing::find($id);
-        $delete->delete();
+        $search=Billing::where('id',$id)->get()->first();
+        if($search->attribute3==null){
+            Billing::where('id',$id)->update([
+                'attribute_2'=>Auth::user()->id,
+                'deleted_at'=>date('Y-m-d H:i:s'),
+            ]);
+        }
+       
         return redirect()->back()->with('alert','Berhasil Dihapus');
     }
 }

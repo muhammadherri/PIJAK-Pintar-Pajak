@@ -133,7 +133,7 @@ Route::get('/billing', [App\Http\Controllers\BillingController::class, 'index'])
 Route::get('/billing/create', [App\Http\Controllers\BillingController::class, 'create'])->name('billing/create');
 Route::post('/billing/store', [App\Http\Controllers\BillingController::class, 'store'])->name('billing/store');
 
-Route::delete('/billing/{id}', [App\Http\Controllers\BillingController::class, 'destroy']);
+Route::get('/billing/{id}/destroy', [App\Http\Controllers\BillingController::class, 'destroy']);
 Route::get('/billing/{id}/show', [App\Http\Controllers\BillingController::class, 'show'])->name('billing/show');
 Route::get('/billing/{id}/edit', [App\Http\Controllers\BillingController::class, 'edit'])->name('billing/edit');
 Route::put('/billing/{id}', [App\Http\Controllers\BillingController::class, 'update'])->name('billing/update');

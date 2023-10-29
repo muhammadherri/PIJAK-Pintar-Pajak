@@ -163,26 +163,26 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Jumlah Bruto</label>
                                             <div class="col-sm-9">
-                                                <input value="{{ $ebupot->jumlah_bruto }}"
+                                                <input onkeyup="this.value=sprator(this.value);" value="{{ number_format($ebupot->jumlah_bruto) }}"
                                                     placeholder="Masukkan Jumlah Bruto" autocomplete="off"
-                                                    id="jumlah_bruto" name="jumlah_bruto" type="number"
+                                                    id="jumlah_bruto" name="jumlah_bruto" type="text"
                                                     class="form-control">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Tarif</label>
                                             <div class="col-sm-3">
-                                                <input value="{{ $ebupot->tarif }}" placeholder="Masukkan Tarif"
-                                                    autocomplete="off" id="tarif" name="tarif" type="number"
+                                                <input onkeyup="this.value=sprator(this.value);" value="{{ number_format($ebupot->tarif) }}" placeholder="Masukkan Tarif"
+                                                    autocomplete="off" id="tarif" name="tarif" type="text"
                                                     class="form-control">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Potongan PPH</label>
                                             <div class="col-sm-9">
-                                                <input readonly value="{{ $ebupot->potongan_pph }}"
+                                                <input readonly value="{{ number_format($ebupot->potongan_pph) }}"
                                                     placeholder="Masukkan Potongan PPh" autocomplete="off"
-                                                    id="potongan_pph" name="potongan_pph" type="number"
+                                                    id="potongan_pph" name="potongan_pph" type="text"
                                                     class="form-control">
                                             </div>
                                         </div>
@@ -223,6 +223,22 @@
 @endsection
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+    function sprator(x) {
+        //remove commas
+        retVal = x ? parseFloat(x.replace(/,/g, '')) : 0;
+        const jumlah_bruto = $('#jumlah_bruto').val();
+        const tarif = $('#tarif').val();
+        console.log(retVal);
+
+        const resultpotongan_pph = document.getElementById('potongan_pph');
+
+        retValjumlah_bruto =jumlah_bruto ? parseFloat(jumlah_bruto.replace(/,/g, '')) : 0;
+        retValtarif =tarif ? parseFloat(tarif.replace(/,/g, '')) : 0;
+        const potonganpph = (retValjumlah_bruto*retValtarif)/100;
+        resultpotongan_pph.value = potonganpph.toLocaleString();
+        return retVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+    }
     $(document).ready(function() {
 
         $("#addRow").click(function() {

@@ -33,27 +33,19 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Akun Debet</label>
                                             <div class="col-sm-9">
-                                                <select id="no_akun_debet" name="no_akun_debet"
-                                                class="dropdown-groups">
-                                                    @foreach ($neraca as $row)
-                                                        <option value="{{ $row->no_akun }}"{{ $jurnalmanual->no_akun_debit == $row->no_akun ? 'selected' : '' }}>{{ $row->no_akun }} - {{ $row->nama_akun }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
+                                                <input type="text" value="{{$jurnalmanual->no_akun_debit}} - {{$jurnalmanual->nama_akun_debit}}" id="no_akun_debet" readonly class="form-control" name="no_akun_debet">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">No Akun Kredit</label>
                                             <div class="col-sm-9">
-                                                <select required id="no_akun_kredit" class="dropdown-groups" name="no_akun_kredit">
-                                                    
-                                                </select>
+                                                <input type="text" value="{{$jurnalmanual->no_akun_kredit}} - {{$jurnalmanual->nama_akun_kredit}}" id="no_akun_kredit" readonly class="form-control" name="no_akun_kredit">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Nama Akun Debet</label>
                                             <div class="col-sm-9">
-                                                <input type="text" id="nama_akun_debet" readonly class="form-control" name="nama_akun_debet">
+                                                <input value=" {{$jurnalmanual->nama_akun_debit}}" type="text" id="nama_akun_debet" readonly class="form-control" name="nama_akun_debet">
                                                 {{-- <select required id="nama_akun_debet" class="dropdown-groups" name="nama_akun_debet">
                                                 </select> --}}
                                             </div>
@@ -61,7 +53,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Nama Akun Kredit</label>
                                             <div class="col-sm-9">
-                                                <input type="text" id="nama_akun_kredit" readonly class="form-control" name="nama_akun_kredit">
+                                                <input type="text" value=" {{$jurnalmanual->nama_akun_kredit}}"  id="nama_akun_kredit" readonly class="form-control" name="nama_akun_kredit">
 
                                                 {{-- <select required id="nama_akun_kredit" class="dropdown-groups" name="nama_akun_kredit">
                                                 </select> --}}
@@ -70,7 +62,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Nilai Debet</label>
                                             <div class="col-sm-9">
-                                                <input required min="0" value="{{$jurnalmanual->nilai_debit}}" autocomplete="off" type="number" id="nilai_debet"
+                                                <input required min="0" onkeyup="this.value=addcommas(this.value);" value="{{number_format($jurnalmanual->nilai_debit)}}" autocomplete="off" type="text" id="nilai_debet"
                                                     name="nilai_debet" class="form-control"
                                                     placeholder="Masukkan Nilai Debet">
                                             </div>
@@ -78,7 +70,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Nilai Kredit</label>
                                             <div class="col-sm-9">
-                                                <input required min="0"  value="{{$jurnalmanual->nilai_kredit}}" autocomplete="off" type="number" id="nilai_kredit"
+                                                <input required min="0" onkeyup="this.value=addcommas(this.value);" value="{{number_format($jurnalmanual->nilai_kredit)}}" autocomplete="off" type="text" id="nilai_kredit"
                                                     name="nilai_kredit" class="form-control"
                                                     placeholder="Masukkan Nilai Kredit">
                                             </div>

@@ -33,19 +33,19 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Jumlah PPN Masuk</label>
                                             <div class="col-sm-9">
-                                                <input name="ppn_masuk" id="ppn_masuk" autocomplete="off" value="{{$ppnmasuk}}" type="number" class="form-control" readonly>
+                                                <input name="ppn_masuk" id="ppn_masuk" autocomplete="off" value="{{number_format($ppnmasuk)}}" type="text" class="form-control" readonly>
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Jumlah PPN Keluar</label>
                                             <div class="col-sm-9">
-                                                <input name="ppn_keluar" id="ppn_keluar" autocomplete="off" value="{{$ppnkeluar}}" type="number" class="form-control" readonly>
+                                                <input name="ppn_keluar" id="ppn_keluar" autocomplete="off" value="{{number_format($ppnkeluar)}}" type="text" class="form-control" readonly>
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Hutang PPN</label>
                                             <div class="col-sm-9">
-                                                <input name="jumlah" id="jumlah" autocomplete="off" value="{{$ppnmasuk-$ppnkeluar}}" type="number" class="form-control" readonly>
+                                                <input name="jumlah" id="jumlah" autocomplete="off" value="{{number_format($ppnmasuk-$ppnkeluar)}}" type="text" class="form-control" readonly>
                                             </div>
                                         </div>
                                     </div>

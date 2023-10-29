@@ -27,7 +27,7 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <a class="btn btn-primary" href="{{ route('jurnalmanual/create') }}">
-                                        {{ __('Create') }}
+                                        {{ __('Tambah') }}
                                     </a>
                                 </div>
                             </div>
@@ -136,11 +136,11 @@
                     render: function(data, type, row, index) {
                         content = `
                             <div class="d-flex">
-                                <a class="btn btn-danger shadow btn-xs sharp" href="jurnalmanual/${row.id}/destroy">
-                                    <i class="fa fa-trash"></i>
-                                </a>
                                 <a class="btn btn-primary shadow btn-xs sharp me-1" href="jurnalmanual/${row.id}/edit">
                                     <i class="fa fa-pencil"></i>
+                                </a>
+                                <a class="btn btn-danger shadow btn-xs sharp me-1" href="jurnalmanual/${row.id}/destroy">
+                                    <i class="fa fa-trash"></i>
                                 </a>
                                 <a class="btn btn-success shadow btn-xs sharp me-1" href="jurnalmanual/${row.id}/show">
                                     <i class="fa fa-eye"></i>
