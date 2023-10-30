@@ -1095,8 +1095,12 @@ class LaporanController extends Controller
 
         $totaldebit=JurnalManual::where('attribute3',NULL)->where('no_akun_debit','>','4100')->sum('nilai_debit');
         $totalkredit=JurnalManual::where('attribute3',NULL)->where('no_akun_kredit','>','4100')->sum('nilai_kredit');
-
+        $totalkomersial = $ikhtisarlabarugi+$totaldebit-$totalkredit;
+        
+        $pajakpenghasiliktisarlabarugi = $ikhtisarlabarugi*22/100;
+        $pajakpenghasiltotalkomersial = $totalkomersial*22/100;
         return view('laporan.laporankeuanganlabarugifiskal',compact(
+            'pajakpenghasiliktisarlabarugi','pajakpenghasiltotalkomersial',
             'totaldebit','totalkredit',
             'totalpenjualan','totalharpok','totalbiayaoperasional','jumlahpendapatanlain',
             'jumlahbebanlain','labakotor','labaoperasional','totalpendapatandanbebanlain',

@@ -1,3 +1,89 @@
+function sprator(x) {
+    //remove commas
+    retVal = x ? parseFloat(x.replace(/,/g, '')) : 0;
+    const digunggung_dpp_1111_AB = $('#digunggung_dpp_1111_AB').val();
+    const resultdigunggung_ppn_1111_AB = document.getElementById('digunggung_ppn_1111_AB');
+    retValdgg_1111_AB =digunggung_dpp_1111_AB ? parseFloat(digunggung_dpp_1111_AB.replace(/,/g, '')) : 0;
+    const hasildigunggung_dpp_1111_AB = (retValdgg_1111_AB*11)/100;
+    resultdigunggung_ppn_1111_AB.value = hasildigunggung_dpp_1111_AB.toLocaleString();
+
+    retVal = x ? parseFloat(x.replace(/,/g, '')) : 0;
+    const dipungut_dpp_1111_AB = $('#dipungut_dpp_1111_AB').val();
+    const resultdipungut_ppn_1111_AB = document.getElementById('dipungut_ppn_1111_AB');
+    retValdpgt_dpp_1111_AB =dipungut_dpp_1111_AB ? parseFloat(dipungut_dpp_1111_AB.replace(/,/g, '')) : 0;
+    const hasildipungut_dpp_1111_AB = (retValdpgt_dpp_1111_AB*11)/100;
+    resultdipungut_ppn_1111_AB.value = hasildipungut_dpp_1111_AB.toLocaleString();
+
+    const pemungut_dpp_1111_AB = $('#pemungut_dpp_1111_AB').val();
+    const resultpemungut_ppn_1111_AB = document.getElementById('pemungut_ppn_1111_AB');
+    retValpmgt_dpp_1111_AB =pemungut_dpp_1111_AB ? parseFloat(pemungut_dpp_1111_AB.replace(/,/g, '')) : 0;
+    const hasilpemungut_dpp_1111_AB = (retValpmgt_dpp_1111_AB*11)/100;
+    resultpemungut_ppn_1111_AB.value = hasilpemungut_dpp_1111_AB.toLocaleString();
+
+    const tidakdipungut_dpp_1111_AB = $('#tidakdipungut_dpp_1111_AB').val();
+    const resulttidakdipungut_ppn_1111_AB = document.getElementById('tidakdipungut_ppn_1111_AB');
+    retValtdkdpgt_dpp_1111_AB =tidakdipungut_dpp_1111_AB ? parseFloat(tidakdipungut_dpp_1111_AB.replace(/,/g, '')) : 0;
+    const hasilretValtidakdipungut_dpp_1111_AB = (retValtdkdpgt_dpp_1111_AB*11)/100;
+    resulttidakdipungut_ppn_1111_AB.value = hasilretValtidakdipungut_dpp_1111_AB.toLocaleString();
+    
+    const bebaspajak_dpp_1111_AB = $('#bebaspajak_dpp_1111_AB').val();
+    const resultbebaspajak_ppn_1111_AB = document.getElementById('bebaspajak_ppn_1111_AB');
+    retValbbspjk_dpp_1111_AB =bebaspajak_dpp_1111_AB ? parseFloat(bebaspajak_dpp_1111_AB.replace(/,/g, '')) : 0;
+    const hasilretValretValbbspjk_dpp_1111_AB = (retValbbspjk_dpp_1111_AB*11)/100;
+    resultbebaspajak_ppn_1111_AB.value = hasilretValretValbbspjk_dpp_1111_AB.toLocaleString();
+    // console.log(retVal);
+    const impor_bkp_1111_AB = $('#impor_bkp_1111_AB').val();
+    const impor_bkp_ppn_1111_AB = $('#impor_bkp_ppn_1111_AB').val();
+    const impor_bkp_ppnbm_1111_AB = $('#impor_bkp_ppnbm_1111_AB').val();
+    retValbkp_1111_AB =impor_bkp_1111_AB ? parseFloat(impor_bkp_1111_AB.replace(/,/g, '')) : 0;
+    retValbkp_ppn_1111_AB =impor_bkp_ppn_1111_AB ? parseFloat(impor_bkp_ppn_1111_AB.replace(/,/g, '')) : 0;
+    retValbkp_ppnbm_1111_AB =impor_bkp_ppnbm_1111_AB ? parseFloat(impor_bkp_ppnbm_1111_AB.replace(/,/g, '')) : 0;
+    
+    const perolehan_bkp_1111_AB = $('#perolehan_bkp_1111_AB').val();
+    const perolehan_bkp_ppn_1111_AB = $('#perolehan_bkp_ppn_1111_AB').val();
+    const perolehan_bkp_ppnbm_1111_AB = $('#perolehan_bkp_ppnbm_1111_AB').val();
+    retValdppprolehan =perolehan_bkp_1111_AB ? parseFloat(perolehan_bkp_1111_AB.replace(/,/g, '')) : 0;
+    retValppnprolehan =perolehan_bkp_ppn_1111_AB ? parseFloat(perolehan_bkp_ppn_1111_AB.replace(/,/g, '')) : 0;
+    retValppnbmprolehan =perolehan_bkp_ppnbm_1111_AB ? parseFloat(perolehan_bkp_ppnbm_1111_AB.replace(/,/g, '')) : 0;
+    
+    const impor_perolehan_bkp_1111_AB = $('#impor_perolehan_bkp_1111_AB').val();
+    const impor_perolehan_bkp_ppn_1111_AB = $('#impor_perolehan_bkp_ppn_1111_AB').val();
+    const impor_perolehan_bkp_ppnbm_1111_AB = $('#impor_perolehan_bkp_ppnbm_1111_AB').val();
+    retValdppimpor =impor_perolehan_bkp_1111_AB ? parseFloat(impor_perolehan_bkp_1111_AB.replace(/,/g, '')) : 0;
+    retValppnimpor =impor_perolehan_bkp_ppn_1111_AB ? parseFloat(impor_perolehan_bkp_ppn_1111_AB.replace(/,/g, '')) : 0;
+    retValppnbmimpor =impor_perolehan_bkp_ppnbm_1111_AB ? parseFloat(impor_perolehan_bkp_ppnbm_1111_AB.replace(/,/g, '')) : 0;
+    
+    const jumlahdpp1111ab =retValbkp_1111_AB+retValdppprolehan+retValdppimpor;
+    const jumlahppn1111ab =retValbkp_ppn_1111_AB+retValppnprolehan+retValppnimpor;
+    const jumlahppnbm1111ab =retValbkp_ppnbm_1111_AB+retValppnbmprolehan+retValppnbmimpor;
+    const jumlahkredit =retValbkp_1111_AB+retValdppprolehan;
+
+    const resultjumlah_perolehan_1111_AB = document.getElementById('jumlah_perolehan_1111_AB');
+    const resultjumlah_perolehan_ppn_1111_AB = document.getElementById('jumlah_perolehan_ppn_1111_AB');
+    const resultjumlah_perolehan_ppnbm_1111_AB = document.getElementById('jumlah_perolehan_ppnbm_1111_AB');
+    const resultjumlah_pajakmasukan_1111_AB = document.getElementById('jumlah_pajakmasukan_1111_AB');
+    
+    resultjumlah_perolehan_1111_AB.value = jumlahdpp1111ab.toLocaleString();
+    resultjumlah_perolehan_ppn_1111_AB.value = jumlahppn1111ab.toLocaleString();
+    resultjumlah_perolehan_ppnbm_1111_AB.value = jumlahppnbm1111ab.toLocaleString();
+    resultjumlah_pajakmasukan_1111_AB.value = jumlahkredit.toLocaleString();
+
+    const ppn_masa_pajak_sebelumnya_1111_AB = $('#ppn_masa_pajak_sebelumnya_1111_AB').val();
+    const spt_ppn_1111_AB = $('#spt_ppn_1111_AB').val();
+    const pajak_masukan_1111_AB = $('#pajak_masukan_1111_AB').val();
+    retValppn_masa_pajak_sebelumnya_1111_AB =ppn_masa_pajak_sebelumnya_1111_AB ? parseFloat(ppn_masa_pajak_sebelumnya_1111_AB.replace(/,/g, '')) : 0;
+    retValspt_ppn_1111_AB =spt_ppn_1111_AB ? parseFloat(spt_ppn_1111_AB.replace(/,/g, '')) : 0;
+    retValpajak_masukan_1111_AB =pajak_masukan_1111_AB ? parseFloat(pajak_masukan_1111_AB.replace(/,/g, '')) : 0;
+    const hasilpajakmasukanab = retValppn_masa_pajak_sebelumnya_1111_AB+retValspt_ppn_1111_AB+retValpajak_masukan_1111_AB;
+
+    const resultjumlah_pajak_masukan_1111_AB = document.getElementById('jumlah_pajak_masukan_1111_AB');
+    resultjumlah_pajak_masukan_1111_AB.value = hasilpajakmasukanab.toLocaleString();
+
+    const jumlahpajakab = jumlahkredit+hasilpajakmasukanab;
+    const resulttotaljumlah_pajak_masukan_1111_AB = document.getElementById('totaljumlah_pajak_masukan_1111_AB');
+    resulttotaljumlah_pajak_masukan_1111_AB.value = jumlahpajakab.toLocaleString();
+    return retVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 document.addEventListener('DOMContentLoaded', function() {
     // 1111
     const npwp_1111 = document.getElementById('npwp_1111');
@@ -56,9 +142,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const a5_ppn_1111 =a5_dpp_1111*11/100;
 
         const ajumlah_terutang_dpp = ekspor_1111+a2_dpp_1111+a3_dpp_1111+a4_dpp_1111+a5_dpp_1111;
-        // const ajumlah_terutang_ppn = a2_ppn_1111+a3_ppn_1111+a4_ppn_1111+a5_ppn_1111;
+        const ajumlah_terutang_ppn = a2_ppn_1111+a3_ppn_1111+a4_ppn_1111+a5_ppn_1111;
         resulta_jumlah_dpp_1111.value=ajumlah_terutang_dpp;
-        resulta_jumlah_ppn_1111.value=ajumlah_terutang_dpp*11/100;
+        // resulta_jumlah_ppn_1111.value=ajumlah_terutang_dpp*11/100;
+        resulta_jumlah_ppn_1111.value=ajumlah_terutang_ppn;
         
         resulta2_ppn_1111.value=a2_ppn_1111;
         resulta3_ppn_1111.value=a3_ppn_1111;
@@ -230,7 +317,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     class="form-control" />
             </td>
             <td class="text-center">
-                <input required autocomplete="off" type="number"
+                <input required autocomplete="off" type="text"
+                onkeyup="this.value=sprator(this.value);"
                     name="pajak_dpp_1111A1[]" id="pajak_dpp_1111A1[]"
                     min="0"
                     class="form-control subdpp_1111A1" />
@@ -254,10 +342,10 @@ document.addEventListener('DOMContentLoaded', function() {
             var totaldpp = 0
 
             $(".subdpp_1111A1").each(function() {
-                totaldpp += +$(this).val();
+                totaldpp += +$(this).val().replace(/,/g, '');
             });
            
-            $('.totaldpp_1111A1').val(totaldpp);
+            $('.totaldpp_1111A1').val(totaldpp.toLocaleString());
           
         }
     });
@@ -309,20 +397,20 @@ document.addEventListener('DOMContentLoaded', function() {
                     class="form-control"/>
             </td>
             <td class="text-center">
-                <input required autocomplete="off" type="number"
-                    name="pajak_dpp_1111A2[]"
+                <input required autocomplete="off" type="text"
+                    name="pajak_dpp_1111A2[]" onkeyup="this.value=sprator(this.value);"
                     id="pajak_dpp_1111A2[]" min="0"
                     class="form-control subdpp_1111A2" />
             </td>
             <td class="text-center">
-                <input required readonly autocomplete="off" type="number"
-                    name="pajak_ppn_1111A2[]"
+                <input required readonly autocomplete="off" type="text"
+                    name="pajak_ppn_1111A2[]" onkeyup="this.value=sprator(this.value);"
                     id="pajak_ppn_1111A2[]" min="0"
                     class="form-control subppn_1111A2" />
             </td>
             <td class="text-center">
-                <input required  autocomplete="off" type="number"
-                    name="pajak_ppnBM_1111A2[]"
+                <input required  autocomplete="off" type="text"
+                    name="pajak_ppnBM_1111A2[]" onkeyup="this.value=sprator(this.value);"
                     id="pajak_ppnBM_1111A2[]" min="0"
                     class="form-control subppnbm_1111A2" />
             </td>
@@ -343,28 +431,31 @@ document.addEventListener('DOMContentLoaded', function() {
         const target = event.target;
         if (target.tagName === 'INPUT' && target.name.startsWith('pajak')) {
             const row = target.closest('tr');
-            const angkA2 = parseFloat(row.querySelector('input[name="pajak_dpp_1111A2[]"]').value) || 0;
+            // const angkA2 = parseFloat(row.querySelector('input[name="pajak_dpp_1111A2[]"]').value) || 0;
+            const angkA2 = $(row.querySelector('[name="pajak_dpp_1111A2[]"]')).val();
+            retValangkA2=angkA2 ? parseFloat(angkA2.replace(/,/g, '')) : 0;
+            
             const hasilInput = row.querySelector('input[name="pajak_ppn_1111A2[]"]');
-            const sum = angkA2 * 11/100;
-            hasilInput.value = sum;
+            const sum = retValangkA2 * 11/100;
+            hasilInput.value = sum.toLocaleString();
 
             var totaldpp = 0
             var totalppn = 0
             var totalppnbm = 0
 
             $(".subdpp_1111A2").each(function() {
-                totaldpp += +$(this).val();
+                totaldpp += +$(this).val().replace(/,/g, '');
             });
             $(".subppn_1111A2").each(function() {
-                totalppn += +$(this).val();
+                totalppn += +$(this).val().replace(/,/g, '');
             });
             $(".subppnbm_1111A2").each(function() {
-                totalppnbm += +$(this).val();
+                totalppnbm += +$(this).val().replace(/,/g, '');
             });
            
-            $('.totaldpp_1111A2').val(totaldpp);
-            $('.totalppn_1111A2').val(totalppn);
-            $('.totalppnbm_1111A2').val(totalppnbm);
+            $('.totaldpp_1111A2').val(totaldpp.toLocaleString());
+            $('.totalppn_1111A2').val(totalppn.toLocaleString());
+            $('.totalppnbm_1111A2').val(totalppnbm.toLocaleString());
         }
     });
     tablelist_1111A2.addEventListener('click', function(event) {
@@ -412,19 +503,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     class="form-control" />
             </td>
             <td class="text-center">
-                <input required autocomplete="off" type="number"
+                <input required autocomplete="off" type="text" onkeyup="this.value=sprator(this.value);"
                     name="pajak_dpp_1111b1[]" id="pajak_dpp_1111b1[]"
                     min="0"
                     class="form-control subdpp_1111b1" />
             </td>
             <td class="text-center">
-                <input required readonly autocomplete="off" type="number"
+                <input required readonly autocomplete="off" type="text" onkeyup="this.value=sprator(this.value);"
                     name="pajak_ppn_1111b1[]" id="pajak_ppn_1111b1[]"
                     min="0"
                     class="form-control subppn_1111b1" />
             </td>
             <td class="text-center">
-                <input required autocomplete="off" type="number"
+                <input required autocomplete="off" type="text" onkeyup="this.value=sprator(this.value);"
                     name="pajak_ppnBM_1111b1[]"
                     id="pajak_ppnBM_1111b1[]" min="0"
                     class="form-control subppnbm_1111b1" />
@@ -446,9 +537,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const target = event.target;
         if (target.tagName === 'INPUT' && target.name.startsWith('pajak')) {
             const row = target.closest('tr');
-            const angkA2 = parseFloat(row.querySelector('input[name="pajak_dpp_1111b1[]"]').value) || 0;
+            // const angkA2 = parseFloat(row.querySelector('input[name="pajak_dpp_1111b1[]"]').value) || 0;
+            const angkA2 = $(row.querySelector('[name="pajak_dpp_1111b1[]"]')).val();
+            retValangkA2=angkA2 ? parseFloat(angkA2.replace(/,/g, '')) : 0;
+            
             const hasilInput = row.querySelector('input[name="pajak_ppn_1111b1[]"]');
-            const sum = angkA2 * 11/100;
+            const sum = retValangkA2 * 11/100;
             hasilInput.value = sum;
 
             var totaldpp = 0
@@ -456,18 +550,18 @@ document.addEventListener('DOMContentLoaded', function() {
             var totalppnbm = 0
 
             $(".subdpp_1111b1").each(function() {
-                totaldpp += +$(this).val();
+                totaldpp += +$(this).val().replace(/,/g, '');
             });
             $(".subppn_1111b1").each(function() {
-                totalppn += +$(this).val();
+                totalppn += +$(this).val().replace(/,/g, '');
             });
             $(".subppnbm_1111b1").each(function() {
-                totalppnbm += +$(this).val();
+                totalppnbm += +$(this).val().replace(/,/g, '');
             });
            
-            $('.totaldpp_1111b1').val(totaldpp);
-            $('.totalppn_1111b1').val(totalppn);
-            $('.totalppnbm_1111b1').val(totalppnbm);
+            $('.totaldpp_1111b1').val(totaldpp.toLocaleString());
+            $('.totalppn_1111b1').val(totalppn.toLocaleString());
+            $('.totalppnbm_1111b1').val(totalppnbm.toLocaleString());
         }
     });
     tablelist_1111b1.addEventListener('click', function(event) {
@@ -518,19 +612,21 @@ document.addEventListener('DOMContentLoaded', function() {
                     class="form-control"/>
             </td>
             <td class="text-center">
-                <input required autocomplete="off" type="number"
+                <input onkeyup="this.value=sprator(this.value);" required autocomplete="off" type="text"
                     name="pajak_dpp_1111B2[]"
                     id="pajak_dpp_1111B2[]" min="0"
                     class="form-control subdpp_1111B2" />
             </td>
             <td class="text-center">
-                <input required readonly autocomplete="off" type="number"
+                <input required readonly autocomplete="off" type="text"
+                onkeyup="this.value=sprator(this.value);"
                     name="pajak_ppn_1111B2[]"
                     id="pajak_ppn_1111B2[]" min="0"
                     class="form-control subppn_1111B2" />
             </td>
             <td class="text-center">
-                <input required  autocomplete="off" type="number"
+                <input required  autocomplete="off" type="text"
+                onkeyup="this.value=sprator(this.value);"
                     name="pajak_ppnBM_1111B2[]"
                     id="pajak_ppnBM_1111B2[]" min="0"
                     class="form-control subppnbm_1111B2" />
@@ -552,28 +648,31 @@ document.addEventListener('DOMContentLoaded', function() {
         const target = event.target;
         if (target.tagName === 'INPUT' && target.name.startsWith('pajak')) {
             const row = target.closest('tr');
-            const angkA2 = parseFloat(row.querySelector('input[name="pajak_dpp_1111B2[]"]').value) || 0;
+            // const angkA2 = parseFloat(row.querySelector('input[name="pajak_dpp_1111B2[]"]').value) || 0;
+            const angkA2 = $(row.querySelector('[name="pajak_dpp_1111B2[]"]')).val();
+            retValangkA2=angkA2 ? parseFloat(angkA2.replace(/,/g, '')) : 0;
+
             const hasilInput = row.querySelector('input[name="pajak_ppn_1111B2[]"]');
-            const sum = angkA2 * 11/100;
-            hasilInput.value = sum;
+            const sum = retValangkA2 * 11/100;
+            hasilInput.value = sum.toLocaleString();
 
             var totaldpp = 0
             var totalppn = 0
             var totalppnbm = 0
 
             $(".subdpp_1111B2").each(function() {
-                totaldpp += +$(this).val();
+                totaldpp += +$(this).val().replace(/,/g, '');
             });
             $(".subppn_1111B2").each(function() {
-                totalppn += +$(this).val();
+                totalppn += +$(this).val().replace(/,/g, '');
             });
             $(".subppnbm_1111B2").each(function() {
-                totalppnbm += +$(this).val();
+                totalppnbm += +$(this).val().replace(/,/g, '');
             });
            
-            $('.totaldpp_1111B2').val(totaldpp);
-            $('.totalppn_1111B2').val(totalppn);
-            $('.totalppnbm_1111B2').val(totalppnbm);
+            $('.totaldpp_1111B2').val(totaldpp.toLocaleString());
+            $('.totalppn_1111B2').val(totalppn.toLocaleString());
+            $('.totalppnbm_1111B2').val(totalppnbm.toLocaleString());
         }
     });
     tablelist_1111B2.addEventListener('click', function(event) {
@@ -625,19 +724,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     class="form-control"/>
             </td>
             <td class="text-center">
-                <input required autocomplete="off" type="number"
+                <input required autocomplete="off" type="text" onkeyup="this.value=sprator(this.value);"
                     name="pajak_dpp_1111B3[]"
                     id="pajak_dpp_1111B3[]" min="0"
                     class="form-control subdpp_1111B3" />
             </td>
             <td class="text-center">
-                <input required readonly autocomplete="off" type="number"
+                <input required readonly autocomplete="off" type="text" onkeyup="this.value=sprator(this.value);"
                     name="pajak_ppn_1111B3[]"
                     id="pajak_ppn_1111B3[]" min="0"
                     class="form-control subppn_1111B3" />
             </td>
             <td class="text-center">
-                <input required autocomplete="off" type="number"
+                <input required autocomplete="off" type="text" onkeyup="this.value=sprator(this.value);"
                     name="pajak_ppnBM_1111B3[]"
                     id="pajak_ppnBM_1111B3[]" min="0"
                     class="form-control subppnbm_1111B3" />
@@ -659,28 +758,31 @@ document.addEventListener('DOMContentLoaded', function() {
         const target = event.target;
         if (target.tagName === 'INPUT' && target.name.startsWith('pajak')) {
             const row = target.closest('tr');
-            const angkA2 = parseFloat(row.querySelector('input[name="pajak_dpp_1111B3[]"]').value) || 0;
+            // const angkA2 = parseFloat(row.querySelector('input[name="pajak_dpp_1111B3[]"]').value) || 0;
+            const angkA2 = $(row.querySelector('[name="pajak_dpp_1111B3[]"]')).val();
+            retValangkA2=angkA2 ? parseFloat(angkA2.replace(/,/g, '')) : 0;
+
             const hasilInput = row.querySelector('input[name="pajak_ppn_1111B3[]"]');
-            const sum = angkA2 * 11/100;
-            hasilInput.value = sum;
+            const sum = retValangkA2 * 11/100;
+            hasilInput.value = sum.toLocaleString();
 
             var totaldpp = 0
             var totalppn = 0
             var totalppnbm = 0
 
             $(".subdpp_1111B3").each(function() {
-                totaldpp += +$(this).val();
+                totaldpp += +$(this).val().replace(/,/g, '');
             });
             $(".subppn_1111B3").each(function() {
-                totalppn += +$(this).val();
+                totalppn += +$(this).val().replace(/,/g, '');
             });
             $(".subppnbm_1111B3").each(function() {
-                totalppnbm += +$(this).val();
+                totalppnbm += +$(this).val().replace(/,/g, '');
             });
            
-            $('.totaldpp_1111B3').val(totaldpp);
-            $('.totalppn_1111B3').val(totalppn);
-            $('.totalppnbm_1111B3').val(totalppnbm);
+            $('.totaldpp_1111B3').val(totaldpp.toLocaleString());
+            $('.totalppn_1111B3').val(totalppn.toLocaleString());
+            $('.totalppnbm_1111B3').val(totalppnbm.toLocaleString());
         }
     });
     tablelist_1111B3.addEventListener('click', function(event) {
@@ -710,17 +812,22 @@ function pembayaran() {
        
     }
 }
-function kurang() {
-    var nomorsatu = document.getElementById("digunggung_dpp_1111_AB");
-    var nomorlima = document.getElementById("dua_c_pajak_keluaran_ppn_1111");
-    var hidden_lebih_bayar = document.getElementById("hidden_lebih_bayar");
-    var kurang = nomorsatu*11/100;
-    if (kurang > nomorlima.value) {
-        hidden_lebih_bayar.style.display = 'none';
-    } else {
-        hidden_lebih_bayar.style.display = 'block';
+function kurang(x) {
+    
+    // var nomorsatu = document.getElementById("digunggung_dpp_1111_AB");
+    // var nomorlima = document.getElementById("dua_c_pajak_keluaran_ppn_1111");
+    // var hidden_lebih_bayar = document.getElementById("hidden_lebih_bayar");
+    // var kurang = nomorsatu*11/100;
+    // console.log(kurang);
+
+    // if (kurang > nomorlima.value) {
+    //     hidden_lebih_bayar.style.display = 'none';
+    // } else {
+    //     hidden_lebih_bayar.style.display = 'block';
        
-    }
+    // }
+    return retVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
 }
 function togglePasal() {
     var dua_h_khusus_1111 = document.getElementById("dua_h_khusus_1111");

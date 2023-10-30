@@ -17,64 +17,74 @@
                     <div class="row">
                         <div class="col-xl-6 col-xxl-12">
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="card progress-card">
+                                <div class="col-xl-3 col-xxl-6 col-sm-6">
+                                    <div class="card bg-warning invoice-card">
                                         <div class="card-body d-flex">
-                                            <div class="me-auto">
-                                                <h4 class="card-title">Transaksi PPh 21</h4>
-                                                <div class="d-flex align-items-center">
-                                                    <h2 class="fs-38 mb-0">{{$pph21}}</h2>
-                                                    {{-- <div class="text-success transaction-caret">
-                                                        <i class="fa fa-sort-asc"></i>
-                                                        <p class="mb-0">+0.5%</p>
-                                                    </div> --}}
-                                                </div>
+                                            
+                                            <div>
+                                                <h2 class="text-white invoice-num">Rp.{{number_format($invcount)}}</h2>
+                                                <span class="text-white fs-18">Total Invoices Penjualan</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Transaksi E-bupot</h4>
-                                            <div class="d-flex align-items-center">
-                                                {{-- <div class="me-auto">
-                                                    <div class="progress mt-4" style="height:10px;">
-                                                        <div class="progress-bar bg-primary progress-animated"
-                                                            style="width: 45%; height:10px;" role="progressbar">
-                                                            <span class="sr-only">60% Complete</span>
-                                                        </div>
-                                                    </div>
-                                                    <p class="fs-16 mb-0 mt-2"><span class="text-danger">-0,8% </span>from
-                                                        last month</p>
-                                                </div> --}}
-                                                <h2 class="fs-38">{{$ebupot}}</h2>
+                                <div class="col-xl-3 col-xxl-6 col-sm-6">
+                                    <div class="card bg-primary invoice-card">
+                                        <div class="card-body d-flex">
+                                            <div>
+                                                <h2 class="text-white invoice-num">{{number_format($billing)}}</h2>
+                                                <span class="text-white fs-18">Jumlah Transaksi Billing</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h4 class="card-title mt-2">Transaksi Pembayaran</h4>
-                                            <div class="d-flex align-items-center mt-3 mb-2">
-                                                {{-- <h2 class="fs-38 mb-0 me-3">456</h2> --}}
-                                                <span class="badge badge-success badge-xl">{{$billing}}</span>
+                                <div class="col-xl-3 col-xxl-6 col-sm-6">
+                                    <div class="card bg-info invoice-card">
+                                        <div class="card-body d-flex">
+                                            <div>
+                                                <h2 class="text-white invoice-num">{{number_format($stp1771)}}</h2>
+                                                <span class="text-white fs-18">Jumlah Pelaporan 1771</span></p>
+                                                {{-- <span class="text-white fs-18">SPT 1721 - {{number_format($stp1721)}}</span></p>
+                                                <span class="text-white fs-18">SPT 1111 - {{number_format($stp1111)}}</span> --}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-xxl-6 col-sm-6">
+                                    <div class="card bg-light invoice-card">
+                                        <div class="card-body d-flex">
+                                            <div>
 
+                                                <span class="text-white invoice-num">{{number_format($stp1721)}}</span>
+                                                <h4 class="text-white fs-18">Jumlah Pelaporan 1721</h4>
                                             </div>
-                                            {{-- <div class="d-flex align-items-center mt-3 mb-2">
-                                                <span class="badge badge-danger badge-xl">Invoice - {{number_format($invcount)}}</span>
-
-                                            </div> --}}
+                                            <div class="d-flex align-items-center mt-3 mb-2">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h4 class="card-title mt-2">Jumlah Mahasiswa</h4>
+                                <div class="col-xl-3 col-xxl-6 col-sm-6">
+                                    <div class="card bg-success invoice-card">
+                                        <div class="card-body d-flex">
+                                            <div>
+
+                                                <span class="text-white invoice-num">{{number_format($stp1111)}}</span>
+                                                <h4 class="text-white fs-18">Jumlah Pelaporan 1111</h4>
+                                            </div>
                                             <div class="d-flex align-items-center mt-3 mb-2">
-                                                <h2 class="fs-38 mb-0 me-3">{{$jumlahmahasiswa}}</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-xxl-6 col-sm-6">
+                                    <div class="card bg-secondary invoice-card">
+                                        <div class="card-body d-flex">
+                                            <div>
+
+                                                <span class="text-white invoice-num">{{Str::limit($user->dosen_pembimbing,11)}}</span>
+                                                <h4 class="text-white fs-18">Dosen Pengajar</h4>
+                                            </div>
+                                            <div class="d-flex align-items-center mt-3 mb-2">
                                             </div>
                                         </div>
                                     </div>

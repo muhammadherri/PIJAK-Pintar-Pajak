@@ -346,7 +346,7 @@
 @endsection
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-     function sprator(x) {
+    function sprator(x) {
         //remove commas
         retVal = x ? parseFloat(x.replace(/,/g, '')) : 0;
         // console.log(retVal);

@@ -257,7 +257,10 @@
                                         <th></th>
                                         <th width="auto" class="text-center">TOTAL PENJUALAN</th>
                                         <th class="text-center">{{ number_format($totalpenjualan) }}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{ number_format($totalpenjualan) }}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>
@@ -543,19 +546,28 @@
                                         <th></th>
                                         <th width="auto" class="text-center">JUMLAH HARGA POKOK PENJUALAN</th>
                                         <th class="text-center">{{ number_format($totalharpok) }}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{ number_format($totalharpok) }}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>
                                         <th width="auto" class="text-center">LABA KOTOR</th>
                                         <th class="text-center">{{ number_format($labakotor) }}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{ number_format($labakotor) }}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>
                                         <th width="auto" class="text-center">PENGELUARAN OPERASIONAL</th>
                                         <th class="text-center">{{ number_format($labakotor) }}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{ number_format($labakotor) }}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     @foreach ($asetlancar6100 as $key => $row)
                                         <tr>
@@ -1206,19 +1218,28 @@
                                         <th></th>
                                         <th width="auto" class="text-center">TOTAL OPERASIONAL</th>
                                         <th class="text-center">{{ number_format($totalbiayaoperasional) }}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{ number_format($totalbiayaoperasional) }}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>
                                         <th width="auto" class="text-center">LABA OPERASIONAL</th>
                                         <th class="text-center">{{ number_format($labaoperasional) }}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{ number_format($labaoperasional) }}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>
                                         <th width="auto" class="text-center">PENDAPATAN LAIN</th>
                                         <th class="text-center">{{ number_format($labaoperasional) }}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{ number_format($labaoperasional) }}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     @foreach ($asetlancar7100 as $key => $row)
                                         <tr>
@@ -1256,7 +1277,10 @@
                                         <th></th>
                                         <th width="auto" class="text-center">JUMLAH PENDAPATAN</th>
                                         <th class="text-center">{{ number_format($jumlahpendapatanlain) }}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{ number_format($jumlahpendapatanlain) }}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>
@@ -1316,13 +1340,19 @@
                                         <th></th>
                                         <th width="auto" class="text-center">JUMLAH BEBAN LAIN</th>
                                         <th class="text-center">{{ number_format($jumlahbebanlain) }}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{ number_format($jumlahbebanlain) }}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>
                                         <th width="auto" class="text-center">TOTAL PENDAPATAN DAN BEBAN LAIN</th>
                                         <th class="text-center">{{ number_format($totalpendapatandanbebanlain) }}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{ number_format($totalpendapatandanbebanlain) }}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>
@@ -1330,7 +1360,17 @@
                                         <th class="text-center">{{ number_format($ikhtisarlabarugi) }}</th>
                                         <th class="text-center">{{ number_format($totaldebit) }}</th>
                                         <th class="text-center">{{ number_format($totalkredit) }}</th>
-                                        <th colspan="3" class="text-center"></th>
+                                        <th class="text-center">{{ number_format($ikhtisarlabarugi+$totaldebit-$totalkredit) }}</th>
+                                        <th colspan="2" class="text-center"></th>
+                                    </tr>
+                                    <tr>
+                                        <th></th>
+                                        <th width="auto" class="text-center">PAJAK PENGHASIL</th>
+                                        <th class="text-center">{{ number_format($pajakpenghasiliktisarlabarugi) }}</th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{ number_format($pajakpenghasiltotalkomersial) }}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                 </table>
                             </div>

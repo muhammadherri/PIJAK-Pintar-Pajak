@@ -26,7 +26,10 @@ class User extends Authenticatable
         'dosen_pembimbing',
         'nama_lengkap',
     ];
-
+    public function users()
+    {
+        return $this->hasOne(User::class, 'dosen_pembimbing', 'email');
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

@@ -525,7 +525,11 @@
                                         <th></th>
                                         <th width="auto" class="text-center">TOTAL AKTIVA LANCAR </th>
                                         <th class="text-center">{{number_format($totalaktivalancar)}}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{number_format($totalaktivalancar)}}</th>
+                                       
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>
@@ -671,7 +675,10 @@
                                         <th></th>
                                         <th width="auto" class="text-center">TOTAL AKTIVA </th>
                                         <th class="text-center">{{number_format($totalaktiva)}}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{number_format($totalaktiva)}}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>
@@ -875,7 +882,10 @@
                                         <th></th>
                                         <th width="auto" class="text-center">TOTAL LIABILITAS LANCAR</th>
                                         <th class="text-center">{{number_format($totalliabilitislancar)}}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{number_format($totalliabilitislancar)}}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>
@@ -1019,7 +1029,10 @@
                                         <th></th>
                                         <th width="auto" class="text-center">TOTAL MODAL</th>
                                         <th class="text-center">{{number_format($totalmodal)}}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{number_format($totalmodal)}}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>

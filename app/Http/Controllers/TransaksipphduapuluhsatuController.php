@@ -164,6 +164,7 @@ class TransaksipphduapuluhsatuController extends Controller
 
     public function update(Request $request, $id)
     {
+        dd('masuk');
             $tes=TransaksiPphDuapuluhSatu::where('id',$id)->update([
                 'status_npwp'=>$request->npwp,
                 'nama_wajib_pajak'=>$request->input_wajib_pajak,

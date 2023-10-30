@@ -174,9 +174,9 @@
                             <span class="nav-text">Pelaporan</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ route('spttahunan') }}" >SPT Badan</a></li>
-                            <li><a href="{{ route('sptmasapajak') }}" >SPT Masa</a></li>
-                            <li><a href="{{ route('sptPPN') }}" >SPT PPN</a></li>
+                            <li><a href="{{ route('spttahunan') }}" >SPT Badan 1771</a></li>
+                            <li><a href="{{ route('sptmasapajak') }}" >SPT 1721</a></li>
+                            <li><a href="{{ route('sptPPN') }}" >SPT PPN 1111</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
@@ -314,7 +314,7 @@
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by <a href="" target="_blank">TAXCEED</a> 2023 <p style="color:#f3f3f3">MASHER</p></p>
+                <p>Copyright © Designed &amp; Developed by <a href="" target="_blank">TAXCEED</a> 2023 <p style="color:#f3f3f3"></p></p>
             </div>
         </div>
         <!--**********************************

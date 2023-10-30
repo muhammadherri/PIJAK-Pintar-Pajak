@@ -671,7 +671,7 @@
                                                 <label class="col-sm-1 col-form-label">DPP</label>
                                                 <div class="col-sm-3">
                                                     <input autocomplete="off" readonly id="pdn_dpp_1111_AB"
-                                                    name="pdn_dpp_1111_AB"type="number" class="form-control totaldpp_1111A2">
+                                                    name="pdn_dpp_1111_AB"type="text" class="form-control totaldpp_1111A2">
                                                 </div>
                                                 <label class="col-sm-1 col-form-label">PPN</label>
                                                 <div class="col-sm-2">
@@ -681,7 +681,7 @@
                                                 <label class="col-sm-2 col-form-label">PPnBM</label>
                                                 <div class="col-sm-3">
                                                     <input autocomplete="off" readonly id="pdn_ppnbm_1111_AB"
-                                                    name="pdn_ppnbm_1111_AB"type="number" class="form-control totalppnbm_1111A2">
+                                                    name="pdn_ppnbm_1111_AB"type="text" class="form-control totalppnbm_1111A2">
                                                 </div>
                                             </div>
                                             <br>
@@ -689,8 +689,10 @@
                                             <div class="mb-3 row">
                                                 <label class="col-sm-1 col-form-label">DPP</label>
                                                 <div class="col-sm-3">
-                                                    <input min="0" onchange="kurang()" placeholder="Masukkan DPP" autocomplete="off" required id="digunggung_dpp_1111_AB"
-                                                    name="digunggung_dpp_1111_AB"type="number" class="form-control">
+                                                    <input min="0" 
+                                                    onchange="kurang()" 
+                                                    onkeyup="this.value=sprator(this.value);" placeholder="Masukkan DPP" autocomplete="off" required id="digunggung_dpp_1111_AB"
+                                                    name="digunggung_dpp_1111_AB"type="text" class="form-control">
                                                 </div>
                                                 <label class="col-sm-1 col-form-label">PPN</label>
                                                 <div class="col-sm-2">
@@ -699,8 +701,8 @@
                                                 </div>
                                                 <label class="col-sm-2 col-form-label">PPnBM</label>
                                                 <div class="col-sm-3">
-                                                    <input min="0" placeholder="Masukkan PPNBM" autocomplete="off" required id="digunggung_ppnbm_1111_AB"
-                                                    name="digunggung_ppnbm_1111_AB"type="number" class="form-control">
+                                                    <input min="0" placeholder="Masukkan PPNBM"onkeyup="this.value=sprator(this.value);"  autocomplete="off" required id="digunggung_ppnbm_1111_AB"
+                                                    name="digunggung_ppnbm_1111_AB"type="text" class="form-control">
                                                 </div>
                                             </div>
                                             <br>
@@ -711,7 +713,7 @@
                                                 <label class="col-sm-1 col-form-label">DPP</label>
                                                 <div class="col-sm-3">
                                                     <input min="0" placeholder="Masukkan DPP" autocomplete="off" required id="dipungut_dpp_1111_AB"
-                                                    name="dipungut_dpp_1111_AB"type="number" class="form-control">
+                                                    name="dipungut_dpp_1111_AB"type="text" onkeyup="this.value=sprator(this.value);" class="form-control">
                                                 </div>
                                                 <label class="col-sm-1 col-form-label">PPN</label>
                                                 <div class="col-sm-2">
@@ -720,8 +722,8 @@
                                                 </div>
                                                 <label class="col-sm-2 col-form-label">PPnBM</label>
                                                 <div class="col-sm-3">
-                                                    <input min="0" placeholder="Masukkan PPNBM" autocomplete="off" required id="dipungut_ppnbm_1111_AB"
-                                                    name="dipungut_ppnbm_1111_AB"type="number" class="form-control">
+                                                    <input min="0" onkeyup="this.value=sprator(this.value);" placeholder="Masukkan PPNBM" autocomplete="off" required id="dipungut_ppnbm_1111_AB"
+                                                    name="dipungut_ppnbm_1111_AB"type="text" class="form-control">
                                                 </div>
                                             </div>
                                             <br>
@@ -729,8 +731,8 @@
                                             <div class="mb-3 row">
                                                 <label class="col-sm-1 col-form-label">DPP</label>
                                                 <div class="col-sm-3">
-                                                    <input min="0" placeholder="Masukkan DPP" autocomplete="off" required id="pemungut_dpp_1111_AB"
-                                                    name="pemungut_dpp_1111_AB"type="number" class="form-control">
+                                                    <input min="0" onkeyup="this.value=sprator(this.value);" placeholder="Masukkan DPP" autocomplete="off" required id="pemungut_dpp_1111_AB"
+                                                    name="pemungut_dpp_1111_AB"type="text" class="form-control">
                                                 </div>
                                                 <label class="col-sm-1 col-form-label">PPN</label>
                                                 <div class="col-sm-2">
@@ -739,8 +741,8 @@
                                                 </div>
                                                 <label class="col-sm-2 col-form-label">PPnBM</label>
                                                 <div class="col-sm-3">
-                                                    <input min="0" placeholder="Masukkan PPNBM" autocomplete="off" required id="pemungut_ppnbm_1111_AB"
-                                                    name="pemungut_ppnbm_1111_AB"type="number" class="form-control">
+                                                    <input min="0" placeholder="Masukkan PPNBM" onkeyup="this.value=sprator(this.value);" autocomplete="off" required id="pemungut_ppnbm_1111_AB"
+                                                    name="pemungut_ppnbm_1111_AB"type="text" class="form-control">
                                                 </div>
                                             </div>
                                             <br>
@@ -748,8 +750,8 @@
                                             <div class="mb-3 row">
                                                 <label class="col-sm-1 col-form-label">DPP</label>
                                                 <div class="col-sm-3">
-                                                    <input placeholder="Masukkan DPP" min="0" autocomplete="off" required id="tidakdipungut_dpp_1111_AB"
-                                                    name="tidakdipungut_dpp_1111_AB"type="number" class="form-control">
+                                                    <input placeholder="Masukkan DPP" min="0" onkeyup="this.value=sprator(this.value);"autocomplete="off" required id="tidakdipungut_dpp_1111_AB"
+                                                    name="tidakdipungut_dpp_1111_AB"type="text" class="form-control">
                                                 </div>
                                                 <label class="col-sm-1 col-form-label">PPN</label>
                                                 <div class="col-sm-2">
@@ -758,8 +760,8 @@
                                                 </div>
                                                 <label class="col-sm-2 col-form-label">PPnBM</label>
                                                 <div class="col-sm-3">
-                                                    <input placeholder="Masukkan PPNBM" min="0" autocomplete="off" required id="tidakdipungut_ppnbm_1111_AB"
-                                                    name="tidakdipungut_ppnbm_1111_AB"type="number" class="form-control">
+                                                    <input placeholder="Masukkan PPNBM" min="0" onkeyup="this.value=sprator(this.value);"autocomplete="off" required id="tidakdipungut_ppnbm_1111_AB"
+                                                    name="tidakdipungut_ppnbm_1111_AB"type="text" class="form-control">
                                                 </div>
                                             </div>
                                             <br>
@@ -767,8 +769,8 @@
                                             <div class="mb-3 row">
                                                 <label class="col-sm-1 col-form-label">DPP</label>
                                                 <div class="col-sm-3">
-                                                    <input placeholder="Masukkan DPP" min="0" autocomplete="off" required id="bebaspajak_dpp_1111_AB"
-                                                    name="bebaspajak_dpp_1111_AB"type="number" class="form-control">
+                                                    <input placeholder="Masukkan DPP" onkeyup="this.value=sprator(this.value);" min="0" autocomplete="off" required id="bebaspajak_dpp_1111_AB"
+                                                    name="bebaspajak_dpp_1111_AB"type="text" class="form-control">
                                                 </div>
                                                 <label class="col-sm-1 col-form-label">PPN</label>
                                                 <div class="col-sm-2">
@@ -777,8 +779,8 @@
                                                 </div>
                                                 <label class="col-sm-2 col-form-label">PPnBM</label>
                                                 <div class="col-sm-3">
-                                                    <input placeholder="Masukkan PPNBM" min="0" autocomplete="off" required id="bebaspajak_ppnbm_1111_AB"
-                                                    name="bebaspajak_ppnbm_1111_AB"type="number" class="form-control">
+                                                    <input placeholder="Masukkan PPNBM" onkeyup="this.value=sprator(this.value);" min="0" autocomplete="off" required id="bebaspajak_ppnbm_1111_AB"
+                                                    name="bebaspajak_ppnbm_1111_AB"type="text" class="form-control">
                                                 </div>
                                             </div>
                                             <br>
@@ -788,18 +790,18 @@
                                             <div class="mb-3 row">
                                                 <label class="col-sm-1 col-form-label">BPP</label>
                                                 <div class="col-sm-3">
-                                                    <input autocomplete="off" readonly required id="impor_bkp_1111_AB"
-                                                    name="impor_bkp_1111_AB"type="number" class="form-control totaldpp_1111b1">
+                                                    <input autocomplete="off" onkeyup="this.value=sprator(this.value);" readonly required id="impor_bkp_1111_AB"
+                                                    name="impor_bkp_1111_AB"type="text" class="form-control totaldpp_1111b1">
                                                 </div>
                                                 <label class="col-sm-1 col-form-label">PPN</label>
                                                 <div class="col-sm-2">
                                                     <input autocomplete="off" readonly required id="impor_bkp_ppn_1111_AB"
-                                                    name="impor_bkp_ppn_1111_AB"type="number" class="form-control totalppn_1111b1">
+                                                    name="impor_bkp_ppn_1111_AB"type="text" class="form-control totalppn_1111b1">
                                                 </div>
                                                 <label class="col-sm-2 col-form-label">PPnBM</label>
                                                 <div class="col-sm-3">
                                                     <input autocomplete="off" readonly required id="impor_bkp_ppnbm_1111_AB"
-                                                    name="impor_bkp_ppnbm_1111_AB"type="number" class="form-control totalppnbm_1111b1">
+                                                    name="impor_bkp_ppnbm_1111_AB"type="text" class="form-control totalppnbm_1111b1">
                                                 </div>
                                             </div>
                                             <br>
@@ -808,17 +810,17 @@
                                                 <label class="col-sm-1 col-form-label">DPP</label>
                                                 <div class="col-sm-3">
                                                     <input autocomplete="off" readonly required id="perolehan_bkp_1111_AB"
-                                                    name="perolehan_bkp_1111_AB"type="number" class="form-control totaldpp_1111B2">
+                                                    name="perolehan_bkp_1111_AB"type="text" class="form-control totaldpp_1111B2">
                                                 </div>
                                                 <label class="col-sm-1 col-form-label">PPN</label>
                                                 <div class="col-sm-2">
                                                     <input autocomplete="off" readonly required id="perolehan_bkp_ppn_1111_AB"
-                                                    name="perolehan_bkp_ppn_1111_AB"type="number" class="form-control totalppn_1111B2">
+                                                    name="perolehan_bkp_ppn_1111_AB"type="text" class="form-control totalppn_1111B2">
                                                 </div>
                                                 <label class="col-sm-2 col-form-label">PPnBM</label>
                                                 <div class="col-sm-3">
                                                     <input autocomplete="off" readonly required id="perolehan_bkp_ppnbm_1111_AB"
-                                                    name="perolehan_bkp_ppnbm_1111_AB"type="number" class="form-control totalppnbm_1111B2">
+                                                    name="perolehan_bkp_ppnbm_1111_AB"type="text" class="form-control totalppnbm_1111B2">
                                                 </div>
                                             </div>
                                             <br>
@@ -827,17 +829,17 @@
                                                 <label class="col-sm-1 col-form-label">DPP</label>
                                                 <div class="col-sm-3">
                                                     <input autocomplete="off" readonly required id="impor_perolehan_bkp_1111_AB"
-                                                    name="impor_perolehan_bkp_1111_AB"type="number" class="form-control totaldpp_1111B3">
+                                                    name="impor_perolehan_bkp_1111_AB"type="text" class="form-control totaldpp_1111B3">
                                                 </div>
                                                 <label class="col-sm-1 col-form-label">PPN</label>
                                                 <div class="col-sm-2">
                                                     <input autocomplete="off" readonly required id="impor_perolehan_bkp_ppn_1111_AB"
-                                                    name="impor_perolehan_bkp_ppn_1111_AB"type="number" class="form-control totalppn_1111B3">
+                                                    name="impor_perolehan_bkp_ppn_1111_AB"type="text" class="form-control totalppn_1111B3">
                                                 </div>
                                                 <label class="col-sm-2 col-form-label">PPnBM</label>
                                                 <div class="col-sm-3">
                                                     <input autocomplete="off" readonly required id="impor_perolehan_bkp_ppnbm_1111_AB"
-                                                    name="impor_perolehan_bkp_ppnbm_1111_AB"type="number" class="form-control totalppnbm_1111B3">
+                                                    name="impor_perolehan_bkp_ppnbm_1111_AB"type="text" class="form-control totalppnbm_1111B3">
                                                 </div>
                                             </div>
                                             <br>
@@ -846,17 +848,17 @@
                                                 <label class="col-sm-1 col-form-label">DPP</label>
                                                 <div class="col-sm-3">
                                                     <input autocomplete="off" readonly required id="jumlah_perolehan_1111_AB"
-                                                    name="jumlah_perolehan_1111_AB"type="number" class="form-control">
+                                                    name="jumlah_perolehan_1111_AB"type="text" class="form-control">
                                                 </div>
                                                 <label class="col-sm-1 col-form-label">PPN</label>
                                                 <div class="col-sm-2">
                                                     <input autocomplete="off" readonly required id="jumlah_perolehan_ppn_1111_AB"
-                                                    name="jumlah_perolehan_ppn_1111_AB"type="number" class="form-control">
+                                                    name="jumlah_perolehan_ppn_1111_AB"type="text" class="form-control">
                                                 </div>
                                                 <label class="col-sm-2 col-form-label">PPnBM</label>
                                                 <div class="col-sm-3">
                                                     <input autocomplete="off" readonly required id="jumlah_perolehan_ppnbm_1111_AB"
-                                                    name="jumlah_perolehan_ppnbm_1111_AB"type="number" class="form-control">
+                                                    name="jumlah_perolehan_ppnbm_1111_AB"type="text" class="form-control">
                                                 </div>
                                             </div>
                                             <br>
@@ -866,7 +868,7 @@
                                                 <label class="col-sm-3 col-form-label">A. Pajak Masukan</label>
                                                 <div class="col-sm-9">
                                                     <input autocomplete="off" readonly required id="jumlah_pajakmasukan_1111_AB"
-                                                    name="jumlah_pajakmasukan_1111_AB"type="number" class="form-control">
+                                                    name="jumlah_pajakmasukan_1111_AB"type="text" class="form-control">
                                                 </div>
                                             </div>
                                             <h6>B. Pajak Masukan Lainnya</h6>
@@ -874,8 +876,8 @@
                                             <div class="mb-3 row">
                                                 <label class="col-sm-3 col-form-label"></label>
                                                 <div class="col-sm-9">
-                                                    <input autocomplete="off" placeholder="Masukkan Nilai Pajak Sebelumnya" min="0"required required id="ppn_masa_pajak_sebelumnya_1111_AB"
-                                                    name="ppn_masa_pajak_sebelumnya_1111_AB"type="number" class="form-control">
+                                                    <input autocomplete="off" onkeyup="this.value=sprator(this.value);" placeholder="Masukkan Nilai Pajak Sebelumnya" min="0"required required id="ppn_masa_pajak_sebelumnya_1111_AB"
+                                                    name="ppn_masa_pajak_sebelumnya_1111_AB"type="text" class="form-control">
                                                 </div>
                                             </div>
                                             <label class="col-sm-12 col-form-label">2. Kompensasi kelebihan PPN karena pembetulan SPT PPN Masa Pajak</label>
@@ -887,16 +889,16 @@
                                                 </div>
                                                 <label class="col-sm-2 col-form-label">PPN</label>
                                                 <div class="col-sm-3">
-                                                    <input placeholder="Masukkan PPN" min="0" autocomplete="off" required required id="spt_ppn_1111_AB"
-                                                    name="spt_ppn_1111_AB"type="number" class="form-control">
+                                                    <input placeholder="Masukkan PPN" onkeyup="this.value=sprator(this.value);" min="0" autocomplete="off" required required id="spt_ppn_1111_AB"
+                                                    name="spt_ppn_1111_AB"type="text" class="form-control">
                                                 </div>
                                             </div>
                                             <label class="col-sm-12 col-form-label">3. Hasil Penghitungan Kembali Pajak Masukan yang telah dikreditkan sebagai penambah (pengurang) Pajak Masukan</label>
                                             <div class="mb-3 row">
                                                 <label class="col-sm-3 col-form-label"></label>
                                                 <div class="col-sm-9">
-                                                    <input placeholder="Masukkan Jumlah Pajak Masukan" min="0" autocomplete="off" required required id="pajak_masukan_1111_AB"
-                                                    name="pajak_masukan_1111_AB"type="number" class="form-control">
+                                                    <input placeholder="Masukkan Jumlah Pajak Masukan" onkeyup="this.value=sprator(this.value);" min="0" autocomplete="off" required required id="pajak_masukan_1111_AB"
+                                                    name="pajak_masukan_1111_AB"type="text" class="form-control">
                                                 </div>
                                             </div>
                                             <label class="col-sm-12 col-form-label">Jumlah (III.B.1 + III.B.2 + III.B.3)</label>
@@ -904,7 +906,7 @@
                                                 <label class="col-sm-3 col-form-label"></label>
                                                 <div class="col-sm-9">
                                                     <input autocomplete="off" readonly required id="jumlah_pajak_masukan_1111_AB"
-                                                    name="jumlah_pajak_masukan_1111_AB"type="number" class="form-control">
+                                                    name="jumlah_pajak_masukan_1111_AB"type="text" class="form-control">
                                                 </div>
                                             </div>
                                             <label class="col-sm-12 col-form-label">Jumlah Pajak Masukan yang Dapat Diperhitungkan( III.A + III.B.4)</label>
@@ -912,7 +914,7 @@
                                                 <label class="col-sm-3 col-form-label"></label>
                                                 <div class="col-sm-9">
                                                     <input autocomplete="off" readonly required id="totaljumlah_pajak_masukan_1111_AB"
-                                                    name="totaljumlah_pajak_masukan_1111_AB"type="number" class="form-control">
+                                                    name="totaljumlah_pajak_masukan_1111_AB"type="text" class="form-control">
                                                 </div>
                                             </div>
                                         </div>
@@ -995,7 +997,8 @@
                                                                         class="form-control" />
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <input required autocomplete="off" type="number"
+                                                                    <input required autocomplete="off" type="text"
+                                                                    onkeyup="this.value=sprator(this.value);"
                                                                         name="pajak_dpp_1111A1[]" id="pajak_dpp_1111A1[]"
                                                                         min="0"
                                                                         class="form-control subdpp_1111A1" />
@@ -1025,7 +1028,7 @@
                                                             <tr>
                                                                 <td colspan="3"><b>JUMLAH</b></td>
                                                                 <td>
-                                                                    <input readonly autocomplete="off" type="number"
+                                                                    <input readonly autocomplete="off" type="text"
                                                                         name="total_dpp_1111A1" id="total_dpp_1111A1"
                                                                         class="form-control totaldpp_1111A1" />
                                                                 </td>
@@ -1131,19 +1134,19 @@
                                                                         class="form-control" />
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <input required autocomplete="off" type="number"
+                                                                    <input required autocomplete="off" type="text" onkeyup="this.value=sprator(this.value);"
                                                                         name="pajak_dpp_1111A2[]" id="pajak_dpp_1111A2[]"
                                                                         min="0"
                                                                         class="form-control subdpp_1111A2" />
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <input required readonly autocomplete="off" type="number"
+                                                                    <input required readonly autocomplete="off" type="text" onkeyup="this.value=sprator(this.value);"
                                                                         name="pajak_ppn_1111A2[]" id="pajak_ppn_1111A2[]"
                                                                         min="0"
                                                                         class="form-control subppn_1111A2" />
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <input required  autocomplete="off" type="number"
+                                                                    <input required  autocomplete="off" type="text" onkeyup="this.value=sprator(this.value);"
                                                                         name="pajak_ppnBM_1111A2[]"
                                                                         id="pajak_ppnBM_1111A2[]" min="0"
                                                                         class="form-control subppnbm_1111A2" />
@@ -1173,17 +1176,17 @@
                                                             <tr>
                                                                 <td colspan="4"><b>JUMLAH</b></td>
                                                                 <td>
-                                                                    <input readonly autocomplete="off" type="number"
+                                                                    <input readonly autocomplete="off" type="text"
                                                                         name="total_dpp_1111A2" id="total_dpp_1111A2"
                                                                         class="form-control totaldpp_1111A2" />
                                                                 </td>
                                                                 <td>
-                                                                    <input readonly autocomplete="off" type="number"
+                                                                    <input readonly autocomplete="off" type="text"
                                                                         name="total_ppn_1111A2" id="total_ppn_1111A2"
                                                                         class="form-control totalppn_1111A2" />
                                                                 </td>
                                                                 <td>
-                                                                    <input readonly autocomplete="off" type="number"
+                                                                    <input readonly autocomplete="off" type="text"
                                                                         name="total_ppnbm_1111A2" id="total_ppnbm_1111A2"
                                                                         class="form-control totalppnbm_1111A2" />
                                                                 </td>
@@ -1278,19 +1281,19 @@
                                                                         class="form-control" />
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <input required autocomplete="off" type="number"
+                                                                    <input required autocomplete="off" type="text" onkeyup="this.value=sprator(this.value);"
                                                                         name="pajak_dpp_1111b1[]" id="pajak_dpp_1111b1[]"
                                                                         min="0"
                                                                         class="form-control subdpp_1111b1" />
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <input required readonly autocomplete="off" type="number"
+                                                                    <input required readonly autocomplete="off" type="text" onkeyup="this.value=sprator(this.value);"
                                                                         name="pajak_ppn_1111b1[]" id="pajak_ppn_1111b1[]"
                                                                         min="0"
                                                                         class="form-control subppn_1111b1" />
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <input required autocomplete="off" type="number"
+                                                                    <input required autocomplete="off" type="text" onkeyup="this.value=sprator(this.value);"
                                                                         name="pajak_ppnBM_1111b1[]"
                                                                         id="pajak_ppnBM_1111b1[]" min="0"
                                                                         class="form-control subppnbm_1111b1" />
@@ -1320,17 +1323,17 @@
                                                             <tr>
                                                                 <td colspan="3"><b>JUMLAH</b></td>
                                                                 <td>
-                                                                    <input readonly autocomplete="off" type="number"
+                                                                    <input readonly autocomplete="off" type="text"
                                                                         name="total_dpp_1111b1" id="total_dpp_1111b1"
                                                                         class="form-control totaldpp_1111b1" />
                                                                 </td>
                                                                 <td>
-                                                                    <input readonly autocomplete="off" type="number"
+                                                                    <input readonly autocomplete="off" type="text"
                                                                         name="total_ppn_1111b1" id="total_ppn_1111b1"
                                                                         class="form-control totalppn_1111b1" />
                                                                 </td>
                                                                 <td>
-                                                                    <input readonly autocomplete="off" type="number"
+                                                                    <input readonly autocomplete="off" type="text"
                                                                         name="total_ppnbm_1111b1" id="total_ppnbm_1111b1"
                                                                         class="form-control totalppnbm_1111b1" />
                                                                 </td>
@@ -1431,19 +1434,19 @@
                                                                         class="form-control" />
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <input required autocomplete="off" type="number"
+                                                                    <input onkeyup="this.value=sprator(this.value);" required autocomplete="off" type="text"
                                                                         name="pajak_dpp_1111B2[]" id="pajak_dpp_1111B2[]"
                                                                         min="0"
                                                                         class="form-control subdpp_1111B2" />
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <input required readonly autocomplete="off" type="number"
+                                                                    <input onkeyup="this.value=sprator(this.value);" required readonly autocomplete="off" type="text"
                                                                         name="pajak_ppn_1111B2[]" id="pajak_ppn_1111B2[]"
                                                                         min="0"
                                                                         class="form-control subppn_1111B2" />
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <input required  autocomplete="off" type="number"
+                                                                    <input onkeyup="this.value=sprator(this.value);" required  autocomplete="off" type="text"
                                                                         name="pajak_ppnBM_1111B2[]"
                                                                         id="pajak_ppnBM_1111B2[]" min="0"
                                                                         class="form-control subppnbm_1111B2" />
@@ -1473,17 +1476,17 @@
                                                             <tr>
                                                                 <td colspan="4"><b>JUMLAH</b></td>
                                                                 <td>
-                                                                    <input readonly autocomplete="off" type="number"
+                                                                    <input readonly autocomplete="off" type="text"
                                                                         name="total_dpp_1111B2" id="total_dpp_1111B2"
                                                                         class="form-control totaldpp_1111B2" />
                                                                 </td>
                                                                 <td>
-                                                                    <input readonly autocomplete="off" type="number"
+                                                                    <input readonly autocomplete="off" type="text"
                                                                         name="total_ppn_1111B2" id="total_ppn_1111B2"
                                                                         class="form-control totalppn_1111B2" />
                                                                 </td>
                                                                 <td>
-                                                                    <input readonly autocomplete="off" type="number"
+                                                                    <input readonly autocomplete="off" type="text"
                                                                         name="total_ppnbm_1111B2" id="total_ppnbm_1111B2"
                                                                         class="form-control totalppnbm_1111B2" />
                                                                 </td>
@@ -1584,19 +1587,19 @@
                                                                         class="form-control" />
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <input required autocomplete="off" type="number"
+                                                                    <input required autocomplete="off" type="text" onkeyup="this.value=sprator(this.value);"
                                                                         name="pajak_dpp_1111B3[]" id="pajak_dpp_1111B3[]"
                                                                         min="0"
                                                                         class="form-control subdpp_1111B3" />
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <input required readonly autocomplete="off" type="number"
+                                                                    <input required readonly autocomplete="off" type="text" onkeyup="this.value=sprator(this.value);"
                                                                         name="pajak_ppn_1111B3[]" id="pajak_ppn_1111B3[]"
                                                                         min="0"
                                                                         class="form-control subppn_1111B3" />
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <input required  autocomplete="off" type="number"
+                                                                    <input required  autocomplete="off" type="text" onkeyup="this.value=sprator(this.value);"
                                                                         name="pajak_ppnBM_1111B3[]"
                                                                         id="pajak_ppnBM_1111B3[]" min="0"
                                                                         class="form-control subppnbm_1111B3" />
@@ -1626,17 +1629,17 @@
                                                             <tr>
                                                                 <td colspan="4"><b>JUMLAH</b></td>
                                                                 <td>
-                                                                    <input readonly autocomplete="off" type="number"
+                                                                    <input readonly autocomplete="off" type="text"
                                                                         name="total_dpp_1111B3" id="total_dpp_1111B3"
                                                                         class="form-control totaldpp_1111B3" />
                                                                 </td>
                                                                 <td>
-                                                                    <input readonly autocomplete="off" type="number"
+                                                                    <input readonly autocomplete="off" type="text"
                                                                         name="total_ppn_1111B3" id="total_ppn_1111B3"
                                                                         class="form-control totalppn_1111B3" />
                                                                 </td>
                                                                 <td>
-                                                                    <input readonly autocomplete="off" type="number"
+                                                                    <input readonly autocomplete="off" type="text"
                                                                         name="total_ppnbm_1111B3" id="total_ppnbm_1111B3"
                                                                         class="form-control totalppnbm_1111B3" />
                                                                 </td>
