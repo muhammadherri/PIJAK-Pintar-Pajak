@@ -1070,18 +1070,18 @@ tags will be replaced.-->
   <td colspan=2 class=xl853983 style='border-left:none'>&nbsp;{{$row->npwp}}</td>
   <td class=xl863983 style='border-top:none;border-left:none'>&nbsp;{{$row->seri}}</td>
   <td class=xl873983 style='border-top:none;border-left:none'>&nbsp;{{date('d-M-Y',strtotime($row->tgl))}}</td>
-  <td class=xl883983 style='border-top:none;border-left:none'>&nbsp;{{number_format($row->dpp,2)}}</td>
-  <td class=xl883983 style='border-top:none;border-left:none'>&nbsp;{{number_format($row->ppn,2)}}</td>
-  <td colspan=4 class=xl893983 style='border-left:none'>&nbsp;{{number_format($row->ppnbm,2)}}</td>
+  <td class=xl883983 style='border-top:none;border-left:none'>&nbsp;{{number_format($row->dpp  )}}</td>
+  <td class=xl883983 style='border-top:none;border-left:none'>&nbsp;{{number_format($row->ppn  )}}</td>
+  <td colspan=4 class=xl893983 style='border-left:none'>&nbsp;{{number_format($row->ppnbm  )}}</td>
   <td colspan=5 class=xl903983 width=202 style='border-left:none;width:152pt'>&nbsp;{{$row->seri}}kodeseri</td>
  </tr>
  @endforeach
  <tr height=24 style='mso-height-source:userset;height:18.0pt'>
   <td colspan=9 height=24 class=xl1023983 style='border-right:.5pt solid black;
   height:18.0pt'>JUMLAH</td>
-  <td class=xl1003983 style='border-left:none'>&nbsp;{{number_format($spt->jumlah_dpp_1111_B3,2)}}</td>
-  <td class=xl1003983 style='border-left:none'>&nbsp;{{number_format($spt->jumlah_ppn_1111_B3,2)}}</td>
-  <td colspan=4 class=xl1013983 style='border-left:none'>&nbsp;{{number_format($spt->jumlah_ppnbm_1111_B3,2)}}</td>
+  <td class=xl1003983 style='border-left:none'>&nbsp;{{number_format($spt->jumlah_dpp_1111_B3  )}}</td>
+  <td class=xl1003983 style='border-left:none'>&nbsp;{{number_format($spt->jumlah_ppn_1111_B3  )}}</td>
+  <td colspan=4 class=xl1013983 style='border-left:none'>&nbsp;{{number_format($spt->jumlah_ppnbm_1111_B3  )}}</td>
   <td colspan=5 class=xl1053983 width=202 style='border-left:none;width:152pt'>&nbsp;</td>
  </tr>
  <tr height=24 style='mso-height-source:userset;height:18.0pt'>

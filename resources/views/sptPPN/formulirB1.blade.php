@@ -1071,9 +1071,9 @@ tags will be replaced.-->
   <td colspan=4 class=xl8720300 style='border-left:none'>&nbsp;{{$row->nama_penjual_bkp}}</td>
   <td colspan=3 class=xl8820300 style='border-left:none'>&nbsp;{{$row->no_dok}}</td>
   <td class=xl8920300 style='border-top:none;border-left:none'>&nbsp;{{date('d-M-Y',strtotime($row->tgl_dok))}}</td>
-  <td class=xl9020300 style='border-top:none;border-left:none'>&nbsp;{{number_format($row->dpp,2)}}</td>
-  <td class=xl9020300 style='border-top:none;border-left:none'>&nbsp;{{number_format($row->ppn,2)}}</td>
-  <td colspan=4 class=xl9120300 style='border-left:none'>&nbsp;{{number_format($row->ppnbm,2)}}</td>
+  <td class=xl9020300 style='border-top:none;border-left:none'>&nbsp;{{number_format($row->dpp  )}}</td>
+  <td class=xl9020300 style='border-top:none;border-left:none'>&nbsp;{{number_format($row->ppn  )}}</td>
+  <td colspan=4 class=xl9120300 style='border-left:none'>&nbsp;{{number_format($row->ppnbm  )}}</td>
   <td colspan=5 class=xl9220300 width=202 style='border-left:none;width:152pt'>&nbsp;{{$row->keterangan}}</td>
  </tr>
  @endforeach

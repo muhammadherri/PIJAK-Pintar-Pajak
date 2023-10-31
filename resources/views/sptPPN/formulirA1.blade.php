@@ -1084,7 +1084,7 @@ tags will be replaced.-->
   <td colspan=8 class=xl8824539 style='border-left:none'>&nbsp;{{$row->nama_pembeli_bkp}}</td>
   <td class=xl8924539 style='border-top:none;border-left:none'>&nbsp;{{$row->no_dok}}</td>
   <td class=xl9024539 style='border-top:none;border-left:none'>&nbsp;{{date('d-M-Y',strtotime($row->tgl_dok))}}</td>
-  <td colspan=4 class=xl9124539 style='border-left:none'>&nbsp;{{number_format($row->dpp,2)}}</td>
+  <td colspan=4 class=xl9124539 style='border-left:none'>&nbsp;{{number_format($row->dpp)}}</td>
   <td colspan=5 class=xl9224539 width=202 style='border-left:none;width:152pt'>&nbsp;{{$row->keterangan}}</td>
  </tr>
  @endforeach
@@ -1093,7 +1093,7 @@ tags will be replaced.-->
   <td colspan=9 class=xl10124539 style='border-right:.5pt solid black'>JUMLAH</td>
   <td class=xl10424539 style='border-left:none'>&nbsp;</td>
   <td class=xl10524539 style='border-left:none'>&nbsp;</td>
-  <td colspan=4 class=xl10024539 style='border-left:none'>&nbsp;{{$spt->jumlah_dpp_1111_A1}}</td>
+  <td colspan=4 class=xl10024539 style='border-left:none'>&nbsp;{{number_format($spt->jumlah_dpp_1111_A1)}}</td>
   <td colspan=5 class=xl10624539 width=202 style='border-left:none;width:152pt'>&nbsp;</td>
  </tr>
  <tr height=24 style='mso-height-source:userset;height:18.0pt'>

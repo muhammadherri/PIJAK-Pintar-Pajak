@@ -1085,9 +1085,9 @@ tags will be replaced.-->
   <td colspan=2 class=xl9727906 style='border-left:none'>&nbsp;{{$row->npwp}}</td>
   <td class=xl9827906 style='border-left:none'>&nbsp;{{$row->noseri}}</td>
   <td class=xl9927906 style='border-left:none'>&nbsp;{{date('d-M-Y',strtotime($row->tgl))}}</td>
-  <td class=xl10027906 style='border-left:none'>&nbsp;{{number_format($row->dpp,2)}}</td>
-  <td class=xl10027906 style='border-left:none'>&nbsp;{{number_format($row->ppn,2)}}</td>
-  <td colspan=4 class=xl10127906 style='border-left:none'>&nbsp;{{number_format($row->ppnbm,2)}}</td>
+  <td class=xl10027906 style='border-left:none'>&nbsp;{{number_format($row->dpp  )}}</td>
+  <td class=xl10027906 style='border-left:none'>&nbsp;{{number_format($row->ppn  )}}</td>
+  <td colspan=4 class=xl10127906 style='border-left:none'>&nbsp;{{number_format($row->ppnbm  )}}</td>
   <td colspan=5 class=xl10227906 width=206 style='border-left:none;width:155pt'>&nbsp;{{$row->kodeseri}}</td>
  </tr>
  @endforeach
@@ -1095,9 +1095,9 @@ tags will be replaced.-->
  <tr height=24 style='mso-height-source:userset;height:18.0pt'>
   <td colspan=9 height=24 class=xl10627906 style='border-right:.5pt solid black;
   height:18.0pt'>JUMLAH</td>
-  <td class=xl10027906 style='border-top:none;border-left:none'>&nbsp;{{number_format($spt->jumlah_dpp_1111_B2,2)}}</td>
-  <td class=xl10027906 style='border-top:none;border-left:none'>&nbsp;{{number_format($spt->jumlah_ppn_1111_B2,2)}}</td>
-  <td colspan=4 class=xl10127906 style='border-left:none'>&nbsp;{{number_format($spt->jumlah_ppnbm_1111_B2,2)}}</td>
+  <td class=xl10027906 style='border-top:none;border-left:none'>&nbsp;{{number_format($spt->jumlah_dpp_1111_B2  )}}</td>
+  <td class=xl10027906 style='border-top:none;border-left:none'>&nbsp;{{number_format($spt->jumlah_ppn_1111_B2  )}}</td>
+  <td colspan=4 class=xl10127906 style='border-left:none'>&nbsp;{{number_format($spt->jumlah_ppnbm_1111_B2  )}}</td>
   <td colspan=5 class=xl10927906 width=206 style='border-left:none;width:155pt'>&nbsp;</td>
  </tr>
  <tr height=24 style='mso-height-source:userset;height:18.0pt'>
