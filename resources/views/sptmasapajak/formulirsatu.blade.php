@@ -5925,11 +5925,11 @@ tags will be replaced.-->
   <td colspan=7 class=xl1114763 width=84 style='border-right:.5pt solid black;
   border-left:none;width:63pt'>{{$row->kode_objek}}</td>
   <td colspan=8 class=xl1144763 style='border-right:.5pt solid black;
-  border-left:none'>&nbsp;{{$row->jumlah_penerima_penghasilan}}</td>
+  border-left:none'>&nbsp;{{number_format($row->jumlah_penerima_penghasilan)}}</td>
   <td colspan=14 class=xl1144763 style='border-right:.5pt solid black;
-  border-left:none'>&nbsp;{{$row->jumlah_penghasilan_bruto}}</td>
+  border-left:none'>&nbsp;{{number_format($row->jumlah_penghasilan_bruto)}}</td>
   <td colspan=16 class=xl1174763 width=172 style='border-right:1.0pt solid black;
-  border-left:none;width:128pt'>&nbsp;{{$row->jumlah_pajak_dipotong}}</td>
+  border-left:none;width:128pt'>&nbsp;{{number_format($row->jumlah_pajak_dipotong)}}</td>
   <td class=xl674763></td>
  </tr>
  @endforeach
@@ -5940,9 +5940,9 @@ tags will be replaced.-->
   border-left:none;width:243pt'><font class="font84763">JUMLAH BAGIAN C</font><font
   class="font74763"> </font></td>
   <td colspan=7 class=xl3164763 width=84 style='border-left:none;width:63pt'>&nbsp;</td>
-  <td colspan=8 class=xl3174763 style='border-left:none'>&nbsp;{{$spt->jumlah_penerima_penghasilan_c}}</td>
-  <td colspan=14 class=xl3174763 style='border-left:none'>&nbsp;{{$spt->jumlah_penghasilan_bruto_c}}</td>
-  <td colspan=16 class=xl3184763 width=172 style='border-left:none;width:128pt'>&nbsp;{{$spt->jumlah_pajak_dipotong_c}}</td>
+  <td colspan=8 class=xl3174763 style='border-left:none'>&nbsp;{{number_format($spt->jumlah_penerima_penghasilan_c)}}</td>
+  <td colspan=14 class=xl3174763 style='border-left:none'>&nbsp;{{number_format($spt->jumlah_penghasilan_bruto_c)}}</td>
+  <td colspan=16 class=xl3184763 width=172 style='border-left:none;width:128pt'>&nbsp;{{number_format($spt->jumlah_pajak_dipotong_c)}}</td>
   <td class=xl674763></td>
  </tr>
  <tr class=xl674763 height=58 style='mso-height-source:userset;height:43.5pt'>

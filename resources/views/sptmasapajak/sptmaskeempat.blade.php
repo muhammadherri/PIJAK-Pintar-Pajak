@@ -4153,7 +4153,7 @@ tags will be replaced.-->
   <td colspan=24 class=xl211890 width=240 style='border-right:.5pt solid black;
   border-left:none;width:180pt'>&nbsp;{{$row->nomo_bukti}}</td>
   <td colspan=12 class=xl214890 width=154 style='border-right:.5pt solid black;
-  border-left:none;width:118pt'>&nbsp;{{$row->jumlah_pph_setor}}</td>
+  border-left:none;width:118pt'>&nbsp;{{number_format($row->jumlah_pph_setor)}}</td>
   <td colspan=6 class=xl217890 style='border-right:.5pt solid black;border-left:
   none'>&nbsp;{{Str::limit($row->keterangan,7)}}</td>
   <td class=xl84890></td>
@@ -4165,7 +4165,7 @@ tags will be replaced.-->
   <td colspan=64 class=xl155890 width=622 style='border-right:.5pt solid black;
   width:465pt'>JUMLAH <font class="font5890"></font></td>
   <td class=xl122890 width=13 style='border-left:none;width:10pt'>&nbsp;</td>
-  <td class=xl123890 width=13 style='width:10pt'>&nbsp;{{$spt->jumlah_pph_disetor}}</td>
+  <td class=xl123890 width=13 style='width:10pt'>&nbsp;{{number_format($spt->jumlah_pph_disetor)}}</td>
   <td class=xl123890 width=13 style='width:10pt'>&nbsp;</td>
   <td class=xl123890 width=13 style='width:10pt'>&nbsp;</td>
   <td class=xl123890 width=13 style='width:10pt'>&nbsp;</td>

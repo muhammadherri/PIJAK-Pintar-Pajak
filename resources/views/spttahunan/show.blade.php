@@ -6797,7 +6797,7 @@
                 <td class=xl789897></td>
                 <td rowspan=2 class=xl2119897>1</td>
                 <td colspan=18 rowspan=2 class=xl2149897 style='text-align: right'>
-                    {{ number_format($spt->a1_kena_pajak, 2) }}&nbsp;</td>
+                    {{ number_format($spt->a1_kena_pajak ) }}&nbsp;</td>
             </tr>
             <tr class=xl679897 height=15 style='mso-height-source:userset;height:11.25pt'>
                 <td height=15 class=xl1029897 style='height:11.25pt;border-left:none'>&nbsp;</td>
@@ -6860,7 +6860,7 @@
                 <td class=xl909897></td>
                 <td rowspan=2 class=xl2119897>2</td>
                 <td colspan=18 rowspan=2 class=xl2149897 style='text-align: right'>
-                    {{ number_format($spt->a2_kena_pajak, 2) }}&nbsp;</td>
+                    {{ number_format($spt->a2_kena_pajak ) }}&nbsp;</td>
             </tr>
             <tr class=xl679897 height=15 style='mso-height-source:userset;height:11.25pt'>
                 <td height=15 class=xl1029897 style='height:11.25pt;border-left:none'>&nbsp;</td>
@@ -6931,7 +6931,7 @@
                 <td class=xl909897></td>
                 <td rowspan=2 class=xl2119897>3</td>
                 <td colspan=18 rowspan=2 class=xl2149897 style='text-align: right'>
-                    {{ number_format($spt->a3_kena_pajak, 2) }}&nbsp;
+                    {{ number_format($spt->a3_kena_pajak ) }}&nbsp;
                 </td>
             </tr>
             <tr class=xl679897 height=15 style='mso-height-source:userset;height:11.25pt'>
@@ -7093,7 +7093,7 @@
                 <td rowspan=5 class=xl2509897 style='border-bottom:.5pt solid black'>4</td>
                 <td colspan=18 rowspan=5 class=xl2199897 style='border-right:.5pt solid black;
               text-align: right'>
-                    {{ number_format($spt->b4_pph_terutang, 2) }}&nbsp;</td>
+                    {{ number_format($spt->b4_pph_terutang ) }}&nbsp;</td>
             </tr>
             <tr class=xl679897 height=5 style='mso-height-source:userset;height:3.75pt'>
                 <td height=5 class=xl899897 style='height:3.75pt'></td>
@@ -7246,7 +7246,7 @@
                 <td class=xl909897></td>
                 <td rowspan=2 class=xl2119897>5</td>
                 <td colspan=18 rowspan=2 class=xl2149897 style='text-align: right'>
-                    {{ number_format($spt->b5_pph_terutang, 2) }}&nbsp;</td>
+                    {{ number_format($spt->b5_pph_terutang ) }}&nbsp;</td>
             </tr>
             <tr class=xl679897 height=15 style='mso-height-source:userset;height:11.25pt'>
                 <td height=15 class=xl949897 style='height:11.25pt'></td>
@@ -7316,7 +7316,7 @@
                 <td class=xl909897></td>
                 <td rowspan=2 class=xl2119897>6</td>
                 <td colspan=18 rowspan=2 class=xl2149897 style='text-align: right'>
-                    {{ number_format($spt->b6_pph_terutang, 2) }}&nbsp;</td>
+                    {{ number_format($spt->b6_pph_terutang ) }}&nbsp;</td>
             </tr>
             <tr class=xl679897 height=15 style='mso-height-source:userset;height:11.25pt'>
                 <td height=15 class=xl949897 style='height:11.25pt'>6.</td>
@@ -7434,7 +7434,7 @@
                 <td class=xl909897></td>
                 <td rowspan=2 class=xl2119897>7</td>
                 <td colspan=18 rowspan=2 class=xl2149897 style='text-align: right'>
-                    {{ number_format($spt->c7_kredit_pajak, 2) }}&nbsp;
+                    {{ number_format($spt->c7_kredit_pajak ) }}&nbsp;
                 </td>
             </tr>
             <tr class=xl679897 height=15 style='mso-height-source:userset;height:11.25pt'>
@@ -7498,7 +7498,7 @@
                 <td class=xl909897></td>
                 <td rowspan=2 class=xl2119897>8a</td>
                 <td colspan=18 rowspan=2 class=xl2149897 style='text-align: right'>
-                    {{ number_format($spt->c8a_kredit_pajak, 2) }}&nbsp;
+                    {{ number_format($spt->c8a_kredit_pajak ) }}&nbsp;
 
                 </td>
             </tr>
@@ -7565,7 +7565,7 @@
                 <td class=xl909897></td>
                 <td rowspan=2 class=xl2119897>8b</td>
                 <td colspan=18 rowspan=2 class=xl2149897 style='text-align: right'>
-                    {{ number_format($spt->c8b_kredit_pajak, 2) }}&nbsp;
+                    {{ number_format($spt->c8b_kredit_pajak ) }}&nbsp;
 
                 </td>
             </tr>
@@ -7638,7 +7638,7 @@
                 <td class=xl909897></td>
                 <td rowspan=2 class=xl2119897>8c</td>
                 <td colspan=18 rowspan=2 class=xl2149897 style='text-align: right'>
-                    {{ number_format($spt->c8c_kredit_pajak, 2) }}&nbsp;
+                    {{ number_format($spt->c8c_kredit_pajak ) }}&nbsp;
                 </td>
             </tr>
             <tr class=xl679897 height=15 style='mso-height-source:userset;height:11.25pt'>
@@ -7744,7 +7744,7 @@
                 <td rowspan=4 class=xl2119897>9</td>
                 <td colspan=18 rowspan=4 class=xl2199897 style='border-right:.5pt solid black;
               text-align: right'>
-                    {{ number_format($spt->c9_kredit_pajak, 2) }}&nbsp;
+                    {{ number_format($spt->c9_kredit_pajak ) }}&nbsp;
                 </td>
             </tr>
             <tr class=xl679897 height=3 style='mso-height-source:userset;height:2.25pt'>
@@ -7858,7 +7858,7 @@
                 <td class=xl909897></td>
                 <td rowspan=2 class=xl2119897>10a</td>
                 <td colspan=18 rowspan=2 class=xl2149897 style='text-align: right'>
-                    {{ number_format($spt->c10a_kredit_pajak, 2) }}&nbsp;
+                    {{ number_format($spt->c10a_kredit_pajak ) }}&nbsp;
                 </td>
             </tr>
             <tr class=xl679897 height=15 style='mso-height-source:userset;height:11.25pt'>
@@ -7929,7 +7929,7 @@
                 <td class=xl909897></td>
                 <td rowspan=2 class=xl2119897>10b</td>
                 <td colspan=18 rowspan=2 class=xl2149897 style='text-align: right'>
-                    {{ number_format($spt->c10b_kredit_pajak, 2) }}&nbsp;
+                    {{ number_format($spt->c10b_kredit_pajak ) }}&nbsp;
                 </td>
             </tr>
             <tr class=xl679897 height=15 style='mso-height-source:userset;height:11.25pt'>
@@ -8084,7 +8084,7 @@
                 <td class=xl909897></td>
                 <td rowspan=2 class=xl2119897>10c</td>
                 <td colspan=18 rowspan=2 class=xl2149897 style='text-align: right'>
-                    {{ number_format($spt->c10c_kredit_pajak, 2) }}&nbsp;
+                    {{ number_format($spt->c10c_kredit_pajak ) }}&nbsp;
                 </td>
             </tr>
             <tr class=xl679897 height=15 style='mso-height-source:userset;height:11.25pt'>
@@ -8238,7 +8238,7 @@
                 <td rowspan=4 class=xl2119897>11</td>
                 <td colspan=18 rowspan=4 class=xl2199897 style='border-right:.5pt solid black;
                 text-align: right'>
-                    {{ number_format($spt->d11_pph_kurang, 2) }}&nbsp;
+                    {{ number_format($spt->d11_pph_kurang ) }}&nbsp;
                 </td>
             </tr>
             <tr class=xl679897 height=3 style='mso-height-source:userset;height:2.25pt'>
@@ -8361,7 +8361,7 @@
                 </td>
                 <td class=xl1509897 style='border-left:none'>
                     <input type="text"readonly class="custom-input"
-                        value="{{ substr($spt->d12_pph_kurang, 2, -20) }}">
+                        value="{{ substr($spt->d12_pph_kurang , -20) }}">
                 </td>
                 <td class=xl1509897 style='border-left:none'>
                     <input type="text"readonly class="custom-input"
@@ -8637,7 +8637,7 @@
                 <td class=xl909897></td>
                 <td rowspan=2 class=xl2579897 style='border-bottom:.5pt solid #333333'>14a</td>
                 <td colspan=18 rowspan=2 class=xl2149897 style='text-align: right'>
-                    {{ number_format($spt->e14a_angsuran_pph, 2) }}&nbsp;
+                    {{ number_format($spt->e14a_angsuran_pph ) }}&nbsp;
                 </td>
             </tr>
             <tr class=xl1419897 height=12 style='mso-height-source:userset;height:9.0pt'>
@@ -8702,7 +8702,7 @@
                 <td class=xl909897></td>
                 <td rowspan=2 class=xl2579897 style='border-bottom:.5pt solid #333333'>14b</td>
                 <td colspan=18 rowspan=2 class=xl2149897 style='text-align: right'>
-                    {{ number_format($spt->e14b_angsuran_pph, 2) }}&nbsp;
+                    {{ number_format($spt->e14b_angsuran_pph ) }}&nbsp;
                 </td>
             </tr>
             <tr height=20 style='mso-height-source:userset;height:15.0pt'>
@@ -8775,7 +8775,7 @@
                 <td class=xl909897></td>
                 <td rowspan=2 class=xl2579897 style='border-bottom:.5pt solid #333333'>14c</td>
                 <td colspan=18 rowspan=2 class=xl2149897 style='text-align: right'>
-                    {{ number_format($spt->e14c_angsuran_pph, 2) }} &nbsp;
+                    {{ number_format($spt->e14c_angsuran_pph ) }} &nbsp;
                 </td>
             </tr>
             <tr height=20 style='mso-height-source:userset;height:15.0pt'>
@@ -8844,7 +8844,7 @@
                 <td class=xl909897></td>
                 <td rowspan=2 class=xl2579897 style='border-bottom:.5pt solid #333333'>14d</td>
                 <td colspan=18 rowspan=2 class=xl2149897 style='text-align: right'>
-                    {{ number_format($spt->e14d_angsuran_pph, 2) }}&nbsp;</td>
+                    {{ number_format($spt->e14d_angsuran_pph ) }}&nbsp;</td>
             </tr>
             <tr height=20 style='mso-height-source:userset;height:15.0pt'>
                 <td height=20 class=xl789897 style='height:15.0pt'></td>
@@ -8939,7 +8939,7 @@
                 <td class=xl909897></td>
                 <td rowspan=2 class=xl2579897 style='border-bottom:.5pt solid #333333'>14e</td>
                 <td colspan=18 rowspan=2 class=xl2149897 style='text-align: right'>
-                    {{ number_format($spt->e14e_angsuran_pph, 2) }}&nbsp;</td>
+                    {{ number_format($spt->e14e_angsuran_pph ) }}&nbsp;</td>
             </tr>
             <tr height=20 style='mso-height-source:userset;height:15.0pt'>
                 <td height=20 class=xl789897 style='height:15.0pt'></td>
@@ -9011,7 +9011,7 @@
                 <td class=xl909897></td>
                 <td rowspan=2 class=xl2579897 style='border-bottom:.5pt solid #333333'>14f</td>
                 <td colspan=18 rowspan=2 class=xl2149897 style='text-align: right'>
-                    {{ number_format($spt->e14f_angsuran_pph, 2) }}&nbsp;</td>
+                    {{ number_format($spt->e14f_angsuran_pph ) }}&nbsp;</td>
             </tr>
             <tr height=20 style='mso-height-source:userset;height:15.0pt'>
                 <td height=20 class=xl789897 style='height:15.0pt'></td>
@@ -9084,7 +9084,7 @@
                 <td class=xl909897></td>
                 <td rowspan=2 class=xl2579897 style='border-bottom:.5pt solid #333333'>14g</td>
                 <td colspan=18 rowspan=2 class=xl2149897 style='text-align: right'>
-                    {{ number_format($spt->e14g_angsuran_pph, 2) }}&nbsp;</td>
+                    {{ number_format($spt->e14g_angsuran_pph ) }}&nbsp;</td>
             </tr>
             <tr height=20 style='mso-height-source:userset;height:15.0pt'>
                 <td height=20 class=xl789897 style='height:15.0pt'></td>
@@ -9242,7 +9242,7 @@
                 <td class=xl789897></td>
                 <td rowspan=2 class=xl2579897 style='border-bottom:.5pt solid #333333'>15a</td>
                 <td colspan=18 rowspan=2 class=xl2149897 style='text-align: right'>
-                    {{ number_format($spt->f15a_pph_final, 2) }}&nbsp;</td>
+                    {{ number_format($spt->f15a_pph_final ) }}&nbsp;</td>
                 </td>
             </tr>
             <tr height=20 style='mso-height-source:userset;height:15.0pt'>
@@ -9339,7 +9339,7 @@
                 <td class=xl789897></td>
                 <td rowspan=2 class=xl2579897 style='border-bottom:.5pt solid #333333'>15b</td>
                 <td colspan=18 rowspan=2 class=xl2149897 style='text-align: right'>
-                    {{ number_format($spt->f15b_pph_final, 2) }}&nbsp;</td>
+                    {{ number_format($spt->f15b_pph_final ) }}&nbsp;</td>
                 </td>
             </tr>
             <tr height=20 style='mso-height-source:userset;height:15.0pt'>
@@ -11158,7 +11158,7 @@
                 </td>
                 <td class=xl1689897 style='border-left:none'>
                     <input type="text"readonly class="custom-input"
-                        value="{{ substr($spt->created_at, 2, -16) }}">
+                        value="{{ substr($spt->created_at , -16) }}">
                 </td>
                 <td class=xl1689897 style='border-left:none'>
                     <input type="text"readonly class="custom-input"

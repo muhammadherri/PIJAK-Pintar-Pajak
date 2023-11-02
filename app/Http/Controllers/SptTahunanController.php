@@ -45,41 +45,41 @@ class SptTahunanController extends Controller
 
         // 1771 II
         $rincian = $request->input('angkapembelianbarang');
-        $harpok = $request->input('angkaharpok1');
-        $biayausaha = $request->input('angkabiaya_usaha1');
-        $biayaluar = $request->input('angkabiaya_luar1');
-        $subjumlah = $request->input('subjum1');
+        $harpok = preg_replace('/[^0-9]/','',$request->input('angkaharpok1'));
+        $biayausaha = preg_replace('/[^0-9]/','',$request->input('angkabiaya_usaha1'));
+        $biayaluar = preg_replace('/[^0-9]/','',$request->input('angkabiaya_luar1'));
+        $subjumlah = preg_replace('/[^0-9]/','',$request->input('subjum1'));
         // 1771 II
 
         // 1771 III
         $nama_npwp = $request->input('kreditnama');
         $no_npwp = $request->input('kreditnpwp');
         $trx = $request->input('kredittrx');
-        $rp = $request->input('kreditrp');
-        $potonganpajak = $request->input('kreditpajak');
+        $rp = preg_replace('/[^0-9]/','',$request->input('kreditrp'));
+        $potonganpajak = preg_replace('/[^0-9]/','',$request->input('kreditpajak'));
         $nopotong = $request->input('kreditnomor');
         $kredittgl = $request->input('kredittgl');
         // 1771 III
 
         // 1771IV a
         $jenispenghasilan = $request->input('jenispenghasilan');
-        $pengenaanpajak = $request->input('angka_pengenaan_pajak');
-        $tarifpotong = $request->input('angka_tarif_potongan');
-        $pphterutang = $request->input('angka_pph_terutang');
+        $pengenaanpajak = preg_replace('/[^0-9]/','',$request->input('angka_pengenaan_pajak'));
+        $tarifpotong = preg_replace('/[^0-9]/','',$request->input('angka_tarif_potongan'));
+        $pphterutang = preg_replace('/[^0-9]/','',$request->input('angka_pph_terutang'));
         // 1771IV a
 
         // 1771IV b
         $jenispenghasilanb = $request->input('jenis_penghasilanb');
-        $penghasilanbruto = $request->input('angka_penghasilan_brutob');
+        $penghasilanbruto = preg_replace('/[^0-9]/','',$request->input('angka_penghasilan_brutob'));
         // 1771IV b
         
         // 1771V a
         $pemegang_saham = $request->input('pemegangsh_nama_1771V');
         $alamat_pemegang_sh = $request->input('pemegangsh_alamat_nama_1771V');
         $npwp_pemegang_sh = $request->input('pemegangsh_npwp_1771V');
-        $modal_setor = $request->input('pemegangsh_modalsetor_1771V');
-        $pemegangsh_persen = $request->input('pemegangsh_persen_1771V');
-        $pemegangsh_dividen = $request->input('pemegangsh_dividen_1771V');
+        $modal_setor = preg_replace('/[^0-9]/','',$request->input('pemegangsh_modalsetor_1771V'));
+        $pemegangsh_persen = preg_replace('/[^0-9]/','',$request->input('pemegangsh_persen_1771V'));
+        $pemegangsh_dividen = preg_replace('/[^0-9]/','',$request->input('pemegangsh_dividen_1771V'));
         // 1771V a
 
         // 1771V b
@@ -93,8 +93,8 @@ class SptTahunanController extends Controller
         $penyertaan_nama = $request->input('penyertaan_nama');
         $penyertaan_alamat = $request->input('penyertaan_alamat');
         $penyertaan_npwp = $request->input('penyertaan_npwp');
-        $penyertaan_modal = $request->input('penyertaan_modal');
-        $penyertaan_persen = $request->input('penyertaan_persen');
+        $penyertaan_modal = preg_replace('/[^0-9]/','',$request->input('penyertaan_modal'));
+        $penyertaan_persen = preg_replace('/[^0-9]/','',$request->input('penyertaan_persen'));
         // 1771Vi a 
         $npwpvib = $request->input('penyertaan_npwpb');
         $npwpvic = $request->input('penyertaan_npwpc');
@@ -120,36 +120,36 @@ class SptTahunanController extends Controller
             'npwp_kantor_konsultan_pajak'=>$request->npwp_kantor_konsultan_pajak,
             'nama_konsultan_pajak'=>$request->nama_konsultan_pajak,
             'npwp_konsultan_pajak'=>$request->npwp_konsultan_pajak,
-            'a1_kena_pajak'=>$request->a1_kena_pajak,
-            'a2_kena_pajak'=>$request->a2_kena_pajak,
-            'a3_kena_pajak'=>$request->a3_kena_pajak,
-            'b4_pph_terutang'=>$request->b4_pph_terutang,
-            'b5_pph_terutang'=>$request->b5_pph_terutang,
-            'b6_pph_terutang'=>$request->b6_pph_terutang,
-            'c7_kredit_pajak'=>$request->c7_kredit_pajak,
-            'c8a_kredit_pajak'=>$request->c8a_kredit_pajak,
-            'c8b_kredit_pajak'=>$request->c8b_kredit_pajak,
-            'c8c_kredit_pajak'=>$request->c8c_kredit_pajak,
+            'a1_kena_pajak'=>preg_replace('/[^0-9]/','',$request->a1_kena_pajak),
+            'a2_kena_pajak'=>preg_replace('/[^0-9]/','',$request->a2_kena_pajak),
+            'a3_kena_pajak'=>preg_replace('/[^0-9]/','',$request->a3_kena_pajak),
+            'b4_pph_terutang'=>preg_replace('/[^0-9]/','',$request->b4_pph_terutang),
+            'b5_pph_terutang'=>preg_replace('/[^0-9]/','',$request->b5_pph_terutang),
+            'b6_pph_terutang'=>preg_replace('/[^0-9]/','',$request->b6_pph_terutang),
+            'c7_kredit_pajak'=>preg_replace('/[^0-9]/','',$request->c7_kredit_pajak),
+            'c8a_kredit_pajak'=>preg_replace('/[^0-9]/','',$request->c8a_kredit_pajak),
+            'c8b_kredit_pajak'=>preg_replace('/[^0-9]/','',$request->c8b_kredit_pajak),
+            'c8c_kredit_pajak'=>preg_replace('/[^0-9]/','',$request->c8c_kredit_pajak),
             'c9a_kredit_pajak'=>$request->c9a_kredit_pajak,
             // 'c9b_kredit_pajak'=>$request->NULL,
-            'c9_kredit_pajak'=>$request->c9_kredit_pajak,
-            'c10a_kredit_pajak'=>$request->c10a_kredit_pajak,
-            'c10b_kredit_pajak'=>$request->c10b_kredit_pajak,
-            'c10c_kredit_pajak'=>$request->c10c_kredit_pajak,
+            'c9_kredit_pajak'=>preg_replace('/[^0-9]/','',$request->c9_kredit_pajak),
+            'c10a_kredit_pajak'=>preg_replace('/[^0-9]/','',$request->c10a_kredit_pajak),
+            'c10b_kredit_pajak'=>preg_replace('/[^0-9]/','',$request->c10b_kredit_pajak),
+            'c10c_kredit_pajak'=>preg_replace('/[^0-9]/','',$request->c10c_kredit_pajak),
             'd11a_pph_kurang'=>$request->d11a_pph_kurang,
             // 'd11b_pph_kurang'=>$request->d11b_pph_kurang,
-            'd11_pph_kurang'=>$request->d11_pph_kurang,
+            'd11_pph_kurang'=>preg_replace('/[^0-9]/','',$request->d11_pph_kurang),
             'd12_pph_kurang'=>$request->d12_pph_kurang,
             'd13_pph_kurang'=>$request->d13_pph_kurang,
-            'e14a_angsuran_pph'=>$request->e14a_angsuran_pph,
-            'e14b_angsuran_pph'=>$request->e14b_angsuran_pph,
-            'e14c_angsuran_pph'=>$request->e14c_angsuran_pph,
-            'e14d_angsuran_pph'=>$request->e14d_angsuran_pph,
-            'e14e_angsuran_pph'=>$request->e14e_angsuran_pph,
-            'e14f_angsuran_pph'=>$request->e14f_angsuran_pph,
-            'e14g_angsuran_pph'=>$request->e14g_angsuran_pph,
-            'f15a_pph_final'=>$request->f15a_pph_final,
-            'f15b_pph_final'=>$request->f15b_pph_final,
+            'e14a_angsuran_pph'=>preg_replace('/[^0-9]/','',$request->e14a_angsuran_pph),
+            'e14b_angsuran_pph'=>preg_replace('/[^0-9]/','',$request->e14b_angsuran_pph),
+            'e14c_angsuran_pph'=>preg_replace('/[^0-9]/','',$request->e14c_angsuran_pph),
+            'e14d_angsuran_pph'=>preg_replace('/[^0-9]/','',$request->e14d_angsuran_pph),
+            'e14e_angsuran_pph'=>preg_replace('/[^0-9]/','',$request->e14e_angsuran_pph),
+            'e14f_angsuran_pph'=>preg_replace('/[^0-9]/','',$request->e14f_angsuran_pph),
+            'e14g_angsuran_pph'=>preg_replace('/[^0-9]/','',$request->e14g_angsuran_pph),
+            'f15a_pph_final'=>preg_replace('/[^0-9]/','',$request->f15a_pph_final),
+            'f15b_pph_final'=>preg_replace('/[^0-9]/','',$request->f15b_pph_final),
             'g16_pernyataan_trx'=>$request->g16_pernyataan_trx,
             'h17_lampiran'=>$request->h17_lampiran,
             'wajib_pajak'=>$request->wajib_pajak,
@@ -168,37 +168,37 @@ class SptTahunanController extends Controller
             'nama_npwp'=>$request->nama_npwp_1771i,
             'start_periode_pembukuan'=>$request->start_periode_pembukuan_1771i,
             'end_periode_pembukuan'=>$request->end_periode_pembukuan_1771i,
-            'peredaran_usaha'=>$request->a1_penghasilan_netto_1771i,
-            'harga_pokok'=>$request->b1_penghasilan_netto_1771i,
-            'biaya_usaha_lain'=>$request->c1_penghasilan_netto_1771i,
-            'penghasilan_netto_dari_usaha'=>$request->d1_penghasilan_netto_1771i,
-            'penghasilan_dari_luar_usaha'=>$request->e1_penghasilan_netto_1771i,
-            'biaya_dari_luar_usaha'=>$request->f1_penghasilan_netto_1771i,
-            'penghasilan_netto_dari_luar_usaha'=>$request->g1_penghasilan_netto_1771i,
-            'jumlah_netto_komersial_dalam_negeri'=>$request->h1_penghasilan_netto_1771i,
-            'penghasilan_netto_luar_negeri'=>$request->penghasilan_netto_luar_negeri_1771i,
-            'jumlah_penghasilan_netto_komersial'=>$request->jumlah_1771i,
-            'penghasilan'=>$request->penghasilan_1771i,
-            'biaya_dibebankan'=>$request->a5_penyesuaian_fiskal_1771i,
-            'dana_cadangan'=>$request->b5_penyesuaian_fiskal_1771i,
-            'natura'=>$request->c5_penyesuaian_fiskal_1771i,
-            'jumlah_melebihi_kewajaran'=>$request->d5_penyesuaian_fiskal_1771i,
-            'harta_dihibahkan'=>$request->e5_penyesuaian_fiskal_1771i,
-            'pajak_penghasilan'=>$request->f5_penyesuaian_fiskal_1771i,
-            'gaji_yang_dibayarkan'=>$request->g5_penyesuaian_fiskal_1771i,
-            'sanksi_adm'=>$request->h5_penyesuaian_fiskal_1771i,
-            'selisih_penyusutan_komersial'=>$request->i5_penyesuaian_fiskal_1771i,
-            'selisih_amortisasi'=>$request->j5_penyesuaian_fiskal_1771i,
-            'biaya_yang_ditangguhkan'=>$request->k5_penyesuaian_fiskal_1771i,
-            'penyesuaian_fiskal'=>$request->l5_penyesuaian_fiskal_1771i,
-            'jumlah_penyesuaian'=>$request->m5_penyesuaian_fiskal_1771i,
-            'selisih_penyusutan_fiskal_negatif'=>$request->a6_fiskal_negatif_1771i,
-            'selisih_amortisasi_fiskal_negatif'=>$request->b6_fiskal_negatif_1771i,
-            'penghasilan_ditangguhkan'=>$request->c6_fiskal_negatif_1771i,
-            'penyesuaian_fiskal_fiskal_negatif'=>$request->d6_fiskal_negatif_1771i,
-            'jumlah_fiskal_negatif'=>$request->e6_fiskal_negatif_1771i,
-            'pengurangan_penghasilan_netto'=>$request->fasilitas_1771i,
-            'netto_fiskal'=>$request->netto_fiskal_1771i,
+            'peredaran_usaha'=>preg_replace('/[^0-9]/','',$request->a1_penghasilan_netto_1771i),
+            'harga_pokok'=>preg_replace('/[^0-9]/','',$request->b1_penghasilan_netto_1771i),
+            'biaya_usaha_lain'=>preg_replace('/[^0-9]/','',$request->c1_penghasilan_netto_1771i),
+            'penghasilan_netto_dari_usaha'=>preg_replace('/[^0-9]/','',$request->d1_penghasilan_netto_1771i),
+            'penghasilan_dari_luar_usaha'=>preg_replace('/[^0-9]/','',$request->e1_penghasilan_netto_1771i),
+            'biaya_dari_luar_usaha'=>preg_replace('/[^0-9]/','',$request->f1_penghasilan_netto_1771i),
+            'penghasilan_netto_dari_luar_usaha'=>preg_replace('/[^0-9]/','',$request->g1_penghasilan_netto_1771i),
+            'jumlah_netto_komersial_dalam_negeri'=>preg_replace('/[^0-9]/','',$request->h1_penghasilan_netto_1771i),
+            'penghasilan_netto_luar_negeri'=>preg_replace('/[^0-9]/','',$request->penghasilan_netto_luar_negeri_1771i),
+            'jumlah_penghasilan_netto_komersial'=>preg_replace('/[^0-9]/','',$request->jumlah_1771i),
+            'penghasilan'=>preg_replace('/[^0-9]/','',$request->penghasilan_1771i),
+            'biaya_dibebankan'=>preg_replace('/[^0-9]/','',$request->a5_penyesuaian_fiskal_1771i),
+            'dana_cadangan'=>preg_replace('/[^0-9]/','',$request->b5_penyesuaian_fiskal_1771i),
+            'natura'=>preg_replace('/[^0-9]/','',$request->c5_penyesuaian_fiskal_1771i),
+            'jumlah_melebihi_kewajaran'=>preg_replace('/[^0-9]/','',$request->d5_penyesuaian_fiskal_1771i),
+            'harta_dihibahkan'=>preg_replace('/[^0-9]/','',$request->e5_penyesuaian_fiskal_1771i),
+            'pajak_penghasilan'=>preg_replace('/[^0-9]/','',$request->f5_penyesuaian_fiskal_1771i),
+            'gaji_yang_dibayarkan'=>preg_replace('/[^0-9]/','',$request->g5_penyesuaian_fiskal_1771i),
+            'sanksi_adm'=>preg_replace('/[^0-9]/','',$request->h5_penyesuaian_fiskal_1771i),
+            'selisih_penyusutan_komersial'=>preg_replace('/[^0-9]/','',$request->i5_penyesuaian_fiskal_1771i),
+            'selisih_amortisasi'=>preg_replace('/[^0-9]/','',$request->j5_penyesuaian_fiskal_1771i),
+            'biaya_yang_ditangguhkan'=>preg_replace('/[^0-9]/','',$request->k5_penyesuaian_fiskal_1771i),
+            'penyesuaian_fiskal'=>preg_replace('/[^0-9]/','',$request->l5_penyesuaian_fiskal_1771i),
+            'jumlah_penyesuaian'=>preg_replace('/[^0-9]/','',$request->m5_penyesuaian_fiskal_1771i),
+            'selisih_penyusutan_fiskal_negatif'=>preg_replace('/[^0-9]/','',$request->a6_fiskal_negatif_1771i),
+            'selisih_amortisasi_fiskal_negatif'=>preg_replace('/[^0-9]/','',$request->b6_fiskal_negatif_1771i),
+            'penghasilan_ditangguhkan'=>preg_replace('/[^0-9]/','',$request->c6_fiskal_negatif_1771i),
+            'penyesuaian_fiskal_fiskal_negatif'=>preg_replace('/[^0-9]/','',$request->d6_fiskal_negatif_1771i),
+            'jumlah_fiskal_negatif'=>preg_replace('/[^0-9]/','',$request->e6_fiskal_negatif_1771i),
+            'pengurangan_penghasilan_netto'=>preg_replace('/[^0-9]/','',$request->fasilitas_1771i),
+            'netto_fiskal'=>preg_replace('/[^0-9]/','',$request->netto_fiskal_1771i),
             'attribute1'=>Auth::user()->id,
         );
         SptTahunanI::create($data1771i);
@@ -210,10 +210,10 @@ class SptTahunanController extends Controller
             'nama_npwp'=>$request->nama_npwp_1771II,
             'start_periode_pembukuan'=>$request->start_periode_pembukuan_1771II,
             'end_periode_pembukuan'=>$request->end_periode_pembukuan_1771II,
-            'sub_harga_pokok'=>$request->subangkaharpok1,
-            'sub_biaya_usaha'=>$request->subangkabiaya_usaha1,
-            'sub_biaya_luar_usaha'=>$request->subangkabiaya_luar1,
-            'total_jumlah_biaya'=>$request->totaljum1,
+            'sub_harga_pokok'=>preg_replace('/[^0-9]/','',$request->subangkaharpok1),
+            'sub_biaya_usaha'=>preg_replace('/[^0-9]/','',$request->subangkabiaya_usaha1),
+            'sub_biaya_luar_usaha'=>preg_replace('/[^0-9]/','',$request->subangkabiaya_luar1),
+            'total_jumlah_biaya'=>preg_replace('/[^0-9]/','',$request->totaljum1),
             'attribute1'=>Auth::user()->id,
         );
         SptTahunanIIHead::create($data1771iihead);
@@ -237,8 +237,8 @@ class SptTahunanController extends Controller
             'nama_npwp'=>$request->nama_npwp_1771III,
             'start_periode_pembukuan'=>$request->start_periode_pembukuan_1771III,
             'end_periode_pembukuan'=>$request->end_periode_pembukuan_1771III,
-            'jumlah_biaya_dalam_rupiah'=>$request->kreditsubrp,
-            'jumlah_pajak_penghasil_yang_dipotong'=>$request->kreditpenghasilan,
+            'jumlah_biaya_dalam_rupiah'=>preg_replace('/[^0-9]/','',$request->kreditsubrp),
+            'jumlah_pajak_penghasil_yang_dipotong'=>preg_replace('/[^0-9]/','',$request->kreditpenghasilan),
             'attribute1'=>Auth::user()->id,
         );
         SptTahunanIIIHead::create($data1771iiihead);
@@ -264,10 +264,10 @@ class SptTahunanController extends Controller
             'nama_npwp'=>$request->nama_npwp_1771IV,
             'start_periode_pembukuan'=>$request->start_periode_pembukuan_1771IV,
             'end_periode_pembukuan'=>$request->end_periode_pembukuan_1771IV,
-            'jumlah_dasar_pengenaan_pajak'=>$request->sub_angka_pengenaan_pajak,
-            'jumlah_potongan_tarif'=>$request->sub_tarif,
-            'jumlah_pph_terutang'=>$request->total1771iv,
-            'jumlah_penghasilan_bruto'=>$request->totalbruto,
+            'jumlah_dasar_pengenaan_pajak'=>preg_replace('/[^0-9]/','',$request->sub_angka_pengenaan_pajak),
+            'jumlah_potongan_tarif'=>preg_replace('/[^0-9]/','',$request->sub_tarif),
+            'jumlah_pph_terutang'=>preg_replace('/[^0-9]/','',$request->total1771iv),
+            'jumlah_penghasilan_bruto'=>preg_replace('/[^0-9]/','',$request->totalbruto),
             'attribute1'=>Auth::user()->id,
         );
         SptTahunanIVHead::create($data1771ivhead);
@@ -299,8 +299,8 @@ class SptTahunanController extends Controller
             'nama_npwp'=>$request->nama_npwp_1771IV,
             'start_periode_pembukuan'=>$request->start_periode_pembukuan_1771IV,
             'end_periode_pembukuan'=>$request->end_periode_pembukuan_1771IV,
-            'jumlah_modal_setor'=>$request->jumlahmodalsetor,
-            'jumlah_deviden'=>$request->jumlahdividen,
+            'jumlah_modal_setor'=>preg_replace('/[^0-9]/','',$request->jumlahmodalsetor),
+            'jumlah_deviden'=>preg_replace('/[^0-9]/','',$request->jumlahdividen),
             'attribute1'=>Auth::user()->id,
         );
         // dd($data1771vhead);
@@ -336,7 +336,7 @@ class SptTahunanController extends Controller
             'nama_npwp'=>$request->nama_npwp_1771IV,
             'start_periode_pembukuan'=>$request->start_periode_pembukuan_1771IV,
             'end_periode_pembukuan'=>$request->end_periode_pembukuan_1771IV,
-            'jumlah_modal_setor_pemilik_saham'=>$request->jumlahmodalafiliasi,
+            'jumlah_modal_setor_pemilik_saham'=>preg_replace('/[^0-9]/','',$request->jumlahmodalafiliasi),
             'attribute1'=>Auth::user()->id,
         );
         SptTahunanVIHead::create($data1771vihead);
@@ -358,9 +358,9 @@ class SptTahunanController extends Controller
                 'formulir_id' => $header_id,
                 'nama_peminjam_saham' => $request->penyertaan_namab[$key],
                 'no_npwp_peminjam' => $request->penyertaan_npwpb[$key],
-                'jumlah_pinjaman' => $request->penyertaan_jumlahpinjamanb[$key],
-                'tahun_pinjaman' => $request->penyertaan_thnpinjamanb[$key],
-                'bunga_pinjaman' => $request->penyertaan_bungapinjamanb[$key],
+                'jumlah_pinjaman' => preg_replace('/[^0-9]/','',$request->penyertaan_jumlahpinjamanb[$key]),
+                'tahun_pinjaman' => preg_replace('/[^0-9]/','',$request->penyertaan_thnpinjamanb[$key]),
+                'bunga_pinjaman' => preg_replace('/[^0-9]/','',$request->penyertaan_bungapinjamanb[$key]),
             );
             SptTahunanVILinesB::create($data1771vilines_b);
             
@@ -370,14 +370,15 @@ class SptTahunanController extends Controller
                 'formulir_id' => $header_id,
                 'nama_peminjam_saham' => $request->penyertaan_namac[$key],
                 'no_npwp_peminjam_saham' => $request->penyertaan_npwpc[$key],
-                'jumlah_pinjaman' => $request->penyertaan_jumlahpinjamanc[$key],
-                'tahun_pinjaman' => $request->penyertaan_thnpinjamanc[$key],
-                'bunga_pinjaman' => $request->penyertaan_bungapinjamanc[$key],
+                'jumlah_pinjaman' => preg_replace('/[^0-9]/','',$request->penyertaan_jumlahpinjamanc[$key]),
+                'tahun_pinjaman' => preg_replace('/[^0-9]/','',$request->penyertaan_thnpinjamanc[$key]),
+                'bunga_pinjaman' => preg_replace('/[^0-9]/','',$request->penyertaan_bungapinjamanc[$key]),
             );
             SptTahunanVILinesC::create($data1771vilines_c);
         }
         $a= \DB::commit();
-        return redirect()->route('spttahunan/show',['id'=>$spt->formulir_id]);
+        return redirect()->route('spttahunan');
+        // return redirect()->route('spttahunan/show',['id'=>$spt->formulir_id]);
     }
 
     public function show($id)

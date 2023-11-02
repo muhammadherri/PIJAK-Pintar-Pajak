@@ -70,12 +70,14 @@
                                             <tbody class="sales_order_detail_container">
                                                 <tr>
                                                     <td width="auto">
-                                                        <select name="column1[]" id="jenis_pph" class="form-control">
+                                                        <input required min="0" autocomplete="off" type="text" name="column1[]"
+                                                            class="form-control"></td>
+                                                        {{-- <select name="column1[]" id="jenis_pph" class="form-control">
                                                             @foreach ($dokref as $row)
                                                                 <option value="{{ $row->id }}">
                                                                     {{ $row->jenis_dokumen }}</option>
                                                             @endforeach
-                                                        </select>
+                                                        </select> --}}
                                                     </td>
                                                     <td><input required min="0" autocomplete="off" type="text" name="column2[]"
                                                             class="form-control"></td>
@@ -220,11 +222,8 @@
             var newRow = `
             <tr>
                 <td width="auto"> 
-                    <select name="column1[]" id="jenis_pph" class="default-select form-control wide">
-                        @foreach ($dokref as $row)
-                            <option value="{{ $row->id }}">{{ $row->jenis_dokumen }}</option>
-                        @endforeach
-                    </select>
+                    <input required min="0" autocomplete="off" type="text" name="column1[]"
+                                                            class="form-control"></td>
                 </td>
                 <td><input required min="0" autocomplete="off" type="text" name="column2[]" class="form-control"></td>
                 <td><input required min="0" type="date" name="column3[]" class="form-control"></td>

@@ -638,7 +638,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     class="form-control"/>
             </td>
             <td class="text-center">
-                <input required autocomplete="off" type="text" onkeyup="this.value=sprator(this.value);"
+                <input required autocomplete="off" type="text" 
+                    onkeyup="this.value=sprator(this.value);"
                     name="pajak_dpp_1111B3[]"
                     id="pajak_dpp_1111B3[]" min="0"
                     class="form-control subdpp_1111B3" />

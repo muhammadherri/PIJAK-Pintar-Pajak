@@ -3273,9 +3273,9 @@ border-bottom:.5pt solid black;width:42pt'>{{ substr($spt->tahun_pajak, 3) }}</t
     <td colspan=11 class=xl11920880 style='border-right:.5pt solid black;
     border-left:none'>{{$row->jenis_penghasilan}}</td>
     <td colspan=12 class=xl11920880 style='border-right:.5pt solid black;
-    border-left:none'>{{$row->dasar_pengenaan_pajak}}</td>
-    <td colspan=3 class=xl12120880>{{$row->potongan_tarif}}</td>
-    <td colspan=12 class=xl11920880 style='border-right:.5pt solid black'>{{$row->pph_terutang}}</td>
+    border-left:none'>{{number_format($row->dasar_pengenaan_pajak)}}</td>
+    <td colspan=3 class=xl12120880>{{number_format($row->potongan_tarif)}}</td>
+    <td colspan=12 class=xl11920880 style='border-right:.5pt solid black'>{{number_format($row->pph_terutang)}}</td>
     <td class=xl10620880></td>
     <td class=xl10620880></td>
     <td class=xl10620880></td>
@@ -3288,9 +3288,9 @@ border-bottom:.5pt solid black;width:42pt'>{{ substr($spt->tahun_pajak, 3) }}</t
  <tr height=17 style='height:12.75pt'>
   <td colspan=2 height=17 class=xl14520880 style='height:12.75pt'>&nbsp;</td>
   <td colspan=11 class=xl14620880 style='border-left:none'>JUMLAH</td>
-  <td colspan=12 class=xl14520880 style='border-left:none'>{{$sptlinescountdasar_pengenaan_pajak}}&nbsp;</td>
+  <td colspan=12 class=xl14520880 style='border-left:none'>{{number_format($sptlinescountdasar_pengenaan_pajak)}}&nbsp;</td>
   <td colspan=3 class=xl14620880 style='border-left:none'>&nbsp;</td>
-  <td colspan=12 class=xl14520880 style='border-left:none'>{{$sptlinescountpph_terutang}}&nbsp;</td>
+  <td colspan=12 class=xl14520880 style='border-left:none'>{{number_format($sptlinescountpph_terutang)}}&nbsp;</td>
   <td class=xl1520880></td>
   <td class=xl1520880></td>
   <td class=xl1520880></td>
@@ -3432,7 +3432,7 @@ border-bottom:.5pt solid black;width:42pt'>{{ substr($spt->tahun_pajak, 3) }}</t
         <td colspan=2 height=17 class=xl14520880 style='height:12.75pt'>{{$non++}}&nbsp;</td>
         <td colspan=18 class=xl13320880 style='border-right:.5pt solid black;
         border-left:none'>{{$row->jenis_penghasilan}}&nbsp;</td>
-        <td colspan=20 class=xl14520880 style='border-left:none'>{{$row->penghasilan_bruto}}&nbsp;</td>
+        <td colspan=20 class=xl14520880 style='border-left:none'>{{number_format($row->penghasilan_bruto)}}&nbsp;</td>
         <td class=xl1520880></td>
         <td class=xl1520880></td>
         <td class=xl1520880></td>
@@ -3448,7 +3448,7 @@ border-bottom:.5pt solid black;width:42pt'>{{ substr($spt->tahun_pajak, 3) }}</t
   <td colspan=18 class=xl13720880 style='border-right:.5pt solid black;
   border-left:none'>JUMLAH</td>
   <td colspan=20 class=xl13320880 style='border-right:.5pt solid black;
-  border-left:none'>{{$sptlinesbpenghasilan_bruto}}&nbsp;</td>
+  border-left:none'>{{number_format($sptlinesbpenghasilan_bruto)}}&nbsp;</td>
   <td class=xl1520880></td>
   <td class=xl1520880></td>
   <td class=xl1520880></td>

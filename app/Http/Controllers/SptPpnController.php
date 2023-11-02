@@ -336,23 +336,18 @@ class SptPpnController extends Controller
             'deleted_at'=>date('Y-m-d H:i:s'),
         ]);
         SptPpnLinea1::where('formulir_id',$id)->update([
-            'attribute_2'=>Auth::user()->id,
             'deleted_at'=>date('Y-m-d H:i:s'),
         ]);
         SptPpnLinea2::where('formulir_id',$id)->update([
-            'attribute_2'=>Auth::user()->id,
             'deleted_at'=>date('Y-m-d H:i:s'),
         ]);
         SptPpnLineb1::where('formulir_id',$id)->update([
-            'attribute_2'=>Auth::user()->id,
             'deleted_at'=>date('Y-m-d H:i:s'),
         ]);
         SptPpnLineb2::where('formulir_id',$id)->update([
-            'attribute_2'=>Auth::user()->id,
             'deleted_at'=>date('Y-m-d H:i:s'),
         ]);
         SptPpnLineb3::where('formulir_id',$id)->update([
-            'attribute_2'=>Auth::user()->id,
             'deleted_at'=>date('Y-m-d H:i:s'),
         ]);
         $a= \DB::commit();    

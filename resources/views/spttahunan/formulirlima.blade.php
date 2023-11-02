@@ -2652,11 +2652,11 @@ tags will be replaced.-->
     <td colspan=6 class=xl1376651 style='border-right:.5pt solid black;
     border-left:none'>{{$row->no_npwp}}&nbsp;</td>
     <td colspan=6 class=xl1376651 style='border-right:.5pt solid black;
-    border-left:none'>{{$row->modal_setor_pemilik_saham}}&nbsp;</td>
+    border-left:none'>{{number_format($row->modal_setor_pemilik_saham)}}&nbsp;</td>
     <td colspan=2 class=xl1376651 style='border-right:.5pt solid black;
-    border-left:none'>{{$row->modal_persen}}&nbsp;</td>
+    border-left:none'>{{number_format($row->modal_persen)}}&nbsp;</td>
     <td colspan=7 class=xl1376651 style='border-right:.5pt solid black;
-    border-left:none'>{{$row->jumlah_dividen}}&nbsp;</td>
+    border-left:none'>{{number_format($row->jumlah_dividen)}}&nbsp;</td>
     <td class=xl156651></td>
     <td class=xl156651></td>
     <td class=xl156651></td>
@@ -2676,11 +2676,11 @@ tags will be replaced.-->
   <td colspan=6 class=xl1376651 style='border-right:.5pt solid black;
   border-left:none'>&nbsp;</td>
   <td colspan=6 class=xl1376651 style='border-right:.5pt solid black;
-  border-left:none'>{{$spt->jumlah_modal_setor}}&nbsp;</td>
+  border-left:none'>{{number_format($spt->jumlah_modal_setor)}}&nbsp;</td>
   <td colspan=2 class=xl1376651 style='border-right:.5pt solid black;
   border-left:none'>&nbsp;</td>
   <td colspan=7 class=xl1376651 style='border-right:.5pt solid black;
-  border-left:none'>{{$spt->jumlah_deviden}}&nbsp;</td>
+  border-left:none'>{{number_format($spt->jumlah_deviden)}}&nbsp;</td>
   <td class=xl156651></td>
   <td class=xl156651></td>
   <td class=xl156651></td>

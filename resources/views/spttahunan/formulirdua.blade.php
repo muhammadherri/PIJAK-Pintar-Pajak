@@ -2390,22 +2390,22 @@ xmlns="http://www.w3.org/TR/REC-html40">
   <td colspan=10 class=xl852891 style='border-right:.5pt solid black;
   border-left:none'>{{$row->perincian_pembelian_barang}}</td>
   <td colspan=14 class=xl822891 style='border-right:.5pt solid black;
-  border-left:none'>{{$row->harga_pokok}}&nbsp;</td>
+  border-left:none'>{{number_format($row->harga_pokok)}}&nbsp;</td>
   <td colspan=14 class=xl822891 style='border-right:.5pt solid black;
-  border-left:none'>{{$row->biaya_usaha}}&nbsp;</td>
+  border-left:none'>{{number_format($row->biaya_usaha)}}&nbsp;</td>
   <td colspan=14 class=xl822891 style='border-right:.5pt solid black;
-  border-left:none'>{{$row->biaya_luar_usaha}}&nbsp;</td>
+  border-left:none'>{{number_format($row->biaya_luar_usaha)}}&nbsp;</td>
   <td colspan=14 class=xl822891 style='border-right:.5pt solid black;
-  border-left:none'>{{$row->sub_jumlah_biaya}}&nbsp;</td>
+  border-left:none'>{{number_format($row->sub_jumlah_biaya)}}&nbsp;</td>
  </tr>
  @endforeach
  <tr class=xl712891 height=16 style='height:11.65pt'>
   <td height=16 class=xl792891 style='height:11.65pt;border-top:none'>&nbsp;</td>
   <td colspan=10 class=xl782891 style='border-left:none'>JUMLAH</td>
-  <td colspan=14 class=xl772891 style='border-left:none'>{{$sptII->sub_harga_pokok}}&nbsp;</td>
-  <td colspan=14 class=xl772891 style='border-left:none'>{{$sptII->sub_biaya_usaha}}&nbsp;</td>
-  <td colspan=14 class=xl772891 style='border-left:none'>{{$sptII->sub_biaya_luar_usaha}}&nbsp;</td>
-  <td colspan=14 class=xl772891 style='border-left:none'>{{$sptII->total_jumlah_biaya}}&nbsp;</td>
+  <td colspan=14 class=xl772891 style='border-left:none'>{{number_format($sptII->sub_harga_pokok)}}&nbsp;</td>
+  <td colspan=14 class=xl772891 style='border-left:none'>{{number_format($sptII->sub_biaya_usaha)}}&nbsp;</td>
+  <td colspan=14 class=xl772891 style='border-left:none'>{{number_format($sptII->sub_biaya_luar_usaha)}}&nbsp;</td>
+  <td colspan=14 class=xl772891 style='border-left:none'>{{number_format($sptII->total_jumlah_biaya)}}&nbsp;</td>
  </tr>
  <tr class=xl712891 height=11 style='mso-height-source:userset;height:8.25pt'>
   <td height=11 class=xl732891 style='height:8.25pt'></td>

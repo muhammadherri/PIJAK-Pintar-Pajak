@@ -51,19 +51,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 </td>
               
                 <td class="text-center">
-                    <input required autocomplete="off" type="number"
+                    <input required autocomplete="off" type="text" onkeyup="this.value=sprator(this.value);"
                         name="objek_jumlahpenerima[]"
                         id="objek_jumlahpenerima[]" min="0"
                         class="form-control penerima1771" />
                 </td>
                 <td class="text-center">
-                    <input required autocomplete="off" type="number"
+                    <input required autocomplete="off" type="text" onkeyup="this.value=sprator(this.value);"
                         name="objek_jumlahpenghasilan[]"
                         id="objek_jumlahpenghasilan[]" min="0"
                         class="form-control penghasilan1771" />
                 </td>
                 <td class="text-center">
-                    <input required autocomplete="off" type="number"
+                    <input required autocomplete="off" type="text" onkeyup="this.value=sprator(this.value);"
                         name="objek_jumlahpajak[]"
                         id="objek_jumlahpajak[]" min="0"
                         class="form-control pajak1771" />
@@ -84,18 +84,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 var totalpajakpotong = 0
 
                 $(".penerima1771").each(function() {
-                    totalpenerima += +$(this).val();
+                    totalpenerima += +$(this).val().replace(/,/g, '');
                 });
                 $(".penghasilan1771").each(function() {
-                    totalbruto += +$(this).val();
+                    totalbruto += +$(this).val().replace(/,/g, '');
                 });
                 $(".pajak1771").each(function() {
-                    totalpajakpotong += +$(this).val();
+                    totalpajakpotong += +$(this).val().replace(/,/g, '');
                 });
             
-                $('.totalpenerima1771').val(totalpenerima);
-                $('.totalbruto1771').val(totalbruto);
-                $('.totalpajak1771').val(totalpajakpotong);
+                $('.totalpenerima1771').val(totalpenerima.toLocaleString());
+                $('.totalbruto1771').val(totalbruto.toLocaleString());
+                $('.totalpajak1771').val(totalpajakpotong.toLocaleString());
             }
         });
         tablelist_1721.addEventListener('click', function(event) {
@@ -121,20 +121,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 </td>
                
                 <td class="text-center">
-                    <input required autocomplete="off" type="number"
+                    <input required autocomplete="off" type="text"
+                        onkeyup="this.value=sprator(this.value);"
                         name="objek_jumlahpenerima_c[]"
                         id="objek_jumlahpenerima_c[]" min="0"
                         class="form-control penerima_c" />
                 </td>
                 <td class="text-center">
-                    <input required autocomplete="off" type="number"
-                        name="objek_jumlahpenghasilan_c[]"
+                    <input required autocomplete="off" type="text"
+                    onkeyup="this.value=sprator(this.value);"
+                    name="objek_jumlahpenghasilan_c[]"
                         id="objek_jumlahpenghasilan_c[]"
                         min="0" class="form-control penghasilan_c" />
                 </td>
                 <td class="text-center">
-                    <input required autocomplete="off" type="number"
-                        name="objek_jumlahpajak_c[]"
+                    <input required autocomplete="off" type="text"
+                    onkeyup="this.value=sprator(this.value);"
+                    name="objek_jumlahpajak_c[]"
                         id="objek_jumlahpajak_c[]" min="0"
                         class="form-control pajak_c" />
                 </td>
@@ -154,18 +157,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 var totalpajakpotong = 0
 
                 $(".penerima_c").each(function() {
-                    totalpenerima += +$(this).val();
+                    totalpenerima += +$(this).val().replace(/,/g, '');
                 });
                 $(".penghasilan_c").each(function() {
-                    totalbruto += +$(this).val();
+                    totalbruto += +$(this).val().replace(/,/g, '');
                 });
                 $(".pajak_c").each(function() {
-                    totalpajakpotong += +$(this).val();
+                    totalpajakpotong += +$(this).val().replace(/,/g, '');
                 });
             
-                $('.totalpenerima_c').val(totalpenerima);
-                $('.totalbruto_c').val(totalbruto);
-                $('.totalpajak_c').val(totalpajakpotong);
+                $('.totalpenerima_c').val(totalpenerima.toLocaleString());
+                $('.totalbruto_c').val(totalbruto.toLocaleString());
+                $('.totalpajak_c').val(totalpajakpotong.toLocaleString());
             }
         });
         tablelistobjekpajakfinal_1721.addEventListener('click', function(event) {
@@ -219,18 +222,21 @@ document.addEventListener('DOMContentLoaded', function() {
                         class="form-control" />
                 </td>
                 <td width="auto" class="text-center">
-                    <input required autocomplete="off" type="number" min="0"
+                    <input required autocomplete="off" type="text" min="0"
                         name="pgt_jumlahpenghasilanbruto_1721[]" id="pgt_jumlahpenghasilanbruto_1721[]"
+                        onkeyup="this.value=sprator(this.value);"
                         class="form-control bruto" />
                 </td>
                 <td width="auto" class="text-center">
-                    <input required autocomplete="off" type="number" min="0"
+                    <input required autocomplete="off" type="text" min="0"
                         name="pgt_pphdipotong_1721[]" id="pgt_pphdipotong_1721[]"
+                        onkeyup="this.value=sprator(this.value);"
                         class="form-control pph" />
                 </td>
                 <td width="auto" class="text-center">
-                    <input required autocomplete="off" type="number" min="0"
+                    <input required autocomplete="off" type="text" min="0"
                         name="pgt_masaperolehan_1721[]" id="pgt_masaperolehan_1721[]"
+                        onkeyup="this.value=sprator(this.value);"
                         class="form-control" />
                 </td>
                 <td width="auto" class="text-center">
@@ -253,14 +259,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 var totalpph = 0
 
                 $(".bruto").each(function() {
-                    totalbruto += +$(this).val();
+                    totalbruto += +$(this).val().replace(/,/g, '');
                 });
                 $(".pph").each(function() {
-                    totalpph += +$(this).val();
+                    totalpph += +$(this).val().replace(/,/g, '');
                 });
              
-                $('.totalbruto').val(totalbruto);
-                $('.totalpph').val(totalpph);
+                $('.totalbruto').val(totalbruto.toLocaleString());
+                $('.totalpph').val(totalpph.toLocaleString());
             }
         });
         tablelist_1721i.addEventListener('click', function(event) {
@@ -315,13 +321,15 @@ document.addEventListener('DOMContentLoaded', function() {
                         class="form-control" />
                 </td>
                 <td width="auto" class="text-center">
-                    <input required autocomplete="off" type="number" min="0"
+                    <input required autocomplete="off" type="text" min="0"
                         name="pgt_jumlahpenghasilanbruto_1721_formulirII[]" id="pgt_jumlahpenghasilanbruto_1721_formulirII[]"
+                        onkeyup="this.value=sprator(this.value);"
                         class="form-control penghasilanbruto" />
                 </td>
                 <td width="auto" class="text-center">
-                    <input required autocomplete="off" type="number" min="0"
+                    <input required autocomplete="off" type="text" min="0"
                         name="pgt_pphdipotong_1721_formulirII[]" id="pgt_pphdipotong_1721_formulirII[]"
+                        onkeyup="this.value=sprator(this.value);"
                         class="form-control potonganpph" />
                 </td>
                 <td width="auto" class="text-center">
@@ -343,14 +351,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 var totalpph = 0
 
                 $(".penghasilanbruto").each(function() {
-                    totalbruto += +$(this).val();
+                    totalbruto += +$(this).val().replace(/,/g, '');
                 });
                 $(".potonganpph").each(function() {
-                    totalpph += +$(this).val();
+                    totalpph += +$(this).val().replace(/,/g, '');
                 });
              
-                $('.jumlahbruto1721II').val(totalbruto);
-                $('.jumlahpotonganpph1721II').val(totalpph);
+                $('.jumlahbruto1721II').val(totalbruto.toLocaleString());
+                $('.jumlahpotonganpph1721II').val(totalpph.toLocaleString());
             }
         });
         tablelist_1721ii.addEventListener('click', function(event) {
@@ -404,13 +412,15 @@ document.addEventListener('DOMContentLoaded', function() {
                         class="form-control" />
                 </td>
                 <td width="auto" class="text-center">
-                    <input required autocomplete="off" type="number" min="0"
+                    <input required autocomplete="off" type="text" min="0"
                         name="pgt_jumlahpenghasilanbruto_1721_formulirIII[]" id="pgt_jumlahpenghasilanbruto_1721_formulirIII[]"
+                        onkeyup="this.value=sprator(this.value);"
                         class="form-control penghasilanbruto1721iii" />
                 </td>
                 <td width="auto" class="text-center">
-                    <input required autocomplete="off" type="number" min="0"
+                    <input required autocomplete="off" type="text" min="0"
                         name="pgt_pphdipotong_1721_formulirIII[]" id="pgt_pphdipotong_1721_formulirIII[]"
+                        onkeyup="this.value=sprator(this.value);"
                         class="form-control potonganpph1721iii" />
                 </td>
                 <td><button type="button" class="btn btn-danger btn-remove-1721iii"><i
@@ -427,14 +437,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 var totalpph = 0
 
                 $(".penghasilanbruto1721iii").each(function() {
-                    totalbruto += +$(this).val();
+                    totalbruto += +$(this).val().replace(/,/g, '');
                 });
                 $(".potonganpph1721iii").each(function() {
-                    totalpph += +$(this).val();
+                    totalpph += +$(this).val().replace(/,/g, '');
                 });
              
-                $('.jumlahbruto1721III').val(totalbruto);
-                $('.jumlahpotonganpph1721III').val(totalpph);
+                $('.jumlahbruto1721III').val(totalbruto.toLocaleString());
+                $('.jumlahpotonganpph1721III').val(totalpph.toLocaleString());
             }
         });
         tablelist_1721iii.addEventListener('click', function(event) {   
@@ -485,6 +495,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <td width="auto" class="text-center">
                     <input required autocomplete="off" type="number"
                         name="ssp_pphIV[]" id="ssp_pphIV[]" min="0"
+                        onkeyup="this.value=sprator(this.value);"
                         class="form-control jumlahpph" />
                 </td>
                 <td width="auto" class="text-center">
@@ -505,10 +516,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 var totalpph = 0
              
                 $(".jumlahpph").each(function() {
-                    totalpph += +$(this).val();
+                    totalpph += +$(this).val().replace(/,/g, '');
                 });
              
-                $('.totalpph').val(totalpph);
+                $('.totalpph').val(totalpph.toLocaleString());
             }
         });
         tablelist_1721iv.addEventListener('click', function(event) {
@@ -569,31 +580,36 @@ document.addEventListener('DOMContentLoaded', function() {
                 </td>
                 <td class="text-center">
                     <input min="0" required autocomplete="off"
-                        type="number" name="pph_JPBVI[]"
+                        type="text" name="pph_JPBVI[]"
+                        onkeyup="this.value=sprator(this.value);"
                         id="pph_JPBVI[]"
                         class="form-control" />
                 </td>
                 <td class="text-center">
                     <input min="0" required autocomplete="off"
-                        type="number" name="pph_DPPVI[]"
+                        type="text" name="pph_DPPVI[]"
+                        onkeyup="this.value=sprator(this.value);"
                         id="pph_DPPVI[]"
                         class="form-control" />
                 </td>
                 <td class="text-center">
                     <input min="0" required autocomplete="off"
-                        type="number" name="pph_TLTVI[]"
+                        type="text" name="pph_TLTVI[]"
+                        onkeyup="this.value=sprator(this.value);"
                         id="pph_TLTVI[]"
                         class="form-control" />
                 </td>
                 <td class="text-center">
                     <input min="0" required autocomplete="off"
-                        type="number" name="pph_tarifVI[]"
+                        type="text" name="pph_tarifVI[]"
+                        onkeyup="this.value=sprator(this.value);"
                         id="pph_tarifVI[]"
                         class="form-control" />
                 </td>
                 <td class="text-center">
                     <input min="0" required autocomplete="off"
-                        type="number" name="pph_potongVI[]"
+                        type="text" name="pph_potongVI[]"
+                        onkeyup="this.value=sprator(this.value);"
                         id="pph_potongVI[]"
                         class="form-control" />
                 </td>
@@ -642,19 +658,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 </td>
                 <td class="text-center">
                     <input min="0" required autocomplete="off"
-                        type="number" name="pph_jpb_formulir_Vii[]"
+                        onkeyup="this.value=sprator(this.value);"
+                        type="text" name="pph_jpb_formulir_Vii[]"
                         id="pph_jpb_formulir_Vii[]"
                         class="form-control" />
                 </td>
                 <td class="text-center">
                     <input min="0" required autocomplete="off"
-                        type="number" name="pph_tp_formulir_Vii[]"
+                        onkeyup="this.value=sprator(this.value);"
+                        type="text" name="pph_tp_formulir_Vii[]"
                         id="pph_tp_formulir_Vii[]"
                         class="form-control" />
                 </td>
                 <td class="text-center">
                     <input min="0" required autocomplete="off"
-                        type="number" name="pph_pph_formulir_Vii[]"
+                        type="text" name="pph_pph_formulir_Vii[]"
+                        onkeyup="this.value=sprator(this.value);"
                         id="pph_pph_formulir_Vii[]"
                         class="form-control" />
                 </td>
@@ -916,6 +935,180 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     // sptmasapajak
 });
+function sprator(x) {
+    //remove commas
+    retVal = x ? parseFloat(x.replace(/,/g, '')) : 0;
+    // console.log(retVal);
+    const pokokpajak_1721 = $('#pokokpajak_1721').val();
+    const kelebihanpenyetor_1721 = $('#kelebihanpenyetor_1721').val();
+    const resultjumlah_1721 = document.getElementById('jumlah_1721');
+    
+    retValpokokpajak_1721 =pokokpajak_1721 ? parseFloat(pokokpajak_1721.replace(/,/g, '')) : 0;
+    retValkelebihanpenyetor_1721 =kelebihanpenyetor_1721 ? parseFloat(kelebihanpenyetor_1721.replace(/,/g, '')) : 0;
+    const hasilpokokpajak =retValpokokpajak_1721+retValkelebihanpenyetor_1721;
+    resultjumlah_1721.value = hasilpokokpajak.toLocaleString();
 
+    const total_jumlah_pajak1721 = $('#total_jumlah_pajak1721').val();
+    retValtotal_jumlah_pajak1721=total_jumlah_pajak1721 ? parseFloat(total_jumlah_pajak1721.replace(/,/g, '')) : 0;
+    const resultkuranglebihsetor_1721 = document.getElementById('kuranglebihsetor_1721');
+    
+    const hasilsetor =retValtotal_jumlah_pajak1721-hasilpokokpajak;
+    if(hasilsetor<0){
+        resultkuranglebihsetor_1721.value =0;
+    }else{
+        resultkuranglebihsetor_1721.value = hasilsetor.toLocaleString();
+    }
+    
+    const sptdibetulkan_1721 = $('#sptdibetulkan_1721').val();
+    retValsptdibetulkan_1721 =sptdibetulkan_1721 ? parseFloat(sptdibetulkan_1721.replace(/,/g, '')) : 0;
+    const hasilpembetulan =hasilsetor-retValsptdibetulkan_1721;
+    
+    const resultsptpembetulan_1721 = document.getElementById('sptpembetulan_1721');
+    if(hasilpembetulan<0){
+        resultsptpembetulan_1721.value =0;
+    }else{
+        resultsptpembetulan_1721.value = hasilpembetulan.toLocaleString();
+    }
+
+    const jumlahbruto_1721_formulirI = $('#jumlahbruto_1721_formulirI').val();
+    const tht_1721_formulirI = $('#tht_1721_formulirI').val();
+    retValjumlahbruto_1721_formulirI =jumlahbruto_1721_formulirI ? parseFloat(jumlahbruto_1721_formulirI.replace(/,/g, '')) : 0;
+    retValtht_1721_formulirI =tht_1721_formulirI ? parseFloat(tht_1721_formulirI.replace(/,/g, '')) : 0;
+    const totaljumlah1721_i =retValjumlahbruto_1721_formulirI+retValtht_1721_formulirI;
+    const resulttotaljumlah_1721_formulirI = document.getElementById('totaljumlah_1721_formulirI');
+    resulttotaljumlah_1721_formulirI.value = totaljumlah1721_i.toLocaleString();
+
+    const jumlahgaji_formulirV_1721= $('#gaji_formulirV_1721').val();
+    const biayatransportasi_formulirV_1721 = $('#biayatransportasi_formulirV_1721').val();
+    const biayaPenyusutan_formulirV_1721 = $('#biayaPenyusutan_formulirV_1721').val();
+    const biayaSewa_formulirV_1721 = $('#biayaSewa_formulirV_1721').val();
+    const biayaBungaPinjam_formulirV_1721 = $('#biayaBungaPinjam_formulirV_1721').val();
+    const biayaSehubunganDenganJasa_formulirV_1721 = $('#biayaSehubunganDenganJasa_formulirV_1721').val();
+    const biayaPiutangTakTertagih_formulirV_1721 = $('#biayaPiutangTakTertagih_formulirV_1721').val();
+    const biayaRoyalti_formulirV_1721 = $('#biayaRoyalti_formulirV_1721').val();
+    const biayaPemasaran_formulirV_1721 = $('#biayaPemasaran_formulirV_1721').val();
+    const biayaLain_formulirV_1721 = $('#biayaLain_formulirV_1721').val();
+
+    retValjumlahgaji_formulirV_1721 =jumlahgaji_formulirV_1721 ? parseFloat(jumlahgaji_formulirV_1721.replace(/,/g, '')) : 0;
+    retValbiayatransportasi_formulirV_1721 =biayatransportasi_formulirV_1721 ? parseFloat(biayatransportasi_formulirV_1721.replace(/,/g, '')) : 0;
+    retValbiayaPenyusutan_formulirV_1721 =biayaPenyusutan_formulirV_1721 ? parseFloat(biayaPenyusutan_formulirV_1721.replace(/,/g, '')) : 0;
+    retValbiayaSewa_formulirV_1721 =biayaSewa_formulirV_1721 ? parseFloat(biayaSewa_formulirV_1721.replace(/,/g, '')) : 0;
+    retValbiayaBungaPinjam_formulirV_1721 =biayaBungaPinjam_formulirV_1721 ? parseFloat(biayaBungaPinjam_formulirV_1721.replace(/,/g, '')) : 0;
+    retValbiayaSehubunganDenganJasa_formulirV_1721 =biayaSehubunganDenganJasa_formulirV_1721 ? parseFloat(biayaSehubunganDenganJasa_formulirV_1721.replace(/,/g, '')) : 0;
+    retValbiayaPiutangTakTertagih_formulirV_1721 =biayaPiutangTakTertagih_formulirV_1721 ? parseFloat(biayaPiutangTakTertagih_formulirV_1721.replace(/,/g, '')) : 0;
+    retValbiayaRoyalti_formulirV_1721 =biayaRoyalti_formulirV_1721 ? parseFloat(biayaRoyalti_formulirV_1721.replace(/,/g, '')) : 0;
+    retValbiayaPemasaran_formulirV_1721 =biayaPemasaran_formulirV_1721 ? parseFloat(biayaPemasaran_formulirV_1721.replace(/,/g, '')) : 0;
+    retValbiayaLain_formulirV_1721 =biayaLain_formulirV_1721 ? parseFloat(biayaLain_formulirV_1721.replace(/,/g, '')) : 0;
+    const totalbiaya = retValjumlahgaji_formulirV_1721+retValbiayatransportasi_formulirV_1721+retValbiayaPenyusutan_formulirV_1721+retValbiayaSewa_formulirV_1721+retValbiayaBungaPinjam_formulirV_1721+retValbiayaSehubunganDenganJasa_formulirV_1721+retValbiayaPiutangTakTertagih_formulirV_1721+retValbiayaRoyalti_formulirV_1721+retValbiayaPemasaran_formulirV_1721+retValbiayaLain_formulirV_1721;
+    const resultjumlah_formulirV_1721 = document.getElementById('jumlah_formulirV_1721');
+    resultjumlah_formulirV_1721.value = totalbiaya.toLocaleString();
+    
+    const gaji_formulirA1_1721 = $('#gaji_formulirA1_1721').val();
+    const tunjanganPph_formulirA1_1721 = $('#tunjanganPph_formulirA1_1721').val();
+    const tunjanganlain_formulirA1_1721 = $('#tunjanganlain_formulirA1_1721').val();
+    const honorarium_formulirA1_1721 = $('#honorarium_formulirA1_1721').val();
+    const premiAsuransi_formulirA1_1721 = $('#premiAsuransi_formulirA1_1721').val();
+    const natura_formulirA1_1721 = $('#natura_formulirA1_1721').val();
+    const tantiem_formulirA1_1721 = $('#tantiem_formulirA1_1721').val();
+    retValgaji_formulirA1_1721 =gaji_formulirA1_1721 ? parseFloat(gaji_formulirA1_1721.replace(/,/g, '')) : 0;
+    retValtunjanganPph_formulirA1_1721 =tunjanganPph_formulirA1_1721 ? parseFloat(tunjanganPph_formulirA1_1721.replace(/,/g, '')) : 0;
+    retValtunjanganlain_formulirA1_1721 =tunjanganlain_formulirA1_1721 ? parseFloat(tunjanganlain_formulirA1_1721.replace(/,/g, '')) : 0;
+    retValhonorarium_formulirA1_1721 =honorarium_formulirA1_1721 ? parseFloat(honorarium_formulirA1_1721.replace(/,/g, '')) : 0;
+    retValpremiAsuransi_formulirA1_1721 =premiAsuransi_formulirA1_1721 ? parseFloat(premiAsuransi_formulirA1_1721.replace(/,/g, '')) : 0;
+    retValnatura_formulirA1_1721 =natura_formulirA1_1721 ? parseFloat(natura_formulirA1_1721.replace(/,/g, '')) : 0;
+    retValtantiem_formulirA1_1721 =tantiem_formulirA1_1721 ? parseFloat(tantiem_formulirA1_1721.replace(/,/g, '')) : 0;
+    const totalpemotongan= retValgaji_formulirA1_1721+retValtunjanganPph_formulirA1_1721+retValtunjanganlain_formulirA1_1721+retValhonorarium_formulirA1_1721+retValpremiAsuransi_formulirA1_1721+retValnatura_formulirA1_1721+retValtantiem_formulirA1_1721;
+    
+    const resultjumlahbruto_formulirA1_1721 = document.getElementById('jumlahbruto_formulirA1_1721');
+    resultjumlahbruto_formulirA1_1721.value = totalpemotongan.toLocaleString();
+
+    const biayajabatan_formulirA1_1721 = $('#biayajabatan_formulirA1_1721').val();
+    const iuranPensiun_formulirA1_1721 = $('#iuranPensiun_formulirA1_1721').val();
+    retValbiayajabatan_formulirA1_1721 =biayajabatan_formulirA1_1721 ? parseFloat(biayajabatan_formulirA1_1721.replace(/,/g, '')) : 0;
+    retValiuranPensiun_formulirA1_1721 =iuranPensiun_formulirA1_1721 ? parseFloat(iuranPensiun_formulirA1_1721.replace(/,/g, '')) : 0;
+    const totalpengurangan =retValbiayajabatan_formulirA1_1721+retValiuranPensiun_formulirA1_1721;
+
+    const resultjumlahpengurangan_formulirA1_1721 = document.getElementById('jumlahpengurangan_formulirA1_1721');
+    resultjumlahpengurangan_formulirA1_1721.value = totalpengurangan.toLocaleString();
+    
+    const jumlahpengnetto= totalpemotongan-totalpengurangan;
+    const jumlahPenghasilanNeto_formulirA1_1721 = document.getElementById('jumlahPenghasilanNeto_formulirA1_1721');
+    
+    if(jumlahpengnetto<0){
+        jumlahPenghasilanNeto_formulirA1_1721.value = 0;
+    }else{
+        jumlahPenghasilanNeto_formulirA1_1721.value = jumlahpengnetto.toLocaleString();
+    }
+    
+    const jumlahPenghasilanNetoSetaun_formulirA1_1721 = $('#jumlahPenghasilanNetoSetaun_formulirA1_1721').val();
+    const ptkp_formulirA1_1721 = $('#ptkp_formulirA1_1721').val();
+    retValjumlahPenghasilanNetoSetaun_formulirA1_1721 =jumlahPenghasilanNetoSetaun_formulirA1_1721 ? parseFloat(jumlahPenghasilanNetoSetaun_formulirA1_1721.replace(/,/g, '')) : 0;
+    retValptkp_formulirA1_1721 =ptkp_formulirA1_1721 ? parseFloat(ptkp_formulirA1_1721.replace(/,/g, '')) : 0;
+
+    const jumlahkenapajak = retValjumlahPenghasilanNetoSetaun_formulirA1_1721-retValptkp_formulirA1_1721;
+    const resultpkp_formulirA1_1721 = document.getElementById('pkp_formulirA1_1721');
+    if(jumlahkenapajak<0){
+        resultpkp_formulirA1_1721.value = 0;
+    }else{
+        resultpkp_formulirA1_1721.value = jumlahkenapajak.toLocaleString();
+    }
+
+    const gajiPokok_formulirA2_1721 = $('#gajiPokok_formulirA2_1721').val();
+    const tunjanganIsteri_formulirA2_1721 = $('#tunjanganIsteri_formulirA2_1721').val();
+    const tunjanganAnak_formulirA2_1721 = $('#tunjanganAnak_formulirA2_1721').val();
+    retValgajiPokok_formulirA2_1721 =gajiPokok_formulirA2_1721 ? parseFloat(gajiPokok_formulirA2_1721.replace(/,/g, '')) : 0;
+    retValtunjanganIsteri_formulirA2_1721 =tunjanganIsteri_formulirA2_1721 ? parseFloat(tunjanganIsteri_formulirA2_1721.replace(/,/g, '')) : 0;
+    retValtunjanganAnak_formulirA2_1721 =tunjanganAnak_formulirA2_1721 ? parseFloat(tunjanganAnak_formulirA2_1721.replace(/,/g, '')) : 0;
+    const jumlahgaji = retValgajiPokok_formulirA2_1721+retValtunjanganIsteri_formulirA2_1721+retValtunjanganAnak_formulirA2_1721;
+
+    const resultkeluarga_formulirA2_1721 = document.getElementById('keluarga_formulirA2_1721');
+    resultkeluarga_formulirA2_1721.value = jumlahgaji.toLocaleString();
+
+    const tunjanganPerbaikan_formulirA2_1721 = $('#tunjanganPerbaikan_formulirA2_1721').val();
+    const tunjanganStruktural_formulirA2_1721 = $('#tunjanganStruktural_formulirA2_1721').val();
+    const tunjanganBeras_formulirA2_1721 = $('#tunjanganBeras_formulirA2_1721').val();
+    const tunjanganKhusus_formulirA2_1721 = $('#tunjanganKhusus_formulirA2_1721').val();
+    const tunjanganLain_formulirA2_1721 = $('#tunjanganLain_formulirA2_1721').val();
+    const penghasilanTetap_formulirA2_1721 = $('#penghasilanTetap_formulirA2_1721').val();
+    retValtunjanganPerbaikan_formulirA2_1721 =tunjanganPerbaikan_formulirA2_1721 ? parseFloat(tunjanganPerbaikan_formulirA2_1721.replace(/,/g, '')) : 0;
+    retValtunjanganStruktural_formulirA2_1721 =tunjanganStruktural_formulirA2_1721 ? parseFloat(tunjanganStruktural_formulirA2_1721.replace(/,/g, '')) : 0;
+    retValtunjanganBeras_formulirA2_1721 =tunjanganBeras_formulirA2_1721 ? parseFloat(tunjanganBeras_formulirA2_1721.replace(/,/g, '')) : 0;
+    retValtunjanganKhusus_formulirA2_1721 =tunjanganKhusus_formulirA2_1721 ? parseFloat(tunjanganKhusus_formulirA2_1721.replace(/,/g, '')) : 0;
+    retValtunjanganLain_formulirA2_1721 =tunjanganLain_formulirA2_1721 ? parseFloat(tunjanganLain_formulirA2_1721.replace(/,/g, '')) : 0;
+    retValpenghasilanTetap_formulirA2_1721 =penghasilanTetap_formulirA2_1721 ? parseFloat(penghasilanTetap_formulirA2_1721.replace(/,/g, '')) : 0;
+    const jumlahpengbruto = jumlahgaji+retValtunjanganPerbaikan_formulirA2_1721+retValtunjanganStruktural_formulirA2_1721+retValtunjanganBeras_formulirA2_1721+retValtunjanganKhusus_formulirA2_1721+retValtunjanganLain_formulirA2_1721+retValpenghasilanTetap_formulirA2_1721;
+    const penghasilanBruto_formulirA2_1721 = document.getElementById('penghasilanBruto_formulirA2_1721');
+    penghasilanBruto_formulirA2_1721.value = jumlahpengbruto.toLocaleString();
+
+
+    const biayaJabatan_formulirA2_1721 = $('#biayaJabatan_formulirA2_1721').val();
+    const iuranPensi_formulirA2_1721 = $('#iuranPensi_formulirA2_1721').val();
+    retValbiayaJabatan_formulirA2_1721 =biayaJabatan_formulirA2_1721 ? parseFloat(biayaJabatan_formulirA2_1721.replace(/,/g, '')) : 0;
+    retValiuranPensi_formulirA2_1721 =iuranPensi_formulirA2_1721 ? parseFloat(iuranPensi_formulirA2_1721.replace(/,/g, '')) : 0;
+    const jumlahpengurangan = retValbiayaJabatan_formulirA2_1721+retValiuranPensi_formulirA2_1721;
+    const resultjumlahPengurangan_formulirA2_1721 = document.getElementById('jumlahPengurangan_formulirA2_1721');
+    resultjumlahPengurangan_formulirA2_1721.value = jumlahpengurangan.toLocaleString();
+    
+    const jumlahpengnettoa2 = jumlahpengbruto-jumlahpengurangan;
+    const resultjumlahPenghasilan_formulirA2_1721 = document.getElementById('jumlahPenghasilan_formulirA2_1721');
+    if(jumlahpengnettoa2<0){
+        resultjumlahPenghasilan_formulirA2_1721.value =0;
+    }else{
+        resultjumlahPenghasilan_formulirA2_1721.value = jumlahpengnettoa2.toLocaleString();
+    }
+    
+    const jumlahPenghasilanPenghitungan_formulirA2_1721 = $('#jumlahPenghasilanPenghitungan_formulirA2_1721').val();
+    const ptkp_formulirA2_1721 = $('#ptkp_formulirA2_1721').val();
+    retValjumlahPenghasilanPenghitungan_formulirA2_1721 =jumlahPenghasilanPenghitungan_formulirA2_1721 ? parseFloat(jumlahPenghasilanPenghitungan_formulirA2_1721.replace(/,/g, '')) : 0;
+    retValptkp_formulirA2_1721 =ptkp_formulirA2_1721 ? parseFloat(ptkp_formulirA2_1721.replace(/,/g, '')) : 0;
+    const jumlahpengkenapajak = retValjumlahPenghasilanPenghitungan_formulirA2_1721-retValptkp_formulirA2_1721;
+    const resultpkp_formulirA2_1721 = document.getElementById('pkp_formulirA2_1721');
+    if(jumlahpengkenapajak<0){
+        resultpkp_formulirA2_1721.value = 0;
+    }else{
+        resultpkp_formulirA2_1721.value = jumlahpengkenapajak.toLocaleString();
+    }
+    return retVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
     

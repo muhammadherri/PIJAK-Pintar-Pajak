@@ -7296,15 +7296,15 @@ tags will be replaced.-->
   <td colspan=20 class=xl3202070 width=212 style='border-right:.5pt solid black;
   width:160pt'>{{$row->kode_objek_pajak}}</td>
   <td colspan=19 class=xl3202070 width=163 style='border-right:.5pt solid black;
-  border-left:none;width:120pt'>{{$row->jumlah_penghasilan_bruto}}</td>
+  border-left:none;width:120pt'>{{number_format($row->jumlah_penghasilan_bruto)}}</td>
   <td colspan=17 class=xl3202070 width=143 style='border-right:.5pt solid black;
-  border-left:none;width:105pt'>{{$row->dasar_pengenaan_pajak}}</td>
+  border-left:none;width:105pt'>{{number_format($row->dasar_pengenaan_pajak)}}</td>
   <td colspan=8 class=xl3202070 width=104 style='border-right:.5pt solid black;
-  border-left:none;width:80pt'>{{$row->tarif}}</td>
+  border-left:none;width:80pt'>{{number_format($row->tarif)}}</td>
   <td colspan=6 class=xl3382070 style='border-right:.5pt solid black;
-  border-left:none'>{{$row->potongan}}</td>
+  border-left:none'>{{number_format($row->potongan)}}</td>
   <td colspan=11 class=xl3202070 width=141 style='border-right:.5pt solid black;
-  border-left:none;width:107pt'>{{$row->potongan_pph}}</td>
+  border-left:none;width:107pt'>{{number_format($row->potongan_pph)}}</td>
   <td class=xl762070 width=5 style='width:3pt'></td>
   <td class=xl762070 width=20 style='width:15pt'></td>
  </tr>

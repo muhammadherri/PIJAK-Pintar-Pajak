@@ -10,7 +10,6 @@ xmlns="http://www.w3.org/TR/REC-html40">
 <meta name=Generator content="Microsoft Excel 15">
 <link rel=File-List href="Copy%20of%201721_A2_files/filelist.xml">
 <style id="1721_A2_28249_Styles">
-<!--table
 	{mso-displayed-decimal-separator:"\.";
 	mso-displayed-thousand-separator:"\,";}
 .xl6328249
@@ -8587,7 +8586,7 @@ tags will be replaced.-->
   <td class=xl15128249></td>
   <td colspan=2 rowspan=2 class=xl15528249>HB /</td>
   @if($spt->status_pernikahan_identitas==2)
-  <td colspan=4 rowspan=2 class=xl33528249 style='border-bottom:.5pt solid black'>{{$spt->status_jumlah_identitas}}</td>
+  <td colspan=4 rowspan=2 class=xl33528249 style='border-bottom:.5pt solid black'>{{number_format($spt->status_jumlah_identitas)}}</td>
   @else
   <td colspan=4 rowspan=2 class=xl33528249 style='border-bottom:.5pt solid black'></td>
   @endif
@@ -9631,7 +9630,7 @@ tags will be replaced.-->
   <td class=xl20328249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td class=xl20328249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td class=xl20328249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
-  <td colspan=17 class=xl31928249 style='border-right:.5pt solid black'>&nbsp;{{$spt->gaji_pokok_rincian}}</td>
+  <td colspan=17 class=xl31928249 style='border-right:.5pt solid black'>&nbsp;{{number_format($spt->gaji_pokok_rincian)}}</td>
   <td class=xl20428249 width=5 style='width:3pt'></td>
   <td class=xl20428249 width=11 style='width:8pt'></td>
  </tr>
@@ -9700,7 +9699,7 @@ tags will be replaced.-->
   <td class=xl20328249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td class=xl20328249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td colspan=17 class=xl30028249 width=219 style='border-right:.5pt solid black;
-  width:167pt'>&nbsp;{{$spt->tunjangan_istri_rincian}}</td>
+  width:167pt'>&nbsp;{{number_format($spt->tunjangan_istri_rincian)}}</td>
   <td class=xl20428249 width=5 style='width:3pt'></td>
   <td class=xl20428249 width=11 style='width:8pt'></td>
  </tr>
@@ -9742,7 +9741,7 @@ tags will be replaced.-->
   <td class=xl20328249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td class=xl20328249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td colspan=17 class=xl30028249 width=219 style='border-right:.5pt solid black;
-  width:167pt'>&nbsp;{{$spt->tunjangan_anak_rincian}}</td>
+  width:167pt'>&nbsp;{{number_format($spt->tunjangan_anak_rincian)}}</td>
   <td class=xl20428249 width=5 style='width:3pt'></td>
   <td class=xl20428249 width=11 style='width:8pt'></td>
  </tr>
@@ -9753,7 +9752,7 @@ tags will be replaced.-->
   <td colspan=77 class=xl30928249 width=701 style='border-right:.5pt solid black;
   border-left:none;width:520pt'>JUMLAH GAJI DAN TUNJANGAN KELUARGA (1 S.D. 3)</td>
   <td colspan=17 class=xl30028249 width=219 style='border-right:.5pt solid black;
-  border-left:none;width:167pt'>&nbsp;{{$spt->tunjangan_keluarga_rincian}}</td>
+  border-left:none;width:167pt'>&nbsp;{{number_format($spt->tunjangan_keluarga_rincian)}}</td>
   <td class=xl20428249 width=5 style='width:3pt'></td>
   <td class=xl20428249 width=11 style='width:8pt'></td>
  </tr>
@@ -9764,7 +9763,7 @@ tags will be replaced.-->
   <td colspan=77 class=xl30928249 width=701 style='border-right:.5pt solid black;
   border-left:none;width:520pt'>TUNJANGAN PERBAIKAN PENGHASILAN</td>
   <td colspan=17 class=xl31128249 width=219 style='border-right:.5pt solid black;
-  border-left:none;width:167pt'>&nbsp;{{$spt->tunjangan_perbaikan_rincian}}</td>
+  border-left:none;width:167pt'>&nbsp;{{number_format($spt->tunjangan_perbaikan_rincian)}}</td>
   <td class=xl20428249 width=5 style='width:3pt'></td>
   <td class=xl20428249 width=11 style='width:8pt'></td>
  </tr>
@@ -9775,7 +9774,7 @@ tags will be replaced.-->
   <td colspan=77 class=xl30928249 width=701 style='border-right:.5pt solid black;
   border-left:none;width:520pt'>TUNJANGAN STRUKTURAL/FUNGSIONAL</td>
   <td colspan=17 class=xl30028249 width=219 style='border-right:.5pt solid black;
-  border-left:none;width:167pt'>&nbsp;{{$spt->tunjangan_struktural_rincian}}</td>
+  border-left:none;width:167pt'>&nbsp;{{number_format($spt->tunjangan_struktural_rincian)}}</td>
   <td class=xl20428249 width=5 style='width:3pt'></td>
   <td class=xl20428249 width=11 style='width:8pt'></td>
  </tr>
@@ -9800,7 +9799,7 @@ tags will be replaced.-->
   <td class=xl20328249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td class=xl20328249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td colspan=17 class=xl30028249 width=219 style='border-right:.5pt solid black;
-  width:167pt'>&nbsp;{{$spt->tunjangan_beras_rincian}}</td>
+  width:167pt'>&nbsp;{{number_format($spt->tunjangan_beras_rincian)}}</td>
   <td class=xl20428249 width=5 style='width:3pt'></td>
   <td class=xl20428249 width=11 style='width:8pt'></td>
  </tr>
@@ -9845,7 +9844,7 @@ tags will be replaced.-->
   <td class=xl20328249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td class=xl20328249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td colspan=17 class=xl30028249 width=219 style='border-right:.5pt solid black;
-  width:167pt'>&nbsp;{{$spt->tunjangan_khusus_rincian}}</td>
+  width:167pt'>&nbsp;{{number_format($spt->tunjangan_khusus_rincian)}}</td>
   <td class=xl20428249 width=5 style='width:3pt'></td>
   <td class=xl20428249 width=11 style='width:8pt'></td>
  </tr>
@@ -9865,7 +9864,7 @@ tags will be replaced.-->
   <td class=xl20328249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td class=xl20328249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td colspan=17 class=xl30028249 width=219 style='border-right:.5pt solid black;
-  width:167pt'>&nbsp;{{$spt->tunjangan_lain_rincian}}</td>
+  width:167pt'>&nbsp;{{number_format($spt->tunjangan_lain_rincian)}}</td>
   <td class=xl20428249 width=5 style='width:3pt'></td>
   <td class=xl20428249 width=11 style='width:8pt'></td>
  </tr>
@@ -9878,7 +9877,7 @@ tags will be replaced.-->
   style='mso-spacerun:yes'> </span>PENGHASILAN TETAP DAN TERATUR LAINNYA YANG
   PEMBAYARANNYA TERPISAH DARI PEMBAYARAN GAJI</td>
   <td colspan=17 class=xl30028249 width=219 style='border-right:.5pt solid black;
-  border-left:none;width:167pt'>&nbsp;{{$spt->tunjangan_tetap_rincian}}</td>
+  border-left:none;width:167pt'>&nbsp;{{number_format($spt->penghasilan_tetap_rincian)}}</td>
   <td class=xl20428249 width=5 style='width:3pt'></td>
   <td class=xl20428249 width=11 style='width:8pt'></td>
  </tr>
@@ -9925,7 +9924,7 @@ tags will be replaced.-->
   <td class=xl20328249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td class=xl20328249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td colspan=17 class=xl30028249 width=219 style='border-right:.5pt solid black;
-  width:167pt'>&nbsp;{{$spt->jumlah_bruto_rincian}}</td>
+  width:167pt'>&nbsp;{{number_format($spt->jumlah_bruto_rincian)}}</td>
   <td class=xl20428249 width=5 style='width:3pt'></td>
   <td class=xl20428249 width=11 style='width:8pt'></td>
  </tr>
@@ -10043,7 +10042,7 @@ tags will be replaced.-->
   <td class=xl20328249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td class=xl20328249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td colspan=17 class=xl30028249 width=219 style='border-right:.5pt solid black;
-  width:167pt'>&nbsp;{{$spt->biaya_jabatan_pengurangan}}</td>
+  width:167pt'>&nbsp;{{number_format($spt->biaya_jabatan_pengurangan)}}</td>
   <td class=xl20428249 width=5 style='width:3pt'></td>
   <td class=xl20428249 width=11 style='width:8pt'></td>
  </tr>
@@ -10092,7 +10091,7 @@ tags will be replaced.-->
   <td class=xl21228249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td class=xl21228249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td colspan=17 class=xl29428249 width=219 style='border-right:.5pt solid black;
-  width:167pt'>&nbsp;{{$spt->iuran_pensiun_pengurangan}}</td>
+  width:167pt'>&nbsp;{{number_format($spt->iuran_pensiun_pengurangan)}}</td>
   <td class=xl20428249 width=5 style='width:3pt'></td>
   <td class=xl20428249 width=11 style='width:8pt'></td>
  </tr>
@@ -10111,7 +10110,7 @@ tags will be replaced.-->
   <td class=xl21328249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td class=xl21328249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td colspan=17 class=xl29428249 width=219 style='border-right:.5pt solid black;
-  width:167pt'>&nbsp;{{$spt->jumlah_pengurangan}}</td>
+  width:167pt'>&nbsp;{{number_format($spt->jumlah_pengurangan)}}</td>
   <td class=xl20428249 width=5 style='width:3pt'></td>
   <td class=xl20428249 width=11 style='width:8pt'></td>
  </tr>
@@ -10196,7 +10195,7 @@ tags will be replaced.-->
   <td class=xl20528249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td class=xl20528249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td colspan=17 class=xl28328249 width=219 style='border-right:.5pt solid black;
-  width:167pt'>&nbsp;{{$spt->jumlah_penghasilan_neto_penghitung}}</td>
+  width:167pt'>&nbsp;{{number_format($spt->jumlah_penghasilan_neto_penghitung)}}</td>
   <td class=xl20428249 width=5 style='width:3pt'></td>
   <td class=xl20428249 width=11 style='width:8pt'></td>
  </tr>
@@ -10214,7 +10213,7 @@ tags will be replaced.-->
   <td class=xl20528249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td class=xl20528249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td colspan=17 class=xl28328249 width=219 style='border-right:.5pt solid black;
-  width:167pt'>&nbsp;{{$spt->jumlah_penghasilan_neto_masa_penghitung}}</td>
+  width:167pt'>&nbsp;{{number_format($spt->jumlah_penghasilan_neto_masa_penghitung)}}</td>
   <td class=xl20428249 width=5 style='width:3pt'></td>
   <td class=xl20428249 width=11 style='width:8pt'></td>
  </tr>
@@ -10226,7 +10225,7 @@ tags will be replaced.-->
   border-left:none;width:520pt'><span style='mso-spacerun:yes'> </span>JUMLAH
   PENGHASILAN NETO UNTUK PENGHITUNGAN PPh PASAL 21 (SETAHUN/DISETAHUNKAN)</td>
   <td colspan=17 class=xl28328249 width=219 style='border-right:.5pt solid black;
-  border-left:none;width:167pt'>&nbsp;{{$spt->jumlah_penghasilan_penghitung}}</td>
+  border-left:none;width:167pt'>&nbsp;{{number_format($spt->jumlah_penghasilan_penghitung)}}</td>
   <td class=xl20428249 width=5 style='width:3pt'></td>
   <td class=xl20428249 width=11 style='width:8pt'></td>
  </tr>
@@ -10238,7 +10237,7 @@ tags will be replaced.-->
   border-left:none'><span style='mso-spacerun:yes'> </span>PENGHASILAN TIDAK
   KENA PAJAK (PTKP)</td>
   <td colspan=17 class=xl27428249 width=219 style='border-right:.5pt solid black;
-  border-left:none;width:167pt'>&nbsp;{{$spt->ptkp_penghitung}}</td>
+  border-left:none;width:167pt'>&nbsp;{{number_format($spt->ptkp_penghitung)}}</td>
   <td class=xl20428249 width=5 style='width:3pt'></td>
   <td class=xl20428249 width=11 style='width:8pt'></td>
  </tr>
@@ -10255,7 +10254,7 @@ tags will be replaced.-->
   <td class=xl20828249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td class=xl20828249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td colspan=17 class=xl27428249 width=219 style='border-right:.5pt solid black;
-  width:167pt'>&nbsp;{{$spt->pkp_penghitung}}</td>
+  width:167pt'>&nbsp;{{number_format($spt->pkp_penghitung)}}</td>
   <td class=xl20428249 width=5 style='width:3pt'></td>
   <td class=xl20428249 width=11 style='width:8pt'></td>
  </tr>
@@ -10269,7 +10268,7 @@ tags will be replaced.-->
   <td class=xl21428249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td class=xl21428249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td colspan=17 class=xl27428249 width=219 style='border-right:.5pt solid black;
-  width:167pt'>&nbsp;{{$spt->pkp_setahun_penghitung}}</td>
+  width:167pt'>&nbsp;{{number_format($spt->pkp_setahun_penghitung)}}</td>
   <td class=xl20428249 width=5 style='width:3pt'></td>
   <td class=xl20428249 width=11 style='width:8pt'></td>
  </tr>
@@ -10284,7 +10283,7 @@ tags will be replaced.-->
   <td class=xl21428249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td class=xl21428249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td colspan=17 class=xl27428249 width=219 style='border-right:.5pt solid black;
-  width:167pt'>&nbsp;{{$spt->potongan_masa_penghitung}}</td>
+  width:167pt'>&nbsp;{{number_format($spt->potongan_masa_penghitung)}}</td>
   <td class=xl20428249 width=5 style='width:3pt'></td>
   <td class=xl20428249 width=11 style='width:8pt'></td>
  </tr>
@@ -10297,7 +10296,7 @@ tags will be replaced.-->
   <td class=xl21428249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td class=xl21428249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td colspan=17 class=xl27428249 width=219 style='border-right:.5pt solid black;
-  width:167pt'>&nbsp;{{$spt->terutang_penghitung}}</td>
+  width:167pt'>&nbsp;{{number_format($spt->terutang_penghitung)}}</td>
   <td class=xl20428249 width=5 style='width:3pt'></td>
   <td class=xl20428249 width=11 style='width:8pt'></td>
  </tr>
@@ -10331,7 +10330,7 @@ tags will be replaced.-->
   <td class=xl21428249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td class=xl21428249 width=13 style='border-top:none;width:10pt'>&nbsp;</td>
   <td colspan=17 class=xl27428249 width=219 style='border-right:.5pt solid black;
-  width:167pt'>&nbsp;{{$spt->dilunasi_gaji_penghitung}}</td>
+  width:167pt'>&nbsp;{{number_format($spt->dilunasi_gaji_penghitung)}}</td>
   <td class=xl20428249 width=5 style='width:3pt'></td>
   <td class=xl20428249 width=11 style='width:8pt'></td>
  </tr>
@@ -10344,7 +10343,7 @@ tags will be replaced.-->
   width:495pt'>ATAS PENGHASILAN TETAP DAN TERATUR LAINNYA YANG PEMBAYARANNYA
   TERPISAH DARI PEMBAYARAN GAJI</td>
   <td colspan=17 class=xl27428249 width=219 style='border-right:.5pt solid black;
-  border-left:none;width:167pt'>&nbsp;{{$spt->dilunasi_tetap_penghitung}}</td>
+  border-left:none;width:167pt'>&nbsp;{{number_format($spt->dilunasi_tetap_penghitung)}}</td>
   <td class=xl20428249 width=5 style='width:3pt'></td>
   <td class=xl20428249 width=11 style='width:8pt'></td>
  </tr>

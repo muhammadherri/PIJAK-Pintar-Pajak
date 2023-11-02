@@ -170,32 +170,47 @@ document.addEventListener('DOMContentLoaded', function() {
         const newRow = `
         <tr>
             <td width="auto" class="text-center" value="">
-                <input required autocomplete="off"
-                    type="text" name="angkapembelianbarang[]"
-                    id="angkapembelianbarang[]" min="0"
-                    class="form-control" />
+            <select id="angkapembelianbarang[]"name="angkapembelianbarang[]"
+                class="dropdown-groups">
+                <option value="PEMBELIAN BAHAN/BARANG DAGANGAN">PEMBELIAN BAHAN/BARANG DAGANGAN</option>
+                <option value="GAJI, UPAH, BONUS, GRATIFIKASI,HONORARIUM, THR, DSB">GAJI, UPAH, BONUS, GRATIFIKASI,HONORARIUM, THR, DSB</option>
+                <option value="BIAYA TRANSPORTASI">BIAYA TRANSPORTASI</option>
+                <option value="BIAYA PENYUSUTAN DAN AMORTISASI">BIAYA PENYUSUTAN DAN AMORTISASI</option>
+                <option value="BIAYA SEWA">BIAYA SEWA</option>
+                <option value="BIAYA BUNGA PINJAMAN">BIAYA BUNGA PINJAMAN</option>
+                <option value="BIAYA SEHUBUNGAN DENGAN JASA">BIAYA SEHUBUNGAN DENGAN JASA</option>
+                <option value="BIAYA PIUTANG TAK TERTAGIH">BIAYA PIUTANG TAK TERTAGIH</option>
+                <option value="BIAYA ROYALTI">BIAYA ROYALTI</option>
+                <option value="BIAYA PEMASARAN/PROMOSI">BIAYA PEMASARAN/PROMOSI</option>
+                <option value="BIAYA LAINNYA">BIAYA LAINNYA</option>
+                <option value="PERSEDIAAN AWAL">PERSEDIAAN AWAL</option>
+                <option value="PERSEDIAAN AKHIR (-/-)">PERSEDIAAN AKHIR (-/-)</option>
+            </select>
             </td>
             <td class="text-center">
                 <input required autocomplete="off"
-                    type="number" name="angkaharpok1[]"
+                onkeyup="this.value=sprator(this.value);"
+                type="text" name="angkaharpok1[]"
                     id="angkaharpok1[]" min="0"
                     class="form-control sub_harpok" />
             </td>
             <td class="text-center">
                 <input required autocomplete="off"
-                    type="number" name="angkabiaya_usaha1[]"
+                    type="text" name="angkabiaya_usaha1[]"
+                    onkeyup="this.value=sprator(this.value);"
                     id="angkabiaya_usaha1[]" min="0"
                     class="form-control sub_biaya_usaha" />
             </td>
             <td class="text-center">
                 <input required autocomplete="off"
-                    type="number" name="angkabiaya_luar1[]"
+                    type="text" name="angkabiaya_luar1[]"
+                    onkeyup="this.value=sprator(this.value);"
                     id="angkabiaya_luar1[]" min="0"
                     class="form-control sub_biaya_luar" />
             </td>
             <td class="text-center">
                 <input readonly autocomplete="off"
-                    type="number" name="subjum1[]"
+                    type="text" name="subjum1[]"
                     id="subjum1[]" min="0"
                     class="form-control jumlahtotal" />
             </td>
@@ -210,12 +225,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const target = event.target;
         if (target.tagName === 'INPUT' && target.name.startsWith('angka')) {
             const row = target.closest('tr');
-            const harpok1 = parseFloat(row.querySelector('input[name="angkaharpok1[]"]').value) || 0;
-            const biaya_usaha1 = parseFloat(row.querySelector('input[name="angkabiaya_usaha1[]"]').value) || 0;
-            const biaya_luar1 = parseFloat(row.querySelector('input[name="angkabiaya_luar1[]"]').value) || 0;
+            // const harpok1 = parseFloat(row.querySelector('input[name="angkaharpok1[]"]').value) || 0;
+            const harpok1 = $(row.querySelector('[name="angkaharpok1[]"]')).val();
+            retValharpok1=harpok1 ? parseFloat(harpok1.replace(/,/g, '')) : 0;
+
+            // const biaya_usaha1 = parseFloat(row.querySelector('input[name="angkabiaya_usaha1[]"]').value) || 0;
+            const biaya_usaha1 = $(row.querySelector('[name="angkabiaya_usaha1[]"]')).val();
+            retValbiaya_usaha1=biaya_usaha1 ? parseFloat(biaya_usaha1.replace(/,/g, '')) : 0;
+            
+            // const biaya_luar1 = parseFloat(row.querySelector('input[name="angkabiaya_luar1[]"]').value) || 0;
+            const biaya_luar1 = $(row.querySelector('[name="angkabiaya_luar1[]"]')).val();
+            retValbiaya_luar1=biaya_luar1 ? parseFloat(biaya_luar1.replace(/,/g, '')) : 0;
+
             const hasiljumlah1 = row.querySelector('input[name="subjum1[]"]');
-            const sum = harpok1 + biaya_usaha1 + biaya_luar1;
-            hasiljumlah1.value = sum;
+            const sum = retValharpok1 + retValbiaya_usaha1 + retValbiaya_luar1;
+            hasiljumlah1.value = sum.toLocaleString();
 
             var totalharpok = 0
             var totalbiaya_usaha = 0
@@ -228,36 +252,36 @@ document.addEventListener('DOMContentLoaded', function() {
             var pengurangsub_jumlah = 0
 
             $(".sub_harpok").each(function() {
-                totalharpok += +$(this).val();
+                totalharpok += +$(this).val().replace(/,/g, '');
             });
             $(".sub_biaya_usaha").each(function() {
-                totalbiaya_usaha += +$(this).val();
+                totalbiaya_usaha += +$(this).val().replace(/,/g, '');
             });
             $(".sub_biaya_luar").each(function() {
-                totalbiaya_luar += +$(this).val();
+                totalbiaya_luar += +$(this).val().replace(/,/g, '');
             });
             $(".jumlahtotal").each(function() {
-                totalsub_jumlah += +$(this).val();
+                totalsub_jumlah += +$(this).val().replace(/,/g, '');
             });
 
             $(".pengurangan_harpok").each(function() {
-                pengurangharpok += +$(this).val();
+                pengurangharpok += +$(this).val().replace(/,/g, '');
             });
             $(".pengurangan_biayausaha").each(function() {
-                pengurangbiaya_usaha += +$(this).val();
+                pengurangbiaya_usaha += +$(this).val().replace(/,/g, '');
             });
             $(".pengurangan_biayaluar").each(function() {
-                pengurangbiaya_luar += +$(this).val();
+                pengurangbiaya_luar += +$(this).val().replace(/,/g, '');
             });
             $(".pengurangan_subjum").each(function() {
-                pengurangsub_jumlah += +$(this).val();
+                pengurangsub_jumlah += +$(this).val().replace(/,/g, '');
             });
 
             const totalharpoknol = totalharpok-pengurangharpok;
             if(totalharpoknol<0){
                 $('.total_harpok').val(0);
             }else{
-                $('.total_harpok').val(totalharpoknol);
+                $('.total_harpok').val(totalharpoknol.toLocaleString());
             }
             
             const totalbiayausahanol = totalbiaya_usaha-pengurangbiaya_usaha;
@@ -300,7 +324,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     class="form-control" />
             </td>
             <td class="text-center">
-                <input required autocomplete="off" type="number" name="kreditnpwp[]" id="kreditnpwp[]" min="0"
+                <input required autocomplete="off" type="text" name="kreditnpwp[]" id="kreditnpwp[]" min="0"
                     class="form-control" />
             </td>
             <td class="text-center">
@@ -308,11 +332,17 @@ document.addEventListener('DOMContentLoaded', function() {
                     class="form-control" />
             </td>
             <td class="text-center">
-                <input required autocomplete="off" type="number" name="kreditrp[]" id="kreditrp[]" min="0"
+                <input required autocomplete="off"
+                    onkeyup="this.value=sprator(this.value);"
+                    type="text" name="kreditrp[]"
+                    id="kreditrp[]" min="0"
                     class="form-control subrupiah" />
             </td>
             <td class="text-center">
-                <input required autocomplete="off" type="number" name="kreditpajak[]" id="kreditpajak[]" min="0"
+                <input required autocomplete="off"
+                    onkeyup="this.value=sprator(this.value);"
+                    type="text" name="kreditpajak[]"
+                    id="kreditpajak[]" min="0"
                     class="form-control subpajak" />
             </td>
             <td class="text-center">
@@ -337,14 +367,14 @@ document.addEventListener('DOMContentLoaded', function() {
             var totalpenghasilan= 0
 
             $(".subrupiah").each(function() {
-                totalrupiah += +$(this).val();
+                totalrupiah += +$(this).val().replace(/,/g, '');
             });
             $(".subpajak").each(function() {
-                totalpenghasilan += +$(this).val();
+                totalpenghasilan += +$(this).val().replace(/,/g, '');
             });
             
-            $('.jumlahrupiah').val(totalrupiah);
-            $('.jumlahpenghasilan').val(totalpenghasilan);
+            $('.jumlahrupiah').val(totalrupiah.toLocaleString());
+            $('.jumlahpenghasilan').val(totalpenghasilan.toLocaleString());
             
         }
     });
@@ -412,15 +442,29 @@ addBtnadd1771iva.addEventListener('click', function() {
     const newRow = `
     <tr>
         <td width="auto" class="text-center">
-            <input required autocomplete="off"
-            type="text"
-            name="jenispenghasilan[]"
-            id="jenispenghasilan[]"
-            class="form-control" />
+        <select id="jenispenghasilan[]"name="jenispenghasilan[]"
+            class="dropdown-groups">
+            <option value="1. BUNGA DEPOSITO / TABUNGAN, DAN DISKONTO SBI / SBN">1. BUNGA DEPOSITO / TABUNGAN, DAN DISKONTO SBI / SBN</option>
+            <option value="2. BUNGA / DISKONTO OBLIGASI">2. BUNGA / DISKONTO OBLIGASI</option>
+            <option value="3. PENGHASILAN PENJUALAN SAHAM YANG DIPERDAGANGKAN DI BURSA EFEK">3. PENGHASILAN PENJUALAN SAHAM YANG DIPERDAGANGKAN DI BURSA EFEK</option>
+            <option value="4. PENGHASILAN PENJUALAN SAHAM MILIK PERUSAHAAN MODAL VENTURA">4. PENGHASILAN PENJUALAN SAHAM MILIK PERUSAHAAN MODAL VENTURA</option>
+            <option value="5. PENGHASILAN USAHA PENYALUR / DEALER / AGEN PRODUK BBM">5. PENGHASILAN USAHA PENYALUR / DEALER / AGEN PRODUK BBM</option>
+            <option value="6. PENGHASILAN PENGALIHAN HAK ATAS TANAH / BANGUNAN">6. PENGHASILAN PENGALIHAN HAK ATAS TANAH / BANGUNAN</option>
+            <option value="7. PENGHASILAN PERSEWAAN ATAS TANAH / BANGUNAN">7. PENGHASILAN PERSEWAAN ATAS TANAH / BANGUNAN</option>
+            <option value="8A. PELAKSANA KONSTRUKSI">8A. PELAKSANA KONSTRUKSI</option>
+            <option value="8B. PERENCANA KONSTRUKSI">8B. PERENCANA KONSTRUKSI</option>
+            <option value="8C. PENGAWAS KONSTRUKSI">8C. PENGAWAS KONSTRUKSI</option>
+            <option value="9. PERWAKILAN DAGANG ASING">9. PERWAKILAN DAGANG ASING</option>
+            <option value="10. PELAYARAN / PENERBANGAN ASING">10. PELAYARAN / PENERBANGAN ASING</option>
+            <option value="11. PELAYARAN DALAM NEGERI">11. PELAYARAN DALAM NEGERI</option>
+            <option value="12. PENILAIAN KEMBALI AKTIVA TETAP">12. PENILAIAN KEMBALI AKTIVA TETAP</option>
+            <option value="13. TRANSAKSI DERIVATIF YANG DIPERDAGANGKAN DI BURSA">13. TRANSAKSI DERIVATIF YANG DIPERDAGANGKAN DI BURSA</option>
+        </select>
         </td>
         <td class="text-center">
             <input required autocomplete="off"
-                type="number"
+                type="text"
+                onkeyup="this.value=sprator(this.value);"
                 name="angka_pengenaan_pajak[]"
                 id="angka_pengenaan_pajak[]"
                 min="0"
@@ -428,7 +472,8 @@ addBtnadd1771iva.addEventListener('click', function() {
         </td>
         <td class="text-center">
             <input required autocomplete="off"
-                type="number"
+                onkeyup="this.value=sprator(this.value);"
+                type="text"
                 name="angka_tarif_potongan[]"
                 id="angka_tarif_potongan[]"
                 min="0"
@@ -436,7 +481,7 @@ addBtnadd1771iva.addEventListener('click', function() {
         </td>
         <td class="text-center">
             <input readonly autocomplete="off"
-                type="number"
+                type="text"
                 name="angka_pph_terutang[]"
                 id="angka_pph_terutang[]" min="0"
                 class="form-control sub_terutang" />
@@ -452,30 +497,37 @@ tablelist_1771IV.addEventListener('input', function(event) {
     const target = event.target;
     if (target.tagName === 'INPUT' && target.name.startsWith('angka')) {
         const row = target.closest('tr');
-        const pengenaanpajak = parseFloat(row.querySelector('input[name="angka_pengenaan_pajak[]"]').value) || 0;
-        const tarif = parseFloat(row.querySelector('input[name="angka_tarif_potongan[]"]').value) || 0;
+        // const pengenaanpajak = parseFloat(row.querySelector('input[name="angka_pengenaan_pajak[]"]').value) || 0;
+        const pengenaanpajak = $(row.querySelector('[name="angka_pengenaan_pajak[]"]')).val();
+        retValpengenaanpajak=pengenaanpajak ? parseFloat(pengenaanpajak.replace(/,/g, '')) : 0;
+
+        // const tarif = parseFloat(row.querySelector('input[name="angka_tarif_potongan[]"]').value) || 0;
+        const tarif = $(row.querySelector('[name="angka_tarif_potongan[]"]')).val();
+        retValtarif=tarif ? parseFloat(tarif.replace(/,/g, '')) : 0;
+
         const hasiljumlah1 = row.querySelector('input[name="angka_pph_terutang[]"]');
-        const sum = pengenaanpajak * tarif/100;
-        hasiljumlah1.value = sum;
+
+        const sum = retValpengenaanpajak * retValtarif/100;
+        hasiljumlah1.value = sum.toLocaleString();
 
         var total_pengenaanpajak = 0
         var total_tarifpotongan = 0
         var totalterutang = 0
 
         $(".sub_pengenaanpajak").each(function() {
-            total_pengenaanpajak += +$(this).val();
+            total_pengenaanpajak += +$(this).val().replace(/,/g, '');
         });
         $(".sub_tarifpotongan").each(function() {
-            total_tarifpotongan += +$(this).val();
+            total_tarifpotongan += +$(this).val().replace(/,/g, '');
         });
         
         $(".sub_terutang").each(function() {
-            totalterutang += +$(this).val();
+            totalterutang += +$(this).val().replace(/,/g, '');
         });
 
-        $('.total_kena_pajak').val(total_pengenaanpajak);
-        $('.total_tarif_potongan').val(total_tarifpotongan);
-        $('.total_terutang').val(totalterutang);
+        $('.total_kena_pajak').val(total_pengenaanpajak.toLocaleString());
+        $('.total_tarif_potongan').val(total_tarifpotongan.toLocaleString());
+        $('.total_terutang').val(totalterutang.toLocaleString());
 
     }
 });
@@ -500,7 +552,8 @@ addBtnadd1771ivb.addEventListener('click', function() {
         </td>
         <td class="text-center">
             <input required autocomplete="off"
-                type="number"
+                onkeyup="this.value=sprator(this.value);"
+                type="text"
                 name="angka_penghasilan_bruto[]"
                 id="angka_penghasilan_bruto[]"
                 min="0"
@@ -520,10 +573,10 @@ tablelist_1771IVB.addEventListener('input', function(event) {
         var total_bruto = 0
 
         $(".sub_penghasilan_bruto").each(function() {
-            total_bruto += +$(this).val();
+            total_bruto += +$(this).val().replace(/,/g, '');
         });
     
-        $('.total_bruto').val(total_bruto);
+        $('.total_bruto').val(total_bruto.toLocaleString());
 
     }
 });
@@ -580,14 +633,15 @@ addBtnaddlist1771V.addEventListener('click', function() {
         </td>
         <td class="text-center">
             <input required autocomplete="off"
-                type="number"
+                type="text"
                 name="pemegangsh_npwp_1771V[]"
                 id="pemegangsh_npwp_1771V[]" min="0"
                 class="form-control" />
         </td>
         <td class="text-center">
             <input required autocomplete="off"
-                type="number"
+                type="text"
+                onkeyup="this.value=sprator(this.value);"
                 name="pemegangsh_modalsetor_1771V[]"
                 id="pemegangsh_modalsetor_1771V[]"
                 min="0"
@@ -595,14 +649,16 @@ addBtnaddlist1771V.addEventListener('click', function() {
         </td>
         <td class="text-center">
             <input required autocomplete="off"
-                type="number"
+                onkeyup="this.value=sprator(this.value);"
+                type="text"
                 name="pemegangsh_persen_1771V[]"
                 id="pemegangsh_persen_1771V[]"
                 min="0" class="form-control" />
         </td>
         <td class="text-center">
             <input required autocomplete="off"
-                type="number"
+                onkeyup="this.value=sprator(this.value);"
+                type="text"
                 name="pemegangsh_dividen_1771V[]"
                 id="pemegangsh_dividen_1771V[]"
                 min="0" class="form-control subdividen177v_a" />
@@ -621,15 +677,15 @@ tablelist1771V.addEventListener('input', function(event) {
 
         var totalmodalsetor = 0
         $(".submodalsetor1771v_a").each(function() {
-            totalmodalsetor += +$(this).val();
+            totalmodalsetor += +$(this).val().replace(/,/g, '');
         });
         var totaldividen = 0
         $(".subdividen177v_a").each(function() {
-            totaldividen += +$(this).val();
+            totaldividen += +$(this).val().replace(/,/g, '');
         });
 
-        $('.total_modalsetor').val(totalmodalsetor);
-        $('.total_dividen').val(totaldividen);
+        $('.total_modalsetor').val(totalmodalsetor.toLocaleString());
+        $('.total_dividen').val(totaldividen.toLocaleString());
     }
 });
 tablelist1771V.addEventListener('click', function(event) {
@@ -656,7 +712,7 @@ addBtnaddlist1771Vb.addEventListener('click', function() {
                 class="form-control"/>
         </td>
         <td class="text-center">
-            <input required autocomplete="off" type="number"
+            <input required autocomplete="off" type="text"
                 name="pemegangshb_npwp_1771V[]"
                 id="pemegangsh_npwpb_1771V[]" min="0"
                 class="form-control"/>
@@ -735,22 +791,24 @@ addBtnaddlist1771VI.addEventListener('click', function() {
                 class="form-control"/>
         </td>
         <td class="text-center">
-            <input required autocomplete="off" type="number"
-                name="penyertaan_npwp[]"
+            <input required autocomplete="off"
+                type="text" name="penyertaan_npwp[]"
                 id="penyertaan_npwp[]" min="0"
-                class="form-control"/>
+                class="form-control" />
         </td>
         <td class="text-center">
-            <input required autocomplete="off" type="number"
-                name="penyertaan_modal[]"
+            <input required autocomplete="off"
+                type="text" name="penyertaan_modal[]"
+                onkeyup="this.value=sprator(this.value);"
                 id="penyertaan_modal[]" min="0"
-                class="form-control submodalafiliasi"/>
+                class="form-control submodalafiliasi" />
         </td>
         <td class="text-center">
-            <input required autocomplete="off" type="number"
-                name="penyertaan_persen[]"
+            <input required autocomplete="off"
+                onkeyup="this.value=sprator(this.value);"
+                type="text" name="penyertaan_persen[]"
                 id="penyertaan_persen[]" min="0"
-                class="form-control"/>
+                class="form-control" />
         </td>
         <td><button type="button" class="btn btn-danger btn-remove-1771VI"><i
             class="fa fa-trash"></i>
@@ -770,10 +828,10 @@ tablelist1771VI.addEventListener('input', function(event) {
         // hasiljumlah1.value = sum;
         var totalmodalafiliasi = 0
         $(".submodalafiliasi").each(function() {
-            totalmodalafiliasi += +$(this).val();
+            totalmodalafiliasi += +$(this).val().replace(/,/g, '');
         });
 
-        $('.total_modalafiliasi').val(totalmodalafiliasi);
+        $('.total_modalafiliasi').val(totalmodalafiliasi.toLocaleString());
     }
 });
 tablelist1771VI.addEventListener('click', function(event) {
@@ -795,13 +853,14 @@ addBtnaddlist1771VIb.addEventListener('click', function() {
                 class="form-control"/>
         </td>
         <td class="text-center">
-            <input required autocomplete="off" type="number"
+            <input required autocomplete="off" type="text"
                 name="penyertaan_npwpb[]"
                 id="penyertaan_npwpb[]" min="0"
                 class="form-control"/>
         </td>
         <td class="text-center">
-            <input required autocomplete="off" type="number"
+            <input required autocomplete="off" type="text"
+                onkeyup="this.value=sprator(this.value);"
                 name="penyertaan_jumlahpinjamanb[]"
                 id="penyertaan_jumlahpinjamanb[]" min="0"
                 class="form-control"/>
@@ -813,7 +872,8 @@ addBtnaddlist1771VIb.addEventListener('click', function() {
                 class="form-control"/>
         </td>
         <td class="text-center">
-            <input required autocomplete="off" type="number"
+            <input required autocomplete="off" type="text"
+                onkeyup="this.value=sprator(this.value);"
                 name="penyertaan_bungapinjamanb[]"
                 id="penyertaan_bungapinjamanb[]" min="0"
                 class="form-control"/>
@@ -850,14 +910,15 @@ addBtnaddlist1771VIc.addEventListener('click', function() {
                 class="form-control"/>
         </td>
         <td class="text-center">
-            <input required autocomplete="off" type="number"
+            <input required autocomplete="off" type="text"
                 name="penyertaan_npwpc[]"
                 id="penyertaan_npwpc[]" min="0"
                 class="form-control"/>
         </td>
         <td class="text-center">
-            <input required autocomplete="off" type="number"
-                name="penyertaan_jumlahpinjamanc[]"
+            <input required autocomplete="off" type="text"
+            onkeyup="this.value=sprator(this.value);"
+            name="penyertaan_jumlahpinjamanc[]"
                 id="penyertaan_jumlahpinjamanc[]" min="0"
                 class="form-control"/>
         </td>
@@ -868,8 +929,9 @@ addBtnaddlist1771VIc.addEventListener('click', function() {
                 class="form-control"/>
         </td>
         <td class="text-center">
-            <input required autocomplete="off" type="number"
-                name="penyertaan_bungapinjamanc[]"
+            <input required autocomplete="off" type="text"
+            onkeyup="this.value=sprator(this.value);"
+            name="penyertaan_bungapinjamanc[]"
                 id="penyertaan_bungapinjamanc[]" min="0"
                 class="form-control"/>
         </td>
@@ -936,4 +998,184 @@ function laporankeuangan() {
         nama_konsultan_pajak.disabled = false;
         npwp_konsultan_pajak.disabled = false;
     }
+}
+function sprator(x) {
+    //remove commas
+    retVal = x ? parseFloat(x.replace(/,/g, '')) : 0;
+    const a1_kena_pajak = $('#a1_kena_pajak').val();
+    const a2_kena_pajak = $('#a2_kena_pajak').val();
+    retVala1_kena_pajak=a1_kena_pajak ? parseFloat(a1_kena_pajak.replace(/,/g, '')) : 0;
+    retVala2_kena_pajak=a2_kena_pajak ? parseFloat(a2_kena_pajak.replace(/,/g, '')) : 0;
+    const hasilkenapajak = retVala1_kena_pajak+retVala2_kena_pajak;
+    const resulta3_kena_pajak = document.getElementById('a3_kena_pajak');
+    resulta3_kena_pajak.value = hasilkenapajak.toLocaleString();
+    
+    const hasilpphterutang = hasilkenapajak*22/100;
+    const resultb4_pph_terutang = document.getElementById('b4_pph_terutang');
+    resultb4_pph_terutang.value = hasilpphterutang.toLocaleString();
+
+    const b5_pph_terutang = $('#b5_pph_terutang').val();
+    retValb5_pph_terutang=b5_pph_terutang ? parseFloat(b5_pph_terutang.replace(/,/g, '')) : 0;
+    const jumlahpphterutang =hasilpphterutang+retValb5_pph_terutang;
+    console.log(jumlahpphterutang);
+    const resultb6_pph_terutang = document.getElementById('b6_pph_terutang');
+    resultb6_pph_terutang.value = jumlahpphterutang.toLocaleString();
+
+    const c8a_kredit_pajak = $('#c8a_kredit_pajak').val();
+    const c8b_kredit_pajak = $('#c8b_kredit_pajak').val();
+    retValc8a_kredit_pajak=c8a_kredit_pajak ? parseFloat(c8a_kredit_pajak.replace(/,/g, '')) : 0;
+    retValc8b_kredit_pajak=c8b_kredit_pajak ? parseFloat(c8b_kredit_pajak.replace(/,/g, '')) : 0;
+    const jumlahkreditpjk = retValc8a_kredit_pajak+retValc8b_kredit_pajak;
+    const resultc8c_kredit_pajak = document.getElementById('c8c_kredit_pajak');
+    resultc8c_kredit_pajak.value = jumlahkreditpjk.toLocaleString();
+
+    const c7_kredit_pajak = $('#c7_kredit_pajak').val();
+    retValc7_kredit_pajak=c7_kredit_pajak ? parseFloat(c7_kredit_pajak.replace(/,/g, '')) : 0;
+    const resultc9_kredit_pajak = document.getElementById('c9_kredit_pajak');
+    const jumlah9 = jumlahpphterutang-retValc7_kredit_pajak-jumlahkreditpjk;
+    if(jumlah9<0){
+        resultc9_kredit_pajak.value = 0;
+    }else{
+        resultc9_kredit_pajak.value = jumlah9.toLocaleString();
+    }
+    
+    const c10a_kredit_pajak = $('#c10a_kredit_pajak').val();
+    const c10b_kredit_pajak = $('#c10b_kredit_pajak').val();
+    retValc10a_kredit_pajak=c10a_kredit_pajak ? parseFloat(c10a_kredit_pajak.replace(/,/g, '')) : 0;
+    retValc10b_kredit_pajak=c10b_kredit_pajak ? parseFloat(c10b_kredit_pajak.replace(/,/g, '')) : 0;
+    const jumlah10 = retValc10a_kredit_pajak+retValc10b_kredit_pajak;
+    const resultc10c_kredit_pajak = document.getElementById('c10c_kredit_pajak');
+    resultc10c_kredit_pajak.value = jumlah10.toLocaleString();
+
+    const jumlah11 = jumlah9-jumlah10;
+    const resultd11_pph_kurang = document.getElementById('d11_pph_kurang');
+    if(jumlah11<0){
+        resultd11_pph_kurang.value = 0;
+    }else{
+        resultd11_pph_kurang.value = jumlah11.toLocaleString();
+    }
+
+    const e14a_angsuran_pph = $('#e14a_angsuran_pph').val();
+    const e14b_angsuran_pph = $('#e14b_angsuran_pph').val();
+    retVale14a_angsuran_pph=e14a_angsuran_pph ? parseFloat(e14a_angsuran_pph.replace(/,/g, '')) : 0;
+    retVale14b_angsuran_pph=e14b_angsuran_pph ? parseFloat(e14b_angsuran_pph.replace(/,/g, '')) : 0;
+    const jumlah14 = retVale14a_angsuran_pph-retVale14b_angsuran_pph;
+    const resulte14c_angsuran_pph = document.getElementById('e14c_angsuran_pph');
+    if(jumlah14<0){
+        resulte14c_angsuran_pph.value = 0;
+    }else{
+        resulte14c_angsuran_pph.value = jumlah14.toLocaleString();
+    }
+    const jumlah14d = retVale14a_angsuran_pph*22/100;
+    const resulte14d_angsuran_pph = document.getElementById('e14d_angsuran_pph');
+    resulte14d_angsuran_pph.value = jumlah14d.toLocaleString();
+
+    const e14e_angsuran_pph = $('#e14e_angsuran_pph').val();
+    retVale14e_angsuran_pph=e14e_angsuran_pph ? parseFloat(e14e_angsuran_pph.replace(/,/g, '')) : 0;
+    const jumlah14f = jumlah14d-retVale14e_angsuran_pph;
+    const resulte14f_angsuran_pph = document.getElementById('e14f_angsuran_pph');
+    if(jumlah14f<0){
+        resulte14f_angsuran_pph.value = 0;
+    }else{
+        resulte14f_angsuran_pph.value = jumlah14f.toLocaleString();
+    }
+    const jumlah14g = jumlah14f/12;
+    const resulte14g_angsuran_pph = document.getElementById('e14g_angsuran_pph');
+    if(jumlah14g<0){
+        resulte14g_angsuran_pph.value = 0;
+    }else{
+        resulte14g_angsuran_pph.value = jumlah14g.toLocaleString();
+    }
+    
+    const a1_penghasilan_netto_1771i = $('#a1_penghasilan_netto_1771i').val();
+    const b1_penghasilan_netto_1771i = $('#b1_penghasilan_netto_1771i').val();
+    const c1_penghasilan_netto_1771i = $('#c1_penghasilan_netto_1771i').val();
+    retVala1_penghasilan_netto_1771i=a1_penghasilan_netto_1771i ? parseFloat(a1_penghasilan_netto_1771i.replace(/,/g, '')) : 0;
+    retValb1_penghasilan_netto_1771i=b1_penghasilan_netto_1771i ? parseFloat(b1_penghasilan_netto_1771i.replace(/,/g, '')) : 0;
+    retValc1_penghasilan_netto_1771i=c1_penghasilan_netto_1771i ? parseFloat(c1_penghasilan_netto_1771i.replace(/,/g, '')) : 0;
+    const jumlah1d =retVala1_penghasilan_netto_1771i-retValb1_penghasilan_netto_1771i-retValc1_penghasilan_netto_1771i;
+    const resultd1_penghasilan_netto_1771i= document.getElementById('d1_penghasilan_netto_1771i');
+    if(jumlah1d<0){
+        resultd1_penghasilan_netto_1771i.value = 0;
+    }else{
+        resultd1_penghasilan_netto_1771i.value = jumlah1d.toLocaleString();
+    }
+
+    const e1_penghasilan_netto_1771i = $('#e1_penghasilan_netto_1771i').val();
+    const f1_penghasilan_netto_1771i = $('#f1_penghasilan_netto_1771i').val();
+    retVale1_penghasilan_netto_1771i=e1_penghasilan_netto_1771i ? parseFloat(e1_penghasilan_netto_1771i.replace(/,/g, '')) : 0;
+    retValf1_penghasilan_netto_1771i=f1_penghasilan_netto_1771i ? parseFloat(f1_penghasilan_netto_1771i.replace(/,/g, '')) : 0;
+    const jumlah1g =retVale1_penghasilan_netto_1771i-retValf1_penghasilan_netto_1771i;
+    const resultg1_penghasilan_netto_1771i= document.getElementById('g1_penghasilan_netto_1771i');
+    if(jumlah1g<0){
+        resultg1_penghasilan_netto_1771i.value = 0;
+    }else{
+        resultg1_penghasilan_netto_1771i.value = jumlah1g.toLocaleString();
+    }
+
+    const jumlah1h =jumlah1d+jumlah1g;
+    const resulth1_penghasilan_netto_1771i= document.getElementById('h1_penghasilan_netto_1771i');
+    resulth1_penghasilan_netto_1771i.value = jumlah1h.toLocaleString();
+
+    const penghasilan_netto_luar_negeri_1771i = $('#penghasilan_netto_luar_negeri_1771i').val();
+    retValpenghasilan_netto_luar_negeri_1771i=penghasilan_netto_luar_negeri_1771i ? parseFloat(penghasilan_netto_luar_negeri_1771i.replace(/,/g, '')) : 0;
+    const jumlah3 =jumlah1h+retValpenghasilan_netto_luar_negeri_1771i;
+    const resultjumlah_1771i= document.getElementById('jumlah_1771i');
+    resultjumlah_1771i.value = jumlah3.toLocaleString();
+
+    const a5_penyesuaian_fiskal_1771i = $('#a5_penyesuaian_fiskal_1771i').val();
+    const b5_penyesuaian_fiskal_1771i = $('#b5_penyesuaian_fiskal_1771i').val();
+    const c5_penyesuaian_fiskal_1771i = $('#c5_penyesuaian_fiskal_1771i').val();
+    const d5_penyesuaian_fiskal_1771i = $('#d5_penyesuaian_fiskal_1771i').val();
+    const e5_penyesuaian_fiskal_1771i = $('#e5_penyesuaian_fiskal_1771i').val();
+    const f5_penyesuaian_fiskal_1771i = $('#f5_penyesuaian_fiskal_1771i').val();
+    const g5_penyesuaian_fiskal_1771i = $('#g5_penyesuaian_fiskal_1771i').val();
+    const h5_penyesuaian_fiskal_1771i = $('#h5_penyesuaian_fiskal_1771i').val();
+    const i5_penyesuaian_fiskal_1771i = $('#i5_penyesuaian_fiskal_1771i').val();
+    const j5_penyesuaian_fiskal_1771i = $('#j5_penyesuaian_fiskal_1771i').val();
+    const k5_penyesuaian_fiskal_1771i = $('#k5_penyesuaian_fiskal_1771i').val();
+    const l5_penyesuaian_fiskal_1771i = $('#l5_penyesuaian_fiskal_1771i').val();
+    retVala5_penyesuaian_fiskal_1771i=a5_penyesuaian_fiskal_1771i ? parseFloat(a5_penyesuaian_fiskal_1771i.replace(/,/g, '')) : 0;
+    retValb5_penyesuaian_fiskal_1771i=b5_penyesuaian_fiskal_1771i ? parseFloat(b5_penyesuaian_fiskal_1771i.replace(/,/g, '')) : 0;
+    retValc5_penyesuaian_fiskal_1771i=c5_penyesuaian_fiskal_1771i ? parseFloat(c5_penyesuaian_fiskal_1771i.replace(/,/g, '')) : 0;
+    retVald5_penyesuaian_fiskal_1771i=d5_penyesuaian_fiskal_1771i ? parseFloat(d5_penyesuaian_fiskal_1771i.replace(/,/g, '')) : 0;
+    retVale5_penyesuaian_fiskal_1771i=e5_penyesuaian_fiskal_1771i ? parseFloat(e5_penyesuaian_fiskal_1771i.replace(/,/g, '')) : 0;
+    retValf5_penyesuaian_fiskal_1771i=f5_penyesuaian_fiskal_1771i ? parseFloat(f5_penyesuaian_fiskal_1771i.replace(/,/g, '')) : 0;
+    retValg5_penyesuaian_fiskal_1771i=g5_penyesuaian_fiskal_1771i ? parseFloat(g5_penyesuaian_fiskal_1771i.replace(/,/g, '')) : 0;
+    retValh5_penyesuaian_fiskal_1771i=h5_penyesuaian_fiskal_1771i ? parseFloat(h5_penyesuaian_fiskal_1771i.replace(/,/g, '')) : 0;
+    retVali5_penyesuaian_fiskal_1771i=i5_penyesuaian_fiskal_1771i ? parseFloat(i5_penyesuaian_fiskal_1771i.replace(/,/g, '')) : 0;
+    retValj5_penyesuaian_fiskal_1771i=j5_penyesuaian_fiskal_1771i ? parseFloat(j5_penyesuaian_fiskal_1771i.replace(/,/g, '')) : 0;
+    retValk5_penyesuaian_fiskal_1771i=k5_penyesuaian_fiskal_1771i ? parseFloat(k5_penyesuaian_fiskal_1771i.replace(/,/g, '')) : 0;
+    retVall5_penyesuaian_fiskal_1771i=l5_penyesuaian_fiskal_1771i ? parseFloat(l5_penyesuaian_fiskal_1771i.replace(/,/g, '')) : 0;
+
+    const jumlah5m=retVall5_penyesuaian_fiskal_1771i+retValk5_penyesuaian_fiskal_1771i+retValj5_penyesuaian_fiskal_1771i+retVali5_penyesuaian_fiskal_1771i+retVala5_penyesuaian_fiskal_1771i+retValb5_penyesuaian_fiskal_1771i+retValc5_penyesuaian_fiskal_1771i+retVald5_penyesuaian_fiskal_1771i+retVale5_penyesuaian_fiskal_1771i+retValf5_penyesuaian_fiskal_1771i+retValg5_penyesuaian_fiskal_1771i+retValh5_penyesuaian_fiskal_1771i;
+    const resultm5_penyesuaian_fiskal_1771i= document.getElementById('m5_penyesuaian_fiskal_1771i');
+    resultm5_penyesuaian_fiskal_1771i.value = jumlah5m.toLocaleString();
+    
+    const a6_fiskal_negatif_1771i = $('#a6_fiskal_negatif_1771i').val();
+    const b6_fiskal_negatif_1771i = $('#b6_fiskal_negatif_1771i').val();
+    const c6_fiskal_negatif_1771i = $('#c6_fiskal_negatif_1771i').val();
+    const d6_fiskal_negatif_1771i = $('#d6_fiskal_negatif_1771i').val();
+    retVala6_fiskal_negatif_1771i=a6_fiskal_negatif_1771i ? parseFloat(a6_fiskal_negatif_1771i.replace(/,/g, '')) : 0;
+    retValb6_fiskal_negatif_1771i=b6_fiskal_negatif_1771i ? parseFloat(b6_fiskal_negatif_1771i.replace(/,/g, '')) : 0;
+    retValc6_fiskal_negatif_1771i=c6_fiskal_negatif_1771i ? parseFloat(c6_fiskal_negatif_1771i.replace(/,/g, '')) : 0;
+    retVald6_fiskal_negatif_1771i=d6_fiskal_negatif_1771i ? parseFloat(d6_fiskal_negatif_1771i.replace(/,/g, '')) : 0;
+
+    const jumlah6e=retVala6_fiskal_negatif_1771i+retValb6_fiskal_negatif_1771i+retValc6_fiskal_negatif_1771i+retVald6_fiskal_negatif_1771i;
+    const resulte6_fiskal_negatif_1771i= document.getElementById('e6_fiskal_negatif_1771i');
+    resulte6_fiskal_negatif_1771i.value = jumlah6e.toLocaleString();
+
+    const penghasilan_1771i = $('#penghasilan_1771i').val();
+    jumlah4=penghasilan_1771i ? parseFloat(penghasilan_1771i.replace(/,/g, '')) : 0;
+    const fasilitas_1771i = $('#fasilitas_1771i').val();
+    jumlah7=fasilitas_1771i ? parseFloat(fasilitas_1771i.replace(/,/g, '')) : 0;
+    const resultnetto_fiskal_1771i= document.getElementById('netto_fiskal_1771i');
+
+    const jumlah8 = jumlah3-jumlah4+jumlah5m-jumlah6e-jumlah7;
+    if(jumlah8<0){
+        resultnetto_fiskal_1771i.value = 0;
+    }else{
+        resultnetto_fiskal_1771i.value = jumlah8.toLocaleString();
+    }
+    return retVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }

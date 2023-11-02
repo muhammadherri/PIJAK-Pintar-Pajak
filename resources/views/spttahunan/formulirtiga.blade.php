@@ -3028,11 +3028,11 @@ tags will be replaced.-->
   <td colspan=10 class=xl11127615 style='border-right:.5pt solid black;
   border-left:none'>{{$row->jenis_transaksi}}&nbsp;</td>
   <td colspan=9 class=xl11127615 style='border-right:.5pt solid black;
-  border-left:none'>{{$row->biaya}}&nbsp;</td>
+  border-left:none'>{{number_format($row->biaya)}}&nbsp;</td>
   <td colspan=10 class=xl11127615 style='border-right:.5pt solid black;
-  border-left:none'>{{$row->pajak_penghasilan}}&nbsp;</td>
+  border-left:none'>{{number_format($row->pajak_penghasilan)}}&nbsp;</td>
   <td colspan=8 class=xl11127615 style='border-right:.5pt solid black;
-  border-left:none'>{{$row->bukti_no_pemotong}}&nbsp;</td>
+  border-left:none'>{{number_format($row->bukti_no_pemotong)}}&nbsp;</td>
   <td colspan=7 class=xl11127615 style='border-right:.5pt solid black;
   border-left:none'>{{date('d-M-Y',strtotime($row->tgl_bukti_pemotong))}}&nbsp;</td>
  </tr>
@@ -3047,9 +3047,9 @@ tags will be replaced.-->
     <td colspan=10 class=xl12127615 style='border-right:.5pt solid black;
     border-left:none'>&nbsp;</td>
     <td colspan=9 class=xl12127615 style='border-right:.5pt solid black;
-    border-left:none'>{{$spt->jumlah_biaya_dalam_rupiah}}&nbsp;</td>
+    border-left:none'>{{number_format($spt->jumlah_biaya_dalam_rupiah)}}&nbsp;</td>
     <td colspan=10 class=xl12127615 style='border-right:.5pt solid black;
-    border-left:none'>{{$spt->jumlah_pajak_penghasil_yang_dipotong}}&nbsp;</td>
+    border-left:none'>{{number_format($spt->jumlah_pajak_penghasil_yang_dipotong)}}&nbsp;</td>
     <td colspan=8 class=xl12127615 style='border-right:.5pt solid black;
     border-left:none'>&nbsp;</td>
     <td colspan=7 class=xl12127615 style='border-right:.5pt solid black;

@@ -6698,9 +6698,9 @@ tags will be replaced.-->
   <td colspan=3 class=xl22528746 width=39 style='width:30pt'>&nbsp;</td>
   <td colspan=35 class=xl27728746 width=329 style='border-left:none;width:245pt'>&nbsp;{{$row->penerima_penghasilan}}</td>
   <td colspan=9 class=xl27828746 width=75 style='border-left:none;width:55pt'>&nbsp;{{$row->kode_objek}}</td>
-  <td colspan=10 class=xl27828746 width=88 style='border-left:none;width:65pt'>&nbsp;{{$row->jumlah_penerima_penghasilan}}</td>
-  <td colspan=13 class=xl27828746 width=169 style='border-left:none;width:130pt'>&nbsp;{{$row->jumlah_penghasilan_bruto}}</td>
-  <td colspan=11 class=xl27828746 width=141 style='border-left:none;width:107pt'>&nbsp;{{$row->jumlah_pajak_dipotong}}</td>
+  <td colspan=10 class=xl27828746 width=88 style='border-left:none;width:65pt'>&nbsp;{{number_format($row->jumlah_penerima_penghasilan)}}</td>
+  <td colspan=13 class=xl27828746 width=169 style='border-left:none;width:130pt'>&nbsp;{{number_format($row->jumlah_penghasilan_bruto)}}</td>
+  <td colspan=11 class=xl27828746 width=141 style='border-left:none;width:107pt'>&nbsp;{{number_format($row->jumlah_pajak_dipotong)}}</td>
   <td class=xl8728746 width=5 style='width:3pt'></td>
   <td class=xl8728746 width=20 style='width:15pt'></td>
  </tr>
@@ -6712,9 +6712,9 @@ tags will be replaced.-->
   <td colspan=3 class=xl22528746 width=39 style='width:30pt'>&nbsp;</td>
   <td colspan=35 class=xl27728746 width=329 style='border-left:none;width:245pt'>&nbsp;<b>JUMLAH</b></td>
   <td colspan=9 class=xl27828746 width=75 style='border-left:none;width:55pt'>&nbsp;</td>
-  <td colspan=10 class=xl27928746 style='border-left:none'>&nbsp;{{$spt->jumlah_penerima_penghasilan_b}}</td>
-  <td colspan=13 class=xl27828746 width=169 style='border-left:none;width:130pt'>&nbsp;{{$spt->jumlah_penghasilan_bruto_b}}</td>
-  <td colspan=11 class=xl27828746 width=141 style='border-left:none;width:107pt'>&nbsp;{{$spt->jumlah_pajak_dipotong_b}}</td>
+  <td colspan=10 class=xl27928746 style='border-left:none'>&nbsp;{{number_format($spt->jumlah_penerima_penghasilan_b)}}</td>
+  <td colspan=13 class=xl27828746 width=169 style='border-left:none;width:130pt'>&nbsp;{{number_format($spt->jumlah_penghasilan_bruto_b)}}</td>
+  <td colspan=11 class=xl27828746 width=141 style='border-left:none;width:107pt'>&nbsp;{{number_format($spt->jumlah_pajak_dipotong_b)}}</td>
   <td class=xl8728746 width=5 style='width:3pt'></td>
   <td class=xl8728746 width=20 style='width:15pt'></td>
  </tr>
@@ -6752,7 +6752,7 @@ tags will be replaced.-->
   <td class=xl16428746 style='border-top:none'>&nbsp;</td>
   <td colspan=2 class=xl24928746 style='border-right:.5pt solid black'>B.01</td>
   <td colspan=11 class=xl24328746 width=141 style='border-right:1.0pt solid black;
-  border-left:none;width:107pt'>&nbsp;{{$spt->pokok_pajak}}</td>
+  border-left:none;width:107pt'>&nbsp;{{number_format($spt->pokok_pajak)}}</td>
   <td class=xl8728746 width=5 style='width:3pt'></td>
   <td class=xl8728746 width=20 style='width:15pt'></td>
  </tr>
@@ -6946,7 +6946,7 @@ tags will be replaced.-->
   <td class=xl7328746></td>
   <td class=xl12728746 colspan=2 style='border-right:.5pt solid black'>B.03</td>
   <td colspan=11 rowspan=2 class=xl24628746 width=141 style='border-right:1.0pt solid black;
-  width:107pt'>&nbsp;{{$spt->masa_pajak_pokok}}</td>
+  width:107pt'>&nbsp;{{number_format($spt->masa_pajak_pokok)}}</td>
   <td class=xl8728746 width=5 style='width:3pt'></td>
   <td class=xl8728746 width=20 style='width:15pt'></td>
  </tr>
@@ -7131,7 +7131,7 @@ tags will be replaced.-->
   <td class=xl17928746>&nbsp;</td>
   <td class=xl18128746 colspan=2 style='border-right:.5pt solid black'>B.04</td>
   <td colspan=11 class=xl24328746 width=141 style='border-right:1.0pt solid black;
-  border-left:none;width:107pt'>&nbsp;{{$spt->jumlah_objekpajak}}</td>
+  border-left:none;width:107pt'>&nbsp;{{number_format($spt->jumlah_objekpajak)}}</td>
   <td class=xl8728746 width=5 style='width:3pt'></td>
   <td class=xl8728746 width=20 style='width:15pt'></td>
  </tr>
@@ -7148,7 +7148,7 @@ tags will be replaced.-->
   <td class=xl17928746 style='border-top:none'>&nbsp;</td>
   <td class=xl18128746 colspan=2 style='border-right:.5pt solid black'>B.05</td>
   <td colspan=11 class=xl24628746 width=141 style='border-right:1.0pt solid black;
-  border-left:none;width:107pt'>&nbsp;{{$spt->kurang_lebih_setor}}</td>
+  border-left:none;width:107pt'>&nbsp;{{number_format($spt->kurang_lebih_setor)}}</td>
   <td class=xl8728746 width=5 style='width:3pt'></td>
   <td class=xl8728746 width=20 style='width:15pt'></td>
  </tr>
@@ -7178,7 +7178,7 @@ tags will be replaced.-->
   <td colspan=2 class=xl22928746 width=26 style='border-right:.5pt solid black;
   width:20pt'>B.06</td>
   <td colspan=11 class=xl26428746 width=141 style='border-right:1.0pt solid black;
-  border-left:none;width:107pt'>&nbsp;{{$spt->spt_dibetulkan}}</td>
+  border-left:none;width:107pt'>&nbsp;{{number_format($spt->spt_dibetulkan)}}</td>
   <td class=xl8728746 width=5 style='width:3pt'></td>
   <td class=xl8728746 width=20 style='width:15pt'></td>
  </tr>
@@ -7196,7 +7196,7 @@ tags will be replaced.-->
   <td colspan=2 class=xl22928746 width=26 style='border-right:.5pt solid black;
   width:20pt'>B.07</td>
   <td colspan=11 class=xl24028746 width=141 style='border-right:1.0pt solid black;
-  border-left:none;width:107pt'>&nbsp;{{$spt->spt_pembetulan}}</td>
+  border-left:none;width:107pt'>&nbsp;{{number_format($spt->spt_pembetulan)}}</td>
   <td class=xl8728746 width=5 style='width:3pt'></td>
   <td class=xl8728746 width=20 style='width:15pt'></td>
  </tr>

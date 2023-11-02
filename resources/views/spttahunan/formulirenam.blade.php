@@ -3096,9 +3096,9 @@ tags will be replaced.-->
     <td colspan=8 class=xl16324627 style='border-right:.5pt solid black;
     border-left:none'>{{$row->no_npwp}}&nbsp;</td>
     <td colspan=8 class=xl16324627 style='border-right:.5pt solid black;
-    border-left:none'>{{$row->modal_setor}}&nbsp;</td>
+    border-left:none'>{{number_format($row->modal_setor)}}&nbsp;</td>
     <td colspan=2 class=xl16324627 style='border-right:.5pt solid black;
-    border-left:none'>{{$row->persen}}&nbsp;</td>
+    border-left:none'>{{number_format($row->persen)}}&nbsp;</td>
     <td class=xl1524627></td>
     <td class=xl1524627></td>
     <td class=xl1524627></td>
@@ -3112,7 +3112,7 @@ tags will be replaced.-->
   <td colspan=30 height=26 class=xl16624627 style='border-right:.5pt solid black;
   height:19.5pt'>JUMLAH</td>
   <td colspan=8 class=xl16324627 style='border-right:.5pt solid black;
-  border-left:none'>{{$spt->jumlah_modal_setor_pemilik_saham}}&nbsp;</td>
+  border-left:none'>{{number_format($spt->jumlah_modal_setor_pemilik_saham)}}&nbsp;</td>
   <td colspan=2 class=xl16324627 style='border-right:.5pt solid black;
   border-left:none'>&nbsp;</td>
   <td class=xl1524627></td>
@@ -3241,9 +3241,9 @@ tags will be replaced.-->
     <td height=26 class=xl16224627 style='height:19.5pt;border-top:none'>{{$nob++}}</td>
     <td colspan=14 class=xl16124627 style='border-left:none'>{{$row->nama_peminjam_saham}}&nbsp;</td>
     <td colspan=11 class=xl16124627 style='border-left:none'>{{$row->no_npwp_peminjam}}&nbsp;</td>
-    <td colspan=8 class=xl16124627 style='border-left:none'>{{$row->jumlah_pinjaman}}&nbsp;</td>
+    <td colspan=8 class=xl16124627 style='border-left:none'>{{number_format($row->jumlah_pinjaman)}}&nbsp;</td>
     <td colspan=4 class=xl16124627 style='border-left:none'>{{date('d-M-Y',strtotime($row->tahun_pinjaman))}}&nbsp;</td>
-    <td colspan=2 class=xl16124627 style='border-left:none'>{{$row->bunga_pinjaman}}&nbsp;</td>
+    <td colspan=2 class=xl16124627 style='border-left:none'>{{number_format($row->bunga_pinjaman)}}&nbsp;</td>
     <td class=xl1524627></td>
     <td class=xl1524627></td>
     <td class=xl1524627></td>
@@ -3408,9 +3408,9 @@ tags will be replaced.-->
     <td height=30 class=xl16224627 style='height:22.5pt;border-top:none'>{{$noc++}}</td>
     <td colspan=14 class=xl16124627 style='border-left:none'>{{$row->nama_peminjam_saham}}&nbsp;</td>
     <td colspan=11 class=xl16124627 style='border-left:none'>{{$row->no_npwp_peminjam_saham}}&nbsp;</td>
-    <td colspan=8 class=xl16124627 style='border-left:none'>{{$row->jumlah_pinjaman}}&nbsp;</td>
+    <td colspan=8 class=xl16124627 style='border-left:none'>{{number_format($row->jumlah_pinjaman)}}&nbsp;</td>
     <td colspan=4 class=xl16124627 style='border-left:none'>{{date('d-M-Y',strtotime($row->tahun_pinjaman))}}&nbsp;</td>
-    <td colspan=2 class=xl16124627 style='border-left:none'>{{$row->bunga_pinjaman}}&nbsp;</td>
+    <td colspan=2 class=xl16124627 style='border-left:none'>{{number_format($row->bunga_pinjaman)}}&nbsp;</td>
     <td class=xl1524627></td>
     <td class=xl1524627></td>
     <td class=xl1524627></td>

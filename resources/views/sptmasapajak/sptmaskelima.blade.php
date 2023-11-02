@@ -3742,7 +3742,7 @@ tags will be replaced.-->
   border-left:none;width:430pt'><span style='mso-spacerun:yes'> </span>GAJI,
   UPAH, BONUS, GRATIFIKASI, HONORARIUM, TUNJANGAN HARI RAYA, DLL</td>
   <td colspan=18 class=xl1798560 width=224 style='border-right:.5pt solid black;
-  border-left:none;width:170pt'>&nbsp;{{$spt->gaji}}</td>
+  border-left:none;width:170pt'>&nbsp;{{number_format($spt->gaji)}}</td>
   <td class=xl848560></td>
  </tr>
  <tr class=xl848560 height=25 style='mso-height-source:userset;height:18.95pt'>
@@ -3754,7 +3754,7 @@ tags will be replaced.-->
   border-left:none;width:430pt'><span style='mso-spacerun:yes'> </span>BIAYA
   TRANSPORTASI</td>
   <td colspan=18 class=xl1798560 width=224 style='border-right:.5pt solid black;
-  border-left:none;width:170pt'>&nbsp;{{$spt->biaya_transport}}</td>
+  border-left:none;width:170pt'>&nbsp;{{number_format($spt->biaya_transport)}}</td>
   <td class=xl848560></td>
  </tr>
  <tr class=xl848560 height=25 style='mso-height-source:userset;height:18.95pt'>
@@ -3766,7 +3766,7 @@ tags will be replaced.-->
   border-left:none;width:430pt'><span style='mso-spacerun:yes'> </span>BIAYA
   PENYUSUTAN DAN AMORTISASI</td>
   <td colspan=18 class=xl1798560 width=224 style='border-right:.5pt solid black;
-  border-left:none;width:170pt'>&nbsp;{{$spt->biaya_penyusutan}}</td>
+  border-left:none;width:170pt'>&nbsp;{{number_format($spt->biaya_penyusutan)}}</td>
   <td class=xl788560 width=20 style='width:15pt'></td>
  </tr>
  <tr class=xl848560 height=25 style='mso-height-source:userset;height:18.95pt'>
@@ -3778,7 +3778,7 @@ tags will be replaced.-->
   border-left:none;width:430pt'><span style='mso-spacerun:yes'> </span>BIAYA
   SEWA</td>
   <td colspan=18 class=xl1798560 width=224 style='border-right:.5pt solid black;
-  border-left:none;width:170pt'>&nbsp;{{$spt->biaya_sewa}}</td>
+  border-left:none;width:170pt'>&nbsp;{{number_format($spt->biaya_sewa)}}</td>
   <td class=xl788560 width=20 style='width:15pt'></td>
  </tr>
  <tr class=xl848560 height=25 style='mso-height-source:userset;height:18.95pt'>
@@ -3790,7 +3790,7 @@ tags will be replaced.-->
   border-left:none;width:430pt'><span style='mso-spacerun:yes'> </span>BIAYA
   BUNGA PINJAMAN</td>
   <td colspan=18 class=xl1798560 width=224 style='border-right:.5pt solid black;
-  border-left:none;width:170pt'>&nbsp;{{$spt->biaya_bunga_pinjaman}}</td>
+  border-left:none;width:170pt'>&nbsp;{{number_format($spt->biaya_bunga_pinjaman)}}</td>
   <td class=xl788560 width=20 style='width:15pt'></td>
  </tr>
  <tr class=xl848560 height=25 style='mso-height-source:userset;height:18.95pt'>
@@ -3802,7 +3802,7 @@ tags will be replaced.-->
   border-left:none;width:430pt'><span style='mso-spacerun:yes'> </span>BIAYA
   SEHUBUNGAN DENGAN JASA</td>
   <td colspan=18 class=xl1798560 width=224 style='border-right:.5pt solid black;
-  border-left:none;width:170pt'>&nbsp;{{$spt->biaya_jasa}}</td>
+  border-left:none;width:170pt'>&nbsp;{{number_format($spt->biaya_jasa)}}</td>
   <td class=xl788560 width=20 style='width:15pt'></td>
  </tr>
  <tr class=xl848560 height=25 style='mso-height-source:userset;height:18.95pt'>
@@ -3814,7 +3814,7 @@ tags will be replaced.-->
   border-left:none;width:430pt'><span style='mso-spacerun:yes'> </span>BIAYA
   PIUTANG TAK TERTAGIH</td>
   <td colspan=18 class=xl1798560 width=224 style='border-right:.5pt solid black;
-  border-left:none;width:170pt'>&nbsp;{{$spt->biaya_piutang}}</td>
+  border-left:none;width:170pt'>&nbsp;{{number_format($spt->biaya_piutang)}}</td>
   <td class=xl788560 width=20 style='width:15pt'></td>
  </tr>
  <tr class=xl848560 height=25 style='mso-height-source:userset;height:18.95pt'>
@@ -3826,7 +3826,7 @@ tags will be replaced.-->
   border-left:none;width:430pt'><span style='mso-spacerun:yes'> </span>BIAYA
   ROYALTI</td>
   <td colspan=18 class=xl1798560 width=224 style='border-right:.5pt solid black;
-  border-left:none;width:170pt'>&nbsp;{{$spt->biaya_royalti}}</td>
+  border-left:none;width:170pt'>&nbsp;{{number_format($spt->biaya_royalti)}}</td>
   <td class=xl728560></td>
  </tr>
  <tr class=xl848560 height=25 style='mso-height-source:userset;height:18.95pt'>
@@ -3837,7 +3837,7 @@ tags will be replaced.-->
   border-left:none'><span style='mso-spacerun:yes'> </span>BIAYA
   PEMASARAN/PROMOSI</td>
   <td colspan=18 class=xl1798560 style='border-right:.5pt solid black;
-  border-left:none'>&nbsp;{{$spt->biaya_pemasaran}}</td>
+  border-left:none'>&nbsp;{{number_format($spt->biaya_pemasaran)}}</td>
   <td class=xl848560></td>
  </tr>
  <tr class=xl848560 height=25 style='mso-height-source:userset;height:18.95pt'>
@@ -3847,7 +3847,7 @@ tags will be replaced.-->
   <td colspan=60 class=xl2098560 style='border-right:.5pt solid black;
   border-left:none'><span style='mso-spacerun:yes'> </span>BIAYA LAINNYA</td>
   <td colspan=18 class=xl1798560 style='border-right:.5pt solid black;
-  border-left:none'>&nbsp;{{$spt->biaya_lain}}</td>
+  border-left:none'>&nbsp;{{number_format($spt->biaya_lain)}}</td>
   <td class=xl848560></td>
  </tr>
  <tr height=25 style='mso-height-source:userset;height:18.95pt'>
@@ -3857,7 +3857,7 @@ tags will be replaced.-->
   class="font58560">JUMLAH</font><font class="font78560"> </font><font
   class="font68560">(PENJUMLAHAN ANGKA 1 S.D. ANGKA 10)</font></td>
   <td colspan=18 class=xl2008560 style='border-right:.5pt solid black;
-  border-left:none'>&nbsp;{{$spt->jumlah}}</td>
+  border-left:none'>&nbsp;{{number_format($spt->jumlah)}}</td>
   <td class=xl848560></td>
  </tr>
  <tr height=25 style='mso-height-source:userset;height:18.95pt'>

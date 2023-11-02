@@ -5811,11 +5811,11 @@ tags will be replaced.-->
   <td colspan=28 class=xl1926028 width=280 style='border-right:.5pt solid black;
   width:210pt'>{{$row->kode_objek_pajak}}</td>
   <td colspan=28 class=xl1926028 width=238 style='border-right:.5pt solid black;
-  border-left:none;width:175pt'>{{$row->jumlah_penghasilan_bruto}}</td>
+  border-left:none;width:175pt'>{{number_format($row->jumlah_penghasilan_bruto)}}</td>
   <td colspan=8 class=xl1926028 width=104 style='border-right:.5pt solid black;
-  border-left:none;width:80pt'>{{$row->tarif}}</td>
+  border-left:none;width:80pt'>{{number_format($row->tarif)}}</td>
   <td colspan=17 class=xl1926028 width=219 style='border-right:.5pt solid black;
-  border-left:none;width:167pt'>{{$row->pph}}</td>
+  border-left:none;width:167pt'>{{number_format($row->pph)}}</td>
   <td class=xl756028 width=5 style='width:3pt'></td>
   <td class=xl756028 width=20 style='width:15pt'></td>
  </tr>

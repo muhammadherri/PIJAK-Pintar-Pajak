@@ -2789,7 +2789,7 @@ x:publishsource="Excel">
   <td class=xl825231></td>
   <td rowspan=2 class=xl1575231>1a</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->peredaran_usaha,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->peredaran_usaha )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl995231 style='height:12.75pt'>&nbsp;</td>
@@ -2824,7 +2824,7 @@ x:publishsource="Excel">
   <td class=xl1115231></td>
   <td rowspan=2 class=xl1575231 style='border-top:none'>1b</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->harga_pokok,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->harga_pokok )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl995231 style='height:12.75pt'>&nbsp;</td>
@@ -2858,7 +2858,7 @@ x:publishsource="Excel">
   <td class=xl1115231></td>
   <td rowspan=2 class=xl1575231 style='border-top:none'>1c</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->biaya_usaha_lain,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->biaya_usaha_lain )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl995231 style='height:12.75pt'>&nbsp;</td>
@@ -2892,7 +2892,7 @@ x:publishsource="Excel">
   <td class=xl1115231></td>
   <td rowspan=2 class=xl1575231 style='border-top:none'>1d</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->penghasilan_netto_dari_usaha,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->penghasilan_netto_dari_usaha )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl995231 style='height:12.75pt'>&nbsp;</td>
@@ -2927,7 +2927,7 @@ x:publishsource="Excel">
   <td class=xl1115231></td>
   <td rowspan=2 class=xl1575231 style='border-top:none'>1e</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->penghasilan_dari_luar_usaha,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->penghasilan_dari_luar_usaha )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl995231 style='height:12.75pt'>&nbsp;</td>
@@ -2962,7 +2962,7 @@ x:publishsource="Excel">
   <td class=xl1115231></td>
   <td rowspan=2 class=xl1575231 style='border-top:none'>1f</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->biaya_dari_luar_usaha,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->biaya_dari_luar_usaha )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl995231 style='height:12.75pt'>&nbsp;</td>
@@ -2996,7 +2996,7 @@ x:publishsource="Excel">
   <td class=xl1115231></td>
   <td rowspan=2 class=xl1575231 style='border-top:none'>1g</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->penghasilan_netto_dari_luar_usaha,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->penghasilan_netto_dari_luar_usaha )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl995231 style='height:12.75pt'>&nbsp;</td>
@@ -3031,7 +3031,7 @@ x:publishsource="Excel">
   <td class=xl1115231></td>
   <td rowspan=2 class=xl1575231 style='border-top:none'>1h</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->jumlah_netto_komersial_dalam_negeri,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->jumlah_netto_komersial_dalam_negeri )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl995231 style='height:12.75pt'>&nbsp;</td>
@@ -3057,7 +3057,7 @@ x:publishsource="Excel">
   <td class=xl1115231></td>
   <td rowspan=2 class=xl1575231 style='border-top:none'>2</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->penghasilan_netto_luar_negeri,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->penghasilan_netto_luar_negeri )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl995231 style='height:12.75pt'>&nbsp;</td>
@@ -3090,7 +3090,7 @@ x:publishsource="Excel">
   <td class=xl1115231></td>
   <td rowspan=2 class=xl1575231 style='border-top:none'>3</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->jumlah_penghasilan_netto_komersial,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->jumlah_penghasilan_netto_komersial )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td colspan=2 height=17 class=xl985231 style='border-right:.5pt solid black;
@@ -3188,7 +3188,7 @@ x:publishsource="Excel">
   <td class=xl1115231></td>
   <td rowspan=2 class=xl1575231>4</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->penghasilan,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->penghasilan )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl985231 style='height:12.75pt'>&nbsp;</td>
@@ -3262,7 +3262,7 @@ x:publishsource="Excel">
   <td class=xl1115231></td>
   <td rowspan=2 class=xl1575231>5a</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->biaya_dibebankan,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->biaya_dibebankan )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl995231 style='height:12.75pt'>&nbsp;</td>
@@ -3297,7 +3297,7 @@ x:publishsource="Excel">
   <td class=xl1115231></td>
   <td rowspan=2 class=xl1575231 style='border-top:none'>5b</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->dana_cadangan,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->dana_cadangan )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl995231 style='height:12.75pt'>&nbsp;</td>
@@ -3322,7 +3322,7 @@ x:publishsource="Excel">
   <td class=xl1115231></td>
   <td rowspan=2 class=xl1575231 style='border-top:none'>5c</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->natura,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->natura )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl985231 style='height:12.75pt'>&nbsp;</td>
@@ -3386,7 +3386,7 @@ x:publishsource="Excel">
   <td class=xl1115231></td>
   <td rowspan=2 class=xl1575231>5d</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->jumlah_melebihi_kewajaran,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->jumlah_melebihi_kewajaran )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl995231 style='height:12.75pt'>&nbsp;</td>
@@ -3421,7 +3421,7 @@ x:publishsource="Excel">
   <td class=xl1115231></td>
   <td rowspan=2 class=xl1575231 style='border-top:none'>5e</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->harta_dihibahkan,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->harta_dihibahkan )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl985231 style='height:12.75pt'>&nbsp;</td>
@@ -3456,7 +3456,7 @@ x:publishsource="Excel">
   <td class=xl1115231></td>
   <td rowspan=2 class=xl1575231 style='border-top:none'>5f</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->pajak_penghasilan,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->pajak_penghasilan )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl995231 style='height:12.75pt'>&nbsp;</td>
@@ -3476,7 +3476,7 @@ x:publishsource="Excel">
   <td class=xl1115231></td>
   <td rowspan=2 class=xl1575231 style='border-top:none'>5g</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->gaji_yang_dibayarkan,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->gaji_yang_dibayarkan )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl995231 style='height:12.75pt'>&nbsp;</td>
@@ -3510,7 +3510,7 @@ x:publishsource="Excel">
   <td class=xl1115231></td>
   <td rowspan=2 class=xl1575231 style='border-top:none'>5h</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->sanksi_adm,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->sanksi_adm )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl995231 style='height:12.75pt'>&nbsp;</td>
@@ -3544,7 +3544,7 @@ x:publishsource="Excel">
   <td class=xl1115231></td>
   <td rowspan=2 class=xl1575231 style='border-top:none'>5i</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->selisih_penyusutan_komersial,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->selisih_penyusutan_komersial )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl995231 style='height:12.75pt'>&nbsp;</td>
@@ -3579,7 +3579,7 @@ x:publishsource="Excel">
   <td class=xl1115231></td>
   <td rowspan=2 class=xl1575231 style='border-top:none'>5j</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->selisih_amortisasi,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->selisih_amortisasi )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl995231 style='height:12.75pt'>&nbsp;</td>
@@ -3614,7 +3614,7 @@ x:publishsource="Excel">
   <td class=xl1115231></td>
   <td rowspan=2 class=xl1575231 style='border-top:none'>5k</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
- text-align: right'>{{number_format($sptI->biaya_yang_ditangguhkan,2)}}&nbsp;</td>
+ text-align: right'>{{number_format($sptI->biaya_yang_ditangguhkan )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl995231 style='height:12.75pt'>&nbsp;</td>
@@ -3648,7 +3648,7 @@ x:publishsource="Excel">
   <td class=xl1115231></td>
   <td rowspan=2 class=xl1575231 style='border-top:none'>5l</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->penyesuaian_fiskal,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->penyesuaian_fiskal )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl995231 style='height:12.75pt'>&nbsp;</td>
@@ -3683,7 +3683,7 @@ x:publishsource="Excel">
   <td class=xl1115231></td>
   <td rowspan=2 class=xl1575231 style='border-top:none'>5m</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->jumlah_penyesuaian,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->jumlah_penyesuaian )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl995231 style='height:12.75pt'>&nbsp;</td>
@@ -3797,7 +3797,7 @@ x:publishsource="Excel">
   <td class=xl1115231></td>
   <td rowspan=2 class=xl1575231>6a</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->selisih_penyusutan_fiskal_negatif,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->selisih_penyusutan_fiskal_negatif )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl995231 style='height:12.75pt'>&nbsp;</td>
@@ -3832,7 +3832,7 @@ x:publishsource="Excel">
   <td class=xl1115231></td>
   <td rowspan=2 class=xl1575231 style='border-top:none'>6b</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->selisih_amortisasi_fiskal_negatif,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->selisih_amortisasi_fiskal_negatif )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl995231 style='height:12.75pt'>&nbsp;</td>
@@ -3866,7 +3866,7 @@ x:publishsource="Excel">
   <td class=xl1115231></td>
   <td rowspan=2 class=xl1575231 style='border-top:none'>6c</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->penghasilan_ditangguhkan,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->penghasilan_ditangguhkan )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl995231 style='height:12.75pt'>&nbsp;</td>
@@ -3901,7 +3901,7 @@ x:publishsource="Excel">
   <td class=xl1115231></td>
   <td rowspan=2 class=xl1575231 style='border-top:none'>6d</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->penyesuaian_fiskal_fiskal_negatif,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->penyesuaian_fiskal_fiskal_negatif )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl995231 style='height:12.75pt'>&nbsp;</td>
@@ -3936,7 +3936,7 @@ x:publishsource="Excel">
   <td class=xl1115231></td>
   <td rowspan=2 class=xl1575231 style='border-top:none'>6e</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->jumlah_fiskal_negatif,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->jumlah_fiskal_negatif )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl995231 style='height:12.75pt'>&nbsp;</td>
@@ -4040,7 +4040,7 @@ x:publishsource="Excel">
   </span>FASILITAS PENANAMAN MODAL BERUPA PENGURANGAN PENGHASILAN NETO:</td>
   <td rowspan=2 class=xl1575231>7b</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->pengurangan_penghasilan_netto,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->pengurangan_penghasilan_netto )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
   <td height=17 class=xl995231 style='height:12.75pt'>&nbsp;</td>
@@ -4133,7 +4133,7 @@ x:publishsource="Excel">
   class="font55231">..…………...………….....…</font></td>
   <td rowspan=2 class=xl1575231>8</td>
   <td colspan=18 rowspan=2 class=xl1585231 style='border-right:.5pt solid black;
-  text-align: right'>{{number_format($sptI->netto_fiskal,2)}}&nbsp;</td>
+  text-align: right'>{{number_format($sptI->netto_fiskal )}}&nbsp;</td>
  </tr>
  <tr height=17 style='height:12.75pt'>
  </tr>
