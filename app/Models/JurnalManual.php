@@ -24,6 +24,7 @@ class JurnalManual extends Model
         'attribute1',
         'attribute2',
         'attribute3',
+        'attribute4',
         'created_at',
         'updated_at',
         'deleted_at',

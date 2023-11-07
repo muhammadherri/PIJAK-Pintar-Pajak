@@ -38,19 +38,39 @@ class JurnalManualLatihanController extends Controller
     public function store(Request $request)
     {
         $kredit = preg_replace('/[^0-9]/','',$request->input('no_akun_kredit')); 
-
-        // DD($kredit);
-        $data = array(
-            'no_akun_debit'=>$request->no_akun_debet,
-            'no_akun_kredit'=>$kredit,
-            'nama_akun_debit'=>$request->nama_akun_debet,
-            'nama_akun_kredit'=>$request->nama_akun_kredit,
-            'nilai_debit'=>preg_replace('/[^0-9]/','',$request->nilai_debet),
-            'nilai_kredit'=>preg_replace('/[^0-9]/','',$request->nilai_kredit),
-            'keterangan'=>$request->keterangan,
-            'attribute1'=>Auth::user()->id,
-            'attribute3'=>1,
-        );
+        if($request->check==0){
+            $data = array(
+                'no_akun_debit'=>$request->no_akun_debet,
+                'nama_akun_debit'=>$request->nama_akun_debet,
+                'nilai_debit'=>preg_replace('/[^0-9]/','',$request->nilai_debet),
+                'keterangan'=>$request->keterangan,
+                'attribute1'=>Auth::user()->id,
+                'attribute3'=>1,
+                'attribute4'=>$request->check,
+            );
+        }else{
+            $data = array(
+                'no_akun_kredit'=>$request->no_akun_debet,
+                'nama_akun_kredit'=>$request->nama_akun_debet,
+                'nilai_kredit'=>preg_replace('/[^0-9]/','',$request->nilai_debet),
+                'keterangan'=>$request->keterangan,
+                'attribute1'=>Auth::user()->id,
+                'attribute3'=>1,
+                'attribute4'=>$request->check,
+            );
+        }
+        
+        // $data = array(
+        //     'no_akun_debit'=>$request->no_akun_debet,
+        //     'no_akun_kredit'=>$kredit,
+        //     'nama_akun_debit'=>$request->nama_akun_debet,
+        //     'nama_akun_kredit'=>$request->nama_akun_kredit,
+        //     'nilai_debit'=>preg_replace('/[^0-9]/','',$request->nilai_debet),
+        //     'nilai_kredit'=>preg_replace('/[^0-9]/','',$request->nilai_kredit),
+        //     'keterangan'=>$request->keterangan,
+        //     'attribute1'=>Auth::user()->id,
+        //     'attribute3'=>1,
+        // );
         // dd($data);
         JurnalManual::create($data);
         $a= \DB::commit();
@@ -100,17 +120,34 @@ class JurnalManualLatihanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        JurnalManual::where('id',$id)->update([
-            // 'no_akun_debit'=>$request->no_akun_debet,
-            // 'no_akun_kredit'=>$request->no_akun_kredit,
-            // 'nama_akun_debit'=>$request->nama_akun_debet,
-            // 'nama_akun_kredit'=>$request->nama_akun_kredit,
-            'nilai_debit'=>preg_replace('/[^0-9]/','',$request->nilai_debet),
-            'nilai_kredit'=>preg_replace('/[^0-9]/','',$request->nilai_kredit),
-            'keterangan'=>$request->keterangan,
-            'attribute2'=>Auth::user()->id,
-            'updated_at'=>date('Y-m-d H:i:s'),
-        ]);
+       
+        if($request->check==0){
+            JurnalManual::where('id',$id)->update([
+                'no_akun_debit'=>$request->no_akun,
+                'nama_akun_debit'=>$request->nama_akun,
+                'no_akun_kredit'=>NULL,
+                'nama_akun_kredit'=>NULL,
+                'nilai_debit'=>preg_replace('/[^0-9]/','',$request->nilai),
+                'nilai_kredit'=>null,
+                'keterangan'=>$request->keterangan,
+                'attribute2'=>Auth::user()->id,
+                'updated_at'=>date('Y-m-d H:i:s'),
+                'attribute4'=>$request->check,
+            ]);
+        }else{
+            JurnalManual::where('id',$id)->update([
+                'no_akun_debit'=>NULL,
+                'nama_akun_debit'=>NULL,
+                'no_akun_kredit'=>$request->no_akun,
+                'nama_akun_kredit'=>$request->nama_akun,
+                'nilai_debit'=>null,
+                'nilai_kredit'=>preg_replace('/[^0-9]/','',$request->nilai),
+                'keterangan'=>$request->keterangan,
+                'attribute2'=>Auth::user()->id,
+                'updated_at'=>date('Y-m-d H:i:s'),
+                'attribute4'=>$request->check,
+            ]);
+        }
         
         $a= \DB::commit();    
         return redirect()->route('latihan');

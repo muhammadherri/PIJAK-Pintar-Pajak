@@ -289,6 +289,7 @@ class SptTahunanController extends Controller
                 'jenis_penghasilan' => $jenispenghasilanb[$key],
                 'penghasilan_bruto' => $penghasilanbruto[$key],
             );
+            // DD($data1771ivlines_b);
         SptTahunanIVLinesB::create($data1771ivlines_b);
         }
         $data1771vhead = array(

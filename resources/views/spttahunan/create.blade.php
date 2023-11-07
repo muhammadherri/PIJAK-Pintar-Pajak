@@ -1709,20 +1709,15 @@
                                                                                 class="dropdown-groups">
                                                                                 <option value="1. BANTUAN / SUMBANGAN">1. BANTUAN / SUMBANGAN</option>
                                                                                 <option value="2. HIBAH">2. HIBAH</option>
-                                                                                <option value="3. DIVIDEN / BAGIAN LABA DARI PENYERTAAN MODAL PADA BADAN USAHA DI INDONESIA (Pasal 4 Ayat (3) Huruf f UU PPh)">3. DIVIDEN / BAGIAN LABA DARI PENYERTAAN MODAL PADA BADAN USAHA DI INDONESIA (Pasal 4 Ayat (3) Huruf f UU PPh)</option>
-                                                                                <option value="4. IURAN DAN PENGHASILAN TERTENTU YANG DITERIMA DANA PENSIUN">4. IURAN DAN PENGHASILAN TERTENTU YANG DITERIMA DANA PENSIUN</option>
-                                                                                <option value="5. BAGIAN LABA YANG DITERIMA PERUSAHAAN MODAL VENTURA DARI BADAN PASANGAN USAHA">5. BAGIAN LABA YANG DITERIMA PERUSAHAAN MODAL VENTURA DARI BADAN PASANGAN USAHA</option>
+                                                                                <option value="3. DIVIDEN / BAGIAN LABA DARI PENYERTAAN MODAL PADA BADAN USAHA DI INDONESIA (Pasal 4 Ayat (3) Huruf f UU PPh)">3. DIVIDEN / BAGIAN LABA DARI PENYERTAAN MODAL PADA BADAN </p>USAHA DI INDONESIA (Pasal 4 Ayat (3) Huruf f UU PPh)</option>
+                                                                                <option value="4. IURAN DAN PENGHASILAN TERTENTU YANG DITERIMA DANA PENSIUN">4. IURAN DAN PENGHASILAN TERTEN...</option>
+                                                                                <option value="5. BAGIAN LABA YANG DITERIMA PERUSAHAAN MODAL VENTURA DARI BADAN PASANGAN USAHA">5. BAGIAN LABA YANG DITERIMA PER...</option>
                                                                                 <option value="6. SISA LEBIH YANG DITERIMA ATAU DIPEROLEH BADAN ATAU LEMBAGA 
                                                                                 NIRLABA YANG BERGERAK DALAM BIDANG PENDIDIKAN DAN/ATAU 
                                                                                 BIDANG PENELITIAN DAN PENGEMBANGAN, YANG TELAH TERDAFTAR 
                                                                                 PADA INSTANSI YANG MEMBIDANGINYA, YANG DITANAMKAN KEMBALI 
                                                                                 DALAM BENTUK SARANA DAN PRASARANA KEGIATAN PENDIDIKAN DAN/
-                                                                                ATAU PENELITIAN DAN PENGEMBANGAN (Pasal 4 Ayat (3) Huruf m UU PPh)">6. SISA LEBIH YANG DITERIMA ATAU DIPEROLEH BADAN ATAU LEMBAGA 
-                                                                                NIRLABA YANG BERGERAK DALAM BIDANG PENDIDIKAN DAN/ATAU 
-                                                                                BIDANG PENELITIAN DAN PENGEMBANGAN, YANG TELAH TERDAFTAR 
-                                                                                PADA INSTANSI YANG MEMBIDANGINYA, YANG DITANAMKAN KEMBALI 
-                                                                                DALAM BENTUK SARANA DAN PRASARANA KEGIATAN PENDIDIKAN DAN/
-                                                                                ATAU PENELITIAN DAN PENGEMBANGAN (Pasal 4 Ayat (3) Huruf m UU PPh)</option>
+                                                                                ATAU PENELITIAN DAN PENGEMBANGAN (Pasal 4 Ayat (3) Huruf m UU PPh)">6. SISA LEBIH YANG DITERIMA ATAU...</option>
                                                                             </select>
                                                                             {{-- <input required autocomplete="off"
                                                                                 type="text"

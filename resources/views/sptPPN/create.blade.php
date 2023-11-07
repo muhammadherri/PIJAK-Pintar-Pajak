@@ -698,7 +698,7 @@
                                                 </div>
                                             </div>
                                             <br>
-                                            <h6>2. Penyerahan Dalam Negeri dengan Faktur Pajak yang Digunggung</h6>
+                                            <h6>2. Penyerahan Dalam Negeri dengan Faktur Pajak Yang Tidak Digunggung</h6>
                                             <div class="mb-3 row">
                                                 <label class="col-sm-1 col-form-label">DPP</label>
                                                 <div class="col-sm-3">

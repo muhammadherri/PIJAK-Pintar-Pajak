@@ -20,7 +20,7 @@
                 </ol>
             </div>
             <div class="row">
-                <div class="col-xl-6">
+                <div class="col-12">
                     <div class="card">
                         <div class="card-header">
                             <h4 class="card-title">Daftar Keuangan Fiskal</h4>
@@ -77,29 +77,50 @@
             ajax: "{{ route('data.latihan') }}",
             columnDefs: [{
                     "targets": 0,
+                    "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.no_akun_debit;
+                        if(row.no_akun_debit==null ){
+                            var info = '-';
+                        }else{
+                            var info = row.no_akun_debit;
+                        }
+                        return info;
                     }
                 },
                 {
                     "targets": 1,
+                    "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.no_akun_kredit;
+                        if(row.no_akun_kredit==null ){
+                            var info = '-';
+                        }else{
+                            var info = row.no_akun_kredit;
+                        }
+                        return info;
                     }
                 },
                 {
                     "targets": 2,
                     "class": "text-center",
                     render: function(data, type, row, index) {
-                        return row.nama_akun_debit;
-
+                        if(row.nama_akun_debit==null ){
+                            var info = '-';
+                        }else{
+                            var info = row.nama_akun_debit;
+                        }
+                        return info;
                     }
                 },
                 {
                     "targets": 3,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.nama_akun_kredit;
+                        if(row.nama_akun_kredit==null ){
+                            var info = '-';
+                        }else{
+                            var info = row.nama_akun_kredit;
+                        }
+                        return info;
                     }
                 },
                 {

@@ -31,48 +31,82 @@
                                     <div class="row">
                                         <h5>Neraca</h5>
                                         <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">Akun Debet</label>
+                                            <label class="col-sm-3 col-form-label">Akun</label>
                                             <div class="col-sm-9">
-                                                <input type="text" value="{{$jurnalmanual->no_akun_debit}} - {{$jurnalmanual->nama_akun_debit}}" id="no_akun_debet" readonly class="form-control" name="no_akun_debet">
+                                                @if($jurnalmanual->attribute4==0)
+                                                <input type="text" id="no_akun" value="{{$jurnalmanual->no_akun_debit}}" readonly class="form-control" name="no_akun">
+                                                @else
+                                                <input type="text" id="no_akun" value="{{$jurnalmanual->no_akun_kredit}}" readonly class="form-control" name="no_akun">
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">No Akun Kredit</label>
+                                            <label class="col-sm-3 col-form-label">Nama Akun</label>
                                             <div class="col-sm-9">
-                                                <input type="text" value="{{$jurnalmanual->no_akun_kredit}} - {{$jurnalmanual->nama_akun_kredit}}" id="no_akun_kredit" readonly class="form-control" name="no_akun_kredit">
+                                                @if($jurnalmanual->attribute4==0)
+                                                <input type="text" id="nama_akun" value="{{$jurnalmanual->nama_akun_debit}}" readonly class="form-control" name="nama_akun">
+                                                @else
+                                                <input type="text" id="nama_akun" value="{{$jurnalmanual->nama_akun_kredit}}" readonly class="form-control" name="nama_akun">
+                                                @endif
                                             </div>
                                         </div>
-                                        <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">Nama Akun Debet</label>
-                                            <div class="col-sm-9">
-                                                <input value=" {{$jurnalmanual->nama_akun_debit}}" type="text" id="nama_akun_debet" readonly class="form-control" name="nama_akun_debet">
-                                                {{-- <select required id="nama_akun_debet" class="dropdown-groups" name="nama_akun_debet">
-                                                </select> --}}
+                                        @if($jurnalmanual->attribute4==0)
+                                        <div class="mb-12 row">
+                                            <label class="col-sm-3 col-form-label"> </label>
+                                            <div class="col-sm-3">
+                                                <div class="form-check">
+                                                    <input class="form-check-input"
+                                                        type="radio" name="check" value="0"checked>
+                                                    <label class="form-check-label">
+                                                        Positif
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="form-check">
+                                                    <input class="form-check-input"
+                                                        type="radio" name="check" value="1">
+                                                    <label class="form-check-label">
+                                                        Negatif
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">Nama Akun Kredit</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" value=" {{$jurnalmanual->nama_akun_kredit}}"  id="nama_akun_kredit" readonly class="form-control" name="nama_akun_kredit">
-
-                                                {{-- <select required id="nama_akun_kredit" class="dropdown-groups" name="nama_akun_kredit">
-                                                </select> --}}
+                                        @else
+                                        <div class="mb-12 row">
+                                            <label class="col-sm-3 col-form-label"> </label>
+                                            <div class="col-sm-3">
+                                                <div class="form-check">
+                                                    <input class="form-check-input"
+                                                        type="radio" name="check" value="0">
+                                                    <label class="form-check-label">
+                                                        Positif
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="form-check">
+                                                    <input class="form-check-input"
+                                                        type="radio" name="check" value="1"checked>
+                                                    <label class="form-check-label">
+                                                        Negatif
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
+                                        @endif
                                         <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">Nilai Debet</label>
+                                            <label class="col-sm-3 col-form-label">Nilai</label>
                                             <div class="col-sm-9">
-                                                <input required min="0" onkeyup="this.value=addcommas(this.value);" value="{{number_format($jurnalmanual->nilai_debit)}}" autocomplete="off" type="text" id="nilai_debet"
-                                                    name="nilai_debet" class="form-control"
-                                                    placeholder="Masukkan Nilai Debet">
-                                            </div>
-                                        </div>
-                                        <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">Nilai Kredit</label>
-                                            <div class="col-sm-9">
-                                                <input required min="0" onkeyup="this.value=addcommas(this.value);" value="{{number_format($jurnalmanual->nilai_kredit)}}" autocomplete="off" type="text" id="nilai_kredit"
-                                                    name="nilai_kredit" class="form-control"
+                                                @if($jurnalmanual->attribute4==0)
+                                                    <input required min="0" onkeyup="this.value=addcommas(this.value);" value="{{number_format($jurnalmanual->nilai_debit)}}" autocomplete="off" type="text" id="nilai_debet"
+                                                        name="nilai" class="form-control"
+                                                        placeholder="Masukkan Nilai Debet">
+                                                @else
+                                                    <input required min="0" onkeyup="this.value=addcommas(this.value);"  value="{{number_format($jurnalmanual->nilai_kredit)}}" autocomplete="off" type="text" id="nilai_kredit"
+                                                    name="nilai" class="form-control"
                                                     placeholder="Masukkan Nilai Kredit">
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="mb-3 row">

@@ -308,8 +308,19 @@ Route::get('/penerimapenghasilan/{id}/destroy', [App\Http\Controllers\PenerimaHa
 Route::get('/penerimapenghasilan/{id}/show', [App\Http\Controllers\PenerimaHasilController::class, 'show'])->name('penerimapenghasilan/show');
 Route::get('/penerimapenghasilan/{id}/edit', [App\Http\Controllers\PenerimaHasilController::class, 'edit'])->name('penerimapenghasilan/edit');
 Route::put('/penerimapenghasilan/{id}', [App\Http\Controllers\PenerimaHasilController::class, 'update'])->name('penerimapenghasilan/update');
-
 // penerimapenghasilan
+
+// jenispajak
+Route::get('/jenis_pajak', [App\Http\Controllers\JenisPajakController::class, 'index'])->name('jenis_pajak');
+Route::get('/jenis_pajak/create', [App\Http\Controllers\JenisPajakController::class, 'create'])->name('jenis_pajak/create');
+Route::post('/jenis_pajak/store', [App\Http\Controllers\JenisPajakController::class, 'store'])->name('jenis_pajak/store');
+
+Route::get('/jenis_pajak/{id}/destroy', [App\Http\Controllers\JenisPajakController::class, 'destroy'])->name('jenis_pajak/destroy');
+Route::get('/jenis_pajak/{id}/show', [App\Http\Controllers\JenisPajakController::class, 'show'])->name('jenis_pajak/show');
+Route::get('/jenis_pajak/{id}/edit', [App\Http\Controllers\JenisPajakController::class, 'edit'])->name('jenis_pajak/edit');
+Route::put('/jenis_pajak/{id}', [App\Http\Controllers\JenisPajakController::class, 'update'])->name('jenis_pajak/update');
+
+// jenispajak
 
 // pembayaran
 Route::get('/pembayaran', [App\Http\Controllers\PembayaranController::class, 'index'])->name('pembayaran');

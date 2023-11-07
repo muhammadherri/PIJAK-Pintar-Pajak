@@ -26,7 +26,7 @@
                                 <div class="col-lg-6">
                                     <a class="btn btn-primary" href="{{ route('jenispph/create') }}">
 
-                                        {{ __('Create') }}
+                                        {{ __('Tambah') }}
 
                                     </a>
                                 </div>

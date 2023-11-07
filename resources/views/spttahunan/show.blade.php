@@ -3,7 +3,7 @@
 
 <head>
     <link rel="icon" href="{{ asset('images/umlogo.png') }}">
-    <title>Taxceed </title>
+    <title>PIJAK | Pintar Pajak </title>
     <meta http-equiv=Content-Type content="text/html; charset=windows-1252">
     <meta name=ProgId content=Excel.Sheet>
     <meta name=Generator content="Microsoft Excel 15">

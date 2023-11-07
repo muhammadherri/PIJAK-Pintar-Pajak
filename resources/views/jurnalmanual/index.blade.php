@@ -20,7 +20,7 @@
                 </ol>
             </div>
             <div class="row">
-                <div class="col-xl-6">
+                <div class="col-12">
                     <div class="card">
                         <div class="card-header">
                             <h4 class="card-title">Daftar Keuangan Fiskal</h4>
@@ -33,25 +33,23 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <div class="basic-form">
-                                <div class="table-responsive">
-                                    <table id="fiskalTable" class="display" style="min-width: 845px">
-                                        <thead>
-                                            <tr>
-                                                <th>No Akun Debet</th>
-                                                <th>No Akun Kredit</th>
-                                                <th>Nama Akun Debet</th>
-                                                <th>Nama Akun Kredit</th>
-                                                <th>Nilai Debet</th>
-                                                <th>Nilai Kredit</th>
-                                                <th>Dibuat Oleh</th>
-                                                <th>Tanggal Dibuat</th>
-                                                <th>Action</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </div>
+                            <div class="table-responsive">
+                                <table id="fiskalTable" class="display" style="min-width: 845px">
+                                    <thead>
+                                        <tr>
+                                            <th>No Akun Debet</th>
+                                            <th>No Akun Kredit</th>
+                                            <th>Nama Akun Debet</th>
+                                            <th>Nama Akun Kredit</th>
+                                            <th>Nilai Debet</th>
+                                            <th>Nilai Kredit</th>
+                                            <th>Dibuat Oleh</th>
+                                            <th>Tanggal Dibuat</th>
+                                            <th>Action</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -76,30 +74,51 @@
             "order":[[9,'desc']],
             ajax: "{{ route('data.fiskal') }}",
             columnDefs: [{
+                    "class": "text-center",
                     "targets": 0,
                     "render": function(data, type, row, meta) {
-                        return row.no_akun_debit;
+                        if(row.no_akun_debit==null ){
+                            var info = '-';
+                        }else{
+                            var info = row.no_akun_debit;
+                        }
+                        return info;
                     }
                 },
                 {
                     "targets": 1,
+                    "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.no_akun_kredit;
+                        if(row.no_akun_kredit==null ){
+                            var info = '-';
+                        }else{
+                            var info = row.no_akun_kredit;
+                        }
+                        return info;
                     }
                 },
                 {
                     "targets": 2,
                     "class": "text-center",
                     render: function(data, type, row, index) {
-                        return row.nama_akun_debit;
-
+                        if(row.nama_akun_debit==null ){
+                            var info = '-';
+                        }else{
+                            var info = row.nama_akun_debit;
+                        }
+                        return info;
                     }
                 },
                 {
                     "targets": 3,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.nama_akun_kredit;
+                        if(row.nama_akun_kredit==null ){
+                            var info = '-';
+                        }else{
+                            var info = row.nama_akun_kredit;
+                        }
+                        return info;
                     }
                 },
                 {

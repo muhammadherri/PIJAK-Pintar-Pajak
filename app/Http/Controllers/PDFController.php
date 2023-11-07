@@ -25,6 +25,9 @@ class PDFController extends Controller
         ];
         if(Auth::user()->status==1){
             $billing = Billing::where('kode_billing',$idbilling)->get()->first();
+            if($billing==null){
+                return back()->with('msg', 'Kode Billing Tidak Ditemukan');
+            }
             // dd($billing->jenis_transaksi);
             if($billing->jenis_transaksi==1){
                 // dd('masukbupto');
@@ -69,7 +72,11 @@ class PDFController extends Controller
             }
             
         }else{
+            
             $billing = Billing::where('attribute1',$id)->where('kode_billing',$idbilling)->get()->first();
+            if($billing==null){
+                return back()->with('msg', 'Kode Billing Tidak Ditemukan');
+            }
             if($billing->jenis_transaksi==1){
                 $ebupot=Ebupot::where('id',$billing->trx_bupot)->update([
                     'attribute2'=>Auth::user()->id,

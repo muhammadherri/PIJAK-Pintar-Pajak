@@ -25,7 +25,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-8">
+                <div class="col-xl-12">
                     <div class="card">
                         <div class="card-body">
                             <div class="profile-tab">
@@ -290,13 +290,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-8">
+                <div class="col-xl-12">
                     <div class="card">
                         <div class="card-body">
                             <div class="profile-tab">
                                 <div class="custom-tab-1">
                                     <div class="text-center">
-                                        <h4>Penjualan</h4>
+                                        <h4>PENJUALAN</h4>
                                     </div>
                                     <hr>
                                     <ul class="nav nav-tabs">
@@ -335,7 +335,7 @@
                                                                     <td>{{ $row->informasi_pembayaran }}</td>
                                                                     <td>{{ date('d-m-Y',strtotime($row->created_at)) }}</td>
                                                                     <td >
-                                                                        {{number_format($row->ppn,2)}}
+                                                                        {{number_format($row->ppn )}}
                                                                     </td>
                                                                     <td>{{ $row->users->name }}</td>
                                                                 </tr>
@@ -377,6 +377,128 @@
                                                             @endforeach
                                                         </tbody>
                                                     </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="profile-tab">
+                                <div class="custom-tab-1">
+                                    <div class="text-center">
+                                        <h4>PEMBELIAN</h4>
+                                    </div>
+                                    <hr>
+                                    <ul class="nav nav-tabs">
+                                        <li class="nav-item"><a href="#prepopulate" data-bs-toggle="tab" class="nav-link active show">Prepopulate</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div id="prepopulate" class="tab-pane fade active show">
+                                            <div class="my-post-content pt-3">
+                                                <div class="card">
+                                                    <div class="table-responsive">
+                                                        <table id="example3" class="display" style="min-width: 845px">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Nomor NPWP Terdaftar</th>
+                                                                    <th>Nama Wajib Pajak</th>
+                                                                    <th>Alamat Wajib Pajak</th>
+                                                                    <th>Nomor Faktur</th>
+                                                                    <th>Jumlah DPP</th>
+                                                                    <th>Jumlah PPN</th>
+                                                                    <th>Tahun</th>
+                                                                    <th>Masa PPN Terdaftar</th>
+                                                                    <th>Tanggal Pembuatan</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                @foreach ($prepopulate as $key => $row)
+                                                                <tr>
+                                                                    <td>{{ $row->npwp }}</td>
+                                                                    <td>{{ $row->nama_npwp }}</td>
+                                                                    <td>{{ $row->alamat_npwp }}</td>
+                                                                    <td>{{ $row->no_faktur }}</td>
+                                                                    <td>{{ number_format($row->jumlah_dpp ) }}</td>
+                                                                    <td>{{ number_format($row->jumlah_ppn ) }}</td>
+                                                                    <td>{{ $row->tahun }}</td>
+                                                                    <td>{{ date('d-m-Y',strtotime($row->masa_ppn)) }}</td>
+                                                                    <td>{{ date('d-m-Y',strtotime($row->created_at)) }}</td>
+                                                                </tr>
+                                                            @endforeach
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="profile-tab">
+                                <div class="custom-tab-1">
+                                    <div class="text-center">
+                                        <h4>PEMBAYARAN</h4>
+                                    </div>
+                                    <hr>
+                                    <ul class="nav nav-tabs">
+                                        <li class="nav-item"><a href="#hutangppn" data-bs-toggle="tab" class="nav-link active show">Hutang PPn</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div id="hutangppn" class="tab-pane fade active show">
+                                            <div class="my-post-content pt-3">
+                                                <div class="card">
+                                                    <div class="table-responsive">
+                                                        <table id="example3" class="display" style="min-width: 845px">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Nomor Transaksi</th>
+                                                                    <th>Jumlah PPN Masuk</th>
+                                                                    <th>Jumlah PPN Keluar</th>
+                                                                    <th>Hutang PPN</th>
+                                                                    <th>Tgl Pembuatan</th>
+                                                                    <th>Status</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                @foreach ($hutangppn as $key => $row)
+                                                                <tr>
+                                                                    <td>{{ $row->trx }}</td>
+                                                                    <td>{{ number_format($row->jumlah_ppn_masuk) }}</td>
+                                                                    <td>{{ number_format($row->jumlah_ppn_keluar) }}</td>
+                                                                    <td>{{ number_format($row->hutang_ppn) }}</td>
+                                                                    <td>{{ $row->created_at->format('d-M-Y') }}</td>
+                                                                    <td>
+                                                                        @if($row->attribute3==null)
+                                                                            <div class="d-flex"><a class="badge badge-rounded badge-outline-danger">
+                                                                                Belum Dibayar</a></div>
+                                                                        @elseif($row->attribute3==1)
+                                                                            <div class="d-flex">
+                                                                                <a class="badge badge-rounded badge-outline-warning">
+                                                                                Menunggu Pembayaran</a></div>
+                                                                        @else
+                                                                            <a class="badge badge-rounded badge-outline-primary">Sudah Dibayar</a>
+                                                                        @endif
+                                                                    </td>
+                                                                   
+                                                                </tr>
+                                                            @endforeach
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

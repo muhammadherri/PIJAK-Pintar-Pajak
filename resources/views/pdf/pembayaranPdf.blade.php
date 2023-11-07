@@ -172,7 +172,7 @@
 				</tr>
 				<tr>
 					<td>Tanggal Buku</td>
-					<td>{{date('d-M-Y',strtotime($billing->created_at))}}</td>
+					<td>{{date('d-M-Y',strtotime($billing->start_periode_pajak))}}</td>
 				</tr>
 				<tr>
 					<td>Jenis Pembayaran</td>
@@ -201,7 +201,7 @@
 					<td>{{$billing->nama_penyetor}}</td>
 					<td>Dibuat</td>
 					<td><b></b></td>
-					<td>{{date('d-M-Y',strtotime($billing->created_at))}}</td>
+					<td>{{date('d-M-Y',strtotime($billing->start_periode_pajak))}}</td>
 				</tr>
 				<tr>
 					@php

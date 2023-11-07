@@ -15,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <!-- PAGE TITLE HERE -->
     <link rel="icon" href="{{ asset('images/umlogo.png') }}">
-    <title>Taxceed </title>
+    <title>PIJAK | Pintar Pajak </title>
     <!-- FAVICONS ICON -->
     {{-- <link rel="shortcut icon" type="image/png" href="images/favicon.png" /> --}}
     <link rel="stylesheet" href="{{ asset('app-assets/vendor/jquery-nice-select/css/nice-select.css') }}">
@@ -114,7 +114,11 @@
                 <ul class="metismenu" id="menu">
                     <li class="dropdown header-profile">
                         <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
+                            @if(Auth::user()->gender==1)
                             <img src="{{ asset('images/user.png') }}" width="20" alt="" />
+                            @else
+                            <img src="{{ asset('images/female.png') }}" width="20" alt="" />
+                            @endif
                             <div class="header-info ms-3">
                                 {{-- @if ($user == 'erp') --}}
                                 <span class="font-w600 ">Hi,{{ Auth::user()->name }}</span>
@@ -258,6 +262,7 @@
                             <li><a href="{{ route('penandatanganan') }}">Penandatanganan</a></li>
                             <li><a href="{{ route('jenispph') }}">Jenis PPh</a></li>
                             <li><a href="{{ route('noseri') }}">No Seri</a></li>
+                            <li><a href="{{ route('jenis_pajak') }}">Jenis Pajak</a></li>
                             {{-- <li><a href="{{ route('penerimapenghasilan') }}">Penerima Penghasilan</a></li> --}}
                         </ul>
 
@@ -291,7 +296,7 @@
                 </ul>
 
                 <div class="copyright">
-                    <p><strong>Taxceed Dashboard</strong> </p>
+                    <p><strong>PIJAK DASHBOARD</strong></p>
                 </div>
             </div>
         </div>
@@ -314,7 +319,7 @@
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by <a href="" target="_blank">TAXCEED</a> 2023 <p style="color:#f3f3f3"></p></p>
+                <p>Copyright © Designed &amp; Developed by <a href="" target="_blank">PIJAK</a> 2023 <p style="color:#f3f3f3"></p></p>
             </div>
         </div>
         <!--**********************************

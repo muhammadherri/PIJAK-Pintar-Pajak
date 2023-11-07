@@ -16,7 +16,7 @@
     <!-- Style -->
     <link rel="stylesheet" href="{{ asset('app-assets/css/style.css') }}">
 
-    <title>Taxceed</title>
+    <title>PIJAK | Pintar Pajak </title>
 </head>
 <body>
     <div class="content">

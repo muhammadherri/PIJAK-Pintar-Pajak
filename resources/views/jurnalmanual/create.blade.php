@@ -31,7 +31,8 @@
                                     <div class="row">
                                         <h5>Neraca</h5>
                                         <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">Akun Debet</label>
+                                            <label class="col-sm-3 col-form-label">Akun</label>
+                                            {{-- <label class="col-sm-3 col-form-label">Akun Debet</label> --}}
                                             <div class="col-sm-9">
                                                 <select id="no_akun_debet" name="no_akun_debet"
                                                 class="dropdown-groups">
@@ -41,46 +42,66 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="mb-3 row">
+                                        {{-- <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">No Akun Kredit</label>
                                             <div class="col-sm-9">
                                                 <select required id="no_akun_kredit" class="dropdown-groups" name="no_akun_kredit">
                                                 </select>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">Nama Akun Debet</label>
+                                            {{-- <label class="col-sm-3 col-form-label">Nama Akun Debet</label> --}}
+                                            <label class="col-sm-3 col-form-label">Nama Akun </label>
                                             <div class="col-sm-9">
                                                 <input type="text" id="nama_akun_debet" readonly class="form-control" name="nama_akun_debet">
-                                                {{-- <select required id="nama_akun_debet" class="dropdown-groups" name="nama_akun_debet">
-                                                </select> --}}
                                             </div>
                                         </div>
-                                        <div class="mb-3 row">
+                                        {{-- <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Nama Akun Kredit</label>
                                             <div class="col-sm-9">
                                                 <input type="text" id="nama_akun_kredit" readonly class="form-control" name="nama_akun_kredit">
-
-                                                {{-- <select required id="nama_akun_kredit" class="dropdown-groups" name="nama_akun_kredit">
-                                                </select> --}}
+                                            </div>
+                                        </div> --}}
+                                        <div class="mb-12 row">
+                                            <label class="col-sm-3 col-form-label"> </label>
+                                            <div class="col-sm-3">
+                                                <div class="form-check">
+                                                    <input class="form-check-input"
+                                                        type="radio" name="check" value="0"checked>
+                                                    <label class="form-check-label">
+                                                        Positif
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="form-check">
+                                                    <input class="form-check-input"
+                                                        type="radio" name="check" value="1">
+                                                    <label class="form-check-label">
+                                                        Negatif
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">Nilai Debet</label>
+                                            <label class="col-sm-3 col-form-label">Nilai</label>
+                                            {{-- <label class="col-sm-3 col-form-label">Nilai Debet</label> --}}
                                             <div class="col-sm-9">
-                                                <input required min="0" onkeyup="this.value=addcommas(this.value);" autocomplete="off" type="text" id="nilai_debet"
+                                                <input required min="0" onkeyup="this.value=addcommas(this.value);" 
+                                                autocomplete="off" type="text" id="nilai_debet"
                                                     name="nilai_debet" class="form-control"
-                                                    placeholder="Masukkan Nilai Debet">
+                                                    placeholder="Masukkan Nilai">
                                             </div>
                                         </div>
-                                        <div class="mb-3 row">
+                                        {{-- <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Nilai Kredit</label>
                                             <div class="col-sm-9">
-                                                <input onkeyup="this.value=addcommas(this.value);" required min="0" autocomplete="off" type="text" id="nilai_kredit"
+                                                <input required min="0" onkeyup="this.value=addcommas(this.value);"
+                                                autocomplete="off" type="text" id="nilai_kredit"
                                                     name="nilai_kredit" class="form-control"
                                                     placeholder="Masukkan Nilai Kredit">
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Keterangan</label>
                                             <div class="col-sm-9">

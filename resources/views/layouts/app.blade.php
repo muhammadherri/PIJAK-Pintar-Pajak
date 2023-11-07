@@ -13,7 +13,7 @@
     <!-- Style -->
     <link rel="stylesheet" href="{{ asset('app-assets/css/style.css') }}">
     <link rel="icon" href="{{ asset('images/umlogo.png') }}">
-    <title>Taxceed</title>
+    <title>PIJAK | Pintar Pajak </title>
 </head>
 <body>
     <div class="content">

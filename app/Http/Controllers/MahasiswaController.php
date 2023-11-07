@@ -11,6 +11,8 @@ use App\Models\PphTidakFinal;
 use App\Models\TransaksiPphDuapuluhSatu;
 use App\Models\Invoice;
 use App\Models\Faktur;
+use App\Models\HutangPpn;
+use App\Models\Prepopulate;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
@@ -55,6 +57,8 @@ class MahasiswaController extends Controller
      */
     public function show($id)
     {
+        $hutangppn=HutangPpn::where('attribute1',$id)->get();
+        $prepopulate=Prepopulate::where('attribute1',$id)->get();
         $trx=TransaksiPphDuapuluhSatu::where('attribute1',$id)->get();
         $pphfinal=Pphfinal::where('attribute1',$id)->get();
         $pphtidakfinal=PphTidakFinal::where('attribute1',$id)->get();
@@ -70,7 +74,7 @@ class MahasiswaController extends Controller
         $timeDifferent = $now->diffForHumans($lastLoginTime);
         // dd($user);
         if(Auth::user()->status==1){
-            return view('mahasiswa.show',compact('faktur','invoice','pphtidakfinal','pphfinal','timeDifferent','user','trx','ebupot','billing'))->with('no',1);
+            return view('mahasiswa.show',compact('hutangppn','prepopulate','faktur','invoice','pphtidakfinal','pphfinal','timeDifferent','user','trx','ebupot','billing'))->with('no',1);
         }else{
             return back();
         }

@@ -288,21 +288,21 @@ document.addEventListener('DOMContentLoaded', function() {
             if(totalbiayausahanol<0){
                 $('.total_biayausaha').val(0);
             }else{
-                $('.total_biayausaha').val(totalbiayausahanol);
+                $('.total_biayausaha').val(totalbiayausahanol.toLocaleString());
             }
             
             const totalbiayaluarnol = totalbiaya_luar-pengurangbiaya_luar;
             if(totalbiayaluarnol<0){
                 $('.total_biayaluar').val(0);
             }else{
-                $('.total_biayaluar').val(totalbiayaluarnol);
+                $('.total_biayaluar').val(totalbiayaluarnol.toLocaleString());
             }
             
             const totalnol = totalsub_jumlah-pengurangsub_jumlah;
             if(totalnol<0){
                 $('.total').val(0);
             }else{
-                $('.total').val(totalnol);
+                $('.total').val(totalnol.toLocaleString());
             }
         }
     });
@@ -544,18 +544,27 @@ addBtnadd1771ivb.addEventListener('click', function() {
     const newRow = `
     <tr>
         <td width="auto" class="text-center">
-            <input required autocomplete="off"
-                type="text"
-                name="jenis_penghasilan[]"
-                id="jenis_penghasilan[]"
-                class="form-control" />
+        <select id="jenis_penghasilanb[]"name="jenis_penghasilanb[]"
+        class="dropdown-groups">
+        <option value="1. BANTUAN / SUMBANGAN">1. BANTUAN / SUMBANGAN</option>
+        <option value="2. HIBAH">2. HIBAH</option>
+        <option value="3. DIVIDEN / BAGIAN LABA DARI PENYERTAAN MODAL PADA BADAN USAHA DI INDONESIA (Pasal 4 Ayat (3) Huruf f UU PPh)">3. DIVIDEN / BAGIAN LABA DARI PENYERTAAN MODAL PADA BADAN USAHA </option>
+        <option value="4. IURAN DAN PENGHASILAN TERTENTU YANG DITERIMA DANA PENSIUN">4. IURAN DAN PENGHASILAN TERTEN...</option>
+        <option value="5. BAGIAN LABA YANG DITERIMA PERUSAHAAN MODAL VENTURA DARI BADAN PASANGAN USAHA">5. BAGIAN LABA YANG DITERIMA PER...</option>
+        <option value="6. SISA LEBIH YANG DITERIMA ATAU DIPEROLEH BADAN ATAU LEMBAGA 
+        NIRLABA YANG BERGERAK DALAM BIDANG PENDIDIKAN DAN/ATAU 
+        BIDANG PENELITIAN DAN PENGEMBANGAN, YANG TELAH TERDAFTAR 
+        PADA INSTANSI YANG MEMBIDANGINYA, YANG DITANAMKAN KEMBALI 
+        DALAM BENTUK SARANA DAN PRASARANA KEGIATAN PENDIDIKAN DAN/
+        ATAU PENELITIAN DAN PENGEMBANGAN (Pasal 4 Ayat (3) Huruf m UU PPh)">6. SISA LEBIH YANG DITERIMA ATAU...</option>
+    </select>
         </td>
         <td class="text-center">
             <input required autocomplete="off"
                 onkeyup="this.value=sprator(this.value);"
                 type="text"
-                name="angka_penghasilan_bruto[]"
-                id="angka_penghasilan_bruto[]"
+                name="angka_penghasilan_brutob[]"
+                id="angka_penghasilan_brutob[]"
                 min="0"
                 class="form-control sub_penghasilan_bruto" />
         </td>

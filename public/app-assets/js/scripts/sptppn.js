@@ -766,7 +766,7 @@ function sprator(x) {
     const jumlahdpp1111ab =retValbkp_1111_AB+retValdppprolehan+retValdppimpor;
     const jumlahppn1111ab =retValbkp_ppn_1111_AB+retValppnprolehan+retValppnimpor;
     const jumlahppnbm1111ab =retValbkp_ppnbm_1111_AB+retValppnbmprolehan+retValppnbmimpor;
-    const jumlahkredit =retValbkp_1111_AB+retValdppprolehan;
+    const jumlahkredit =retValbkp_ppn_1111_AB+retValppnprolehan;
 
     const resultjumlah_perolehan_1111_AB = document.getElementById('jumlah_perolehan_1111_AB');
     const resultjumlah_perolehan_ppn_1111_AB = document.getElementById('jumlah_perolehan_ppn_1111_AB');

@@ -8,6 +8,7 @@ use App\Models\Ebupot;
 use App\Models\HutangPpn;
 use App\Models\Pphfinal;
 use App\Models\PphTidakFinal;
+use App\Models\JenisPajak;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use PDF;
@@ -43,12 +44,13 @@ class BillingController extends Controller
         $id=Auth::user()->id;
 
         $vendor=Vendor::all();
+        $jenispajak=JenisPajak::all();
         $trx=Ebupot::orderBy('id','DESC')->whereNotNull('trx')->where('attribute1',$id)->where('attribute3',null)->get();
         $trxppn=HutangPpn::orderBy('id','DESC')->where('attribute1',$id)->where('attribute3',null)->get();
         $trxpphfinal=Pphfinal::orderBy('id','DESC')->whereNotNull('transaksi')->where('attribute1',$id)->where('attribute3',null)->get();
         $trxpphtidakfinal=PphTidakFinal::orderBy('id','DESC')->where('attribute1',$id)->where('attribute3',null)->get();
         // dd($trx);
-        return view('billing.create',compact('vendor','trx','trxppn','trxpphfinal','trxpphtidakfinal'));
+        return view('billing.create',compact('jenispajak','vendor','trx','trxppn','trxpphfinal','trxpphtidakfinal'));
     }
 
     /**

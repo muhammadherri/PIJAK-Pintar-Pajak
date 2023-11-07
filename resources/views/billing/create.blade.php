@@ -131,8 +131,15 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Jenis Pajak</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" required id="jenis_pajak" name="jenis_pajak"
-                                                    type="text" class="form-control" placeholder="Masukkan Jenis Pajak">
+                                                <select id="jenis_pajak" name="jenis_pajak"
+                                                    class="dropdown-groups">
+                                                    @foreach ($jenispajak as $row)
+                                                        <option value="{{ $row->id }}">
+                                                            {{ $row->kode }} - {{ $row->jenis_pajak }}</option>
+                                                    @endforeach
+                                                </select>                 
+                                                {{-- <input autocomplete="off" required id="jenis_pajak" name="jenis_pajak"
+                                                    type="text" class="form-control" placeholder="Masukkan Jenis Pajak"> --}}
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
