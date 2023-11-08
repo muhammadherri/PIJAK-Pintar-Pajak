@@ -164,154 +164,154 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    const tablelist_1771II = document.querySelector('#list_1771II tbody');
-    const addBtnadd1771ii = document.querySelector('#btn-add1771ii');
-    addBtnadd1771ii.addEventListener('click', function() {
-        const newRow = `
-        <tr>
-            <td width="auto" class="text-center" value="">
-            <select id="angkapembelianbarang[]"name="angkapembelianbarang[]"
-                class="dropdown-groups">
-                <option value="PEMBELIAN BAHAN/BARANG DAGANGAN">PEMBELIAN BAHAN/BARANG DAGANGAN</option>
-                <option value="GAJI, UPAH, BONUS, GRATIFIKASI,HONORARIUM, THR, DSB">GAJI, UPAH, BONUS, GRATIFIKASI,HONORARIUM, THR, DSB</option>
-                <option value="BIAYA TRANSPORTASI">BIAYA TRANSPORTASI</option>
-                <option value="BIAYA PENYUSUTAN DAN AMORTISASI">BIAYA PENYUSUTAN DAN AMORTISASI</option>
-                <option value="BIAYA SEWA">BIAYA SEWA</option>
-                <option value="BIAYA BUNGA PINJAMAN">BIAYA BUNGA PINJAMAN</option>
-                <option value="BIAYA SEHUBUNGAN DENGAN JASA">BIAYA SEHUBUNGAN DENGAN JASA</option>
-                <option value="BIAYA PIUTANG TAK TERTAGIH">BIAYA PIUTANG TAK TERTAGIH</option>
-                <option value="BIAYA ROYALTI">BIAYA ROYALTI</option>
-                <option value="BIAYA PEMASARAN/PROMOSI">BIAYA PEMASARAN/PROMOSI</option>
-                <option value="BIAYA LAINNYA">BIAYA LAINNYA</option>
-                <option value="PERSEDIAAN AWAL">PERSEDIAAN AWAL</option>
-                <option value="PERSEDIAAN AKHIR (-/-)">PERSEDIAAN AKHIR (-/-)</option>
-            </select>
-            </td>
-            <td class="text-center">
-                <input required autocomplete="off"
-                onkeyup="this.value=sprator(this.value);"
-                type="text" name="angkaharpok1[]"
-                    id="angkaharpok1[]" min="0"
-                    class="form-control sub_harpok" />
-            </td>
-            <td class="text-center">
-                <input required autocomplete="off"
-                    type="text" name="angkabiaya_usaha1[]"
-                    onkeyup="this.value=sprator(this.value);"
-                    id="angkabiaya_usaha1[]" min="0"
-                    class="form-control sub_biaya_usaha" />
-            </td>
-            <td class="text-center">
-                <input required autocomplete="off"
-                    type="text" name="angkabiaya_luar1[]"
-                    onkeyup="this.value=sprator(this.value);"
-                    id="angkabiaya_luar1[]" min="0"
-                    class="form-control sub_biaya_luar" />
-            </td>
-            <td class="text-center">
-                <input readonly autocomplete="off"
-                    type="text" name="subjum1[]"
-                    id="subjum1[]" min="0"
-                    class="form-control jumlahtotal" />
-            </td>
-            <td><button type="button" class="btn btn-danger btn-remove-1771ii"><i
-                class="fa fa-trash"></i>
-            </td>
-        </tr>
-        `;
-        tablelist_1771II.insertAdjacentHTML('beforeend', newRow);
-    });
-    tablelist_1771II.addEventListener('input', function(event) {
-        const target = event.target;
-        if (target.tagName === 'INPUT' && target.name.startsWith('angka')) {
-            const row = target.closest('tr');
-            // const harpok1 = parseFloat(row.querySelector('input[name="angkaharpok1[]"]').value) || 0;
-            const harpok1 = $(row.querySelector('[name="angkaharpok1[]"]')).val();
-            retValharpok1=harpok1 ? parseFloat(harpok1.replace(/,/g, '')) : 0;
+    // const tablelist_1771II = document.querySelector('#list_1771II tbody');
+    // const addBtnadd1771ii = document.querySelector('#btn-add1771ii');
+    // addBtnadd1771ii.addEventListener('click', function() {
+    //     const newRow = `
+    //     <tr>
+    //         <td width="auto" class="text-center" value="">
+    //         <select id="angkapembelianbarang[]"name="angkapembelianbarang[]"
+    //             class="dropdown-groups">
+    //             <option value="PEMBELIAN BAHAN/BARANG DAGANGAN">PEMBELIAN BAHAN/BARANG DAGANGAN</option>
+    //             <option value="GAJI, UPAH, BONUS, GRATIFIKASI,HONORARIUM, THR, DSB">GAJI, UPAH, BONUS, GRATIFIKASI,HONORARIUM, THR, DSB</option>
+    //             <option value="BIAYA TRANSPORTASI">BIAYA TRANSPORTASI</option>
+    //             <option value="BIAYA PENYUSUTAN DAN AMORTISASI">BIAYA PENYUSUTAN DAN AMORTISASI</option>
+    //             <option value="BIAYA SEWA">BIAYA SEWA</option>
+    //             <option value="BIAYA BUNGA PINJAMAN">BIAYA BUNGA PINJAMAN</option>
+    //             <option value="BIAYA SEHUBUNGAN DENGAN JASA">BIAYA SEHUBUNGAN DENGAN JASA</option>
+    //             <option value="BIAYA PIUTANG TAK TERTAGIH">BIAYA PIUTANG TAK TERTAGIH</option>
+    //             <option value="BIAYA ROYALTI">BIAYA ROYALTI</option>
+    //             <option value="BIAYA PEMASARAN/PROMOSI">BIAYA PEMASARAN/PROMOSI</option>
+    //             <option value="BIAYA LAINNYA">BIAYA LAINNYA</option>
+    //             <option value="PERSEDIAAN AWAL">PERSEDIAAN AWAL</option>
+    //             <option value="PERSEDIAAN AKHIR (-/-)">PERSEDIAAN AKHIR (-/-)</option>
+    //         </select>
+    //         </td>
+    //         <td class="text-center">
+    //             <input required autocomplete="off"
+    //             onkeyup="this.value=sprator(this.value);"
+    //             type="text" name="angkaharpok1[]"
+    //                 id="angkaharpok1[]" min="0"
+    //                 class="form-control sub_harpok" />
+    //         </td>
+    //         <td class="text-center">
+    //             <input required autocomplete="off"
+    //                 type="text" name="angkabiaya_usaha1[]"
+    //                 onkeyup="this.value=sprator(this.value);"
+    //                 id="angkabiaya_usaha1[]" min="0"
+    //                 class="form-control sub_biaya_usaha" />
+    //         </td>
+    //         <td class="text-center">
+    //             <input required autocomplete="off"
+    //                 type="text" name="angkabiaya_luar1[]"
+    //                 onkeyup="this.value=sprator(this.value);"
+    //                 id="angkabiaya_luar1[]" min="0"
+    //                 class="form-control sub_biaya_luar" />
+    //         </td>
+    //         <td class="text-center">
+    //             <input readonly autocomplete="off"
+    //                 type="text" name="subjum1[]"
+    //                 id="subjum1[]" min="0"
+    //                 class="form-control jumlahtotal" />
+    //         </td>
+    //         <td><button type="button" class="btn btn-danger btn-remove-1771ii"><i
+    //             class="fa fa-trash"></i>
+    //         </td>
+    //     </tr>
+    //     `;
+    //     tablelist_1771II.insertAdjacentHTML('beforeend', newRow);
+    // });
+    // tablelist_1771II.addEventListener('input', function(event) {
+    //     const target = event.target;
+    //     if (target.tagName === 'INPUT' && target.name.startsWith('angka')) {
+    //         const row = target.closest('tr');
+    //         // const harpok1 = parseFloat(row.querySelector('input[name="angkaharpok1[]"]').value) || 0;
+    //         const harpok1 = $(row.querySelector('[name="angkaharpok1[]"]')).val();
+    //         retValharpok1=harpok1 ? parseFloat(harpok1.replace(/,/g, '')) : 0;
 
-            // const biaya_usaha1 = parseFloat(row.querySelector('input[name="angkabiaya_usaha1[]"]').value) || 0;
-            const biaya_usaha1 = $(row.querySelector('[name="angkabiaya_usaha1[]"]')).val();
-            retValbiaya_usaha1=biaya_usaha1 ? parseFloat(biaya_usaha1.replace(/,/g, '')) : 0;
+    //         // const biaya_usaha1 = parseFloat(row.querySelector('input[name="angkabiaya_usaha1[]"]').value) || 0;
+    //         const biaya_usaha1 = $(row.querySelector('[name="angkabiaya_usaha1[]"]')).val();
+    //         retValbiaya_usaha1=biaya_usaha1 ? parseFloat(biaya_usaha1.replace(/,/g, '')) : 0;
             
-            // const biaya_luar1 = parseFloat(row.querySelector('input[name="angkabiaya_luar1[]"]').value) || 0;
-            const biaya_luar1 = $(row.querySelector('[name="angkabiaya_luar1[]"]')).val();
-            retValbiaya_luar1=biaya_luar1 ? parseFloat(biaya_luar1.replace(/,/g, '')) : 0;
+    //         // const biaya_luar1 = parseFloat(row.querySelector('input[name="angkabiaya_luar1[]"]').value) || 0;
+    //         const biaya_luar1 = $(row.querySelector('[name="angkabiaya_luar1[]"]')).val();
+    //         retValbiaya_luar1=biaya_luar1 ? parseFloat(biaya_luar1.replace(/,/g, '')) : 0;
 
-            const hasiljumlah1 = row.querySelector('input[name="subjum1[]"]');
-            const sum = retValharpok1 + retValbiaya_usaha1 + retValbiaya_luar1;
-            hasiljumlah1.value = sum.toLocaleString();
+    //         const hasiljumlah1 = row.querySelector('input[name="subjum1[]"]');
+    //         const sum = retValharpok1 + retValbiaya_usaha1 + retValbiaya_luar1;
+    //         hasiljumlah1.value = sum.toLocaleString();
 
-            var totalharpok = 0
-            var totalbiaya_usaha = 0
-            var totalbiaya_luar = 0
-            var totalsub_jumlah = 0
+    //         var totalharpok = 0
+    //         var totalbiaya_usaha = 0
+    //         var totalbiaya_luar = 0
+    //         var totalsub_jumlah = 0
 
-            var pengurangharpok = 0
-            var pengurangbiaya_usaha = 0
-            var pengurangbiaya_luar = 0
-            var pengurangsub_jumlah = 0
+    //         var pengurangharpok = 0
+    //         var pengurangbiaya_usaha = 0
+    //         var pengurangbiaya_luar = 0
+    //         var pengurangsub_jumlah = 0
 
-            $(".sub_harpok").each(function() {
-                totalharpok += +$(this).val().replace(/,/g, '');
-            });
-            $(".sub_biaya_usaha").each(function() {
-                totalbiaya_usaha += +$(this).val().replace(/,/g, '');
-            });
-            $(".sub_biaya_luar").each(function() {
-                totalbiaya_luar += +$(this).val().replace(/,/g, '');
-            });
-            $(".jumlahtotal").each(function() {
-                totalsub_jumlah += +$(this).val().replace(/,/g, '');
-            });
+    //         $(".sub_harpok").each(function() {
+    //             totalharpok += +$(this).val().replace(/,/g, '');
+    //         });
+    //         $(".sub_biaya_usaha").each(function() {
+    //             totalbiaya_usaha += +$(this).val().replace(/,/g, '');
+    //         });
+    //         $(".sub_biaya_luar").each(function() {
+    //             totalbiaya_luar += +$(this).val().replace(/,/g, '');
+    //         });
+    //         $(".jumlahtotal").each(function() {
+    //             totalsub_jumlah += +$(this).val().replace(/,/g, '');
+    //         });
 
-            $(".pengurangan_harpok").each(function() {
-                pengurangharpok += +$(this).val().replace(/,/g, '');
-            });
-            $(".pengurangan_biayausaha").each(function() {
-                pengurangbiaya_usaha += +$(this).val().replace(/,/g, '');
-            });
-            $(".pengurangan_biayaluar").each(function() {
-                pengurangbiaya_luar += +$(this).val().replace(/,/g, '');
-            });
-            $(".pengurangan_subjum").each(function() {
-                pengurangsub_jumlah += +$(this).val().replace(/,/g, '');
-            });
+    //         $(".pengurangan_harpok").each(function() {
+    //             pengurangharpok += +$(this).val().replace(/,/g, '');
+    //         });
+    //         $(".pengurangan_biayausaha").each(function() {
+    //             pengurangbiaya_usaha += +$(this).val().replace(/,/g, '');
+    //         });
+    //         $(".pengurangan_biayaluar").each(function() {
+    //             pengurangbiaya_luar += +$(this).val().replace(/,/g, '');
+    //         });
+    //         $(".pengurangan_subjum").each(function() {
+    //             pengurangsub_jumlah += +$(this).val().replace(/,/g, '');
+    //         });
 
-            const totalharpoknol = totalharpok-pengurangharpok;
-            if(totalharpoknol<0){
-                $('.total_harpok').val(0);
-            }else{
-                $('.total_harpok').val(totalharpoknol.toLocaleString());
-            }
+    //         const totalharpoknol = totalharpok-pengurangharpok;
+    //         if(totalharpoknol<0){
+    //             $('.total_harpok').val(0);
+    //         }else{
+    //             $('.total_harpok').val(totalharpoknol.toLocaleString());
+    //         }
             
-            const totalbiayausahanol = totalbiaya_usaha-pengurangbiaya_usaha;
-            if(totalbiayausahanol<0){
-                $('.total_biayausaha').val(0);
-            }else{
-                $('.total_biayausaha').val(totalbiayausahanol.toLocaleString());
-            }
+    //         const totalbiayausahanol = totalbiaya_usaha-pengurangbiaya_usaha;
+    //         if(totalbiayausahanol<0){
+    //             $('.total_biayausaha').val(0);
+    //         }else{
+    //             $('.total_biayausaha').val(totalbiayausahanol.toLocaleString());
+    //         }
             
-            const totalbiayaluarnol = totalbiaya_luar-pengurangbiaya_luar;
-            if(totalbiayaluarnol<0){
-                $('.total_biayaluar').val(0);
-            }else{
-                $('.total_biayaluar').val(totalbiayaluarnol.toLocaleString());
-            }
+    //         const totalbiayaluarnol = totalbiaya_luar-pengurangbiaya_luar;
+    //         if(totalbiayaluarnol<0){
+    //             $('.total_biayaluar').val(0);
+    //         }else{
+    //             $('.total_biayaluar').val(totalbiayaluarnol.toLocaleString());
+    //         }
             
-            const totalnol = totalsub_jumlah-pengurangsub_jumlah;
-            if(totalnol<0){
-                $('.total').val(0);
-            }else{
-                $('.total').val(totalnol.toLocaleString());
-            }
-        }
-    });
-    tablelist_1771II.addEventListener('click', function(event) {
-        if (event.target.classList.contains('btn-remove-1771ii')) {
-            const row = event.target.closest('tr');
-            row.remove();
-        }
-    });
+    //         const totalnol = totalsub_jumlah-pengurangsub_jumlah;
+    //         if(totalnol<0){
+    //             $('.total').val(0);
+    //         }else{
+    //             $('.total').val(totalnol.toLocaleString());
+    //         }
+    //     }
+    // });
+    // tablelist_1771II.addEventListener('click', function(event) {
+    //     if (event.target.classList.contains('btn-remove-1771ii')) {
+    //         const row = event.target.closest('tr');
+    //         row.remove();
+    //     }
+    // });
 // 1771 II
 // 1771 III
     const tablekredit = document.querySelector('#list_1771III tbody');
@@ -436,165 +436,165 @@ npwp_1771IVInput.addEventListener('input', function() {
     }
 });
 
-const tablelist_1771IV = document.querySelector('#list_1771IV tbody');
-const addBtnadd1771iva = document.querySelector('#btn-add1771iva');
-addBtnadd1771iva.addEventListener('click', function() {
-    const newRow = `
-    <tr>
-        <td width="auto" class="text-center">
-        <select id="jenispenghasilan[]"name="jenispenghasilan[]"
-            class="dropdown-groups">
-            <option value="1. BUNGA DEPOSITO / TABUNGAN, DAN DISKONTO SBI / SBN">1. BUNGA DEPOSITO / TABUNGAN, DAN DISKONTO SBI / SBN</option>
-            <option value="2. BUNGA / DISKONTO OBLIGASI">2. BUNGA / DISKONTO OBLIGASI</option>
-            <option value="3. PENGHASILAN PENJUALAN SAHAM YANG DIPERDAGANGKAN DI BURSA EFEK">3. PENGHASILAN PENJUALAN SAHAM YANG DIPERDAGANGKAN DI BURSA EFEK</option>
-            <option value="4. PENGHASILAN PENJUALAN SAHAM MILIK PERUSAHAAN MODAL VENTURA">4. PENGHASILAN PENJUALAN SAHAM MILIK PERUSAHAAN MODAL VENTURA</option>
-            <option value="5. PENGHASILAN USAHA PENYALUR / DEALER / AGEN PRODUK BBM">5. PENGHASILAN USAHA PENYALUR / DEALER / AGEN PRODUK BBM</option>
-            <option value="6. PENGHASILAN PENGALIHAN HAK ATAS TANAH / BANGUNAN">6. PENGHASILAN PENGALIHAN HAK ATAS TANAH / BANGUNAN</option>
-            <option value="7. PENGHASILAN PERSEWAAN ATAS TANAH / BANGUNAN">7. PENGHASILAN PERSEWAAN ATAS TANAH / BANGUNAN</option>
-            <option value="8A. PELAKSANA KONSTRUKSI">8A. PELAKSANA KONSTRUKSI</option>
-            <option value="8B. PERENCANA KONSTRUKSI">8B. PERENCANA KONSTRUKSI</option>
-            <option value="8C. PENGAWAS KONSTRUKSI">8C. PENGAWAS KONSTRUKSI</option>
-            <option value="9. PERWAKILAN DAGANG ASING">9. PERWAKILAN DAGANG ASING</option>
-            <option value="10. PELAYARAN / PENERBANGAN ASING">10. PELAYARAN / PENERBANGAN ASING</option>
-            <option value="11. PELAYARAN DALAM NEGERI">11. PELAYARAN DALAM NEGERI</option>
-            <option value="12. PENILAIAN KEMBALI AKTIVA TETAP">12. PENILAIAN KEMBALI AKTIVA TETAP</option>
-            <option value="13. TRANSAKSI DERIVATIF YANG DIPERDAGANGKAN DI BURSA">13. TRANSAKSI DERIVATIF YANG DIPERDAGANGKAN DI BURSA</option>
-        </select>
-        </td>
-        <td class="text-center">
-            <input required autocomplete="off"
-                type="text"
-                onkeyup="this.value=sprator(this.value);"
-                name="angka_pengenaan_pajak[]"
-                id="angka_pengenaan_pajak[]"
-                min="0"
-                class="form-control sub_pengenaanpajak" />
-        </td>
-        <td class="text-center">
-            <input required autocomplete="off"
-                onkeyup="this.value=sprator(this.value);"
-                type="text"
-                name="angka_tarif_potongan[]"
-                id="angka_tarif_potongan[]"
-                min="0"
-                class="form-control sub_tarifpotongan" />
-        </td>
-        <td class="text-center">
-            <input readonly autocomplete="off"
-                type="text"
-                name="angka_pph_terutang[]"
-                id="angka_pph_terutang[]" min="0"
-                class="form-control sub_terutang" />
-        </td>
-        <td><button type="button" class="btn btn-danger btn-remove-1771iva"><i
-            class="fa fa-trash"></i>
-        </td>
-    </tr>
-    `;
-    tablelist_1771IV.insertAdjacentHTML('beforeend', newRow);
-});
-tablelist_1771IV.addEventListener('input', function(event) {
-    const target = event.target;
-    if (target.tagName === 'INPUT' && target.name.startsWith('angka')) {
-        const row = target.closest('tr');
-        // const pengenaanpajak = parseFloat(row.querySelector('input[name="angka_pengenaan_pajak[]"]').value) || 0;
-        const pengenaanpajak = $(row.querySelector('[name="angka_pengenaan_pajak[]"]')).val();
-        retValpengenaanpajak=pengenaanpajak ? parseFloat(pengenaanpajak.replace(/,/g, '')) : 0;
+// const tablelist_1771IV = document.querySelector('#list_1771IV tbody');
+// const addBtnadd1771iva = document.querySelector('#btn-add1771iva');
+// addBtnadd1771iva.addEventListener('click', function() {
+//     const newRow = `
+//     <tr>
+//         <td width="auto" class="text-center">
+//         <select id="jenispenghasilan[]"name="jenispenghasilan[]"
+//             class="dropdown-groups">
+//             <option value="1. BUNGA DEPOSITO / TABUNGAN, DAN DISKONTO SBI / SBN">1. BUNGA DEPOSITO / TABUNGAN, DAN DISKONTO SBI / SBN</option>
+//             <option value="2. BUNGA / DISKONTO OBLIGASI">2. BUNGA / DISKONTO OBLIGASI</option>
+//             <option value="3. PENGHASILAN PENJUALAN SAHAM YANG DIPERDAGANGKAN DI BURSA EFEK">3. PENGHASILAN PENJUALAN SAHAM YANG DIPERDAGANGKAN DI BURSA EFEK</option>
+//             <option value="4. PENGHASILAN PENJUALAN SAHAM MILIK PERUSAHAAN MODAL VENTURA">4. PENGHASILAN PENJUALAN SAHAM MILIK PERUSAHAAN MODAL VENTURA</option>
+//             <option value="5. PENGHASILAN USAHA PENYALUR / DEALER / AGEN PRODUK BBM">5. PENGHASILAN USAHA PENYALUR / DEALER / AGEN PRODUK BBM</option>
+//             <option value="6. PENGHASILAN PENGALIHAN HAK ATAS TANAH / BANGUNAN">6. PENGHASILAN PENGALIHAN HAK ATAS TANAH / BANGUNAN</option>
+//             <option value="7. PENGHASILAN PERSEWAAN ATAS TANAH / BANGUNAN">7. PENGHASILAN PERSEWAAN ATAS TANAH / BANGUNAN</option>
+//             <option value="8A. PELAKSANA KONSTRUKSI">8A. PELAKSANA KONSTRUKSI</option>
+//             <option value="8B. PERENCANA KONSTRUKSI">8B. PERENCANA KONSTRUKSI</option>
+//             <option value="8C. PENGAWAS KONSTRUKSI">8C. PENGAWAS KONSTRUKSI</option>
+//             <option value="9. PERWAKILAN DAGANG ASING">9. PERWAKILAN DAGANG ASING</option>
+//             <option value="10. PELAYARAN / PENERBANGAN ASING">10. PELAYARAN / PENERBANGAN ASING</option>
+//             <option value="11. PELAYARAN DALAM NEGERI">11. PELAYARAN DALAM NEGERI</option>
+//             <option value="12. PENILAIAN KEMBALI AKTIVA TETAP">12. PENILAIAN KEMBALI AKTIVA TETAP</option>
+//             <option value="13. TRANSAKSI DERIVATIF YANG DIPERDAGANGKAN DI BURSA">13. TRANSAKSI DERIVATIF YANG DIPERDAGANGKAN DI BURSA</option>
+//         </select>
+//         </td>
+//         <td class="text-center">
+//             <input required autocomplete="off"
+//                 type="text"
+//                 onkeyup="this.value=sprator(this.value);"
+//                 name="angka_pengenaan_pajak[]"
+//                 id="angka_pengenaan_pajak[]"
+//                 min="0"
+//                 class="form-control sub_pengenaanpajak" />
+//         </td>
+//         <td class="text-center">
+//             <input required autocomplete="off"
+//                 onkeyup="this.value=sprator(this.value);"
+//                 type="text"
+//                 name="angka_tarif_potongan[]"
+//                 id="angka_tarif_potongan[]"
+//                 min="0"
+//                 class="form-control sub_tarifpotongan" />
+//         </td>
+//         <td class="text-center">
+//             <input readonly autocomplete="off"
+//                 type="text"
+//                 name="angka_pph_terutang[]"
+//                 id="angka_pph_terutang[]" min="0"
+//                 class="form-control sub_terutang" />
+//         </td>
+//         <td><button type="button" class="btn btn-danger btn-remove-1771iva"><i
+//             class="fa fa-trash"></i>
+//         </td>
+//     </tr>
+//     `;
+//     tablelist_1771IV.insertAdjacentHTML('beforeend', newRow);
+// });
+// tablelist_1771IV.addEventListener('input', function(event) {
+//     const target = event.target;
+//     if (target.tagName === 'INPUT' && target.name.startsWith('angka')) {
+//         const row = target.closest('tr');
+//         // const pengenaanpajak = parseFloat(row.querySelector('input[name="angka_pengenaan_pajak[]"]').value) || 0;
+//         const pengenaanpajak = $(row.querySelector('[name="angka_pengenaan_pajak[]"]')).val();
+//         retValpengenaanpajak=pengenaanpajak ? parseFloat(pengenaanpajak.replace(/,/g, '')) : 0;
 
-        // const tarif = parseFloat(row.querySelector('input[name="angka_tarif_potongan[]"]').value) || 0;
-        const tarif = $(row.querySelector('[name="angka_tarif_potongan[]"]')).val();
-        retValtarif=tarif ? parseFloat(tarif.replace(/,/g, '')) : 0;
+//         // const tarif = parseFloat(row.querySelector('input[name="angka_tarif_potongan[]"]').value) || 0;
+//         const tarif = $(row.querySelector('[name="angka_tarif_potongan[]"]')).val();
+//         retValtarif=tarif ? parseFloat(tarif.replace(/,/g, '')) : 0;
 
-        const hasiljumlah1 = row.querySelector('input[name="angka_pph_terutang[]"]');
+//         const hasiljumlah1 = row.querySelector('input[name="angka_pph_terutang[]"]');
 
-        const sum = retValpengenaanpajak * retValtarif/100;
-        hasiljumlah1.value = sum.toLocaleString();
+//         const sum = retValpengenaanpajak * retValtarif/100;
+//         hasiljumlah1.value = sum.toLocaleString();
 
-        var total_pengenaanpajak = 0
-        var total_tarifpotongan = 0
-        var totalterutang = 0
+//         var total_pengenaanpajak = 0
+//         var total_tarifpotongan = 0
+//         var totalterutang = 0
 
-        $(".sub_pengenaanpajak").each(function() {
-            total_pengenaanpajak += +$(this).val().replace(/,/g, '');
-        });
-        $(".sub_tarifpotongan").each(function() {
-            total_tarifpotongan += +$(this).val().replace(/,/g, '');
-        });
+//         $(".sub_pengenaanpajak").each(function() {
+//             total_pengenaanpajak += +$(this).val().replace(/,/g, '');
+//         });
+//         $(".sub_tarifpotongan").each(function() {
+//             total_tarifpotongan += +$(this).val().replace(/,/g, '');
+//         });
         
-        $(".sub_terutang").each(function() {
-            totalterutang += +$(this).val().replace(/,/g, '');
-        });
+//         $(".sub_terutang").each(function() {
+//             totalterutang += +$(this).val().replace(/,/g, '');
+//         });
 
-        $('.total_kena_pajak').val(total_pengenaanpajak.toLocaleString());
-        $('.total_tarif_potongan').val(total_tarifpotongan.toLocaleString());
-        $('.total_terutang').val(totalterutang.toLocaleString());
+//         $('.total_kena_pajak').val(total_pengenaanpajak.toLocaleString());
+//         $('.total_tarif_potongan').val(total_tarifpotongan.toLocaleString());
+//         $('.total_terutang').val(totalterutang.toLocaleString());
 
-    }
-});
-tablelist_1771IV.addEventListener('click', function(event) {
-    if (event.target.classList.contains('btn-remove-1771iva')) {
-        const row = event.target.closest('tr');
-        row.remove();
-    }
-});
+//     }
+// });
+// tablelist_1771IV.addEventListener('click', function(event) {
+//     if (event.target.classList.contains('btn-remove-1771iva')) {
+//         const row = event.target.closest('tr');
+//         row.remove();
+//     }
+// });
 
-const tablelist_1771IVB = document.querySelector('#list_1771IVB tbody');
-const addBtnadd1771ivb = document.querySelector('#btn-add1771ivb');
-addBtnadd1771ivb.addEventListener('click', function() {
-    const newRow = `
-    <tr>
-        <td width="auto" class="text-center">
-        <select id="jenis_penghasilanb[]"name="jenis_penghasilanb[]"
-        class="dropdown-groups">
-        <option value="1. BANTUAN / SUMBANGAN">1. BANTUAN / SUMBANGAN</option>
-        <option value="2. HIBAH">2. HIBAH</option>
-        <option value="3. DIVIDEN / BAGIAN LABA DARI PENYERTAAN MODAL PADA BADAN USAHA DI INDONESIA (Pasal 4 Ayat (3) Huruf f UU PPh)">3. DIVIDEN / BAGIAN LABA DARI PENYERTAAN MODAL PADA BADAN USAHA </option>
-        <option value="4. IURAN DAN PENGHASILAN TERTENTU YANG DITERIMA DANA PENSIUN">4. IURAN DAN PENGHASILAN TERTEN...</option>
-        <option value="5. BAGIAN LABA YANG DITERIMA PERUSAHAAN MODAL VENTURA DARI BADAN PASANGAN USAHA">5. BAGIAN LABA YANG DITERIMA PER...</option>
-        <option value="6. SISA LEBIH YANG DITERIMA ATAU DIPEROLEH BADAN ATAU LEMBAGA 
-        NIRLABA YANG BERGERAK DALAM BIDANG PENDIDIKAN DAN/ATAU 
-        BIDANG PENELITIAN DAN PENGEMBANGAN, YANG TELAH TERDAFTAR 
-        PADA INSTANSI YANG MEMBIDANGINYA, YANG DITANAMKAN KEMBALI 
-        DALAM BENTUK SARANA DAN PRASARANA KEGIATAN PENDIDIKAN DAN/
-        ATAU PENELITIAN DAN PENGEMBANGAN (Pasal 4 Ayat (3) Huruf m UU PPh)">6. SISA LEBIH YANG DITERIMA ATAU...</option>
-    </select>
-        </td>
-        <td class="text-center">
-            <input required autocomplete="off"
-                onkeyup="this.value=sprator(this.value);"
-                type="text"
-                name="angka_penghasilan_brutob[]"
-                id="angka_penghasilan_brutob[]"
-                min="0"
-                class="form-control sub_penghasilan_bruto" />
-        </td>
-        <td><button type="button" class="btn btn-danger btn-remove-1771ivb"><i
-            class="fa fa-trash"></i>
-        </td>
-    </tr>
-    `;
-    tablelist_1771IVB.insertAdjacentHTML('beforeend', newRow);
-});
-tablelist_1771IVB.addEventListener('input', function(event) {
-    const target = event.target;
-    if (target.tagName === 'INPUT' && target.name.startsWith('angka')) {
+// const tablelist_1771IVB = document.querySelector('#list_1771IVB tbody');
+// const addBtnadd1771ivb = document.querySelector('#btn-add1771ivb');
+// addBtnadd1771ivb.addEventListener('click', function() {
+//     const newRow = `
+//     <tr>
+//         <td width="auto" class="text-center">
+//         <select id="jenis_penghasilanb[]"name="jenis_penghasilanb[]"
+//         class="dropdown-groups">
+//         <option value="1. BANTUAN / SUMBANGAN">1. BANTUAN / SUMBANGAN</option>
+//         <option value="2. HIBAH">2. HIBAH</option>
+//         <option value="3. DIVIDEN / BAGIAN LABA DARI PENYERTAAN MODAL PADA BADAN USAHA DI INDONESIA (Pasal 4 Ayat (3) Huruf f UU PPh)">3. DIVIDEN / BAGIAN LABA DARI PENYERTAAN MODAL PADA BADAN USAHA </option>
+//         <option value="4. IURAN DAN PENGHASILAN TERTENTU YANG DITERIMA DANA PENSIUN">4. IURAN DAN PENGHASILAN TERTEN...</option>
+//         <option value="5. BAGIAN LABA YANG DITERIMA PERUSAHAAN MODAL VENTURA DARI BADAN PASANGAN USAHA">5. BAGIAN LABA YANG DITERIMA PER...</option>
+//         <option value="6. SISA LEBIH YANG DITERIMA ATAU DIPEROLEH BADAN ATAU LEMBAGA 
+//         NIRLABA YANG BERGERAK DALAM BIDANG PENDIDIKAN DAN/ATAU 
+//         BIDANG PENELITIAN DAN PENGEMBANGAN, YANG TELAH TERDAFTAR 
+//         PADA INSTANSI YANG MEMBIDANGINYA, YANG DITANAMKAN KEMBALI 
+//         DALAM BENTUK SARANA DAN PRASARANA KEGIATAN PENDIDIKAN DAN/
+//         ATAU PENELITIAN DAN PENGEMBANGAN (Pasal 4 Ayat (3) Huruf m UU PPh)">6. SISA LEBIH YANG DITERIMA ATAU...</option>
+//     </select>
+//         </td>
+//         <td class="text-center">
+//             <input required autocomplete="off"
+//                 onkeyup="this.value=sprator(this.value);"
+//                 type="text"
+//                 name="angka_penghasilan_brutob[]"
+//                 id="angka_penghasilan_brutob[]"
+//                 min="0"
+//                 class="form-control sub_penghasilan_bruto" />
+//         </td>
+//         <td><button type="button" class="btn btn-danger btn-remove-1771ivb"><i
+//             class="fa fa-trash"></i>
+//         </td>
+//     </tr>
+//     `;
+//     tablelist_1771IVB.insertAdjacentHTML('beforeend', newRow);
+// });
+// tablelist_1771IVB.addEventListener('input', function(event) {
+//     const target = event.target;
+//     if (target.tagName === 'INPUT' && target.name.startsWith('angka')) {
 
-        var total_bruto = 0
+//         var total_bruto = 0
 
-        $(".sub_penghasilan_bruto").each(function() {
-            total_bruto += +$(this).val().replace(/,/g, '');
-        });
+//         $(".sub_penghasilan_bruto").each(function() {
+//             total_bruto += +$(this).val().replace(/,/g, '');
+//         });
     
-        $('.total_bruto').val(total_bruto.toLocaleString());
+//         $('.total_bruto').val(total_bruto.toLocaleString());
 
-    }
-});
-tablelist_1771IVB.addEventListener('click', function(event) {
-    if (event.target.classList.contains('btn-remove-1771ivb')) {
-        const row = event.target.closest('tr');
-        row.remove();
-    }
-});
+//     }
+// });
+// tablelist_1771IVB.addEventListener('click', function(event) {
+//     if (event.target.classList.contains('btn-remove-1771ivb')) {
+//         const row = event.target.closest('tr');
+//         row.remove();
+//     }
+// });
 // 1771 IV
 // 1771 V
 const nama_npwp_1771VInput = document.getElementById('nama_npwp_1771V');
@@ -1186,5 +1186,309 @@ function sprator(x) {
     }else{
         resultnetto_fiskal_1771i.value = jumlah8.toLocaleString();
     }
+
+    const hpp1_1771ii = $('#hpp1_1771ii').val();
+    const biayausaha1_1771ii = $('#biayausaha1_1771ii').val();
+    const biayaluarusaha1_1771ii = $('#biayaluarusaha1_1771ii').val();
+    retVal_hpp1_1771ii=hpp1_1771ii ? parseFloat(hpp1_1771ii.replace(/,/g, '')) : 0;
+    retVal_biayausaha1_1771ii=biayausaha1_1771ii ? parseFloat(biayausaha1_1771ii.replace(/,/g, '')) : 0;
+    retVal_biayaluarusaha1_1771ii=biayaluarusaha1_1771ii ? parseFloat(biayaluarusaha1_1771ii.replace(/,/g, '')) : 0;
+    const jumlah1_1771ii = retVal_hpp1_1771ii+retVal_biayausaha1_1771ii+retVal_biayaluarusaha1_1771ii;
+    const result_jumlah1_1771ii= document.getElementById('jumlah1_1771ii');
+    result_jumlah1_1771ii.value = jumlah1_1771ii.toLocaleString();
+
+    const hpp2_1771ii = $('#hpp2_1771ii').val();
+    const biayausaha2_1771ii = $('#biayausaha2_1771ii').val();
+    const biayaluarusaha2_1771ii = $('#biayaluarusaha2_1771ii').val();
+    retVal_hpp2_1771ii=hpp2_1771ii ? parseFloat(hpp2_1771ii.replace(/,/g, '')) : 0;
+    retVal_biayausaha2_1771ii=biayausaha2_1771ii ? parseFloat(biayausaha2_1771ii.replace(/,/g, '')) : 0;
+    retVal_biayaluarusaha2_1771ii=biayaluarusaha2_1771ii ? parseFloat(biayaluarusaha2_1771ii.replace(/,/g, '')) : 0;
+    const jumlah2_1771ii = retVal_hpp2_1771ii+retVal_biayausaha2_1771ii+retVal_biayaluarusaha2_1771ii;
+    const result_jumlah2_1771ii= document.getElementById('jumlah2_1771ii');
+    result_jumlah2_1771ii.value = jumlah2_1771ii.toLocaleString();
+
+    const hpp3_1771ii = $('#hpp3_1771ii').val();
+    const biayausaha3_1771ii = $('#biayausaha3_1771ii').val();
+    const biayaluarusaha3_1771ii = $('#biayaluarusaha3_1771ii').val();
+    retVal_hpp3_1771ii=hpp3_1771ii ? parseFloat(hpp3_1771ii.replace(/,/g, '')) : 0;
+    retVal_biayausaha3_1771ii=biayausaha3_1771ii ? parseFloat(biayausaha3_1771ii.replace(/,/g, '')) : 0;
+    retVal_biayaluarusaha3_1771ii=biayaluarusaha3_1771ii ? parseFloat(biayaluarusaha3_1771ii.replace(/,/g, '')) : 0;
+    const jumlah3_1771ii = retVal_hpp3_1771ii+retVal_biayausaha3_1771ii+retVal_biayaluarusaha3_1771ii;
+    const result_jumlah3_1771ii= document.getElementById('jumlah3_1771ii');
+    result_jumlah3_1771ii.value = jumlah3_1771ii.toLocaleString();
+
+    const hpp4_1771ii = $('#hpp4_1771ii').val();
+    const biayausaha4_1771ii = $('#biayausaha4_1771ii').val();
+    const biayaluarusaha4_1771ii = $('#biayaluarusaha4_1771ii').val();
+    retVal_hpp4_1771ii=hpp4_1771ii ? parseFloat(hpp4_1771ii.replace(/,/g, '')) : 0;
+    retVal_biayausaha4_1771ii=biayausaha4_1771ii ? parseFloat(biayausaha4_1771ii.replace(/,/g, '')) : 0;
+    retVal_biayaluarusaha4_1771ii=biayaluarusaha4_1771ii ? parseFloat(biayaluarusaha4_1771ii.replace(/,/g, '')) : 0;
+    const jumlah4_1771ii = retVal_hpp4_1771ii+retVal_biayausaha4_1771ii+retVal_biayaluarusaha4_1771ii;
+    const result_jumlah4_1771ii= document.getElementById('jumlah4_1771ii');
+    result_jumlah4_1771ii.value = jumlah4_1771ii.toLocaleString();
+
+    const hpp5_1771ii = $('#hpp5_1771ii').val();
+    const biayausaha5_1771ii = $('#biayausaha5_1771ii').val();
+    const biayaluarusaha5_1771ii = $('#biayaluarusaha5_1771ii').val();
+    retVal_hpp5_1771ii=hpp5_1771ii ? parseFloat(hpp5_1771ii.replace(/,/g, '')) : 0;
+    retVal_biayausaha5_1771ii=biayausaha5_1771ii ? parseFloat(biayausaha5_1771ii.replace(/,/g, '')) : 0;
+    retVal_biayaluarusaha5_1771ii=biayaluarusaha5_1771ii ? parseFloat(biayaluarusaha5_1771ii.replace(/,/g, '')) : 0;
+    const jumlah5_1771ii = retVal_hpp5_1771ii+retVal_biayausaha5_1771ii+retVal_biayaluarusaha5_1771ii;
+    const result_jumlah5_1771ii= document.getElementById('jumlah5_1771ii');
+    result_jumlah5_1771ii.value = jumlah5_1771ii.toLocaleString();
+
+    const hpp6_1771ii = $('#hpp6_1771ii').val();
+    const biayausaha6_1771ii = $('#biayausaha6_1771ii').val();
+    const biayaluarusaha6_1771ii = $('#biayaluarusaha6_1771ii').val();
+    retVal_hpp6_1771ii=hpp6_1771ii ? parseFloat(hpp6_1771ii.replace(/,/g, '')) : 0;
+    retVal_biayausaha6_1771ii=biayausaha6_1771ii ? parseFloat(biayausaha6_1771ii.replace(/,/g, '')) : 0;
+    retVal_biayaluarusaha6_1771ii=biayaluarusaha6_1771ii ? parseFloat(biayaluarusaha6_1771ii.replace(/,/g, '')) : 0;
+    const jumlah6_1771ii = retVal_hpp6_1771ii+retVal_biayausaha6_1771ii+retVal_biayaluarusaha6_1771ii;
+    const result_jumlah6_1771ii= document.getElementById('jumlah6_1771ii');
+    result_jumlah6_1771ii.value = jumlah6_1771ii.toLocaleString();
+
+    const hpp7_1771ii = $('#hpp7_1771ii').val();
+    const biayausaha7_1771ii = $('#biayausaha7_1771ii').val();
+    const biayaluarusaha7_1771ii = $('#biayaluarusaha7_1771ii').val();
+    retVal_hpp7_1771ii=hpp7_1771ii ? parseFloat(hpp7_1771ii.replace(/,/g, '')) : 0;
+    retVal_biayausaha7_1771ii=biayausaha7_1771ii ? parseFloat(biayausaha7_1771ii.replace(/,/g, '')) : 0;
+    retVal_biayaluarusaha7_1771ii=biayaluarusaha7_1771ii ? parseFloat(biayaluarusaha7_1771ii.replace(/,/g, '')) : 0;
+    const jumlah7_1771ii = retVal_hpp7_1771ii+retVal_biayausaha7_1771ii+retVal_biayaluarusaha7_1771ii;
+    const result_jumlah7_1771ii= document.getElementById('jumlah7_1771ii');
+    result_jumlah7_1771ii.value = jumlah7_1771ii.toLocaleString();
+
+    const hpp8_1771ii = $('#hpp8_1771ii').val();
+    const biayausaha8_1771ii = $('#biayausaha8_1771ii').val();
+    const biayaluarusaha8_1771ii = $('#biayaluarusaha8_1771ii').val();
+    retVal_hpp8_1771ii=hpp8_1771ii ? parseFloat(hpp8_1771ii.replace(/,/g, '')) : 0;
+    retVal_biayausaha8_1771ii=biayausaha8_1771ii ? parseFloat(biayausaha8_1771ii.replace(/,/g, '')) : 0;
+    retVal_biayaluarusaha8_1771ii=biayaluarusaha8_1771ii ? parseFloat(biayaluarusaha8_1771ii.replace(/,/g, '')) : 0;
+    const jumlah8_1771ii = retVal_hpp8_1771ii+retVal_biayausaha8_1771ii+retVal_biayaluarusaha8_1771ii;
+    const result_jumlah8_1771ii= document.getElementById('jumlah8_1771ii');
+    result_jumlah8_1771ii.value = jumlah8_1771ii.toLocaleString();
+
+    const hpp9_1771ii = $('#hpp9_1771ii').val();
+    const biayausaha9_1771ii = $('#biayausaha9_1771ii').val();
+    const biayaluarusaha9_1771ii = $('#biayaluarusaha9_1771ii').val();
+    retVal_hpp9_1771ii=hpp9_1771ii ? parseFloat(hpp9_1771ii.replace(/,/g, '')) : 0;
+    retVal_biayausaha9_1771ii=biayausaha9_1771ii ? parseFloat(biayausaha9_1771ii.replace(/,/g, '')) : 0;
+    retVal_biayaluarusaha9_1771ii=biayaluarusaha9_1771ii ? parseFloat(biayaluarusaha9_1771ii.replace(/,/g, '')) : 0;
+    const jumlah9_1771ii = retVal_hpp9_1771ii+retVal_biayausaha9_1771ii+retVal_biayaluarusaha9_1771ii;
+    const result_jumlah9_1771ii= document.getElementById('jumlah9_1771ii');
+    result_jumlah9_1771ii.value = jumlah9_1771ii.toLocaleString();
+
+    const hpp10_1771ii = $('#hpp10_1771ii').val();
+    const biayausaha10_1771ii = $('#biayausaha10_1771ii').val();
+    const biayaluarusaha10_1771ii = $('#biayaluarusaha10_1771ii').val();
+    retVal_hpp10_1771ii=hpp10_1771ii ? parseFloat(hpp10_1771ii.replace(/,/g, '')) : 0;
+    retVal_biayausaha10_1771ii=biayausaha10_1771ii ? parseFloat(biayausaha10_1771ii.replace(/,/g, '')) : 0;
+    retVal_biayaluarusaha10_1771ii=biayaluarusaha10_1771ii ? parseFloat(biayaluarusaha10_1771ii.replace(/,/g, '')) : 0;
+    const jumlah10_1771ii = retVal_hpp10_1771ii+retVal_biayausaha10_1771ii+retVal_biayaluarusaha10_1771ii;
+    const result_jumlah10_1771ii= document.getElementById('jumlah10_1771ii');
+    result_jumlah10_1771ii.value = jumlah10_1771ii.toLocaleString();
+
+    const hpp11_1771ii = $('#hpp11_1771ii').val();
+    const biayausaha11_1771ii = $('#biayausaha11_1771ii').val();
+    const biayaluarusaha11_1771ii = $('#biayaluarusaha11_1771ii').val();
+    retVal_hpp11_1771ii=hpp11_1771ii ? parseFloat(hpp11_1771ii.replace(/,/g, '')) : 0;
+    retVal_biayausaha11_1771ii=biayausaha11_1771ii ? parseFloat(biayausaha11_1771ii.replace(/,/g, '')) : 0;
+    retVal_biayaluarusaha11_1771ii=biayaluarusaha11_1771ii ? parseFloat(biayaluarusaha11_1771ii.replace(/,/g, '')) : 0;
+    const jumlah11_1771ii = retVal_hpp11_1771ii+retVal_biayausaha11_1771ii+retVal_biayaluarusaha11_1771ii;
+    const result_jumlah11_1771ii= document.getElementById('jumlah11_1771ii');
+    result_jumlah11_1771ii.value = jumlah11_1771ii.toLocaleString();
+
+    const hpp12_1771ii = $('#hpp12_1771ii').val();
+    const biayausaha12_1771ii = $('#biayausaha12_1771ii').val();
+    const biayaluarusaha12_1771ii = $('#biayaluarusaha12_1771ii').val();
+    retVal_hpp12_1771ii=hpp12_1771ii ? parseFloat(hpp12_1771ii.replace(/,/g, '')) : 0;
+    retVal_biayausaha12_1771ii=biayausaha12_1771ii ? parseFloat(biayausaha12_1771ii.replace(/,/g, '')) : 0;
+    retVal_biayaluarusaha12_1771ii=biayaluarusaha12_1771ii ? parseFloat(biayaluarusaha12_1771ii.replace(/,/g, '')) : 0;
+    const jumlah12_1771ii = retVal_hpp12_1771ii+retVal_biayausaha12_1771ii+retVal_biayaluarusaha12_1771ii;
+    const result_jumlah12_1771ii= document.getElementById('jumlah12_1771ii');
+    result_jumlah12_1771ii.value = jumlah12_1771ii.toLocaleString();
+
+    const hpp13_1771ii = $('#hpp13_1771ii').val();
+    const biayausaha13_1771ii = $('#biayausaha13_1771ii').val();
+    const biayaluarusaha13_1771ii = $('#biayaluarusaha13_1771ii').val();
+    retVal_hpp13_1771ii=hpp13_1771ii ? parseFloat(hpp13_1771ii.replace(/,/g, '')) : 0;
+    retVal_biayausaha13_1771ii=biayausaha13_1771ii ? parseFloat(biayausaha13_1771ii.replace(/,/g, '')) : 0;
+    retVal_biayaluarusaha13_1771ii=biayaluarusaha13_1771ii ? parseFloat(biayaluarusaha13_1771ii.replace(/,/g, '')) : 0;
+    const jumlah13_1771ii = retVal_hpp13_1771ii+retVal_biayausaha13_1771ii+retVal_biayaluarusaha13_1771ii;
+    const result_jumlah13_1771ii= document.getElementById('jumlah13_1771ii');
+    result_jumlah13_1771ii.value = jumlah13_1771ii.toLocaleString();
+
+    const jumlahhpp14_1771ii=retVal_hpp1_1771ii+retVal_hpp2_1771ii+retVal_hpp3_1771ii+retVal_hpp4_1771ii+retVal_hpp5_1771ii+retVal_hpp6_1771ii+retVal_hpp7_1771ii+retVal_hpp8_1771ii+retVal_hpp9_1771ii+retVal_hpp10_1771ii+retVal_hpp11_1771ii+retVal_hpp12_1771ii-retVal_hpp13_1771ii;
+    const result_hpp14_1771ii= document.getElementById('hpp14_1771ii');
+    result_hpp14_1771ii.value = jumlahhpp14_1771ii.toLocaleString();
+    
+    const jumlahbiayausaha14_1771ii=retVal_biayausaha1_1771ii+retVal_biayausaha2_1771ii+retVal_biayausaha3_1771ii+retVal_biayausaha4_1771ii+retVal_biayausaha5_1771ii+retVal_biayausaha6_1771ii+retVal_biayausaha7_1771ii+retVal_biayausaha8_1771ii+retVal_biayausaha9_1771ii+retVal_biayausaha10_1771ii+retVal_biayausaha11_1771ii+retVal_biayausaha12_1771ii-retVal_biayausaha13_1771ii;
+    const result_biayausaha14_1771ii= document.getElementById('biayausaha14_1771ii');
+    result_biayausaha14_1771ii.value = jumlahbiayausaha14_1771ii.toLocaleString();
+
+    const jumlahbiayaluarusaha14_1771ii=retVal_biayaluarusaha1_1771ii+retVal_biayaluarusaha2_1771ii+retVal_biayaluarusaha3_1771ii+retVal_biayaluarusaha4_1771ii+retVal_biayaluarusaha5_1771ii+retVal_biayaluarusaha6_1771ii+retVal_biayaluarusaha7_1771ii+retVal_biayaluarusaha8_1771ii+retVal_biayaluarusaha9_1771ii+retVal_biayaluarusaha10_1771ii+retVal_biayaluarusaha11_1771ii+retVal_biayaluarusaha12_1771ii-retVal_biayaluarusaha13_1771ii;
+    const result_biayaluarusaha14_1771ii= document.getElementById('biayaluarusaha14_1771ii');
+    result_biayaluarusaha14_1771ii.value = jumlahbiayaluarusaha14_1771ii.toLocaleString();
+
+    const jumlah14_1771ii = jumlah1_1771ii+jumlah2_1771ii+jumlah3_1771ii+jumlah4_1771ii+jumlah5_1771ii+jumlah6_1771ii+jumlah7_1771ii+jumlah8_1771ii+jumlah9_1771ii+jumlah10_1771ii+jumlah11_1771ii+jumlah12_1771ii-jumlah13_1771ii;
+    const result_jumlah14_1771ii= document.getElementById('jumlah14_1771ii');
+    if(jumlah14_1771ii<0){
+        result_jumlah14_1771ii.value = 0;
+    }else{
+        result_jumlah14_1771ii.value = jumlah14_1771ii.toLocaleString();
+    }
+
+    
+    const dpp1_1771iv = $('#dpp1_1771iv').val();
+    const tarif1_1771ii = $('#tarif1_1771ii').val();
+    retVal_dpp1_1771iv=dpp1_1771iv ? parseFloat(dpp1_1771iv.replace(/,/g, '')) : 0;
+    retVal_tarif1_1771ii=tarif1_1771ii ? parseFloat(tarif1_1771ii.replace(/,/g, '')) : 0;
+    const jumlahPPh1_1771ii = retVal_dpp1_1771iv*retVal_tarif1_1771ii/100;
+    const result_pph1_1771ii= document.getElementById('pph1_1771ii');
+    result_pph1_1771ii.value = jumlahPPh1_1771ii.toLocaleString();
+    
+    const dpp2_1771iv = $('#dpp2_1771iv').val();
+    const tarif2_1771ii = $('#tarif2_1771ii').val();
+    retVal_dpp2_1771iv=dpp2_1771iv ? parseFloat(dpp2_1771iv.replace(/,/g, '')) : 0;
+    retVal_tarif2_1771ii=tarif2_1771ii ? parseFloat(tarif2_1771ii.replace(/,/g, '')) : 0;
+    const jumlahPPh2_1771ii = retVal_dpp2_1771iv*retVal_tarif2_1771ii/100;
+    const result_pph2_1771ii= document.getElementById('pph2_1771ii');
+    result_pph2_1771ii.value = jumlahPPh2_1771ii.toLocaleString();
+    
+    const dpp3_1771iv = $('#dpp3_1771iv').val();
+    const tarif3_1771ii = $('#tarif3_1771ii').val();
+    retVal_dpp3_1771iv=dpp3_1771iv ? parseFloat(dpp3_1771iv.replace(/,/g, '')) : 0;
+    retVal_tarif3_1771ii=tarif3_1771ii ? parseFloat(tarif3_1771ii.replace(/,/g, '')) : 0;
+    const jumlahPPh3_1771ii = retVal_dpp3_1771iv*retVal_tarif3_1771ii/100;
+    const result_pph3_1771ii= document.getElementById('pph3_1771ii');
+    result_pph3_1771ii.value = jumlahPPh3_1771ii.toLocaleString();
+
+    const dpp4_1771iv = $('#dpp4_1771iv').val();
+    const tarif4_1771ii = $('#tarif4_1771ii').val();
+    retVal_dpp4_1771iv=dpp4_1771iv ? parseFloat(dpp4_1771iv.replace(/,/g, '')) : 0;
+    retVal_tarif4_1771ii=tarif4_1771ii ? parseFloat(tarif4_1771ii.replace(/,/g, '')) : 0;
+    const jumlahPPh4_1771ii = retVal_dpp4_1771iv*retVal_tarif4_1771ii/100;
+    const result_pph4_1771ii= document.getElementById('pph4_1771ii');
+    result_pph4_1771ii.value = jumlahPPh4_1771ii.toLocaleString();
+    
+    const dpp5_1771iv = $('#dpp5_1771iv').val();
+    const tarif5_1771ii = $('#tarif5_1771ii').val();
+    retVal_dpp5_1771iv=dpp5_1771iv ? parseFloat(dpp5_1771iv.replace(/,/g, '')) : 0;
+    retVal_tarif5_1771ii=tarif5_1771ii ? parseFloat(tarif5_1771ii.replace(/,/g, '')) : 0;
+    const jumlahPPh5_1771ii = retVal_dpp5_1771iv*retVal_tarif5_1771ii/100;
+    const result_pph5_1771ii= document.getElementById('pph5_1771ii');
+    result_pph5_1771ii.value = jumlahPPh5_1771ii.toLocaleString();
+
+    const dpp6_1771iv = $('#dpp6_1771iv').val();
+    const tarif6_1771ii = $('#tarif6_1771ii').val();
+    retVal_dpp6_1771iv=dpp6_1771iv ? parseFloat(dpp6_1771iv.replace(/,/g, '')) : 0;
+    retVal_tarif6_1771ii=tarif6_1771ii ? parseFloat(tarif6_1771ii.replace(/,/g, '')) : 0;
+    const jumlahPPh6_1771ii = retVal_dpp6_1771iv*retVal_tarif6_1771ii/100;
+    const result_pph6_1771ii= document.getElementById('pph6_1771ii');
+    result_pph6_1771ii.value = jumlahPPh6_1771ii.toLocaleString();
+
+    const dpp7_1771iv = $('#dpp7_1771iv').val();
+    const tarif7_1771ii = $('#tarif7_1771ii').val();
+    retVal_dpp7_1771iv=dpp7_1771iv ? parseFloat(dpp7_1771iv.replace(/,/g, '')) : 0;
+    retVal_tarif7_1771ii=tarif7_1771ii ? parseFloat(tarif7_1771ii.replace(/,/g, '')) : 0;
+    const jumlahPPh7_1771ii = retVal_dpp7_1771iv*retVal_tarif7_1771ii/100;
+    const result_pph7_1771ii= document.getElementById('pph7_1771ii');
+    result_pph7_1771ii.value = jumlahPPh7_1771ii.toLocaleString();
+
+    const dpp8a_1771iv = $('#dpp8a_1771iv').val();
+    const tarif8a_1771ii = $('#tarif8a_1771ii').val();
+    retVal_dpp8a_1771iv=dpp8a_1771iv ? parseFloat(dpp8a_1771iv.replace(/,/g, '')) : 0;
+    retVal_tarif8a_1771ii=tarif8a_1771ii ? parseFloat(tarif8a_1771ii.replace(/,/g, '')) : 0;
+    const jumlahPPh8a_1771ii = retVal_dpp8a_1771iv*retVal_tarif8a_1771ii/100;
+    const result_pph8a_1771ii= document.getElementById('pph8a_1771ii');
+    result_pph8a_1771ii.value = jumlahPPh8a_1771ii.toLocaleString();
+
+    const dpp8b_1771iv = $('#dpp8b_1771iv').val();
+    const tarif8b_1771ii = $('#tarif8b_1771ii').val();
+    retVal_dpp8b_1771iv=dpp8b_1771iv ? parseFloat(dpp8b_1771iv.replace(/,/g, '')) : 0;
+    retVal_tarif8b_1771ii=tarif8b_1771ii ? parseFloat(tarif8b_1771ii.replace(/,/g, '')) : 0;
+    const jumlahPPh8b_1771ii = retVal_dpp8b_1771iv*retVal_tarif8b_1771ii/100;
+    const result_pph8b_1771ii= document.getElementById('pph8b_1771ii');
+    result_pph8b_1771ii.value = jumlahPPh8b_1771ii.toLocaleString();
+
+    const dpp8c_1771iv = $('#dpp8c_1771iv').val();
+    const tarif8c_1771ii = $('#tarif8c_1771ii').val();
+    retVal_dpp8c_1771iv=dpp8c_1771iv ? parseFloat(dpp8c_1771iv.replace(/,/g, '')) : 0;
+    retVal_tarif8c_1771ii=tarif8c_1771ii ? parseFloat(tarif8c_1771ii.replace(/,/g, '')) : 0;
+    const jumlahPPh8c_1771ii = retVal_dpp8c_1771iv*retVal_tarif8c_1771ii/100;
+    const result_pph8c_1771ii= document.getElementById('pph8c_1771ii');
+    result_pph8c_1771ii.value = jumlahPPh8c_1771ii.toLocaleString();
+
+    const dpp9_1771iv = $('#dpp9_1771iv').val();
+    const tarif9_1771ii = $('#tarif9_1771ii').val();
+    retVal_dpp9_1771iv=dpp9_1771iv ? parseFloat(dpp9_1771iv.replace(/,/g, '')) : 0;
+    retVal_tarif9_1771ii=tarif9_1771ii ? parseFloat(tarif9_1771ii.replace(/,/g, '')) : 0;
+    const jumlahPPh9_1771ii = retVal_dpp9_1771iv*retVal_tarif9_1771ii/100;
+    const result_pph9_1771ii= document.getElementById('pph9_1771ii');
+    result_pph9_1771ii.value = jumlahPPh9_1771ii.toLocaleString();
+
+    const dpp10_1771iv = $('#dpp10_1771iv').val();
+    const tarif10_1771ii = $('#tarif10_1771ii').val();
+    retVal_dpp10_1771iv=dpp10_1771iv ? parseFloat(dpp10_1771iv.replace(/,/g, '')) : 0;
+    retVal_tarif10_1771ii=tarif10_1771ii ? parseFloat(tarif10_1771ii.replace(/,/g, '')) : 0;
+    const jumlahPPh10_1771ii = retVal_dpp10_1771iv*retVal_tarif10_1771ii/100;
+    const result_pph10_1771ii= document.getElementById('pph10_1771ii');
+    result_pph10_1771ii.value = jumlahPPh10_1771ii.toLocaleString();
+
+    const dpp11_1771iv = $('#dpp11_1771iv').val();
+    const tarif11_1771ii = $('#tarif11_1771ii').val();
+    retVal_dpp11_1771iv=dpp11_1771iv ? parseFloat(dpp11_1771iv.replace(/,/g, '')) : 0;
+    retVal_tarif11_1771ii=tarif11_1771ii ? parseFloat(tarif11_1771ii.replace(/,/g, '')) : 0;
+    const jumlahPPh11_1771ii = retVal_dpp11_1771iv*retVal_tarif11_1771ii/100;
+    const result_pph11_1771ii= document.getElementById('pph11_1771ii');
+    result_pph11_1771ii.value = jumlahPPh11_1771ii.toLocaleString();
+
+    const dpp12_1771iv = $('#dpp12_1771iv').val();
+    const tarif12_1771ii = $('#tarif12_1771ii').val();
+    retVal_dpp12_1771iv=dpp12_1771iv ? parseFloat(dpp12_1771iv.replace(/,/g, '')) : 0;
+    retVal_tarif12_1771ii=tarif12_1771ii ? parseFloat(tarif12_1771ii.replace(/,/g, '')) : 0;
+    const jumlahPPh12_1771ii = retVal_dpp12_1771iv*retVal_tarif12_1771ii/100;
+    const result_pph12_1771ii= document.getElementById('pph12_1771ii');
+    result_pph12_1771ii.value = jumlahPPh12_1771ii.toLocaleString();
+
+    const dpp13_1771iv = $('#dpp13_1771iv').val();
+    const tarif13_1771ii = $('#tarif13_1771ii').val();
+    retVal_dpp13_1771iv=dpp13_1771iv ? parseFloat(dpp13_1771iv.replace(/,/g, '')) : 0;
+    retVal_tarif13_1771ii=tarif13_1771ii ? parseFloat(tarif13_1771ii.replace(/,/g, '')) : 0;
+    const jumlahPPh13_1771ii = retVal_dpp13_1771iv*retVal_tarif13_1771ii/100;
+    const result_pph13_1771ii= document.getElementById('pph13_1771ii');
+    result_pph13_1771ii.value = jumlahPPh13_1771ii.toLocaleString();
+
+    const dpp14_1771iv = $('#dpp14_1771iv').val();
+    const tarif14_1771ii = $('#tarif14_1771ii').val();
+    retVal_dpp14_1771iv=dpp14_1771iv ? parseFloat(dpp14_1771iv.replace(/,/g, '')) : 0;
+    retVal_tarif14_1771ii=tarif14_1771ii ? parseFloat(tarif14_1771ii.replace(/,/g, '')) : 0;
+    const jumlahPPh14_1771ii = retVal_dpp14_1771iv*retVal_tarif14_1771ii/100;
+    const result_pph14_1771ii= document.getElementById('pph14_1771ii');
+    result_pph14_1771ii.value = jumlahPPh14_1771ii.toLocaleString();
+
+    const jumlahdpp_1771iv = retVal_dpp1_1771iv+retVal_dpp2_1771iv+retVal_dpp3_1771iv+retVal_dpp4_1771iv+retVal_dpp5_1771iv+retVal_dpp6_1771iv+retVal_dpp7_1771iv+retVal_dpp8a_1771iv+retVal_dpp8b_1771iv+retVal_dpp8c_1771iv+retVal_dpp9_1771iv+retVal_dpp10_1771iv+retVal_dpp11_1771iv+retVal_dpp12_1771iv+retVal_dpp13_1771iv+retVal_dpp14_1771iv;
+    const jumlahrupiah_1771iv = jumlahPPh1_1771ii+jumlahPPh2_1771ii+jumlahPPh3_1771ii+jumlahPPh4_1771ii+jumlahPPh5_1771ii+jumlahPPh6_1771ii+jumlahPPh7_1771ii+jumlahPPh8a_1771ii+jumlahPPh8b_1771ii+jumlahPPh8c_1771ii+jumlahPPh9_1771ii+jumlahPPh10_1771ii+jumlahPPh11_1771ii+jumlahPPh12_1771ii+jumlahPPh13_1771ii+jumlahPPh14_1771ii;
+    const result_jumlahdpp14_1771iv= document.getElementById('jumlahdpp14_1771iv');
+    result_jumlahdpp14_1771iv.value = jumlahdpp_1771iv.toLocaleString();
+    const result_jumlahpph14_1771ii= document.getElementById('jumlahpph14_1771ii');
+    result_jumlahpph14_1771ii.value = jumlahrupiah_1771iv.toLocaleString();
+
+    const bruto1_1771iv = $('#bruto1_1771iv').val();
+    const bruto2_1771iv = $('#bruto2_1771iv').val();
+    const bruto3_1771iv = $('#bruto3_1771iv').val();
+    const bruto4_1771iv = $('#bruto4_1771iv').val();
+    const bruto5_1771iv = $('#bruto5_1771iv').val();
+    const bruto6_1771iv = $('#bruto6_1771iv').val();
+    const bruto7_1771iv = $('#bruto7_1771iv').val();
+    retVal_bruto1_1771iv=bruto1_1771iv ? parseFloat(bruto1_1771iv.replace(/,/g, '')) : 0;
+    retVal_bruto2_1771iv=bruto2_1771iv ? parseFloat(bruto2_1771iv.replace(/,/g, '')) : 0;
+    retVal_bruto3_1771iv=bruto3_1771iv ? parseFloat(bruto3_1771iv.replace(/,/g, '')) : 0;
+    retVal_bruto4_1771iv=bruto4_1771iv ? parseFloat(bruto4_1771iv.replace(/,/g, '')) : 0;
+    retVal_bruto5_1771iv=bruto5_1771iv ? parseFloat(bruto5_1771iv.replace(/,/g, '')) : 0;
+    retVal_bruto6_1771iv=bruto6_1771iv ? parseFloat(bruto6_1771iv.replace(/,/g, '')) : 0;
+    retVal_bruto7_1771iv=bruto7_1771iv ? parseFloat(bruto7_1771iv.replace(/,/g, '')) : 0;
+    const jumlahbruto_1771iv=retVal_bruto1_1771iv+retVal_bruto2_1771iv+retVal_bruto3_1771iv+retVal_bruto4_1771iv+retVal_bruto5_1771iv+retVal_bruto6_1771iv+retVal_bruto7_1771iv;
+    const result_jumlahbruto_1771iv= document.getElementById('jumlahbruto_1771iv');
+    result_jumlahbruto_1771iv.value = jumlahbruto_1771iv.toLocaleString();
     return retVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }

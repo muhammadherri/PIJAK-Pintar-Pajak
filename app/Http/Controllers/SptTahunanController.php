@@ -210,25 +210,78 @@ class SptTahunanController extends Controller
             'nama_npwp'=>$request->nama_npwp_1771II,
             'start_periode_pembukuan'=>$request->start_periode_pembukuan_1771II,
             'end_periode_pembukuan'=>$request->end_periode_pembukuan_1771II,
-            'sub_harga_pokok'=>preg_replace('/[^0-9]/','',$request->subangkaharpok1),
-            'sub_biaya_usaha'=>preg_replace('/[^0-9]/','',$request->subangkabiaya_usaha1),
-            'sub_biaya_luar_usaha'=>preg_replace('/[^0-9]/','',$request->subangkabiaya_luar1),
-            'total_jumlah_biaya'=>preg_replace('/[^0-9]/','',$request->totaljum1),
+            'hpp1_1771ii'=>preg_replace('/[^0-9]/','',$request->hpp1_1771ii),
+            'hpp2_1771ii'=>preg_replace('/[^0-9]/','',$request->hpp2_1771ii),
+            'hpp3_1771ii'=>preg_replace('/[^0-9]/','',$request->hpp3_1771ii),
+            'hpp4_1771ii'=>preg_replace('/[^0-9]/','',$request->hpp4_1771ii),
+            'hpp5_1771ii'=>preg_replace('/[^0-9]/','',$request->hpp5_1771ii),
+            'hpp6_1771ii'=>preg_replace('/[^0-9]/','',$request->hpp6_1771ii),
+            'hpp7_1771ii'=>preg_replace('/[^0-9]/','',$request->hpp7_1771ii),
+            'hpp8_1771ii'=>preg_replace('/[^0-9]/','',$request->hpp8_1771ii),
+            'hpp9_1771ii'=>preg_replace('/[^0-9]/','',$request->hpp9_1771ii),
+            'hpp10_1771ii'=>preg_replace('/[^0-9]/','',$request->hpp10_1771ii),
+            'hpp11_1771ii'=>preg_replace('/[^0-9]/','',$request->hpp11_1771ii),
+            'hpp12_1771ii'=>preg_replace('/[^0-9]/','',$request->hpp12_1771ii),
+            'hpp13_1771ii'=>preg_replace('/[^0-9]/','',$request->hpp13_1771ii),
+            'hpp14_1771ii'=>preg_replace('/[^0-9]/','',$request->hpp14_1771ii),
+            'biayausaha1_1771ii'=>preg_replace('/[^0-9]/','',$request->biayausaha1_1771ii),
+            'biayausaha2_1771ii'=>preg_replace('/[^0-9]/','',$request->biayausaha2_1771ii),
+            'biayausaha3_1771ii'=>preg_replace('/[^0-9]/','',$request->biayausaha3_1771ii),
+            'biayausaha4_1771ii'=>preg_replace('/[^0-9]/','',$request->biayausaha4_1771ii),
+            'biayausaha5_1771ii'=>preg_replace('/[^0-9]/','',$request->biayausaha5_1771ii),
+            'biayausaha6_1771ii'=>preg_replace('/[^0-9]/','',$request->biayausaha6_1771ii),
+            'biayausaha7_1771ii'=>preg_replace('/[^0-9]/','',$request->biayausaha7_1771ii),
+            'biayausaha8_1771ii'=>preg_replace('/[^0-9]/','',$request->biayausaha8_1771ii),
+            'biayausaha9_1771ii'=>preg_replace('/[^0-9]/','',$request->biayausaha9_1771ii),
+            'biayausaha10_1771ii'=>preg_replace('/[^0-9]/','',$request->biayausaha10_1771ii),
+            'biayausaha11_1771ii'=>preg_replace('/[^0-9]/','',$request->biayausaha11_1771ii),
+            'biayausaha12_1771ii'=>preg_replace('/[^0-9]/','',$request->biayausaha12_1771ii),
+            'biayausaha13_1771ii'=>preg_replace('/[^0-9]/','',$request->biayausaha13_1771ii),
+            'biayausaha14_1771ii'=>preg_replace('/[^0-9]/','',$request->biayausaha14_1771ii),
+            'biayaluarusaha1_1771ii'=>preg_replace('/[^0-9]/','',$request->biayaluarusaha1_1771ii),
+            'biayaluarusaha2_1771ii'=>preg_replace('/[^0-9]/','',$request->biayaluarusaha2_1771ii),
+            'biayaluarusaha3_1771ii'=>preg_replace('/[^0-9]/','',$request->biayaluarusaha3_1771ii),
+            'biayaluarusaha4_1771ii'=>preg_replace('/[^0-9]/','',$request->biayaluarusaha4_1771ii),
+            'biayaluarusaha5_1771ii'=>preg_replace('/[^0-9]/','',$request->biayaluarusaha5_1771ii),
+            'biayaluarusaha6_1771ii'=>preg_replace('/[^0-9]/','',$request->biayaluarusaha6_1771ii),
+            'biayaluarusaha7_1771ii'=>preg_replace('/[^0-9]/','',$request->biayaluarusaha7_1771ii),
+            'biayaluarusaha8_1771ii'=>preg_replace('/[^0-9]/','',$request->biayaluarusaha8_1771ii),
+            'biayaluarusaha9_1771ii'=>preg_replace('/[^0-9]/','',$request->biayaluarusaha9_1771ii),
+            'biayaluarusaha10_1771ii'=>preg_replace('/[^0-9]/','',$request->biayaluarusaha10_1771ii),
+            'biayaluarusaha11_1771ii'=>preg_replace('/[^0-9]/','',$request->biayaluarusaha11_1771ii),
+            'biayaluarusaha12_1771ii'=>preg_replace('/[^0-9]/','',$request->biayaluarusaha12_1771ii),
+            'biayaluarusaha13_1771ii'=>preg_replace('/[^0-9]/','',$request->biayaluarusaha13_1771ii),
+            'biayaluarusaha14_1771ii'=>preg_replace('/[^0-9]/','',$request->biayaluarusaha14_1771ii),
+            'jumlah1_1771ii'=>preg_replace('/[^0-9]/','',$request->jumlah1_1771ii),
+            'jumlah2_1771ii'=>preg_replace('/[^0-9]/','',$request->jumlah2_1771ii),
+            'jumlah3_1771ii'=>preg_replace('/[^0-9]/','',$request->jumlah3_1771ii),
+            'jumlah4_1771ii'=>preg_replace('/[^0-9]/','',$request->jumlah4_1771ii),
+            'jumlah5_1771ii'=>preg_replace('/[^0-9]/','',$request->jumlah5_1771ii),
+            'jumlah6_1771ii'=>preg_replace('/[^0-9]/','',$request->jumlah6_1771ii),
+            'jumlah7_1771ii'=>preg_replace('/[^0-9]/','',$request->jumlah7_1771ii),
+            'jumlah8_1771ii'=>preg_replace('/[^0-9]/','',$request->jumlah8_1771ii),
+            'jumlah9_1771ii'=>preg_replace('/[^0-9]/','',$request->jumlah9_1771ii),
+            'jumlah10_1771ii'=>preg_replace('/[^0-9]/','',$request->jumlah10_1771ii),
+            'jumlah11_1771ii'=>preg_replace('/[^0-9]/','',$request->jumlah11_1771ii),
+            'jumlah12_1771ii'=>preg_replace('/[^0-9]/','',$request->jumlah12_1771ii),
+            'jumlah13_1771ii'=>preg_replace('/[^0-9]/','',$request->jumlah13_1771ii),
+            'jumlah14_1771ii'=>preg_replace('/[^0-9]/','',$request->jumlah14_1771ii),
             'attribute1'=>Auth::user()->id,
         );
+        // dd($data1771iihead);
         SptTahunanIIHead::create($data1771iihead);
-        foreach ($harpok as $key => $row) {
-            $data1771iilines = array(
-                'formulir_id' => $header_id,
-                'perincian_pembelian_barang' => $rincian[$key],
-                'harga_pokok' => $harpok[$key],
-                'biaya_usaha' => $biayausaha[$key],
-                'biaya_luar_usaha' => $biayaluar[$key],
-                'sub_jumlah_biaya' => $subjumlah[$key],
-            );
-            // dd($data1771iihead);
-        SptTahunanIILines::create($data1771iilines);
-        }
+        // foreach ($harpok as $key => $row) {
+        //     $data1771iilines = array(
+        //         'formulir_id' => $header_id,
+        //         'perincian_pembelian_barang' => $rincian[$key],
+        //         'harga_pokok' => $harpok[$key],
+        //         'biaya_usaha' => $biayausaha[$key],
+        //         'biaya_luar_usaha' => $biayaluar[$key],
+        //         'sub_jumlah_biaya' => $subjumlah[$key],
+        //     );
+        //     // dd($data1771iihead);
+        // SptTahunanIILines::create($data1771iilines);
+        // }
         $data1771iiihead = array(
             'formulir_id'=>$header_id,
             'jenis_spt'=>$request->jenis_spt_1771III,
@@ -264,34 +317,88 @@ class SptTahunanController extends Controller
             'nama_npwp'=>$request->nama_npwp_1771IV,
             'start_periode_pembukuan'=>$request->start_periode_pembukuan_1771IV,
             'end_periode_pembukuan'=>$request->end_periode_pembukuan_1771IV,
-            'jumlah_dasar_pengenaan_pajak'=>preg_replace('/[^0-9]/','',$request->sub_angka_pengenaan_pajak),
-            'jumlah_potongan_tarif'=>preg_replace('/[^0-9]/','',$request->sub_tarif),
-            'jumlah_pph_terutang'=>preg_replace('/[^0-9]/','',$request->total1771iv),
-            'jumlah_penghasilan_bruto'=>preg_replace('/[^0-9]/','',$request->totalbruto),
+            'dpp1_1771iv'=>preg_replace('/[^0-9]/','',$request->dpp1_1771iv),
+            'dpp2_1771iv'=>preg_replace('/[^0-9]/','',$request->dpp2_1771iv),
+            'dpp3_1771iv'=>preg_replace('/[^0-9]/','',$request->dpp3_1771iv),
+            'dpp4_1771iv'=>preg_replace('/[^0-9]/','',$request->dpp4_1771iv),
+            'dpp5_1771iv'=>preg_replace('/[^0-9]/','',$request->dpp5_1771iv),
+            'dpp6_1771iv'=>preg_replace('/[^0-9]/','',$request->dpp6_1771iv),
+            'dpp7_1771iv'=>preg_replace('/[^0-9]/','',$request->dpp7_1771iv),
+            'dpp8a_1771iv'=>preg_replace('/[^0-9]/','',$request->dpp8a_1771iv),
+            'dpp8b_1771iv'=>preg_replace('/[^0-9]/','',$request->dpp8b_1771iv),
+            'dpp8c_1771iv'=>preg_replace('/[^0-9]/','',$request->dpp8c_1771iv),
+            'dpp9_1771iv'=>preg_replace('/[^0-9]/','',$request->dpp9_1771iv),
+            'dpp10_1771iv'=>preg_replace('/[^0-9]/','',$request->dpp10_1771iv),
+            'dpp11_1771iv'=>preg_replace('/[^0-9]/','',$request->dpp11_1771iv),
+            'dpp12_1771iv'=>preg_replace('/[^0-9]/','',$request->dpp12_1771iv),
+            'dpp13_1771iv'=>preg_replace('/[^0-9]/','',$request->dpp13_1771iv),
+            'dpp14_1771iv'=>preg_replace('/[^0-9]/','',$request->dpp14_1771iv),
+            'jumlahdpp14_1771iv'=>preg_replace('/[^0-9]/','',$request->jumlahdpp14_1771iv),
+            'tarif1_1771ii'=>preg_replace('/[^0-9]/','',$request->tarif1_1771ii),
+            'tarif2_1771ii'=>preg_replace('/[^0-9]/','',$request->tarif2_1771ii),
+            'tarif3_1771ii'=>preg_replace('/[^0-9]/','',$request->tarif3_1771ii),
+            'tarif4_1771ii'=>preg_replace('/[^0-9]/','',$request->tarif4_1771ii),
+            'tarif5_1771ii'=>preg_replace('/[^0-9]/','',$request->tarif5_1771ii),
+            'tarif6_1771ii'=>preg_replace('/[^0-9]/','',$request->tarif6_1771ii),
+            'tarif7_1771ii'=>preg_replace('/[^0-9]/','',$request->tarif7_1771ii),
+            'tarif8a_1771ii'=>preg_replace('/[^0-9]/','',$request->tarif8a_1771ii),
+            'tarif8b_1771ii'=>preg_replace('/[^0-9]/','',$request->tarif8b_1771ii),
+            'tarif8c_1771ii'=>preg_replace('/[^0-9]/','',$request->tarif8c_1771ii),
+            'tarif9_1771ii'=>preg_replace('/[^0-9]/','',$request->tarif9_1771ii),
+            'tarif10_1771ii'=>preg_replace('/[^0-9]/','',$request->tarif10_1771ii),
+            'tarif11_1771ii'=>preg_replace('/[^0-9]/','',$request->tarif11_1771ii),
+            'tarif12_1771ii'=>preg_replace('/[^0-9]/','',$request->tarif12_1771ii),
+            'tarif13_1771ii'=>preg_replace('/[^0-9]/','',$request->tarif13_1771ii),
+            'tarif14_1771ii'=>preg_replace('/[^0-9]/','',$request->tarif14_1771ii),
+            'pph1_1771ii'=>preg_replace('/[^0-9]/','',$request->pph1_1771ii),
+            'pph2_1771ii'=>preg_replace('/[^0-9]/','',$request->pph2_1771ii),
+            'pph3_1771ii'=>preg_replace('/[^0-9]/','',$request->pph3_1771ii),
+            'pph4_1771ii'=>preg_replace('/[^0-9]/','',$request->pph4_1771ii),
+            'pph5_1771ii'=>preg_replace('/[^0-9]/','',$request->pph5_1771ii),
+            'pph6_1771ii'=>preg_replace('/[^0-9]/','',$request->pph6_1771ii),
+            'pph7_1771ii'=>preg_replace('/[^0-9]/','',$request->pph7_1771ii),
+            'pph8a_1771ii'=>preg_replace('/[^0-9]/','',$request->pph8a_1771ii),
+            'pph8b_1771ii'=>preg_replace('/[^0-9]/','',$request->pph8b_1771ii),
+            'pph8c_1771ii'=>preg_replace('/[^0-9]/','',$request->pph8c_1771ii),
+            'pph9_1771ii'=>preg_replace('/[^0-9]/','',$request->pph9_1771ii),
+            'pph10_1771ii'=>preg_replace('/[^0-9]/','',$request->pph10_1771ii),
+            'pph11_1771ii'=>preg_replace('/[^0-9]/','',$request->pph11_1771ii),
+            'pph12_1771ii'=>preg_replace('/[^0-9]/','',$request->pph12_1771ii),
+            'pph13_1771ii'=>preg_replace('/[^0-9]/','',$request->pph13_1771ii),
+            'pph14_1771ii'=>preg_replace('/[^0-9]/','',$request->pph14_1771ii),
+            'jumlahpph14_1771ii'=>preg_replace('/[^0-9]/','',$request->jumlahpph14_1771ii),
+            'bruto1_1771iv'=>preg_replace('/[^0-9]/','',$request->bruto1_1771iv),
+            'bruto2_1771iv'=>preg_replace('/[^0-9]/','',$request->bruto2_1771iv),
+            'bruto3_1771iv'=>preg_replace('/[^0-9]/','',$request->bruto3_1771iv),
+            'bruto4_1771iv'=>preg_replace('/[^0-9]/','',$request->bruto4_1771iv),
+            'bruto5_1771iv'=>preg_replace('/[^0-9]/','',$request->bruto5_1771iv),
+            'bruto6_1771iv'=>preg_replace('/[^0-9]/','',$request->bruto6_1771iv),
+            'bruto7_1771iv'=>preg_replace('/[^0-9]/','',$request->bruto7_1771iv),
+            'jumlahbruto_1771iv'=>preg_replace('/[^0-9]/','',$request->jumlahbruto_1771iv),
             'attribute1'=>Auth::user()->id,
         );
         SptTahunanIVHead::create($data1771ivhead);
-        foreach ($pengenaanpajak as $key => $row) {
-            $data1771ivlines_a = array(
-                'formulir_id' => $header_id,
-                'jenis_penghasilan' => $jenispenghasilan[$key],
-                'dasar_pengenaan_pajak' => $pengenaanpajak[$key],
-                'potongan_tarif' => $tarifpotong[$key],
-                'pph_terutang' => $pphterutang[$key],
+        // foreach ($pengenaanpajak as $key => $row) {
+        //     $data1771ivlines_a = array(
+        //         'formulir_id' => $header_id,
+        //         'jenis_penghasilan' => $jenispenghasilan[$key],
+        //         'dasar_pengenaan_pajak' => $pengenaanpajak[$key],
+        //         'potongan_tarif' => $tarifpotong[$key],
+        //         'pph_terutang' => $pphterutang[$key],
                 
-            );
-            // dd($data1771ivlines_a);
-        SptTahunanIVLinesA::create($data1771ivlines_a);
-        }
-        foreach ($jenispenghasilanb as $key => $row) {
-            $data1771ivlines_b = array(
-                'formulir_id' => $header_id,
-                'jenis_penghasilan' => $jenispenghasilanb[$key],
-                'penghasilan_bruto' => $penghasilanbruto[$key],
-            );
-            // DD($data1771ivlines_b);
-        SptTahunanIVLinesB::create($data1771ivlines_b);
-        }
+        //     );
+        //     // dd($data1771ivlines_a);
+        // SptTahunanIVLinesA::create($data1771ivlines_a);
+        // }
+        // foreach ($jenispenghasilanb as $key => $row) {
+        //     $data1771ivlines_b = array(
+        //         'formulir_id' => $header_id,
+        //         'jenis_penghasilan' => $jenispenghasilanb[$key],
+        //         'penghasilan_bruto' => $penghasilanbruto[$key],
+        //     );
+        //     // DD($data1771ivlines_b);
+        // SptTahunanIVLinesB::create($data1771ivlines_b);
+        // }
         $data1771vhead = array(
             'formulir_id'=>$header_id,
             'jenis_spt'=>$request->jenis_spt_1771IV,

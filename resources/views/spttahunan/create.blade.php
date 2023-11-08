@@ -120,7 +120,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">N P W P</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" min="0" autocomplete="off" required
+                                                        <input type="text" min="0" autocomplete="off"  
                                                             placeholder="Masukkan No N P W P"
                                                             class="form-control"id="npwp" name="npwp">
                                                         <span id="errorNpwp" style="color: red;"></span>
@@ -130,7 +130,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Nama Wajib Pajak</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" autocomplete="off" required
+                                                        <input type="text" autocomplete="off"  
                                                             placeholder="Masukkan Nama Wajib Pajak"
                                                             class="form-control"id="nama_npwp" name="nama_npwp">
                                                         <span id="errornamaNpwp" style="color: red;"></span>
@@ -139,7 +139,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Jenis Usaha</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" autocomplete="off" required
+                                                        <input type="text" autocomplete="off"  
                                                             placeholder="Masukkan Jenis Usaha"
                                                             class="form-control"id="jenis_usaha" name="jenis_usaha">
                                                         <span id="errorjenis_usaha" style="color: red;"></span>
@@ -148,7 +148,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">KLU</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" autocomplete="off" required
+                                                        <input type="text" autocomplete="off"  
                                                             placeholder="Masukkan KLU" class="form-control"id="klu"
                                                             name="klu">
                                                         <span id="errorklu" style="color: red;"></span>
@@ -157,7 +157,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">No. Telp</label>
                                                     <div class="col-sm-9">
-                                                        <input type="number" min="0" autocomplete="off" required
+                                                        <input type="number" min="0" autocomplete="off"  
                                                             placeholder="Masukkan Jenis Usaha"
                                                             class="form-control"id="no_telp" name="no_telp">
                                                         <span id="errorno_telp" style="color: red;"></span>
@@ -166,7 +166,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">No. Faks</label>
                                                     <div class="col-sm-9">
-                                                        <input type="number" min="0" autocomplete="off" required
+                                                        <input type="number" min="0" autocomplete="off"  
                                                             placeholder="Masukkan Jenis Usaha"
                                                             class="form-control"id="no_fak" name="no_fak">
                                                         <span id="errorno_fak" style="color: red;"></span>
@@ -175,13 +175,13 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Periode Pembukuan</label>
                                                     <div class="col-sm-4">
-                                                        <input type="date" autocomplete="off" required
+                                                        <input type="date" autocomplete="off"  
                                                             class="form-control"id="start_periode_pembukuan"
                                                             name="start_periode_pembukuan">
                                                     </div>
                                                     <label class="col-sm-1 col-form-label">s.d</label>
                                                     <div class="col-sm-4">
-                                                        <input type="date" autocomplete="off" required
+                                                        <input type="date" autocomplete="off"  
                                                             class="form-control"id="end_periode_pembukuan"
                                                             name="end_periode_pembukuan">
                                                     </div>
@@ -191,7 +191,7 @@
                                                     <div class="col-sm-9">
                                                         <input type="text"
                                                             placeholder="Masukkan NEGARA DOMISILI KANTOR PUSAT (khusus BUT)..."
-                                                            autocomplete="off" required
+                                                            autocomplete="off"  
                                                             class="form-control"id="negara_domisili"
                                                             name="negara_domisili">
                                                         <span id="errornegara_domisili" style="color: red;"></span>
@@ -308,7 +308,7 @@
                                                         <input type="text" min="0"
                                                             onkeyup="this.value=sprator(this.value);"
                                                             placeholder="Masukkan Penghasilan Netto Fiskal..."
-                                                            autocomplete="off" required
+                                                            autocomplete="off"  
                                                             class="form-control"id="a1_kena_pajak" name="a1_kena_pajak">
                                                     </div>
                                                 </div>
@@ -318,7 +318,7 @@
                                                         <input type="text" min="0"
                                                             placeholder="Masukkan Kompensasi Kerugian Fiskal..."
                                                             onkeyup="this.value=sprator(this.value);"
-                                                            autocomplete="off" required
+                                                            autocomplete="off"  
                                                             class="form-control"id="a2_kena_pajak" name="a2_kena_pajak">
                                                     </div>
                                                 </div>
@@ -327,7 +327,7 @@
                                                         (1-2)</label>
                                                     <div class="col-sm-9">
                                                         <input type="text" min="0" readonly autocomplete="off"
-                                                            required class="form-control"id="a3_kena_pajak"
+                                                              class="form-control"id="a3_kena_pajak"
                                                             name="a3_kena_pajak">
                                                     </div>
                                                 </div>
@@ -336,7 +336,7 @@
                                                     <label class="col-sm-3 col-form-label">4.PPh Terutang</label>
                                                     <div class="col-sm-9">
                                                         <input type="text" min="0" readonly autocomplete="off"
-                                                            required class="form-control"id="b4_pph_terutang"
+                                                              class="form-control"id="b4_pph_terutang"
                                                             name="b4_pph_terutang">
                                                     </div>
                                                 </div>
@@ -347,7 +347,7 @@
                                                         <input type="text" min="0"
                                                             placeholder="Masukkan Pengembalian / Pengurangan Kredit Pajak Luar Negeri..."
                                                             onkeyup="this.value=sprator(this.value);"
-                                                            autocomplete="off" required
+                                                            autocomplete="off"  
                                                             class="form-control"id="b5_pph_terutang"
                                                             name="b5_pph_terutang">
                                                     </div>
@@ -356,7 +356,7 @@
                                                     <label class="col-sm-3 col-form-label">6.Jumlah PPh Terutang
                                                         (4+5)</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" readonly autocomplete="off" required
+                                                        <input type="text" readonly autocomplete="off"  
                                                             class="form-control"id="b6_pph_terutang"
                                                             name="b6_pph_terutang">
                                                     </div>
@@ -369,7 +369,7 @@
                                                         <input type="text" min="0"
                                                             onkeyup="this.value=sprator(this.value);"
                                                             placeholder="Masukkan PPh Ditanggung Pemerintah..."
-                                                            autocomplete="off" required
+                                                            autocomplete="off"  
                                                             class="form-control"id="c7_kredit_pajak"
                                                             name="c7_kredit_pajak">
                                                     </div>
@@ -381,7 +381,7 @@
                                                         <input type="text" min="0"
                                                             placeholder="Masukkan Kredit Pajak Dalam Negeri..."
                                                             onkeyup="this.value=sprator(this.value);"
-                                                            autocomplete="off" required
+                                                            autocomplete="off"  
                                                             class="form-control"id="c8a_kredit_pajak"
                                                             name="c8a_kredit_pajak">
                                                     </div>
@@ -393,7 +393,7 @@
                                                         <input type="text" min="0"
                                                             placeholder="Masukkan Kredit Pajak Luar Negeri..."
                                                             onkeyup="this.value=sprator(this.value);"
-                                                            autocomplete="off" required
+                                                            autocomplete="off"  
                                                             class="form-control"id="c8b_kredit_pajak"
                                                             name="c8b_kredit_pajak">
                                                     </div>
@@ -401,7 +401,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">8c.Jumlah (8a +8b)</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" readonly autocomplete="off" required
+                                                        <input type="text" readonly autocomplete="off"  
                                                             class="form-control"id="c8c_kredit_pajak"
                                                             name="c8c_kredit_pajak">
                                                     </div>
@@ -432,14 +432,14 @@
                                                     </div>
                                                     {{-- <div class="col-sm-4">
                                                         <input type="number" autocomplete="off" min="0"
-                                                            placeholder="Masukkan PPh Yang Harus Dibayar Sendiri" required
+                                                            placeholder="Masukkan PPh Yang Harus Dibayar Sendiri"  
                                                             class="form-control"id="c9a_kredit_pajak"
                                                             name="c9a_kredit_pajak">
                                                     </div>
                                                     <label class="col-sm-1 col-form-label">b.</label>
                                                     <div class="col-sm-3">
                                                         <input type="number" min="0"
-                                                            placeholder="Masukkan Nilai K" autocomplete="off" required
+                                                            placeholder="Masukkan Nilai K" autocomplete="off"  
                                                             class="form-control"id="c9b_kredit_pajak"
                                                             name="c9b_kredit_pajak">
                                                     </div>
@@ -459,7 +459,7 @@
                                                     <div class="col-sm-9">
                                                         <input type="text" autocomplete="off" min="0"
                                                             onkeyup="this.value=sprator(this.value);"
-                                                            placeholder="Masukkan PPh Ps.25 Bulanan" required
+                                                            placeholder="Masukkan PPh Ps.25 Bulanan"  
                                                             class="form-control"id="c10a_kredit_pajak"
                                                             name="c10a_kredit_pajak">
                                                     </div>
@@ -470,7 +470,7 @@
                                                     <div class="col-sm-9">
                                                         <input type="text" min="0" autocomplete="off"
                                                             onkeyup="this.value=sprator(this.value);"
-                                                            placeholder="Masukkan STP Ps.25 Pokok Pajak" required
+                                                            placeholder="Masukkan STP Ps.25 Pokok Pajak"  
                                                             class="form-control"id="c10b_kredit_pajak"
                                                             name="c10b_kredit_pajak">
                                                     </div>
@@ -478,7 +478,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">10c.Jumlah (10a + 10b)</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" readonly autocomplete="off" required
+                                                        <input type="text" readonly autocomplete="off"  
                                                             class="form-control"id="c10c_kredit_pajak"
                                                             name="c10c_kredit_pajak">
                                                     </div>
@@ -511,7 +511,7 @@
                                                     <div class="col-sm-9">
                                                         <input type="number" min="0"
                                                             placeholder="Masukkan PPh Kurang Di Bayar..."
-                                                            autocomplete="off" required
+                                                            autocomplete="off"  
                                                             class="form-control"id="d11a_pph_kurang"
                                                             name="d11a_pph_kurang">
                                                     </div> --}}
@@ -521,7 +521,7 @@
                                                     <div class="col-sm-9">
                                                         <input type="number" min="0"
                                                             placeholder="Masukkan PPh Ditanggung Pemerintah..."
-                                                            autocomplete="off" required
+                                                            autocomplete="off"  
                                                             class="form-control"id="d11b_pph_kurang"
                                                             name="d11b_pph_kurang">
                                                     </div>
@@ -536,7 +536,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">12.Tanggal Setor</label>
                                                     <div class="col-sm-9">
-                                                        <input type="date" required
+                                                        <input type="date"  
                                                             class="form-control"id="d12_pph_kurang" name="d12_pph_kurang">
                                                     </div>
                                                 </div>
@@ -558,7 +558,7 @@
                                                         Angsuran</label>
                                                     <div class="col-sm-9">
                                                         <input type="text" min="0"
-                                                            placeholder="Masukkan Penghitungan Angsuran..." required
+                                                            placeholder="Masukkan Penghitungan Angsuran..."  
                                                             onkeyup="this.value=sprator(this.value);"
                                                             class="form-control"id="e14a_angsuran_pph"
                                                             name="e14a_angsuran_pph">
@@ -569,7 +569,7 @@
                                                         Fiskal</label>
                                                     <div class="col-sm-9">
                                                         <input type="text"
-                                                            placeholder="Masukkan Kompensasi Kerugian Fiskal..." required
+                                                            placeholder="Masukkan Kompensasi Kerugian Fiskal..."  
                                                             onkeyup="this.value=sprator(this.value);"
                                                             class="form-control"id="e14b_angsuran_pph"
                                                             name="e14b_angsuran_pph">
@@ -598,7 +598,7 @@
                                                         Pajak</label>
                                                     <div class="col-sm-9">
                                                         <input type="text" min="0"
-                                                            placeholder="Masukkan Kredit Pajak Tahun Pajak..." required
+                                                            placeholder="Masukkan Kredit Pajak Tahun Pajak..."  
                                                             class="form-control"id="e14e_angsuran_pph"
                                                             onkeyup="this.value=sprator(this.value);"
                                                             name="e14e_angsuran_pph">
@@ -625,7 +625,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">15a. PPh Final</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" required min="0"
+                                                        <input type="text"   min="0"
                                                             onkeyup="this.value=sprator(this.value);"
                                                             placeholder="Masukkan PPh Final..."
                                                             class="form-control"id="f15a_pph_final" name="f15a_pph_final">
@@ -634,7 +634,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">15b. Penghasilan Bruto</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" required min="0"
+                                                        <input type="text"   min="0"
                                                             onkeyup="this.value=sprator(this.value);"
                                                             placeholder="Masukkan Penghasilan Bruto..."
                                                             class="form-control"id="f15b_pph_final" name="f15b_pph_final">
@@ -712,14 +712,14 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Tempat</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" required placeholder="Masukkan Tempat..."
+                                                        <input type="text"   placeholder="Masukkan Tempat..."
                                                             class="form-control"id="tempat" name="tempat">
                                                     </div>
                                                 </div>
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Nama Lengkap Pengurus</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" required
+                                                        <input type="text"  
                                                             placeholder="Masukkan Nama Lengkap Pengurus..."
                                                             class="form-control"id="nama_lengkap" name="nama_lengkap">
                                                         <span id="errornama_lengkap" style="color: red;"></span>
@@ -728,7 +728,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">NPWP Pengurus</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" required
+                                                        <input type="text"  
                                                             placeholder="Masukkan NPWP Pengurus..."
                                                             class="form-control"id="npwp_pengurus" name="npwp_pengurus">
                                                         <span id="errornpwp_pengurus" style="color: red;"></span>
@@ -781,7 +781,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">N P W P</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" min="0" autocomplete="off" required
+                                                        <input type="text" min="0" autocomplete="off"  
                                                             placeholder="Masukkan No N P W P"
                                                             class="form-control"id="npwp_1771i" name="npwp_1771i">
                                                         <span id="errorNpwp_1771i" style="color: red;"></span>
@@ -791,7 +791,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Nama Wajib Pajak</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" autocomplete="off" required
+                                                        <input type="text" autocomplete="off"  
                                                             placeholder="Masukkan Nama Wajib Pajak"
                                                             class="form-control"id="nama_npwp_1771i"
                                                             name="nama_npwp_1771i">
@@ -802,13 +802,13 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Periode Pembukuan</label>
                                                     <div class="col-sm-4">
-                                                        <input type="date" autocomplete="off" required
+                                                        <input type="date" autocomplete="off"  
                                                             class="form-control"id="start_periode_pembukuan_1771i"
                                                             name="start_periode_pembukuan_1771i">
                                                     </div>
                                                     <label class="col-sm-1 col-form-label">s.d</label>
                                                     <div class="col-sm-4">
-                                                        <input type="date" autocomplete="off" required
+                                                        <input type="date" autocomplete="off"  
                                                             class="form-control"id="end_periode_pembukuan_1771i"
                                                             name="end_periode_pembukuan_1771i">
                                                     </div>
@@ -818,7 +818,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">A. Peredaran Usaha</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" min="0" autocomplete="off" required
+                                                        <input type="text" min="0" autocomplete="off"  
                                                             onkeyup="this.value=sprator(this.value);"
                                                             placeholder="Masukkan Peredaran Usaha..."
                                                             class="form-control"id="a1_penghasilan_netto_1771i"
@@ -828,7 +828,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">B. Harga Pokok Penjualan</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" min="0" autocomplete="off" required
+                                                        <input type="text" min="0" autocomplete="off"  
                                                             placeholder="Masukkan Harga Pokok Penjualan..."
                                                             onkeyup="this.value=sprator(this.value);"
                                                             class="form-control"id="b1_penghasilan_netto_1771i"
@@ -838,7 +838,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">C. Biaya Usaha Lainnya</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" min="0" autocomplete="off" required
+                                                        <input type="text" min="0" autocomplete="off"  
                                                             onkeyup="this.value=sprator(this.value);"
                                                             placeholder="Masukkan Biaya Usaha Lainnya..."
                                                             class="form-control"id="c1_penghasilan_netto_1771i"
@@ -858,7 +858,7 @@
                                                     <label class="col-sm-3 col-form-label">E. Penghasilan Dari Luar
                                                         Usaha</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" min="0" autocomplete="off" required
+                                                        <input type="text" min="0" autocomplete="off"  
                                                             placeholder="Masukkan Penghasilan Dari Luar Usaha..."
                                                             onkeyup="this.value=sprator(this.value);"
                                                             class="form-control"id="e1_penghasilan_netto_1771i"
@@ -868,7 +868,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">F. Biaya Dari Luar Usaha</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" min="0" autocomplete="off" required
+                                                        <input type="text" min="0" autocomplete="off"  
                                                             onkeyup="this.value=sprator(this.value);"
                                                             placeholder="Masukkan Biaya Dari Luar Usaha..."
                                                             class="form-control"id="f1_penghasilan_netto_1771i"
@@ -897,7 +897,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Penghasilan Netto</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" min="0" autocomplete="off" required
+                                                        <input type="text" min="0" autocomplete="off"  
                                                             onkeyup="this.value=sprator(this.value);"
                                                             placeholder="Masukkan Penghasilan Netto..."
                                                             class="form-control"id="penghasilan_netto_luar_negeri_1771i"
@@ -919,7 +919,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Penghasilan</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" min="0" autocomplete="off" required
+                                                        <input type="text" min="0" autocomplete="off"  
                                                             onkeyup="this.value=sprator(this.value);"
                                                             placeholder="Masukkan Penghasilan Yand Dikanakan PPh..."
                                                             class="form-control"id="penghasilan_1771i"
@@ -931,7 +931,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">A. Biaya Di Bebankan</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" min="0" autocomplete="off" required
+                                                        <input type="text" min="0" autocomplete="off"  
                                                             placeholder="Masukkan Biaya Di Bebankan / Dikeluarkan Untuk Ke..."
                                                             onkeyup="this.value=sprator(this.value);"
                                                             class="form-control"id="a5_penyesuaian_fiskal_1771i"
@@ -941,7 +941,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">B. Dana Cadangan</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" min="0" autocomplete="off" required
+                                                        <input type="text" min="0" autocomplete="off"  
                                                             placeholder="Masukkan Dana Cadangan..."
                                                             onkeyup="this.value=sprator(this.value);"
                                                             class="form-control"id="b5_penyesuaian_fiskal_1771i"
@@ -951,7 +951,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">C. Natura</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" min="0" autocomplete="off" required
+                                                        <input type="text" min="0" autocomplete="off"  
                                                             placeholder="Masukkan Penggantian / Imbalan Pekerjaan..."
                                                             onkeyup="this.value=sprator(this.value);"
                                                             class="form-control"id="c5_penyesuaian_fiskal_1771i"
@@ -962,7 +962,7 @@
                                                     <label class="col-sm-3 col-form-label">D. Jumlah Melebihi
                                                         Kewajaran</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" min="0" autocomplete="off" required
+                                                        <input type="text" min="0" autocomplete="off"  
                                                             placeholder="Masukkan Jumlah Melebihi Kewajaran..."
                                                             onkeyup="this.value=sprator(this.value);"
                                                             class="form-control"id="d5_penyesuaian_fiskal_1771i"
@@ -973,7 +973,7 @@
                                                     <label class="col-sm-3 col-form-label">E. Harta Yang Di
                                                         Hibahkan</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" min="0" autocomplete="off" required
+                                                        <input type="text" min="0" autocomplete="off"  
                                                             placeholder="Masukkan Harta Yang Di Hibahkan..."
                                                             onkeyup="this.value=sprator(this.value);"
                                                             class="form-control"id="e5_penyesuaian_fiskal_1771i"
@@ -983,7 +983,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">F. Pajak Penghasilan</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" min="0" autocomplete="off" required
+                                                        <input type="text" min="0" autocomplete="off"  
                                                             placeholder="Masukkan Pajak Penghasilan..."
                                                             onkeyup="this.value=sprator(this.value);"
                                                             class="form-control"id="f5_penyesuaian_fiskal_1771i"
@@ -993,7 +993,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">G. Gaji Yang Dibayarkan</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" min="0" autocomplete="off" required
+                                                        <input type="text" min="0" autocomplete="off"  
                                                             placeholder="Masukkan Gaji Yang Dibayarkan Kepada Anggota Persekutuan..."
                                                             onkeyup="this.value=sprator(this.value);"
                                                             class="form-control"id="g5_penyesuaian_fiskal_1771i"
@@ -1003,7 +1003,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">H. Sanksi Administrasi</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" min="0" autocomplete="off" required
+                                                        <input type="text" min="0" autocomplete="off"  
                                                             placeholder="Masukkan Sanksi Administrasi..."
                                                             onkeyup="this.value=sprator(this.value);"
                                                             class="form-control"id="h5_penyesuaian_fiskal_1771i"
@@ -1014,7 +1014,7 @@
                                                     <label class="col-sm-3 col-form-label">I. Selisih Penyusutan
                                                         Komersial</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" min="0" autocomplete="off" required
+                                                        <input type="text" min="0" autocomplete="off"  
                                                             placeholder="Masukkan Selisih Penyusutan Komersial..."
                                                             onkeyup="this.value=sprator(this.value);"
                                                             class="form-control"id="i5_penyesuaian_fiskal_1771i"
@@ -1025,7 +1025,7 @@
                                                     <label class="col-sm-3 col-form-label">J. Selisih Amortisasi
                                                         Komersial</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" min="0" autocomplete="off" required
+                                                        <input type="text" min="0" autocomplete="off"  
                                                             placeholder="Masukkan Selisih Amortisasi Komersial..."
                                                             onkeyup="this.value=sprator(this.value);"
                                                             class="form-control"id="j5_penyesuaian_fiskal_1771i"
@@ -1036,7 +1036,7 @@
                                                     <label class="col-sm-3 col-form-label">K. Biaya Yang
                                                         Ditangguhkan</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" min="0" autocomplete="off" required
+                                                        <input type="text" min="0" autocomplete="off"  
                                                             onkeyup="this.value=sprator(this.value);"
                                                             placeholder="Masukkan Biaya Yang Ditangguhkan..."
                                                             class="form-control"id="k5_penyesuaian_fiskal_1771i"
@@ -1046,7 +1046,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">L. Penyesuaian Fiskal</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" min="0" autocomplete="off" required
+                                                        <input type="text" min="0" autocomplete="off"  
                                                             placeholder="Masukkan Penyesuaian Fiskal Positif Lainnya..."
                                                             onkeyup="this.value=sprator(this.value);"
                                                             class="form-control"id="l5_penyesuaian_fiskal_1771i"
@@ -1066,7 +1066,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">A. Selisih Penyusutan</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" min="0" autocomplete="off" required
+                                                        <input type="text" min="0" autocomplete="off"  
                                                             placeholder="Masukkan Selisih Penyusutan..."
                                                             onkeyup="this.value=sprator(this.value);"
                                                             class="form-control"id="a6_fiskal_negatif_1771i"
@@ -1076,7 +1076,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">B. Selisih Amortisasi</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" min="0" autocomplete="off" required
+                                                        <input type="text" min="0" autocomplete="off"  
                                                             placeholder="Masukkan Selisih Amortisasi..."
                                                             onkeyup="this.value=sprator(this.value);"
                                                             class="form-control"id="b6_fiskal_negatif_1771i"
@@ -1087,7 +1087,7 @@
                                                     <label class="col-sm-3 col-form-label">C. Penghasilan
                                                         Ditangguhkan</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" min="0" autocomplete="off" required
+                                                        <input type="text" min="0" autocomplete="off"  
                                                             placeholder="Masukkan Penghasilan Ditangguhkan..."
                                                             onkeyup="this.value=sprator(this.value);"
                                                             class="form-control"id="c6_fiskal_negatif_1771i"
@@ -1098,7 +1098,7 @@
                                                     <label class="col-sm-3 col-form-label">D. Penyesuaian Fiskal
                                                         Negatif</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" min="0" autocomplete="off" required
+                                                        <input type="text" min="0" autocomplete="off"  
                                                             placeholder="Masukkan Penyesuaian Fiskal Negatif..."
                                                             onkeyup="this.value=sprator(this.value);"
                                                             class="form-control"id="d6_fiskal_negatif_1771i"
@@ -1119,7 +1119,7 @@
                                                     <label class="col-sm-3 col-form-label">Pengurangan Penghasilan
                                                         Netto</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" min="0" autocomplete="off" required
+                                                        <input type="text" min="0" autocomplete="off"  
                                                             placeholder="Masukkan Pengurangan Penghasilan Netto..."
                                                             onkeyup="this.value=sprator(this.value);"
                                                             class="form-control"id="fasilitas_1771i"
@@ -1180,7 +1180,7 @@
                                                     <div class="mb-3 row">
                                                         <label class="col-sm-3 col-form-label">N P W P</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" min="0" autocomplete="off" required
+                                                            <input type="text" min="0" autocomplete="off"  
                                                                 placeholder="Masukkan No N P W P"
                                                                 class="form-control"id="npwp_1771II" name="npwp_1771II">
                                                             <span id="errornpwp_1771II" style="color: red;"></span>
@@ -1189,7 +1189,7 @@
                                                     <div class="mb-3 row">
                                                         <label class="col-sm-3 col-form-label">Nama Wajib Pajak</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" autocomplete="off" required
+                                                            <input type="text" autocomplete="off"  
                                                                 placeholder="Masukkan Nama Wajib Pajak"
                                                                 class="form-control"id="nama_npwp_1771II"
                                                                 name="nama_npwp_1771II">
@@ -1199,132 +1199,380 @@
                                                     <div class="mb-3 row">
                                                         <label class="col-sm-3 col-form-label">Periode Pembukuan</label>
                                                         <div class="col-sm-4">
-                                                            <input type="date" autocomplete="off" required
+                                                            <input type="date" autocomplete="off"  
                                                                 class="form-control"id="start_periode_pembukuan_1771II"
                                                                 name="start_periode_pembukuan_1771II">
                                                         </div>
                                                         <label class="col-sm-1 col-form-label">s.d</label>
                                                         <div class="col-sm-4">
-                                                            <input type="date" autocomplete="off" required
+                                                            <input type="date" autocomplete="off"  
                                                                 class="form-control"id="end_periode_pembukuan_1771II"
                                                                 name="end_periode_pembukuan_1771II">
                                                         </div>
                                                     </div>
                                                     <hr>
-                                                    <div class="card-body">
-                                                        <div class="table-responsive">
-                                                            <table id="list_1771II"class="display" style="min-width: 845px">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th class="text-center">Perincian Pembelian Barang
-                                                                        </th>
-                                                                        <th class="text-center">Harga Pokok</th>
-                                                                        <th class="text-center">Biaya Usaha</th>
-                                                                        <th class="text-center">Biaya Luar Usaha</th>
-                                                                        <th class="text-center">Sub Jumlah Biaya</th>
-                                                                        <th class="text-center">Action</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td width="auto" class="text-center"
-                                                                            value="">
-                                                                            <select id="angkapembelianbarang[]"name="angkapembelianbarang[]"
-                                                                                class="dropdown-groups">
-                                                                                <option value="PEMBELIAN BAHAN/BARANG DAGANGAN">PEMBELIAN BAHAN/BARANG DAGANGAN</option>
-                                                                                <option value="GAJI, UPAH, BONUS, GRATIFIKASI,HONORARIUM, THR, DSB">GAJI, UPAH, BONUS, GRATIFIKASI,HONORARIUM, THR, DSB</option>
-                                                                                <option value="BIAYA TRANSPORTASI">BIAYA TRANSPORTASI</option>
-                                                                                <option value="BIAYA PENYUSUTAN DAN AMORTISASI">BIAYA PENYUSUTAN DAN AMORTISASI</option>
-                                                                                <option value="BIAYA SEWA">BIAYA SEWA</option>
-                                                                                <option value="BIAYA BUNGA PINJAMAN">BIAYA BUNGA PINJAMAN</option>
-                                                                                <option value="BIAYA SEHUBUNGAN DENGAN JASA">BIAYA SEHUBUNGAN DENGAN JASA</option>
-                                                                                <option value="BIAYA PIUTANG TAK TERTAGIH">BIAYA PIUTANG TAK TERTAGIH</option>
-                                                                                <option value="BIAYA ROYALTI">BIAYA ROYALTI</option>
-                                                                                <option value="BIAYA PEMASARAN/PROMOSI">BIAYA PEMASARAN/PROMOSI</option>
-                                                                                <option value="BIAYA LAINNYA">BIAYA LAINNYA</option>
-                                                                                <option value="PERSEDIAAN AWAL">PERSEDIAAN AWAL</option>
-                                                                                <option value="PERSEDIAAN AKHIR (-/-)">PERSEDIAAN AKHIR (-/-)</option>
-                                                                            </select>
-                                                                            {{-- <input required autocomplete="off"
-                                                                                type="text" name="angkapembelianbarang[]"
-                                                                                id="angkapembelianbarang[]" min="0"
-                                                                                class="form-control" /> --}}
-                                                                        </td>
-                                                                        <td class="text-center">
-                                                                            <input required autocomplete="off"
-                                                                                onkeyup="this.value=sprator(this.value);"
-                                                                                type="text" name="angkaharpok1[]"
-                                                                                id="angkaharpok1[]" min="0"
-                                                                                class="form-control sub_harpok" />
-                                                                        </td>
-                                                                        <td class="text-center">
-                                                                            <input required autocomplete="off"
-                                                                                type="text" name="angkabiaya_usaha1[]"
-                                                                                onkeyup="this.value=sprator(this.value);"
-                                                                                id="angkabiaya_usaha1[]" min="0"
-                                                                                class="form-control sub_biaya_usaha" />
-                                                                        </td>
-                                                                        <td class="text-center">
-                                                                            <input required autocomplete="off"
-                                                                                type="text" name="angkabiaya_luar1[]"
-                                                                                onkeyup="this.value=sprator(this.value);"
-                                                                                id="angkabiaya_luar1[]" min="0"
-                                                                                class="form-control sub_biaya_luar" />
-                                                                        </td>
-                                                                        <td class="text-center">
-                                                                            <input readonly autocomplete="off"
-                                                                                type="text" name="subjum1[]"
-                                                                                id="subjum1[]" min="0"
-                                                                                class="form-control jumlahtotal" />
-                                                                        </td>
-                                                                        <td><button type="button" class="btn btn-light"><i
-                                                                                    class="fa fa-trash"></i>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                                <tfoot>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <button
-                                                                                class="btn btn-primary btn-submit"name='action'
-                                                                                value="create" id="btn-add1771ii"
-                                                                                type="button"><i data-feather='save'></i>
-                                                                                {{ 'Tambah Item' }}</button>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tfoot>
-                                                                <tfoot class="footer">
-                                                                    <tr>
-                                                                        <td width="auto" class="text-center"><b>JUMLAH</b>
-                                                                        </td>
-                                                                        <td class="text-center">
-                                                                            <input readonly autocomplete="off"
-                                                                                type="text" name="subangkaharpok1"
-                                                                                id="angkaharpok1" min="0"
-                                                                                class="form-control total_harpok" />
-                                                                        </td>
-                                                                        <td class="text-center">
-                                                                            <input readonly autocomplete="off"
-                                                                                type="text" name="subangkabiaya_usaha1"
-                                                                                id="angkabiaya_usaha1" min="0"
-                                                                                class="form-control total_biayausaha" />
-                                                                        </td>
-                                                                        <td class="text-center">
-                                                                            <input readonly autocomplete="off"
-                                                                                type="text" name="subangkabiaya_luar1"
-                                                                                id="subangkabiaya_luar1" min="0"
-                                                                                class="form-control total_biayaluar" />
-                                                                        </td>
-                                                                        <td class="text-center">
-                                                                            <input readonly autocomplete="off"
-                                                                                type="text" name="totaljum1"
-                                                                                id="totaljum1" min="0"
-                                                                                class="form-control total" />
-                                                                        </td>
-                                                                        <td></td>
-                                                                    </tr>
-                                                                </tfoot>
-                                                            </table>
+                                                    <label>1. Pembelian Bahan/Barang Dagangan</label>
+                                                    <div class="mb-3 row">
+                                                       <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="hpp1_1771ii" placeholder="HPP"
+                                                                name="hpp1_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="biayausaha1_1771ii"placeholder="Biaya Usaha"
+                                                                name="biayausaha1_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="biayaluarusaha1_1771ii" placeholder="Biaya Luar Usaha"
+                                                                name="biayaluarusaha1_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"   readonly
+                                                                class="form-control"id="jumlah1_1771ii" placeholder="Jumlah"
+                                                                name="jumlah1_1771ii">
+                                                        </div>
+                                                    </div>
+                                                    <label>2. Gaji, Upah, Bonus, Gratifikasi, Honorarium, THR, DSB</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="hpp2_1771ii" placeholder="HPP"
+                                                                name="hpp2_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="biayausaha2_1771ii"placeholder="Biaya Usaha"
+                                                                name="biayausaha2_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="biayaluarusaha2_1771ii" placeholder="Biaya Luar Usaha"
+                                                                name="biayaluarusaha2_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"   readonly
+                                                                class="form-control"id="jumlah2_1771ii" placeholder="Jumlah"
+                                                                name="jumlah2_1771ii">
+                                                        </div>
+                                                    </div>
+                                                    <label>3. Biaya Transportasi</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="hpp3_1771ii" placeholder="HPP"
+                                                                name="hpp3_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="biayausaha3_1771ii"placeholder="Biaya Usaha"
+                                                                name="biayausaha3_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="biayaluarusaha3_1771ii" placeholder="Biaya Luar Usaha"
+                                                                name="biayaluarusaha3_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"   readonly
+                                                                class="form-control"id="jumlah3_1771ii" placeholder="Jumlah"
+                                                                name="jumlah3_1771ii">
+                                                        </div>
+                                                    </div>
+                                                    <label>4. Biaya Penyusutan Dan Amortisasi</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="hpp4_1771ii" placeholder="HPP"
+                                                                name="hpp4_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="biayausaha4_1771ii"placeholder="Biaya Usaha"
+                                                                name="biayausaha4_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="biayaluarusaha4_1771ii" placeholder="Biaya Luar Usaha"
+                                                                name="biayaluarusaha4_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"   readonly
+                                                                class="form-control"id="jumlah4_1771ii" placeholder="Jumlah"
+                                                                name="jumlah4_1771ii">
+                                                        </div>
+                                                    </div>
+                                                    <label>5. Biaya Sewa</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="hpp5_1771ii" placeholder="HPP"
+                                                                name="hpp5_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="biayausaha5_1771ii"placeholder="Biaya Usaha"
+                                                                name="biayausaha5_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="biayaluarusaha5_1771ii" placeholder="Biaya Luar Usaha"
+                                                                name="biayaluarusaha5_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"   readonly
+                                                                class="form-control"id="jumlah5_1771ii" placeholder="Jumlah"
+                                                                name="jumlah5_1771ii">
+                                                        </div>
+                                                    </div>
+                                                    <label>6. Biaya Bunga Pinjaman</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="hpp6_1771ii" placeholder="HPP"
+                                                                name="hpp6_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="biayausaha6_1771ii"placeholder="Biaya Usaha"
+                                                                name="biayausaha6_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="biayaluarusaha6_1771ii" placeholder="Biaya Luar Usaha"
+                                                                name="biayaluarusaha6_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"   readonly
+                                                                class="form-control"id="jumlah6_1771ii" placeholder="Jumlah"
+                                                                name="jumlah6_1771ii">
+                                                        </div>
+                                                    </div>
+                                                    <label>7. Biaya Sehubungan Dengan Jasa</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="hpp7_1771ii" placeholder="HPP"
+                                                                name="hpp7_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="biayausaha7_1771ii"placeholder="Biaya Usaha"
+                                                                name="biayausaha7_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="biayaluarusaha7_1771ii" placeholder="Biaya Luar Usaha"
+                                                                name="biayaluarusaha7_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"   readonly
+                                                                class="form-control"id="jumlah7_1771ii" placeholder="Jumlah"
+                                                                name="jumlah7_1771ii">
+                                                        </div>
+                                                    </div>
+                                                    <label>8. Biaya Piutang Tat Tertagih</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="hpp8_1771ii" placeholder="HPP"
+                                                                name="hpp8_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="biayausaha8_1771ii"placeholder="Biaya Usaha"
+                                                                name="biayausaha8_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="biayaluarusaha8_1771ii" placeholder="Biaya Luar Usaha"
+                                                                name="biayaluarusaha8_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"   readonly
+                                                                class="form-control"id="jumlah8_1771ii" placeholder="Jumlah"
+                                                                name="jumlah8_1771ii">
+                                                        </div>
+                                                    </div>
+                                                    <label>9. Biaya Royalti</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="hpp9_1771ii" placeholder="HPP"
+                                                                name="hpp9_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="biayausaha9_1771ii"placeholder="Biaya Usaha"
+                                                                name="biayausaha9_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="biayaluarusaha9_1771ii" placeholder="Biaya Luar Usaha"
+                                                                name="biayaluarusaha9_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"   readonly
+                                                                class="form-control"id="jumlah9_1771ii" placeholder="Jumlah"
+                                                                name="jumlah9_1771ii">
+                                                        </div>
+                                                    </div>
+                                                    <label>10. Biaya Pemasaran/Promosi</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="hpp10_1771ii" placeholder="HPP"
+                                                                name="hpp10_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="biayausaha10_1771ii"placeholder="Biaya Usaha"
+                                                                name="biayausaha10_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="biayaluarusaha10_1771ii" placeholder="Biaya Luar Usaha"
+                                                                name="biayaluarusaha10_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"   readonly
+                                                                class="form-control"id="jumlah10_1771ii" placeholder="Jumlah"
+                                                                name="jumlah10_1771ii">
+                                                        </div>
+                                                    </div>
+                                                    <label>11. Biaya Lainnya</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="hpp11_1771ii" placeholder="HPP"
+                                                                name="hpp11_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="biayausaha11_1771ii"placeholder="Biaya Usaha"
+                                                                name="biayausaha11_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="biayaluarusaha11_1771ii" placeholder="Biaya Luar Usaha"
+                                                                name="biayaluarusaha11_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"   readonly
+                                                                class="form-control"id="jumlah11_1771ii" placeholder="Jumlah"
+                                                                name="jumlah11_1771ii">
+                                                        </div>
+                                                    </div>
+                                                    <label>12. Persediaan Awal</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="hpp12_1771ii" placeholder="HPP"
+                                                                name="hpp12_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="biayausaha12_1771ii"placeholder="Biaya Usaha"
+                                                                name="biayausaha12_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="biayaluarusaha12_1771ii" placeholder="Biaya Luar Usaha"
+                                                                name="biayaluarusaha12_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"   readonly
+                                                                class="form-control"id="jumlah12_1771ii" placeholder="Jumlah"
+                                                                name="jumlah12_1771ii">
+                                                        </div>
+                                                    </div>
+                                                    <label>13. Persediaan Akhir (-/-)</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="hpp13_1771ii" placeholder="HPP"
+                                                                name="hpp13_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="biayausaha13_1771ii"placeholder="Biaya Usaha"
+                                                                name="biayausaha13_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="biayaluarusaha13_1771ii" placeholder="Biaya Luar Usaha"
+                                                                name="biayaluarusaha13_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"   readonly
+                                                                class="form-control"id="jumlah13_1771ii" placeholder="Jumlah"
+                                                                name="jumlah13_1771ii">
+                                                        </div>
+                                                    </div>
+                                                    <label>14. Jumlah  1 S.D. 12 Dikurangi 13</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"   readonly
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="hpp14_1771ii" placeholder="HPP"
+                                                                name="hpp14_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"   readonly
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="biayausaha14_1771ii"placeholder="Biaya Usaha"
+                                                                name="biayausaha14_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"   readonly
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="biayaluarusaha14_1771ii" placeholder="Biaya Luar Usaha"
+                                                                name="biayaluarusaha14_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" autocomplete="off"   readonly
+                                                                class="form-control"id="jumlah14_1771ii" placeholder="Jumlah"
+                                                                name="jumlah14_1771ii">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1367,7 +1615,7 @@
                                                     <label class="col-sm-3 col-form-label">N P W P</label>
                                                     <div class="col-sm-9">
                                                         <input type="text" min="0" autocomplete="off"
-                                                            required placeholder="Masukkan No N P W P"
+                                                              placeholder="Masukkan No N P W P"
                                                             class="form-control"id="npwp_1771III" name="npwp_1771III">
                                                         <span id="errornpwp_1771III" style="color: red;"></span>
                                                     </div>
@@ -1375,7 +1623,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Nama Wajib Pajak</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" autocomplete="off" required
+                                                        <input type="text" autocomplete="off"  
                                                             placeholder="Masukkan Nama Wajib Pajak"
                                                             class="form-control"id="nama_npwp_1771III"
                                                             name="nama_npwp_1771III">
@@ -1385,13 +1633,13 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Periode Pembukuan</label>
                                                     <div class="col-sm-4">
-                                                        <input type="date" autocomplete="off" required
+                                                        <input type="date" autocomplete="off"  
                                                             class="form-control"id="start_periode_pembukuan_1771III"
                                                             name="start_periode_pembukuan_1771III">
                                                     </div>
                                                     <label class="col-sm-1 col-form-label">s.d</label>
                                                     <div class="col-sm-4">
-                                                        <input type="date" autocomplete="off" required
+                                                        <input type="date" autocomplete="off"  
                                                             class="form-control"id="end_periode_pembukuan_1771III"
                                                             name="end_periode_pembukuan_1771III">
                                                     </div>
@@ -1418,44 +1666,44 @@
                                                                 <tbody class="">
                                                                     <tr>
                                                                         <td class="text-center">
-                                                                            <input required autocomplete="off"
+                                                                            <input   autocomplete="off"
                                                                                 type="text" name="kreditnama[]"
                                                                                 id="kreditnama[]"
                                                                                 class="form-control" />
                                                                         </td>
                                                                         <td class="text-center">
-                                                                            <input required autocomplete="off"
+                                                                            <input   autocomplete="off"
                                                                                 type="text" name="kreditnpwp[]"
                                                                                 id="kreditnpwp[]" min="0"
                                                                                 class="form-control" />
                                                                         </td>
                                                                         <td class="text-center">
-                                                                            <input required autocomplete="off"
+                                                                            <input   autocomplete="off"
                                                                                 type="text" name="kredittrx[]"
                                                                                 id="kredittrx[]" class="form-control" />
                                                                         </td>
                                                                         <td class="text-center">
-                                                                            <input required autocomplete="off"
+                                                                            <input   autocomplete="off"
                                                                                 onkeyup="this.value=sprator(this.value);"
                                                                                 type="text" name="kreditrp[]"
                                                                                 id="kreditrp[]" min="0"
                                                                                 class="form-control subrupiah" />
                                                                         </td>
                                                                         <td class="text-center">
-                                                                            <input required autocomplete="off"
+                                                                            <input   autocomplete="off"
                                                                                 onkeyup="this.value=sprator(this.value);"
                                                                                 type="text" name="kreditpajak[]"
                                                                                 id="kreditpajak[]" min="0"
                                                                                 class="form-control subpajak" />
                                                                         </td>
                                                                         <td class="text-center">
-                                                                            <input required autocomplete="off"
+                                                                            <input   autocomplete="off"
                                                                                 type="number" name="kreditnomor[]"
                                                                                 id="kreditnomor[]" min="0"
                                                                                 class="form-control" />
                                                                         </td>
                                                                         <td class="text-center">
-                                                                            <input required autocomplete="off"
+                                                                            <input   autocomplete="off"
                                                                                 type="date" name="kredittgl[]"
                                                                                 id="kredittgl[]" class="form-control" />
                                                                         </td>
@@ -1544,7 +1792,7 @@
                                                     <label class="col-sm-3 col-form-label">N P W P</label>
                                                     <div class="col-sm-9">
                                                         <input type="text" min="0" autocomplete="off"
-                                                            required placeholder="Masukkan No N P W P"
+                                                              placeholder="Masukkan No N P W P"
                                                             class="form-control"id="npwp_1771IV" name="npwp_1771IV">
                                                         <span id="errornpwp_1771IV" style="color: red;"></span>
                                                     </div>
@@ -1552,7 +1800,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Nama Wajib Pajak</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" autocomplete="off" required
+                                                        <input type="text" autocomplete="off"  
                                                             placeholder="Masukkan Nama Wajib Pajak"
                                                             class="form-control"id="nama_npwp_1771IV"
                                                             name="nama_npwp_1771IV">
@@ -1562,212 +1810,430 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Periode Pembukuan</label>
                                                     <div class="col-sm-4">
-                                                        <input type="date" autocomplete="off" required
+                                                        <input type="date" autocomplete="off"  
                                                             class="form-control"id="start_periode_pembukuan_1771IV"
                                                             name="start_periode_pembukuan_1771IV">
                                                     </div>
                                                     <label class="col-sm-1 col-form-label">s.d</label>
                                                     <div class="col-sm-4">
-                                                        <input type="date" autocomplete="off" required
+                                                        <input type="date" autocomplete="off"  
                                                             class="form-control"id="end_periode_pembukuan_1771IV"
                                                             name="end_periode_pembukuan_1771IV">
                                                     </div>
-                                                    <hr>
                                                     <h4>Bagian A : PPh Final</h4>
-                                                    <div class="card-body">
-                                                        <div class="table-responsive">
-                                                            <table id="list_1771IV"class="display"
-                                                                style="min-width: 845px">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th class="text-center">Jenis Penghasilan</th>
-                                                                        <th class="text-center">Dasar Pengenaan Pajak</th>
-                                                                        <th class="text-center">Potongan Tarif %</th>
-                                                                        <th class="text-center">PPh Terutang</th>
-                                                                        <th>Action</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td width="auto" class="text-center">
-                                                                            <select id="jenispenghasilan[]"name="jenispenghasilan[]"
-                                                                                class="dropdown-groups">
-                                                                                <option value="1. BUNGA DEPOSITO / TABUNGAN, DAN DISKONTO SBI / SBN">1. BUNGA DEPOSITO / TABUNGAN, DAN DISKONTO SBI / SBN</option>
-                                                                                <option value="2. BUNGA / DISKONTO OBLIGASI">2. BUNGA / DISKONTO OBLIGASI</option>
-                                                                                <option value="3. PENGHASILAN PENJUALAN SAHAM YANG DIPERDAGANGKAN DI BURSA EFEK">3. PENGHASILAN PENJUALAN SAHAM YANG DIPERDAGANGKAN DI BURSA EFEK</option>
-                                                                                <option value="4. PENGHASILAN PENJUALAN SAHAM MILIK PERUSAHAAN MODAL VENTURA">4. PENGHASILAN PENJUALAN SAHAM MILIK PERUSAHAAN MODAL VENTURA</option>
-                                                                                <option value="5. PENGHASILAN USAHA PENYALUR / DEALER / AGEN PRODUK BBM">5. PENGHASILAN USAHA PENYALUR / DEALER / AGEN PRODUK BBM</option>
-                                                                                <option value="6. PENGHASILAN PENGALIHAN HAK ATAS TANAH / BANGUNAN">6. PENGHASILAN PENGALIHAN HAK ATAS TANAH / BANGUNAN</option>
-                                                                                <option value="7. PENGHASILAN PERSEWAAN ATAS TANAH / BANGUNAN">7. PENGHASILAN PERSEWAAN ATAS TANAH / BANGUNAN</option>
-                                                                                <option value="8A. PELAKSANA KONSTRUKSI">8A. PELAKSANA KONSTRUKSI</option>
-                                                                                <option value="8B. PERENCANA KONSTRUKSI">8B. PERENCANA KONSTRUKSI</option>
-                                                                                <option value="8C. PENGAWAS KONSTRUKSI">8C. PENGAWAS KONSTRUKSI</option>
-                                                                                <option value="9. PERWAKILAN DAGANG ASING">9. PERWAKILAN DAGANG ASING</option>
-                                                                                <option value="10. PELAYARAN / PENERBANGAN ASING">10. PELAYARAN / PENERBANGAN ASING</option>
-                                                                                <option value="11. PELAYARAN DALAM NEGERI">11. PELAYARAN DALAM NEGERI</option>
-                                                                                <option value="12. PENILAIAN KEMBALI AKTIVA TETAP">12. PENILAIAN KEMBALI AKTIVA TETAP</option>
-                                                                                <option value="13. TRANSAKSI DERIVATIF YANG DIPERDAGANGKAN DI BURSA">13. TRANSAKSI DERIVATIF YANG DIPERDAGANGKAN DI BURSA</option>
-                                                                            </select>
-                                                                            {{-- <input required autocomplete="off"
-                                                                                type="text" name="jenispenghasilan[]"
-                                                                                id="jenispenghasilan[]"
-                                                                                class="form-control" /> --}}
-                                                                        </td>
-                                                                        <td class="text-center">
-                                                                            <input required autocomplete="off"
-                                                                                type="text"
-                                                                                onkeyup="this.value=sprator(this.value);"
-                                                                                name="angka_pengenaan_pajak[]"
-                                                                                id="angka_pengenaan_pajak[]"
-                                                                                min="0"
-                                                                                class="form-control sub_pengenaanpajak" />
-                                                                        </td>
-                                                                        <td class="text-center">
-                                                                            <input required autocomplete="off"
-                                                                                onkeyup="this.value=sprator(this.value);"
-                                                                                type="text"
-                                                                                name="angka_tarif_potongan[]"
-                                                                                id="angka_tarif_potongan[]"
-                                                                                min="0"
-                                                                                class="form-control sub_tarifpotongan" />
-                                                                        </td>
-                                                                        <td class="text-center">
-                                                                            <input readonly autocomplete="off"
-                                                                                type="text"
-                                                                                name="angka_pph_terutang[]"
-                                                                                id="angka_pph_terutang[]" min="0"
-                                                                                class="form-control sub_terutang" />
-                                                                        </td>
-                                                                        <td><button type="button"
-                                                                                class="btn btn-light "><i
-                                                                                    class="fa fa-trash"></i>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                                <tfoot>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <button
-                                                                                class="btn btn-primary btn-submit"name='action'
-                                                                                value="create" id="btn-add1771iva"
-                                                                                type="button"><i
-                                                                                    data-feather='save'></i>
-                                                                                {{ 'Tambah Item' }}</button>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tfoot>
-                                                                <tfoot class="footer">
-                                                                    <tr>
-                                                                        <td width="auto" class="text-center">
-                                                                            <b>JUMLAH</b>
-                                                                        </td>
-                                                                        <td class="text-center">
-                                                                            <input readonly autocomplete="off"
-                                                                                type="text"
-                                                                                name="sub_angka_pengenaan_pajak"
-                                                                                id="sub_angka_pengenaan_pajak"
-                                                                                min="0"
-                                                                                class="form-control total_kena_pajak" />
-                                                                        </td>
-                                                                        <td class="text-center">
-                                                                            <input readonly autocomplete="off"
-                                                                                type="text" name="sub_tarif"
-                                                                                id="sub_tarif" min="0"
-                                                                                class="form-control total_tarif_potongan" />
-                                                                        </td>
-                                                                        <td class="text-center">
-                                                                            <input readonly autocomplete="off"
-                                                                                type="text" name="total1771iv"
-                                                                                id="total1771iv" min="0"
-                                                                                class="form-control total_terutang" />
-                                                                        </td>
-                                                                        <td></td>
-                                                                    </tr>
-                                                                </tfoot>
-                                                            </table>
-
+                                                    <label>1. Bunga Deposito / Tabungan, Dan Diskonto SBI / SBN</label>
+                                                    <div class="mb-3 row">
+                                                       <div class="col-sm-4">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="dpp1_1771iv" placeholder="DPP"
+                                                                name="dpp1_1771iv">
                                                         </div>
-
+                                                        <div class="col-sm-4">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="tarif1_1771ii"placeholder="Tarif %"
+                                                                name="tarif1_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <input type="text" autocomplete="off"   readonly
+                                                                class="form-control"id="pph1_1771ii" placeholder="PPh Terutang"
+                                                                name="pph1_1771ii">
+                                                        </div>
+                                                       
                                                     </div>
+                                                    <label>2. Bunga / Diskonto Obligasi</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="dpp2_1771iv" placeholder="DPP"
+                                                                 name="dpp2_1771iv">
+                                                         </div>
+                                                         <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="tarif2_1771ii"placeholder="Tarif %"
+                                                                 name="tarif2_1771ii">
+                                                         </div>
+                                                         <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"   readonly
+                                                                 class="form-control"id="pph2_1771ii" placeholder="PPh Terutang"
+                                                                 name="pph2_1771ii">
+                                                         </div>
+                                                    </div>
+                                                    <label>3. Penghasilan Penjualan Saham Yang Diperdagangkan Di Bursa Efek</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="dpp3_1771iv" placeholder="DPP"
+                                                                 name="dpp3_1771iv">
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="tarif3_1771ii"placeholder="Tarif %"
+                                                                 name="tarif3_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"   readonly
+                                                             class="form-control"id="pph3_1771ii" placeholder="PPh Terutang"
+                                                             name="pph3_1771ii">
+                                                        </div>
+                                                    </div>
+                                                    <label>4. Penghasilan Penjualan Saham Milik Perusahaan Modal Ventura</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="dpp4_1771iv" placeholder="DPP"
+                                                                 name="dpp4_1771iv">
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="tarif4_1771ii"placeholder="Tarif %"
+                                                                 name="tarif4_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"   readonly
+                                                             class="form-control"id="pph4_1771ii" placeholder="PPh Terutang"
+                                                                 name="pph4_1771ii">
+                                                        </div>
+                                                    </div>
+                                                    <label>5. Penghasilan Usaha Penyalur / Dealer / Agen Produk BBM</label>
+													<div class="mb-3 row">
+                                                        <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="dpp5_1771iv" placeholder="DPP"
+                                                                 name="dpp5_1771iv">
+                                                         </div>
+                                                         <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="tarif5_1771ii"placeholder="Tarif %"
+                                                                 name="tarif5_1771ii">
+                                                         </div>
+                                                         <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"   readonly
+                                                                 class="form-control"id="pph5_1771ii" placeholder="PPh Terutang"
+                                                                 name="pph5_1771ii">
+                                                         </div>
+                                                    </div>
+                                                    <label>6. Penghasilan Pengalihan Hak Atas Tanah / Bangunan</label>
+													<div class="mb-3 row">
+                                                        <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="dpp6_1771iv" placeholder="DPP"
+                                                                 name="dpp6_1771iv">
+                                                         </div>
+                                                         <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="tarif6_1771ii"placeholder="Tarif %"
+                                                                 name="tarif6_1771ii">
+                                                         </div>
+                                                         <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"   readonly
+                                                                 class="form-control"id="pph6_1771ii" placeholder="PPh Terutang"
+                                                                 name="pph6_1771ii">
+                                                         </div>
+                                                    </div>
+                                                    <label>7. Penghasilan Pengalihan Hak Atas Tanah / Bangunan</label>
+													<div class="mb-3 row">
+                                                        <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="dpp7_1771iv" placeholder="DPP"
+                                                                 name="dpp7_1771iv">
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="tarif7_1771ii"placeholder="Tarif %"
+                                                                name="tarif7_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <input type="text" autocomplete="off"   readonly
+                                                                class="form-control"id="pph7_1771ii" placeholder="PPh Terutang"
+                                                                name="pph7_1771ii">
+                                                        </div>
+                                                    </div>
+                                                    <label>8. Imbalan Jasa Konstruksi :</label>
+                                                    <label>8a. Pelaksana Konstruksi</label>
+													<div class="mb-3 row">
+                                                        <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="dpp8a_1771iv" placeholder="DPP"
+                                                                 name="dpp8a_1771iv">
+                                                         </div>
+                                                         <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="tarif8a_1771ii"placeholder="Tarif %"
+                                                                 name="tarif8a_1771ii">
+                                                         </div>
+                                                         <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"   readonly
+                                                                 class="form-control"id="pph8a_1771ii" placeholder="PPh Terutang"
+                                                                 name="pph8a_1771ii">
+                                                         </div>
+                                                    </div>
+                                                    <label>8b. Perencana Konstruksi</label>
+													<div class="mb-3 row">
+                                                        <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="dpp8b_1771iv" placeholder="DPP"
+                                                                 name="dpp8b_1771iv">
+                                                         </div>
+                                                         <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="tarif8b_1771ii"placeholder="Tarif %"
+                                                                 name="tarif8b_1771ii">
+                                                         </div>
+                                                         <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"   readonly
+                                                                 class="form-control"id="pph8b_1771ii" placeholder="PPh Terutang"
+                                                                 name="pph8b_1771ii">
+                                                         </div>
+                                                    </div>
+                                                    <label>8c. Pengawas Konstruksi</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="dpp8c_1771iv" placeholder="DPP"
+                                                                 name="dpp8c_1771iv">
+                                                         </div>
+                                                         <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="tarif8c_1771ii"placeholder="Tarif %"
+                                                                 name="tarif8c_1771ii">
+                                                         </div>
+                                                         <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"   readonly
+                                                                 class="form-control"id="pph8c_1771ii" placeholder="PPh Terutang"
+                                                                 name="pph8c_1771ii">
+                                                         </div>
+                                                    </div>                                                        
+                                                    <label>9. Perwakilan Dagang Asing</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="dpp9_1771iv" placeholder="DPP"
+                                                                 name="dpp9_1771iv">
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="tarif9_1771ii"placeholder="Tarif %"
+                                                                 name="tarif9_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"   readonly
+                                                                 class="form-control"id="pph9_1771ii" placeholder="PPh Terutang"
+                                                                 name="pph9_1771ii">
+                                                        </div>
+                                                    </div>        
+                                                    <label class="col-sm-4">10. Pelayaran / Penerbangan Asing</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="dpp10_1771iv" placeholder="DPP"
+                                                                 name="dpp10_1771iv">
+                                                         </div>
+                                                         <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="tarif10_1771ii"placeholder="Tarif %"
+                                                                 name="tarif10_1771ii">
+                                                         </div>
+                                                         <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"   readonly
+                                                                 class="form-control"id="pph10_1771ii" placeholder="PPh Terutang"
+                                                                 name="pph10_1771ii">
+                                                         </div>
+                                                    </div>     
+                                                    <label class="col-sm-4">11. Pelayaran Dalam Negeri</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-4">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="dpp11_1771iv" placeholder="DPP"
+                                                                name="dpp11_1771iv">
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="tarif11_1771ii"placeholder="Tarif %"
+                                                                name="tarif11_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <input type="text" autocomplete="off"   readonly
+                                                                class="form-control"id="pph11_1771ii" placeholder="PPh Terutang"
+                                                                name="pph11_1771ii">
+                                                        </div>
+                                                    </div>  
+                                                    <label class="col-sm-4">12. Penilaian Kembali Aktiva Tetap</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="dpp12_1771iv" placeholder="DPP"
+                                                                 name="dpp12_1771iv">
+                                                         </div>
+                                                         <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="tarif12_1771ii"placeholder="Tarif %"
+                                                                 name="tarif12_1771ii">
+                                                         </div>
+                                                         <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"   readonly
+                                                                 class="form-control"id="pph12_1771ii" placeholder="PPh Terutang"
+                                                                 name="pph12_1771ii">
+                                                         </div>
+                                                    </div>
+                                                    <label>13. Transaksi Derivatif Yang Diperdagangkan Di Bursa</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-4">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="dpp13_1771iv" placeholder="DPP"
+                                                                name="dpp13_1771iv">
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <input type="text" autocomplete="off"  
+                                                                onkeyup="this.value=sprator(this.value);"
+                                                                class="form-control"id="tarif13_1771ii"placeholder="Tarif %"
+                                                                name="tarif13_1771ii">
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <input type="text" autocomplete="off"   readonly
+                                                                class="form-control"id="pph13_1771ii" placeholder="PPh Terutang"
+                                                                name="pph13_1771ii">
+                                                        </div>
+                                                    </div>
+                                                    <label>14.....</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="dpp14_1771iv" placeholder="DPP"
+                                                                 name="dpp14_1771iv">
+                                                         </div>
+                                                         <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="tarif14_1771ii"placeholder="Tarif %"
+                                                                 name="tarif14_1771ii">
+                                                         </div>
+                                                         <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"   readonly
+                                                                 class="form-control"id="pph14_1771ii" placeholder="PPh Terutang"
+                                                                 name="pph14_1771ii">
+                                                         </div>
+                                                    </div>
+                                                    <label>Jumlah</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"   readonly
+                                                                 class="form-control"id="jumlahdpp14_1771iv" placeholder="DPP"
+                                                                 name="jumlahdpp14_1771iv">
+                                                         </div>
+                                                         <div class="col-sm-4">
+                                                            
+                                                         </div>
+                                                         <div class="col-sm-4">
+                                                             <input type="text" autocomplete="off"   readonly
+                                                                 class="form-control"id="jumlahpph14_1771ii" placeholder="PPh Terutang"
+                                                                 name="jumlahpph14_1771ii">
+                                                         </div>
+                                                    </div>
+													
+													
                                                     <hr>
                                                     <h4>Bagian B : Penghasilan Bukan Objek Pajak</h4>
-                                                    <div class="card-body">
-                                                        <div class="table-responsive">
-                                                            <table id="list_1771IVB"class="display"
-                                                                style="min-width: 845px">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th class="text-center">Jenis Penghasilan</th>
-                                                                        <th class="text-center">Penghasilan Bruto</th>
-                                                                        <th>Action</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td width="auto" class="text-center">
-                                                                            <select id="jenis_penghasilanb[]"name="jenis_penghasilanb[]"
-                                                                                class="dropdown-groups">
-                                                                                <option value="1. BANTUAN / SUMBANGAN">1. BANTUAN / SUMBANGAN</option>
-                                                                                <option value="2. HIBAH">2. HIBAH</option>
-                                                                                <option value="3. DIVIDEN / BAGIAN LABA DARI PENYERTAAN MODAL PADA BADAN USAHA DI INDONESIA (Pasal 4 Ayat (3) Huruf f UU PPh)">3. DIVIDEN / BAGIAN LABA DARI PENYERTAAN MODAL PADA BADAN </p>USAHA DI INDONESIA (Pasal 4 Ayat (3) Huruf f UU PPh)</option>
-                                                                                <option value="4. IURAN DAN PENGHASILAN TERTENTU YANG DITERIMA DANA PENSIUN">4. IURAN DAN PENGHASILAN TERTEN...</option>
-                                                                                <option value="5. BAGIAN LABA YANG DITERIMA PERUSAHAAN MODAL VENTURA DARI BADAN PASANGAN USAHA">5. BAGIAN LABA YANG DITERIMA PER...</option>
-                                                                                <option value="6. SISA LEBIH YANG DITERIMA ATAU DIPEROLEH BADAN ATAU LEMBAGA 
-                                                                                NIRLABA YANG BERGERAK DALAM BIDANG PENDIDIKAN DAN/ATAU 
-                                                                                BIDANG PENELITIAN DAN PENGEMBANGAN, YANG TELAH TERDAFTAR 
-                                                                                PADA INSTANSI YANG MEMBIDANGINYA, YANG DITANAMKAN KEMBALI 
-                                                                                DALAM BENTUK SARANA DAN PRASARANA KEGIATAN PENDIDIKAN DAN/
-                                                                                ATAU PENELITIAN DAN PENGEMBANGAN (Pasal 4 Ayat (3) Huruf m UU PPh)">6. SISA LEBIH YANG DITERIMA ATAU...</option>
-                                                                            </select>
-                                                                            {{-- <input required autocomplete="off"
-                                                                                type="text"
-                                                                                name="jenis_penghasilanb[]"
-                                                                                id="jenis_penghasilan[]"
-                                                                                class="form-control" /> --}}
-                                                                        </td>
-                                                                        <td class="text-center">
-                                                                            <input required autocomplete="off"
-                                                                                onkeyup="this.value=sprator(this.value);"
-                                                                                type="text"
-                                                                                name="angka_penghasilan_brutob[]"
-                                                                                id="angka_penghasilan_bruto[]"
-                                                                                min="0"
-                                                                                class="form-control sub_penghasilan_bruto" />
-                                                                        </td>
-                                                                        <td><button type="button"
-                                                                                class="btn btn-light "><i
-                                                                                    class="fa fa-trash"></i>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                                <tfoot>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <button
-                                                                                class="btn btn-primary btn-submit"name='action'
-                                                                                value="create" id="btn-add1771ivb"
-                                                                                type="button"><i
-                                                                                    data-feather='save'></i>
-                                                                                {{ 'Tambah Item' }}</button>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tfoot>
-                                                                <tfoot class="footer">
-                                                                    <tr>
-                                                                        <td width="auto" class="text-center">
-                                                                            <b>JUMLAH</b>
-                                                                        </td>
-                                                                        <td class="text-center">
-                                                                            <input readonly autocomplete="off"
-                                                                                type="text" name="totalbruto"
-                                                                                id="totalbruto" min="0"
-                                                                                class="form-control total_bruto" />
-                                                                        </td>
-                                                                        <td width="auto"></td>
-                                                                    </tr>
-                                                                </tfoot>
-                                                            </table>
-                                                        </div>
+                                                    <label>1. Bantuan / Sumbangan</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-12">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="bruto1_1771iv" placeholder="Penghasilan Bruto"
+                                                                 name="bruto1_1771iv">
+                                                         </div>
+                                                    </div>
+                                                    <label>2. Hibah</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-12">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="bruto2_1771iv" placeholder="Penghasilan Bruto"
+                                                                 name="bruto2_1771iv">
+                                                         </div>
+                                                    </div>
+                                                    <label>3. Dividen / Bagian Laba Dari Penyertaan Modal</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-12">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="bruto3_1771iv" placeholder="Penghasilan Bruto"
+                                                                 name="bruto3_1771iv">
+                                                         </div>
+                                                    </div>
+                                                    <label>4. Iuran Dan Penghasilan Tertentu Yang Diterima Dana Pensiun</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-12">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="bruto4_1771iv" placeholder="Penghasilan Bruto"
+                                                                 name="bruto4_1771iv">
+                                                         </div>
+                                                    </div>
+                                                    <label>5. Bagian Laba Yang Diterima Perusahaan Modal Ventura Dari BAdan Pasangan Usaha</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-12">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="bruto5_1771iv" placeholder="Penghasilan Bruto"
+                                                                 name="bruto5_1771iv">
+                                                         </div>
+                                                    </div>
+                                                    <label>6. Sisa Lebih Yang Diterima Atau Diperoleh Badan Atau Lembaga</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-12">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="bruto6_1771iv" placeholder="Penghasilan Bruto"
+                                                                 name="bruto6_1771iv">
+                                                         </div>
+                                                    </div>
+                                                    <label>7....</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-12">
+                                                             <input type="text" autocomplete="off"  
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="bruto7_1771iv" placeholder="Penghasilan Bruto"
+                                                                 name="bruto7_1771iv">
+                                                         </div>
+                                                    </div>
+                                                    <label>Jumlah</label>
+                                                    <div class="mb-3 row">
+                                                        <div class="col-sm-12">
+                                                             <input type="text" autocomplete="off"   readonly
+                                                                 onkeyup="this.value=sprator(this.value);"
+                                                                 class="form-control"id="jumlahbruto_1771iv" placeholder="Penghasilan Bruto"
+                                                                 name="jumlahbruto_1771iv">
+                                                         </div>
                                                     </div>
                                                 </div>
                                                 <hr>
@@ -1812,7 +2278,7 @@
                                                     <label class="col-sm-3 col-form-label">N P W P</label>
                                                     <div class="col-sm-9">
                                                         <input type="text" min="0" autocomplete="off"
-                                                            required placeholder="Masukkan No N P W P"
+                                                              placeholder="Masukkan No N P W P"
                                                             class="form-control"id="npwp_1771V" name="npwp_1771V">
                                                         <span id="errornpwp_1771V" style="color: red;"></span>
                                                     </div>
@@ -1820,7 +2286,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Nama Wajib Pajak</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" autocomplete="off" required
+                                                        <input type="text" autocomplete="off"  
                                                             placeholder="Masukkan Nama Wajib Pajak"
                                                             class="form-control"id="nama_npwp_1771V"
                                                             name="nama_npwp_1771V">
@@ -1830,13 +2296,13 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Periode Pembukuan</label>
                                                     <div class="col-sm-4">
-                                                        <input type="date" autocomplete="off" required
+                                                        <input type="date" autocomplete="off"  
                                                             class="form-control"id="start_periode_pembukuan_1771V"
                                                             name="start_periode_pembukuan_1771V">
                                                     </div>
                                                     <label class="col-sm-1 col-form-label">s.d</label>
                                                     <div class="col-sm-4">
-                                                        <input type="date" autocomplete="off" required
+                                                        <input type="date" autocomplete="off"  
                                                             class="form-control"id="end_periode_pembukuan_1771V"
                                                             name="end_periode_pembukuan_1771V">
                                                     </div>
@@ -1860,28 +2326,28 @@
                                                             <tbody>
                                                                 <tr>
                                                                     <td width="auto" class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input   autocomplete="off"
                                                                             type="text"
                                                                             name="pemegangsh_nama_1771V[]"
                                                                             id="pemegangsh_nama_1771V[]" min="0"
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input   autocomplete="off"
                                                                             type="text"
                                                                             name="pemegangsh_alamat_nama_1771V[]"
                                                                             id="pemegangsh_alamat_nama_1771V[]"
                                                                             min="0" class="form-control" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input   autocomplete="off"
                                                                             type="text"
                                                                             name="pemegangsh_npwp_1771V[]"
                                                                             id="pemegangsh_npwp_1771V[]" min="0"
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input   autocomplete="off"
                                                                             onkeyup="this.value=sprator(this.value);"
                                                                             type="text"
                                                                             name="pemegangsh_modalsetor_1771V[]"
@@ -1890,7 +2356,7 @@
                                                                             class="form-control submodalsetor1771v_a" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input   autocomplete="off"
                                                                             onkeyup="this.value=sprator(this.value);"
                                                                             type="text"
                                                                             name="pemegangsh_persen_1771V[]"
@@ -1898,7 +2364,7 @@
                                                                             min="0" class="form-control" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input   autocomplete="off"
                                                                             onkeyup="this.value=sprator(this.value);"
                                                                             type="text"
                                                                             name="pemegangsh_dividen_1771V[]"
@@ -1969,28 +2435,28 @@
                                                             <tbody>
                                                                 <tr>
                                                                     <td width="auto" class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input   autocomplete="off"
                                                                             type="text"
                                                                             name="pemegangshb_nama_1771V[]"
                                                                             id="pemegangshb_nama_1771V[]" min="0"
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input   autocomplete="off"
                                                                             type="text"
                                                                             name="pemegangshb_alamat_nama_1771V[]"
                                                                             id="pemegangshb_alamat_nama_1771V[]"
                                                                             min="0" class="form-control" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input   autocomplete="off"
                                                                             type="text"
                                                                             name="pemegangshb_npwp_1771V[]"
                                                                             id="pemegangsh_npwpb_1771V[]" min="0"
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input   autocomplete="off"
                                                                             type="text"
                                                                             name="pemegangshb_jabatan_1771V[]"
                                                                             id="pemegangshb_jabatan_1771V[]"
@@ -2059,7 +2525,7 @@
                                                     <label class="col-sm-3 col-form-label">N P W P</label>
                                                     <div class="col-sm-9">
                                                         <input type="text" min="0" autocomplete="off"
-                                                            required placeholder="Masukkan No N P W P"
+                                                              placeholder="Masukkan No N P W P"
                                                             class="form-control"id="npwp_1771VI" name="npwp_1771VI">
                                                         <span id="errornpwp_1771VI" style="color: red;"></span>
                                                     </div>
@@ -2067,7 +2533,7 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Nama Wajib Pajak</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" autocomplete="off" required
+                                                        <input type="text" autocomplete="off"  
                                                             placeholder="Masukkan Nama Wajib Pajak"
                                                             class="form-control"id="nama_npwp_1771VI"
                                                             name="nama_npwp_1771VI">
@@ -2077,13 +2543,13 @@
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Periode Pembukuan</label>
                                                     <div class="col-sm-4">
-                                                        <input type="date" autocomplete="off" required
+                                                        <input type="date" autocomplete="off"  
                                                             class="form-control"id="start_periode_pembukuan_1771VI"
                                                             name="start_periode_pembukuan_1771VI">
                                                     </div>
                                                     <label class="col-sm-1 col-form-label">s.d</label>
                                                     <div class="col-sm-4">
-                                                        <input type="date" autocomplete="off" required
+                                                        <input type="date" autocomplete="off"  
                                                             class="form-control"id="end_periode_pembukuan_1771VI"
                                                             name="end_periode_pembukuan_1771VI">
                                                     </div>
@@ -2108,32 +2574,32 @@
                                                             <tbody>
                                                                 <tr>
                                                                     <td width="auto" class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input   autocomplete="off"
                                                                             type="text" name="penyertaan_nama[]"
                                                                             id="penyertaan_nama[]" min="0"
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input   autocomplete="off"
                                                                             type="text" name="penyertaan_alamat[]"
                                                                             id="penyertaan_alamat[]" min="0"
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input   autocomplete="off"
                                                                             type="text" name="penyertaan_npwp[]"
                                                                             id="penyertaan_npwp[]" min="0"
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input   autocomplete="off"
                                                                             type="text" name="penyertaan_modal[]"
                                                                             onkeyup="this.value=sprator(this.value);"
                                                                             id="penyertaan_modal[]" min="0"
                                                                             class="form-control submodalafiliasi" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input   autocomplete="off"
                                                                             onkeyup="this.value=sprator(this.value);"
                                                                             type="text" name="penyertaan_persen[]"
                                                                             id="penyertaan_persen[]" min="0"
@@ -2199,19 +2665,19 @@
                                                             <tbody>
                                                                 <tr>
                                                                     <td width="auto" class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input   autocomplete="off"
                                                                             type="text" name="penyertaan_namab[]"
                                                                             id="penyertaan_namab[]" min="0"
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input   autocomplete="off"
                                                                             type="text" name="penyertaan_npwpb[]"
                                                                             id="penyertaan_npwpb[]" min="0"
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input   autocomplete="off"
                                                                             onkeyup="this.value=sprator(this.value);"
                                                                             type="text"
                                                                             name="penyertaan_jumlahpinjamanb[]"
@@ -2219,14 +2685,14 @@
                                                                             min="0" class="form-control" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input   autocomplete="off"
                                                                             type="date"
                                                                             name="penyertaan_thnpinjamanb[]"
                                                                             id="penyertaan_thnpinjamanb[]"
                                                                             min="0" class="form-control" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input   autocomplete="off"
                                                                             onkeyup="this.value=sprator(this.value);"
                                                                             type="text"
                                                                             name="penyertaan_bungapinjamanb[]"
@@ -2274,19 +2740,19 @@
                                                             <tbody>
                                                                 <tr>
                                                                     <td width="auto" class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input   autocomplete="off"
                                                                             type="text" name="penyertaan_namac[]"
                                                                             id="penyertaan_namac[]" min="0"
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input   autocomplete="off"
                                                                             type="text" name="penyertaan_npwpc[]"
                                                                             id="penyertaan_npwpc[]" min="0"
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input   autocomplete="off"
                                                                             onkeyup="this.value=sprator(this.value);"
                                                                             type="text"
                                                                             name="penyertaan_jumlahpinjamanc[]"
@@ -2294,14 +2760,14 @@
                                                                             min="0" class="form-control" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input   autocomplete="off"
                                                                             type="date"
                                                                             name="penyertaan_thnpinjamanc[]"
                                                                             id="penyertaan_thnpinjamanc[]"
                                                                             min="0" class="form-control" />
                                                                     </td>
                                                                     <td class="text-center">
-                                                                        <input required autocomplete="off"
+                                                                        <input   autocomplete="off"
                                                                             onkeyup="this.value=sprator(this.value);"
                                                                             type="text"
                                                                             name="penyertaan_bungapinjamanc[]"

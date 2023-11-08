@@ -2339,7 +2339,7 @@ x:publishsource="Excel">
    <tr height=24 style='mso-height-source:userset;height:18.0pt'>
     <td height=24 class=xl1419897 style='height:18.0pt'></td>
                 <td class=xl1419897></td>
-    <td colspan=2 rowspan=2 class=xl2109897>{{ Str::limit($sptI->tahun_pajak, 1, '') }}</td>
+    			<td colspan=2 rowspan=2 class=xl2109897>{{ Str::limit($sptI->tahun_pajak, 1, '') }}</td>
                 <td colspan=2 rowspan=2 class=xl2109897>{{ substr($sptI->tahun_pajak, 1, -2) }}</td>
                 <td colspan=2 rowspan=2 class=xl2109897>{{ substr($sptI->tahun_pajak, 2, -1) }}</td>
                 <td colspan=2 rowspan=2 class=xl2109897>{{ substr($sptI->tahun_pajak, 3) }}</td>
