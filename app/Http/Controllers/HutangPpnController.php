@@ -21,13 +21,13 @@ class HutangPpnController extends Controller
     public function index()
     {
         $id=Auth::user()->id;
-        if(Auth::user()->status==1){
-            $ppnmasuk = Prepopulate::sum('jumlah_ppn');
-            $ppnkeluar = Invoice::sum('ppn');
-        }else{
+        // if(Auth::user()->status==1){
+        //     $ppnmasuk = Prepopulate::sum('jumlah_ppn');
+        //     $ppnkeluar = Invoice::sum('ppn');
+        // }else{
             $ppnmasuk = Prepopulate::where('attribute1',$id)->sum('jumlah_ppn');
             $ppnkeluar = Invoice::where('attribute1',$id)->sum('ppn');
-        }
+        // }
         return view('hutangppn.index',compact('ppnmasuk','ppnkeluar'));
     }
 

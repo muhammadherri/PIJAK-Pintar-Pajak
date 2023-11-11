@@ -5,7 +5,7 @@
             <div class="collapse navbar-collapse justify-content-between">
                 <div></div>
                 <ul class="navbar-nav header-right">
-                    <p><a href="{{route('register')}}">Register</a></p>
+                    <p><a href="{{route('registers')}}">Register</a></p>
                 </ul>
             </div>
         </nav>

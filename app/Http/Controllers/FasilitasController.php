@@ -14,7 +14,11 @@ class FasilitasController extends Controller
      */
     public function index()
     {
-        $fasilitas=Fasilitas::all();
+        if(Auth::user()->status==1){
+            $fasilitas=Fasilitas::all();
+        }else{
+            return back();
+        }
         return view('fasilitas.index',compact('fasilitas'))->with('no',1);
     }
 

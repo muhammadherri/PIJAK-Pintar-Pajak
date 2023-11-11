@@ -17,11 +17,11 @@ class PrepopulateController extends Controller
     {
         // dd('tes');
         $id=Auth::user()->id;
-        if(Auth::user()->status==1){
-            $invcount = Prepopulate::sum('jumlah_ppn');
-        }else{
+        // if(Auth::user()->status==1){
+        //     $invcount = Prepopulate::sum('jumlah_ppn');
+        // }else{
             $invcount = Prepopulate::where('attribute1',$id)->sum('jumlah_ppn');
-        }
+        // }
         return view('prepopulates.index',compact('invcount'));
     }
 
@@ -82,7 +82,7 @@ class PrepopulateController extends Controller
      */
     public function edit($id)
     {
-        $prep=Prepopulate::where('id',$id)->get()->first();
+        $prep=Prepopulate::where('id',$id)->where('attribute1',$iduser)->get()->first();
         return view('prepopulates.edit',compact('prep'));
     }
 

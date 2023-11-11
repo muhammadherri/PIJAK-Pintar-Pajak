@@ -74,9 +74,54 @@ class SptMasaPajakPenghasilanController extends Controller
             'no_telp'=>$request->id_no_telp_1721,
             'email'=>$request->id_email_1721,
             'alamat_objekpajak'=>NULL,
-            'jumlah_penerima_penghasilan_b'=>preg_replace('/[^0-9]/','',$request->total_jumlah_penerima1721),
-            'jumlah_penghasilan_bruto_b'=>preg_replace('/[^0-9]/','',$request->total_jumlah_bruto1721),
-            'jumlah_pajak_dipotong_b'=>preg_replace('/[^0-9]/','',$request->total_jumlah_pajak1721),
+            'b1_penerima_penghasilan_1721'=>preg_replace('/[^0-9]/','',$request->b1_penerima_penghasilan_1721),
+            'b1_penghasilan_bruto_1721'=>preg_replace('/[^0-9]/','',$request->b1_penghasilan_bruto_1721),
+            'b1_jumlahpajak_1721'=>preg_replace('/[^0-9]/','',$request->b1_jumlahpajak_1721),
+            'b2_penerima_penghasilan_1721'=>preg_replace('/[^0-9]/','',$request->b2_penerima_penghasilan_1721),
+            'b2_penghasilan_bruto_1721'=>preg_replace('/[^0-9]/','',$request->b2_penghasilan_bruto_1721),
+            'b2_jumlahpajak_1721'=>preg_replace('/[^0-9]/','',$request->b2_jumlahpajak_1721),
+            'b3_penerima_penghasilan_1721'=>preg_replace('/[^0-9]/','',$request->b3_penerima_penghasilan_1721),
+            'b3_penghasilan_bruto_1721'=>preg_replace('/[^0-9]/','',$request->b3_penghasilan_bruto_1721),
+            'b3_jumlahpajak_1721'=>preg_replace('/[^0-9]/','',$request->b3_jumlahpajak_1721),
+            'b4a_penerima_penghasilan_1721'=>preg_replace('/[^0-9]/','',$request->b4a_penerima_penghasilan_1721),
+            'b4a_penghasilan_bruto_1721'=>preg_replace('/[^0-9]/','',$request->b4a_penghasilan_bruto_1721),
+            'b4a_jumlahpajak_1721'=>preg_replace('/[^0-9]/','',$request->b4a_jumlahpajak_1721),
+            'b4b_penerima_penghasilan_1721'=>preg_replace('/[^0-9]/','',$request->b4b_penerima_penghasilan_1721),
+            'b4b_penghasilan_bruto_1721'=>preg_replace('/[^0-9]/','',$request->b4b_penghasilan_bruto_1721),
+            'b4b_jumlahpajak_1721'=>preg_replace('/[^0-9]/','',$request->b4b_jumlahpajak_1721),
+            'b4c_penerima_penghasilan_1721'=>preg_replace('/[^0-9]/','',$request->b4c_penerima_penghasilan_1721),
+            'b4c_penghasilan_bruto_1721'=>preg_replace('/[^0-9]/','',$request->b4c_penghasilan_bruto_1721),
+            'b4c_jumlahpajak_1721'=>preg_replace('/[^0-9]/','',$request->b4c_jumlahpajak_1721),
+            'b4d_penerima_penghasilan_1721'=>preg_replace('/[^0-9]/','',$request->b4d_penerima_penghasilan_1721),
+            'b4d_penghasilan_bruto_1721'=>preg_replace('/[^0-9]/','',$request->b4d_penghasilan_bruto_1721),
+            'b4d_jumlahpajak_1721'=>preg_replace('/[^0-9]/','',$request->b4d_jumlahpajak_1721),
+            'b4e_penerima_penghasilan_1721'=>preg_replace('/[^0-9]/','',$request->b4e_penerima_penghasilan_1721),
+            'b4e_penghasilan_bruto_1721'=>preg_replace('/[^0-9]/','',$request->b4e_penghasilan_bruto_1721),
+            'b4e_jumlahpajak_1721'=>preg_replace('/[^0-9]/','',$request->b4e_jumlahpajak_1721),
+            'b4f_penerima_penghasilan_1721'=>preg_replace('/[^0-9]/','',$request->b4f_penerima_penghasilan_1721),
+            'b4f_penghasilan_bruto_1721'=>preg_replace('/[^0-9]/','',$request->b4f_penghasilan_bruto_1721),
+            'b4f_jumlahpajak_1721'=>preg_replace('/[^0-9]/','',$request->b4f_jumlahpajak_1721),
+            'b5_penerima_penghasilan_1721'=>preg_replace('/[^0-9]/','',$request->b5_penerima_penghasilan_1721),
+            'b5_penghasilan_bruto_1721'=>preg_replace('/[^0-9]/','',$request->b5_penghasilan_bruto_1721),
+            'b5_jumlahpajak_1721'=>preg_replace('/[^0-9]/','',$request->b5_jumlahpajak_1721),
+            'b6_penerima_penghasilan_1721'=>preg_replace('/[^0-9]/','',$request->b6_penerima_penghasilan_1721),
+            'b6_penghasilan_bruto_1721'=>preg_replace('/[^0-9]/','',$request->b6_penghasilan_bruto_1721),
+            'b6_jumlahpajak_1721'=>preg_replace('/[^0-9]/','',$request->b6_jumlahpajak_1721),
+            'b7_penerima_penghasilan_1721'=>preg_replace('/[^0-9]/','',$request->b7_penerima_penghasilan_1721),
+            'b7_penghasilan_bruto_1721'=>preg_replace('/[^0-9]/','',$request->b7_penghasilan_bruto_1721),
+            'b7_jumlahpajak_1721'=>preg_replace('/[^0-9]/','',$request->b7_jumlahpajak_1721),
+            'b8_penerima_penghasilan_1721'=>preg_replace('/[^0-9]/','',$request->b8_penerima_penghasilan_1721),
+            'b8_penghasilan_bruto_1721'=>preg_replace('/[^0-9]/','',$request->b8_penghasilan_bruto_1721),
+            'b8_jumlahpajak_1721'=>preg_replace('/[^0-9]/','',$request->b8_jumlahpajak_1721),
+            'b9_penerima_penghasilan_1721'=>preg_replace('/[^0-9]/','',$request->b9_penerima_penghasilan_1721),
+            'b9_penghasilan_bruto_1721'=>preg_replace('/[^0-9]/','',$request->b9_penghasilan_bruto_1721),
+            'b9_jumlahpajak_1721'=>preg_replace('/[^0-9]/','',$request->b9_jumlahpajak_1721),
+            'b10_penerima_penghasilan_1721'=>preg_replace('/[^0-9]/','',$request->b10_penerima_penghasilan_1721),
+            'b10_penghasilan_bruto_1721'=>preg_replace('/[^0-9]/','',$request->b10_penghasilan_bruto_1721),
+            'b10_jumlahpajak_1721'=>preg_replace('/[^0-9]/','',$request->b10_jumlahpajak_1721),
+            'b11_penerima_penghasilan_1721'=>preg_replace('/[^0-9]/','',$request->b11_penerima_penghasilan_1721),
+            'b11_penghasilan_bruto_1721'=>preg_replace('/[^0-9]/','',$request->b11_penghasilan_bruto_1721),
+            'b11_jumlahpajak_1721'=>preg_replace('/[^0-9]/','',$request->b11_jumlahpajak_1721),
             'pokok_pajak'=>preg_replace('/[^0-9]/','',$request->pokokpajak_1721),
             'masa_pajak_bulan'=>$request->masapajak,
             'masa_pajak_tahun'=>$request->tahun_pajak,
@@ -87,9 +132,21 @@ class SptMasaPajakPenghasilanController extends Controller
             'spt_pembetulan'=>preg_replace('/[^0-9]/','',$request->sptpembetulan_1721),
             'kompensasi'=>$request->kompensasi_1721,
             'npwp_pemotong'=>$request->npwppemotong_1721,
-            'jumlah_penerima_penghasilan_c'=>preg_replace('/[^0-9]/','',$request->jumlahpenerimapenghasilan_c),
-            'jumlah_penghasilan_bruto_c'=>preg_replace('/[^0-9]/','',$request->jumlahpenghasilanbruot_c),
-            'jumlah_pajak_dipotong_c'=>preg_replace('/[^0-9]/','',$request->jumlahpajakdipotong_c),
+            'c1_penerima_penghasilan_1721'=>preg_replace('/[^0-9]/','',$request->c1_penerima_penghasilan_1721),
+            'c1_penghasilan_bruto_1721'=>preg_replace('/[^0-9]/','',$request->c1_penghasilan_bruto_1721),
+            'c1_jumlahpajak_1721'=>preg_replace('/[^0-9]/','',$request->c1_jumlahpajak_1721),
+            'c2_penerima_penghasilan_1721'=>preg_replace('/[^0-9]/','',$request->c2_penerima_penghasilan_1721),
+            'c2_penghasilan_bruto_1721'=>preg_replace('/[^0-9]/','',$request->c2_penghasilan_bruto_1721),
+            'c2_jumlahpajak_1721'=>preg_replace('/[^0-9]/','',$request->c2_jumlahpajak_1721),
+            'c3_penerima_penghasilan_1721'=>preg_replace('/[^0-9]/','',$request->c3_penerima_penghasilan_1721),
+            'c3_penghasilan_bruto_1721'=>preg_replace('/[^0-9]/','',$request->c3_penghasilan_bruto_1721),
+            'c3_jumlahpajak_1721'=>preg_replace('/[^0-9]/','',$request->c3_jumlahpajak_1721),
+            'c4_penerima_penghasilan_1721'=>preg_replace('/[^0-9]/','',$request->c4_penerima_penghasilan_1721),
+            'c4_penghasilan_bruto_1721'=>preg_replace('/[^0-9]/','',$request->c4_penghasilan_bruto_1721),
+            'c4_jumlahpajak_1721'=>preg_replace('/[^0-9]/','',$request->c4_jumlahpajak_1721),
+            'jumlah_penerima_penghasilan_c'=>preg_replace('/[^0-9]/','',$request->jumlah_penerima_penghasilan_1721),
+            'jumlah_penghasilan_bruto_c'=>preg_replace('/[^0-9]/','',$request->jumlah_penghasilan_bruto_1721),
+            'jumlah_pajak_dipotong_c'=>preg_replace('/[^0-9]/','',$request->jumlah_jumlahpajak_1721),
             'lembar_formulir_1721I'=>$request->satumasapajak_1721,
             'lembar_formulir_1721IB'=>$request->satutahunpajak_1721,
             'lembar_formulir_1721II'=>$request->formulirII_1721,
@@ -110,30 +167,30 @@ class SptMasaPajakPenghasilanController extends Controller
         $objek_penerima_1721 = $request->input('objek_penerima');
         // dd(preg_replace('/[^0-9]/','',$objek_penerima_1721));
         $objek_penerimac_1721 = $request->input('objek_penerima_c');
-        foreach ($objek_penerima_1721 as $key => $row) {
-            $data1721lines = array(
-                'formulir_id' => $header_id,
-                'penerima_penghasilan' => $objek_penerima_1721[$key],
-                'kode_objek' => preg_replace('/[^0-9]/','',$objek_penerima_1721[$key]),
-                'jumlah_penerima_penghasilan' => preg_replace('/[^0-9]/','',$request->objek_jumlahpenerima[$key]),
-                'jumlah_penghasilan_bruto' => preg_replace('/[^0-9]/','',$request->objek_jumlahpenghasilan[$key]),
-                'jumlah_pajak_dipotong' => preg_replace('/[^0-9]/','',$request->objek_jumlahpajak[$key]),
-            );
+        // foreach ($objek_penerima_1721 as $key => $row) {
+        //     $data1721lines = array(
+        //         'formulir_id' => $header_id,
+        //         'penerima_penghasilan' => $objek_penerima_1721[$key],
+        //         'kode_objek' => preg_replace('/[^0-9]/','',$objek_penerima_1721[$key]),
+        //         'jumlah_penerima_penghasilan' => preg_replace('/[^0-9]/','',$request->objek_jumlahpenerima[$key]),
+        //         'jumlah_penghasilan_bruto' => preg_replace('/[^0-9]/','',$request->objek_jumlahpenghasilan[$key]),
+        //         'jumlah_pajak_dipotong' => preg_replace('/[^0-9]/','',$request->objek_jumlahpajak[$key]),
+        //     );
         // dd($data1721lines);
-        SptMasaLineB::create($data1721lines);
-        }
-        foreach ($objek_penerimac_1721 as $key => $row) {
-            $data1721lines = array(
-                'formulir_id' => $header_id,
-                'penerima_penghasilan' => $objek_penerimac_1721[$key],
-                'kode_objek' => preg_replace('/[^0-9]/','',$objek_penerimac_1721[$key]),
-                'jumlah_penerima_penghasilan' => preg_replace('/[^0-9]/','',$request->objek_jumlahpenerima_c[$key]),
-                'jumlah_penghasilan_bruto' => preg_replace('/[^0-9]/','',$request->objek_jumlahpenghasilan_c[$key]),
-                'jumlah_pajak_dipotong' => preg_replace('/[^0-9]/','',$request->objek_jumlahpajak_c[$key]),
-            );
+        // SptMasaLineB::create($data1721lines);
+        // }
+        // foreach ($objek_penerimac_1721 as $key => $row) {
+        //     $data1721lines = array(
+        //         'formulir_id' => $header_id,
+        //         'penerima_penghasilan' => $objek_penerimac_1721[$key],
+        //         'kode_objek' => preg_replace('/[^0-9]/','',$objek_penerimac_1721[$key]),
+        //         'jumlah_penerima_penghasilan' => preg_replace('/[^0-9]/','',$request->objek_jumlahpenerima_c[$key]),
+        //         'jumlah_penghasilan_bruto' => preg_replace('/[^0-9]/','',$request->objek_jumlahpenghasilan_c[$key]),
+        //         'jumlah_pajak_dipotong' => preg_replace('/[^0-9]/','',$request->objek_jumlahpajak_c[$key]),
+        //     );
         // dd($data1721lines);
-        SptMasaLineC::create($data1721lines);
-        }
+        // SptMasaLineC::create($data1721lines);
+        // }
         $spt=SptMasa::create($data1721);
         // 1721
 

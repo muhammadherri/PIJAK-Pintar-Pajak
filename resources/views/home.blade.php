@@ -81,7 +81,7 @@
                                         <div class="card-body d-flex">
                                             <div>
 
-                                                <span class="text-white invoice-num">{{Str::limit($user->dosen_pembimbing,11)}}</span>
+                                                <span class="text-white invoice-num">{{Str::limit($namadosen->nama_lengkap,11)}}</span>
                                                 <h4 class="text-white fs-18">Dosen Pengajar</h4>
                                             </div>
                                             <div class="d-flex align-items-center mt-3 mb-2">
@@ -94,7 +94,7 @@
                                         <div class="card-body d-sm-flex d-block align-items-center">
                                             
                                             <div>
-                                                <h3 class="text-white">Aplikasi Perpajakan Taxceed</h3>
+                                                <h3 class="text-white">Aplikasi Perpajakan PIJAK</h3>
                                                 <p>Adalah aplikasi yang terhubung secara langsung dengan sistem informasi yang dapat digunakan oleh wajib pajak untuk melaksanakan hak dan/atau kewajiban perpajakan</p>
                                                 <a class="text-white" href="javascript:void(0);">Pelajari Lagi>></a>
                                             </div>
@@ -117,6 +117,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>Nama</th>
+                                                    <th>Kelas</th>
                                                     <th>Nomor Induk Mahasiswa</th>
                                                     <th>Status</th>
                                                     <th>Terakhir Login</th>
@@ -139,7 +140,7 @@
                                 <div class="card-body d-sm-flex d-block align-items-center">
                                     
                                     <div>
-                                        <h3 class="text-white">Aplikasi Perpajakan Taxceed</h3>
+                                        <h3 class="text-white">Aplikasi Perpajakan PIJAK</h3>
                                         <p>Adalah aplikasi yang terhubung secara langsung dengan sistem informasi yang dapat digunakan oleh wajib pajak untuk melaksanakan hak dan/atau kewajiban perpajakan</p>
                                         <a class="text-white" href="javascript:void(0);">Pelajari Lagi>></a>
                                     </div>
@@ -166,7 +167,7 @@
                 [10, 25, 50, -1],
                 [10, 25, 50, 300]
             ],
-            "order":[[5,'desc']],
+            "order":[[6,'desc']],
             ajax:"{{route('data.mahasiswa')}}",
             columnDefs:[
                 {
@@ -178,12 +179,18 @@
                 {
                     "targets": 1
                     , "render": function(data, type, row, meta) {
+                        return row.kelas;
+                    }
+                },
+                {
+                    "targets": 2
+                    , "render": function(data, type, row, meta) {
                         return row.email;
                     }
                 },
                 
                 {
-                    "targets": 2
+                    "targets": 3
                     , "class": "text-center"
                     , render: function(data, type, row, index) {
                         content = `
@@ -193,13 +200,13 @@
                     }
                 },
                 {
-                    "targets": 3
+                    "targets": 4
                     , "render": function(data, type, row, meta) {
                         return row.created_at;
                     }
                 },
                 {
-                    "targets": 4
+                    "targets": 5
                     , "class": "text-center"
                     , render: function(data, type, row, index) {
                         content = `
@@ -213,7 +220,7 @@
                     }
                 },
                 {
-                    "targets": 5,
+                    "targets": 6,
                     "visible":false,
                     "searchable":false,
                     "render": function(data, type, row, meta) {

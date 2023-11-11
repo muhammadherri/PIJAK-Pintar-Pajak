@@ -48,7 +48,8 @@ class PphFinalController extends Controller
             'bruto'=>preg_replace('/[^0-9]/','',$request->bruto),
             'tarif'=>preg_replace('/[^0-9]/','',$request->tarif),
             'potongan_pph'=>preg_replace('/[^0-9]/','',$request->input('potongan_pph')),
-            'attribute1'=>Auth::user()->id
+            'nama_dosen'=>Auth::user()->dosen_pembimbing,
+            'attribute1'=>Auth::user()->id,
         );
         Pphfinal::create($data);
         $a= \DB::commit();
@@ -76,11 +77,11 @@ class PphFinalController extends Controller
     public function edit($id)
     {
         $iduser=Auth::user()->id;
-        if(Auth::user()->status==1){
-            $pphfinal=Pphfinal::where('id',$id)->get()->first();
-        }else{
+        // if(Auth::user()->status==1){
+        //     $pphfinal=Pphfinal::where('id',$id)->get()->first();
+        // }else{
             $pphfinal=Pphfinal::where('attribute1',$iduser)->where('id',$id)->get()->first();
-        }
+        // }
 
         if($pphfinal==null){
             return back();

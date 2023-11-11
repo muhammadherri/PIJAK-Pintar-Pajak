@@ -25,158 +25,158 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        const tablelist_1721 = document.querySelector('#objekpajak_1721 tbody');
-        const addBtnadd_1721 = document.querySelector('#btn-addobjek_1721');
-        addBtnadd_1721.addEventListener('click', function() {
-            const newRow = `
-            <tr>
-                <td width="auto" class="text-center"value="">
-                    <select id="objek_penerima[]" name="objek_penerima[]" class="dropdown-groups">
-                        <option value="PEGAWAI TETAP - 21-100-01">1. PEGAWAI TETAP - 21-100-01</option>
-                        <option value="PENERIMA PENSIUN - BERKALA 21-100-02">2. PENERIMA PENSIUN BERKALA - 21-100-02</option>
-                        <option value="PEGAWAI TIDAK TETAP ATAU TENAGA KERJA LEPAS - 21-100-03">3. PEGAWAI TIDAK TETAP ATAU... - 21-100-03</option>
-                        <option value="DISTRIBUTOR MLM - 21-100-04">4a. DISTRIBUTOR MLM - 21-100-04</option>
-                        <option value="PETUGAS DINAS LUAR ASURANSI - 21-100-05">4b. PETUGAS DINAS LUAR ASURAN... - 21-100-05</option>
-                        <option value="PENJAJA BARANG DAGANGAN - 21-100-06">4c. PENJAJA BARANG DAGANGAN - 21-100-06</option>
-                        <option value="TENAGA AHLI - 21-100-07">4d. TENAGA AHLI - 21-100-07</option>
-                        <option value="BUKAN PEGAWAI YANG MENERIMA IMBALAN YANG BERSIFAT BERKESINAMBUNGAN - 21-100-08">4e. BUKAN PEGAWAI YANG MENERI ... - 21-100-08</option>
-                        <option value="BUKAN PEGAWAI YANG MENERIMA IMBALAN YANG TIDAK BERSIFAT BERKESINAMBUNGAN - 21-100-09">4f. BUKAN PEGAWAI YANG MENERI... - 21-100-09</option>
-                        <option value="ANGGOTA DEWAN KOMISARIS ATAU DEWAN PENGAWAS YANG TIDAK MERANGKAP SEBAGAI PEGAWAI TETAP - 21-100-10">5. ANGGOTA DEWAN KOMISARIS A... - 21-100-10</option>
-                        <option value="MANTAN PEGAWAI YANG MENERIMA JASA PRODUKSI, TANTIEM, BONUS ATAU IMBALAN LAIN - 21-100-11">6. MANTAN PEGAWAI YANG MENERI... - 21-100-11</option>
-                        <option value="PEGAWAI YANG MELAKUKAN PENARIKAN DANA PENSIUN - 21-100-12">7. PEGAWAI YANG MELAKUKAN PE... - 21-100-12</option>
-                        <option value="PESERTA KEGIATAN - 21-100-13">8. PESERTA KEGIATAN - 21-100-13</option>
-                        <option value="PENERIMA PENGHASILAN YANG DIPOTONG PPh PASAL 21 TIDAK FINAL LAINNYA - 21-100-99">9. PENERIMA PENGHASILAN YANG... - 21-100-99</option>
-                        <option value="PEGAWAI/PEMBERI JASA/PESERTA KEGIATAN/PENERIMA PENSIUN BERKALA SEBAGAI WAJIB PAJAK LUAR NEGERI - 27-100-99">10. PEGAWAI/PEMBERI JASA/PESE... - 27-100-99</option>
-                    </select>  
-                </td>
+        // const tablelist_1721 = document.querySelector('#objekpajak_1721 tbody');
+        // const addBtnadd_1721 = document.querySelector('#btn-addobjek_1721');
+        // addBtnadd_1721.addEventListener('click', function() {
+        //     const newRow = `
+        //     <tr>
+        //         <td width="auto" class="text-center"value="">
+        //             <select id="objek_penerima[]" name="objek_penerima[]" class="dropdown-groups">
+        //                 <option value="PEGAWAI TETAP - 21-100-01">1. PEGAWAI TETAP - 21-100-01</option>
+        //                 <option value="PENERIMA PENSIUN - BERKALA 21-100-02">2. PENERIMA PENSIUN BERKALA - 21-100-02</option>
+        //                 <option value="PEGAWAI TIDAK TETAP ATAU TENAGA KERJA LEPAS - 21-100-03">3. PEGAWAI TIDAK TETAP ATAU... - 21-100-03</option>
+        //                 <option value="DISTRIBUTOR MLM - 21-100-04">4a. DISTRIBUTOR MLM - 21-100-04</option>
+        //                 <option value="PETUGAS DINAS LUAR ASURANSI - 21-100-05">4b. PETUGAS DINAS LUAR ASURAN... - 21-100-05</option>
+        //                 <option value="PENJAJA BARANG DAGANGAN - 21-100-06">4c. PENJAJA BARANG DAGANGAN - 21-100-06</option>
+        //                 <option value="TENAGA AHLI - 21-100-07">4d. TENAGA AHLI - 21-100-07</option>
+        //                 <option value="BUKAN PEGAWAI YANG MENERIMA IMBALAN YANG BERSIFAT BERKESINAMBUNGAN - 21-100-08">4e. BUKAN PEGAWAI YANG MENERI ... - 21-100-08</option>
+        //                 <option value="BUKAN PEGAWAI YANG MENERIMA IMBALAN YANG TIDAK BERSIFAT BERKESINAMBUNGAN - 21-100-09">4f. BUKAN PEGAWAI YANG MENERI... - 21-100-09</option>
+        //                 <option value="ANGGOTA DEWAN KOMISARIS ATAU DEWAN PENGAWAS YANG TIDAK MERANGKAP SEBAGAI PEGAWAI TETAP - 21-100-10">5. ANGGOTA DEWAN KOMISARIS A... - 21-100-10</option>
+        //                 <option value="MANTAN PEGAWAI YANG MENERIMA JASA PRODUKSI, TANTIEM, BONUS ATAU IMBALAN LAIN - 21-100-11">6. MANTAN PEGAWAI YANG MENERI... - 21-100-11</option>
+        //                 <option value="PEGAWAI YANG MELAKUKAN PENARIKAN DANA PENSIUN - 21-100-12">7. PEGAWAI YANG MELAKUKAN PE... - 21-100-12</option>
+        //                 <option value="PESERTA KEGIATAN - 21-100-13">8. PESERTA KEGIATAN - 21-100-13</option>
+        //                 <option value="PENERIMA PENGHASILAN YANG DIPOTONG PPh PASAL 21 TIDAK FINAL LAINNYA - 21-100-99">9. PENERIMA PENGHASILAN YANG... - 21-100-99</option>
+        //                 <option value="PEGAWAI/PEMBERI JASA/PESERTA KEGIATAN/PENERIMA PENSIUN BERKALA SEBAGAI WAJIB PAJAK LUAR NEGERI - 27-100-99">10. PEGAWAI/PEMBERI JASA/PESE... - 27-100-99</option>
+        //             </select>  
+        //         </td>
               
-                <td class="text-center">
-                    <input required autocomplete="off" type="text" onkeyup="this.value=sprator(this.value);"
-                        name="objek_jumlahpenerima[]"
-                        id="objek_jumlahpenerima[]" min="0"
-                        class="form-control penerima1771" />
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off" type="text" onkeyup="this.value=sprator(this.value);"
-                        name="objek_jumlahpenghasilan[]"
-                        id="objek_jumlahpenghasilan[]" min="0"
-                        class="form-control penghasilan1771" />
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off" type="text" onkeyup="this.value=sprator(this.value);"
-                        name="objek_jumlahpajak[]"
-                        id="objek_jumlahpajak[]" min="0"
-                        class="form-control pajak1771" />
-                </td>
-                <td><button type="button" class="btn btn-danger btn-remove-1721"><i
-                    class="fa fa-trash"></i>
-                </td>
-            </tr>
-            `;
-            tablelist_1721.insertAdjacentHTML('beforeend', newRow);
-        });
-        tablelist_1721.addEventListener('input', function(event) {
-            const target = event.target;
-            if (target.tagName === 'INPUT' && target.name.startsWith('objek')) {
+        //         <td class="text-center">
+        //             <input required autocomplete="off" type="text" onkeyup="this.value=sprator(this.value);"
+        //                 name="objek_jumlahpenerima[]"
+        //                 id="objek_jumlahpenerima[]" min="0"
+        //                 class="form-control penerima1771" />
+        //         </td>
+        //         <td class="text-center">
+        //             <input required autocomplete="off" type="text" onkeyup="this.value=sprator(this.value);"
+        //                 name="objek_jumlahpenghasilan[]"
+        //                 id="objek_jumlahpenghasilan[]" min="0"
+        //                 class="form-control penghasilan1771" />
+        //         </td>
+        //         <td class="text-center">
+        //             <input required autocomplete="off" type="text" onkeyup="this.value=sprator(this.value);"
+        //                 name="objek_jumlahpajak[]"
+        //                 id="objek_jumlahpajak[]" min="0"
+        //                 class="form-control pajak1771" />
+        //         </td>
+        //         <td><button type="button" class="btn btn-danger btn-remove-1721"><i
+        //             class="fa fa-trash"></i>
+        //         </td>
+        //     </tr>
+        //     `;
+        //     tablelist_1721.insertAdjacentHTML('beforeend', newRow);
+        // });
+        // tablelist_1721.addEventListener('input', function(event) {
+        //     const target = event.target;
+        //     if (target.tagName === 'INPUT' && target.name.startsWith('objek')) {
 
-                var totalpenerima = 0
-                var totalbruto = 0
-                var totalpajakpotong = 0
+        //         var totalpenerima = 0
+        //         var totalbruto = 0
+        //         var totalpajakpotong = 0
 
-                $(".penerima1771").each(function() {
-                    totalpenerima += +$(this).val().replace(/,/g, '');
-                });
-                $(".penghasilan1771").each(function() {
-                    totalbruto += +$(this).val().replace(/,/g, '');
-                });
-                $(".pajak1771").each(function() {
-                    totalpajakpotong += +$(this).val().replace(/,/g, '');
-                });
+        //         $(".penerima1771").each(function() {
+        //             totalpenerima += +$(this).val().replace(/,/g, '');
+        //         });
+        //         $(".penghasilan1771").each(function() {
+        //             totalbruto += +$(this).val().replace(/,/g, '');
+        //         });
+        //         $(".pajak1771").each(function() {
+        //             totalpajakpotong += +$(this).val().replace(/,/g, '');
+        //         });
             
-                $('.totalpenerima1771').val(totalpenerima.toLocaleString());
-                $('.totalbruto1771').val(totalbruto.toLocaleString());
-                $('.totalpajak1771').val(totalpajakpotong.toLocaleString());
-            }
-        });
-        tablelist_1721.addEventListener('click', function(event) {
-            if (event.target.classList.contains('btn-remove-1721')) {
-                const row = event.target.closest('tr');
-                row.remove();
-            }
-        });
+        //         $('.totalpenerima1771').val(totalpenerima.toLocaleString());
+        //         $('.totalbruto1771').val(totalbruto.toLocaleString());
+        //         $('.totalpajak1771').val(totalpajakpotong.toLocaleString());
+        //     }
+        // });
+        // tablelist_1721.addEventListener('click', function(event) {
+        //     if (event.target.classList.contains('btn-remove-1721')) {
+        //         const row = event.target.closest('tr');
+        //         row.remove();
+        //     }
+        // });
 
-        const tablelistobjekpajakfinal_1721 = document.querySelector('#objekpajakfinal_1721 tbody');
-        const addBtnadd_addobjekfinal_1721 = document.querySelector('#btn-addobjekfinal_1721');
-        addBtnadd_addobjekfinal_1721.addEventListener('click', function() {
-            const newRow = `
-            <tr>
-                <td width="auto" class="text-center"value="">
-                    <select id="objek_penerima_c[]" name="objek_penerima_c[]" class="dropdown-groups">
-                        <option value="PENERIMA UANG PESANGON YANG DIBAYARKAN SEKALIGUS - 21-401-01">1. PENERIMA UANG PESANGON YA... -  21-401-01</option>
-                        <option value="PENERIMA UANG MANFAAT PENSIUN, TUNJANGAN HARI TUA ATAU JAMINAN HARI TUA DAN PEMBAYARAN SEJENIS YANG DIBAYARKAN SEKALIGUS - 21-401-02">2. PENERIMA UANG MANFAAT PEN... -  21-401-02</option>
-                        <option value="PEJABAT NEGARA, PEGAWAI NEGERI SIPIL, ANGGOTA TNI/POLRI DAN PENSIUNAN YANG MENERIMA HONORARIUM DAN IMBALAN LAIN YANG DIBEBANKAN KEPADA KEUANGAN NEGARA/DAERAH - 21-402-01">3. PEJABAT NEGARA, PEGAWAI N... -  21-402-01</option>
-                        <option value="PENERIMA PENGHASILAN YANG DIPOTONG PPh PASAL 21 FINAL LAINNYA - 21-499-99">4. PENERIMA PENGHASILAN YANG... -  21-499-99</option>
+        // const tablelistobjekpajakfinal_1721 = document.querySelector('#objekpajakfinal_1721 tbody');
+        // const addBtnadd_addobjekfinal_1721 = document.querySelector('#btn-addobjekfinal_1721');
+        // addBtnadd_addobjekfinal_1721.addEventListener('click', function() {
+        //     const newRow = `
+        //     <tr>
+        //         <td width="auto" class="text-center"value="">
+        //             <select id="objek_penerima_c[]" name="objek_penerima_c[]" class="dropdown-groups">
+        //                 <option value="PENERIMA UANG PESANGON YANG DIBAYARKAN SEKALIGUS - 21-401-01">1. PENERIMA UANG PESANGON YA... -  21-401-01</option>
+        //                 <option value="PENERIMA UANG MANFAAT PENSIUN, TUNJANGAN HARI TUA ATAU JAMINAN HARI TUA DAN PEMBAYARAN SEJENIS YANG DIBAYARKAN SEKALIGUS - 21-401-02">2. PENERIMA UANG MANFAAT PEN... -  21-401-02</option>
+        //                 <option value="PEJABAT NEGARA, PEGAWAI NEGERI SIPIL, ANGGOTA TNI/POLRI DAN PENSIUNAN YANG MENERIMA HONORARIUM DAN IMBALAN LAIN YANG DIBEBANKAN KEPADA KEUANGAN NEGARA/DAERAH - 21-402-01">3. PEJABAT NEGARA, PEGAWAI N... -  21-402-01</option>
+        //                 <option value="PENERIMA PENGHASILAN YANG DIPOTONG PPh PASAL 21 FINAL LAINNYA - 21-499-99">4. PENERIMA PENGHASILAN YANG... -  21-499-99</option>
                         
-                    </select>
-                </td>
+        //             </select>
+        //         </td>
                
-                <td class="text-center">
-                    <input required autocomplete="off" type="text"
-                        onkeyup="this.value=sprator(this.value);"
-                        name="objek_jumlahpenerima_c[]"
-                        id="objek_jumlahpenerima_c[]" min="0"
-                        class="form-control penerima_c" />
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off" type="text"
-                    onkeyup="this.value=sprator(this.value);"
-                    name="objek_jumlahpenghasilan_c[]"
-                        id="objek_jumlahpenghasilan_c[]"
-                        min="0" class="form-control penghasilan_c" />
-                </td>
-                <td class="text-center">
-                    <input required autocomplete="off" type="text"
-                    onkeyup="this.value=sprator(this.value);"
-                    name="objek_jumlahpajak_c[]"
-                        id="objek_jumlahpajak_c[]" min="0"
-                        class="form-control pajak_c" />
-                </td>
-                <td><button type="button" class="btn btn-danger btn-remove-final-1721"><i
-                    class="fa fa-trash"></i>
-                </td>
-            </tr>
-            `;
-            tablelistobjekpajakfinal_1721.insertAdjacentHTML('beforeend', newRow);
-        });
-        tablelistobjekpajakfinal_1721.addEventListener('input', function(event) {
-            const target = event.target;
-            if (target.tagName === 'INPUT' && target.name.startsWith('objek')) {
+        //         <td class="text-center">
+        //             <input required autocomplete="off" type="text"
+        //                 onkeyup="this.value=sprator(this.value);"
+        //                 name="objek_jumlahpenerima_c[]"
+        //                 id="objek_jumlahpenerima_c[]" min="0"
+        //                 class="form-control penerima_c" />
+        //         </td>
+        //         <td class="text-center">
+        //             <input required autocomplete="off" type="text"
+        //             onkeyup="this.value=sprator(this.value);"
+        //             name="objek_jumlahpenghasilan_c[]"
+        //                 id="objek_jumlahpenghasilan_c[]"
+        //                 min="0" class="form-control penghasilan_c" />
+        //         </td>
+        //         <td class="text-center">
+        //             <input required autocomplete="off" type="text"
+        //             onkeyup="this.value=sprator(this.value);"
+        //             name="objek_jumlahpajak_c[]"
+        //                 id="objek_jumlahpajak_c[]" min="0"
+        //                 class="form-control pajak_c" />
+        //         </td>
+        //         <td><button type="button" class="btn btn-danger btn-remove-final-1721"><i
+        //             class="fa fa-trash"></i>
+        //         </td>
+        //     </tr>
+        //     `;
+        //     tablelistobjekpajakfinal_1721.insertAdjacentHTML('beforeend', newRow);
+        // });
+        // tablelistobjekpajakfinal_1721.addEventListener('input', function(event) {
+        //     const target = event.target;
+        //     if (target.tagName === 'INPUT' && target.name.startsWith('objek')) {
 
-                var totalpenerima = 0
-                var totalbruto = 0
-                var totalpajakpotong = 0
+        //         var totalpenerima = 0
+        //         var totalbruto = 0
+        //         var totalpajakpotong = 0
 
-                $(".penerima_c").each(function() {
-                    totalpenerima += +$(this).val().replace(/,/g, '');
-                });
-                $(".penghasilan_c").each(function() {
-                    totalbruto += +$(this).val().replace(/,/g, '');
-                });
-                $(".pajak_c").each(function() {
-                    totalpajakpotong += +$(this).val().replace(/,/g, '');
-                });
+        //         $(".penerima_c").each(function() {
+        //             totalpenerima += +$(this).val().replace(/,/g, '');
+        //         });
+        //         $(".penghasilan_c").each(function() {
+        //             totalbruto += +$(this).val().replace(/,/g, '');
+        //         });
+        //         $(".pajak_c").each(function() {
+        //             totalpajakpotong += +$(this).val().replace(/,/g, '');
+        //         });
             
-                $('.totalpenerima_c').val(totalpenerima.toLocaleString());
-                $('.totalbruto_c').val(totalbruto.toLocaleString());
-                $('.totalpajak_c').val(totalpajakpotong.toLocaleString());
-            }
-        });
-        tablelistobjekpajakfinal_1721.addEventListener('click', function(event) {
-            if (event.target.classList.contains('btn-remove-final-1721')) {
-                const row = event.target.closest('tr');
-                row.remove();
-            }
-        });
+        //         $('.totalpenerima_c').val(totalpenerima.toLocaleString());
+        //         $('.totalbruto_c').val(totalbruto.toLocaleString());
+        //         $('.totalpajak_c').val(totalpajakpotong.toLocaleString());
+        //     }
+        // });
+        // tablelistobjekpajakfinal_1721.addEventListener('click', function(event) {
+        //     if (event.target.classList.contains('btn-remove-final-1721')) {
+        //         const row = event.target.closest('tr');
+        //         row.remove();
+        //     }
+        // });
 
     // FORMULIR I
         const npwppemotong_1721_formulirI = document.getElementById('npwppemotong_1721_formulirI');
@@ -698,247 +698,404 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     // FORMULIR VII
     // FORMULIR A1
-        const npwppemotong_formulirA1_1721 = document.getElementById('npwppemotong_formulirA1_1721');
-        const error_npwppemotong_formulirA1_1721 = document.getElementById('error_npwppemotong_formulirA1_1721');
-        npwppemotong_formulirA1_1721.addEventListener('input', function() {
-            const inputValue = npwppemotong_formulirA1_1721.value;
-            if (inputValue.length > 15) {
-                npwppemotong_formulirA1_1721.value = inputValue.slice(0, 15);
-                error_npwppemotong_formulirA1_1721.textContent = 'Maksimal 15 digit';
-            } else {
-                error_npwppemotong_formulirA1_1721.textContent = '';
-            }
-        });
-        const npwppenerima_formulirA1_1721 = document.getElementById('npwppenerima_formulirA1_1721');
-        const error_npwppenerima_formulirA1_1721 = document.getElementById('error_npwppenerima_formulirA1_1721');
-        npwppenerima_formulirA1_1721.addEventListener('input', function() {
-            const inputValue = npwppenerima_formulirA1_1721.value;
-            if (inputValue.length > 15) {
-                npwppenerima_formulirA1_1721.value = inputValue.slice(0, 15);
-                error_npwppenerima_formulirA1_1721.textContent = 'Maksimal 15 digit';
-            } else {
-                error_npwppenerima_formulirA1_1721.textContent = '';
-            }
-        });
-        const npwpIdPem_formulirA1_1721 = document.getElementById('npwpIdPem_formulirA1_1721');
-        const error_npwpIdPem_formulirA1_1721 = document.getElementById('error_npwpIdPem_formulirA1_1721');
-        npwpIdPem_formulirA1_1721.addEventListener('input', function() {
-            const inputValue = npwpIdPem_formulirA1_1721.value;
-            if (inputValue.length > 15) {
-                npwpIdPem_formulirA1_1721.value = inputValue.slice(0, 15);
-                error_npwpIdPem_formulirA1_1721.textContent = 'Maksimal 15 digit';
-            } else {
-                error_npwpIdPem_formulirA1_1721.textContent = '';
-            }
-        });
+        // const npwppemotong_formulirA1_1721 = document.getElementById('npwppemotong_formulirA1_1721');
+        // const error_npwppemotong_formulirA1_1721 = document.getElementById('error_npwppemotong_formulirA1_1721');
+        // npwppemotong_formulirA1_1721.addEventListener('input', function() {
+        //     const inputValue = npwppemotong_formulirA1_1721.value;
+        //     if (inputValue.length > 15) {
+        //         npwppemotong_formulirA1_1721.value = inputValue.slice(0, 15);
+        //         error_npwppemotong_formulirA1_1721.textContent = 'Maksimal 15 digit';
+        //     } else {
+        //         error_npwppemotong_formulirA1_1721.textContent = '';
+        //     }
+        // });
+        // const npwppenerima_formulirA1_1721 = document.getElementById('npwppenerima_formulirA1_1721');
+        // const error_npwppenerima_formulirA1_1721 = document.getElementById('error_npwppenerima_formulirA1_1721');
+        // npwppenerima_formulirA1_1721.addEventListener('input', function() {
+        //     const inputValue = npwppenerima_formulirA1_1721.value;
+        //     if (inputValue.length > 15) {
+        //         npwppenerima_formulirA1_1721.value = inputValue.slice(0, 15);
+        //         error_npwppenerima_formulirA1_1721.textContent = 'Maksimal 15 digit';
+        //     } else {
+        //         error_npwppenerima_formulirA1_1721.textContent = '';
+        //     }
+        // });
+        // const npwpIdPem_formulirA1_1721 = document.getElementById('npwpIdPem_formulirA1_1721');
+        // const error_npwpIdPem_formulirA1_1721 = document.getElementById('error_npwpIdPem_formulirA1_1721');
+        // npwpIdPem_formulirA1_1721.addEventListener('input', function() {
+        //     const inputValue = npwpIdPem_formulirA1_1721.value;
+        //     if (inputValue.length > 15) {
+        //         npwpIdPem_formulirA1_1721.value = inputValue.slice(0, 15);
+        //         error_npwpIdPem_formulirA1_1721.textContent = 'Maksimal 15 digit';
+        //     } else {
+        //         error_npwpIdPem_formulirA1_1721.textContent = '';
+        //     }
+        // });
     // FORMULIR A1
     // FORMULIR A2
-    const npwpBendahara_formulirA2_1721 = document.getElementById('npwpBendahara_formulirA2_1721');
-    const error_npwpBendahara_formulirA2_1721 = document.getElementById('error_npwpBendahara_formulirA2_1721');
-    npwpBendahara_formulirA2_1721.addEventListener('input', function() {
-        const inputValue = npwpBendahara_formulirA2_1721.value;
-        if (inputValue.length > 15) {
-            npwpBendahara_formulirA2_1721.value = inputValue.slice(0, 15);
-            error_npwpBendahara_formulirA2_1721.textContent = 'Maksimal 15 digit';
-        } else {
-            error_npwpBendahara_formulirA2_1721.textContent = '';
-        }
-    });
-    const npwpPenerima_formulirA2_1721 = document.getElementById('npwpPenerima_formulirA2_1721');
-    const error_npwpPenerima_formulirA2_1721 = document.getElementById('error_npwpPenerima_formulirA2_1721');
-    npwpPenerima_formulirA2_1721.addEventListener('input', function() {
-        const inputValue = npwpPenerima_formulirA2_1721.value;
-        if (inputValue.length > 15) {
-            npwpPenerima_formulirA2_1721.value = inputValue.slice(0, 15);
-            error_npwpPenerima_formulirA2_1721.textContent = 'Maksimal 15 digit';
-        } else {
-            error_npwpPenerima_formulirA2_1721.textContent = '';
-        }
-    });
-    const npwpttdben_formulirA2_1721 = document.getElementById('npwpttdben_formulirA2_1721');
-    const error_npwpttdben_formulirA2_1721 = document.getElementById('error_npwpttdben_formulirA2_1721');
-    npwpttdben_formulirA2_1721.addEventListener('input', function() {
-        const inputValue = npwpttdben_formulirA2_1721.value;
-        if (inputValue.length > 15) {
-            npwpttdben_formulirA2_1721.value = inputValue.slice(0, 15);
-            error_npwpttdben_formulirA2_1721.textContent = 'Maksimal 15 digit';
-        } else {
-            error_npwpttdben_formulirA2_1721.textContent = '';
-        }
-    });
+    // const npwpBendahara_formulirA2_1721 = document.getElementById('npwpBendahara_formulirA2_1721');
+    // const error_npwpBendahara_formulirA2_1721 = document.getElementById('error_npwpBendahara_formulirA2_1721');
+    // npwpBendahara_formulirA2_1721.addEventListener('input', function() {
+    //     const inputValue = npwpBendahara_formulirA2_1721.value;
+    //     if (inputValue.length > 15) {
+    //         npwpBendahara_formulirA2_1721.value = inputValue.slice(0, 15);
+    //         error_npwpBendahara_formulirA2_1721.textContent = 'Maksimal 15 digit';
+    //     } else {
+    //         error_npwpBendahara_formulirA2_1721.textContent = '';
+    //     }
+    // });
+    // const npwpPenerima_formulirA2_1721 = document.getElementById('npwpPenerima_formulirA2_1721');
+    // const error_npwpPenerima_formulirA2_1721 = document.getElementById('error_npwpPenerima_formulirA2_1721');
+    // npwpPenerima_formulirA2_1721.addEventListener('input', function() {
+    //     const inputValue = npwpPenerima_formulirA2_1721.value;
+    //     if (inputValue.length > 15) {
+    //         npwpPenerima_formulirA2_1721.value = inputValue.slice(0, 15);
+    //         error_npwpPenerima_formulirA2_1721.textContent = 'Maksimal 15 digit';
+    //     } else {
+    //         error_npwpPenerima_formulirA2_1721.textContent = '';
+    //     }
+    // });
+    // const npwpttdben_formulirA2_1721 = document.getElementById('npwpttdben_formulirA2_1721');
+    // const error_npwpttdben_formulirA2_1721 = document.getElementById('error_npwpttdben_formulirA2_1721');
+    // npwpttdben_formulirA2_1721.addEventListener('input', function() {
+    //     const inputValue = npwpttdben_formulirA2_1721.value;
+    //     if (inputValue.length > 15) {
+    //         npwpttdben_formulirA2_1721.value = inputValue.slice(0, 15);
+    //         error_npwpttdben_formulirA2_1721.textContent = 'Maksimal 15 digit';
+    //     } else {
+    //         error_npwpttdben_formulirA2_1721.textContent = '';
+    //     }
+    // });
     // FORMULIR A2
-        const bruto_1721_I = document.getElementById('jumlahbruto_1721_formulirI');
-        const tht_1721_I = document.getElementById('tht_1721_formulirI');
-        const pokokpajak_b = document.getElementById('pokokpajak_1721');
-        const setorlebih = document.getElementById('kelebihanpenyetor_1721');
-        const totalpajakb = document.getElementById('total_jumlah_pajak1721');
-        const sptbetulan_b = document.getElementById('sptdibetulkan_1721');
+        // const bruto_1721_I = document.getElementById('jumlahbruto_1721_formulirI');
+        // const tht_1721_I = document.getElementById('tht_1721_formulirI');
+        // const pokokpajak_b = document.getElementById('pokokpajak_1721');
+        // const setorlebih = document.getElementById('kelebihanpenyetor_1721');
+        // const totalpajakb = document.getElementById('total_jumlah_pajak1721');
+        // const sptbetulan_b = document.getElementById('sptdibetulkan_1721');
 
-        const resultjumlah_1721_I = document.getElementById('totaljumlah_1721_formulirI');
-        const jumlahobjekb = document.getElementById('jumlah_1721');
-        const kuranglebih_b = document.getElementById('kuranglebihsetor_1721');
-        const pembetulan_b = document.getElementById('sptpembetulan_1721');
+        // const resultjumlah_1721_I = document.getElementById('totaljumlah_1721_formulirI');
+        // const jumlahobjekb = document.getElementById('jumlah_1721');
+        // const kuranglebih_b = document.getElementById('kuranglebihsetor_1721');
+        // const pembetulan_b = document.getElementById('sptpembetulan_1721');
 
-        const inputgaji_formulirV_1721 = document.getElementById('gaji_formulirV_1721');
-        const inputbiayatransportasi_formulirV_1721 = document.getElementById('biayatransportasi_formulirV_1721');
-        const inputbiayaPenyusutan_formulirV_1721 = document.getElementById('biayaPenyusutan_formulirV_1721');
-        const inputbiayaSewa_formulirV_1721 = document.getElementById('biayaSewa_formulirV_1721');
-        const inputbiayaBungaPinjam_formulirV_1721 = document.getElementById('biayaBungaPinjam_formulirV_1721');
-        const inputbiayaSehubunganDenganJasa_formulirV_1721 = document.getElementById('biayaSehubunganDenganJasa_formulirV_1721');
-        const inputbiayaPiutangTakTertagih_formulirV_1721 = document.getElementById('biayaPiutangTakTertagih_formulirV_1721');
-        const inputbiayaRoyalti_formulirV_1721 = document.getElementById('biayaRoyalti_formulirV_1721');
-        const inputbiayaPemasaran_formulirV_1721 = document.getElementById('biayaPemasaran_formulirV_1721');
-        const inputbiayaLain_formulirV_1721 = document.getElementById('biayaLain_formulirV_1721');
+        // const inputgaji_formulirV_1721 = document.getElementById('gaji_formulirV_1721');
+        // const inputbiayatransportasi_formulirV_1721 = document.getElementById('biayatransportasi_formulirV_1721');
+        // const inputbiayaPenyusutan_formulirV_1721 = document.getElementById('biayaPenyusutan_formulirV_1721');
+        // const inputbiayaSewa_formulirV_1721 = document.getElementById('biayaSewa_formulirV_1721');
+        // const inputbiayaBungaPinjam_formulirV_1721 = document.getElementById('biayaBungaPinjam_formulirV_1721');
+        // const inputbiayaSehubunganDenganJasa_formulirV_1721 = document.getElementById('biayaSehubunganDenganJasa_formulirV_1721');
+        // const inputbiayaPiutangTakTertagih_formulirV_1721 = document.getElementById('biayaPiutangTakTertagih_formulirV_1721');
+        // const inputbiayaRoyalti_formulirV_1721 = document.getElementById('biayaRoyalti_formulirV_1721');
+        // const inputbiayaPemasaran_formulirV_1721 = document.getElementById('biayaPemasaran_formulirV_1721');
+        // const inputbiayaLain_formulirV_1721 = document.getElementById('biayaLain_formulirV_1721');
         
-        const resultjumlah_formulirV_1721 = document.getElementById('jumlah_formulirV_1721');
+        // const resultjumlah_formulirV_1721 = document.getElementById('jumlah_formulirV_1721');
         
-        const inputgaji_formulirA1_1721 = document.getElementById('gaji_formulirA1_1721');
-        const inputtunjanganPph_formulirA1_1721 = document.getElementById('tunjanganPph_formulirA1_1721');
-        const inputtunjanganlain_formulirA1_1721 = document.getElementById('tunjanganlain_formulirA1_1721');
-        const inputhonorarium_formulirA1_1721 = document.getElementById('honorarium_formulirA1_1721');
-        const inputpremiAsuransi_formulirA1_1721 = document.getElementById('premiAsuransi_formulirA1_1721');
-        const inputnatura_formulirA1_1721 = document.getElementById('natura_formulirA1_1721');
-        const inputtantiem_formulirA1_1721 = document.getElementById('tantiem_formulirA1_1721');
+        // const inputgaji_formulirA1_1721 = document.getElementById('gaji_formulirA1_1721');
+        // const inputtunjanganPph_formulirA1_1721 = document.getElementById('tunjanganPph_formulirA1_1721');
+        // const inputtunjanganlain_formulirA1_1721 = document.getElementById('tunjanganlain_formulirA1_1721');
+        // const inputhonorarium_formulirA1_1721 = document.getElementById('honorarium_formulirA1_1721');
+        // const inputpremiAsuransi_formulirA1_1721 = document.getElementById('premiAsuransi_formulirA1_1721');
+        // const inputnatura_formulirA1_1721 = document.getElementById('natura_formulirA1_1721');
+        // const inputtantiem_formulirA1_1721 = document.getElementById('tantiem_formulirA1_1721');
         
-        const inputbiayajabatan_formulirA1_1721 = document.getElementById('biayajabatan_formulirA1_1721');
-        const inputiuranPensiun_formulirA1_1721 = document.getElementById('iuranPensiun_formulirA1_1721');
-        const inputjumlahPenghasilanNetoSetaun_formulirA1_1721 = document.getElementById('jumlahPenghasilanNetoSetaun_formulirA1_1721');
-        const inputiuranptkp_formulirA1_1721 = document.getElementById('ptkp_formulirA1_1721');
-        const inputgajiPokok_formulirA2_1721 = document.getElementById('gajiPokok_formulirA2_1721');
-        const inputtunjanganIsteri_formulirA2_1721 = document.getElementById('tunjanganIsteri_formulirA2_1721');
-        const inputtunjanganAnak_formulirA2_1721 = document.getElementById('tunjanganAnak_formulirA2_1721');
+        // const inputbiayajabatan_formulirA1_1721 = document.getElementById('biayajabatan_formulirA1_1721');
+        // const inputiuranPensiun_formulirA1_1721 = document.getElementById('iuranPensiun_formulirA1_1721');
+        // const inputjumlahPenghasilanNetoSetaun_formulirA1_1721 = document.getElementById('jumlahPenghasilanNetoSetaun_formulirA1_1721');
+        // const inputiuranptkp_formulirA1_1721 = document.getElementById('ptkp_formulirA1_1721');
+        // const inputgajiPokok_formulirA2_1721 = document.getElementById('gajiPokok_formulirA2_1721');
+        // const inputtunjanganIsteri_formulirA2_1721 = document.getElementById('tunjanganIsteri_formulirA2_1721');
+        // const inputtunjanganAnak_formulirA2_1721 = document.getElementById('tunjanganAnak_formulirA2_1721');
         
-        const inputtunjanganPerbaikan_formulirA2_1721 = document.getElementById('tunjanganPerbaikan_formulirA2_1721');
-        const inputtunjanganStruktural_formulirA2_1721 = document.getElementById('tunjanganStruktural_formulirA2_1721');
-        const inputtunjanganBeras_formulirA2_1721 = document.getElementById('tunjanganBeras_formulirA2_1721');
-        const inputtunjanganKhusus_formulirA2_1721 = document.getElementById('tunjanganKhusus_formulirA2_1721');
-        const inputtunjanganLain_formulirA2_1721 = document.getElementById('tunjanganLain_formulirA2_1721');
-        const inputpenghasilanTetap_formulirA2_1721 = document.getElementById('penghasilanTetap_formulirA2_1721');
-        const inputbiayaJabatan_formulirA2_1721 = document.getElementById('biayaJabatan_formulirA2_1721');
-        const inputiuranPensi_formulirA2_1721 = document.getElementById('iuranPensi_formulirA2_1721');
-        const inputjumlahPenghasilanPenghitungan_formulirA2_1721 = document.getElementById('jumlahPenghasilanPenghitungan_formulirA2_1721');
-        const inputptkp_formulirA2_1721 = document.getElementById('ptkp_formulirA2_1721');
+        // const inputtunjanganPerbaikan_formulirA2_1721 = document.getElementById('tunjanganPerbaikan_formulirA2_1721');
+        // const inputtunjanganStruktural_formulirA2_1721 = document.getElementById('tunjanganStruktural_formulirA2_1721');
+        // const inputtunjanganBeras_formulirA2_1721 = document.getElementById('tunjanganBeras_formulirA2_1721');
+        // const inputtunjanganKhusus_formulirA2_1721 = document.getElementById('tunjanganKhusus_formulirA2_1721');
+        // const inputtunjanganLain_formulirA2_1721 = document.getElementById('tunjanganLain_formulirA2_1721');
+        // const inputpenghasilanTetap_formulirA2_1721 = document.getElementById('penghasilanTetap_formulirA2_1721');
+        // const inputbiayaJabatan_formulirA2_1721 = document.getElementById('biayaJabatan_formulirA2_1721');
+        // const inputiuranPensi_formulirA2_1721 = document.getElementById('iuranPensi_formulirA2_1721');
+        // const inputjumlahPenghasilanPenghitungan_formulirA2_1721 = document.getElementById('jumlahPenghasilanPenghitungan_formulirA2_1721');
+        // const inputptkp_formulirA2_1721 = document.getElementById('ptkp_formulirA2_1721');
         
-        const resultjumlahbruto_formulirA1_1721 = document.getElementById('jumlahbruto_formulirA1_1721');
-        const resultjumlahpengurangan_formulirA1_1721 = document.getElementById('jumlahpengurangan_formulirA1_1721');
-        const resultjumlahPenghasilanNeto_formulirA1_1721 = document.getElementById('jumlahPenghasilanNeto_formulirA1_1721');
-        const resultpkp_formulirA1_1721 = document.getElementById('pkp_formulirA1_1721');
-        const resultkeluarga_formulirA2_1721 = document.getElementById('keluarga_formulirA2_1721');
-        const resultpenghasilanBruto_formulirA2_1721 = document.getElementById('penghasilanBruto_formulirA2_1721');
-        const resultjumlahPengurangan_formulirA2_1721 = document.getElementById('jumlahPengurangan_formulirA2_1721');
-        const resultjumlahPenghasilan_formulirA2_1721 = document.getElementById('jumlahPenghasilan_formulirA2_1721');
-        const resultpkp_formulirA2_1721 = document.getElementById('pkp_formulirA2_1721');
+        // const resultjumlahbruto_formulirA1_1721 = document.getElementById('jumlahbruto_formulirA1_1721');
+        // const resultjumlahpengurangan_formulirA1_1721 = document.getElementById('jumlahpengurangan_formulirA1_1721');
+        // const resultjumlahPenghasilanNeto_formulirA1_1721 = document.getElementById('jumlahPenghasilanNeto_formulirA1_1721');
+        // const resultpkp_formulirA1_1721 = document.getElementById('pkp_formulirA1_1721');
+        // const resultkeluarga_formulirA2_1721 = document.getElementById('keluarga_formulirA2_1721');
+        // const resultpenghasilanBruto_formulirA2_1721 = document.getElementById('penghasilanBruto_formulirA2_1721');
+        // const resultjumlahPengurangan_formulirA2_1721 = document.getElementById('jumlahPengurangan_formulirA2_1721');
+        // const resultjumlahPenghasilan_formulirA2_1721 = document.getElementById('jumlahPenghasilan_formulirA2_1721');
+        // const resultpkp_formulirA2_1721 = document.getElementById('pkp_formulirA2_1721');
 
-        [inputptkp_formulirA2_1721,inputjumlahPenghasilanPenghitungan_formulirA2_1721,inputiuranPensi_formulirA2_1721,inputbiayaJabatan_formulirA2_1721,inputpenghasilanTetap_formulirA2_1721,inputtunjanganLain_formulirA2_1721,inputtunjanganKhusus_formulirA2_1721,inputtunjanganBeras_formulirA2_1721,inputtunjanganStruktural_formulirA2_1721,inputtunjanganPerbaikan_formulirA2_1721,inputtunjanganAnak_formulirA2_1721,inputtunjanganIsteri_formulirA2_1721,inputgajiPokok_formulirA2_1721,inputiuranptkp_formulirA1_1721,inputjumlahPenghasilanNetoSetaun_formulirA1_1721,inputiuranPensiun_formulirA1_1721,inputbiayajabatan_formulirA1_1721,inputtantiem_formulirA1_1721,inputnatura_formulirA1_1721,inputpremiAsuransi_formulirA1_1721,inputhonorarium_formulirA1_1721,inputtunjanganlain_formulirA1_1721,inputtunjanganPph_formulirA1_1721,inputgaji_formulirA1_1721,inputbiayaLain_formulirV_1721,inputbiayaPemasaran_formulirV_1721,inputbiayaRoyalti_formulirV_1721,inputbiayaPiutangTakTertagih_formulirV_1721,inputbiayaSehubunganDenganJasa_formulirV_1721,inputbiayaBungaPinjam_formulirV_1721,inputbiayaSewa_formulirV_1721,inputbiayaPenyusutan_formulirV_1721,inputgaji_formulirV_1721,inputbiayatransportasi_formulirV_1721,bruto_1721_I,tht_1721_I,resultjumlah_1721_I,pokokpajak_b,setorlebih,totalpajakb
-        ,sptbetulan_b]
-            .forEach(input => {
-                input.addEventListener('input', updateformuliri);
-            });
-        function updateformuliri() {
-            const jumlahbruto_1721_i = parseFloat(bruto_1721_I.value) || 0;
-            const tht_1721_i = parseFloat(tht_1721_I.value) || 0;
-            resultjumlah_1721_I.value=jumlahbruto_1721_i+tht_1721_i;
+        // [inputptkp_formulirA2_1721,inputjumlahPenghasilanPenghitungan_formulirA2_1721,inputiuranPensi_formulirA2_1721,inputbiayaJabatan_formulirA2_1721,inputpenghasilanTetap_formulirA2_1721,inputtunjanganLain_formulirA2_1721,inputtunjanganKhusus_formulirA2_1721,inputtunjanganBeras_formulirA2_1721,inputtunjanganStruktural_formulirA2_1721,inputtunjanganPerbaikan_formulirA2_1721,inputtunjanganAnak_formulirA2_1721,inputtunjanganIsteri_formulirA2_1721,inputgajiPokok_formulirA2_1721,inputiuranptkp_formulirA1_1721,inputjumlahPenghasilanNetoSetaun_formulirA1_1721,inputiuranPensiun_formulirA1_1721,inputbiayajabatan_formulirA1_1721,inputtantiem_formulirA1_1721,inputnatura_formulirA1_1721,inputpremiAsuransi_formulirA1_1721,inputhonorarium_formulirA1_1721,inputtunjanganlain_formulirA1_1721,inputtunjanganPph_formulirA1_1721,inputgaji_formulirA1_1721,inputbiayaLain_formulirV_1721,inputbiayaPemasaran_formulirV_1721,inputbiayaRoyalti_formulirV_1721,inputbiayaPiutangTakTertagih_formulirV_1721,inputbiayaSehubunganDenganJasa_formulirV_1721,inputbiayaBungaPinjam_formulirV_1721,inputbiayaSewa_formulirV_1721,inputbiayaPenyusutan_formulirV_1721,inputgaji_formulirV_1721,inputbiayatransportasi_formulirV_1721,bruto_1721_I,tht_1721_I,resultjumlah_1721_I,pokokpajak_b,setorlebih,totalpajakb
+        // ,sptbetulan_b]
+        //     .forEach(input => {
+        //         input.addEventListener('input', updateformuliri);
+        //     });
+        // function updateformuliri() {
+        //     const jumlahbruto_1721_i = parseFloat(bruto_1721_I.value) || 0;
+        //     const tht_1721_i = parseFloat(tht_1721_I.value) || 0;
+        //     resultjumlah_1721_I.value=jumlahbruto_1721_i+tht_1721_i;
             
-            const lebih = parseFloat(setorlebih.value) || 0;
-            const pajakpokokb = parseFloat(pokokpajak_b.value) || 0;
-            const jumlahobjek_b = lebih+pajakpokokb;
-            jumlahobjekb.value=jumlahobjek_b;
+        //     const lebih = parseFloat(setorlebih.value) || 0;
+        //     const pajakpokokb = parseFloat(pokokpajak_b.value) || 0;
+        //     const jumlahobjek_b = lebih+pajakpokokb;
+        //     jumlahobjekb.value=jumlahobjek_b;
             
-            const totpajakb = parseFloat(totalpajakb.value) || 0;
-            const kurang = totpajakb-jumlahobjek_b;
-            if(kurang<0){
-                kuranglebih_b.value=0;
-            }else{
-                kuranglebih_b.value=kurang;
-            }
-            const betulan_b = parseFloat(sptbetulan_b.value) || 0;
-            const pembetul_b = kurang-betulan_b;
-            if(pembetul_b<0){
-                pembetulan_b.value=0;
-            }else{
-                pembetulan_b.value=pembetul_b;
-            }
-            const gajiFormulirV_1721 = parseFloat(inputgaji_formulirV_1721.value) || 0;
-            const transportasiFormulirV_1721 = parseFloat(inputbiayatransportasi_formulirV_1721.value) || 0;
-            const penyusutanFormulirV_1721 = parseFloat(inputbiayaPenyusutan_formulirV_1721.value) || 0;
-            const sewaFormulirV_1721 = parseFloat(inputbiayaSewa_formulirV_1721.value) || 0;
-            const bungaFormulirV_1721 = parseFloat(inputbiayaBungaPinjam_formulirV_1721.value) || 0;
-            const jasaFormulirV_1721 = parseFloat(inputbiayaSehubunganDenganJasa_formulirV_1721.value) || 0;
-            const piutangFormulirV_1721 = parseFloat(inputbiayaPiutangTakTertagih_formulirV_1721.value) || 0;
-            const royaltiFormulirV_1721 = parseFloat(inputbiayaRoyalti_formulirV_1721.value) || 0;
-            const pemasaranFormulirV_1721 = parseFloat(inputbiayaPemasaran_formulirV_1721.value) || 0;
-            const biayalainFormulirV_1721 = parseFloat(inputbiayaLain_formulirV_1721.value) || 0;
-            resultjumlah_formulirV_1721.value=gajiFormulirV_1721+transportasiFormulirV_1721+penyusutanFormulirV_1721+sewaFormulirV_1721+bungaFormulirV_1721+jasaFormulirV_1721+piutangFormulirV_1721+royaltiFormulirV_1721+pemasaranFormulirV_1721+biayalainFormulirV_1721;
+        //     const totpajakb = parseFloat(totalpajakb.value) || 0;
+        //     const kurang = totpajakb-jumlahobjek_b;
+        //     if(kurang<0){
+        //         kuranglebih_b.value=0;
+        //     }else{
+        //         kuranglebih_b.value=kurang;
+        //     }
+        //     const betulan_b = parseFloat(sptbetulan_b.value) || 0;
+        //     const pembetul_b = kurang-betulan_b;
+        //     if(pembetul_b<0){
+        //         pembetulan_b.value=0;
+        //     }else{
+        //         pembetulan_b.value=pembetul_b;
+        //     }
+        //     const gajiFormulirV_1721 = parseFloat(inputgaji_formulirV_1721.value) || 0;
+        //     const transportasiFormulirV_1721 = parseFloat(inputbiayatransportasi_formulirV_1721.value) || 0;
+        //     const penyusutanFormulirV_1721 = parseFloat(inputbiayaPenyusutan_formulirV_1721.value) || 0;
+        //     const sewaFormulirV_1721 = parseFloat(inputbiayaSewa_formulirV_1721.value) || 0;
+        //     const bungaFormulirV_1721 = parseFloat(inputbiayaBungaPinjam_formulirV_1721.value) || 0;
+        //     const jasaFormulirV_1721 = parseFloat(inputbiayaSehubunganDenganJasa_formulirV_1721.value) || 0;
+        //     const piutangFormulirV_1721 = parseFloat(inputbiayaPiutangTakTertagih_formulirV_1721.value) || 0;
+        //     const royaltiFormulirV_1721 = parseFloat(inputbiayaRoyalti_formulirV_1721.value) || 0;
+        //     const pemasaranFormulirV_1721 = parseFloat(inputbiayaPemasaran_formulirV_1721.value) || 0;
+        //     const biayalainFormulirV_1721 = parseFloat(inputbiayaLain_formulirV_1721.value) || 0;
+        //     resultjumlah_formulirV_1721.value=gajiFormulirV_1721+transportasiFormulirV_1721+penyusutanFormulirV_1721+sewaFormulirV_1721+bungaFormulirV_1721+jasaFormulirV_1721+piutangFormulirV_1721+royaltiFormulirV_1721+pemasaranFormulirV_1721+biayalainFormulirV_1721;
             
-            const formulirA1Gaji = parseFloat(inputgaji_formulirA1_1721.value) || 0;
-            const formulirA1tunjanganpph = parseFloat(inputtunjanganPph_formulirA1_1721.value) || 0;
-            const formulirA1tunlain= parseFloat(inputtunjanganlain_formulirA1_1721.value) || 0;
-            const formulirA1honorarium= parseFloat(inputhonorarium_formulirA1_1721.value) || 0;
-            const formulirA1premiasuransi= parseFloat(inputpremiAsuransi_formulirA1_1721.value) || 0;
-            const formulirA1natura= parseFloat(inputnatura_formulirA1_1721.value) || 0;
-            const formulirA1tantiem= parseFloat(inputtantiem_formulirA1_1721.value) || 0;
-            const brutoA1= formulirA1Gaji+formulirA1tunjanganpph+formulirA1tunlain+formulirA1honorarium+formulirA1premiasuransi+formulirA1natura+formulirA1tantiem;
-            resultjumlahbruto_formulirA1_1721.value=brutoA1;
+        //     const formulirA1Gaji = parseFloat(inputgaji_formulirA1_1721.value) || 0;
+        //     const formulirA1tunjanganpph = parseFloat(inputtunjanganPph_formulirA1_1721.value) || 0;
+        //     const formulirA1tunlain= parseFloat(inputtunjanganlain_formulirA1_1721.value) || 0;
+        //     const formulirA1honorarium= parseFloat(inputhonorarium_formulirA1_1721.value) || 0;
+        //     const formulirA1premiasuransi= parseFloat(inputpremiAsuransi_formulirA1_1721.value) || 0;
+        //     const formulirA1natura= parseFloat(inputnatura_formulirA1_1721.value) || 0;
+        //     const formulirA1tantiem= parseFloat(inputtantiem_formulirA1_1721.value) || 0;
+        //     const brutoA1= formulirA1Gaji+formulirA1tunjanganpph+formulirA1tunlain+formulirA1honorarium+formulirA1premiasuransi+formulirA1natura+formulirA1tantiem;
+        //     resultjumlahbruto_formulirA1_1721.value=brutoA1;
             
-            const formulirA1biayajabatan= parseFloat(inputbiayajabatan_formulirA1_1721.value) || 0;
-            const formulirA1iuran= parseFloat(inputiuranPensiun_formulirA1_1721.value) || 0;
-            const jumlahformulirA1iuran= formulirA1biayajabatan+formulirA1iuran;
-            resultjumlahpengurangan_formulirA1_1721.value=jumlahformulirA1iuran;
+        //     const formulirA1biayajabatan= parseFloat(inputbiayajabatan_formulirA1_1721.value) || 0;
+        //     const formulirA1iuran= parseFloat(inputiuranPensiun_formulirA1_1721.value) || 0;
+        //     const jumlahformulirA1iuran= formulirA1biayajabatan+formulirA1iuran;
+        //     resultjumlahpengurangan_formulirA1_1721.value=jumlahformulirA1iuran;
             
-            const jumlahPenghasilanNettoA1= brutoA1-jumlahformulirA1iuran;
-            if(jumlahPenghasilanNettoA1<0){
-                resultjumlahPenghasilanNeto_formulirA1_1721.value=0;
-            }else{
-                resultjumlahPenghasilanNeto_formulirA1_1721.value=jumlahPenghasilanNettoA1;
-            }
-            const formulirA1penghasilannetto= parseFloat(inputjumlahPenghasilanNetoSetaun_formulirA1_1721.value) || 0;
-            const formulirA1ptkp= parseFloat(inputiuranptkp_formulirA1_1721.value) || 0;
-            const jumlahpkpA1= formulirA1penghasilannetto-formulirA1ptkp;
-            if(jumlahpkpA1<0){
-                resultpkp_formulirA1_1721.value=0;
-            }else{
-                resultpkp_formulirA1_1721.value=jumlahpkpA1;
-            }
-            const formulirA2gapok= parseFloat(inputgajiPokok_formulirA2_1721.value) || 0;
-            const formulirA2tunjangan= parseFloat(inputtunjanganIsteri_formulirA2_1721.value) || 0;
-            const formulirA2tunjangananak= parseFloat(inputtunjanganAnak_formulirA2_1721.value) || 0;
-            const jumlahgaji = formulirA2gapok+formulirA2tunjangan+formulirA2tunjangananak;
-            resultkeluarga_formulirA2_1721.value=jumlahgaji;
+        //     const jumlahPenghasilanNettoA1= brutoA1-jumlahformulirA1iuran;
+        //     if(jumlahPenghasilanNettoA1<0){
+        //         resultjumlahPenghasilanNeto_formulirA1_1721.value=0;
+        //     }else{
+        //         resultjumlahPenghasilanNeto_formulirA1_1721.value=jumlahPenghasilanNettoA1;
+        //     }
+        //     const formulirA1penghasilannetto= parseFloat(inputjumlahPenghasilanNetoSetaun_formulirA1_1721.value) || 0;
+        //     const formulirA1ptkp= parseFloat(inputiuranptkp_formulirA1_1721.value) || 0;
+        //     const jumlahpkpA1= formulirA1penghasilannetto-formulirA1ptkp;
+        //     if(jumlahpkpA1<0){
+        //         resultpkp_formulirA1_1721.value=0;
+        //     }else{
+        //         resultpkp_formulirA1_1721.value=jumlahpkpA1;
+        //     }
+        //     const formulirA2gapok= parseFloat(inputgajiPokok_formulirA2_1721.value) || 0;
+        //     const formulirA2tunjangan= parseFloat(inputtunjanganIsteri_formulirA2_1721.value) || 0;
+        //     const formulirA2tunjangananak= parseFloat(inputtunjanganAnak_formulirA2_1721.value) || 0;
+        //     const jumlahgaji = formulirA2gapok+formulirA2tunjangan+formulirA2tunjangananak;
+        //     resultkeluarga_formulirA2_1721.value=jumlahgaji;
 
-            const formulirA2tunper= parseFloat(inputtunjanganPerbaikan_formulirA2_1721.value) || 0;
-            const formulirA2tunstruk= parseFloat(inputtunjanganStruktural_formulirA2_1721.value) || 0;
-            const formulirA2tunberas= parseFloat(inputtunjanganBeras_formulirA2_1721.value) || 0;
-            const formulirA2tunkhus= parseFloat(inputtunjanganKhusus_formulirA2_1721.value) || 0;
-            const formulirA2tunlain= parseFloat(inputtunjanganLain_formulirA2_1721.value) || 0;
-            const formulirA2pengtep= parseFloat(inputpenghasilanTetap_formulirA2_1721.value) || 0;
-            const jumbruto = jumlahgaji+formulirA2tunper+formulirA2tunstruk+formulirA2tunberas+formulirA2tunkhus+formulirA2tunlain+formulirA2pengtep;
-            resultpenghasilanBruto_formulirA2_1721.value=jumbruto;
+        //     const formulirA2tunper= parseFloat(inputtunjanganPerbaikan_formulirA2_1721.value) || 0;
+        //     const formulirA2tunstruk= parseFloat(inputtunjanganStruktural_formulirA2_1721.value) || 0;
+        //     const formulirA2tunberas= parseFloat(inputtunjanganBeras_formulirA2_1721.value) || 0;
+        //     const formulirA2tunkhus= parseFloat(inputtunjanganKhusus_formulirA2_1721.value) || 0;
+        //     const formulirA2tunlain= parseFloat(inputtunjanganLain_formulirA2_1721.value) || 0;
+        //     const formulirA2pengtep= parseFloat(inputpenghasilanTetap_formulirA2_1721.value) || 0;
+        //     const jumbruto = jumlahgaji+formulirA2tunper+formulirA2tunstruk+formulirA2tunberas+formulirA2tunkhus+formulirA2tunlain+formulirA2pengtep;
+        //     resultpenghasilanBruto_formulirA2_1721.value=jumbruto;
             
-            const formulirA2biayajab= parseFloat(inputbiayaJabatan_formulirA2_1721.value) || 0;
-            const formulirA2iuranpens= parseFloat(inputiuranPensi_formulirA2_1721.value) || 0;
-            const jumpeng = formulirA2biayajab+formulirA2iuranpens;
-            resultjumlahPengurangan_formulirA2_1721.value=jumpeng;
-            const jumpengnetto = jumbruto-jumpeng
-            if(jumpengnetto<0){
-                resultjumlahPenghasilan_formulirA2_1721.value=0;
-            }else{
-                resultjumlahPenghasilan_formulirA2_1721.value=jumpengnetto;
-            }
-            const formulirA2jumpeng= parseFloat(inputjumlahPenghasilanPenghitungan_formulirA2_1721.value) || 0;
-            const formulirA2ptkp= parseFloat(inputptkp_formulirA2_1721.value) || 0;
-            const pkp =formulirA2jumpeng-formulirA2ptkp;
-            if(pkp<0){
-                resultpkp_formulirA2_1721.value=0;
-            }else{
-                resultpkp_formulirA2_1721.value=pkp;
-            }
-        }
+        //     const formulirA2biayajab= parseFloat(inputbiayaJabatan_formulirA2_1721.value) || 0;
+        //     const formulirA2iuranpens= parseFloat(inputiuranPensi_formulirA2_1721.value) || 0;
+        //     const jumpeng = formulirA2biayajab+formulirA2iuranpens;
+        //     resultjumlahPengurangan_formulirA2_1721.value=jumpeng;
+        //     const jumpengnetto = jumbruto-jumpeng
+        //     if(jumpengnetto<0){
+        //         resultjumlahPenghasilan_formulirA2_1721.value=0;
+        //     }else{
+        //         resultjumlahPenghasilan_formulirA2_1721.value=jumpengnetto;
+        //     }
+        //     const formulirA2jumpeng= parseFloat(inputjumlahPenghasilanPenghitungan_formulirA2_1721.value) || 0;
+        //     const formulirA2ptkp= parseFloat(inputptkp_formulirA2_1721.value) || 0;
+        //     const pkp =formulirA2jumpeng-formulirA2ptkp;
+        //     if(pkp<0){
+        //         resultpkp_formulirA2_1721.value=0;
+        //     }else{
+        //         resultpkp_formulirA2_1721.value=pkp;
+        //     }
+        // }
     // sptmasapajak
 });
 function sprator(x) {
     //remove commas
     retVal = x ? parseFloat(x.replace(/,/g, '')) : 0;
     // console.log(retVal);
+    const b1_penerima_penghasilan_1721 = $('#b1_penerima_penghasilan_1721').val();
+    const b1_penghasilan_bruto_1721 = $('#b1_penghasilan_bruto_1721').val();
+    const b1_jumlahpajak_1721 = $('#b1_jumlahpajak_1721').val();
+    retVal_b1_penerima_penghasilan_1721 =b1_penerima_penghasilan_1721 ? parseFloat(b1_penerima_penghasilan_1721.replace(/,/g, '')) : 0;
+    retVal_b1_penghasilan_bruto_1721 =b1_penghasilan_bruto_1721 ? parseFloat(b1_penghasilan_bruto_1721.replace(/,/g, '')) : 0;
+    retVal_b1_jumlahpajak_1721 =b1_jumlahpajak_1721 ? parseFloat(b1_jumlahpajak_1721.replace(/,/g, '')) : 0;
+
+    const b2_penerima_penghasilan_1721 = $('#b2_penerima_penghasilan_1721').val();
+    const b2_penghasilan_bruto_1721 = $('#b2_penghasilan_bruto_1721').val();
+    const b2_jumlahpajak_1721 = $('#b2_jumlahpajak_1721').val();
+    retVal_b2_penerima_penghasilan_1721 =b2_penerima_penghasilan_1721 ? parseFloat(b2_penerima_penghasilan_1721.replace(/,/g, '')) : 0;
+    retVal_b2_penghasilan_bruto_1721 =b2_penghasilan_bruto_1721 ? parseFloat(b2_penghasilan_bruto_1721.replace(/,/g, '')) : 0;
+    retVal_b2_jumlahpajak_1721 =b2_jumlahpajak_1721 ? parseFloat(b2_jumlahpajak_1721.replace(/,/g, '')) : 0;
+
+    const b3_penerima_penghasilan_1721 = $('#b3_penerima_penghasilan_1721').val();
+    const b3_penghasilan_bruto_1721 = $('#b3_penghasilan_bruto_1721').val();
+    const b3_jumlahpajak_1721 = $('#b3_jumlahpajak_1721').val();
+    retVal_b3_penerima_penghasilan_1721 =b3_penerima_penghasilan_1721 ? parseFloat(b3_penerima_penghasilan_1721.replace(/,/g, '')) : 0;
+    retVal_b3_penghasilan_bruto_1721 =b3_penghasilan_bruto_1721 ? parseFloat(b3_penghasilan_bruto_1721.replace(/,/g, '')) : 0;
+    retVal_b3_jumlahpajak_1721 =b3_jumlahpajak_1721 ? parseFloat(b3_jumlahpajak_1721.replace(/,/g, '')) : 0;
+
+    const b4a_penerima_penghasilan_1721 = $('#b4a_penerima_penghasilan_1721').val();
+    const b4a_penghasilan_bruto_1721 = $('#b4a_penghasilan_bruto_1721').val();
+    const b4a_jumlahpajak_1721 = $('#b4a_jumlahpajak_1721').val();
+    retVal_b4a_penerima_penghasilan_1721 =b4a_penerima_penghasilan_1721 ? parseFloat(b4a_penerima_penghasilan_1721.replace(/,/g, '')) : 0;
+    retVal_b4a_penghasilan_bruto_1721 =b4a_penghasilan_bruto_1721 ? parseFloat(b4a_penghasilan_bruto_1721.replace(/,/g, '')) : 0;
+    retVal_b4a_jumlahpajak_1721 =b4a_jumlahpajak_1721 ? parseFloat(b4a_jumlahpajak_1721.replace(/,/g, '')) : 0;
+
+    const b4b_penerima_penghasilan_1721 = $('#b4b_penerima_penghasilan_1721').val();
+    const b4b_penghasilan_bruto_1721 = $('#b4b_penghasilan_bruto_1721').val();
+    const b4b_jumlahpajak_1721 = $('#b4b_jumlahpajak_1721').val();
+    retVal_b4b_penerima_penghasilan_1721 =b4b_penerima_penghasilan_1721 ? parseFloat(b4b_penerima_penghasilan_1721.replace(/,/g, '')) : 0;
+    retVal_b4b_penghasilan_bruto_1721 =b4b_penghasilan_bruto_1721 ? parseFloat(b4b_penghasilan_bruto_1721.replace(/,/g, '')) : 0;
+    retVal_b4b_jumlahpajak_1721 =b4b_jumlahpajak_1721 ? parseFloat(b4b_jumlahpajak_1721.replace(/,/g, '')) : 0;
+
+    const b4c_penerima_penghasilan_1721 = $('#b4c_penerima_penghasilan_1721').val();
+    const b4c_penghasilan_bruto_1721 = $('#b4c_penghasilan_bruto_1721').val();
+    const b4c_jumlahpajak_1721 = $('#b4c_jumlahpajak_1721').val();
+    retVal_b4c_penerima_penghasilan_1721 =b4c_penerima_penghasilan_1721 ? parseFloat(b4c_penerima_penghasilan_1721.replace(/,/g, '')) : 0;
+    retVal_b4c_penghasilan_bruto_1721 =b4c_penghasilan_bruto_1721 ? parseFloat(b4c_penghasilan_bruto_1721.replace(/,/g, '')) : 0;
+    retVal_b4c_jumlahpajak_1721 =b4c_jumlahpajak_1721 ? parseFloat(b4c_jumlahpajak_1721.replace(/,/g, '')) : 0;
+
+    const b4d_penerima_penghasilan_1721 = $('#b4d_penerima_penghasilan_1721').val();
+    const b4d_penghasilan_bruto_1721 = $('#b4d_penghasilan_bruto_1721').val();
+    const b4d_jumlahpajak_1721 = $('#b4d_jumlahpajak_1721').val();
+    retVal_b4d_penerima_penghasilan_1721 =b4d_penerima_penghasilan_1721 ? parseFloat(b4d_penerima_penghasilan_1721.replace(/,/g, '')) : 0;
+    retVal_b4d_penghasilan_bruto_1721 =b4d_penghasilan_bruto_1721 ? parseFloat(b4d_penghasilan_bruto_1721.replace(/,/g, '')) : 0;
+    retVal_b4d_jumlahpajak_1721 =b4d_jumlahpajak_1721 ? parseFloat(b4d_jumlahpajak_1721.replace(/,/g, '')) : 0;
+    
+    const b4e_penerima_penghasilan_1721 = $('#b4e_penerima_penghasilan_1721').val();
+    const b4e_penghasilan_bruto_1721 = $('#b4e_penghasilan_bruto_1721').val();
+    const b4e_jumlahpajak_1721 = $('#b4e_jumlahpajak_1721').val();
+    retVal_b4e_penerima_penghasilan_1721 =b4e_penerima_penghasilan_1721 ? parseFloat(b4e_penerima_penghasilan_1721.replace(/,/g, '')) : 0;
+    retVal_b4e_penghasilan_bruto_1721 =b4e_penghasilan_bruto_1721 ? parseFloat(b4e_penghasilan_bruto_1721.replace(/,/g, '')) : 0;
+    retVal_b4e_jumlahpajak_1721 =b4e_jumlahpajak_1721 ? parseFloat(b4e_jumlahpajak_1721.replace(/,/g, '')) : 0;
+
+    const b4f_penerima_penghasilan_1721 = $('#b4f_penerima_penghasilan_1721').val();
+    const b4f_penghasilan_bruto_1721 = $('#b4f_penghasilan_bruto_1721').val();
+    const b4f_jumlahpajak_1721 = $('#b4f_jumlahpajak_1721').val();
+    retVal_b4f_penerima_penghasilan_1721 =b4f_penerima_penghasilan_1721 ? parseFloat(b4f_penerima_penghasilan_1721.replace(/,/g, '')) : 0;
+    retVal_b4f_penghasilan_bruto_1721 =b4f_penghasilan_bruto_1721 ? parseFloat(b4f_penghasilan_bruto_1721.replace(/,/g, '')) : 0;
+    retVal_b4f_jumlahpajak_1721 =b4f_jumlahpajak_1721 ? parseFloat(b4f_jumlahpajak_1721.replace(/,/g, '')) : 0;
+
+    const b5_penerima_penghasilan_1721 = $('#b5_penerima_penghasilan_1721').val();
+    const b5_penghasilan_bruto_1721 = $('#b5_penghasilan_bruto_1721').val();
+    const b5_jumlahpajak_1721 = $('#b5_jumlahpajak_1721').val();
+    retVal_b5_penerima_penghasilan_1721 =b5_penerima_penghasilan_1721 ? parseFloat(b5_penerima_penghasilan_1721.replace(/,/g, '')) : 0;
+    retVal_b5_penghasilan_bruto_1721 =b5_penghasilan_bruto_1721 ? parseFloat(b5_penghasilan_bruto_1721.replace(/,/g, '')) : 0;
+    retVal_b5_jumlahpajak_1721 =b5_jumlahpajak_1721 ? parseFloat(b5_jumlahpajak_1721.replace(/,/g, '')) : 0;
+
+    const b6_penerima_penghasilan_1721 = $('#b6_penerima_penghasilan_1721').val();
+    const b6_penghasilan_bruto_1721 = $('#b6_penghasilan_bruto_1721').val();
+    const b6_jumlahpajak_1721 = $('#b6_jumlahpajak_1721').val();
+    retVal_b6_penerima_penghasilan_1721 =b6_penerima_penghasilan_1721 ? parseFloat(b6_penerima_penghasilan_1721.replace(/,/g, '')) : 0;
+    retVal_b6_penghasilan_bruto_1721 =b6_penghasilan_bruto_1721 ? parseFloat(b6_penghasilan_bruto_1721.replace(/,/g, '')) : 0;
+    retVal_b6_jumlahpajak_1721 =b6_jumlahpajak_1721 ? parseFloat(b6_jumlahpajak_1721.replace(/,/g, '')) : 0;
+
+    const b7_penerima_penghasilan_1721 = $('#b7_penerima_penghasilan_1721').val();
+    const b7_penghasilan_bruto_1721 = $('#b7_penghasilan_bruto_1721').val();
+    const b7_jumlahpajak_1721 = $('#b7_jumlahpajak_1721').val();
+    retVal_b7_penerima_penghasilan_1721 =b7_penerima_penghasilan_1721 ? parseFloat(b7_penerima_penghasilan_1721.replace(/,/g, '')) : 0;
+    retVal_b7_penghasilan_bruto_1721 =b7_penghasilan_bruto_1721 ? parseFloat(b7_penghasilan_bruto_1721.replace(/,/g, '')) : 0;
+    retVal_b7_jumlahpajak_1721 =b7_jumlahpajak_1721 ? parseFloat(b7_jumlahpajak_1721.replace(/,/g, '')) : 0;
+
+    const b8_penerima_penghasilan_1721 = $('#b8_penerima_penghasilan_1721').val();
+    const b8_penghasilan_bruto_1721 = $('#b8_penghasilan_bruto_1721').val();
+    const b8_jumlahpajak_1721 = $('#b8_jumlahpajak_1721').val();
+    retVal_b8_penerima_penghasilan_1721 =b8_penerima_penghasilan_1721 ? parseFloat(b8_penerima_penghasilan_1721.replace(/,/g, '')) : 0;
+    retVal_b8_penghasilan_bruto_1721 =b8_penghasilan_bruto_1721 ? parseFloat(b8_penghasilan_bruto_1721.replace(/,/g, '')) : 0;
+    retVal_b8_jumlahpajak_1721 =b8_jumlahpajak_1721 ? parseFloat(b8_jumlahpajak_1721.replace(/,/g, '')) : 0;
+
+    const b9_penerima_penghasilan_1721 = $('#b9_penerima_penghasilan_1721').val();
+    const b9_penghasilan_bruto_1721 = $('#b9_penghasilan_bruto_1721').val();
+    const b9_jumlahpajak_1721 = $('#b9_jumlahpajak_1721').val();
+    retVal_b9_penerima_penghasilan_1721 =b9_penerima_penghasilan_1721 ? parseFloat(b9_penerima_penghasilan_1721.replace(/,/g, '')) : 0;
+    retVal_b9_penghasilan_bruto_1721 =b9_penghasilan_bruto_1721 ? parseFloat(b9_penghasilan_bruto_1721.replace(/,/g, '')) : 0;
+    retVal_b9_jumlahpajak_1721 =b9_jumlahpajak_1721 ? parseFloat(b9_jumlahpajak_1721.replace(/,/g, '')) : 0;
+
+    const b10_penerima_penghasilan_1721 = $('#b10_penerima_penghasilan_1721').val();
+    const b10_penghasilan_bruto_1721 = $('#b10_penghasilan_bruto_1721').val();
+    const b10_jumlahpajak_1721 = $('#b10_jumlahpajak_1721').val();
+    retVal_b10_penerima_penghasilan_1721 =b10_penerima_penghasilan_1721 ? parseFloat(b10_penerima_penghasilan_1721.replace(/,/g, '')) : 0;
+    retVal_b10_penghasilan_bruto_1721 =b10_penghasilan_bruto_1721 ? parseFloat(b10_penghasilan_bruto_1721.replace(/,/g, '')) : 0;
+    retVal_b10_jumlahpajak_1721 =b10_jumlahpajak_1721 ? parseFloat(b10_jumlahpajak_1721.replace(/,/g, '')) : 0;
+
+    const result_b11_penerima_penghasilan_1721 = document.getElementById('b11_penerima_penghasilan_1721');
+    const jumlahpenerima =retVal_b1_penerima_penghasilan_1721+retVal_b2_penerima_penghasilan_1721+retVal_b3_penerima_penghasilan_1721+retVal_b4a_penerima_penghasilan_1721+retVal_b4b_penerima_penghasilan_1721+retVal_b4c_penerima_penghasilan_1721+retVal_b4d_penerima_penghasilan_1721+retVal_b4e_penerima_penghasilan_1721+retVal_b4f_penerima_penghasilan_1721+retVal_b5_penerima_penghasilan_1721+retVal_b6_penerima_penghasilan_1721+retVal_b7_penerima_penghasilan_1721+retVal_b8_penerima_penghasilan_1721+retVal_b9_penerima_penghasilan_1721+retVal_b10_penerima_penghasilan_1721;
+    result_b11_penerima_penghasilan_1721.value = jumlahpenerima.toLocaleString();
+
+    const result_b11_penghasilan_bruto_1721 = document.getElementById('b11_penghasilan_bruto_1721');
+    const jumlahpenghasilan =retVal_b1_penghasilan_bruto_1721+retVal_b2_penghasilan_bruto_1721+retVal_b3_penghasilan_bruto_1721+retVal_b4a_penghasilan_bruto_1721+retVal_b4b_penghasilan_bruto_1721+retVal_b4c_penghasilan_bruto_1721+retVal_b4d_penghasilan_bruto_1721+retVal_b4e_penghasilan_bruto_1721+retVal_b4f_penghasilan_bruto_1721+retVal_b5_penghasilan_bruto_1721+retVal_b6_penghasilan_bruto_1721+retVal_b7_penghasilan_bruto_1721+retVal_b8_penghasilan_bruto_1721+retVal_b9_penghasilan_bruto_1721+retVal_b10_penghasilan_bruto_1721;
+    result_b11_penghasilan_bruto_1721.value = jumlahpenghasilan.toLocaleString();
+
+    const result_b11_jumlahpajak_1721 = document.getElementById('b11_jumlahpajak_1721');
+    const jumlahpajak =retVal_b1_jumlahpajak_1721+retVal_b2_jumlahpajak_1721+retVal_b3_jumlahpajak_1721+retVal_b4a_jumlahpajak_1721+retVal_b4b_jumlahpajak_1721+retVal_b4c_jumlahpajak_1721+retVal_b4d_jumlahpajak_1721+retVal_b4e_jumlahpajak_1721+retVal_b4f_jumlahpajak_1721+retVal_b5_jumlahpajak_1721+retVal_b6_jumlahpajak_1721+retVal_b7_jumlahpajak_1721+retVal_b8_jumlahpajak_1721+retVal_b9_jumlahpajak_1721+retVal_b10_jumlahpajak_1721;
+    result_b11_jumlahpajak_1721.value = jumlahpajak.toLocaleString();
+
+    const c1_penerima_penghasilan_1721 = $('#c1_penerima_penghasilan_1721').val();
+    const c1_penghasilan_bruto_1721 = $('#c1_penghasilan_bruto_1721').val();
+    const c1_jumlahpajak_1721 = $('#c1_jumlahpajak_1721').val();
+    retVal_c1_penerima_penghasilan_1721 =c1_penerima_penghasilan_1721 ? parseFloat(c1_penerima_penghasilan_1721.replace(/,/g, '')) : 0;
+    retVal_c1_penghasilan_bruto_1721 =c1_penghasilan_bruto_1721 ? parseFloat(c1_penghasilan_bruto_1721.replace(/,/g, '')) : 0;
+    retVal_c1_jumlahpajak_1721 =c1_jumlahpajak_1721 ? parseFloat(c1_jumlahpajak_1721.replace(/,/g, '')) : 0;
+
+    const c2_penerima_penghasilan_1721 = $('#c2_penerima_penghasilan_1721').val();
+    const c2_penghasilan_bruto_1721 = $('#c2_penghasilan_bruto_1721').val();
+    const c2_jumlahpajak_1721 = $('#c2_jumlahpajak_1721').val();
+    retVal_c2_penerima_penghasilan_1721 =c2_penerima_penghasilan_1721 ? parseFloat(c2_penerima_penghasilan_1721.replace(/,/g, '')) : 0;
+    retVal_c2_penghasilan_bruto_1721 =c2_penghasilan_bruto_1721 ? parseFloat(c2_penghasilan_bruto_1721.replace(/,/g, '')) : 0;
+    retVal_c2_jumlahpajak_1721 =c2_jumlahpajak_1721 ? parseFloat(c2_jumlahpajak_1721.replace(/,/g, '')) : 0;
+
+    const c3_penerima_penghasilan_1721 = $('#c3_penerima_penghasilan_1721').val();
+    const c3_penghasilan_bruto_1721 = $('#c3_penghasilan_bruto_1721').val();
+    const c3_jumlahpajak_1721 = $('#c3_jumlahpajak_1721').val();
+    retVal_c3_penerima_penghasilan_1721 =c3_penerima_penghasilan_1721 ? parseFloat(c3_penerima_penghasilan_1721.replace(/,/g, '')) : 0;
+    retVal_c3_penghasilan_bruto_1721 =c3_penghasilan_bruto_1721 ? parseFloat(c3_penghasilan_bruto_1721.replace(/,/g, '')) : 0;
+    retVal_c3_jumlahpajak_1721 =c3_jumlahpajak_1721 ? parseFloat(c3_jumlahpajak_1721.replace(/,/g, '')) : 0;
+
+    const c4_penerima_penghasilan_1721 = $('#c4_penerima_penghasilan_1721').val();
+    const c4_penghasilan_bruto_1721 = $('#c4_penghasilan_bruto_1721').val();
+    const c4_jumlahpajak_1721 = $('#c4_jumlahpajak_1721').val();
+    retVal_c4_penerima_penghasilan_1721 =c4_penerima_penghasilan_1721 ? parseFloat(c4_penerima_penghasilan_1721.replace(/,/g, '')) : 0;
+    retVal_c4_penghasilan_bruto_1721 =c4_penghasilan_bruto_1721 ? parseFloat(c4_penghasilan_bruto_1721.replace(/,/g, '')) : 0;
+    retVal_c4_jumlahpajak_1721 =c4_jumlahpajak_1721 ? parseFloat(c4_jumlahpajak_1721.replace(/,/g, '')) : 0;
+
+    const result_jumlah_penerima_penghasilan_1721 = document.getElementById('jumlah_penerima_penghasilan_1721');
+    const jumlahpenerimac =retVal_c1_penerima_penghasilan_1721+retVal_c2_penerima_penghasilan_1721+retVal_c3_penerima_penghasilan_1721+retVal_c4_penerima_penghasilan_1721;
+    result_jumlah_penerima_penghasilan_1721.value = jumlahpenerimac.toLocaleString();
+
+    const result_jumlah_penghasilan_bruto_1721 = document.getElementById('jumlah_penghasilan_bruto_1721');
+    const jumlahpenghasilanc =retVal_c1_penghasilan_bruto_1721+retVal_c2_penghasilan_bruto_1721+retVal_c3_penghasilan_bruto_1721+retVal_c4_penghasilan_bruto_1721;
+    result_jumlah_penghasilan_bruto_1721.value = jumlahpenghasilanc.toLocaleString();
+
+    const result_jumlah_jumlahpajak_1721 = document.getElementById('jumlah_jumlahpajak_1721');
+    const jumlahpajakc =retVal_c1_jumlahpajak_1721+retVal_c2_jumlahpajak_1721+retVal_c3_jumlahpajak_1721+retVal_c4_jumlahpajak_1721;
+    result_jumlah_jumlahpajak_1721.value = jumlahpajakc.toLocaleString();
+
     const pokokpajak_1721 = $('#pokokpajak_1721').val();
     const kelebihanpenyetor_1721 = $('#kelebihanpenyetor_1721').val();
     const resultjumlah_1721 = document.getElementById('jumlah_1721');
@@ -952,7 +1109,8 @@ function sprator(x) {
     retValtotal_jumlah_pajak1721=total_jumlah_pajak1721 ? parseFloat(total_jumlah_pajak1721.replace(/,/g, '')) : 0;
     const resultkuranglebihsetor_1721 = document.getElementById('kuranglebihsetor_1721');
     
-    const hasilsetor =retValtotal_jumlah_pajak1721-hasilpokokpajak;
+    const hasilsetor =jumlahpajak-hasilpokokpajak;
+    console.log(hasilsetor);
     if(hasilsetor<0){
         resultkuranglebihsetor_1721.value =0;
     }else{
@@ -1108,6 +1266,7 @@ function sprator(x) {
     }else{
         resultpkp_formulirA2_1721.value = jumlahpengkenapajak.toLocaleString();
     }
+
     return retVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 

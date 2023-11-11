@@ -7,18 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\User;
 
-class Pphfinal extends Model
+class NamaKelas extends Model
 {
     use HasFactory,SoftDeletes;
-    public $table = 'tx_pph_final';
+    public $table = 'tx_nama_kelas';
     protected $fillable = [
         'id',
-        'transaksi',
-        'kode_objek_pajak',
-        'bruto',
-        'tarif',
-        'potongan_pph',
-        'nama_dosen',
+        'nama_kelas',
         'attribute1',
         'attribute2',
         'attribute3',

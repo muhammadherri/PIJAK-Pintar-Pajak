@@ -711,6 +711,8 @@ document.addEventListener('DOMContentLoaded', function() {
 function sprator(x) {
     //remove commas
     retVal = x ? parseFloat(x.replace(/,/g, '')) : 0;
+
+    
     const digunggung_dpp_1111_AB = $('#digunggung_dpp_1111_AB').val();
     const resultdigunggung_ppn_1111_AB = document.getElementById('digunggung_ppn_1111_AB');
     retValdgg_1111_AB =digunggung_dpp_1111_AB ? parseFloat(digunggung_dpp_1111_AB.replace(/,/g, '')) : 0;
@@ -879,6 +881,7 @@ function sprator(x) {
     }else{
         resultlima_e_ppn_terutang_1111.value = hasilVE.toLocaleString();
     }
+
     var hidden_lebih_bayar = document.getElementById("hidden_lebih_bayar");
 
     if (hasila2_dpp_1111 > retValdua_c_pajak_keluaran_ppn_1111) {

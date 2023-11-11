@@ -105,16 +105,20 @@ class AllInController extends Controller
         return json_encode($response);
     }
     public function listMahasiswa(Request $request){
-        $data = User::where('status',null)->get();
+        $kodedosen=Auth::user()->id;
+        $data = User::where('status',null)->where('dosen_pembimbing',$kodedosen)->get();
+
         $data_arr = array();
         foreach ($data as $record) {
             $data_arr[] = array(
                 "id" => $record->id,
+                "kelas" => $record->namakelas->nama_kelas,
                 "name" => $record->name,
                 "email" => $record->email,
                 "created_at" => $record->updated_at->format('d-M-Y'),
             );
         }
+        // dd($data_arr);
         $response = array(
             "aaData" => $data_arr,
         );
@@ -123,12 +127,12 @@ class AllInController extends Controller
     public function listInvoice(Request $request){
         $id=Auth::user()->id;
         // $invcount = Invoice::where('attribute1',$id)->sum('total');
-        if(Auth::user()->status==1){
+        // if(Auth::user()->status==1){
 
-            $inv = Invoice::orderBy('id','desc')->get();
-        }else{
+        //     $inv = Invoice::orderBy('id','desc')->get();
+        // }else{
             $inv = Invoice::orderBy('id','desc')->where('attribute1',$id)->get();
-        }
+        // }
         $data_arr = array();
         // dd($inv);
         foreach ($inv as $record) {
@@ -156,11 +160,11 @@ class AllInController extends Controller
         // dd('masuk');
         $id=Auth::user()->id;
         // $invcount = Invoice::where('attribute1',$id)->sum('total');
-        if(Auth::user()->status==1){
-            $bupot = Ebupot::whereNotNull('trx')->orderBy('id','desc')->get();
-        }else{
+        // if(Auth::user()->status==1){
+        //     $bupot = Ebupot::whereNotNull('trx')->orderBy('id','desc')->get();
+        // }else{
             $bupot = Ebupot::whereNotNull('trx')->orderBy('id','desc')->where('attribute1',$id)->get();
-        }
+        // }
         $data_arr = array();
         // dd($inv);
         foreach ($bupot as $record) {
@@ -190,11 +194,11 @@ class AllInController extends Controller
     }
     public function listPph(Request $request){
         $id=Auth::user()->id;
-        if(Auth::user()->status==1){
-            $pph21 = TransaksiPphDuapuluhSatu::orderBy('id','desc')->get();
-        }else{
+        // if(Auth::user()->status==1){
+        //     $pph21 = TransaksiPphDuapuluhSatu::orderBy('id','desc')->where('attribute3',$id)->get();
+        // }else{
             $pph21 = TransaksiPphDuapuluhSatu::orderBy('id','desc')->where('attribute1',$id)->get();
-        }
+        // }
         $data_arr = array();
         foreach ($pph21 as $record) {
             $data_arr[] = array(
@@ -225,11 +229,11 @@ class AllInController extends Controller
     public function listFiskal(Request $request){
         $id=Auth::user()->id;
         // dd($request);
-        if(Auth::user()->status==1){
-            $fiskal = JurnalManual::where('attribute3',NULL)->get();
-        }else{
+        // if(Auth::user()->status==1){
+        //     $fiskal = JurnalManual::where('attribute3',NULL)->get();
+        // }else{
             $fiskal = JurnalManual::where('attribute3',NULL)->where('attribute1',$id)->get();
-        }
+        // }
         // dd($pph21);
         $data_arr = array();
         foreach ($fiskal as $record) {
@@ -254,11 +258,11 @@ class AllInController extends Controller
     public function listLatihan(Request $request){
         $id=Auth::user()->id;
         // dd($request);
-        if(Auth::user()->status==1){
-            $fiskal = JurnalManual::where('attribute3','1')->get();
-        }else{
+        // if(Auth::user()->status==1){
+        //     $fiskal = JurnalManual::where('attribute3','1')->get();
+        // }else{
             $fiskal = JurnalManual::where('attribute3','1')->where('attribute1',$id)->get();
-        }
+        // }
         // dd($pph21);
         $data_arr = array();
         foreach ($fiskal as $record) {
@@ -282,13 +286,12 @@ class AllInController extends Controller
     }
     public function listPrepopulate(Request $request){
         $id=Auth::user()->id;
-        // $invcount = Invoice::where('attribute1',$id)->sum('total');
-        if(Auth::user()->status==1){
+        // if(Auth::user()->status==1){
 
-            $ppr = Prepopulate::get();
-        }else{
+        //     $ppr = Prepopulate::get();
+        // }else{
             $ppr = Prepopulate::where('attribute1',$id)->get();
-        }
+        // }
         $data_arr = array();
         // dd($inv);
         foreach ($ppr as $record) {
@@ -315,12 +318,11 @@ class AllInController extends Controller
     }
     public function listBilling(Request $request){
         $id=Auth::user()->id;
-        // $invcount = Invoice::where('attribute1',$id)->sum('total');
-        if(Auth::user()->status==1){
-            $billing = Billing::get();
-        }else{
+        // if(Auth::user()->status==1){
+        //     $billing = Billing::get();
+        // }else{
             $billing = Billing::where('attribute1',$id)->get();
-        }
+        // }
         $data_arr = array();
         // dd($inv);
         foreach ($billing as $record) {
@@ -346,12 +348,11 @@ class AllInController extends Controller
     }
     public function listHutangppn(Request $request){
         $id=Auth::user()->id;
-        // $invcount = Invoice::where('attribute1',$id)->sum('total');
-        if(Auth::user()->status==1){
-            $hutangppn = HutangPpn::get();
-        }else{
+        // if(Auth::user()->status==1){
+        //     $hutangppn = HutangPpn::get();
+        // }else{
             $hutangppn = HutangPpn::where('attribute1',$id)->get();
-        }
+        // }
         $data_arr = array();
         // dd($inv);
         foreach ($hutangppn as $record) {
@@ -450,11 +451,11 @@ class AllInController extends Controller
     }
     public function listSpt1771(Request $request){
         $id=Auth::user()->id;
-        if(Auth::user()->status==1){
-            $spt = SptTahunan::get();
-        }else{
+        // if(Auth::user()->status==1){
+        //     $spt = SptTahunan::get();
+        // }else{
             $spt = SptTahunan::where('attribute1',$id)->get();
-        }
+        // }
         $data_arr = array();
         // dd($spt);
         foreach ($spt as $record) {
@@ -481,11 +482,11 @@ class AllInController extends Controller
     public function listSpt1721(Request $request){
         // dd('masauk');
         $id=Auth::user()->id;
-        if(Auth::user()->status==1){
-            $spt = SptMasa::get();
-        }else{
+        // if(Auth::user()->status==1){
+        //     $spt = SptMasa::get();
+        // }else{
             $spt = SptMasa::where('attribute1',$id)->get();
-        }
+        // }
         $data_arr = array();
         // dd($spt);
         foreach ($spt as $record) {
@@ -510,11 +511,11 @@ class AllInController extends Controller
     public function listSptPPN(Request $request){
         // dd('masauk');
         $id=Auth::user()->id;
-        if(Auth::user()->status==1){
-            $spt = SptMasa::get();
-        }else{
+        // if(Auth::user()->status==1){
+        //     $spt = SptMasa::get();
+        // }else{
             $spt = SptMasa::where('attribute1',$id)->get();
-        }
+        // }
         $data_arr = array();
         // dd($spt);
         foreach ($spt as $record) {
@@ -539,11 +540,11 @@ class AllInController extends Controller
     public function listspt1770s(Request $request){
         // dd('masuk');
         $id=Auth::user()->id;
-        if(Auth::user()->status==1){
-            $spt = Spt1770S::get();
-        }else{
+        // if(Auth::user()->status==1){
+        //     $spt = Spt1770S::get();
+        // }else{
             $spt = Spt1770S::where('attribute1',$id)->get();
-        }
+        // }
         $data_arr = array();
         // dd($spt);
         foreach ($spt as $record) {
@@ -569,11 +570,11 @@ class AllInController extends Controller
     public function listspt1770ss(Request $request){
         // dd('masuk');
         $id=Auth::user()->id;
-        if(Auth::user()->status==1){
-            $spt = Spt1770SS::get();
-        }else{
+        // if(Auth::user()->status==1){
+        //     $spt = Spt1770SS::get();
+        // }else{
             $spt = Spt1770SS::where('attribute1',$id)->get();
-        }
+        // }
         $data_arr = array();
         // dd($spt);
         foreach ($spt as $record) {
@@ -1999,11 +2000,11 @@ class AllInController extends Controller
     }
     public function listPphfinal(Request $request){
         $id=Auth::user()->id;
-        if(Auth::user()->status==1){
-            $pphfinal = Pphfinal::whereNotNull('transaksi')->get();
-        }else{
+        // if(Auth::user()->status==1){
+        //     $pphfinal = Pphfinal::whereNotNull('transaksi')->where('nama_dosen',$id)->get();
+        // }else{
             $pphfinal = Pphfinal::whereNotNull('transaksi')->where('attribute1',$id)->get();
-        }
+        // }
         $data_arr = array();
         foreach ($pphfinal as $record) {
             $data_arr[] = array(
@@ -2026,11 +2027,11 @@ class AllInController extends Controller
     }
     public function listPphtidakfinal(Request $request){
         $id=Auth::user()->id;
-        if(Auth::user()->status==1){
-            $pphfinal = PphTidakFinal::get();
-        }else{
+        // if(Auth::user()->status==1){
+        //     $pphfinal = PphTidakFinal::get();
+        // }else{
             $pphfinal = PphTidakFinal::where('attribute1',$id)->get();
-        }
+        // }
         $data_arr = array();
         foreach ($pphfinal as $record) {
             $data_arr[] = array(

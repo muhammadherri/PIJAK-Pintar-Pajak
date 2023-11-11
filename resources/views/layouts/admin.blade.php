@@ -263,6 +263,7 @@
                             <li><a href="{{ route('jenispph') }}">Jenis PPh</a></li>
                             <li><a href="{{ route('noseri') }}">No Seri</a></li>
                             <li><a href="{{ route('jenis_pajak') }}">Jenis Pajak</a></li>
+                            <li><a href="{{ route('namakelas') }}">Nama Kelas</a></li>
                             {{-- <li><a href="{{ route('penerimapenghasilan') }}">Penerima Penghasilan</a></li> --}}
                         </ul>
 

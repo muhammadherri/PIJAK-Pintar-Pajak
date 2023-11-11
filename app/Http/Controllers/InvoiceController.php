@@ -21,11 +21,11 @@ class InvoiceController extends Controller
     public function index()
     {
         $id=Auth::user()->id;
-        if(Auth::user()->status==1){
-            $invcount = Invoice::sum('ppn');
-        }else{
+        // if(Auth::user()->status==1){
+        //     $invcount = Invoice::sum('ppn');
+        // }else{
             $invcount = Invoice::where('attribute1',$id)->sum('ppn');
-        }
+        // }
         return view('invoice.index',compact('invcount'));
     }
 
@@ -156,7 +156,7 @@ class InvoiceController extends Controller
 
     public function edit($id)
     {
-        dd($id);
+        dd('Hubungi Developer');
     }
 
     public function update(Request $request, $id)

@@ -134,11 +134,11 @@ class EbupotController extends Controller
     public function edit($id)
     {
         $iduser=Auth::user()->id;
-        if(Auth::user()->status==1){
-            $ebupot=Ebupot::where('id',$id)->get()->first();
-        }else{
+        // if(Auth::user()->status==1){
+        //     $ebupot=Ebupot::where('id',$id)->get()->first();
+        // }else{
             $ebupot=Ebupot::where('id',$id)->where('attribute1',$iduser)->get()->first();
-        }
+        // }
         $ebupotline=Ebupotlines::where('ebupot_id',$ebupot->ebupot_id)->get();
         // dd($ebupotline);
         $fasilitas=Fasilitas::all();

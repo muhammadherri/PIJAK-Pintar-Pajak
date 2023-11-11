@@ -106,8 +106,9 @@ class JurnalManualLatihanController extends Controller
      */
     public function edit($id)
     {
+        $iduser=Auth::user()->id;
         $neraca=LatihanKeuangan::whereNot('saldo',0)->get();
-        $jurnalmanual = JurnalManual::where('attribute3',1)->where('id',$id)->get()->first();
+        $jurnalmanual = JurnalManual::where('attribute1',$iduser)->where('attribute3',1)->where('id',$id)->get()->first();
         return view('latihan.edit',compact('jurnalmanual','neraca'));
     }
 

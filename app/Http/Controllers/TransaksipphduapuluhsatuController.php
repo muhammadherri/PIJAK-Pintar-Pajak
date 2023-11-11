@@ -98,7 +98,7 @@ class TransaksipphduapuluhsatuController extends Controller
             'pph21_terutang'=>preg_replace('/[^0-9]/','',$request->pph21terutang),
             'attribute1'=>Auth::user()->id,
             'attribute2'=>NULL,
-            'attribute3'=>NULL,
+            'attribute3'=>Auth::user()->dosen_pembimbing,
             'created_at'=>date('Y-m-d H:i:s'),
         );
         // dd($data);
@@ -146,11 +146,11 @@ class TransaksipphduapuluhsatuController extends Controller
     public function edit($id)
     {
         $iduser=Auth::user()->id;
-        if(Auth::user()->status==1){
-            $pph21 = TransaksiPphDuapuluhSatu::where('id',$id)->get()->first();
-        }else{
+        // if(Auth::user()->status==1){
+        //     $pph21 = TransaksiPphDuapuluhSatu::where('id',$id)->where('attribute3',$iduser)->get()->first();
+        // }else{
             $pph21 = TransaksiPphDuapuluhSatu::where('id',$id)->where('attribute1',$iduser)->get()->first();
-        }        
+        // }        
         $ptkp=Ptkp::all();
         $status_pernikahan=Ptkp::select('status_pernikahan','kode_ptkp')->groupBy('status_pernikahan','kode_ptkp')->get();
         $tanggungan=Ptkp::select('tanggungan')->groupBy('tanggungan')->get();
@@ -164,7 +164,6 @@ class TransaksipphduapuluhsatuController extends Controller
 
     public function update(Request $request, $id)
     {
-        dd('masuk');
             $tes=TransaksiPphDuapuluhSatu::where('id',$id)->update([
                 'status_npwp'=>$request->npwp,
                 'nama_wajib_pajak'=>$request->input_wajib_pajak,

@@ -23,55 +23,55 @@ class PDFController extends Controller
             'title' =>'STRUK BUKTI KODE PEMBAYARAN',
             'image_path'=>public_path('images/direktorat_pajak.png'),
         ];
-        if(Auth::user()->status==1){
-            $billing = Billing::where('kode_billing',$idbilling)->get()->first();
-            if($billing==null){
-                return back()->with('msg', 'Kode Billing Tidak Ditemukan');
-            }
-            // dd($billing->jenis_transaksi);
-            if($billing->jenis_transaksi==1){
-                // dd('masukbupto');
-                $ebupot=Ebupot::where('id',$billing->trx_bupot)->update([
-                    'attribute2'=>Auth::user()->id,
-                    'attribute3'=>2,
-                ]);
-                $billingupdate = Billing::where('kode_billing',$idbilling)->update([
-                    'attribute2'=>Auth::user()->id,
-                    'attribute3'=>1,
-                ]);
-            }elseif($billing->jenis_transaksi==2){
-                // dd('hutang');
-                $ebupot=HutangPpn::where('id',$billing->trx_bupot)->update([
-                    'attribute2'=>Auth::user()->id,
-                    'attribute3'=>2,
-                ]);
-                $billingupdate = Billing::where('kode_billing',$idbilling)->update([
-                    'attribute2'=>Auth::user()->id,
-                    'attribute3'=>1,
-                ]);
-            }elseif($billing->jenis_transaksi==3){
-                $ebupot=Pphfinal::where('id',$billing->trx_bupot)->update([
-                    'attribute2'=>Auth::user()->id,
-                    'attribute3'=>2,
-                ]);
-                $billingupdate = Billing::where('kode_billing',$idbilling)->update([
-                    'attribute2'=>Auth::user()->id,
-                    'attribute3'=>1,
-                ]);
-            }elseif($billing->jenis_transaksi==4){
-                $ebupot=PphTidakFinal::where('id',$billing->trx_bupot)->update([
-                    'attribute2'=>Auth::user()->id,
-                    'attribute3'=>2,
-                ]);
-                $billingupdate = Billing::where('kode_billing',$idbilling)->update([
-                    'attribute2'=>Auth::user()->id,
-                    'attribute3'=>1,
-                ]);
-            }else{
-                return back();
-            }
+        // if(Auth::user()->status==1){
+        //     $billing = Billing::where('kode_billing',$idbilling)->get()->first();
+        //     if($billing==null){
+        //         return back()->with('msg', 'Kode Billing Tidak Ditemukan');
+        //     }
+        //     // dd($billing->jenis_transaksi);
+        //     if($billing->jenis_transaksi==1){
+        //         // dd('masukbupto');
+        //         $ebupot=Ebupot::where('id',$billing->trx_bupot)->update([
+        //             'attribute2'=>Auth::user()->id,
+        //             'attribute3'=>2,
+        //         ]);
+        //         $billingupdate = Billing::where('kode_billing',$idbilling)->update([
+        //             'attribute2'=>Auth::user()->id,
+        //             'attribute3'=>1,
+        //         ]);
+        //     }elseif($billing->jenis_transaksi==2){
+        //         // dd('hutang');
+        //         $ebupot=HutangPpn::where('id',$billing->trx_bupot)->update([
+        //             'attribute2'=>Auth::user()->id,
+        //             'attribute3'=>2,
+        //         ]);
+        //         $billingupdate = Billing::where('kode_billing',$idbilling)->update([
+        //             'attribute2'=>Auth::user()->id,
+        //             'attribute3'=>1,
+        //         ]);
+        //     }elseif($billing->jenis_transaksi==3){
+        //         $ebupot=Pphfinal::where('id',$billing->trx_bupot)->update([
+        //             'attribute2'=>Auth::user()->id,
+        //             'attribute3'=>2,
+        //         ]);
+        //         $billingupdate = Billing::where('kode_billing',$idbilling)->update([
+        //             'attribute2'=>Auth::user()->id,
+        //             'attribute3'=>1,
+        //         ]);
+        //     }elseif($billing->jenis_transaksi==4){
+        //         $ebupot=PphTidakFinal::where('id',$billing->trx_bupot)->update([
+        //             'attribute2'=>Auth::user()->id,
+        //             'attribute3'=>2,
+        //         ]);
+        //         $billingupdate = Billing::where('kode_billing',$idbilling)->update([
+        //             'attribute2'=>Auth::user()->id,
+        //             'attribute3'=>1,
+        //         ]);
+        //     }else{
+        //         return back();
+        //     }
             
-        }else{
+        // }else{
             
             $billing = Billing::where('attribute1',$id)->where('kode_billing',$idbilling)->get()->first();
             if($billing==null){
@@ -118,7 +118,7 @@ class PDFController extends Controller
             }else{
                 return back();
             }
-        }
+        // }
         if($billing==null){
             // Session::flash('success','Data Yang Dicari Salah');
             return back();

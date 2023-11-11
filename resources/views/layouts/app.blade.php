@@ -20,6 +20,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
+                    <img src="{{ asset('images/pijakum.png') }}"width="100" >
                     <img src="images/log.svg" alt="Image" class="img-fluid">
                 </div>
                 @yield('content')

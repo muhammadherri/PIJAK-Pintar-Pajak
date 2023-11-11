@@ -35,6 +35,9 @@ class HomeController extends Controller
     public function index()
     {
         $user=Auth::user();
+        // dd($user->dosen_pembimbing);
+        $namadosen=User::where('id',$user->dosen_pembimbing)->get()->first();
+        
         $id=Auth::user()->id;
         User::where('id',$id)->update([
             'updated_at'=>now(),
@@ -53,6 +56,6 @@ class HomeController extends Controller
         $invcount = Invoice::where('attribute1',$id)->sum('ppn');
 
         // dd($jumlahmahasiswa);
-        return view('home',compact('stp1111','stp1721','stp1771','invcount','jumlahmahasiswa','user','users','pph21','ebupot','billing'))->with('no');
+        return view('home',compact('namadosen','stp1111','stp1721','stp1771','invcount','jumlahmahasiswa','user','users','pph21','ebupot','billing'))->with('no');
     }
 }

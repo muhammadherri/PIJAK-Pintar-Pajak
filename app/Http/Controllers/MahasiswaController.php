@@ -57,6 +57,7 @@ class MahasiswaController extends Controller
      */
     public function show($id)
     {
+        $iduser=Auth::user()->id;
         $hutangppn=HutangPpn::where('attribute1',$id)->get();
         $prepopulate=Prepopulate::where('attribute1',$id)->get();
         $trx=TransaksiPphDuapuluhSatu::where('attribute1',$id)->get();
@@ -66,13 +67,16 @@ class MahasiswaController extends Controller
         $invoice=Invoice::where('attribute1',$id)->get();
         $faktur=Faktur::where('attribute1',$id)->get();
         $billing=Billing::where('attribute1',$id)->get();
-        $user = User::where('id',$id)->get()->first();
-
+        $user = User::where('id',$id)->where('dosen_pembimbing',$iduser)->get()->first();
+        if($user==null){
+            return back();
+        }
         $lastLogin = $user->updated_at;
         $lastLoginTime = Carbon::createFromFormat('Y-m-d H:i:s',$lastLogin);
         $now = Carbon::now();
         $timeDifferent = $now->diffForHumans($lastLoginTime);
         // dd($user);
+       
         if(Auth::user()->status==1){
             return view('mahasiswa.show',compact('hutangppn','prepopulate','faktur','invoice','pphtidakfinal','pphfinal','timeDifferent','user','trx','ebupot','billing'))->with('no',1);
         }else{

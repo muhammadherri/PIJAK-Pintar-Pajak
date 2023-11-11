@@ -93,8 +93,9 @@ class JurnalManualController extends Controller
      */
     public function edit($id)
     {
+        $iduser=Auth::user()->id;
         $neraca=Neraca::whereNot('saldo',0)->get();
-        $jurnalmanual = JurnalManual::where('attribute3',NULL)->where('id',$id)->get()->first();
+        $jurnalmanual = JurnalManual::where('attribute1',$iduser)->where('attribute3',NULL)->where('id',$id)->get()->first();
         return view('jurnalmanual.edit',compact('jurnalmanual','neraca'));
     }
 

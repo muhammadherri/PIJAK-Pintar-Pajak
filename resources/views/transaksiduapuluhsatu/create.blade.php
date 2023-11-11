@@ -52,9 +52,9 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">No NPWP</label>
                                             <div class="col-sm-9">
-                                                <input required autocomplete="off" id="no_npwp" name="no_npwp" type="number"
+                                                <input required autocomplete="off" id="no_npwp" name="no_npwp" type="text"
                                                     class="form-control" placeholder="Masukkan Nomor NPWP">
-                                                    <span id="errorText" style="color: red;"></span>
+                                                    {{-- <span id="errorText" style="color: red;"></span> --}}
                                             </div>
                                         </div>
 
@@ -482,18 +482,18 @@
         return retVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
     document.addEventListener('DOMContentLoaded', function() {
-        const inputElement = document.getElementById('no_npwp');
-        const errorText = document.getElementById('errorText');
-        inputElement.addEventListener('input',function(){
-            const inputValue = inputElement.value;
+        // const inputElement = document.getElementById('no_npwp');
+        // const errorText = document.getElementById('errorText');
+        // inputElement.addEventListener('input',function(){
+        //     const inputValue = inputElement.value;
             
-            if(inputValue.length > 15){
-                inputElement.value = inputValue.slice(0,15);
-                errorText.textContent = 'Maksimal 15 digit';
-            }else{
-                errorText.textContent = '';
-            }
-        })
+        //     if(inputValue.length > 15){
+        //         inputElement.value = inputValue.slice(0,15);
+        //         errorText.textContent = 'Maksimal 15 digit';
+        //     }else{
+        //         errorText.textContent = '';
+        //     }
+        // })
     });
     // document.addEventListener('DOMContentLoaded', function() {
         

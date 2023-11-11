@@ -23,13 +23,13 @@ class BillingController extends Controller
     public function index()
     {
         $id=Auth::user()->id;
-        if(Auth::user()->status==1){
+        // if(Auth::user()->status==1){
 
-            $billing=Billing::get();
-        }else{
+        //     $billing=Billing::get();
+        // }else{
             $billing=Billing::where('attribute1',$id)->get();
 
-        }
+        // }
         // dd($billing);
         return view('billing.index',compact('billing'))->with('no',1);
     }

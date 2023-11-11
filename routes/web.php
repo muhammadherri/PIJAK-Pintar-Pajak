@@ -14,6 +14,7 @@ Route::get('/adminregister/create', [App\Http\Controllers\AdminRegisterControlle
 Route::post('/adminregister/store', [App\Http\Controllers\AdminRegisterController::class, 'store'])->name('adminregister/store');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('');
+Route::get('/registers', [App\Http\Controllers\RegisterNewController::class, 'create'])->name('registers');
 // transaksipph21
 Route::get('/transaksipph21', [App\Http\Controllers\TransaksipphduapuluhsatuController::class, 'index'])->name('transaksipph21');
 Route::get('/transaksipph21/create', [App\Http\Controllers\TransaksipphduapuluhsatuController::class, 'create'])->name('transaksipph21/create');
@@ -196,6 +197,17 @@ Route::get('/prepopulates/{id}/edit', [App\Http\Controllers\PrepopulateControlle
 Route::put('/prepopulates/{id}', [App\Http\Controllers\PrepopulateController::class, 'update'])->name('prepopulates/update');
 // prepopulate
 
+// kelas
+Route::get('/namakelas', [App\Http\Controllers\NamaKelasController::class, 'index'])->name('namakelas');
+Route::get('/namakelas/create', [App\Http\Controllers\NamaKelasController::class, 'create'])->name('namakelas/create');
+Route::post('/namakelas/store', [App\Http\Controllers\NamaKelasController::class, 'store'])->name('namakelas/store');
+
+Route::get('/namakelas/{id}/destroy', [App\Http\Controllers\NamaKelasController::class, 'destroy'])->name('namakelas/destroy');
+Route::delete('/namakelas/{id}', [App\Http\Controllers\NamaKelasController::class, 'destroy']);
+Route::get('/namakelas/{id}/show', [App\Http\Controllers\NamaKelasController::class, 'show'])->name('namakelas/show');
+Route::get('/namakelas/{id}/edit', [App\Http\Controllers\NamaKelasController::class, 'edit'])->name('namakelas/edit');
+Route::put('/namakelas/{id}', [App\Http\Controllers\NamaKelasController::class, 'update'])->name('namakelas/update');
+// kelas
 // listmahasiswa
 Route::get('/mahasiswa/{id}/show', [App\Http\Controllers\MahasiswaController::class, 'show'])->name('mahasiswa/show');
 // listmahasiswa

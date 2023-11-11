@@ -78,11 +78,11 @@ class PphTidakFinalController extends Controller
     public function edit($id)
     {
         $iduser=Auth::user()->id;
-        if(Auth::user()->status==1){
-            $pphtidakfinal=PphTidakFinal::where('id',$id)->get()->first();
-        }else{
+        // if(Auth::user()->status==1){
+        //     $pphtidakfinal=PphTidakFinal::where('id',$id)->get()->first();
+        // }else{
             $pphtidakfinal=PphTidakFinal::where('attribute1',$iduser)->where('id',$id)->get()->first();
-        }
+        // }
 
         if($pphtidakfinal==null){
             return back();

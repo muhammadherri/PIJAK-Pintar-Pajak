@@ -14,7 +14,7 @@
                     <div class="text-center">
                         <div class="row">
                             <div class="col">
-                                <h6 class="m-b-0">{{$user->nama_lengkap}}-{{$user->kelas}}</h6><span class="badge badge-primary">Mahasiswa</span>
+                                <h6 class="m-b-0">{{$user->nama_lengkap}}-{{$user->namakelas->nama_kelas}}</h6><span class="badge badge-primary">Mahasiswa</span>
                             </div>
                             <div class="col">
                                 <h6 class="m-b-0">{{$user->name}} - {{$user->email}}</h6><span class="badge badge-primary">Nomor Induk Mahasiswa</span>
