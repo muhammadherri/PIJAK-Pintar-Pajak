@@ -112,57 +112,57 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };    
 
-    const inputElementI = document.getElementById('npwp_1771i');
-    const errorTextI = document.getElementById('errorNpwp_1771i');
-    inputElementI.addEventListener('input', function() {
-        const inputValue = inputElementI.value;
+    // const inputElementI = document.getElementById('npwp_1771i');
+    // const errorTextI = document.getElementById('errorNpwp_1771i');
+    // inputElementI.addEventListener('input', function() {
+    //     const inputValue = inputElementI.value;
 
-        if (inputValue.length > 15) {
-            inputElementI.value = inputValue.slice(0, 15);
-            errorTextI.textContent = 'Maksimal 15 digit';
-        } else {
-            errorTextI.textContent = '';
-        }
-    });
+    //     if (inputValue.length > 15) {
+    //         inputElementI.value = inputValue.slice(0, 15);
+    //         errorTextI.textContent = 'Maksimal 15 digit';
+    //     } else {
+    //         errorTextI.textContent = '';
+    //     }
+    // });
 
-    const nama_npwpInputI = document.getElementById('nama_npwp_1771i');
-    const errornamaNpwpTextI = document.getElementById('errornamaNpwp_1771i');
-    nama_npwpInputI.addEventListener('input', function() {
-        const inputValue = nama_npwpInputI.value;
+    // const nama_npwpInputI = document.getElementById('nama_npwp_1771i');
+    // const errornamaNpwpTextI = document.getElementById('errornamaNpwp_1771i');
+    // nama_npwpInputI.addEventListener('input', function() {
+    //     const inputValue = nama_npwpInputI.value;
 
-        if (inputValue.length > 30) {
-            nama_npwpInputI.value = inputValue.slice(0, 30);
-            errornamaNpwpTextI.textContent = 'Maksimal 30 digit';
-        } else {
-            errornamaNpwpTextI.textContent = '';
-        }
-    });
+    //     if (inputValue.length > 30) {
+    //         nama_npwpInputI.value = inputValue.slice(0, 30);
+    //         errornamaNpwpTextI.textContent = 'Maksimal 30 digit';
+    //     } else {
+    //         errornamaNpwpTextI.textContent = '';
+    //     }
+    // });
     // 1771 I
     // 1771 II
-    const nama_npwp_1771IIInput = document.getElementById('nama_npwp_1771II');
-    const errornamaNpwp_1771IIText = document.getElementById('errornamaNpwp_1771II');
-    nama_npwp_1771IIInput.addEventListener('input', function() {
-        const inputValue = nama_npwp_1771IIInput.value;
+    // const nama_npwp_1771IIInput = document.getElementById('nama_npwp_1771II');
+    // const errornamaNpwp_1771IIText = document.getElementById('errornamaNpwp_1771II');
+    // nama_npwp_1771IIInput.addEventListener('input', function() {
+    //     const inputValue = nama_npwp_1771IIInput.value;
 
-        if (inputValue.length > 30) {
-            nama_npwp_1771IIInput.value = inputValue.slice(0, 30);
-            errornamaNpwp_1771IIText.textContent = 'Maksimal 30 digit';
-        } else {
-            errornamaNpwp_1771IIText.textContent = '';
-        }
-    });
-    const npwp_1771IIInput = document.getElementById('npwp_1771II');
-    const errornpwp_1771IIText = document.getElementById('errornpwp_1771II');
-    npwp_1771IIInput.addEventListener('input', function() {
-        const inputValue = npwp_1771IIInput.value;
+    //     if (inputValue.length > 30) {
+    //         nama_npwp_1771IIInput.value = inputValue.slice(0, 30);
+    //         errornamaNpwp_1771IIText.textContent = 'Maksimal 30 digit';
+    //     } else {
+    //         errornamaNpwp_1771IIText.textContent = '';
+    //     }
+    // });
+    // const npwp_1771IIInput = document.getElementById('npwp_1771II');
+    // const errornpwp_1771IIText = document.getElementById('errornpwp_1771II');
+    // npwp_1771IIInput.addEventListener('input', function() {
+    //     const inputValue = npwp_1771IIInput.value;
 
-        if (inputValue.length > 15) {
-            npwp_1771IIInput.value = inputValue.slice(0, 15);
-            errornpwp_1771IIText.textContent = 'Maksimal 15 digit';
-        } else {
-            errornpwp_1771IIText.textContent = '';
-        }
-    });
+    //     if (inputValue.length > 15) {
+    //         npwp_1771IIInput.value = inputValue.slice(0, 15);
+    //         errornpwp_1771IIText.textContent = 'Maksimal 15 digit';
+    //     } else {
+    //         errornpwp_1771IIText.textContent = '';
+    //     }
+    // });
 
     // const tablelist_1771II = document.querySelector('#list_1771II tbody');
     // const addBtnadd1771ii = document.querySelector('#btn-add1771ii');
@@ -385,56 +385,56 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    const nama_npwp_1771IIIInput = document.getElementById('nama_npwp_1771III');
-    const errornamaNpwp_1771IIIText = document.getElementById('errornamaNpwp_1771III');
-    nama_npwp_1771IIIInput.addEventListener('input', function() {
-        const inputValue = nama_npwp_1771IIIInput.value;
+    // const nama_npwp_1771IIIInput = document.getElementById('nama_npwp_1771III');
+    // const errornamaNpwp_1771IIIText = document.getElementById('errornamaNpwp_1771III');
+    // nama_npwp_1771IIIInput.addEventListener('input', function() {
+    //     const inputValue = nama_npwp_1771IIIInput.value;
 
-        if (inputValue.length > 30) {
-            nama_npwp_1771IIIInput.value = inputValue.slice(0, 30);
-            errornamaNpwp_1771IIIText.textContent = 'Maksimal 30 digit';
-        } else {
-            errornamaNpwp_1771IIIText.textContent = '';
-        }
-    });
-    const npwp_1771IIIInput = document.getElementById('npwp_1771III');
-    const errornpwp_1771IIIText = document.getElementById('errornpwp_1771III');
-    npwp_1771IIIInput.addEventListener('input', function() {
-        const inputValue = npwp_1771IIIInput.value;
+    //     if (inputValue.length > 30) {
+    //         nama_npwp_1771IIIInput.value = inputValue.slice(0, 30);
+    //         errornamaNpwp_1771IIIText.textContent = 'Maksimal 30 digit';
+    //     } else {
+    //         errornamaNpwp_1771IIIText.textContent = '';
+    //     }
+    // });
+    // const npwp_1771IIIInput = document.getElementById('npwp_1771III');
+    // const errornpwp_1771IIIText = document.getElementById('errornpwp_1771III');
+    // npwp_1771IIIInput.addEventListener('input', function() {
+    //     const inputValue = npwp_1771IIIInput.value;
 
-        if (inputValue.length > 15) {
-            npwp_1771IIIInput.value = inputValue.slice(0, 15);
-            errornpwp_1771IIIText.textContent = 'Maksimal 15 digit';
-        } else {
-            errornpwp_1771IIIText.textContent = '';
-        }
-    });
+    //     if (inputValue.length > 15) {
+    //         npwp_1771IIIInput.value = inputValue.slice(0, 15);
+    //         errornpwp_1771IIIText.textContent = 'Maksimal 15 digit';
+    //     } else {
+    //         errornpwp_1771IIIText.textContent = '';
+    //     }
+    // });
 // 1771 III
 // 1771 IV
-const nama_npwp_1771IVInput = document.getElementById('nama_npwp_1771IV');
-const errornamaNpwp_1771IVText = document.getElementById('errornamaNpwp_1771IV');
-nama_npwp_1771IVInput.addEventListener('input', function() {
-    const inputValue = nama_npwp_1771IVInput.value;
+    // const nama_npwp_1771IVInput = document.getElementById('nama_npwp_1771IV');
+    // const errornamaNpwp_1771IVText = document.getElementById('errornamaNpwp_1771IV');
+    // nama_npwp_1771IVInput.addEventListener('input', function() {
+    //     const inputValue = nama_npwp_1771IVInput.value;
 
-    if (inputValue.length > 30) {
-        nama_npwp_1771IVInput.value = inputValue.slice(0, 30);
-        errornamaNpwp_1771IVText.textContent = 'Maksimal 30 digit';
-    } else {
-        errornamaNpwp_1771IVText.textContent = '';
-    }
-});
-const npwp_1771IVInput = document.getElementById('npwp_1771IV');
-const errornpwp_1771IVText = document.getElementById('errornpwp_1771IV');
-npwp_1771IVInput.addEventListener('input', function() {
-    const inputValue = npwp_1771IVInput.value;
+    //     if (inputValue.length > 30) {
+    //         nama_npwp_1771IVInput.value = inputValue.slice(0, 30);
+    //         errornamaNpwp_1771IVText.textContent = 'Maksimal 30 digit';
+    //     } else {
+    //         errornamaNpwp_1771IVText.textContent = '';
+    //     }
+    // });
+    // const npwp_1771IVInput = document.getElementById('npwp_1771IV');
+    // const errornpwp_1771IVText = document.getElementById('errornpwp_1771IV');
+    // npwp_1771IVInput.addEventListener('input', function() {
+    //     const inputValue = npwp_1771IVInput.value;
 
-    if (inputValue.length > 15) {
-        npwp_1771IVInput.value = inputValue.slice(0, 15);
-        errornpwp_1771IVText.textContent = 'Maksimal 15 digit';
-    } else {
-        errornpwp_1771IVText.textContent = '';
-    }
-});
+    //     if (inputValue.length > 15) {
+    //         npwp_1771IVInput.value = inputValue.slice(0, 15);
+    //         errornpwp_1771IVText.textContent = 'Maksimal 15 digit';
+    //     } else {
+    //         errornpwp_1771IVText.textContent = '';
+    //     }
+    // });
 
 // const tablelist_1771IV = document.querySelector('#list_1771IV tbody');
 // const addBtnadd1771iva = document.querySelector('#btn-add1771iva');
@@ -597,373 +597,373 @@ npwp_1771IVInput.addEventListener('input', function() {
 // });
 // 1771 IV
 // 1771 V
-const nama_npwp_1771VInput = document.getElementById('nama_npwp_1771V');
-const errornamaNpwp_1771VText = document.getElementById('errornamaNpwp_1771V');
-nama_npwp_1771VInput.addEventListener('input', function() {
-    const inputValue = nama_npwp_1771VInput.value;
+    // const nama_npwp_1771VInput = document.getElementById('nama_npwp_1771V');
+    // const errornamaNpwp_1771VText = document.getElementById('errornamaNpwp_1771V');
+    // nama_npwp_1771VInput.addEventListener('input', function() {
+    //     const inputValue = nama_npwp_1771VInput.value;
 
-    if (inputValue.length > 30) {
-        nama_npwp_1771VInput.value = inputValue.slice(0, 30);
-        errornamaNpwp_1771VText.textContent = 'Maksimal 30 digit';
-    } else {
-        errornamaNpwp_1771VText.textContent = '';
-    }
-});
-const npwp_1771VInput = document.getElementById('npwp_1771V');
-const errornpwp_1771VText = document.getElementById('errornpwp_1771V');
-npwp_1771VInput.addEventListener('input', function() {
-    const inputValue = npwp_1771VInput.value;
+    //     if (inputValue.length > 30) {
+    //         nama_npwp_1771VInput.value = inputValue.slice(0, 30);
+    //         errornamaNpwp_1771VText.textContent = 'Maksimal 30 digit';
+    //     } else {
+    //         errornamaNpwp_1771VText.textContent = '';
+    //     }
+    // });
+    // const npwp_1771VInput = document.getElementById('npwp_1771V');
+    // const errornpwp_1771VText = document.getElementById('errornpwp_1771V');
+    // npwp_1771VInput.addEventListener('input', function() {
+    //     const inputValue = npwp_1771VInput.value;
 
-    if (inputValue.length > 15) {
-        npwp_1771VInput.value = inputValue.slice(0, 15);
-        errornpwp_1771VText.textContent = 'Maksimal 15 digit';
-    } else {
-        errornpwp_1771VText.textContent = '';
-    }
-});
-const tablelist1771V = document.querySelector('#list_1771V tbody');
-const addBtnaddlist1771V = document.querySelector('#btn-add1771V');
-addBtnaddlist1771V.addEventListener('click', function() {
-    const newRow = `
-    <tr>
-        <td width="auto" class="text-center">
-            <input required autocomplete="off"
-                type="text"
-                name="pemegangsh_nama_1771V[]"
-                id="pemegangsh_nama_1771V[]" min="0"
-                class="form-control" />
-        </td>
-        <td class="text-center">
-            <input required autocomplete="off"
-                type="text"
-                name="pemegangsh_alamat_nama_1771V[]"
-                id="pemegangsh_alamat_nama_1771V[]"
-                min="0" class="form-control" />
-        </td>
-        <td class="text-center">
-            <input required autocomplete="off"
-                type="text"
-                name="pemegangsh_npwp_1771V[]"
-                id="pemegangsh_npwp_1771V[]" min="0"
-                class="form-control" />
-        </td>
-        <td class="text-center">
-            <input required autocomplete="off"
-                type="text"
-                onkeyup="this.value=sprator(this.value);"
-                name="pemegangsh_modalsetor_1771V[]"
-                id="pemegangsh_modalsetor_1771V[]"
-                min="0"
-                class="form-control submodalsetor1771v_a" />
-        </td>
-        <td class="text-center">
-            <input required autocomplete="off"
-                onkeyup="this.value=sprator(this.value);"
-                type="text"
-                name="pemegangsh_persen_1771V[]"
-                id="pemegangsh_persen_1771V[]"
-                min="0" class="form-control" />
-        </td>
-        <td class="text-center">
-            <input required autocomplete="off"
-                onkeyup="this.value=sprator(this.value);"
-                type="text"
-                name="pemegangsh_dividen_1771V[]"
-                id="pemegangsh_dividen_1771V[]"
-                min="0" class="form-control subdividen177v_a" />
-        </td>
-        <td><button type="button" class="btn btn-danger btn-remove-1771V"><i
-            class="fa fa-trash"></i>
-        </td>
-    </tr>
-    `;
-    tablelist1771V.insertAdjacentHTML('beforeend', newRow);
-});
-tablelist1771V.addEventListener('input', function(event) {
-    const target = event.target;
-    if (target.tagName === 'INPUT' && target.name.startsWith('pemegangsh')) {
-        const row = target.closest('tr');
+    //     if (inputValue.length > 15) {
+    //         npwp_1771VInput.value = inputValue.slice(0, 15);
+    //         errornpwp_1771VText.textContent = 'Maksimal 15 digit';
+    //     } else {
+    //         errornpwp_1771VText.textContent = '';
+    //     }
+    // });
+    const tablelist1771V = document.querySelector('#list_1771V tbody');
+    const addBtnaddlist1771V = document.querySelector('#btn-add1771V');
+    addBtnaddlist1771V.addEventListener('click', function() {
+        const newRow = `
+        <tr>
+            <td width="auto" class="text-center">
+                <input required autocomplete="off"
+                    type="text"
+                    name="pemegangsh_nama_1771V[]"
+                    id="pemegangsh_nama_1771V[]" min="0"
+                    class="form-control" />
+            </td>
+            <td class="text-center">
+                <input required autocomplete="off"
+                    type="text"
+                    name="pemegangsh_alamat_nama_1771V[]"
+                    id="pemegangsh_alamat_nama_1771V[]"
+                    min="0" class="form-control" />
+            </td>
+            <td class="text-center">
+                <input required autocomplete="off"
+                    type="text"
+                    name="pemegangsh_npwp_1771V[]"
+                    id="pemegangsh_npwp_1771V[]" min="0"
+                    class="form-control" />
+            </td>
+            <td class="text-center">
+                <input required autocomplete="off"
+                    type="text"
+                    onkeyup="this.value=sprator(this.value);"
+                    name="pemegangsh_modalsetor_1771V[]"
+                    id="pemegangsh_modalsetor_1771V[]"
+                    min="0"
+                    class="form-control submodalsetor1771v_a" />
+            </td>
+            <td class="text-center">
+                <input required autocomplete="off"
+                    onkeyup="this.value=sprator(this.value);"
+                    type="text"
+                    name="pemegangsh_persen_1771V[]"
+                    id="pemegangsh_persen_1771V[]"
+                    min="0" class="form-control" />
+            </td>
+            <td class="text-center">
+                <input required autocomplete="off"
+                    onkeyup="this.value=sprator(this.value);"
+                    type="text"
+                    name="pemegangsh_dividen_1771V[]"
+                    id="pemegangsh_dividen_1771V[]"
+                    min="0" class="form-control subdividen177v_a" />
+            </td>
+            <td><button type="button" class="btn btn-danger btn-remove-1771V"><i
+                class="fa fa-trash"></i>
+            </td>
+        </tr>
+        `;
+        tablelist1771V.insertAdjacentHTML('beforeend', newRow);
+    });
+    tablelist1771V.addEventListener('input', function(event) {
+        const target = event.target;
+        if (target.tagName === 'INPUT' && target.name.startsWith('pemegangsh')) {
+            const row = target.closest('tr');
 
-        var totalmodalsetor = 0
-        $(".submodalsetor1771v_a").each(function() {
-            totalmodalsetor += +$(this).val().replace(/,/g, '');
-        });
-        var totaldividen = 0
-        $(".subdividen177v_a").each(function() {
-            totaldividen += +$(this).val().replace(/,/g, '');
-        });
+            var totalmodalsetor = 0
+            $(".submodalsetor1771v_a").each(function() {
+                totalmodalsetor += +$(this).val().replace(/,/g, '');
+            });
+            var totaldividen = 0
+            $(".subdividen177v_a").each(function() {
+                totaldividen += +$(this).val().replace(/,/g, '');
+            });
 
-        $('.total_modalsetor').val(totalmodalsetor.toLocaleString());
-        $('.total_dividen').val(totaldividen.toLocaleString());
-    }
-});
-tablelist1771V.addEventListener('click', function(event) {
-    if (event.target.classList.contains('btn-remove-1771V')) {
-        const row = event.target.closest('tr');
-        row.remove();
-    }
-});
-const tablelist1771Vb = document.querySelector('#list_1771Vb tbody');
-const addBtnaddlist1771Vb = document.querySelector('#btn-add1771Vb');
-addBtnaddlist1771Vb.addEventListener('click', function() {
-    const newRow = `
-    <tr>
-        <td width="auto" class="text-center">
-            <input required autocomplete="off" type="text"
-                name="pemegangshb_nama_1771V[]" id="pemegangshb_nama_1771V[]"
-                min="0"
-                class="form-control"/>
-        </td>
-        <td class="text-center">
-            <input required autocomplete="off" type="text"
-                name="pemegangshb_alamat_nama_1771V[]" id="pemegangshb_alamat_nama_1771V[]"
-                min="0"
-                class="form-control"/>
-        </td>
-        <td class="text-center">
-            <input required autocomplete="off" type="text"
-                name="pemegangshb_npwp_1771V[]"
-                id="pemegangsh_npwpb_1771V[]" min="0"
-                class="form-control"/>
-        </td>
-        <td class="text-center">
-            <input required autocomplete="off" type="text"
-                name="pemegangshb_jabatan_1771V[]"
-                id="pemegangshb_jabatan_1771V[]" min="0"
-                class="form-control submodalsetor"/>
-        </td>
-        <td><button type="button" class="btn btn-danger btn-remove-1771Vb"><i
-            class="fa fa-trash"></i>
-        </td>
-    </tr>
-    `;
-    tablelist1771Vb.insertAdjacentHTML('beforeend', newRow);
-});
-tablelist1771Vb.addEventListener('input', function(event) {
-    const target = event.target;
-    if (target.tagName === 'INPUT' && target.name.startsWith('pemegangshb')) {
-        const row = target.closest('tr');
-        // const pengenaanpajak = parseFloat(row.querySelector('input[name="pemegangsh_modalsetor_1771V[]"]').value) || 0;
-        // const tarif = parseFloat(row.querySelector('input[name="pemegangsh_dividen_1771V[]"]').value) || 0;
-        // const hasiljumlah1 = row.querySelector('input[name="angka_pph_terutang[]"]');
-        // const sum = pengenaanpajak * tarif/100;
-        // hasiljumlah1.value = sum;
-    }
-});
-tablelist1771Vb.addEventListener('click', function(event) {
-    if (event.target.classList.contains('btn-remove-1771Vb')) {
-        const row = event.target.closest('tr');
-        row.remove();
-    }
-});
+            $('.total_modalsetor').val(totalmodalsetor.toLocaleString());
+            $('.total_dividen').val(totaldividen.toLocaleString());
+        }
+    });
+    tablelist1771V.addEventListener('click', function(event) {
+        if (event.target.classList.contains('btn-remove-1771V')) {
+            const row = event.target.closest('tr');
+            row.remove();
+        }
+    });
+    const tablelist1771Vb = document.querySelector('#list_1771Vb tbody');
+    const addBtnaddlist1771Vb = document.querySelector('#btn-add1771Vb');
+    addBtnaddlist1771Vb.addEventListener('click', function() {
+        const newRow = `
+        <tr>
+            <td width="auto" class="text-center">
+                <input required autocomplete="off" type="text"
+                    name="pemegangshb_nama_1771V[]" id="pemegangshb_nama_1771V[]"
+                    min="0"
+                    class="form-control"/>
+            </td>
+            <td class="text-center">
+                <input required autocomplete="off" type="text"
+                    name="pemegangshb_alamat_nama_1771V[]" id="pemegangshb_alamat_nama_1771V[]"
+                    min="0"
+                    class="form-control"/>
+            </td>
+            <td class="text-center">
+                <input required autocomplete="off" type="text"
+                    name="pemegangshb_npwp_1771V[]"
+                    id="pemegangsh_npwpb_1771V[]" min="0"
+                    class="form-control"/>
+            </td>
+            <td class="text-center">
+                <input required autocomplete="off" type="text"
+                    name="pemegangshb_jabatan_1771V[]"
+                    id="pemegangshb_jabatan_1771V[]" min="0"
+                    class="form-control submodalsetor"/>
+            </td>
+            <td><button type="button" class="btn btn-danger btn-remove-1771Vb"><i
+                class="fa fa-trash"></i>
+            </td>
+        </tr>
+        `;
+        tablelist1771Vb.insertAdjacentHTML('beforeend', newRow);
+    });
+    tablelist1771Vb.addEventListener('input', function(event) {
+        const target = event.target;
+        if (target.tagName === 'INPUT' && target.name.startsWith('pemegangshb')) {
+            const row = target.closest('tr');
+            // const pengenaanpajak = parseFloat(row.querySelector('input[name="pemegangsh_modalsetor_1771V[]"]').value) || 0;
+            // const tarif = parseFloat(row.querySelector('input[name="pemegangsh_dividen_1771V[]"]').value) || 0;
+            // const hasiljumlah1 = row.querySelector('input[name="angka_pph_terutang[]"]');
+            // const sum = pengenaanpajak * tarif/100;
+            // hasiljumlah1.value = sum;
+        }
+    });
+    tablelist1771Vb.addEventListener('click', function(event) {
+        if (event.target.classList.contains('btn-remove-1771Vb')) {
+            const row = event.target.closest('tr');
+            row.remove();
+        }
+    });
 // 1771 V
 // 1771 VI
-const nama_npwp_1771VIInput = document.getElementById('nama_npwp_1771VI');
-const errornamaNpwp_1771VIText = document.getElementById('errornamaNpwp_1771VI');
-nama_npwp_1771VIInput.addEventListener('input', function() {
-    const inputValue = nama_npwp_1771VIInput.value;
+    // const nama_npwp_1771VIInput = document.getElementById('nama_npwp_1771VI');
+    // const errornamaNpwp_1771VIText = document.getElementById('errornamaNpwp_1771VI');
+    // nama_npwp_1771VIInput.addEventListener('input', function() {
+    //     const inputValue = nama_npwp_1771VIInput.value;
 
-    if (inputValue.length > 30) {
-        nama_npwp_1771VIInput.value = inputValue.slice(0, 30);
-        errornamaNpwp_1771VIText.textContent = 'Maksimal 30 digit';
-    } else {
-        errornamaNpwp_1771VIText.textContent = '';
-    }
-});
-const npwp_1771VIInput = document.getElementById('npwp_1771VI');
-const errornpwp_1771VIText = document.getElementById('errornpwp_1771VI');
-npwp_1771VIInput.addEventListener('input', function() {
-    const inputValue = npwp_1771VIInput.value;
+    //     if (inputValue.length > 30) {
+    //         nama_npwp_1771VIInput.value = inputValue.slice(0, 30);
+    //         errornamaNpwp_1771VIText.textContent = 'Maksimal 30 digit';
+    //     } else {
+    //         errornamaNpwp_1771VIText.textContent = '';
+    //     }
+    // });
+    // const npwp_1771VIInput = document.getElementById('npwp_1771VI');
+    // const errornpwp_1771VIText = document.getElementById('errornpwp_1771VI');
+    // npwp_1771VIInput.addEventListener('input', function() {
+    //     const inputValue = npwp_1771VIInput.value;
 
-    if (inputValue.length > 15) {
-        npwp_1771VIInput.value = inputValue.slice(0, 15);
-        errornpwp_1771VIText.textContent = 'Maksimal 15 digit';
-    } else {
-        errornpwp_1771VIText.textContent = '';
-    }
-});
-const tablelist1771VI = document.querySelector('#list_1771VI tbody');
-const addBtnaddlist1771VI = document.querySelector('#btn-add1771VI');
-addBtnaddlist1771VI.addEventListener('click', function() {
-    const newRow = `
-    <tr>
-        <td width="auto" class="text-center">
-            <input required autocomplete="off" type="text"
-                name="penyertaan_nama[]" id="penyertaan_nama[]"
-                min="0"
-                class="form-control"/>
-        </td>
-        <td class="text-center">
-            <input required autocomplete="off" type="text"
-                name="penyertaan_alamat[]" id="penyertaan_alamat[]"
-                min="0"
-                class="form-control"/>
-        </td>
-        <td class="text-center">
-            <input required autocomplete="off"
-                type="text" name="penyertaan_npwp[]"
-                id="penyertaan_npwp[]" min="0"
-                class="form-control" />
-        </td>
-        <td class="text-center">
-            <input required autocomplete="off"
-                type="text" name="penyertaan_modal[]"
-                onkeyup="this.value=sprator(this.value);"
-                id="penyertaan_modal[]" min="0"
-                class="form-control submodalafiliasi" />
-        </td>
-        <td class="text-center">
-            <input required autocomplete="off"
-                onkeyup="this.value=sprator(this.value);"
-                type="text" name="penyertaan_persen[]"
-                id="penyertaan_persen[]" min="0"
-                class="form-control" />
-        </td>
-        <td><button type="button" class="btn btn-danger btn-remove-1771VI"><i
-            class="fa fa-trash"></i>
-        </td>
-    </tr>
-    `;
-    tablelist1771VI.insertAdjacentHTML('beforeend', newRow);
-});
-tablelist1771VI.addEventListener('input', function(event) {
-    const target = event.target;
-    if (target.tagName === 'INPUT' && target.name.startsWith('penyertaan')) {
-        const row = target.closest('tr');
-        // const pengenaanpajak = parseFloat(row.querySelector('input[name="pemegangsh_modalsetor_1771V[]"]').value) || 0;
-        // const tarif = parseFloat(row.querySelector('input[name="pemegangsh_dividen_1771V[]"]').value) || 0;
-        // const hasiljumlah1 = row.querySelector('input[name="angka_pph_terutang[]"]');
-        // const sum = pengenaanpajak * tarif/100;
-        // hasiljumlah1.value = sum;
-        var totalmodalafiliasi = 0
-        $(".submodalafiliasi").each(function() {
-            totalmodalafiliasi += +$(this).val().replace(/,/g, '');
-        });
+    //     if (inputValue.length > 15) {
+    //         npwp_1771VIInput.value = inputValue.slice(0, 15);
+    //         errornpwp_1771VIText.textContent = 'Maksimal 15 digit';
+    //     } else {
+    //         errornpwp_1771VIText.textContent = '';
+    //     }
+    // });
+    const tablelist1771VI = document.querySelector('#list_1771VI tbody');
+    const addBtnaddlist1771VI = document.querySelector('#btn-add1771VI');
+    addBtnaddlist1771VI.addEventListener('click', function() {
+        const newRow = `
+        <tr>
+            <td width="auto" class="text-center">
+                <input required autocomplete="off" type="text"
+                    name="penyertaan_nama[]" id="penyertaan_nama[]"
+                    min="0"
+                    class="form-control"/>
+            </td>
+            <td class="text-center">
+                <input required autocomplete="off" type="text"
+                    name="penyertaan_alamat[]" id="penyertaan_alamat[]"
+                    min="0"
+                    class="form-control"/>
+            </td>
+            <td class="text-center">
+                <input required autocomplete="off"
+                    type="text" name="penyertaan_npwp[]"
+                    id="penyertaan_npwp[]" min="0"
+                    class="form-control" />
+            </td>
+            <td class="text-center">
+                <input required autocomplete="off"
+                    type="text" name="penyertaan_modal[]"
+                    onkeyup="this.value=sprator(this.value);"
+                    id="penyertaan_modal[]" min="0"
+                    class="form-control submodalafiliasi" />
+            </td>
+            <td class="text-center">
+                <input required autocomplete="off"
+                    onkeyup="this.value=sprator(this.value);"
+                    type="text" name="penyertaan_persen[]"
+                    id="penyertaan_persen[]" min="0"
+                    class="form-control" />
+            </td>
+            <td><button type="button" class="btn btn-danger btn-remove-1771VI"><i
+                class="fa fa-trash"></i>
+            </td>
+        </tr>
+        `;
+        tablelist1771VI.insertAdjacentHTML('beforeend', newRow);
+    });
+    tablelist1771VI.addEventListener('input', function(event) {
+        const target = event.target;
+        if (target.tagName === 'INPUT' && target.name.startsWith('penyertaan')) {
+            const row = target.closest('tr');
+            // const pengenaanpajak = parseFloat(row.querySelector('input[name="pemegangsh_modalsetor_1771V[]"]').value) || 0;
+            // const tarif = parseFloat(row.querySelector('input[name="pemegangsh_dividen_1771V[]"]').value) || 0;
+            // const hasiljumlah1 = row.querySelector('input[name="angka_pph_terutang[]"]');
+            // const sum = pengenaanpajak * tarif/100;
+            // hasiljumlah1.value = sum;
+            var totalmodalafiliasi = 0
+            $(".submodalafiliasi").each(function() {
+                totalmodalafiliasi += +$(this).val().replace(/,/g, '');
+            });
 
-        $('.total_modalafiliasi').val(totalmodalafiliasi.toLocaleString());
-    }
-});
-tablelist1771VI.addEventListener('click', function(event) {
-    if (event.target.classList.contains('btn-remove-1771VI')) {
-        const row = event.target.closest('tr');
-        row.remove();
-    }
-});
+            $('.total_modalafiliasi').val(totalmodalafiliasi.toLocaleString());
+        }
+    });
+    tablelist1771VI.addEventListener('click', function(event) {
+        if (event.target.classList.contains('btn-remove-1771VI')) {
+            const row = event.target.closest('tr');
+            row.remove();
+        }
+    });
 
-const tablelist1771VIb = document.querySelector('#list_1771VIb tbody');
-const addBtnaddlist1771VIb = document.querySelector('#btn-add1771VIb');
-addBtnaddlist1771VIb.addEventListener('click', function() {
-    const newRow = `
-    <tr>
-        <td width="auto" class="text-center">
-            <input required autocomplete="off" type="text"
-                name="penyertaan_namab[]" id="penyertaan_namab[]"
-                min="0"
-                class="form-control"/>
-        </td>
-        <td class="text-center">
-            <input required autocomplete="off" type="text"
-                name="penyertaan_npwpb[]"
-                id="penyertaan_npwpb[]" min="0"
-                class="form-control"/>
-        </td>
-        <td class="text-center">
-            <input required autocomplete="off" type="text"
+    const tablelist1771VIb = document.querySelector('#list_1771VIb tbody');
+    const addBtnaddlist1771VIb = document.querySelector('#btn-add1771VIb');
+    addBtnaddlist1771VIb.addEventListener('click', function() {
+        const newRow = `
+        <tr>
+            <td width="auto" class="text-center">
+                <input required autocomplete="off" type="text"
+                    name="penyertaan_namab[]" id="penyertaan_namab[]"
+                    min="0"
+                    class="form-control"/>
+            </td>
+            <td class="text-center">
+                <input required autocomplete="off" type="text"
+                    name="penyertaan_npwpb[]"
+                    id="penyertaan_npwpb[]" min="0"
+                    class="form-control"/>
+            </td>
+            <td class="text-center">
+                <input required autocomplete="off" type="text"
+                    onkeyup="this.value=sprator(this.value);"
+                    name="penyertaan_jumlahpinjamanb[]"
+                    id="penyertaan_jumlahpinjamanb[]" min="0"
+                    class="form-control"/>
+            </td>
+            <td class="text-center">
+                <input required autocomplete="off" type="date"
+                    name="penyertaan_thnpinjamanb[]"
+                    id="penyertaan_thnpinjamanb[]" min="0"
+                    class="form-control"/>
+            </td>
+            <td class="text-center">
+                <input required autocomplete="off" type="text"
+                    onkeyup="this.value=sprator(this.value);"
+                    name="penyertaan_bungapinjamanb[]"
+                    id="penyertaan_bungapinjamanb[]" min="0"
+                    class="form-control"/>
+            </td>
+            <td><button type="button" class="btn btn-danger btn-remove-1771VIb"><i
+                class="fa fa-trash"></i>
+            </td>
+        </tr>
+        `;
+        tablelist1771VIb.insertAdjacentHTML('beforeend', newRow);
+    });
+    tablelist1771VIb.addEventListener('input', function(event) {
+        const target = event.target;
+        if (target.tagName === 'INPUT' && target.name.startsWith('penyertaan')) {
+            const row = target.closest('tr');
+            
+        }
+    });
+    tablelist1771VIb.addEventListener('click', function(event) {
+        if (event.target.classList.contains('btn-remove-1771VIb')) {
+            const row = event.target.closest('tr');
+            row.remove();
+        }
+    });
+    const tablelist1771VIc = document.querySelector('#list_1771VIc tbody');
+    const addBtnaddlist1771VIc = document.querySelector('#btn-add1771VIc');
+    addBtnaddlist1771VIc.addEventListener('click', function() {
+        const newRow = `
+        <tr>
+            <td width="auto" class="text-center">
+                <input required autocomplete="off" type="text"
+                    name="penyertaan_namac[]" id="penyertaan_namac[]"
+                    min="0"
+                    class="form-control"/>
+            </td>
+            <td class="text-center">
+                <input required autocomplete="off" type="text"
+                    name="penyertaan_npwpc[]"
+                    id="penyertaan_npwpc[]" min="0"
+                    class="form-control"/>
+            </td>
+            <td class="text-center">
+                <input required autocomplete="off" type="text"
                 onkeyup="this.value=sprator(this.value);"
-                name="penyertaan_jumlahpinjamanb[]"
-                id="penyertaan_jumlahpinjamanb[]" min="0"
-                class="form-control"/>
-        </td>
-        <td class="text-center">
-            <input required autocomplete="off" type="date"
-                name="penyertaan_thnpinjamanb[]"
-                id="penyertaan_thnpinjamanb[]" min="0"
-                class="form-control"/>
-        </td>
-        <td class="text-center">
-            <input required autocomplete="off" type="text"
+                name="penyertaan_jumlahpinjamanc[]"
+                    id="penyertaan_jumlahpinjamanc[]" min="0"
+                    class="form-control"/>
+            </td>
+            <td class="text-center">
+                <input required autocomplete="off" type="date"
+                    name="penyertaan_thnpinjamanc[]"
+                    id="penyertaan_thnpinjamanc[]" min="0"
+                    class="form-control"/>
+            </td>
+            <td class="text-center">
+                <input required autocomplete="off" type="text"
                 onkeyup="this.value=sprator(this.value);"
-                name="penyertaan_bungapinjamanb[]"
-                id="penyertaan_bungapinjamanb[]" min="0"
-                class="form-control"/>
-        </td>
-        <td><button type="button" class="btn btn-danger btn-remove-1771VIb"><i
-            class="fa fa-trash"></i>
-        </td>
-    </tr>
-    `;
-    tablelist1771VIb.insertAdjacentHTML('beforeend', newRow);
-});
-tablelist1771VIb.addEventListener('input', function(event) {
-    const target = event.target;
-    if (target.tagName === 'INPUT' && target.name.startsWith('penyertaan')) {
-        const row = target.closest('tr');
-        
-    }
-});
-tablelist1771VIb.addEventListener('click', function(event) {
-    if (event.target.classList.contains('btn-remove-1771VIb')) {
-        const row = event.target.closest('tr');
-        row.remove();
-    }
-});
-const tablelist1771VIc = document.querySelector('#list_1771VIc tbody');
-const addBtnaddlist1771VIc = document.querySelector('#btn-add1771VIc');
-addBtnaddlist1771VIc.addEventListener('click', function() {
-    const newRow = `
-    <tr>
-        <td width="auto" class="text-center">
-            <input required autocomplete="off" type="text"
-                name="penyertaan_namac[]" id="penyertaan_namac[]"
-                min="0"
-                class="form-control"/>
-        </td>
-        <td class="text-center">
-            <input required autocomplete="off" type="text"
-                name="penyertaan_npwpc[]"
-                id="penyertaan_npwpc[]" min="0"
-                class="form-control"/>
-        </td>
-        <td class="text-center">
-            <input required autocomplete="off" type="text"
-            onkeyup="this.value=sprator(this.value);"
-            name="penyertaan_jumlahpinjamanc[]"
-                id="penyertaan_jumlahpinjamanc[]" min="0"
-                class="form-control"/>
-        </td>
-        <td class="text-center">
-            <input required autocomplete="off" type="date"
-                name="penyertaan_thnpinjamanc[]"
-                id="penyertaan_thnpinjamanc[]" min="0"
-                class="form-control"/>
-        </td>
-        <td class="text-center">
-            <input required autocomplete="off" type="text"
-            onkeyup="this.value=sprator(this.value);"
-            name="penyertaan_bungapinjamanc[]"
-                id="penyertaan_bungapinjamanc[]" min="0"
-                class="form-control"/>
-        </td>
-        <td><button type="button" class="btn btn-danger btn-remove-1771VIc"><i
-            class="fa fa-trash"></i>
-        </td>
-    </tr>
-    `;
-    tablelist1771VIc.insertAdjacentHTML('beforeend', newRow);
-});
-tablelist1771VIc.addEventListener('input', function(event) {
-    const target = event.target;
-    if (target.tagName === 'INPUT' && target.name.startsWith('penyertaan')) {
-        const row = target.closest('tr');
-        
-    }
-});
-tablelist1771VIc.addEventListener('click', function(event) {
-    if (event.target.classList.contains('btn-remove-1771VIc')) {
-        const row = event.target.closest('tr');
-        row.remove();
-    }
-});
+                name="penyertaan_bungapinjamanc[]"
+                    id="penyertaan_bungapinjamanc[]" min="0"
+                    class="form-control"/>
+            </td>
+            <td><button type="button" class="btn btn-danger btn-remove-1771VIc"><i
+                class="fa fa-trash"></i>
+            </td>
+        </tr>
+        `;
+        tablelist1771VIc.insertAdjacentHTML('beforeend', newRow);
+    });
+    tablelist1771VIc.addEventListener('input', function(event) {
+        const target = event.target;
+        if (target.tagName === 'INPUT' && target.name.startsWith('penyertaan')) {
+            const row = target.closest('tr');
+            
+        }
+    });
+    tablelist1771VIc.addEventListener('click', function(event) {
+        if (event.target.classList.contains('btn-remove-1771VIc')) {
+            const row = event.target.closest('tr');
+            row.remove();
+        }
+    });
 
 // 1771 VI
 

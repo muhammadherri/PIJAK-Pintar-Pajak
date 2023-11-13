@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use App\Models\NamaKelas;
 
 class AdminRegisterController extends Controller
 {
@@ -16,6 +17,8 @@ class AdminRegisterController extends Controller
      */
     public function index()
     {
+        return view('adminregister.index');
+
     }
 
     /**
@@ -25,9 +28,11 @@ class AdminRegisterController extends Controller
      */
     public function create()
     {
+        $kelas=NamaKelas::get();
+        $dosen=User::whereNotNull('nama_lengkap')->where('status',1)->get();
         $iduser=Auth::user()->id;
         if(Auth::user()->status==1){
-            return view('adminregister.create');
+            return view('adminregister.create',compact('kelas','dosen'));
         }else{
             return back();
         }
@@ -49,6 +54,7 @@ class AdminRegisterController extends Controller
                 'nama_lengkap'=>$request->nama_lengkap,
                 'dosen_pembimbing'=>$request->dosen_pembimbing,
                 'kelas'=>$request->kelas,
+                'gender'=>$request->gender,
                 'name'=>$request->name,
                 'email'=>$request->nim,
                 'status'=>$request->status,
@@ -57,7 +63,8 @@ class AdminRegisterController extends Controller
             // dd($data);
             User::create($data);
             $a= \DB::commit();
-            return view('home');
+            return redirect()->route('adminregister');
+
         }else{
             return back();
         }

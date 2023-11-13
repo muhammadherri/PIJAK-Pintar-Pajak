@@ -34,7 +34,7 @@
                                             <div class="col-sm-9">
                                                 <input min="0" maxlength="15" autocomplete="off" required id="npwp" name="npwp"
                                                    value="{{$billing->npwp}}" type="text" class="form-control" placeholder="Masukkan NPWP">
-                                                <span id="errorText" style="color: red;"></span>
+                                                {{-- <span id="errorText" style="color: red;"></span> --}}
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
@@ -210,33 +210,31 @@
     </div>
 @endsection
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const inputElement = document.getElementById('npwp');
-        const inputpenyetor = document.getElementById('npwp_penyetor');
-        const errorText = document.getElementById('errorText');
-        const errorpenyetor = document.getElementById('errorpenyetor');
-        inputElement.addEventListener('input',function(){
-            const inputValue = inputElement.value;
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     const inputElement = document.getElementById('npwp');
+    //     const inputpenyetor = document.getElementById('npwp_penyetor');
+    //     const errorText = document.getElementById('errorText');
+    //     const errorpenyetor = document.getElementById('errorpenyetor');
+    //     inputElement.addEventListener('input',function(){
+    //         const inputValue = inputElement.value;
             
-            if(inputValue.length > 15){
-                inputElement.value = inputValue.slice(0,15);
-                errorText.textContent = 'Maksimal 15 digit';
-            }else{
-                errorText.textContent = '';
-            }
-        })
-        inputpenyetor.addEventListener('input',function(){
-            const inputValue = inputpenyetor.value;
+    //         if(inputValue.length > 15){
+    //             inputElement.value = inputValue.slice(0,15);
+    //             errorText.textContent = 'Maksimal 15 digit';
+    //         }else{
+    //             errorText.textContent = '';
+    //         }
+    //     })
+    //     inputpenyetor.addEventListener('input',function(){
+    //         const inputValue = inputpenyetor.value;
             
-            if(inputValue.length > 15){
-                inputpenyetor.value = inputValue.slice(0,15);
-                errorpenyetor.textContent = 'Maksimal 15 digit';
-            }else{
-                errorpenyetor.textContent = '';
-            }
-        })
+    //         if(inputValue.length > 15){
+    //             inputpenyetor.value = inputValue.slice(0,15);
+    //             errorpenyetor.textContent = 'Maksimal 15 digit';
+    //         }else{
+    //             errorpenyetor.textContent = '';
+    //         }
+    //     })
 
-    });
+    // });
 </script>
-{{-- <script src="{{ asset('app-assets/vendor/global/global.min.js') }}"></script>
-<script src="{{ asset('app-assets/js/custom.min.js') }}"></script> --}}

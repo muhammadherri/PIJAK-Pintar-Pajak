@@ -594,6 +594,25 @@ class AllInController extends Controller
         );
         return json_encode($response);
     }
+    public function listDosen(Request $request){
+        $daftar_dosen = User::whereNotNull('nama_lengkap')->where('status',1)->get();
+        $data_arr = array();
+        // dd($daftar_dosen);
+        foreach ($daftar_dosen as $record) {
+            $data_arr[] = array(
+                "id" => $record->id,
+                "nama" => $record->name,
+                "nama_lengkap" => $record->nama_lengkap,
+                "gender" => $record->gender,
+                "tgl" => $record->updated_at->format('d-M-Y'),
+            );
+        }
+        // dd($data_arr);
+        $response = array(
+            "aaData" => $data_arr,
+        );
+        return json_encode($response);
+    }
     public function formulirpertama(Request $request){
         // dd($request);
         $iduser=Auth::user()->id;
@@ -1972,11 +1991,11 @@ class AllInController extends Controller
     }
     public function listSpt1111(Request $request){
         $id=Auth::user()->id;
-        if(Auth::user()->status==1){
-            $sptppn = SptPpn::get();
-        }else{
+        // if(Auth::user()->status==1){
+        //     $sptppn = SptPpn::get();
+        // }else{
             $sptppn = SptPpn::where('attribute_1',$id)->get();
-        }
+        // }
         $data_arr = array();
         foreach ($sptppn as $record) {
             $data_arr[] = array(

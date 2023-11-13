@@ -27,7 +27,7 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <a class="btn btn-primary" href="{{ route('sptS/create') }}">
-                                        {{ __('Create') }}
+                                        {{ __('Tambah') }}
                                     </a>
                                 </div>
                             </div>

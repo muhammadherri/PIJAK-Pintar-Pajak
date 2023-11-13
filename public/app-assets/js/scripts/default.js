@@ -1,29 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
     // sptmasapajak
-        const sptpajak_npwp = document.getElementById('id_npwp_1721');
-        const errorerrorid_npwp = document.getElementById('errorid_npwp_1721');
-        sptpajak_npwp.addEventListener('input', function() {
-            const inputValue = sptpajak_npwp.value;
+        // const sptpajak_npwp = document.getElementById('id_npwp_1721');
+        // const errorerrorid_npwp = document.getElementById('errorid_npwp_1721');
+        // sptpajak_npwp.addEventListener('input', function() {
+        //     const inputValue = sptpajak_npwp.value;
 
-            if (inputValue.length > 15) {
-                sptpajak_npwp.value = inputValue.slice(0, 15);
-                errorerrorid_npwp.textContent = 'Maksimal 15 digit';
-            } else {
-                errorerrorid_npwp.textContent = '';
-            }
-        });
-        const sptnpwppemotong_1721 = document.getElementById('npwppemotong_1721');
-        const erronpwp_pemotong_1721 = document.getElementById('errorid_npwp_pemotong_1721');
-        sptnpwppemotong_1721.addEventListener('input', function() {
-            const inputValue = sptnpwppemotong_1721.value;
+        //     if (inputValue.length > 15) {
+        //         sptpajak_npwp.value = inputValue.slice(0, 15);
+        //         errorerrorid_npwp.textContent = 'Maksimal 15 digit';
+        //     } else {
+        //         errorerrorid_npwp.textContent = '';
+        //     }
+        // });
+        // const sptnpwppemotong_1721 = document.getElementById('npwppemotong_1721');
+        // const erronpwp_pemotong_1721 = document.getElementById('errorid_npwp_pemotong_1721');
+        // sptnpwppemotong_1721.addEventListener('input', function() {
+        //     const inputValue = sptnpwppemotong_1721.value;
 
-            if (inputValue.length > 15) {
-                sptnpwppemotong_1721.value = inputValue.slice(0, 15);
-                erronpwp_pemotong_1721.textContent = 'Maksimal 15 digit';
-            } else {
-                erronpwp_pemotong_1721.textContent = '';
-            }
-        });
+        //     if (inputValue.length > 15) {
+        //         sptnpwppemotong_1721.value = inputValue.slice(0, 15);
+        //         erronpwp_pemotong_1721.textContent = 'Maksimal 15 digit';
+        //     } else {
+        //         erronpwp_pemotong_1721.textContent = '';
+        //     }
+        // });
         
         // const tablelist_1721 = document.querySelector('#objekpajak_1721 tbody');
         // const addBtnadd_1721 = document.querySelector('#btn-addobjek_1721');
@@ -179,18 +179,18 @@ document.addEventListener('DOMContentLoaded', function() {
         // });
 
     // FORMULIR I
-        const npwppemotong_1721_formulirI = document.getElementById('npwppemotong_1721_formulirI');
-        const error_npwppemotong_1721_formulirI = document.getElementById('error_npwppemotong_1721_formulirI');
-        npwppemotong_1721_formulirI.addEventListener('input', function() {
-            const inputValue = npwppemotong_1721_formulirI.value;
+        // const npwppemotong_1721_formulirI = document.getElementById('npwppemotong_1721_formulirI');
+        // const error_npwppemotong_1721_formulirI = document.getElementById('error_npwppemotong_1721_formulirI');
+        // npwppemotong_1721_formulirI.addEventListener('input', function() {
+        //     const inputValue = npwppemotong_1721_formulirI.value;
     
-            if (inputValue.length > 15) {
-                npwppemotong_1721_formulirI.value = inputValue.slice(0, 15);
-                error_npwppemotong_1721_formulirI.textContent = 'Maksimal 15 digit';
-            } else {
-                error_npwppemotong_1721_formulirI.textContent = '';
-            }
-        });
+        //     if (inputValue.length > 15) {
+        //         npwppemotong_1721_formulirI.value = inputValue.slice(0, 15);
+        //         error_npwppemotong_1721_formulirI.textContent = 'Maksimal 15 digit';
+        //     } else {
+        //         error_npwppemotong_1721_formulirI.textContent = '';
+        //     }
+        // });
         const tablelist_1721i = document.querySelector('#penerimapensiun_1721 tbody');
         const addBtnadd_1721i = document.querySelector('#btn-adddaftarpotongan_1721');
         addBtnadd_1721i.addEventListener('click', function() {
@@ -278,18 +278,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // FORMULIR I
     // FORMULIR II
-        const pemotong_formulirII_1721 = document.getElementById('npwppemotong_formulirII_1721');
-        const error_npwppemotong_1721_formulirII = document.getElementById('error_npwppemotong_1721_formulirII');
-        pemotong_formulirII_1721.addEventListener('input', function() {
-            const inputValue = pemotong_formulirII_1721.value;
+        // const pemotong_formulirII_1721 = document.getElementById('npwppemotong_formulirII_1721');
+        // const error_npwppemotong_1721_formulirII = document.getElementById('error_npwppemotong_1721_formulirII');
+        // pemotong_formulirII_1721.addEventListener('input', function() {
+        //     const inputValue = pemotong_formulirII_1721.value;
 
-            if (inputValue.length > 15) {
-                pemotong_formulirII_1721.value = inputValue.slice(0, 15);
-                error_npwppemotong_1721_formulirII.textContent = 'Maksimal 15 digit';
-            } else {
-                error_npwppemotong_1721_formulirII.textContent = '';
-            }
-        });
+        //     if (inputValue.length > 15) {
+        //         pemotong_formulirII_1721.value = inputValue.slice(0, 15);
+        //         error_npwppemotong_1721_formulirII.textContent = 'Maksimal 15 digit';
+        //     } else {
+        //         error_npwppemotong_1721_formulirII.textContent = '';
+        //     }
+        // });
         const tablelist_1721ii = document.querySelector('#formulir1721-II tbody');
         const addBtnadd_1721ii = document.querySelector('#btn-adddaftarpotongan_1721_ii');
         addBtnadd_1721ii.addEventListener('click', function() {
@@ -369,18 +369,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     // FORMULIR II
     // FORMULIR III
-        const pemotong_formulirIII_1721 = document.getElementById('npwppemotong_formulirIII_1721');
-        const error_npwppemotong_1721_formulirIII = document.getElementById('error_npwppemotong_1721_formulirIII');
-        pemotong_formulirIII_1721.addEventListener('input', function() {
-            const inputValue = pemotong_formulirIII_1721.value;
+        // const pemotong_formulirIII_1721 = document.getElementById('npwppemotong_formulirIII_1721');
+        // const error_npwppemotong_1721_formulirIII = document.getElementById('error_npwppemotong_1721_formulirIII');
+        // pemotong_formulirIII_1721.addEventListener('input', function() {
+        //     const inputValue = pemotong_formulirIII_1721.value;
 
-            if (inputValue.length > 15) {
-                pemotong_formulirIII_1721.value = inputValue.slice(0, 15);
-                error_npwppemotong_1721_formulirIII.textContent = 'Maksimal 15 digit';
-            } else {
-                error_npwppemotong_1721_formulirIII.textContent = '';
-            }
-        });
+        //     if (inputValue.length > 15) {
+        //         pemotong_formulirIII_1721.value = inputValue.slice(0, 15);
+        //         error_npwppemotong_1721_formulirIII.textContent = 'Maksimal 15 digit';
+        //     } else {
+        //         error_npwppemotong_1721_formulirIII.textContent = '';
+        //     }
+        // });
         const tablelist_1721iii = document.querySelector('#formulir1721-III tbody');
         const addBtnadd_1721iii = document.querySelector('#btn-adddaftarpotongan_1721_iii');
         addBtnadd_1721iii.addEventListener('click', function() {
@@ -455,18 +455,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     // FORMULIR III
     // FORMULIR IV
-        const npwppemotong_formulirIV_1721 = document.getElementById('npwppemotong_formulirIV_1721');
-        const error_npwppemotong_1721_formulirIV = document.getElementById('error_npwppemotong_1721_formulirIV');
-        npwppemotong_formulirIV_1721.addEventListener('input', function() {
-            const inputValue = npwppemotong_formulirIV_1721.value;
+        // const npwppemotong_formulirIV_1721 = document.getElementById('npwppemotong_formulirIV_1721');
+        // const error_npwppemotong_1721_formulirIV = document.getElementById('error_npwppemotong_1721_formulirIV');
+        // npwppemotong_formulirIV_1721.addEventListener('input', function() {
+        //     const inputValue = npwppemotong_formulirIV_1721.value;
 
-            if (inputValue.length > 15) {
-                npwppemotong_formulirIV_1721.value = inputValue.slice(0, 15);
-                error_npwppemotong_1721_formulirIV.textContent = 'Maksimal 15 digit';
-            } else {
-                error_npwppemotong_1721_formulirIV.textContent = '';
-            }
-        });
+        //     if (inputValue.length > 15) {
+        //         npwppemotong_formulirIV_1721.value = inputValue.slice(0, 15);
+        //         error_npwppemotong_1721_formulirIV.textContent = 'Maksimal 15 digit';
+        //     } else {
+        //         error_npwppemotong_1721_formulirIV.textContent = '';
+        //     }
+        // });
         const tablelist_1721iv = document.querySelector('#formulir1721-IV tbody');
         const addBtnadd_1721iv = document.querySelector('#btn-adddaftarpotongan_1721_iv');
         addBtnadd_1721iv.addEventListener('click', function() {
@@ -530,43 +530,43 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     // FORMULIR IV
     // FORMULIR V
-        const npwppemotong_formulirV_1721 = document.getElementById('npwppemotong_formulirV_1721');
-        const error_npwppemotong_1721_formulirV = document.getElementById('error_npwppemotong_1721_formulirV');
-        npwppemotong_formulirV_1721.addEventListener('input', function() {
-            const inputValue = npwppemotong_formulirV_1721.value;
+        // const npwppemotong_formulirV_1721 = document.getElementById('npwppemotong_formulirV_1721');
+        // const error_npwppemotong_1721_formulirV = document.getElementById('error_npwppemotong_1721_formulirV');
+        // npwppemotong_formulirV_1721.addEventListener('input', function() {
+        //     const inputValue = npwppemotong_formulirV_1721.value;
 
-            if (inputValue.length > 15) {
-                npwppemotong_formulirV_1721.value = inputValue.slice(0, 15);
-                error_npwppemotong_1721_formulirV.textContent = 'Maksimal 15 digit';
-            } else {
-                error_npwppemotong_1721_formulirV.textContent = '';
-            }
-        });
+        //     if (inputValue.length > 15) {
+        //         npwppemotong_formulirV_1721.value = inputValue.slice(0, 15);
+        //         error_npwppemotong_1721_formulirV.textContent = 'Maksimal 15 digit';
+        //     } else {
+        //         error_npwppemotong_1721_formulirV.textContent = '';
+        //     }
+        // });
         
     // FORMULIR V
     // FORMULIR VI
-        const npwp_formulirVI_1721 = document.getElementById('npwp_formulirVI_1721');
-        const error_npwp_1721_formulirVI = document.getElementById('error_npwp_1721_formulirVI');
-        npwp_formulirVI_1721.addEventListener('input', function() {
-            const inputValue = npwp_formulirVI_1721.value;
-            if (inputValue.length > 15) {
-                npwp_formulirVI_1721.value = inputValue.slice(0, 15);
-                error_npwp_1721_formulirVI.textContent = 'Maksimal 15 digit';
-            } else {
-                error_npwp_1721_formulirVI.textContent = '';
-            }
-        });
-        const npwppemotong_formulirVI_1721 = document.getElementById('npwppemotong_formulirVI_1721');
-        const error_npwppemotong_formulirVI_1721 = document.getElementById('error_npwppemotong_formulirVI_1721');
-        npwppemotong_formulirVI_1721.addEventListener('input', function() {
-            const inputValue = npwppemotong_formulirVI_1721.value;
-            if (inputValue.length > 15) {
-                npwppemotong_formulirVI_1721.value = inputValue.slice(0, 15);
-                error_npwppemotong_formulirVI_1721.textContent = 'Maksimal 15 digit';
-            } else {
-                error_npwppemotong_formulirVI_1721.textContent = '';
-            }
-        });
+        // const npwp_formulirVI_1721 = document.getElementById('npwp_formulirVI_1721');
+        // const error_npwp_1721_formulirVI = document.getElementById('error_npwp_1721_formulirVI');
+        // npwp_formulirVI_1721.addEventListener('input', function() {
+        //     const inputValue = npwp_formulirVI_1721.value;
+        //     if (inputValue.length > 15) {
+        //         npwp_formulirVI_1721.value = inputValue.slice(0, 15);
+        //         error_npwp_1721_formulirVI.textContent = 'Maksimal 15 digit';
+        //     } else {
+        //         error_npwp_1721_formulirVI.textContent = '';
+        //     }
+        // });
+        // const npwppemotong_formulirVI_1721 = document.getElementById('npwppemotong_formulirVI_1721');
+        // const error_npwppemotong_formulirVI_1721 = document.getElementById('error_npwppemotong_formulirVI_1721');
+        // npwppemotong_formulirVI_1721.addEventListener('input', function() {
+        //     const inputValue = npwppemotong_formulirVI_1721.value;
+        //     if (inputValue.length > 15) {
+        //         npwppemotong_formulirVI_1721.value = inputValue.slice(0, 15);
+        //         error_npwppemotong_formulirVI_1721.textContent = 'Maksimal 15 digit';
+        //     } else {
+        //         error_npwppemotong_formulirVI_1721.textContent = '';
+        //     }
+        // });
         const tablelist_1721VI_pasal21 = document.querySelector('#list_1721VI_pasal21 tbody');
         const addPphPasal = document.querySelector('#btn-addPphPasal');
         addPphPasal.addEventListener('click', function() {
@@ -634,17 +634,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     // FORMULIR VI
     // FORMULIR VII
-        const npwp_formulirVII_1721 = document.getElementById('npwp_formulirVII_1721');
-        const error_npwp_1721_formulirVII = document.getElementById('error_npwp_1721_formulirVII');
-        npwp_formulirVII_1721.addEventListener('input', function() {
-            const inputValue = npwp_formulirVII_1721.value;
-            if (inputValue.length > 15) {
-                npwp_formulirVII_1721.value = inputValue.slice(0, 15);
-                error_npwp_1721_formulirVII.textContent = 'Maksimal 15 digit';
-            } else {
-                error_npwp_1721_formulirVII.textContent = '';
-            }
-        });
+        // const npwp_formulirVII_1721 = document.getElementById('npwp_formulirVII_1721');
+        // const error_npwp_1721_formulirVII = document.getElementById('error_npwp_1721_formulirVII');
+        // npwp_formulirVII_1721.addEventListener('input', function() {
+        //     const inputValue = npwp_formulirVII_1721.value;
+        //     if (inputValue.length > 15) {
+        //         npwp_formulirVII_1721.value = inputValue.slice(0, 15);
+        //         error_npwp_1721_formulirVII.textContent = 'Maksimal 15 digit';
+        //     } else {
+        //         error_npwp_1721_formulirVII.textContent = '';
+        //     }
+        // });
         const tablelist_formulir1721VII = document.querySelector('#formulir1721-VII tbody');
         const addaddpphformulir1721vii = document.querySelector('#btn-addpphformulir1721-vii');
         addaddpphformulir1721vii.addEventListener('click', function() {

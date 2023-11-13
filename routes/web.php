@@ -10,7 +10,8 @@ use App\Http\Controllers\Auth\LoginController;
 
 Auth::routes();
 
-Route::get('/adminregister/create', [App\Http\Controllers\AdminRegisterController::class, 'create'])->name('adminregister');
+Route::get('/adminregister', [App\Http\Controllers\AdminRegisterController::class, 'index'])->name('adminregister');
+Route::get('/adminregister/create', [App\Http\Controllers\AdminRegisterController::class, 'create'])->name('adminregister/create');
 Route::post('/adminregister/store', [App\Http\Controllers\AdminRegisterController::class, 'store'])->name('adminregister/store');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('');
@@ -373,6 +374,7 @@ Route::get('/pphfinallist', [App\Http\Controllers\AllInController::class,'listPp
 Route::get('/pphtidakfinallist', [App\Http\Controllers\AllInController::class,'listPphtidakfinal'])->name('data.pphtidakfinal');
 Route::get('/spt1770sllist', [App\Http\Controllers\AllInController::class,'listspt1770s'])->name('data.spt1770s');
 Route::get('/spt1770ssllist', [App\Http\Controllers\AllInController::class,'listspt1770ss'])->name('data.spt1770ss');
+Route::get('/listDosen', [App\Http\Controllers\AllInController::class,'listDosen'])->name('data.dosen');
 // SEARCH
 Route::get('/search/resultPtkp', [App\Http\Controllers\AllInController::class,'resultPtkp'])->name('get.ptkp');
 Route::get('/search/resultNoakun', [App\Http\Controllers\AllInController::class,'akun_kredit'])->name('get.nokredit');

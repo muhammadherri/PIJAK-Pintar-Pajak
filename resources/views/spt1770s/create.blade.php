@@ -80,7 +80,7 @@
                                             <div class="mb-3 row">
                                                 <label class="col-sm-3 col-form-label">N P W P</label>
                                                 <div class="col-sm-9">
-                                                    <input type="number" min="0" autocomplete="off" required
+                                                    <input type="text" min="0" autocomplete="off" required
                                                         placeholder="Masukkan No N P W P"
                                                         class="form-control"id="id_npwp_1770s" name="id_npwp_1770s">
                                                     <span id="errorid_npwp_1770s" style="color: red;"></span>
@@ -136,7 +136,7 @@
                                             <div class="mb-3 row">
                                                 <label class="col-sm-3 col-form-label">NPWP Pasangan</label>
                                                 <div class="col-sm-9">
-                                                    <input type="number" min="0" autocomplete="off" required
+                                                    <input type="text" min="0" autocomplete="off" required
                                                         placeholder="Masukkan No N P W P Pasangan"
                                                         class="form-control"id="id_npwp_pasangan_1770s" name="id_npwp_pasangan_1770s">
                                                     <span id="errorid_npwp_pasangan_1770s" style="color: red;"></span>

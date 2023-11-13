@@ -1,16 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const id_npwp_1770ss = document.getElementById('id_npwp_1770ss');
-    const errorid_npwp_1770ss = document.getElementById('errorid_npwp_1770ss');
-    id_npwp_1770ss.addEventListener('input', function() {
-        const inputValue = id_npwp_1770ss.value;
+    // const id_npwp_1770ss = document.getElementById('id_npwp_1770ss');
+    // const errorid_npwp_1770ss = document.getElementById('errorid_npwp_1770ss');
+    // id_npwp_1770ss.addEventListener('input', function() {
+    //     const inputValue = id_npwp_1770ss.value;
 
-        if (inputValue.length > 15) {
-            id_npwp_1770ss.value = inputValue.slice(0, 15);
-            errorid_npwp_1770ss.textContent = 'Maksimal 15 digit';
-        } else {
-            errorid_npwp_1770ss.textContent = '';
-        }
-    });
+    //     if (inputValue.length > 15) {
+    //         id_npwp_1770ss.value = inputValue.slice(0, 15);
+    //         errorid_npwp_1770ss.textContent = 'Maksimal 15 digit';
+    //     } else {
+    //         errorid_npwp_1770ss.textContent = '';
+    //     }
+    // });
     const inputa1_pajak_1770ss = document.getElementById('a1_pajak_1770ss');
     const inputa2_pajak_1770ss = document.getElementById('a2_pajak_1770ss');
     const inputa3_pajak_1770ss = document.getElementById('a3_pajak_1770ss');

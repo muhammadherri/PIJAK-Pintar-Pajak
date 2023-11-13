@@ -60,7 +60,7 @@
                                             <div class="col-sm-9">
                                                 <input value="{{$prep->npwp}}" autocomplete="off" min="0" required id="npwp" name="npwp" type="text" class="form-control"
                                                     placeholder="Masukkan NPWP">
-                                                    <span id="errorText" style="color: red;"></span>
+                                                    {{-- <span id="errorText" style="color: red;"></span> --}}
                                             </div>
                                         </div>
                                         <div class="mb-3 row">

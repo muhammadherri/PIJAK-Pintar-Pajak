@@ -60,7 +60,7 @@
                                             <div class="col-sm-9">
                                                 <input autocomplete="off" min="0" required id="npwp" name="npwp" type="text" class="form-control"
                                                     placeholder="Masukkan NPWP">
-                                                    <span id="errorText" style="color: red;"></span>
+                                                    {{-- <span id="errorText" style="color: red;"></span> --}}
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
@@ -131,20 +131,20 @@
         return retVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
     }
-    document.addEventListener('DOMContentLoaded', function() {
-        const inputElement = document.getElementById('npwp');
-        const errorText = document.getElementById('errorText');
-        inputElement.addEventListener('input',function(){
-            const inputValue = inputElement.value;
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     const inputElement = document.getElementById('npwp');
+    //     const errorText = document.getElementById('errorText');
+    //     inputElement.addEventListener('input',function(){
+    //         const inputValue = inputElement.value;
             
-            if(inputValue.length > 15){
-                inputElement.value = inputValue.slice(0,15);
-                errorText.textContent = 'Maksimal 15 digit';
-            }else{
-                errorText.textContent = '';
-            }
-        })
-    });
+    //         if(inputValue.length > 15){
+    //             inputElement.value = inputValue.slice(0,15);
+    //             errorText.textContent = 'Maksimal 15 digit';
+    //         }else{
+    //             errorText.textContent = '';
+    //         }
+    //     })
+    // });
     function resetForm() {
         var masa_ppn = document.getElementById("masa_ppn");
         var tahun = document.getElementById("tahun");

@@ -109,9 +109,9 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">NPWP</label>
                                             <div class="col-sm-9">
-                                                <input min="0" maxlength="15" autocomplete="off" required id="npwp" name="npwp"
+                                                <input min="0" autocomplete="off" required id="npwp" name="npwp"
                                                     type="text" class="form-control" placeholder="Masukkan NPWP">
-                                                <span id="errorText" style="color: red;"></span>
+                                                {{-- <span id="errorText" style="color: red;"></span> --}}
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
@@ -197,9 +197,9 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">NPWP Penyetor</label>
                                             <div class="col-sm-9">
-                                                <input min="0" maxlength="15" autocomplete="off" required id="npwp_penyetor" name="npwp_penyetor"
+                                                <input min="0" autocomplete="off" required id="npwp_penyetor" name="npwp_penyetor"
                                                     type="text" class="form-control" placeholder="Masukkan NPWP Penyetor">
-                                                <span id="errorpenyetor" style="color: red;"></span>
+                                                {{-- <span id="errorpenyetor" style="color: red;"></span> --}}
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
@@ -295,33 +295,33 @@
     </div>
 @endsection
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const inputElement = document.getElementById('npwp');
-        const inputpenyetor = document.getElementById('npwp_penyetor');
-        const errorText = document.getElementById('errorText');
-        const errorpenyetor = document.getElementById('errorpenyetor');
-        inputElement.addEventListener('input',function(){
-            const inputValue = inputElement.value;
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     const inputElement = document.getElementById('npwp');
+    //     const inputpenyetor = document.getElementById('npwp_penyetor');
+    //     const errorText = document.getElementById('errorText');
+    //     const errorpenyetor = document.getElementById('errorpenyetor');
+    //     inputElement.addEventListener('input',function(){
+    //         const inputValue = inputElement.value;
             
-            if(inputValue.length > 15){
-                inputElement.value = inputValue.slice(0,15);
-                errorText.textContent = 'Maksimal 15 digit';
-            }else{
-                errorText.textContent = '';
-            }
-        })
-        inputpenyetor.addEventListener('input',function(){
-            const inputValue = inputpenyetor.value;
+    //         if(inputValue.length > 15){
+    //             inputElement.value = inputValue.slice(0,15);
+    //             errorText.textContent = 'Maksimal 15 digit';
+    //         }else{
+    //             errorText.textContent = '';
+    //         }
+    //     })
+    //     inputpenyetor.addEventListener('input',function(){
+    //         const inputValue = inputpenyetor.value;
             
-            if(inputValue.length > 15){
-                inputpenyetor.value = inputValue.slice(0,15);
-                errorpenyetor.textContent = 'Maksimal 15 digit';
-            }else{
-                errorpenyetor.textContent = '';
-            }
-        })
+    //         if(inputValue.length > 15){
+    //             inputpenyetor.value = inputValue.slice(0,15);
+    //             errorpenyetor.textContent = 'Maksimal 15 digit';
+    //         }else{
+    //             errorpenyetor.textContent = '';
+    //         }
+    //     })
 
-    });
+    // });
     function resetForm() {
         var npwp = document.getElementById("npwp");
         var nama = document.getElementById("nama");

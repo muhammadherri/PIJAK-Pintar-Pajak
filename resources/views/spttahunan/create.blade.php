@@ -2938,218 +2938,218 @@
             }
 
         };
-        const nama_lengkapinput = document.getElementById('nama_lengkap');
-        const errornama_lengkapText = document.getElementById('errornama_lengkap');
-        nama_lengkapinput.addEventListener('input', function() {
-            const inputValue = nama_lengkapinput.value;
+        // const nama_lengkapinput = document.getElementById('nama_lengkap');
+        // const errornama_lengkapText = document.getElementById('errornama_lengkap');
+        // nama_lengkapinput.addEventListener('input', function() {
+        //     const inputValue = nama_lengkapinput.value;
 
-            if (inputValue.length > 27) {
-                nama_lengkapinput.value = inputValue.slice(0, 27);
-                errornama_lengkapText.textContent = 'Maksimal 27 digit';
-            } else {
-                errornama_lengkapText.textContent = '';
-            }
-        });
-        const npwp_pengurusinput = document.getElementById('npwp_pengurus');
-        const errornpwp_pengurusText = document.getElementById('errornpwp_pengurus');
-        npwp_pengurusinput.addEventListener('input', function() {
-            const inputValue = npwp_pengurusinput.value;
+        //     if (inputValue.length > 27) {
+        //         nama_lengkapinput.value = inputValue.slice(0, 27);
+        //         errornama_lengkapText.textContent = 'Maksimal 27 digit';
+        //     } else {
+        //         errornama_lengkapText.textContent = '';
+        //     }
+        // });
+        // const npwp_pengurusinput = document.getElementById('npwp_pengurus');
+        // const errornpwp_pengurusText = document.getElementById('errornpwp_pengurus');
+        // npwp_pengurusinput.addEventListener('input', function() {
+        //     const inputValue = npwp_pengurusinput.value;
 
-            if (inputValue.length > 15) {
-                npwp_pengurusinput.value = inputValue.slice(0, 15);
-                errornpwp_pengurusText.textContent = 'Maksimal 15 digit';
-            } else {
-                errornpwp_pengurusText.textContent = '';
-            }
-        });
-        const npwp_konsultan_pajakinput = document.getElementById('npwp_konsultan_pajak');
-        const errornpwp_konsultan_pajakText = document.getElementById('errornpwp_konsultan_pajak');
-        npwp_konsultan_pajakinput.addEventListener('input', function() {
-            const inputValue = npwp_konsultan_pajakinput.value;
+        //     if (inputValue.length > 15) {
+        //         npwp_pengurusinput.value = inputValue.slice(0, 15);
+        //         errornpwp_pengurusText.textContent = 'Maksimal 15 digit';
+        //     } else {
+        //         errornpwp_pengurusText.textContent = '';
+        //     }
+        // });
+        // const npwp_konsultan_pajakinput = document.getElementById('npwp_konsultan_pajak');
+        // const errornpwp_konsultan_pajakText = document.getElementById('errornpwp_konsultan_pajak');
+        // npwp_konsultan_pajakinput.addEventListener('input', function() {
+        //     const inputValue = npwp_konsultan_pajakinput.value;
 
-            if (inputValue.length > 15) {
-                npwp_konsultan_pajakinput.value = inputValue.slice(0, 15);
-                errornpwp_konsultan_pajakText.textContent = 'Maksimal 15 digit';
-            } else {
-                errornpwp_konsultan_pajakText.textContent = '';
-            }
-        });
-        const nama_konsultan_pajakinput = document.getElementById('nama_konsultan_pajak');
-        const errornama_konsultan_pajakText = document.getElementById('errornama_konsultan_pajak');
-        nama_konsultan_pajakinput.addEventListener('input', function() {
-            const inputValue = nama_konsultan_pajakinput.value;
+        //     if (inputValue.length > 15) {
+        //         npwp_konsultan_pajakinput.value = inputValue.slice(0, 15);
+        //         errornpwp_konsultan_pajakText.textContent = 'Maksimal 15 digit';
+        //     } else {
+        //         errornpwp_konsultan_pajakText.textContent = '';
+        //     }
+        // });
+        // const nama_konsultan_pajakinput = document.getElementById('nama_konsultan_pajak');
+        // const errornama_konsultan_pajakText = document.getElementById('errornama_konsultan_pajak');
+        // nama_konsultan_pajakinput.addEventListener('input', function() {
+        //     const inputValue = nama_konsultan_pajakinput.value;
 
-            if (inputValue.length > 27) {
-                nama_konsultan_pajakinput.value = inputValue.slice(0, 27);
-                errornama_konsultan_pajakText.textContent = 'Maksimal 27 digit';
-            } else {
-                errornama_konsultan_pajakText.textContent = '';
-            }
-        });
-        const nama_kantor_konsultan_pajakinput = document.getElementById('nama_kantor_konsultan_pajak');
-        const errornama_kantor_konsultan_pajakText = document.getElementById(
-            'errornama_kantor_konsultan_pajak');
-        nama_kantor_konsultan_pajakinput.addEventListener('input', function() {
-            const inputValue = nama_kantor_konsultan_pajakinput.value;
+        //     if (inputValue.length > 27) {
+        //         nama_konsultan_pajakinput.value = inputValue.slice(0, 27);
+        //         errornama_konsultan_pajakText.textContent = 'Maksimal 27 digit';
+        //     } else {
+        //         errornama_konsultan_pajakText.textContent = '';
+        //     }
+        // });
+        // const nama_kantor_konsultan_pajakinput = document.getElementById('nama_kantor_konsultan_pajak');
+        // const errornama_kantor_konsultan_pajakText = document.getElementById(
+        //     'errornama_kantor_konsultan_pajak');
+        // nama_kantor_konsultan_pajakinput.addEventListener('input', function() {
+        //     const inputValue = nama_kantor_konsultan_pajakinput.value;
 
-            if (inputValue.length > 27) {
-                nama_kantor_konsultan_pajakinput.value = inputValue.slice(0, 27);
-                errornama_kantor_konsultan_pajakText.textContent = 'Maksimal 27 digit';
-            } else {
-                errornama_kantor_konsultan_pajakText.textContent = '';
-            }
-        });
-        const npwp_kantor_konsultan_pajakinput = document.getElementById('npwp_kantor_konsultan_pajak');
-        const errornpwp_kantor_konsultan_pajakText = document.getElementById(
-            'errornpwp_kantor_konsultan_pajak');
-        npwp_kantor_konsultan_pajakinput.addEventListener('input', function() {
-            const inputValue = npwp_kantor_konsultan_pajakinput.value;
+        //     if (inputValue.length > 27) {
+        //         nama_kantor_konsultan_pajakinput.value = inputValue.slice(0, 27);
+        //         errornama_kantor_konsultan_pajakText.textContent = 'Maksimal 27 digit';
+        //     } else {
+        //         errornama_kantor_konsultan_pajakText.textContent = '';
+        //     }
+        // });
+        // const npwp_kantor_konsultan_pajakinput = document.getElementById('npwp_kantor_konsultan_pajak');
+        // const errornpwp_kantor_konsultan_pajakText = document.getElementById(
+        //     'errornpwp_kantor_konsultan_pajak');
+        // npwp_kantor_konsultan_pajakinput.addEventListener('input', function() {
+        //     const inputValue = npwp_kantor_konsultan_pajakinput.value;
 
-            if (inputValue.length > 15) {
-                npwp_kantor_konsultan_pajakinput.value = inputValue.slice(0, 15);
-                errornpwp_kantor_konsultan_pajakText.textContent = 'Maksimal 15 digit';
-            } else {
-                errornpwp_kantor_konsultan_pajakText.textContent = '';
-            }
-        });
-        const nama_akuntan_publikinput = document.getElementById('nama_akuntan_publik');
-        const errornama_akuntan_publikText = document.getElementById('errornama_akuntan_publik');
-        nama_akuntan_publikinput.addEventListener('input', function() {
-            const inputValue = nama_akuntan_publikinput.value;
+        //     if (inputValue.length > 15) {
+        //         npwp_kantor_konsultan_pajakinput.value = inputValue.slice(0, 15);
+        //         errornpwp_kantor_konsultan_pajakText.textContent = 'Maksimal 15 digit';
+        //     } else {
+        //         errornpwp_kantor_konsultan_pajakText.textContent = '';
+        //     }
+        // });
+        // const nama_akuntan_publikinput = document.getElementById('nama_akuntan_publik');
+        // const errornama_akuntan_publikText = document.getElementById('errornama_akuntan_publik');
+        // nama_akuntan_publikinput.addEventListener('input', function() {
+        //     const inputValue = nama_akuntan_publikinput.value;
 
-            if (inputValue.length > 15) {
-                nama_akuntan_publikinput.value = inputValue.slice(0, 15);
-                errornama_akuntan_publikText.textContent = 'Maksimal 15 digit';
-            } else {
-                errornama_akuntan_publikText.textContent = '';
-            }
-        });
+        //     if (inputValue.length > 15) {
+        //         nama_akuntan_publikinput.value = inputValue.slice(0, 15);
+        //         errornama_akuntan_publikText.textContent = 'Maksimal 15 digit';
+        //     } else {
+        //         errornama_akuntan_publikText.textContent = '';
+        //     }
+        // });
 
-        const akuntan_publikinput = document.getElementById('akuntan_publik');
-        const errorakuntan_publikText = document.getElementById('errorakuntan_publik');
-        akuntan_publikinput.addEventListener('input', function() {
-            const inputValue = akuntan_publikinput.value;
+        // const akuntan_publikinput = document.getElementById('akuntan_publik');
+        // const errorakuntan_publikText = document.getElementById('errorakuntan_publik');
+        // akuntan_publikinput.addEventListener('input', function() {
+        //     const inputValue = akuntan_publikinput.value;
 
-            if (inputValue.length > 27) {
-                akuntan_publikinput.value = inputValue.slice(0, 27);
-                errorakuntan_publikText.textContent = 'Maksimal 27 digit';
-            } else {
-                errorakuntan_publikText.textContent = '';
-            }
-        });
+        //     if (inputValue.length > 27) {
+        //         akuntan_publikinput.value = inputValue.slice(0, 27);
+        //         errorakuntan_publikText.textContent = 'Maksimal 27 digit';
+        //     } else {
+        //         errorakuntan_publikText.textContent = '';
+        //     }
+        // });
 
-        const npwp_kantor_akuntaninput = document.getElementById('npwp_kantor_akuntan');
-        const errornpwp_kantor_akuntanText = document.getElementById('errornpwp_kantor_akuntan');
-        npwp_kantor_akuntaninput.addEventListener('input', function() {
-            const inputValue = npwp_kantor_akuntaninput.value;
+        // const npwp_kantor_akuntaninput = document.getElementById('npwp_kantor_akuntan');
+        // const errornpwp_kantor_akuntanText = document.getElementById('errornpwp_kantor_akuntan');
+        // npwp_kantor_akuntaninput.addEventListener('input', function() {
+        //     const inputValue = npwp_kantor_akuntaninput.value;
 
-            if (inputValue.length > 15) {
-                npwp_kantor_akuntaninput.value = inputValue.slice(0, 15);
-                errornpwp_kantor_akuntanText.textContent = 'Maksimal 15 digit';
-            } else {
-                errornpwp_kantor_akuntanText.textContent = '';
-            }
-        });
+        //     if (inputValue.length > 15) {
+        //         npwp_kantor_akuntaninput.value = inputValue.slice(0, 15);
+        //         errornpwp_kantor_akuntanText.textContent = 'Maksimal 15 digit';
+        //     } else {
+        //         errornpwp_kantor_akuntanText.textContent = '';
+        //     }
+        // });
 
-        const kantor_akuntaninput = document.getElementById('kantor_akuntan');
-        const errorkantor_akuntanText = document.getElementById('errorkantor_akuntan');
-        kantor_akuntaninput.addEventListener('input', function() {
-            const inputValue = kantor_akuntaninput.value;
+        // const kantor_akuntaninput = document.getElementById('kantor_akuntan');
+        // const errorkantor_akuntanText = document.getElementById('errorkantor_akuntan');
+        // kantor_akuntaninput.addEventListener('input', function() {
+        //     const inputValue = kantor_akuntaninput.value;
 
-            if (inputValue.length > 27) {
-                kantor_akuntaninput.value = inputValue.slice(0, 27);
-                errorkantor_akuntanText.textContent = 'Maksimal 27 digit';
-            } else {
-                errorkantor_akuntanText.textContent = '';
-            }
-        });
+        //     if (inputValue.length > 27) {
+        //         kantor_akuntaninput.value = inputValue.slice(0, 27);
+        //         errorkantor_akuntanText.textContent = 'Maksimal 27 digit';
+        //     } else {
+        //         errorkantor_akuntanText.textContent = '';
+        //     }
+        // });
 
-        const inputElement = document.getElementById('npwp');
-        const errorText = document.getElementById('errorNpwp');
-        inputElement.addEventListener('input', function() {
-            const inputValue = inputElement.value;
+        // const inputElement = document.getElementById('npwp');
+        // const errorText = document.getElementById('errorNpwp');
+        // inputElement.addEventListener('input', function() {
+        //     const inputValue = inputElement.value;
 
-            if (inputValue.length > 15) {
-                inputElement.value = inputValue.slice(0, 15);
-                errorText.textContent = 'Maksimal 15 digit';
-            } else {
-                errorText.textContent = '';
-            }
-        });
+        //     if (inputValue.length > 15) {
+        //         inputElement.value = inputValue.slice(0, 15);
+        //         errorText.textContent = 'Maksimal 15 digit';
+        //     } else {
+        //         errorText.textContent = '';
+        //     }
+        // });
 
-        const nama_npwpInput = document.getElementById('nama_npwp');
-        const errornamaNpwpText = document.getElementById('errornamaNpwp');
-        nama_npwpInput.addEventListener('input', function() {
-            const inputValue = nama_npwpInput.value;
+        // const nama_npwpInput = document.getElementById('nama_npwp');
+        // const errornamaNpwpText = document.getElementById('errornamaNpwp');
+        // nama_npwpInput.addEventListener('input', function() {
+        //     const inputValue = nama_npwpInput.value;
 
-            if (inputValue.length > 30) {
-                nama_npwpInput.value = inputValue.slice(0, 30);
-                errornamaNpwpText.textContent = 'Maksimal 30 digit';
-            } else {
-                errornamaNpwpText.textContent = '';
-            }
-        });
+        //     if (inputValue.length > 30) {
+        //         nama_npwpInput.value = inputValue.slice(0, 30);
+        //         errornamaNpwpText.textContent = 'Maksimal 30 digit';
+        //     } else {
+        //         errornamaNpwpText.textContent = '';
+        //     }
+        // });
 
-        const jenis_usahaInput = document.getElementById('jenis_usaha');
-        const errorjenis_usahaText = document.getElementById('errorjenis_usaha');
-        jenis_usahaInput.addEventListener('input', function() {
-            const inputValue = jenis_usahaInput.value;
+        // const jenis_usahaInput = document.getElementById('jenis_usaha');
+        // const errorjenis_usahaText = document.getElementById('errorjenis_usaha');
+        // jenis_usahaInput.addEventListener('input', function() {
+        //     const inputValue = jenis_usahaInput.value;
 
-            if (inputValue.length > 21) {
-                jenis_usahaInput.value = inputValue.slice(0, 21);
-                errorjenis_usahaText.textContent = 'Maksimal 21 digit';
-            } else {
-                errorjenis_usahaText.textContent = '';
-            }
-        });
+        //     if (inputValue.length > 21) {
+        //         jenis_usahaInput.value = inputValue.slice(0, 21);
+        //         errorjenis_usahaText.textContent = 'Maksimal 21 digit';
+        //     } else {
+        //         errorjenis_usahaText.textContent = '';
+        //     }
+        // });
 
-        const kluInput = document.getElementById('klu');
-        const errorkluText = document.getElementById('errorklu');
-        kluInput.addEventListener('input', function() {
-            const inputValue = kluInput.value;
+        // const kluInput = document.getElementById('klu');
+        // const errorkluText = document.getElementById('errorklu');
+        // kluInput.addEventListener('input', function() {
+        //     const inputValue = kluInput.value;
 
-            if (inputValue.length > 6) {
-                kluInput.value = inputValue.slice(0, 6);
-                errorkluText.textContent = 'Maksimal 6 digit';
-            } else {
-                errorkluText.textContent = '';
-            }
-        });
-        const no_telpInput = document.getElementById('no_telp');
-        const errorno_telpText = document.getElementById('errorno_telp');
-        no_telpInput.addEventListener('input', function() {
-            const inputValue = no_telpInput.value;
+        //     if (inputValue.length > 6) {
+        //         kluInput.value = inputValue.slice(0, 6);
+        //         errorkluText.textContent = 'Maksimal 6 digit';
+        //     } else {
+        //         errorkluText.textContent = '';
+        //     }
+        // });
+        // const no_telpInput = document.getElementById('no_telp');
+        // const errorno_telpText = document.getElementById('errorno_telp');
+        // no_telpInput.addEventListener('input', function() {
+        //     const inputValue = no_telpInput.value;
 
-            if (inputValue.length > 12) {
-                no_telpInput.value = inputValue.slice(0, 12);
-                errorno_telpText.textContent = 'Maksimal 12 digit';
-            } else {
-                errorno_telpText.textContent = '';
-            }
-        });
-        const no_fakInput = document.getElementById('no_fak');
-        const errorno_fakText = document.getElementById('errorno_fak');
-        no_fakInput.addEventListener('input', function() {
-            const inputValue = no_fakInput.value;
+        //     if (inputValue.length > 12) {
+        //         no_telpInput.value = inputValue.slice(0, 12);
+        //         errorno_telpText.textContent = 'Maksimal 12 digit';
+        //     } else {
+        //         errorno_telpText.textContent = '';
+        //     }
+        // });
+        // const no_fakInput = document.getElementById('no_fak');
+        // const errorno_fakText = document.getElementById('errorno_fak');
+        // no_fakInput.addEventListener('input', function() {
+        //     const inputValue = no_fakInput.value;
 
-            if (inputValue.length > 12) {
-                no_fakInput.value = inputValue.slice(0, 12);
-                errorno_fakText.textContent = 'Maksimal 12 digit';
-            } else {
-                errorno_fakText.textContent = '';
-            }
-        });
-        const negara_domisiliInput = document.getElementById('negara_domisili');
-        const errornegara_domisiliText = document.getElementById('errornegara_domisili');
-        negara_domisiliInput.addEventListener('input', function() {
-            const inputValue = negara_domisiliInput.value;
+        //     if (inputValue.length > 12) {
+        //         no_fakInput.value = inputValue.slice(0, 12);
+        //         errorno_fakText.textContent = 'Maksimal 12 digit';
+        //     } else {
+        //         errorno_fakText.textContent = '';
+        //     }
+        // });
+        // const negara_domisiliInput = document.getElementById('negara_domisili');
+        // const errornegara_domisiliText = document.getElementById('errornegara_domisili');
+        // negara_domisiliInput.addEventListener('input', function() {
+        //     const inputValue = negara_domisiliInput.value;
 
-            if (inputValue.length > 23) {
-                negara_domisiliInput.value = inputValue.slice(0, 23);
-                errornegara_domisiliText.textContent = 'Maksimal 23 digit';
-            } else {
-                errornegara_domisiliText.textContent = '';
-            }
-        });
+        //     if (inputValue.length > 23) {
+        //         negara_domisiliInput.value = inputValue.slice(0, 23);
+        //         errornegara_domisiliText.textContent = 'Maksimal 23 digit';
+        //     } else {
+        //         errornegara_domisiliText.textContent = '';
+        //     }
+        // });
     });
 </script>

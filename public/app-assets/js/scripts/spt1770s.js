@@ -1,41 +1,41 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const id_npwp_1770s = document.getElementById('id_npwp_1770s');
-    const errorid_npwp_1770s = document.getElementById('errorid_npwp_1770s');
-    id_npwp_1770s.addEventListener('input', function() {
-        const inputValue = id_npwp_1770s.value;
+    // const id_npwp_1770s = document.getElementById('id_npwp_1770s');
+    // const errorid_npwp_1770s = document.getElementById('errorid_npwp_1770s');
+    // id_npwp_1770s.addEventListener('input', function() {
+    //     const inputValue = id_npwp_1770s.value;
 
-        if (inputValue.length > 15) {
-            id_npwp_1770s.value = inputValue.slice(0, 15);
-            errorid_npwp_1770s.textContent = 'Maksimal 15 digit';
-        } else {
-            errorid_npwp_1770s.textContent = '';
-        }
-    });
-    const pernyataan_npwp_1770s = document.getElementById('pernyataan_npwp_1770s');
-    const errorpernyataan_npwp_1770s = document.getElementById('errorpernyataan_npwp_1770s');
-    pernyataan_npwp_1770s.addEventListener('input', function() {
-        const inputValue = pernyataan_npwp_1770s.value;
+    //     if (inputValue.length > 15) {
+    //         id_npwp_1770s.value = inputValue.slice(0, 15);
+    //         errorid_npwp_1770s.textContent = 'Maksimal 15 digit';
+    //     } else {
+    //         errorid_npwp_1770s.textContent = '';
+    //     }
+    // });
+    // const pernyataan_npwp_1770s = document.getElementById('pernyataan_npwp_1770s');
+    // const errorpernyataan_npwp_1770s = document.getElementById('errorpernyataan_npwp_1770s');
+    // pernyataan_npwp_1770s.addEventListener('input', function() {
+    //     const inputValue = pernyataan_npwp_1770s.value;
 
-        if (inputValue.length > 15) {
-            pernyataan_npwp_1770s.value = inputValue.slice(0, 15);
-            errorpernyataan_npwp_1770s.textContent = 'Maksimal 15 digit';
-        } else {
-            errorpernyataan_npwp_1770s.textContent = '';
-        }
-    });
+    //     if (inputValue.length > 15) {
+    //         pernyataan_npwp_1770s.value = inputValue.slice(0, 15);
+    //         errorpernyataan_npwp_1770s.textContent = 'Maksimal 15 digit';
+    //     } else {
+    //         errorpernyataan_npwp_1770s.textContent = '';
+    //     }
+    // });
 
-    const id_npwp_pasangan_1770s = document.getElementById('id_npwp_pasangan_1770s');
-    const errorid_npwp_pasangan_1770s = document.getElementById('errorid_npwp_pasangan_1770s');
-    id_npwp_pasangan_1770s.addEventListener('input', function() {
-        const inputValue = id_npwp_pasangan_1770s.value;
+    // const id_npwp_pasangan_1770s = document.getElementById('id_npwp_pasangan_1770s');
+    // const errorid_npwp_pasangan_1770s = document.getElementById('errorid_npwp_pasangan_1770s');
+    // id_npwp_pasangan_1770s.addEventListener('input', function() {
+    //     const inputValue = id_npwp_pasangan_1770s.value;
 
-        if (inputValue.length > 15) {
-            id_npwp_pasangan_1770s.value = inputValue.slice(0, 15);
-            errorid_npwp_pasangan_1770s.textContent = 'Maksimal 15 digit';
-        } else {
-            errorid_npwp_pasangan_1770s.textContent = '';
-        }
-    });
+    //     if (inputValue.length > 15) {
+    //         id_npwp_pasangan_1770s.value = inputValue.slice(0, 15);
+    //         errorid_npwp_pasangan_1770s.textContent = 'Maksimal 15 digit';
+    //     } else {
+    //         errorid_npwp_pasangan_1770s.textContent = '';
+    //     }
+    // });
 
     const inputa1_rupiah_1770s = document.getElementById('a1_rupiah_1770s');
     const inputa2_rupiah_1770s = document.getElementById('a2_rupiah_1770s');
