@@ -9,6 +9,7 @@ use App\Models\HutangPpn;
 use App\Models\Pphfinal;
 use App\Models\PphTidakFinal;
 use App\Models\JenisPajak;
+use App\Models\KodeJenisSetoran;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use PDF;
@@ -44,13 +45,14 @@ class BillingController extends Controller
         $id=Auth::user()->id;
 
         $vendor=Vendor::all();
+        $kjs=KodeJenisSetoran::all();
         $jenispajak=JenisPajak::all();
         $trx=Ebupot::orderBy('id','DESC')->whereNotNull('trx')->where('attribute1',$id)->where('attribute3',null)->get();
         $trxppn=HutangPpn::orderBy('id','DESC')->where('attribute1',$id)->where('attribute3',null)->get();
         $trxpphfinal=Pphfinal::orderBy('id','DESC')->whereNotNull('transaksi')->where('attribute1',$id)->where('attribute3',null)->get();
         $trxpphtidakfinal=PphTidakFinal::orderBy('id','DESC')->where('attribute1',$id)->where('attribute3',null)->get();
         // dd($trx);
-        return view('billing.create',compact('jenispajak','vendor','trx','trxppn','trxpphfinal','trxpphtidakfinal'));
+        return view('billing.create',compact('kjs','jenispajak','vendor','trx','trxppn','trxpphfinal','trxpphtidakfinal'));
     }
 
     /**
@@ -279,6 +281,8 @@ class BillingController extends Controller
      */
     public function edit($id)
     {
+        $kjs=KodeJenisSetoran::all();
+        $jenispajak=JenisPajak::all();
         $vendor=Vendor::all();
         $iduser=Auth::user()->id;
         $billing = Billing::where('id',$id)->where('attribute1',$iduser)->get()->first();
@@ -286,7 +290,7 @@ class BillingController extends Controller
         if($billing==null){
             return back();
         }else{
-            return view('billing.edit',compact('billing','vendor'));
+            return view('billing.edit',compact('kjs','jenispajak','billing','vendor'));
         }
     }
 

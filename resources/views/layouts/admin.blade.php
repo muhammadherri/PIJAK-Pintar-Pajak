@@ -251,19 +251,22 @@
                             <span class="nav-text">Lainnya</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ route('fasilitas') }}">Fasilitas</a></li>
-                            <li><a href="{{ route('kodeobjekpajak') }}">Kode Objek Pajak</a></li>
-                            <li><a href="{{ route('neraca') }}">Akun Tes</a></li>
                             <li><a href="{{ route('latihankeuangan') }}">Akun Latihan</a></li>
+                            <li><a href="{{ route('neraca') }}">Akun Tes</a></li>
+                            {{-- <li><a href="{{ route('dokumenreferensi') }}">Dokumen Referensi</a></lim> --}}
+                            <li><a href="{{ route('fasilitas') }}">Fasilitas</a></li>
+                            <li><a href="{{ route('jenis_pajak') }}">Jenis Pajak</a></li>
+                            <li><a href="{{ route('jenispph') }}">Jenis PPh</a></li>
+                            <li><a href="{{ route('kodejenissetoran') }}">Kode Jenis Setoran</a></li>
+                            <li><a href="{{ route('kodeobjekpajak') }}">Kode Objek Pajak</a></li>
+                            <li><a href="{{ route('kodeobjekpphfinal') }}">Kode Objek Pajak PPh Final</a></li>
+                            <li><a href="{{ route('kodeobjekpphtidakfinal') }}">Kode Objek Pajak PPh Tidak Final</a></li>
+                            <li><a href="{{ route('namakelas') }}">Nama Kelas</a></li>
+                            <li><a href="{{ route('noseri') }}">No Seri</a></li>
+                            <li><a href="{{ route('penandatanganan') }}">Penandatanganan</a></li>
+                            <li><a href="{{ route('ptkp') }}">PTKP</a></li>
                             <li><a href="{{ route('top') }}">Top</a></li>
                             <li><a href="{{ route('vendor') }}">Vendor</a></li>
-                            {{-- <li><a href="{{ route('dokumenreferensi') }}">Dokumen Referensi</a></lim> --}}
-                            <li><a href="{{ route('ptkp') }}">PTKP</a></li>
-                            <li><a href="{{ route('penandatanganan') }}">Penandatanganan</a></li>
-                            <li><a href="{{ route('jenispph') }}">Jenis PPh</a></li>
-                            <li><a href="{{ route('noseri') }}">No Seri</a></li>
-                            <li><a href="{{ route('jenis_pajak') }}">Jenis Pajak</a></li>
-                            <li><a href="{{ route('namakelas') }}">Nama Kelas</a></li>
                             {{-- <li><a href="{{ route('penerimapenghasilan') }}">Penerima Penghasilan</a></li> --}}
                         </ul>
 

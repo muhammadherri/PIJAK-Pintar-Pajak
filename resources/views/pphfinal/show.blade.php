@@ -55,8 +55,67 @@
                                 <div class="row">
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Tarif</label>
-                                        <div class="col-sm-9">
-                                            <input required autocomplete="off" id="tarif" name="tarif" value="{{number_format($pphfinal->tarif)}}"
+                                        <div class="col-sm-3">
+                                            <input required autocomplete="off" id="tarif" name="tarif" value="{{number_format($pphfinal->tarif1)}}"
+                                                type="text" min="0" class="form-control" placeholder="Masukkan Jumlah Tarif">
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <input required autocomplete="off" id="tarif" name="tarif" value="{{number_format($pphfinal->persen1)}}"
+                                                type="text" min="0" class="form-control" placeholder="Masukkan Jumlah Tarif">
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <input required autocomplete="off" id="tarif" name="tarif" value="{{number_format($pphfinal->hasil1)}}"
+                                                type="text" min="0" class="form-control" placeholder="Masukkan Jumlah Tarif">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label"></label>
+                                        <div class="col-sm-3">
+                                            <input required autocomplete="off" id="tarif" name="tarif" value="{{number_format($pphfinal->tarif2)}}"
+                                                type="text" min="0" class="form-control" placeholder="Masukkan Jumlah Tarif">
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <input required autocomplete="off" id="tarif" name="tarif" value="{{number_format($pphfinal->persen2)}}"
+                                                type="text" min="0" class="form-control" placeholder="Masukkan Jumlah Tarif">
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <input required autocomplete="off" id="tarif" name="tarif" value="{{number_format($pphfinal->hasil2)}}"
+                                                type="text" min="0" class="form-control" placeholder="Masukkan Jumlah Tarif">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label"></label>
+                                        <div class="col-sm-3">
+                                            <input required autocomplete="off" id="tarif" name="tarif" value="{{number_format($pphfinal->tarif3)}}"
+                                                type="text" min="0" class="form-control" placeholder="Masukkan Jumlah Tarif">
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <input required autocomplete="off" id="tarif" name="tarif" value="{{number_format($pphfinal->persen3)}}"
+                                                type="text" min="0" class="form-control" placeholder="Masukkan Jumlah Tarif">
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <input required autocomplete="off" id="tarif" name="tarif" value="{{number_format($pphfinal->hasil3)}}"
+                                                type="text" min="0" class="form-control" placeholder="Masukkan Jumlah Tarif">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label"></label>
+                                        <div class="col-sm-3">
+                                            <input required autocomplete="off" id="tarif" name="tarif" value="{{number_format($pphfinal->tarif4)}}"
+                                                type="text" min="0" class="form-control" placeholder="Masukkan Jumlah Tarif">
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <input required autocomplete="off" id="tarif" name="tarif" value="{{number_format($pphfinal->persen4)}}"
+                                                type="text" min="0" class="form-control" placeholder="Masukkan Jumlah Tarif">
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <input required autocomplete="off" id="tarif" name="tarif" value="{{number_format($pphfinal->hasil4)}}"
                                                 type="text" min="0" class="form-control" placeholder="Masukkan Jumlah Tarif">
                                         </div>
                                     </div>

@@ -145,9 +145,16 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Kode Jenis Setoran</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" required id="kode_jenis_setoran"
+                                                <select id="kode_jenis_setoran" name="kode_jenis_setoran"
+                                                    class="dropdown-groups">
+                                                    @foreach ($kjs as $row)
+                                                        <option value="{{ $row->id }}">
+                                                            {{ $row->kode }} - {{ $row->jenis_setoran }}</option>
+                                                    @endforeach
+                                                </select>        
+                                                {{-- <input autocomplete="off" required id="kode_jenis_setoran"
                                                     name="kode_jenis_setoran" type="text" class="form-control"
-                                                    placeholder="Masukkan Kode Jenis Setoran">
+                                                    placeholder="Masukkan Kode Jenis Setoran"> --}}
                                             </div>
                                         </div>
                                         <div class="mb-3 row">

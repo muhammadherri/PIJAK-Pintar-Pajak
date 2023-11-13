@@ -496,9 +496,10 @@
                                                 <label class="col-sm-7 col-form-label"></label>
                                                 <label class="col-sm-1 col-form-label">PPN</label>
                                                 <div class="col-sm-4">
-                                                    <input autocomplete="off" readonly   id="lima_a_ppn_terutang_1111"
+                                                    <input autocomplete="off"  id="lima_a_ppn_terutang_1111"
+                                                        onkeyup="this.value=sprator(this.value);"
                                                         name="lima_a_ppn_terutang_1111"type="text" min="0"
-                                                        class="form-control">
+                                                        class="form-control" placeholder="Masukkan PPN">
                                                 </div>
                                             </div>
                                             <h6>B. PPn BM Disetor Dimuka Dalam Masa Pajak Yang Sama</h6>

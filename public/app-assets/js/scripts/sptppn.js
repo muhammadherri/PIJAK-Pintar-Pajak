@@ -860,12 +860,14 @@ function sprator(x) {
         resultdua_f_pajak_keluaran_ppn_1111.value = hasilIIF.toLocaleString();
     }
     
-    const resultlima_a_ppn_terutang_1111 = document.getElementById('lima_a_ppn_terutang_1111');
-    resultlima_a_ppn_terutang_1111.value = hasila2_dpp_1111.toLocaleString();
+    const lima_a_ppn_terutang_1111 = $('#lima_a_ppn_terutang_1111').val();
+    retVallima_a_ppn_terutang_1111=lima_a_ppn_terutang_1111 ? parseFloat(lima_a_ppn_terutang_1111.replace(/,/g, '')) : 0;
+
     const lima_b_ppn_terutang_1111 = $('#lima_b_ppn_terutang_1111').val();
     retVallima_b_ppn_terutang_1111=lima_b_ppn_terutang_1111 ? parseFloat(lima_b_ppn_terutang_1111.replace(/,/g, '')) : 0;
+    
     const resultlima_c_ppn_terutang_1111 = document.getElementById('lima_c_ppn_terutang_1111');
-    const hasilVC = hasila2_dpp_1111-retVallima_b_ppn_terutang_1111;
+    const hasilVC = retVallima_a_ppn_terutang_1111-retVallima_b_ppn_terutang_1111;
     if(hasilVC<0){
         resultlima_c_ppn_terutang_1111.value = 0;
     }else{

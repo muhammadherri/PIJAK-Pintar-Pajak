@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\PphTidakFinal;
+use App\Models\KodeObjekPPhTidakFinal;
 use Illuminate\Support\Facades\Auth;
 
 class PphTidakFinalController extends Controller
@@ -25,7 +26,8 @@ class PphTidakFinalController extends Controller
      */
     public function create()
     {
-        return view('pphtidakfinal.create');
+        $koptidakfinal = KodeObjekPPhTidakFinal::get();
+        return view('pphtidakfinal.create',compact('koptidakfinal'));
     }
 
     /**

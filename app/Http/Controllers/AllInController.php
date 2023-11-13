@@ -2029,9 +2029,9 @@ class AllInController extends Controller
             $data_arr[] = array(
                 "id" => $record->id,
                 "transaksi" => $record->transaksi,
-                "kop" =>$record->kode_objek_pajak,
+                "kop" =>$record->kop->kode_objek.'-'.$record->kop->penerima_penghasilan,
                 "bruto" =>number_format($record->bruto),
-                "tarif" =>number_format($record->tarif),
+                "tarif" =>number_format($record->hasil1+$record->hasil2+$record->hasil3+$record->hasil4),
                 "potongan_pph" =>number_format($record->potongan_pph),
                 "created_at" => $record->created_at->format('d-M-Y'),
                 "status" =>$record->attribute3,

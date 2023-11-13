@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pphfinal;
+use App\Models\KodeObjekPPhFinal;
 use Illuminate\Support\Facades\Auth;
 
 class PphFinalController extends Controller
@@ -25,7 +26,8 @@ class PphFinalController extends Controller
      */
     public function create()
     {
-        return view('pphfinal.create');
+        $kopfinal = KodeObjekPPhFinal::get();
+        return view('pphfinal.create',compact('kopfinal'));
     }
 
     /**
@@ -46,7 +48,18 @@ class PphFinalController extends Controller
             'transaksi'=>$trx,
             'kode_objek_pajak'=>$request->kop,
             'bruto'=>preg_replace('/[^0-9]/','',$request->bruto),
-            'tarif'=>preg_replace('/[^0-9]/','',$request->tarif),
+            'tarif1'=>preg_replace('/[^0-9]/','',$request->tarif1),
+            'tarif2'=>preg_replace('/[^0-9]/','',$request->tarif2),
+            'tarif3'=>preg_replace('/[^0-9]/','',$request->tarif3),
+            'tarif4'=>preg_replace('/[^0-9]/','',$request->tarif4),
+            'persen1'=>preg_replace('/[^0-9]/','',$request->persen1),
+            'persen2'=>preg_replace('/[^0-9]/','',$request->persen2),
+            'persen3'=>preg_replace('/[^0-9]/','',$request->persen3),
+            'persen4'=>preg_replace('/[^0-9]/','',$request->persen4),
+            'hasil1'=>preg_replace('/[^0-9]/','',$request->hasil1),
+            'hasil2'=>preg_replace('/[^0-9]/','',$request->hasil2),
+            'hasil3'=>preg_replace('/[^0-9]/','',$request->hasil3),
+            'hasil4'=>preg_replace('/[^0-9]/','',$request->hasil4),
             'potongan_pph'=>preg_replace('/[^0-9]/','',$request->input('potongan_pph')),
             'nama_dosen'=>Auth::user()->dosen_pembimbing,
             'attribute1'=>Auth::user()->id,
@@ -80,13 +93,14 @@ class PphFinalController extends Controller
         // if(Auth::user()->status==1){
         //     $pphfinal=Pphfinal::where('id',$id)->get()->first();
         // }else{
+            $kopfinal = KodeObjekPPhFinal::get();
             $pphfinal=Pphfinal::where('attribute1',$iduser)->where('id',$id)->get()->first();
         // }
 
         if($pphfinal==null){
             return back();
         }else{
-            return view('pphfinal.edit',compact('pphfinal'));
+            return view('pphfinal.edit',compact('pphfinal','kopfinal'));
         }
     }
 
@@ -102,7 +116,18 @@ class PphFinalController extends Controller
         Pphfinal::where('id',$id)->update([
             'kode_objek_pajak'=>$request->kop,
             'bruto'=>preg_replace('/[^0-9]/','',$request->bruto),
-            'tarif'=>preg_replace('/[^0-9]/','',$request->tarif),
+            'tarif1'=>preg_replace('/[^0-9]/','',$request->tarif1),
+            'tarif2'=>preg_replace('/[^0-9]/','',$request->tarif2),
+            'tarif3'=>preg_replace('/[^0-9]/','',$request->tarif3),
+            'tarif4'=>preg_replace('/[^0-9]/','',$request->tarif4),
+            'persen1'=>preg_replace('/[^0-9]/','',$request->persen1),
+            'persen2'=>preg_replace('/[^0-9]/','',$request->persen2),
+            'persen3'=>preg_replace('/[^0-9]/','',$request->persen3),
+            'persen4'=>preg_replace('/[^0-9]/','',$request->persen4),
+            'hasil1'=>preg_replace('/[^0-9]/','',$request->hasil1),
+            'hasil2'=>preg_replace('/[^0-9]/','',$request->hasil2),
+            'hasil3'=>preg_replace('/[^0-9]/','',$request->hasil3),
+            'hasil4'=>preg_replace('/[^0-9]/','',$request->hasil4),
             'potongan_pph'=>preg_replace('/[^0-9]/','',$request->input('potongan_pph')),
             'attribute2'=>Auth::user()->id,
             'updated_at'=>date('Y-m-d H:i:s'),

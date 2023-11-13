@@ -33,8 +33,17 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Kode Objek Pajak</label>
                                             <div class="col-sm-9">
-                                                <input required autocomplete="off" id="kop" name="kop"
-                                                    type="text" class="form-control" placeholder="Masukkan Kode Objek Pajak">
+                                                <div class="col-sm-12">
+                                                    <select id="kop" name="kop"
+                                                        class="dropdown-groups">
+                                                        @foreach ($koptidakfinal as $row)
+                                                            <option value="{{ $row->id }}">
+                                                                {{ $row->kode_objek }} - {{ $row->penerima_penghasilan }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                                {{-- <input required autocomplete="off" id="kop" name="kop"
+                                                    type="text" class="form-control" placeholder="Masukkan Kode Objek Pajak"> --}}
                                             </div>
                                         </div>
                                     </div>

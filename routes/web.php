@@ -62,6 +62,39 @@ Route::get('/fasilitas/{id}/edit', [App\Http\Controllers\FasilitasController::cl
 Route::put('/fasilitas/{id}', [App\Http\Controllers\FasilitasController::class, 'update'])->name('fasilitas/update');
 // fasilitas
 
+// kodejenissetoran
+Route::get('/kodejenissetoran', [App\Http\Controllers\KodeJenisSetoranController::class, 'index'])->name('kodejenissetoran');
+Route::get('/kodejenissetoran/create', [App\Http\Controllers\KodeJenisSetoranController::class, 'create'])->name('kodejenissetoran/create');
+Route::post('/kodejenissetoran/store', [App\Http\Controllers\KodeJenisSetoranController::class, 'store'])->name('kodejenissetoran/store');
+
+Route::delete('/kodejenissetoran/{id}', [App\Http\Controllers\KodeJenisSetoranController::class, 'destroy']);
+Route::get('/kodejenissetoran/{id}/show', [App\Http\Controllers\KodeJenisSetoranController::class, 'show'])->name('kodejenissetoran/show');
+Route::get('/kodejenissetoran/{id}/edit', [App\Http\Controllers\KodeJenisSetoranController::class, 'edit'])->name('kodejenissetoran/edit');
+Route::put('/kodejenissetoran/{id}', [App\Http\Controllers\KodeJenisSetoranController::class, 'update'])->name('kodejenissetoran/update');
+// kodejenissetoran
+
+// kodeobjekpphtidakfinal
+Route::get('/kodeobjekpphtidakfinal', [App\Http\Controllers\KodeObjekPPhTidakFinalController::class, 'index'])->name('kodeobjekpphtidakfinal');
+Route::get('/kodeobjekpphtidakfinal/create', [App\Http\Controllers\KodeObjekPPhTidakFinalController::class, 'create'])->name('kodeobjekpphtidakfinal/create');
+Route::post('/kodeobjekpphtidakfinal/store', [App\Http\Controllers\KodeObjekPPhTidakFinalController::class, 'store'])->name('kodeobjekpphtidakfinal/store');
+
+Route::delete('/kodeobjekpphtidakfinal/{id}', [App\Http\Controllers\KodeObjekPPhTidakFinalController::class, 'destroy']);
+Route::get('/kodeobjekpphtidakfinal/{id}/show', [App\Http\Controllers\KodeObjekPPhTidakFinalController::class, 'show'])->name('kodeobjekpphtidakfinal/show');
+Route::get('/kodeobjekpphtidakfinal/{id}/edit', [App\Http\Controllers\KodeObjekPPhTidakFinalController::class, 'edit'])->name('kodeobjekpphtidakfinal/edit');
+Route::put('/kodeobjekpphtidakfinal/{id}', [App\Http\Controllers\KodeObjekPPhTidakFinalController::class, 'update'])->name('kodeobjekpphtidakfinal/update');
+// kodeobjekpphtidakfinal
+
+// kodeobjekpphfinal
+Route::get('/kodeobjekpphfinal', [App\Http\Controllers\KodeObjekPPhFinalController::class, 'index'])->name('kodeobjekpphfinal');
+Route::get('/kodeobjekpphfinal/create', [App\Http\Controllers\KodeObjekPPhFinalController::class, 'create'])->name('kodeobjekpphfinal/create');
+Route::post('/kodeobjekpphfinal/store', [App\Http\Controllers\KodeObjekPPhFinalController::class, 'store'])->name('kodeobjekpphfinal/store');
+
+Route::delete('/kodeobjekpphfinal/{id}', [App\Http\Controllers\KodeObjekPPhFinalController::class, 'destroy']);
+Route::get('/kodeobjekpphfinal/{id}/show', [App\Http\Controllers\KodeObjekPPhFinalController::class, 'show'])->name('kodeobjekpphfinal/show');
+Route::get('/kodeobjekpphfinal/{id}/edit', [App\Http\Controllers\KodeObjekPPhFinalController::class, 'edit'])->name('kodeobjekpphfinal/edit');
+Route::put('/kodeobjekpphfinal/{id}', [App\Http\Controllers\KodeObjekPPhFinalController::class, 'update'])->name('kodeobjekpphfinal/update');
+// kodeobjekpphfinal
+
 // kodeobjekpajak
 Route::get('/kodeobjekpajak', [App\Http\Controllers\KodeObjekPajakController::class, 'index'])->name('kodeobjekpajak');
 Route::get('/kodeobjekpajak/create', [App\Http\Controllers\KodeObjekPajakController::class, 'create'])->name('kodeobjekpajak/create');

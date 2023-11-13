@@ -54,16 +54,30 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Jenis Pajak</label>
                                             <div class="col-sm-9">
-                                                <input value="{{$billing->jenis_pajak}}" autocomplete="off" required id="jenis_pajak" name="jenis_pajak"
-                                                    type="text" class="form-control" placeholder="Masukkan Jenis Pajak">
+                                                <select id="jenis_pajak" name="jenis_pajak" class="dropdown-groups">
+                                                    @foreach ($jenispajak as $row)
+                                                        <option value="{{ $row->id }}"
+                                                            {{ $billing->jenis_pajak == $row->id ? 'selected' : '' }}>
+                                                            {{ $row->kode }} - {{ $row->jenis_pajak }}</option>
+                                                    @endforeach
+                                                </select>           
+                                                {{-- <input value="{{$billing->jenis_pajak}}" autocomplete="off" required id="jenis_pajak" name="jenis_pajak"
+                                                    type="text" class="form-control" placeholder="Masukkan Jenis Pajak"> --}}
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Kode Jenis Setoran</label>
                                             <div class="col-sm-9">
-                                                <input value="{{$billing->kode_jenis_setoran}}" autocomplete="off" required id="kode_jenis_setoran"
+                                                {{-- <input value="{{$billing->kode_jenis_setoran}}" autocomplete="off" required id="kode_jenis_setoran"
                                                     name="kode_jenis_setoran" type="text" class="form-control"
-                                                    placeholder="Masukkan Kode Jenis Setoran">
+                                                    placeholder="Masukkan Kode Jenis Setoran"> --}}
+                                                <select id="kode_jenis_setoran" name="kode_jenis_setoran" class="dropdown-groups">
+                                                    @foreach ($kjs as $row)
+                                                        <option value="{{ $row->id }}"
+                                                            {{ $billing->kode_jenis_setoran == $row->id ? 'selected' : '' }}>
+                                                            {{ $row->kode }} - {{ $row->jenis_setoran }}</option>
+                                                    @endforeach
+                                                </select>           
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
