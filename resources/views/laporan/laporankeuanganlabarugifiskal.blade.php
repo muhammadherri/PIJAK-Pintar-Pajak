@@ -58,7 +58,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit4100) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit4100) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit4100 - $kredit4100) }}</td>
+                                                {{ number_format($fiskal4100) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -70,7 +70,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit4101) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit4101) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit4101 - $kredit4101) }}</td>
+                                                {{ number_format($fiskal4101) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -82,7 +82,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit4102) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit4102) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit4102 - $kredit4102) }}</td>
+                                                {{ number_format($fiskal4102) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -94,7 +94,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit4103) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit4103) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit4103 - $kredit4103) }}</td>
+                                                {{ number_format($fiskal4103) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -106,7 +106,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit4104) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit4104) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit4104 - $kredit4104) }}</td>
+                                                {{ number_format($fiskal4104) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -119,7 +119,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit4200) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit4200) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit4200 - $kredit4200) }}</td>
+                                                {{ number_format($fiskal4200) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -132,7 +132,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit4201) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit4201) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit4201 - $kredit4201) }}</td>
+                                                {{ number_format($fiskal4201) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -145,7 +145,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit4202) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit4202) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit4202 - $kredit4202) }}</td>
+                                                {{ number_format($fiskal4202) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -158,7 +158,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit4203) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit4203) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit4203 - $kredit4203) }}</td>
+                                                {{ number_format($fiskal4203) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -171,7 +171,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit4300) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit4300) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit4300 - $kredit4300) }}</td>
+                                                {{ number_format($fiskal4300) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -184,7 +184,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit4310) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit4310) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit4310 - $kredit4310) }}</td>
+                                                {{ number_format($fiskal4310) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -197,7 +197,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit4320) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit4320) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit4320 - $kredit4320) }}</td>
+                                                {{ number_format($fiskal4320) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -210,7 +210,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit4330) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit4330) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit4330 - $kredit4330) }}</td>
+                                                {{ number_format($fiskal4330) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -223,7 +223,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit4340) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit4340) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit4340 - $kredit4340) }}</td>
+                                                {{ number_format($fiskal4340) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -236,7 +236,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit4350) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit4350) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit4350 - $kredit4350) }}</td>
+                                                {{ number_format($fiskal4350) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -249,7 +249,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit4105) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit4105) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit4105 - $kredit4105) }}</td>
+                                                {{ number_format($fiskal4105) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -259,7 +259,8 @@
                                         <th class="text-center">{{ number_format($totalpenjualan) }}</th>
                                         <th class="text-center"></th>
                                         <th class="text-center"></th>
-                                        <th class="text-center">{{ number_format($totalpenjualan) }}</th>
+                                        {{-- <th class="text-center"></th> --}}
+                                        <th class="text-center">{{ number_format($totalpenjualanfiskal) }}</th>
                                         <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
@@ -277,7 +278,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit5100) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit5100) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit5100 - $kredit5100) }}</td>
+                                                {{ number_format($fiskal5100) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -290,7 +291,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit5110) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit5110) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit5110 - $kredit5110) }}</td>
+                                                {{ number_format($fiskal5110) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -303,7 +304,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit5120) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit5120) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit5120 - $kredit5120) }}</td>
+                                                {{ number_format($fiskal5120) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -316,7 +317,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit5200) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit5200) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit5200 - $kredit5200) }}</td>
+                                                {{ number_format($fiskal5200) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -329,7 +330,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit5210) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit5210) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit5210 - $kredit5210) }}</td>
+                                                {{ number_format($fiskal5210) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -342,7 +343,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit5211) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit5211) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit5211 - $kredit5211) }}</td>
+                                                {{ number_format($fiskal5211) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -355,7 +356,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit5212) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit5212) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit5212 - $kredit5212) }}</td>
+                                                {{ number_format($fiskal5212) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -368,7 +369,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit5213) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit5213) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit5213 - $kredit5213) }}</td>
+                                                {{ number_format($fiskal5213) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -381,7 +382,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit5250) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit5250) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit5250 - $kredit5250) }}</td>
+                                                {{ number_format($fiskal5250) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -394,7 +395,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit5260) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit5260) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit5260 - $kredit5260) }}</td>
+                                                {{ number_format($fiskal5260) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -407,7 +408,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit5300) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit5300) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit5300 - $kredit5300) }}</td>
+                                                {{ number_format($fiskal5300) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -420,7 +421,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit5400) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit5400) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit5400 - $kredit5400) }}</td>
+                                                {{ number_format($fiskal5400) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -433,7 +434,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit5410) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit5410) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit5410 - $kredit5410) }}</td>
+                                                {{ number_format($fiskal5410) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -446,7 +447,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit5420) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit5420) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit5420 - $kredit5420) }}</td>
+                                                {{ number_format($fiskal5420) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -459,7 +460,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit5430) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit5430) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit5430 - $kredit5430) }}</td>
+                                                {{ number_format($fiskal5430) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -472,7 +473,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit5440) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit5440) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit5440 - $kredit5440) }}</td>
+                                                {{ number_format($fiskal5440) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -485,7 +486,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit5450) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit5450) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit5450 - $kredit5450) }}</td>
+                                                {{ number_format($fiskal5450) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -498,7 +499,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit5460) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit5460) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit5460 - $kredit5460) }}</td>
+                                                {{ number_format($fiskal5460) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -511,7 +512,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit5470) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit5470) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit5470 - $kredit5470) }}</td>
+                                                {{ number_format($fiskal5470) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -524,7 +525,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit5480) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit5480) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit5480 - $kredit5480) }}</td>
+                                                {{ number_format($fiskal5480) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -537,7 +538,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit5600) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit5600) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit5600 - $kredit5600) }}</td>
+                                                {{ number_format($fiskal5600) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -548,7 +549,7 @@
                                         <th class="text-center">{{ number_format($totalharpok) }}</th>
                                         <th class="text-center"></th>
                                         <th class="text-center"></th>
-                                        <th class="text-center">{{ number_format($totalharpok) }}</th>
+                                        <th class="text-center">{{ number_format($totalharpokfiskal) }}</th>
                                         <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
@@ -557,16 +558,16 @@
                                         <th class="text-center">{{ number_format($labakotor) }}</th>
                                         <th class="text-center"></th>
                                         <th class="text-center"></th>
-                                        <th class="text-center">{{ number_format($labakotor) }}</th>
+                                        <th class="text-center">{{ number_format($labakotorfiskal) }}</th>
                                         <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>
                                         <th width="auto" class="text-center">PENGELUARAN OPERASIONAL</th>
-                                        <th class="text-center">{{ number_format($labakotor) }}</th>
                                         <th class="text-center"></th>
                                         <th class="text-center"></th>
-                                        <th class="text-center">{{ number_format($labakotor) }}</th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
                                         <th colspan="2" class="text-center"></th>
                                     </tr>
                                     @foreach ($asetlancar6100 as $key => $row)
@@ -577,7 +578,7 @@
                                             <td width="auto" class="text-center">{{ number_format($row->saldo) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($debit6100) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6100) }}</td>
-                                            <td width="auto" class="text-center">{{ number_format($row->saldo) }}</td>
+                                            <td width="auto" class="text-center">{{ number_format($fiskal6100) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -590,7 +591,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6110) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6110) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6110 - $kredit6110) }}</td>
+                                                {{ number_format($fiskal6110) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -603,7 +604,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6120) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6120) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6120 - $kredit6120) }}</td>
+                                                {{ number_format($fiskal6120) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -616,7 +617,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6130) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6130) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6130 - $kredit6130) }}</td>
+                                                {{ number_format($fiskal6130) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -629,7 +630,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6140) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6140) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6140 - $kredit6140) }}</td>
+                                                {{ number_format($fiskal6140) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -642,7 +643,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6150) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6150) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6150 - $kredit6150) }}</td>
+                                                {{ number_format($fiskal6150) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -655,7 +656,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6160) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6160) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6160 - $kredit6160) }}</td>
+                                                {{ number_format($fiskal6160) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -668,7 +669,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6170) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6170) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6170 - $kredit6170) }}</td>
+                                                {{ number_format($fiskal6170) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -681,7 +682,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6180) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6180) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6180 - $kredit6180) }}</td>
+                                                {{ number_format($fiskal6180) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -694,7 +695,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6190) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6190) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6190 - $kredit6190) }}</td>
+                                                {{ number_format($fiskal6190) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -707,7 +708,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6200) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6200) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6200 - $kredit6200) }}</td>
+                                                {{ number_format($fiskal6200) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -720,7 +721,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6210) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6210) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6210 - $kredit6210) }}</td>
+                                                {{ number_format($fiskal6210) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -733,7 +734,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6220) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6220) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6220 - $kredit6220) }}</td>
+                                                {{ number_format($fiskal6220) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -746,7 +747,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6230) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6230) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6230 - $kredit6230) }}</td>
+                                                {{ number_format($fiskal6230) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -759,7 +760,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6240) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6240) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6240 - $kredit6240) }}</td>
+                                                {{ number_format($fiskal6240) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -772,7 +773,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6250) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6250) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6250 - $kredit6250) }}</td>
+                                                {{ number_format($fiskal6250) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -785,7 +786,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6260) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6260) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6260 - $kredit6260) }}</td>
+                                                {{ number_format($fiskal6260) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -798,7 +799,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6270) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6270) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6270 - $kredit6270) }}</td>
+                                                {{ number_format($fiskal6270) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -811,7 +812,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6280) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6280) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6280 - $kredit6280) }}</td>
+                                                {{ number_format($fiskal6280) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -824,7 +825,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6290) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6290) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6290 - $kredit6290) }}</td>
+                                                {{ number_format($fiskal6290) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -837,7 +838,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6300) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6300) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6300 - $kredit6300) }}</td>
+                                                {{ number_format($fiskal6300) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -850,7 +851,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6310) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6310) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6310 - $kredit6310) }}</td>
+                                                {{ number_format($fiskal6310) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -863,7 +864,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6320) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6320) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6320 - $kredit6320) }}</td>
+                                                {{ number_format($fiskal6320) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -876,7 +877,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6330) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6330) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6330 - $kredit6330) }}</td>
+                                                {{ number_format($fiskal6330) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -889,7 +890,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6340) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6340) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6340 - $kredit6340) }}</td>
+                                                {{ number_format($fiskal6340) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -902,7 +903,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6350) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6350) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6350 - $kredit6350) }}</td>
+                                                {{ number_format($fiskal6350) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -915,7 +916,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6360) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6360) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6360 - $kredit6360) }}</td>
+                                                {{ number_format($fiskal6360) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -928,7 +929,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6370) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6370) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6370 - $kredit6370) }}</td>
+                                                {{ number_format($fiskal6370) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -941,7 +942,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6380) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6380) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6380 - $kredit6380) }}</td>
+                                                {{ number_format($fiskal6380) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -954,7 +955,7 @@
                                             <td width="auto" class="text-center">{{ number_format($debit6390) }}</td>
                                             <td width="auto" class="text-center">{{ number_format($kredit6390) }}</td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6390 - $kredit6390) }}</td>
+                                                {{ number_format($fiskal6390) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -970,7 +971,7 @@
                                             <td width="auto" class="text-center">{{ number_format($kredit6400) }}
                                             </td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6400 - $kredit6400) }}</td>
+                                                {{ number_format($fiskal6400) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -986,7 +987,7 @@
                                             <td width="auto" class="text-center">{{ number_format($kredit6410) }}
                                             </td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6410 - $kredit6410) }}</td>
+                                                {{ number_format($fiskal6410) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -1002,7 +1003,7 @@
                                             <td width="auto" class="text-center">{{ number_format($kredit6420) }}
                                             </td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6420 - $kredit6420) }}</td>
+                                                {{ number_format($fiskal6420) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -1018,7 +1019,7 @@
                                             <td width="auto" class="text-center">{{ number_format($kredit6430) }}
                                             </td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6430 - $kredit6430) }}</td>
+                                                {{ number_format($fiskal6430) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -1034,7 +1035,7 @@
                                             <td width="auto" class="text-center">{{ number_format($kredit6440) }}
                                             </td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6440 - $kredit6440) }}</td>
+                                                {{ number_format($fiskal6440) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -1050,7 +1051,7 @@
                                             <td width="auto" class="text-center">{{ number_format($kredit6450) }}
                                             </td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6450 - $kredit6450) }}</td>
+                                                {{ number_format($fiskal6450) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -1066,7 +1067,7 @@
                                             <td width="auto" class="text-center">{{ number_format($kredit6460) }}
                                             </td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6460 - $kredit6460) }}</td>
+                                                {{ number_format($fiskal6460) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -1082,7 +1083,7 @@
                                             <td width="auto" class="text-center">{{ number_format($kredit6470) }}
                                             </td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6470 - $kredit6470) }}</td>
+                                                {{ number_format($fiskal6470) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -1098,7 +1099,7 @@
                                             <td width="auto" class="text-center">{{ number_format($kredit6480) }}
                                             </td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6480 - $kredit6480) }}</td>
+                                                {{ number_format($fiskal6480) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -1114,7 +1115,7 @@
                                             <td width="auto" class="text-center">{{ number_format($kredit6490) }}
                                             </td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6490 - $kredit6490) }}</td>
+                                                {{ number_format($fiskal6490) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -1130,7 +1131,7 @@
                                             <td width="auto" class="text-center">{{ number_format($kredit6500) }}
                                             </td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6500 - $kredit6500) }}</td>
+                                                {{ number_format($fiskal6500) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -1146,7 +1147,7 @@
                                             <td width="auto" class="text-center">{{ number_format($kredit6510) }}
                                             </td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6510 - $kredit6510) }}</td>
+                                                {{ number_format($fiskal6510) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -1162,7 +1163,7 @@
                                             <td width="auto" class="text-center">{{ number_format($kredit6520) }}
                                             </td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6520 - $kredit6520) }}</td>
+                                                {{ number_format($fiskal6520) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -1178,7 +1179,7 @@
                                             <td width="auto" class="text-center">{{ number_format($kredit6530) }}
                                             </td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6530 - $kredit6530) }}</td>
+                                                {{ number_format($fiskal6530) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -1194,7 +1195,7 @@
                                             <td width="auto" class="text-center">{{ number_format($kredit6540) }}
                                             </td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6540 - $kredit6540) }}</td>
+                                                {{ number_format($fiskal6540) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -1210,7 +1211,7 @@
                                             <td width="auto" class="text-center">{{ number_format($kredit6600) }}
                                             </td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit6600 - $kredit6600) }}</td>
+                                                {{ number_format($fiskal6600) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -1220,7 +1221,7 @@
                                         <th class="text-center">{{ number_format($totalbiayaoperasional) }}</th>
                                         <th class="text-center"></th>
                                         <th class="text-center"></th>
-                                        <th class="text-center">{{ number_format($totalbiayaoperasional) }}</th>
+                                        <th class="text-center">{{ number_format($totalbiayaoperasionalfiskal) }}</th>
                                         <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
@@ -1229,16 +1230,16 @@
                                         <th class="text-center">{{ number_format($labaoperasional) }}</th>
                                         <th class="text-center"></th>
                                         <th class="text-center"></th>
-                                        <th class="text-center">{{ number_format($labaoperasional) }}</th>
+                                        <th class="text-center">{{ number_format($labaoperasionalfiskal) }}</th>
                                         <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>
                                         <th width="auto" class="text-center">PENDAPATAN LAIN</th>
-                                        <th class="text-center">{{ number_format($labaoperasional) }}</th>
                                         <th class="text-center"></th>
                                         <th class="text-center"></th>
-                                        <th class="text-center">{{ number_format($labaoperasional) }}</th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
                                         <th colspan="2" class="text-center"></th>
                                     </tr>
                                     @foreach ($asetlancar7100 as $key => $row)
@@ -1253,7 +1254,7 @@
                                             <td width="auto" class="text-center">{{ number_format($kredit7100) }}
                                             </td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit7100 - $kredit7100) }}</td>
+                                                {{ number_format($fiskal7100) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -1269,7 +1270,7 @@
                                             <td width="auto" class="text-center">{{ number_format($kredit7110) }}
                                             </td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit7110 - $kredit7110) }}</td>
+                                                {{ number_format($fiskal7110) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -1279,7 +1280,7 @@
                                         <th class="text-center">{{ number_format($jumlahpendapatanlain) }}</th>
                                         <th class="text-center"></th>
                                         <th class="text-center"></th>
-                                        <th class="text-center">{{ number_format($jumlahpendapatanlain) }}</th>
+                                        <th class="text-center">{{ number_format($jumlahpendapatanlainfiskal) }}</th>
                                         <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
@@ -1300,7 +1301,7 @@
                                             <td width="auto" class="text-center">{{ number_format($kredit8100) }}
                                             </td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit8100 - $kredit8100) }}</td>
+                                                {{ number_format($fiskal8100) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -1316,7 +1317,7 @@
                                             <td width="auto" class="text-center">{{ number_format($kredit8110) }}
                                             </td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit8110 - $kredit8110) }}</td>
+                                                {{ number_format($fiskal8110) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -1332,7 +1333,7 @@
                                             <td width="auto" class="text-center">{{ number_format($kredit8120) }}
                                             </td>
                                             <td width="auto" class="text-center">
-                                                {{ number_format($row->saldo + $debit8120 - $kredit8120) }}</td>
+                                                {{ number_format($fiskal8120) }}</td>
                                             <td width="auto" class="text-center">{{ $row->attribute3 }}</td>
                                         </tr>
                                     @endforeach
@@ -1342,7 +1343,7 @@
                                         <th class="text-center">{{ number_format($jumlahbebanlain) }}</th>
                                         <th class="text-center"></th>
                                         <th class="text-center"></th>
-                                        <th class="text-center">{{ number_format($jumlahbebanlain) }}</th>
+                                        <th class="text-center">{{ number_format($jumlahbebanlainfiskal) }}</th>
                                         <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
@@ -1351,7 +1352,7 @@
                                         <th class="text-center">{{ number_format($totalpendapatandanbebanlain) }}</th>
                                         <th class="text-center"></th>
                                         <th class="text-center"></th>
-                                        <th class="text-center">{{ number_format($totalpendapatandanbebanlain) }}</th>
+                                        <th class="text-center">{{ number_format($totalpendapatandanbebanlainfiskal) }}</th>
                                         <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
@@ -1360,7 +1361,7 @@
                                         <th class="text-center">{{ number_format($ikhtisarlabarugi) }}</th>
                                         <th class="text-center">{{ number_format($totaldebit) }}</th>
                                         <th class="text-center">{{ number_format($totalkredit) }}</th>
-                                        <th class="text-center">{{ number_format($ikhtisarlabarugi+$totaldebit-$totalkredit) }}</th>
+                                        <th class="text-center">{{ number_format($totalkomersial) }}</th>
                                         <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>

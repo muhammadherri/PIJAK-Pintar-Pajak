@@ -428,6 +428,8 @@ Route::get('/search/resultnamakreditlatihan', [App\Http\Controllers\AllInControl
 Route::post('/pembayaranpdf', [App\Http\Controllers\PDFController::class,'pembarayanPDF']);
 Route::post('/printpdflabarugifiskal', [App\Http\Controllers\PDFController::class,'labarugifiskalPDF']);
 Route::post('/printpdfneracafiskal', [App\Http\Controllers\PDFController::class,'neracafiskalPDF']);
+Route::post('/printpdflatihanneracafiskal', [App\Http\Controllers\PDFController::class,'latihanneracafiskalPDF']);
+Route::post('/printpdflatihanlabarugifiskal', [App\Http\Controllers\PDFController::class,'latihanlabarugifiskalPDF']);
 
 Route::post('/formulirpertama', [App\Http\Controllers\AllInController::class,'formulirpertama']);
 Route::post('/formulirkedua', [App\Http\Controllers\AllInController::class,'formulirkedua']);

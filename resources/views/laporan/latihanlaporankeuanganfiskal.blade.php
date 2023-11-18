@@ -14,11 +14,11 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="table-responsive">
-                                {{-- <form action="{{ url('printpdfneracafiskal') }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ url('printpdflatihanneracafiskal') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('POST')
                                     <button type="submit" class="btn btn-primary">PRINT PDF</button>
-                                </form> --}}
+                                </form>
                                 <table id="laporanfiskal" class="display" style="min-width: 845px">
                                     <thead>
                                         <tr>

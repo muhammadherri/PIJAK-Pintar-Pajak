@@ -2927,8 +2927,8 @@ class AllInController extends Controller
         $totalpendapatandanbebanlainfiskal = $jumlahpendapatanlainfiskal-$jumlahbebanlainfiskal;
         $ikhtisarlabarugi = $labaoperasional+$totalpendapatandanbebanlain;
 
-        $totaldebit=JurnalManual::where('attribute1',$id)->where('attribute3',1)->where('no_akun_debit','>','4100')->sum('nilai_debit');
-        $totalkredit=JurnalManual::where('attribute1',$id)->where('attribute3',1)->where('no_akun_kredit','>','4100')->sum('nilai_kredit');
+        $totaldebit=JurnalManual::where('attribute1',$id)->where('attribute3',1)->where('no_akun_debit','>','4000')->sum('nilai_debit');
+        $totalkredit=JurnalManual::where('attribute1',$id)->where('attribute3',1)->where('no_akun_kredit','>','4000')->sum('nilai_kredit');
         $totalkomersial = $ikhtisarlabarugi+$totaldebit-$totalkredit;
         
         $pajakpenghasiliktisarlabarugi = $ikhtisarlabarugi*22/100;
