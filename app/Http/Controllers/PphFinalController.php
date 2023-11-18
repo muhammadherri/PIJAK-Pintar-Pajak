@@ -42,7 +42,7 @@ class PphFinalController extends Controller
         $header_id = $header_id ?? 0;
         $header_id = $header_id+1;
         $date = date('Ymd');
-        $trx = 'TRX'.'0'.$header_id.$date;
+        $trx = 'TRX'.'0'.$header_id.$date.'F';
       
         $data = array(
             'transaksi'=>$trx,
@@ -77,8 +77,9 @@ class PphFinalController extends Controller
      */
     public function show($id)
     {
+        $kopfinal = KodeObjekPPhFinal::get();
         $pphfinal=Pphfinal::where('id',$id)->get()->first();
-        return view('pphfinal.show',compact('pphfinal'));
+        return view('pphfinal.show',compact('pphfinal','kopfinal'));
     }
 
     /**

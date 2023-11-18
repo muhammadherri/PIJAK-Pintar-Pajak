@@ -368,7 +368,15 @@
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">PPH 21 Terutang</label>
+                                            <label class="col-sm-3 col-form-label">PPH 21 Terutang 1 Bulan</label>
+                                            <div class="col-sm-9">
+                                                <input required min="0" placeholder="Masukkan Nilai PPH 21 Perbulan" onkeyup="this.value=sprator(this.value);"
+                                                 autocomplete="off" type="text" id="pph21_perbulan"
+                                                    name="pph21_perbulan" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">PPH 21 Terutang 1 Tahun</label>
                                             <div class="col-sm-9">
                                                 <input placeholder="Masukkan Nilai PPH 21 Terutang" autocomplete="off" readonly type="text" id="pph21terutang"
                                                     name="pph21terutang" class="form-control">
@@ -477,7 +485,11 @@
         
         retValpph21potongan =pph21potongan ? parseFloat(pph21potongan.replace(/,/g, '')) : 0;
         const hasilpotonganpkp = hasilpkp-retValpph21potongan;
-        resultpph21terutang.value = hasilpotonganpkp.toLocaleString();
+        if(hasilpotonganpkp<0){
+            resultpph21terutang.value = 0;
+        }else{
+            resultpph21terutang.value = hasilpotonganpkp.toLocaleString();
+        }
 
         return retVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }

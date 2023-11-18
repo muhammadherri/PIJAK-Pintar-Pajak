@@ -24,9 +24,15 @@ class InvoiceController extends Controller
         // if(Auth::user()->status==1){
         //     $invcount = Invoice::sum('ppn');
         // }else{
+            $fktr10 = Faktur::where('attribute1',$id)->where('no_seri','010')->sum('ppn_fktr');
+            $fktr40 = Faktur::where('attribute1',$id)->where('no_seri','040')->sum('ppn_fktr');
+            $fktr60 = Faktur::where('attribute1',$id)->where('no_seri','060')->sum('ppn_fktr');
+            $fktr90 = Faktur::where('attribute1',$id)->where('no_seri','090')->sum('ppn_fktr');
+            $fktrgg = Faktur::where('attribute1',$id)->where('no_seri','Digunggung')->sum('ppn_fktr');
+            $fktrcount= $fktr10+$fktr40+$fktr60+$fktr90+$fktrgg;
             $invcount = Invoice::where('attribute1',$id)->sum('ppn');
         // }
-        return view('invoice.index',compact('invcount'));
+        return view('invoice.index',compact('invcount','fktrcount'));
     }
 
     /**
@@ -70,6 +76,7 @@ class InvoiceController extends Controller
             'pembeli'=>$request->vendor_invoice,
             'no_faktur'=>$request->faktur_komersial,
             'tgl_faktur'=>$request->tgl_faktur,
+            'no_seri'=>$request->no_seri,
             'jatuh_tempo'=>$request->tgl_jatuh_tempo,
             'termin_pembayaran'=>$request->termin_pembayaran,
             'nilai_transaksi'=>preg_replace('/[^0-9]/','',$request->nilaitransaksi),
@@ -88,6 +95,10 @@ class InvoiceController extends Controller
             'dok_lain'=>$request->dokumenlainlain,
             'no_seri'=>$request->no_seri,
             'no_dok'=>$request->no_dokumen,
+            'nilai_transaksi_fktr'=>preg_replace('/[^0-9]/','',$request->nilaitransaksi_fktr),
+            'potongan_harga_fktr'=>preg_replace('/[^0-9]/','',$request->potonganharga_fktr),
+            'ppn_fktr'=>preg_replace('/[^0-9]/','',$request->ppn_fktr),
+            'total_fktr'=>preg_replace('/[^0-9]/','',$request->totaltrx_fktr),
             'catatan'=>$request->catatan_efaktur,
             'attribute1'=>Auth::user()->id,
             'created_at'=>date('Y-m-d H:i:s'),
@@ -100,6 +111,7 @@ class InvoiceController extends Controller
         foreach ($barang_inv as $key => $barang) {
             $data_inv = array(
                 'invoice_id' => $header_id,
+                'no_seri' => $request->no_seri,
                 'nama_barang' => $barang_inv[$key],
                 'kuantitas' => $kuantitas_inv[$key],
                 'harga_satuan' => $harga_satuan_inv[$key],
@@ -114,6 +126,7 @@ class InvoiceController extends Controller
         foreach ($barang_faktur as $key => $barang) {
             $data_faktur = array(
                 'faktur_id' => $header_id,
+                'no_seri' => $request->no_seri,
                 'nama_barang' => $barang_faktur[$key],
                 'kuantitas' => $kuantitas_faktur[$key],
                 'harga_satuan' => $harga_satuan_faktur[$key],

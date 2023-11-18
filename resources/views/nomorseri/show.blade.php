@@ -32,7 +32,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">No Seri</label>
                                             <div class="col-sm-9">
-                                                <input readonly value="{{$noseri->no_seri}}" required id="noseri" name="noseri" type="number" class="form-control">
+                                                <input readonly value="{{$noseri->no_seri}}" required id="noseri" name="noseri" type="text" class="form-control">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">

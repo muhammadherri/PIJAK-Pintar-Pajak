@@ -42,7 +42,7 @@ class PphTidakFinalController extends Controller
         $header_id = $header_id ?? 0;
         $header_id = $header_id+1;
         $date = date('Ymd');
-        $trx = 'TRX'.'0'.$header_id.$date;
+        $trx = 'TRX'.'0'.$header_id.$date.'TF';
 
         $data = array(
             'trx'=>$trx,
@@ -50,10 +50,22 @@ class PphTidakFinalController extends Controller
             'bruto'=>preg_replace('/[^0-9]/','',$request->bruto),
             'dasar_pengenaan_pajak'=>preg_replace('/[^0-9]/','',$request->pengenaan_pajak),
             'tarif_lebih_tinggi'=>1,
-            'tarif'=>preg_replace('/[^0-9]/','',$request->tarif),
+            'tarif1'=>preg_replace('/[^0-9]/','',$request->tarif1),
+            'tarif2'=>preg_replace('/[^0-9]/','',$request->tarif2),
+            'tarif3'=>preg_replace('/[^0-9]/','',$request->tarif3),
+            'tarif4'=>preg_replace('/[^0-9]/','',$request->tarif4),
+            'persen1'=>preg_replace('/[^0-9]/','',$request->persen1),
+            'persen2'=>preg_replace('/[^0-9]/','',$request->persen2),
+            'persen3'=>preg_replace('/[^0-9]/','',$request->persen3),
+            'persen4'=>preg_replace('/[^0-9]/','',$request->persen4),
+            'hasil1'=>preg_replace('/[^0-9]/','',$request->hasil1),
+            'hasil2'=>preg_replace('/[^0-9]/','',$request->hasil2),
+            'hasil3'=>preg_replace('/[^0-9]/','',$request->hasil3),
+            'hasil4'=>preg_replace('/[^0-9]/','',$request->hasil4),
             'potongan_pph'=>preg_replace('/[^0-9]/','',$request->potongan_pph),
             'attribute1'=>Auth::user()->id
         );
+        // dd($data);
         PphTidakFinal::create($data);
         $a= \DB::commit();
         return redirect()->route('pphtidakfinal');
@@ -67,8 +79,9 @@ class PphTidakFinalController extends Controller
      */
     public function show($id)
     {
+        $koptidakfinal = KodeObjekPPhTidakFinal::get();
         $pphtidakfinal=PphTidakFinal::where('id',$id)->get()->first();
-        return view('pphtidakfinal.show',compact('pphtidakfinal'));
+        return view('pphtidakfinal.show',compact('pphtidakfinal','koptidakfinal'));
     }
 
     /**
@@ -83,13 +96,14 @@ class PphTidakFinalController extends Controller
         // if(Auth::user()->status==1){
         //     $pphtidakfinal=PphTidakFinal::where('id',$id)->get()->first();
         // }else{
+            $koptidakfinal = KodeObjekPPhTidakFinal::get();
             $pphtidakfinal=PphTidakFinal::where('attribute1',$iduser)->where('id',$id)->get()->first();
         // }
 
         if($pphtidakfinal==null){
             return back();
         }else{
-            return view('pphtidakfinal.edit',compact('pphtidakfinal'));
+            return view('pphtidakfinal.edit',compact('pphtidakfinal','koptidakfinal'));
         }
     }
 
@@ -107,7 +121,18 @@ class PphTidakFinalController extends Controller
             'bruto'=>preg_replace('/[^0-9]/','',$request->bruto),
             'dasar_pengenaan_pajak'=>preg_replace('/[^0-9]/','',$request->pengenaan_pajak),
             'tarif_lebih_tinggi'=>1,
-            'tarif'=>preg_replace('/[^0-9]/','',$request->tarif),
+            'tarif1'=>preg_replace('/[^0-9]/','',$request->tarif1),
+            'tarif2'=>preg_replace('/[^0-9]/','',$request->tarif2),
+            'tarif3'=>preg_replace('/[^0-9]/','',$request->tarif3),
+            'tarif4'=>preg_replace('/[^0-9]/','',$request->tarif4),
+            'persen1'=>preg_replace('/[^0-9]/','',$request->persen1),
+            'persen2'=>preg_replace('/[^0-9]/','',$request->persen2),
+            'persen3'=>preg_replace('/[^0-9]/','',$request->persen3),
+            'persen4'=>preg_replace('/[^0-9]/','',$request->persen4),
+            'hasil1'=>preg_replace('/[^0-9]/','',$request->hasil1),
+            'hasil2'=>preg_replace('/[^0-9]/','',$request->hasil2),
+            'hasil3'=>preg_replace('/[^0-9]/','',$request->hasil3),
+            'hasil4'=>preg_replace('/[^0-9]/','',$request->hasil4),
             'potongan_pph'=>preg_replace('/[^0-9]/','',$request->potongan_pph),
             'attribute2'=>Auth::user()->id,
             'updated_at'=>date('Y-m-d H:i:s'),

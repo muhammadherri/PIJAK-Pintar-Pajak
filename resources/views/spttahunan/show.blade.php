@@ -8334,38 +8334,33 @@
                 <td class=xl1359897></td>
                 <td class=xl1359897></td>
                 <td class=xl1509897>
-                    <input type="text"readonly class="custom-input"
-                        value="{{ substr($spt->d12_pph_kurang, 8, -14) }}">
+                    {{date('d',strtotime($spt->d12_pph_kurang))}}
+                    {{-- <input type="text"readonly class="custom-input"
+                        value="{{ substr($spt->d12_pph_kurang, 8, -14) }}"> --}}
                 </td>
                 <td class=xl1509897 style='border-left:none'>
-                    <input type="text"readonly class="custom-input"
-                        value="{{ substr($spt->d12_pph_kurang, 9, -13) }}">
+                   -
                 </td>
                 <td class=xl1359897></td>
                 <td class=xl1509897>
-                    <input type="text"readonly class="custom-input"
-                        value="{{ substr($spt->d12_pph_kurang, 5, -17) }}">
+                    {{date('M',strtotime($spt->d12_pph_kurang))}}
                 </td>
                 <td class=xl1509897 style='border-left:none'>
-                    <input type="text"readonly class="custom-input"
-                        value="{{ substr($spt->d12_pph_kurang, 6, -16) }}">
+                   -
                 </td>
                 <td class=xl679897></td>
                 <td class=xl1509897>
-                    <input type="text"readonly class="custom-input"
-                        value="{{ Str::limit($spt->d12_pph_kurang, 1, '') }}">
+                    
                 </td>
                 <td class=xl1509897 style='border-left:none'>
-                    <input type="text"readonly class="custom-input"
-                        value="{{ substr($spt->d12_pph_kurang, 1, -21) }}">
+                    
+                    {{date('Y',strtotime($spt->d12_pph_kurang))}}
                 </td>
                 <td class=xl1509897 style='border-left:none'>
-                    <input type="text"readonly class="custom-input"
-                        value="{{ substr($spt->d12_pph_kurang , -20) }}">
+                 
                 </td>
                 <td class=xl1509897 style='border-left:none'>
-                    <input type="text"readonly class="custom-input"
-                        value="{{ substr($spt->d12_pph_kurang, 3, -19) }}">
+                   
                 </td>
                 <td class=xl1359897></td>
                 <td class=xl1359897></td>
@@ -11130,39 +11125,34 @@
                 <td class=xl1009897 colspan=8>…………………………………,</td>
                 <td class=xl1289897>d.</td>
                 <td class=xl1379897>
-                    <input type="text"readonly class="custom-input"
-                        value="{{ substr($spt->created_at, 8, -10) }}">
                 </td>
                 <td class=xl1379897 style='border-left:none'>
-                    <input type="text"readonly class="custom-input"
-                        value="{{ substr($spt->created_at, 9, -9) }}">
+                    {{date('d',strtotime($spt->created_at))}}
                 </td>
-                <td class=xl789897></td>
+                <td class=xl789897>
+                    -
+                </td>
                 <td class=xl1379897>
-                    <input type="text"readonly class="custom-input"
-                        value="{{ substr($spt->created_at, 5, -13) }}">
+                    {{date('M',strtotime($spt->created_at))}}
+                </td>
+                <td class=xl1689897 style='border-left:none'>
+                   -
+                </td>
+                <td class=xl679897>
+                {{date('Y',strtotime($spt->created_at))}}
+
+                </td>
+                <td class=xl1689897>
 
                 </td>
                 <td class=xl1689897 style='border-left:none'>
-                    <input type="text"readonly class="custom-input"
-                        value="{{ substr($spt->created_at, 6, -12) }}">
-                </td>
-                <td class=xl679897></td>
-                <td class=xl1689897>
-                    <input type="text"readonly class="custom-input"
-                        value="{{ Str::limit($spt->created_at, 1, '') }}">
+                   
                 </td>
                 <td class=xl1689897 style='border-left:none'>
-                    <input type="text"readonly class="custom-input"
-                        value="{{ substr($spt->created_at, 1, -17) }}">
+
                 </td>
                 <td class=xl1689897 style='border-left:none'>
-                    <input type="text"readonly class="custom-input"
-                        value="{{ substr($spt->created_at , -16) }}">
-                </td>
-                <td class=xl1689897 style='border-left:none'>
-                    <input type="text"readonly class="custom-input"
-                        value="{{ substr($spt->created_at, 3, -15) }}">
+                   
                 </td>
                 <td class=xl679897></td>
                 <td class=xl679897></td>
@@ -11194,11 +11184,11 @@
                 <td class=xl789897></td>
                 <td class=xl789897></td>
                 <td class=xl789897></td>
-                <td colspan=2 class=xl2569897>tgl</td>
+                <td colspan=2 class=xl2569897></td>
                 <td class=xl789897></td>
-                <td colspan=2 class=xl2569897>bln</td>
+                <td colspan=2 class=xl2569897></td>
                 <td class=xl679897></td>
-                <td colspan=4 class=xl2569897>thn</td>
+                <td colspan=4 class=xl2569897></td>
                 <td class=xl679897></td>
                 <td class=xl679897></td>
                 <td class=xl1569897>&nbsp;</td>

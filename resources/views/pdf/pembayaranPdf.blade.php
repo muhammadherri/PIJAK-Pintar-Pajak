@@ -140,7 +140,7 @@
 				</tr>
 				<tr>
 					<td>Kose Jenis Setoran</td>
-					<td>{{$billing->kode_jenis_setoran}}</td>
+					<td>{{$billing->jenissetoran->kode}}-{{$billing->jenissetoran->jenis_setoran}}</td>
 				</tr>
 				<tr>
 					<td>Masa Pajak</td>
@@ -148,7 +148,7 @@
 				</tr>
 				<tr>
 					<td>Jumlah Setor</td>
-					<td>{{$billing->jumlah}}</td>
+					<td>{{number_format($billing->jumlah)}}</td>
 				</tr>
 				<tr>
 					<td>Nomor SK</td>

@@ -60,7 +60,7 @@ class EbupotController extends Controller
         $header_id = $header_id ?? 0;
         $header_id = $header_id+1;
         $date = date('Ymd');
-        $trx = 'TRX'.'0'.$header_id.$date;
+        $trx = 'TRX'.'0'.$header_id.$date.'BPT';
 
         $dok_ref = $request->input('column1');
         $no_dok = $request->input('column2');

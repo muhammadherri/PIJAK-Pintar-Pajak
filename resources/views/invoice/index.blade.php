@@ -38,14 +38,18 @@
                                     <thead>
                                         <tr>
                                             <th></th>
-                                            <th>Nama Vendor Terdaftar</th>
-                                            <th>Nomor Faktur Terdaftar</th>
-                                            <th>Termin Pembayaran</th>
-                                            <th>Nilai Transaksi</th>
-                                            <th>Potongan Harga</th>
-                                            <th>Jenis Pembayaran</th>
+                                            <th>Nama Vendor Faktur</th>
+                                            <th>Total PPN Faktur</th>
+                                            <th>Nilai Transaksi Faktur</th>
+                                            <th>Total Faktur</th>
+                                            <th>Nama Vendor Invoice</th>
+                                            <th>Nomor Faktur Invoice</th>
+                                            <th>Termin Pembayaran Invoice</th>
+                                            <th>Nilai Transaksi Invoice</th>
+                                            <th>Potongan Harga Invoice</th>
+                                            <th>Jenis Pembayaran Invoice</th>
                                             <th>Tanggal Invoice</th>
-                                            <th>Total PPN</th>
+                                            <th>Total PPN Invoice</th>
                                             <th>Dibuat Oleh</th>
                                             <th>Action</th>
                                         </tr>
@@ -58,15 +62,19 @@
                                         <tr>
                                             <td></td>
                                             <td><b>TOTAL PPN</b></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
                                             <td>
-                                                <b>{{ number_format($invcount,2) }}</b>
+                                                <b>{{ number_format($fktrcount) }}</b>
                                             </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td></td>
                                             <td></td>
                                         </tr>
@@ -108,17 +116,42 @@
                 {
                     "targets": 1,
                     "render": function(data, type, row, meta) {
-                        return row.code_vendor;
+                        return row.fktr_vendor;
                     }
                 },
                 {
                     "targets": 2,
                     "render": function(data, type, row, meta) {
-                        return row.no_faktur;
+                        return row.fktr_ppn;
                     }
                 },
                 {
                     "targets": 3,
+                    "render": function(data, type, row, meta) {
+                        return row.fktr_nilaitrx;
+                    }
+                },
+               
+                {
+                    "targets": 4,
+                    "render": function(data, type, row, meta) {
+                        return row.fktr_total;
+                    }
+                },
+                {
+                    "targets": 5,
+                    "render": function(data, type, row, meta) {
+                        return row.nama_vendor;
+                    }
+                },
+                {
+                    "targets": 6,
+                    "render": function(data, type, row, meta) {
+                        return row.no_faktur;
+                    }
+                },
+                {
+                    "targets": 7,
                     "class": "text-center",
                     render: function(data, type, row, index) {
                         if (row.termin == 0) {
@@ -132,49 +165,49 @@
                     }
                 },
                 {
-                    "targets": 4,
+                    "targets": 8,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
                         return row.trx;
                     }
                 },
                 {
-                    "targets": 5,
+                    "targets": 9,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
                         return row.potongan_harga;
                     }
                 },
                 {
-                    "targets": 6,
+                    "targets": 10,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
                         return row.informasi;
                     }
                 },
                 {
-                    "targets": 7,
+                    "targets": 11,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
                         return row.tgl_pembuatan;
                     }
                 },
                 {
-                    "targets": 8,
+                    "targets": 12,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
                         return row.ppn;
                     }
                 },
                 {
-                    "targets": 9,
+                    "targets": 13,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
                         return row.created_by;
                     }
                 },
                 {
-                    "targets": 10,
+                    "targets": 14,
                     "class": "text-center",
                     render: function(data, type, row, index) {
                         content = `

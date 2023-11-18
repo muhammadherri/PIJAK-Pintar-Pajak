@@ -14,6 +14,7 @@ class TransaksiPphDuapuluhSatu extends Model
     public $table = 'tx_pphduasatu';
     protected $fillable = [
         'id',
+        'trx',
         'status_npwp',
         'nama_wajib_pajak',
         'no_npwp',
@@ -55,6 +56,7 @@ class TransaksiPphDuapuluhSatu extends Model
         'pph21ataspkp',
         'pph21_dipotong_sebelumnya',
         'pph21_terutang',
+        'pph21_perbulan',
         'attribute1',
         'attribute2',
         'attribute3',

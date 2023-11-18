@@ -349,6 +349,14 @@
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label">PPH 21 Perbulan</label>
+                                            <div class="col-sm-9">
+                                                <input required min="0" value="{{number_format($pph21->pph21_perbulan)}}" placeholder="Masukkan Nilai PPH 21 Perbulan" onkeyup="this.value=sprator(this.value);"
+                                                 autocomplete="off" type="text" id="pph21_perbulan"
+                                                    name="pph21_perbulan" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">PPH 21 Terutang</label>
                                             <div class="col-sm-9">
                                                 <input value="{{number_format($pph21->pph21_terutang)}}" placeholder="Masukkan Nilai PPH 21 Terutang" autocomplete="off" readonly type="text" id="pph21terutang"
@@ -358,13 +366,13 @@
                                     </div>
 
                                     <div class="d-flex justify-content-between">
-                                        <button class="btn btn-warning btn-submit"name='action' value="create"
-                                            id="add_all" onclick="resetForm()" type="button"><i
-                                                data-feather='save'></i>
-                                            {{ 'Bersihkan' }}</button>
+                                       <div></div>
+                                       @if($pph21->attribute3==2)
+                                       @else
                                         <button class="btn btn-primary btn-submit"name='action' value="create"
                                             id="add_all" type="submit"><i data-feather='save'></i>
                                             {{ 'Simpan' }}</button>
+                                        @endif
                                     </div>
                                 </form>
                             </div>

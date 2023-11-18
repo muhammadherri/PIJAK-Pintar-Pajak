@@ -21,14 +21,8 @@ class HutangPpnController extends Controller
     public function index()
     {
         $id=Auth::user()->id;
-        // if(Auth::user()->status==1){
-        //     $ppnmasuk = Prepopulate::sum('jumlah_ppn');
-        //     $ppnkeluar = Invoice::sum('ppn');
-        // }else{
-            $ppnmasuk = Prepopulate::where('attribute1',$id)->sum('jumlah_ppn');
-            $ppnkeluar = Invoice::where('attribute1',$id)->sum('ppn');
-        // }
-        return view('hutangppn.index',compact('ppnmasuk','ppnkeluar'));
+      
+        return view('hutangppn.index');
     }
 
     /**
@@ -43,8 +37,15 @@ class HutangPpnController extends Controller
         //     $ppnmasuk = Prepopulate::sum('jumlah_ppn');
         //     $ppnkeluar = Invoice::sum('ppn');
         // }else{
+
         $ppnmasuk = Prepopulate::where('attribute1',$id)->sum('jumlah_ppn');
-        $ppnkeluar = Invoice::where('attribute1',$id)->sum('ppn');
+
+        $fktr10 = Faktur::where('attribute1',$id)->where('no_seri','010')->sum('ppn_fktr');
+        $fktr40 = Faktur::where('attribute1',$id)->where('no_seri','040')->sum('ppn_fktr');
+        $fktr60 = Faktur::where('attribute1',$id)->where('no_seri','060')->sum('ppn_fktr');
+        $fktr90 = Faktur::where('attribute1',$id)->where('no_seri','090')->sum('ppn_fktr');
+        $fktrgg = Faktur::where('attribute1',$id)->where('no_seri','Digunggung')->sum('ppn_fktr');
+        $ppnkeluar = $fktr10+$fktr40+$fktr60+$fktr90+$fktrgg;
         // }
         return view('hutangppn.create',compact('ppnmasuk','ppnkeluar'));
     }
@@ -61,7 +62,7 @@ class HutangPpnController extends Controller
         $header_id = $header_id ?? 0;
         $header_id = $header_id+1;
         $date = date('Ymd');
-        $trx = 'TRX'.'0'.$header_id.$date;
+        $trx = 'TRX'.'0'.$header_id.$date.'HTG';
 
         $data = array(
             'trx'=>$trx,
@@ -71,18 +72,71 @@ class HutangPpnController extends Controller
             'attribute1'=>Auth::user()->id,
         );
         // dd($data);
-        Invoice::where('attribute1',Auth::user()->id)->update([
+       
+        Invoice::where('attribute1',Auth::user()->id)->where('no_seri','010')->update([
             'deleted_at'=>date('Y-m-d H:i:s'),
         ]);
-        Faktur::where('attribute1',Auth::user()->id)->update([
+        Invoice::where('attribute1',Auth::user()->id)->where('no_seri','040')->update([
             'deleted_at'=>date('Y-m-d H:i:s'),
         ]);
-        InvoiceLine::where('attribute1',Auth::user()->id)->update([
+        Invoice::where('attribute1',Auth::user()->id)->where('no_seri','060')->update([
             'deleted_at'=>date('Y-m-d H:i:s'),
         ]);
-        FakturLine::where('attribute1',Auth::user()->id)->update([
+        Invoice::where('attribute1',Auth::user()->id)->where('no_seri','090')->update([
             'deleted_at'=>date('Y-m-d H:i:s'),
         ]);
+        Invoice::where('attribute1',Auth::user()->id)->where('no_seri','Digunggung')->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+
+        Faktur::where('attribute1',Auth::user()->id)->where('no_seri','010')->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        Faktur::where('attribute1',Auth::user()->id)->where('no_seri','040')->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        Faktur::where('attribute1',Auth::user()->id)->where('no_seri','060')->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        Faktur::where('attribute1',Auth::user()->id)->where('no_seri','090')->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        Faktur::where('attribute1',Auth::user()->id)->where('no_seri','Digunggung')->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+
+        InvoiceLine::where('attribute1',Auth::user()->id)->where('no_seri','010')->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        InvoiceLine::where('attribute1',Auth::user()->id)->where('no_seri','040')->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        InvoiceLine::where('attribute1',Auth::user()->id)->where('no_seri','060')->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        InvoiceLine::where('attribute1',Auth::user()->id)->where('no_seri','090')->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        InvoiceLine::where('attribute1',Auth::user()->id)->where('no_seri','Digunggung')->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+       
+        FakturLine::where('attribute1',Auth::user()->id)->where('no_seri','010')->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        FakturLine::where('attribute1',Auth::user()->id)->where('no_seri','040')->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        FakturLine::where('attribute1',Auth::user()->id)->where('no_seri','060')->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        FakturLine::where('attribute1',Auth::user()->id)->where('no_seri','090')->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        FakturLine::where('attribute1',Auth::user()->id)->where('no_seri','Digunggung')->update([
+            'deleted_at'=>date('Y-m-d H:i:s'),
+        ]);
+        
         Prepopulate::where('attribute1',Auth::user()->id)->update([
             'deleted_at'=>date('Y-m-d H:i:s'),
         ]);

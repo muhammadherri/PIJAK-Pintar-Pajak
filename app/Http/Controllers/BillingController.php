@@ -10,6 +10,7 @@ use App\Models\Pphfinal;
 use App\Models\PphTidakFinal;
 use App\Models\JenisPajak;
 use App\Models\KodeJenisSetoran;
+use App\Models\TransaksiPphDuapuluhSatu;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use PDF;
@@ -47,12 +48,13 @@ class BillingController extends Controller
         $vendor=Vendor::all();
         $kjs=KodeJenisSetoran::all();
         $jenispajak=JenisPajak::all();
+        $trxpph21=TransaksiPphDuapuluhSatu::orderBy('id','DESC')->whereNotNull('trx')->where('attribute1',$id)->where('attribute3',null)->get();
         $trx=Ebupot::orderBy('id','DESC')->whereNotNull('trx')->where('attribute1',$id)->where('attribute3',null)->get();
         $trxppn=HutangPpn::orderBy('id','DESC')->where('attribute1',$id)->where('attribute3',null)->get();
         $trxpphfinal=Pphfinal::orderBy('id','DESC')->whereNotNull('transaksi')->where('attribute1',$id)->where('attribute3',null)->get();
         $trxpphtidakfinal=PphTidakFinal::orderBy('id','DESC')->where('attribute1',$id)->where('attribute3',null)->get();
         // dd($trx);
-        return view('billing.create',compact('kjs','jenispajak','vendor','trx','trxppn','trxpphfinal','trxpphtidakfinal'));
+        return view('billing.create',compact('trxpph21','kjs','jenispajak','vendor','trx','trxppn','trxpphfinal','trxpphtidakfinal'));
     }
 
     /**
@@ -233,6 +235,49 @@ class BillingController extends Controller
                 'attribute3'=>1,
             ]);
 
+        }
+        elseif($request->trx_wan==5){
+
+            if($request->trx_pph21==null){
+                return back();
+            }
+           
+            $data = array(
+                'kode_billing'=>$header_id,
+                'npwp'=>$request->npwp,
+                'trx_bupot'=>$request->trx_pph21,
+                'nama'=>$request->nama,
+                'alamat'=>$request->alamat,
+                'jenis_pajak'=>$request->jenis_pajak,
+                'kode_jenis_setoran'=>$request->kode_jenis_setoran,
+                'masa_pajak'=>$request->masa_pajak,
+                'tahun_pajak'=>date('Y'),
+                'start_periode_pajak'=>$request->start_periode_pajak,
+                'end_periode_pajak'=>$end_periode_pajak->addDays(30),
+                'jumlah'=>preg_replace('/[^0-9]/','',$request->jumlah),
+                'keterangan'=>$request->keterangan,
+                'npwp_penyetor'=>$request->npwp_penyetor,
+                'nama_penyetor'=>$request->nama_penyetor,
+                'no_ref'=>$request->no_ref,
+                'no_rek'=>$request->no_rek,
+                'perusahaan'=>$request->no_rek,
+                'akun'=>$request->akun,
+                'no_sk'=>$request->no_sk,
+                'nop'=>$request->nop,
+                'ntpn'=>$request->ntpn,
+                'ntb'=>$request->ntb,
+                'stan'=>$request->stan,
+                'jenis_pembayaran'=>$request->jenis_pembayaran,
+                'jenis_transaksi'=>$request->trx_wan,
+                'attribute1'=>Auth::user()->id,
+                'created_at'=>date('Y-m-d H:i:s'),
+            );
+            $billing=Billing::create($data);
+            $ebupot=TransaksiPphDuapuluhSatu::where('id',$request->trx_pph21)->update([
+                'attribute2'=>Auth::user()->id,
+                'attribute3'=>1,
+            ]);
+
         }else{
             return back();
         }
@@ -346,7 +391,7 @@ class BillingController extends Controller
         $search=Billing::where('id',$id)->get()->first();
         if($search->attribute3==null){
             Billing::where('id',$id)->update([
-                'attribute_2'=>Auth::user()->id,
+                'attribute2'=>Auth::user()->id,
                 'deleted_at'=>date('Y-m-d H:i:s'),
             ]);
         }

@@ -50,7 +50,7 @@
                                                         <label class="col-sm-3 col-form-label">Pembeli</label>
                                                         <div class="col-sm-9">
                                                             <select id="vendor_invoice" name="vendor_invoice"
-                                                                class="default-select form-control wide">
+                                                                class="dropdown-groups">
                                                                 @foreach ($vendor as $row)
                                                                     <option value="{{ $row->id }}" {{ $inv->pembeli == $row->id ? 'selected' : '' }}>
                                                                         {{ $row->no_id_vendor }} - {{ $row->nama_vendor }}
@@ -122,13 +122,13 @@
                                                                     <input readonly value="{{$row->nama_barang}}" autocomplete="off" type="text" name="angka0[]" min="0"
                                                                     class="form-control" />
                                                                 </td>
-                                                                <td><input readonly value="{{$row->kuantitas}}" autocomplete="off" type="number" name="angka1[]" min="0"
+                                                                <td><input readonly value="{{number_format($row->kuantitas)}}" autocomplete="off" type="text" name="angka1[]" min="0"
                                                                         class="form-control" /></td>
-                                                                <td><input readonly value="{{$row->harga_satuan}}" autocomplete="off" type="number" name="angka2[]" min="0"
+                                                                <td><input readonly value="{{number_format($row->harga_satuan)}}" autocomplete="off" type="text" name="angka2[]" min="0"
                                                                         class="form-control" /></td>
-                                                                <td><input readonly value="{{$row->total_diskon}}" autocomplete="off" type="number" name="angka3[]" min="0"
+                                                                <td><input readonly value="{{number_format($row->total_diskon)}}" autocomplete="off" type="text" name="angka3[]" min="0"
                                                                         class="form-control sub_totpot" /></td>
-                                                                <td><input readonly value="{{$row->total_harga}}" autocomplete="off" type="text" name="hasil[]"
+                                                                <td><input readonly value="{{number_format($row->total_harga)}}" autocomplete="off" type="text" name="hasil[]"
                                                                         class="form-control sub_total"readonly /></td>
                                                                 <td><button type="button" class="btn btn-light btn-submit"><i
                                                                             class="fa fa-trash"></i></td>
@@ -146,12 +146,12 @@
                                                             </tr>
                                                         </tfoot>
                                                     </table>
-
+<p></p>
                                                     <div class="mb-3 row">
                                                         <label class="col-sm-6 col-form-label"></label>
                                                         <label class="col-sm-3 col-form-label">Nilai Transaksi</label>
                                                         <div class="col-sm-3">
-                                                            <input readonly value="{{$inv->nilai_transaksi}}" id="nilaitransaksi" type="number"
+                                                            <input readonly value="{{number_format($inv->nilai_transaksi)}}" id="nilaitransaksi" type="text"
                                                                 name="nilaitransaksi" class="form-control nilaitrx">
                                                             </span>
                                                         </div>
@@ -160,7 +160,7 @@
                                                         <label class="col-sm-6 col-form-label"></label>
                                                         <label class="col-sm-3 col-form-label">Potongan Harga</label>
                                                         <div class="col-sm-3">
-                                                            <input readonly value="{{$inv->potongan_harga}}" id="potonganharga" name="potonganharga"
+                                                            <input readonly value="{{number_format($inv->potongan_harga)}}" id="potonganharga" name="potonganharga"
                                                                 type="text" class="form-control nilaihargapot">
                                                         </div>
                                                     </div>
@@ -168,7 +168,7 @@
                                                         <label class="col-sm-6 col-form-label"></label>
                                                         <label class="col-sm-3 col-form-label">PPn %</label>
                                                         <div class="col-sm-3">
-                                                            <input step="any" readonly value="{{$inv->ppn}}" id="ppn" name="ppn" type="text"
+                                                            <input step="any" readonly value="{{number_format($inv->ppn)}}" id="ppn" name="ppn" type="text"
                                                                 class="form-control nilai_ppn">
                                                         </div>
                                                     </div>
@@ -176,7 +176,7 @@
                                                         <label class="col-sm-6 col-form-label"></label>
                                                         <label class="col-sm-3 col-form-label">Total</label>
                                                         <div class="col-sm-3">
-                                                            <input readonly readonly value="{{$inv->total}}" id="totaltrx" name="totaltrx" type="text"
+                                                            <input readonly readonly value="{{number_format($inv->total)}}" id="totaltrx" name="totaltrx" type="text"
                                                                 class="form-control total_trx">
                                                         </div>
                                                     </div>
@@ -207,7 +207,7 @@
                                                         <label class="col-sm-3 col-form-label">Pembeli</label>
                                                         <div class="col-sm-9">
                                                             <select id="vendor_efaktur"name="vendor_efaktur"
-                                                                class="default-select form-control wide">
+                                                                class="dropdown-groups">
                                                                 @foreach ($vendor as $row)
                                                                     <option value="{{ $row->id }}" {{ $faktur->pembeli == $row->id ? 'selected' : '' }}>
                                                                         {{ $row->no_id_vendor }} - {{ $row->nama_vendor }}
@@ -306,9 +306,9 @@
                                                         <label class="col-sm-3 col-form-label">No Seri Faktur</label>
                                                         <div class="col-sm-3">
                                                             <select id="no_seri" name="no_seri"
-                                                                class="default-select form-control wide">
+                                                                class="dropdown-groups">
                                                                 @foreach ($noseri as $row)
-                                                                    <option value="{{ $row->id }}"{{ $faktur->no_seri == $row->id ? 'selected' : '' }}>
+                                                                    <option value="{{ $row->no_seri }}"{{ $faktur->no_seri == $row->no_seri ? 'selected' : '' }}>
                                                                         {{ $row->no_seri }}</option>
                                                                 @endforeach
                                                             </select>
@@ -336,13 +336,13 @@
                                                                 <td width="auto">
                                                                     <input readonly value="{{$row->nama_barang}}" autocomplete="off" type="text" name="angka7[]" class="form-control" />
                                                                 </td>
-                                                                <td><input readonly value="{{$row->kuantitas}}" autocomplete="off" type="number" name="angka4[]" min="0"
+                                                                <td><input readonly value="{{number_format($row->kuantitas)}}" autocomplete="off" type="text" name="angka4[]" min="0"
                                                                         class="form-control" /></td>
-                                                                <td><input readonly value="{{$row->harga_satuan}}" autocomplete="off" type="number" name="angka5[]" min="0"
+                                                                <td><input readonly value="{{number_format($row->harga_satuan)}}" autocomplete="off" type="text" name="angka5[]" min="0"
                                                                         class="form-control" /></td>
-                                                                <td><input readonly value="{{$row->total_diskon}}" autocomplete="off" type="number" name="angka6[]" min="0"
+                                                                <td><input readonly value="{{number_format($row->total_diskon)}}" autocomplete="off" type="text" name="angka6[]" min="0"
                                                                         class="form-control sub_totpot" /></td>
-                                                                <td><input readonly value="{{$row->total_harga}}" autocomplete="off" type="text" name="hasil2[]"
+                                                                <td><input readonly value="{{number_format($row->total_harga)}}" autocomplete="off" type="text" name="hasil2[]"
                                                                         class="form-control"readonly /></td>
                                                                 <td><button type="button" class="btn btn-light btn-submit"><i
                                                                             class="fa fa-trash"></i></td>
@@ -361,6 +361,39 @@
                                                         </tfoot>
                                                     </table>
                                                     <p></p>
+                                                    <div class="mb-3 row">
+                                                        <label class="col-sm-6 col-form-label"></label>
+                                                        <label class="col-sm-3 col-form-label">Nilai Transaksi</label>
+                                                        <div class="col-sm-3">
+                                                            <input readonly value="{{number_format($faktur->nilai_transaksi_fktr)}}" id="nilaitransaksi" type="text"
+                                                                name="nilaitransaksi" class="form-control nilaitrx">
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3 row">
+                                                        <label class="col-sm-6 col-form-label"></label>
+                                                        <label class="col-sm-3 col-form-label">Potongan Harga</label>
+                                                        <div class="col-sm-3">
+                                                            <input readonly value="{{number_format($faktur->potongan_harga_fktr)}}" id="potonganharga" name="potonganharga"
+                                                                type="text" class="form-control nilaihargapot">
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3 row">
+                                                        <label class="col-sm-6 col-form-label"></label>
+                                                        <label class="col-sm-3 col-form-label">PPn %</label>
+                                                        <div class="col-sm-3">
+                                                            <input step="any" readonly value="{{number_format($faktur->ppn_fktr)}}" id="ppn" name="ppn" type="text"
+                                                                class="form-control nilai_ppn">
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3 row">
+                                                        <label class="col-sm-6 col-form-label"></label>
+                                                        <label class="col-sm-3 col-form-label">Total</label>
+                                                        <div class="col-sm-3">
+                                                            <input readonly readonly value="{{number_format($faktur->total_fktr)}}" id="totaltrx" name="totaltrx" type="text"
+                                                                class="form-control total_trx">
+                                                        </div>
+                                                    </div>
                                                     <div class="mb-3 row">
                                                         <div class="col-sm-12">
                                                             <label required class="col-sm-3 col-form-label">Catatan</label>

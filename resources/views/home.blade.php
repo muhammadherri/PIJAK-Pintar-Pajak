@@ -22,8 +22,8 @@
                                         <div class="card-body d-flex">
                                             
                                             <div>
-                                                <h2 class="text-white invoice-num">Rp.{{number_format($invcount)}}</h2>
-                                                <span class="text-white fs-18">Total Invoices Penjualan</span>
+                                                <h2 class="text-white invoice-num">Rp.{{number_format($fktrcount)}}</h2>
+                                                <span class="text-white fs-18">Total Faktur PPn</span>
                                             </div>
                                         </div>
                                     </div>

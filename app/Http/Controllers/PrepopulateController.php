@@ -82,6 +82,7 @@ class PrepopulateController extends Controller
      */
     public function edit($id)
     {
+        $iduser=Auth::user()->id;
         $prep=Prepopulate::where('id',$id)->where('attribute1',$iduser)->get()->first();
         return view('prepopulates.edit',compact('prep'));
     }

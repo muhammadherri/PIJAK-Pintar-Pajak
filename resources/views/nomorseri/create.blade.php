@@ -32,7 +32,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">No Seri</label>
                                             <div class="col-sm-9">
-                                                <input autocomplete="off" required id="noseri" name="noseri" type="number" min="0" class="form-control">
+                                                <input autocomplete="off" required id="noseri" name="noseri" type="text" min="0" class="form-control">
                                             </div>
                                         </div>
 

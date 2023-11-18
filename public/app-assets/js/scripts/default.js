@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         class="form-control" />
                 </td>
                 <td width="auto" class="text-center">
-                    <input required autocomplete="off" type="number"
+                    <input required autocomplete="off" type="text"
                         name="pgt_nomor_1721[]" id="pgt_nomor_1721[]" min="0"
                         class="form-control" />
                 </td>
@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         class="form-control" />
                 </td>
                 <td width="auto" class="text-center">
-                    <input required autocomplete="off" type="number"
+                    <input required autocomplete="off" type="text"
                         name="pgt_kodeobjek_1721[]" id="pgt_kodeobjek_1721[]" min="0"
                         class="form-control" />
                 </td>
@@ -473,12 +473,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const newRow = `
             <tr>
                 <td width="auto" class="text-center">
-                    <input required autocomplete="off" type="number"
+                    <input required autocomplete="off" type="text"
                         name="ssp_kapIV[]" id="ssp_kapIV[]" min="0"
                         class="form-control" />
                 </td>
                 <td width="auto" class="text-center">
-                    <input min="0" required autocomplete="off" type="number"
+                    <input min="0" required autocomplete="off" type="text"
                         name="ssp_kjsIV[]" id="ssp_kjsIV[]"
                         class="form-control" />
                 </td>
@@ -488,7 +488,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         class="form-control" />
                 </td>
                 <td width="auto" class="text-center">
-                    <input required autocomplete="off" type="number"
+                    <input required autocomplete="off" type="text"
                         name="ssp_ntpnIV[]" id="ssp_ntpnIV[]"
                         class="form-control" />
                 </td>
@@ -574,7 +574,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <tr>
                 <td class="text-center">
                     <input required autocomplete="off"
-                        type="number" name="pph_KOPVI[]"
+                        type="text" name="pph_KOPVI[]"
                         id="pph_KOPVI[]"
                         class="form-control" />
                 </td>
@@ -652,7 +652,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <tr>
                 <td class="text-center">
                     <input required autocomplete="off"
-                        type="number" name="pph_kop_formulir_Vii[]"
+                        type="text" name="pph_kop_formulir_Vii[]"
                         id="pph_kop_formulir_Vii[]"
                         class="form-control" />
                 </td>

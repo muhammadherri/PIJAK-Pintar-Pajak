@@ -11,6 +11,7 @@ use App\Models\HutangPpn;
 use App\Models\JurnalManual;
 use App\Models\Pphfinal;
 use App\Models\PphTidakFinal;
+use App\Models\TransaksiPphDuapuluhSatu;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use PDF;
@@ -108,6 +109,15 @@ class PDFController extends Controller
                 ]);
             }elseif($billing->jenis_transaksi==4){
                 $ebupot=PphTidakFinal::where('id',$billing->trx_bupot)->update([
+                    'attribute2'=>Auth::user()->id,
+                    'attribute3'=>2,
+                ]);
+                $billingupdate = Billing::where('kode_billing',$idbilling)->update([
+                    'attribute2'=>Auth::user()->id,
+                    'attribute3'=>1,
+                ]);
+            }elseif($billing->jenis_transaksi==5){
+                $ebupot=TransaksiPphDuapuluhSatu::where('id',$billing->trx_bupot)->update([
                     'attribute2'=>Auth::user()->id,
                     'attribute3'=>2,
                 ]);

@@ -13,6 +13,7 @@ class FakturLine extends Model
     protected $fillable = [
         'id',
         'faktur_id',
+        'no_seri',
         'nama_barang',
         'kuantitas',
         'harga_satuan',

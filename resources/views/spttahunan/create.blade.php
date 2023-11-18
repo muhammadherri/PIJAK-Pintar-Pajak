@@ -1698,7 +1698,7 @@
                                                                         </td>
                                                                         <td class="text-center">
                                                                             <input   autocomplete="off"
-                                                                                type="number" name="kreditnomor[]"
+                                                                                type="text" name="kreditnomor[]"
                                                                                 id="kreditnomor[]" min="0"
                                                                                 class="form-control" />
                                                                         </td>

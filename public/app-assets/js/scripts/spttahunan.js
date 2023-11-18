@@ -346,7 +346,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     class="form-control subpajak" />
             </td>
             <td class="text-center">
-                <input required autocomplete="off" type="number" name="kreditnomor[]" id="kreditnomor[]" min="0"
+                <input required autocomplete="off" type="text" name="kreditnomor[]" id="kreditnomor[]" min="0"
                     class="form-control" />
             </td>
             <td class="text-center">

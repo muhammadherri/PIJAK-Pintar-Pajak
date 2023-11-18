@@ -13,6 +13,7 @@ class InvoiceLine extends Model
     protected $fillable = [
         'id',
         'invoice_id',
+        'no_seri',
         'nama_barang',
         'kuantitas',
         'harga_satuan',

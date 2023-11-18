@@ -52,9 +52,10 @@ class TransaksipphduapuluhsatuController extends Controller
         $header_id = $header_id ?? 0;
         $header_id = $header_id+1;
         $date = date('Ymd');
-        $trx = 'TRXPPh'.'0'.$header_id.$date;
-        // dd($request);
+        $trx = 'TRX'.'0'.$header_id.$date.'P21';
+        // dd($trx);
         $data = array(
+            'trx'=>$trx,
             'status_npwp'=>$request->npwp,
             'nama_wajib_pajak'=>$request->input_wajib_pajak,
             'no_npwp'=>$request->no_npwp,
@@ -96,9 +97,8 @@ class TransaksipphduapuluhsatuController extends Controller
             'pph21ataspkp'=>preg_replace('/[^0-9]/','',$request->jumlahtotal),
             'pph21_dipotong_sebelumnya'=>preg_replace('/[^0-9]/','',$request->pph21potongan),
             'pph21_terutang'=>preg_replace('/[^0-9]/','',$request->pph21terutang),
+            'pph21_perbulan'=>preg_replace('/[^0-9]/','',$request->pph21_perbulan),
             'attribute1'=>Auth::user()->id,
-            'attribute2'=>NULL,
-            'attribute3'=>Auth::user()->dosen_pembimbing,
             'created_at'=>date('Y-m-d H:i:s'),
         );
         // dd($data);
@@ -133,8 +133,6 @@ class TransaksipphduapuluhsatuController extends Controller
         }   else{
             return view('transaksiduapuluhsatu.show',compact('pph21','ptkp','status_pernikahan','tanggungan'));
         }
-    
-
     }
 
     /**

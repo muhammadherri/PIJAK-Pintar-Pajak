@@ -35,11 +35,28 @@
                                                 <select onchange="toggletrx()" id="trx_wan"name="trx_wan"
                                                     class="dropdown-groups">
                                                     <option value="0">Pilih Transaksi</option>
+                                                    <option value="5">PPh 21</option>
                                                     <option value="1">Transaksi E-Bupot</option>
                                                     <option value="2">Transaksi PPn</option>
                                                     <option value="3">PPh Final</option>
                                                     <option value="4">PPh Tidak Final</option>
                                                 </select>
+                                            </div>
+                                        </div>
+                                        <div id=hidden_pph21_trx style="display:none;">
+                                            <div class="row">
+                                                <div class="mb-3 row">
+                                                    <label class="col-sm-3 col-form-label">Transaksi PPh 21</label>
+                                                    <div class="col-sm-6">
+                                                            <select id="trx_pph21" name="trx_pph21"
+                                                            class="dropdown-groups">
+                                                            @foreach ($trxpph21 as $row)
+                                                                <option value="{{ $row->id }}">
+                                                                    {{ $row->trx }}</option>
+                                                            @endforeach
+                                                        </select>                                            
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div id=hidden_bupot_trx style="display:none;">
@@ -359,6 +376,7 @@
     function toggletrx() {
         var trx_wan = document.getElementById("trx_wan");
         var trx_pphfinal = document.getElementById("trx_pphfinal");
+        var hiden_pph21 = document.getElementById("hidden_pph21_trx");
         var hiden_bupot = document.getElementById("hidden_bupot_trx");
         var hiden_ppn = document.getElementById("hidden_ppn_trx");
         var hidden_pphfinal = document.getElementById("hidden_pphfinal_trx");
@@ -366,27 +384,38 @@
 
         if (trx_wan.value === "1") {
             hiden_bupot.style.display = 'block';
+            hiden_pph21.style.display = 'none';
             hiden_ppn.style.display = 'none';
             hidden_pphfinal.style.display = 'none';
             hidden_pphtidakfinal.style.display = 'none';
         } else if(trx_wan.value === "2") {
             hiden_bupot.style.display = 'none';
+            hiden_pph21.style.display = 'none';
             hiden_ppn.style.display = 'block';
             hidden_pphfinal.style.display = 'none';
             hidden_pphtidakfinal.style.display = 'none';
         }else if(trx_wan.value === "3") {
             hiden_bupot.style.display = 'none';
             hiden_ppn.style.display = 'none';
+            hiden_pph21.style.display = 'none';
             hidden_pphfinal.style.display = 'block';
             hidden_pphtidakfinal.style.display = 'none';
         }else if(trx_wan.value === "4") {
             hiden_bupot.style.display = 'none';
             hiden_ppn.style.display = 'none';
+            hiden_pph21.style.display = 'none';
             hidden_pphfinal.style.display = 'none';
             hidden_pphtidakfinal.style.display = 'block';
+        }else if(trx_wan.value==="5"){
+            hiden_bupot.style.display = 'none';
+            hiden_ppn.style.display = 'none';
+            hiden_pph21.style.display = 'block';
+            hidden_pphfinal.style.display = 'none';
+            hidden_pphtidakfinal.style.display = 'none';
         }else{
             hiden_bupot.style.display = 'none';
             hiden_ppn.style.display = 'none';
+            hiden_pph21.style.display = 'none';
             hidden_pphfinal.style.display = 'none';
             hidden_pphtidakfinal.style.display = 'none';
         }

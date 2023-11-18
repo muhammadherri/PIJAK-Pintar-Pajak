@@ -38,8 +38,15 @@
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Kode Objek Pajak</label>
                                         <div class="col-sm-9">
-                                            <input required autocomplete="off" id="kop" name="kop" value="{{$pphfinal->kode_objek_pajak}}"
-                                                type="text" class="form-control" placeholder="Masukkan Kode Objek Pajak">
+                                            <select id="kop" name="kop"
+                                                class="dropdown-groups">
+                                                @foreach ($kopfinal as $row)
+                                                    <option value="{{ $row->id }}"  {{$pphfinal->kode_objek_pajak == $row->id ? 'selected' : '' }}>
+                                                        {{ $row->kode_objek }} - {{ $row->penerima_penghasilan }}</option>
+                                                @endforeach
+                                            </select>
+                                            {{-- <input required autocomplete="off" id="kop" name="kop" value="{{$pphfinal->kode_objek_pajak}}"
+                                                type="text" class="form-control" placeholder="Masukkan Kode Objek Pajak"> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -47,7 +54,7 @@
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Jumlah Penghasilan Bruto</label>
                                         <div class="col-sm-9">
-                                            <input required autocomplete="off" id="bruto" name="bruto" value="{{number_format($pphfinal->bruto)}}"
+                                            <input required readonly autocomplete="off" id="bruto" name="bruto" value="{{number_format($pphfinal->bruto)}}"
                                                 type="text" min="0" class="form-control" placeholder="Masukkan Jumlah Penghasilan Bruto">
                                         </div>
                                     </div>
@@ -56,7 +63,7 @@
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Tarif</label>
                                         <div class="col-sm-3">
-                                            <input required autocomplete="off" id="tarif" name="tarif" value="{{number_format($pphfinal->tarif1)}}"
+                                            <input required autocomplete="off" readonly id="tarif" name="tarif" value="{{number_format($pphfinal->tarif1)}}"
                                                 type="text" min="0" class="form-control" placeholder="Masukkan Jumlah Tarif">
                                         </div>
                                         <div class="col-sm-3">

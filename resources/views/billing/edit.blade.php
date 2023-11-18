@@ -123,7 +123,7 @@
                                             <label class="col-sm-3 col-form-label">NPWP Penyetor</label>
                                             <div class="col-sm-9">
                                                 <input value="{{$billing->npwp_penyetor}}" min="0" maxlength="15" autocomplete="off" required id="npwp_penyetor" name="npwp_penyetor"
-                                                    type="number" class="form-control" placeholder="Masukkan NPWP Penyetor">
+                                                    type="text" class="form-control" placeholder="Masukkan NPWP Penyetor">
                                                 <span id="errorpenyetor" style="color: red;"></span>
                                             </div>
                                         </div>
@@ -144,7 +144,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">No Rekening</label>
                                             <div class="col-sm-9">
-                                                <select id="no_rek" name="no_rek" class="default-select form-control wide">
+                                                <select id="no_rek" name="no_rek" class="dropdown-groups">
                                                     @foreach ($vendor as $row)
                                                         <option value="{{ $row->id }}"
                                                             {{ $billing->no_rek == $row->id ? 'selected' : '' }}>

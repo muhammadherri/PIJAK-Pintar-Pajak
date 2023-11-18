@@ -96,24 +96,6 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label"></label>
                                             <div class="col-sm-3">
-                                                <input required onkeyup="this.value=separator(this.value);" autocomplete="off" id="tarif4" name="tarif4"
-                                                    type="text" min="0" class="form-control" placeholder="Masukkan Jumlah Tarif">
-                                            </div>
-                                            <div class="col-sm-2">
-                                                <input required onkeyup="this.value=separator(this.value);" autocomplete="off" id="persen4" name="persen4"
-                                                    type="text" min="0" class="form-control" placeholder="Persen">
-                                            </div>
-                                            <label class="col-sm-1 col-form-label">%</label>
-                                            <div class="col-sm-3">
-                                                <input readonly autocomplete="off" id="hasil4" name="hasil4"
-                                                    type="text" min="0" class="form-control">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label"></label>
-                                            <div class="col-sm-3">
                                                 <input required onkeyup="this.value=separator(this.value);" autocomplete="off" id="tarif3" name="tarif3"
                                                     type="text" min="0" class="form-control" placeholder="Masukkan Jumlah Tarif">
                                             </div>
@@ -128,6 +110,25 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-3 col-form-label"></label>
+                                            <div class="col-sm-3">
+                                                <input required onkeyup="this.value=separator(this.value);" autocomplete="off" id="tarif4" name="tarif4"
+                                                    type="text" min="0" class="form-control" placeholder="Masukkan Jumlah Tarif">
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <input required onkeyup="this.value=separator(this.value);" autocomplete="off" id="persen4" name="persen4"
+                                                    type="text" min="0" class="form-control" placeholder="Persen">
+                                            </div>
+                                            <label class="col-sm-1 col-form-label">%</label>
+                                            <div class="col-sm-3">
+                                                <input readonly autocomplete="off" id="hasil4" name="hasil4"
+                                                    type="text" min="0" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
                                     <div class="row">
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Potongan PPH</label>

@@ -49,9 +49,11 @@
                                             <th>Nilai PTKP</th>
                                             <th>PPh 21 PKP</th>
                                             <th>PPh 21 Potongan</th>
-                                            <th>PPh 21 Terutang</th>
-                                            <th>Tanggal Pembuatan</th>
+                                            <th>PPh 21 Terutang 1 Bulan</th>
+                                            <th>PPh 21 Terutang 1 Tahun</th>
                                             <th>Status</th>
+                                            <th>Tanggal Pembuatan</th>
+                                            <th>Status NPWP</th>
                                             <th>Dibuat Oleh</th>
                                             <th>Action</th>
                                         </tr>
@@ -166,18 +168,42 @@
                     "targets": 10
                     , "class": "text-center"
                     , "render": function(data, type, row, meta) {
-                        return row.pph21terutang;
+                        return row.pph21perbulan;
                     }
                 },
                 {
                     "targets": 11
                     , "class": "text-center"
                     , "render": function(data, type, row, meta) {
+                        return row.pph21terutang;
+                    }
+                },
+                {
+                    "targets": 12,
+                    render: function(data, type, row, index) {
+                        if (row.status == null) {
+                            var info = `<div class="d-flex"><a class="badge badge-rounded badge-outline-danger">
+                                Belum Dibayar</a></div>`
+                            ;
+                        } else if (row.status == 1) {
+                            var info = `<div class="d-flex">
+                                <a class="badge badge-rounded badge-outline-warning">
+		                        Menunggu Pembayaran</a></div>`;
+                        } else {
+                            var info = `<a class="badge badge-rounded badge-outline-primary">Sudah Dibayar</a>`;
+                        }
+                        return info;
+                    }
+                },
+                {
+                    "targets": 13
+                    , "class": "text-center"
+                    , "render": function(data, type, row, meta) {
                         return row.created_at;
                     }
                 },
                 {
-                    "targets": 12
+                    "targets": 14
                     , "class": "text-center"
                     , "render": function(data, type, row, meta) {
                         if(row.status_npwp==0 ){
@@ -189,7 +215,7 @@
                     }
                 },
                 {
-                    "targets": 13
+                    "targets": 15
                     , "class": "text-center"
                     , "render": function(data, type, row, meta) {
                         return row.created_by;
@@ -197,7 +223,7 @@
                 },
                 
                 {
-                    "targets": 14
+                    "targets": 16
                     , "class": "text-center"
                     , render: function(data, type, row, index) {
                         content = `

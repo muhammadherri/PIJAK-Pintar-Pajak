@@ -6,7 +6,7 @@ use App\Models\User;
 use App\Models\TransaksiPphDuapuluhSatu;
 use App\Models\Ebupot;
 use App\Models\Billing;
-use App\Models\Invoice;
+use App\Models\Faktur;
 use App\Models\SptTahunan;
 use App\Models\SptMasa;
 use App\Models\SptPpn;
@@ -53,9 +53,14 @@ class HomeController extends Controller
         // $billing=Billing::sum('jumlah');
         $users=User::where('status',null)->get();
         $jumlahmahasiswa=User::where('status',null)->get()->count();
-        $invcount = Invoice::where('attribute1',$id)->sum('ppn');
+        $fktr10 = Faktur::where('attribute1',$id)->where('no_seri','010')->sum('ppn_fktr');
+        $fktr40 = Faktur::where('attribute1',$id)->where('no_seri','040')->sum('ppn_fktr');
+        $fktr60 = Faktur::where('attribute1',$id)->where('no_seri','060')->sum('ppn_fktr');
+        $fktr90 = Faktur::where('attribute1',$id)->where('no_seri','090')->sum('ppn_fktr');
+        $fktrgg = Faktur::where('attribute1',$id)->where('no_seri','Digunggung')->sum('ppn_fktr');
+        $fktrcount= $fktr10+$fktr40+$fktr60+$fktr90+$fktrgg;
 
         // dd($jumlahmahasiswa);
-        return view('home',compact('namadosen','stp1111','stp1721','stp1771','invcount','jumlahmahasiswa','user','users','pph21','ebupot','billing'))->with('no');
+        return view('home',compact('namadosen','stp1111','stp1721','stp1771','fktrcount','jumlahmahasiswa','user','users','pph21','ebupot','billing'))->with('no');
     }
 }

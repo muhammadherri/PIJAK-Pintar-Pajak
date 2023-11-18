@@ -1,7 +1,7 @@
 <html>
     <head>
 		<link rel="icon" href="{{ asset('images/umlogo.png') }}">
-        <title>Taxceed</title>
+    	<title>PIJAK | Pintar Pajak </title>
         <style>
 			.invoice-box {
 				max-width: 800px;
@@ -142,13 +142,13 @@
 						<table>
 							<tr>
 								<td class="title">
-									<img src="{{$image_path}}" style="width: 90%; max-width: 100" />
+									<img src="{{$image_path}}" style="width: 90%; max-width: 200" />
 								</td>
 								<table>
 									<tr>
 										<td>
 											<b>
-												KEMENTRIAN KEUANGAN R.I<br />
+												KEMENTERIAN KEUANGAN REPUBLIK INDONESIA<br />
 											</b>
 											<b>
 												DIREKTORAT JENDERAL PAJAK<br />
@@ -179,11 +179,11 @@
 				</tr>
 				<tr>
 					<td><b>JENIS PAJAK</b></td>
-					<td>{{$billing->jenis_pajak}}</td>
+					<td>{{$billing->jenispajak->kode}}-{{$billing->jenispajak->jenis_pajak}}</td>
 				</tr>
 				<tr>
 					<td><b>JENIS SETORAN</b></td>
-					<td>{{$billing->kode_jenis_setoran}}</td>
+					<td>{{$billing->jenissetoran->kode}}-{{$billing->jenissetoran->jenis_setoran}}</td>
 				</tr>
 				<tr>
 					<td><b>MASA PAJAK</b></td>
@@ -230,9 +230,9 @@
 					<td><b>MASA AKTIF</b></td>
 					<td>{{date('d/M/Y',strtotime($billing->end_periode_pajak))}}</td>
 				</tr>
-				<tr>
+				{{-- <tr>
 					<h6><b>Catatan: Apabila ada kesalahan dalam isian Kode Billing atau masa berlakunya berakhir, Kode Billing dapat dibuat kembali. Tanggung jawab isian Kode Billing ada pada Wajib Pajak yang namanya tercantum di dalamnya.</b></h6>
-				</tr>
+				</tr> --}}
 			</table>
 		</div>
 	</body>

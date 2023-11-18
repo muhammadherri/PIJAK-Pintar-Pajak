@@ -258,7 +258,7 @@
                                                             <select id="no_seri" name="no_seri"
                                                                 class="dropdown-groups">
                                                                 @foreach ($noseri as $row)
-                                                                    <option value="{{ $row->id }}">
+                                                                    <option value="{{ $row->no_seri }}">
                                                                         {{ $row->no_seri }}</option>
                                                                 @endforeach
                                                             </select>
@@ -296,9 +296,9 @@
                                                                                 class="form-control" /></td>
                                                                         <td><input onkeyup="this.value=sprator(this.value);"
                                                                             required autocomplete="off" type="text" name="angka6[]" min="0"
-                                                                                class="form-control sub_totpot" /></td>
+                                                                                class="form-control sub_totpot_fktr" /></td>
                                                                         <td><input required autocomplete="off" type="text" name="hasil2[]"
-                                                                                class="form-control"readonly /></td>
+                                                                                class="form-control sub_total_fktr"readonly /></td>
                                                                         <td><button type="button" class="btn btn-light btn-submit"><i
                                                                                     class="fa fa-trash"></i></td>
                                                                     </tr>
@@ -317,6 +317,39 @@
                                                         </div>
                                                     </div>
                                                     <p></p>
+                                                    <div class="mb-3 row">
+                                                        <label class="col-sm-6 col-form-label"></label>
+                                                        <label class="col-sm-3 col-form-label">Nilai Transaksi</label>
+                                                        <div class="col-sm-3">
+                                                            <input readonly id="nilaitransaksi_fktr" type="text"
+                                                                name="nilaitransaksi_fktr" class="form-control nilaitrx_fktr">
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3 row">
+                                                        <label class="col-sm-6 col-form-label"></label>
+                                                        <label class="col-sm-3 col-form-label">Potongan Harga</label>
+                                                        <div class="col-sm-3">
+                                                            <input readonly id="potonganharga_fktr" name="potonganharga_fktr"
+                                                                type="text" class="form-control nilaihargapot_fktr">
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3 row">
+                                                        <label class="col-sm-6 col-form-label"></label>
+                                                        <label class="col-sm-3 col-form-label">PPn %</label>
+                                                        <div class="col-sm-3">
+                                                            <input step="any" readonly id="ppn_fktr" name="ppn_fktr" type="text"
+                                                                class="form-control nilai_ppn_fktr">
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3 row">
+                                                        <label class="col-sm-6 col-form-label"></label>
+                                                        <label class="col-sm-3 col-form-label">Total</label>
+                                                        <div class="col-sm-3">
+                                                            <input readonly id="totaltrx_fktr" name="totaltrx_fktr" type="text"
+                                                                class="form-control total_trx_fktr">
+                                                        </div>
+                                                    </div>
                                                     <div class="mb-3 row">
                                                         <div class="col-sm-12">
                                                             <label class="col-sm-3 col-form-label">Catatan</label>
@@ -435,8 +468,8 @@
 					<td><input onkeyup="this.value=sprator(this.value);"
                         required autocomplete="off" type="text" name="angka5[]" min="0" class="form-control"/></td>
 					<td><input onkeyup="this.value=sprator(this.value);"
-                        required autocomplete="off" type="text" name="angka6[]" min="0" class="form-control"/></td>
-					<td><input required autocomplete="off" type="text" name="hasil2[]" class="form-control"readonly /></td>
+                        required autocomplete="off" type="text" name="angka6[]" min="0" class="form-control sub_totpot_fktr"/></td>
+					<td><input required autocomplete="off" type="text" name="hasil2[]" class="form-control sub_total_fktr"readonly /></td>
                     <td><button type="button" class="btn btn-danger btn-remove"><i class="fa fa-trash"></i></button></td>
 
                 </tr>
@@ -463,6 +496,24 @@
                 const hasilInput = row.querySelector('input[name="hasil2[]"]');
                 const sum = retValangka1 * retValangka2 - retValangka3;
                 hasilInput.value = sum.toLocaleString();
+
+                var totalhar = 0
+                var totalpot = 0
+
+                $(".sub_total_fktr").each(function() {
+                    var total = $(this).val().replace(/,/g, '');
+                    totalhar +=+total;
+                });
+                $(".sub_totpot_fktr").each(function() {
+                    totalpot += +$(this).val().replace(/,/g, '');
+                });
+             
+                $('.nilaitrx_fktr').val(totalhar.toLocaleString());
+                $('.nilaihargapot_fktr').val(totalpot.toLocaleString());
+                var ppn = ((totalhar-totalpot)*11/100);
+                $('.nilai_ppn_fktr').val(ppn.toLocaleString());
+                var trx = ((totalhar-totalpot)+ppn);
+                $('.total_trx_fktr').val(trx.toLocaleString());
             }
         });
 

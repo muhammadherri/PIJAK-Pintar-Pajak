@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\User;
 use App\Models\Vendor;
+use App\Models\Invoice;
 
 class Faktur extends Model
 {
@@ -20,6 +21,10 @@ class Faktur extends Model
         'dok_lain',
         'no_seri',
         'no_dok',
+        'nilai_transaksi_fktr',
+        'potongan_harga_fktr',
+        'ppn_fktr',
+        'total_fktr',
         'catatan',
         'attribute1',
         'attribute2',
@@ -33,5 +38,8 @@ class Faktur extends Model
     }
     public function users(){
         return $this->hasOne(User::class,'id','attribute1');
+    }
+    public function inv(){
+        return $this->hasOne(Invoice::class,'invoice_id','faktur_id');
     }
 }

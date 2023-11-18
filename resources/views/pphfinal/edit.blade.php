@@ -168,7 +168,7 @@
 @endsection
 
 <script>
-      function separator(x) {
+    function separator(x) {
         //remove commas
         retVal = x ? parseFloat(x.replace(/,/g, '')) : 0;
 

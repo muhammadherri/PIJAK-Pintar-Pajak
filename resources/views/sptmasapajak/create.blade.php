@@ -120,14 +120,14 @@
                                                             placeholder="Masukkan Nama">
                                                     </div>
                                                 </div>
-                                                <div class="mb-3 row">
+                                                {{-- <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Besaran PTKP</label>
                                                     <div class="col-sm-9">
                                                         <input min="0" autocomplete="off"   id="besaran_ptkp"
                                                             name="besaran_ptkp" type="number" class="form-control"
                                                             placeholder="Masukkan Besaran PTKP">
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                                 <div class="mb-3 row">
                                                     <label class="col-sm-3 col-form-label">Alamat</label>
                                                     <div class="col-sm-9">
@@ -938,7 +938,7 @@
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td width="auto" class="text-center">
-                                                                        <input   autocomplete="off" type="number"
+                                                                        <input   autocomplete="off" type="text"
                                                                             name="pgt_nomor_1721[]" id="pgt_nomor_1721[]" min="0"
                                                                             class="form-control" />
                                                                     </td>
@@ -948,7 +948,7 @@
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td width="auto" class="text-center">
-                                                                        <input   autocomplete="off" type="number"
+                                                                        <input   autocomplete="off" type="text"
                                                                             name="pgt_kodeobjek_1721[]" id="pgt_kodeobjek_1721[]" min="0"
                                                                             class="form-control" />
                                                                     </td>
@@ -1358,12 +1358,12 @@
                                                             <tbody>
                                                                 <tr>
                                                                     <td width="auto" class="text-center">
-                                                                        <input   autocomplete="off" type="number"
+                                                                        <input   autocomplete="off" type="text"
                                                                             name="ssp_kapIV[]" id="ssp_kapIV[]" min="0"
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td width="auto" class="text-center">
-                                                                        <input min="0"   autocomplete="off" type="number"
+                                                                        <input min="0"   autocomplete="off" type="text"
                                                                             name="ssp_kjsIV[]" id="ssp_kjsIV[]"
                                                                             class="form-control" />
                                                                     </td>
@@ -1373,7 +1373,7 @@
                                                                             class="form-control" />
                                                                     </td>
                                                                     <td width="auto" class="text-center">
-                                                                        <input   autocomplete="off" type="number"
+                                                                        <input   autocomplete="off" type="text"
                                                                             name="ssp_ntpnIV[]" id="ssp_ntpnIV[]"
                                                                             class="form-control" />
                                                                     </td>
@@ -1644,8 +1644,8 @@
                                                             <tbody class="">
                                                                 <tr>
                                                                     <td class="text-center">
-                                                                        <input   autocomplete="off"
-                                                                            type="number" name="pph_KOPVI[]"
+                                                                        <input autocomplete="off"
+                                                                            type="text" name="pph_KOPVI[]"
                                                                             id="pph_KOPVI[]"
                                                                             class="form-control" />
                                                                     </td>
@@ -1802,8 +1802,8 @@
                                                             <tbody class="">
                                                                 <tr>
                                                                     <td class="text-center">
-                                                                        <input   autocomplete="off"
-                                                                            type="number" name="pph_kop_formulir_Vii[]"
+                                                                        <input autocomplete="off"
+                                                                            type="text" name="pph_kop_formulir_Vii[]"
                                                                             id="pph_kop_formulir_Vii[]"
                                                                             class="form-control" />
                                                                     </td>

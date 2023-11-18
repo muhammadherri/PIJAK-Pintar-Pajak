@@ -38,11 +38,11 @@
                                     <thead>
                                         <tr>
                                             <th>Nomor NPWP Terdaftar</th>
+                                            <th>Jumlah PPN</th>
                                             <th>Nama Wajib Pajak</th>
                                             <th>Alamat Wajib Pajak</th>
                                             <th>Nomor Faktur</th>
                                             <th>Jumlah DPP</th>
-                                            <th>Jumlah PPN</th>
                                             <th>Tahun</th>
                                             <th>Masa PPN Terdaftar</th>
                                             <th>Dibuat Oleh</th>
@@ -58,12 +58,13 @@
                                     <tfoot class="footer">
                                         <tr>
                                             <td><b>TOTAL PPN</b></td>
-                                            <td></td>
+                                            <td>
+                                                <b>{{ number_format($invcount) }}</b>
+                                            </td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
                                             <td>
-                                                <b>{{ number_format($invcount,2) }}</b>
                                             </td>
                                             <td colspan="5"></td>
                                         </tr>
@@ -101,12 +102,19 @@
                 },
                 {
                     "targets": 1,
+                    "class": "text-center",
+                    "render": function(data, type, row, meta) {
+                        return row.jumlah_ppn;
+                    }
+                },
+                {
+                    "targets": 2,
                     "render": function(data, type, row, meta) {
                         return row.nama_npwp;
                     }
                 },
                 {
-                    "targets": 2,
+                    "targets": 3,
                     "class": "text-center",
                     render: function(data, type, row, index) {
                         return row.alamat_npwp;
@@ -114,26 +122,20 @@
                     }
                 },
                 {
-                    "targets": 3,
+                    "targets": 4,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
                         return row.no_faktur;
                     }
                 },
                 {
-                    "targets": 4,
+                    "targets": 5,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
                         return row.jumlah_dpp;
                     }
                 },
-                {
-                    "targets": 5,
-                    "class": "text-center",
-                    "render": function(data, type, row, meta) {
-                        return row.jumlah_ppn;
-                    }
-                },
+               
                 {
                     "targets": 6,
                     "class": "text-center",

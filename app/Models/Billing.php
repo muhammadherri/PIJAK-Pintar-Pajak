@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\User;
 use App\Models\Vendor;
+use App\Models\JenisPajak;
+use App\Models\KodeJenisSetoran;
 
 class Billing extends Model
 {
@@ -54,5 +56,13 @@ class Billing extends Model
     public function vendor()
     {
         return $this->hasOne(Vendor::class,'id','no_rek');
+    }
+    public function jenispajak()
+    {
+        return $this->hasOne(JenisPajak::class,'id','jenis_pajak');
+    }
+    public function jenissetoran()
+    {
+        return $this->hasOne(KodeJenisSetoran::class,'id','kode_jenis_setoran');
     }
 }
