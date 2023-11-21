@@ -1020,12 +1020,16 @@ function sprator(x) {
     resulta3_kena_pajak.value = hasilkenapajak.toLocaleString();
     
     const hasilpphterutang = hasilkenapajak*22/100;
-    const resultb4_pph_terutang = document.getElementById('b4_pph_terutang');
-    resultb4_pph_terutang.value = hasilpphterutang.toLocaleString();
+    const b4_pph_terutang = $('#b4_pph_terutang').val();
+    retValb4_pph_terutang=b4_pph_terutang ? parseFloat(b4_pph_terutang.replace(/,/g, '')) : 0;
+
+    // const resultb4_pph_terutang = document.getElementById('b4_pph_terutang');
+    // resultb4_pph_terutang.value = hasilpphterutang.toLocaleString();
 
     const b5_pph_terutang = $('#b5_pph_terutang').val();
     retValb5_pph_terutang=b5_pph_terutang ? parseFloat(b5_pph_terutang.replace(/,/g, '')) : 0;
-    const jumlahpphterutang =hasilpphterutang+retValb5_pph_terutang;
+    // const jumlahpphterutang =hasilpphterutang+retValb5_pph_terutang;
+    const jumlahpphterutang =retValb4_pph_terutang+retValb5_pph_terutang;
     console.log(jumlahpphterutang);
     const resultb6_pph_terutang = document.getElementById('b6_pph_terutang');
     resultb6_pph_terutang.value = jumlahpphterutang.toLocaleString();
