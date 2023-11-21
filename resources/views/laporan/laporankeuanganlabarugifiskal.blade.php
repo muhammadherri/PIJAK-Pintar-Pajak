@@ -1357,7 +1357,7 @@
                                     </tr>
                                     <tr>
                                         <th></th>
-                                        <th width="auto" class="text-center">IKHTISAR LABA RUGI</th>
+                                        <th width="auto" class="text-center">Laba Sebelum Pajak</th>
                                         <th class="text-center">{{ number_format($ikhtisarlabarugi) }}</th>
                                         <th class="text-center">{{ number_format($totaldebit) }}</th>
                                         <th class="text-center">{{ number_format($totalkredit) }}</th>
