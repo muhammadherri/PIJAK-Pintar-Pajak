@@ -2,7 +2,7 @@
 @section('header')
     <div class="header-left">
         <div class="dashboard_bar">
-            Pelaporan Keuangan Komersial
+            Pelaporan Keuangan Fiskal
         </div>
     </div>
 @endsection
@@ -32,9 +32,9 @@
                                         <tr>
                                             <th width="auto" class="text-center">Kode Akun</th>
                                             <th width="auto" class="text-center">Nama Akun Keuangan Fiskal</th>
-                                            <th width="auto" class="text-center">Realting</th>
-                                            <th width="auto" class="text-center">Debit</th>
-                                            <th width="auto" class="text-center">Kredit</th>
+                                            <th width="auto" class="text-center">Komersial</th>
+                                            <th width="auto" class="text-center">Positif</th>
+                                            <th width="auto" class="text-center">Negatif</th>
                                             <th width="auto" class="text-center">Fiskal</th>
                                             <th width="auto" class="text-center">POS</th>
                                             <th width="auto" class="text-center">Nama Kategori Laporan Pajak</th>
