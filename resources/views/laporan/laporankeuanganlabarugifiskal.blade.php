@@ -39,10 +39,10 @@
                                         <tr>
                                             <th width="auto" class="text-center">Kode Akun</th>
                                             <th width="width: 100px;" class="text-center">Deskripsi Nama Akun</th>
-                                            <th width="auto" class="text-center">Realting</th>
-                                            <th width="auto" class="text-center">Debit</th>
-                                            <th width="auto" class="text-center">Kredit</th>
                                             <th width="auto" class="text-center">Komersial</th>
+                                            <th width="auto" class="text-center">Positif</th>
+                                            <th width="auto" class="text-center">Negatif</th>
+                                            <th width="auto" class="text-center">Fiskal</th>
                                             <th width="auto" class="text-center">Kategori Laporan Pajak</th>
                                         </tr>
                                     </thead>
