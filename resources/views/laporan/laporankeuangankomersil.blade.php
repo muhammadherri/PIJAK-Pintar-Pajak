@@ -33,8 +33,8 @@
                                             <th width="auto" class="text-center">Kode Akun</th>
                                             <th width="width: 100px;" class="text-center">Nama Akun Komersial</th>
                                             <th width="auto" class="text-center">Realting</th>
-                                            <th width="auto" class="text-center">Debit</th>
-                                            <th width="auto" class="text-center">Kredit</th>
+                                            <th width="auto" class="text-center">Positif</th>
+                                            <th width="auto" class="text-center">Negatif</th>
                                             <th width="auto" class="text-center">Fiskal</th>
                                             <th width="auto" class="text-center">POS</th>
                                             <th width="auto" class="text-center">Nama Kategori Laporan Pajak</th>
@@ -129,7 +129,10 @@
                                         <th></th>
                                         <th width="auto" class="text-center">TOTAL AKTIVA LANCAR </th>
                                         <th class="text-center">{{number_format($totalaktivalancar)}}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{number_format($totalaktivalancar)}}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>
@@ -153,7 +156,10 @@
                                         <th></th>
                                         <th width="auto" class="text-center">NILAI AKTIVA TETAP </th>
                                         <th class="text-center">{{number_format($nilaiaktivatetap)}}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{number_format($nilaiaktivatetap)}}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     @foreach ($penyusutan as $key => $row)
                                         <tr>
@@ -172,19 +178,28 @@
                                         <th></th>
                                         <th width="auto" class="text-center">NILAI PENYUSUTAN</th>
                                         <th class="text-center">{{number_format($nilaipenyusutan)}}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{number_format($nilaipenyusutan)}}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>
                                         <th width="auto" class="text-center">TOTAL AKTIVA TETAP</th>
                                         <th class="text-center">{{number_format($totalaktivatetap)}}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{number_format($totalaktivatetap)}}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>
                                         <th width="auto" class="text-center">TOTAL AKTIVA</th>
                                         <th class="text-center">{{number_format($totalaktiva)}}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{number_format($totalaktiva)}}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>
@@ -246,7 +261,10 @@
                                         <th></th>
                                         <th width="auto" class="text-center">TOTAL LIABILITAS LANCAR</th>
                                         <th class="text-center">{{number_format($totalliabilitislancar)}}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{number_format($totalliabilitislancar)}}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>
@@ -270,7 +288,10 @@
                                         <th></th>
                                         <th width="auto" class="text-center">TOTAL LIABILITAS JANGKA PANJANG</th>
                                         <th class="text-center">{{number_format($totalliabilitisjangkapanjang)}}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{number_format($totalliabilitisjangkapanjang)}}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>
@@ -294,13 +315,19 @@
                                         <th></th>
                                         <th width="auto" class="text-center">TOTAL MODAL</th>
                                         <th class="text-center">{{number_format($totalmodal)}}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{number_format($totalmodal)}}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>
                                         <th width="auto" class="text-center">TOTAL LIABLITAS & MODAL </th>
                                         <th class="text-center">{{number_format($totalliabilitasmodal)}}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{number_format($totalliabilitasmodal)}}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                 </table>
                             </div>

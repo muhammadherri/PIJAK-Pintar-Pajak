@@ -33,8 +33,8 @@
                                             <th width="auto" class="text-center">Kode Akun</th>
                                             <th width="width: 100px;" class="text-center">Deskripsi Nama Akun</th>
                                             <th width="auto" class="text-center">Realting</th>
-                                            <th width="auto" class="text-center">Debit</th>
-                                            <th width="auto" class="text-center">Kredit</th>
+                                            <th width="auto" class="text-center">Posifit</th>
+                                            <th width="auto" class="text-center">Negatif</th>
                                             <th width="auto" class="text-center">Komersial</th>
                                             <th width="auto" class="text-center">Kategori Laporan Pajak</th>
                                         </tr>
@@ -58,7 +58,10 @@
                                         <th></th>
                                         <th width="auto" class="text-center">TOTAL PENJUALAN</th>
                                         <th class="text-center">{{number_format($totalpenjualan)}}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{number_format($totalpenjualan)}}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>
@@ -81,18 +84,24 @@
                                         <th></th>
                                         <th width="auto" class="text-center">JUMLAH HARGA POKOK PENJUALAN</th>
                                         <th class="text-center">{{number_format($totalharpok)}}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{number_format($totalharpok)}}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>
                                         <th width="auto" class="text-center">LABA KOTOR</th>
                                         <th class="text-center">{{number_format($labakotor)}}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{number_format($labakotor)}}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>
                                         <th width="auto" class="text-center">PENGELUARAN OPERASIONAL</th>
-                                        <th class="text-center">{{number_format($labakotor)}}</th>
+                                        <th class="text-center"></th>
                                         <th colspan="5" class="text-center"></th>
                                     </tr>
                                     @foreach ($pengeluaranoperasional as $key => $row)
@@ -110,13 +119,19 @@
                                         <th></th>
                                         <th width="auto" class="text-center">TOTAL OPERASIONAL</th>
                                         <th class="text-center">{{number_format($totalbiayaoperasional)}}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{number_format($totalbiayaoperasional)}}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>
                                         <th width="auto" class="text-center">LABA OPERASIONAL</th>
                                         <th class="text-center">{{number_format($labaoperasional)}}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{number_format($labaoperasional)}}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>
@@ -138,8 +153,11 @@
                                     <tr>
                                         <th></th>
                                         <th width="auto" class="text-center">JUMLAH PENDAPATAN</th>
-                                        <th class="text-center">{{number_format($labaoperasional)}}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center">{{number_format($jumlahpendapatanlain)}}</th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{number_format($jumlahpendapatanlain)}}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>
@@ -162,19 +180,28 @@
                                         <th></th>
                                         <th width="auto" class="text-center">JUMLAH BEBAN LAIN</th>
                                         <th class="text-center">{{number_format($jumlahbebanlain)}}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{number_format($jumlahbebanlain)}}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>
                                         <th width="auto" class="text-center">TOTAL PENDAPATAN DAN BEBAN LAIN</th>
                                         <th class="text-center">{{number_format($totalpendapatandanbebanlain)}}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{number_format($totalpendapatandanbebanlain)}}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                     <tr>
                                         <th></th>
                                         <th width="auto" class="text-center">Laba Sebelum Pajak</th>
                                         <th class="text-center">{{number_format($ikhtisarlabarugi)}}</th>
-                                        <th colspan="5" class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"></th>
+                                        <th class="text-center">{{number_format($ikhtisarlabarugi)}}</th>
+                                        <th colspan="2" class="text-center"></th>
                                     </tr>
                                 </table>
                             </div>
