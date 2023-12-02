@@ -148,8 +148,8 @@
                                             <div class="mb-3 row">
                                                 <label class="col-sm-3 col-form-label"></label>
                                                 <div class="col-sm-9">
-                                                    <input type="number" min="0" autocomplete="off" required
-                                                        placeholder="Masukkan Nilai Rupiah"
+                                                    <input type="text" autocomplete="off" required
+                                                        placeholder="Masukkan Nilai Rupiah" onkeyup="this.value=sprator(this.value);"
                                                         class="form-control"id="a1_rupiah_1770s" name="a1_rupiah_1770s">
                                                 </div>
                                             </div>
@@ -157,8 +157,8 @@
                                             <div class="mb-3 row">
                                                 <label class="col-sm-3 col-form-label"></label>
                                                 <div class="col-sm-9">
-                                                    <input type="number" min="0" autocomplete="off" required
-                                                        placeholder="Masukkan Nilai Rupiah"
+                                                    <input type="text" min="0" autocomplete="off" required
+                                                        placeholder="Masukkan Nilai Rupiah" onkeyup="this.value=sprator(this.value);"
                                                         class="form-control"id="a2_rupiah_1770s" name="a2_rupiah_1770s">
                                                 </div>
                                             </div>
@@ -166,8 +166,8 @@
                                             <div class="mb-3 row">
                                                 <label class="col-sm-3 col-form-label"></label>
                                                 <div class="col-sm-9">
-                                                    <input type="number" min="0" autocomplete="off" required
-                                                        placeholder="Masukkan Nilai Rupiah"
+                                                    <input type="text" min="0" autocomplete="off" required
+                                                        placeholder="Masukkan Nilai Rupiah"onkeyup="this.value=sprator(this.value);"
                                                         class="form-control"id="a3_rupiah_1770s" name="a3_rupiah_1770s">
                                                 </div>
                                             </div>
@@ -175,7 +175,7 @@
                                             <div class="mb-3 row">
                                                 <label class="col-sm-3 col-form-label"></label>
                                                 <div class="col-sm-9">
-                                                    <input type="number" min="0" autocomplete="off" readonly required
+                                                    <input type="text" min="0" autocomplete="off" readonly required
                                                         class="form-control"id="a4_rupiah_1770s" name="a4_rupiah_1770s">
                                                 </div>
                                             </div>
@@ -183,8 +183,8 @@
                                             <div class="mb-3 row">
                                                 <label class="col-sm-3 col-form-label"></label>
                                                 <div class="col-sm-9">
-                                                    <input type="number" min="0" autocomplete="off" required
-                                                        placeholder="Masukkan Nilai Rupiah"
+                                                    <input type="text" min="0" autocomplete="off" required
+                                                        placeholder="Masukkan Nilai Rupiah" onkeyup="this.value=sprator(this.value);"
                                                         class="form-control"id="a5_rupiah_1770s" name="a5_rupiah_1770s">
                                                 </div>
                                             </div>
@@ -192,7 +192,7 @@
                                             <div class="mb-3 row">
                                                 <label class="col-sm-3 col-form-label"></label>
                                                 <div class="col-sm-9">
-                                                    <input type="number" min="0" autocomplete="off" readonly required
+                                                    <input type="text" min="0" autocomplete="off" readonly required
                                                         class="form-control"id="a6_rupiah_1770s" name="a6_rupiah_1770s">
                                                 </div>
                                             </div>
@@ -210,8 +210,8 @@
                                                 </div>
                                                 <label class="col-sm-1 col-form-label"></label>
                                                 <div class="col-sm-4">
-                                                    <input type="number" min="0" autocomplete="off" required
-                                                        placeholder="Masukkan Nilai Rupiah"
+                                                    <input type="text" min="0" autocomplete="off" required
+                                                        placeholder="Masukkan Nilai Rupiah" onkeyup="this.value=sprator(this.value);"
                                                         class="form-control"id="b7_rupiah_1770s" name="b7_rupiah_1770s">
                                                 </div>
                                             </div>
@@ -219,7 +219,7 @@
                                             <div class="mb-3 row">
                                                 <label class="col-sm-3 col-form-label"></label>
                                                 <div class="col-sm-9">
-                                                    <input type="number" min="0" autocomplete="off" readonly required
+                                                    <input type="text" min="0" autocomplete="off" readonly required
                                                         class="form-control"id="b8_rupiah_1770s" name="b8_rupiah_1770s">
                                                 </div>
                                             </div>
@@ -228,8 +228,8 @@
                                             <div class="mb-3 row">
                                                 <label class="col-sm-3 col-form-label"></label>
                                                 <div class="col-sm-9">
-                                                    <input type="number" min="0" autocomplete="off" required
-                                                        placeholder="Masukkan Nilai Rupiah"
+                                                    <input type="text" min="0" autocomplete="off" required
+                                                        placeholder="Masukkan Nilai Rupiah" onkeyup="this.value=sprator(this.value);"
                                                         class="form-control"id="c9_rupiah_1770s" name="c9_rupiah_1770s">
                                                 </div>
                                             </div>
@@ -237,8 +237,8 @@
                                             <div class="mb-3 row">
                                                 <label class="col-sm-3 col-form-label"></label>
                                                 <div class="col-sm-9">
-                                                    <input type="number" min="0" autocomplete="off" required
-                                                        placeholder="Masukkan Nilai Rupiah"
+                                                    <input type="text" min="0" autocomplete="off" required
+                                                        placeholder="Masukkan Nilai Rupiah" onkeyup="this.value=sprator(this.value);"
                                                         class="form-control"id="c10_rupiah_1770s" name="c10_rupiah_1770s">
                                                 </div>
                                             </div>
@@ -246,7 +246,7 @@
                                             <div class="mb-3 row">
                                                 <label class="col-sm-3 col-form-label"></label>
                                                 <div class="col-sm-9">
-                                                    <input type="number" min="0" autocomplete="off" readonly required
+                                                    <input type="text" min="0" autocomplete="off" readonly required
                                                         class="form-control"id="c11_rupiah_1770s" name="c11_rupiah_1770s">
                                                 </div>
                                             </div>
@@ -255,8 +255,8 @@
                                             <div class="mb-3 row">
                                                 <label class="col-sm-3 col-form-label"></label>
                                                 <div class="col-sm-9">
-                                                    <input type="number" min="0" autocomplete="off" required
-                                                        placeholder="Masukkan Nilai Rupiah"
+                                                    <input type="text" min="0" autocomplete="off" required
+                                                        placeholder="Masukkan Nilai Rupiah" onkeyup="this.value=sprator(this.value);"
                                                         class="form-control"id="d12_rupiah_1770s" name="d12_rupiah_1770s">
                                                 </div>
                                             </div>
@@ -285,7 +285,7 @@
                                             <div class="mb-3 row">
                                                 <label class="col-sm-3 col-form-label"></label>
                                                 <div class="col-sm-9">
-                                                    <input type="number" min="0" autocomplete="off" readonly required
+                                                    <input type="text" min="0" autocomplete="off" readonly required
                                                         class="form-control"id="d13_jumlah_1770s" name="d13_jumlah_1770s">
                                                 </div>
                                             </div>
@@ -293,16 +293,16 @@
                                             <div class="mb-3 row">
                                                 <label class="col-sm-3 col-form-label">a. PPh Pasal 25</label>
                                                 <div class="col-sm-9">
-                                                    <input type="number" min="0" autocomplete="off" required
-                                                        placeholder="Masukkan Nilai Rupiah"
+                                                    <input type="text" min="0" autocomplete="off" required
+                                                        placeholder="Masukkan Nilai Rupiah" onkeyup="this.value=sprator(this.value);"
                                                         class="form-control"id="d14a_rupiah_1770s" name="d14a_rupiah_1770s">
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
                                                 <label class="col-sm-3 col-form-label">b. STP PPh Pasal 25 (Hanya Pokok Pajak)</label>
                                                 <div class="col-sm-9">
-                                                    <input type="number" min="0" autocomplete="off" required
-                                                        placeholder="Masukkan Nilai Rupiah"
+                                                    <input type="text" min="0" autocomplete="off" required
+                                                        placeholder="Masukkan Nilai Rupiah" onkeyup="this.value=sprator(this.value);"
                                                         class="form-control"id="d14b_rupiah_1770s" name="d14b_rupiah_1770s">
                                                 </div>
                                             </div>
@@ -310,8 +310,7 @@
                                             <div class="mb-3 row">
                                                 <label class="col-sm-3 col-form-label"></label>
                                                 <div class="col-sm-9">
-                                                    <input type="number" min="0" autocomplete="off" readonly required
-                                                        placeholder="Masukkan Nilai Rupiah"
+                                                    <input type="text" min="0" autocomplete="off" readonly required
                                                         class="form-control"id="d15_rupiah_1770s" name="d15_rupiah_1770s">
                                                 </div>
                                             </div>
@@ -347,8 +346,7 @@
                                                 </div>
                                                 <label class="col-sm-1 col-form-label"></label>
                                                 <div class="col-sm-4">
-                                                    <input type="number" min="0" autocomplete="off" readonly required
-                                                        placeholder="Masukkan Nilai Rupiah"
+                                                    <input type="text" min="0" autocomplete="off" readonly required
                                                         class="form-control"id="e16_rupiah_1770s" name="e16_rupiah_1770s">
                                                 </div>
                                             </div>
@@ -378,8 +376,8 @@
                                                 </div>
                                                 <label class="col-sm-1 col-form-label"></label>
                                                 <div class="col-sm-4">
-                                                    <input type="number" min="0" autocomplete="off" required
-                                                    placeholder="Masukkan Nilai Rupiah"
+                                                    <input type="text" min="0" autocomplete="off" required
+                                                    placeholder="Masukkan Nilai Rupiah" onkeyup="this.value=sprator(this.value);"
                                                     class="form-control"id="f18_rupiah_1770s" name="f18_rupiah_1770s">
                                                 </div>
                                             </div>
@@ -469,3 +467,4 @@
         </div>
     </div>
 @endsection
+

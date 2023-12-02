@@ -1301,7 +1301,7 @@
                                                                         class="form-control subdpp_1111b1" />
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <input   readonly autocomplete="off" type="text" onkeyup="this.value=sprator(this.value);"
+                                                                    <input   readonly autocomplete="off" type="text"
                                                                         name="pajak_ppn_1111b1[]" id="pajak_ppn_1111b1[]"
                                                                         min="0"
                                                                         class="form-control subppn_1111b1" />
@@ -1466,7 +1466,7 @@
                                                                         class="form-control subppnbm_1111B2" />
                                                                 </td>
                                                                 <td class="text-center">
-                                                                    <input   autocomplete="off" type="number"
+                                                                    <input   autocomplete="off" type="text"
                                                                         name="pajak_no_seri_1111B2[]"
                                                                         id="pajak_no_seri_1111B2[]" min="0"
                                                                         class="form-control" />

@@ -16,6 +16,7 @@ class VendorController extends Controller
     public function index()
     {
         $vendor=Vendor::all();
+        // dd($vendor);
         return view('vendor.index',compact('vendor'))->with('no',1);
         
     }

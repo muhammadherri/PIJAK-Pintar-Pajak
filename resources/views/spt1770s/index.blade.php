@@ -123,7 +123,22 @@
                     "targets": 6,
                     "class": "text-center",
                     "render": function(data, type, row, meta) {
-                        return row.statuskewajiban;
+                        if (row.statuskewajiban == 0) {
+                            var info = `<div class="d-flex"><a class="badge badge-rounded badge-outline-primary">
+                                KK</a></div>`
+                            ;
+                        } else if (row.statuskewajiban == 1) {
+                            var info = `<div class="d-flex">
+                                <a class="badge badge-rounded badge-outline-primary">
+		                        HB</a></div>`;
+                        } else if (row.statuskewajiban == 2) {
+                            var info = `<div class="d-flex">
+                                <a class="badge badge-rounded badge-outline-primary">
+		                        PH</a></div>`;
+                        } else {
+                            var info = `<a class="badge badge-rounded badge-outline-primary">MT</a>`;
+                        }
+                        return info;
                     }
                 },
                 {

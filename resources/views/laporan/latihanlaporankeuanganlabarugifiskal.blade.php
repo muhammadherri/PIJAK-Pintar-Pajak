@@ -1363,7 +1363,7 @@
                                         <th class="text-center">{{ number_format($totalkomersial) }}</th>
                                         <th colspan="2" class="text-center"></th>
                                     </tr>
-                                    <tr>
+                                    {{-- <tr>
                                         <th></th>
                                         <th width="auto" class="text-center">PAJAK PENGHASIL</th>
                                         <th class="text-center">{{ number_format($pajakpenghasiliktisarlabarugi) }}</th>
@@ -1371,7 +1371,7 @@
                                         <th class="text-center"></th>
                                         <th class="text-center">{{ number_format($pajakpenghasiltotalkomersial) }}</th>
                                         <th colspan="2" class="text-center"></th>
-                                    </tr>
+                                    </tr> --}}
                                 </table>
                             </div>
                         </div>

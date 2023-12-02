@@ -1014,9 +1014,15 @@
                                                                     <td></td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td colspan="5" class="text-left"><b>PEGAWAI TETAP DAN PENERIMA PENSIUN ATAU THT/JHT SERTA PNS, ANGGOTA TNI/POLRI, PEJABAT NEGARA</b>
+                                                                    <td colspan="4" class="text-left"><b>PEGAWAI TETAP DAN PENERIMA PENSIUN ATAU THT/JHT SERTA PNS, ANGGOTA TNI/POLRI, PEJABAT NEGARA</b>
                                                                     </td>
                                                                   
+                                                                    <td width="auto" class="text-center">
+                                                                        <input autocomplete="off" type="text"
+                                                                            onkeyup="this.value=sprator(this.value);"
+                                                                            name="orang_1721_formulirI" id="orang_1721_formulirI" min="0"
+                                                                            class="form-control" placeholder="Orang"/>
+                                                                    </td>
                                                                     <td width="auto" class="text-center">
                                                                         <input   autocomplete="off" type="text"
                                                                             onkeyup="this.value=sprator(this.value);"

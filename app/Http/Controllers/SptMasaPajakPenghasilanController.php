@@ -202,6 +202,7 @@ class SptMasaPajakPenghasilanController extends Controller
             'npwp_pemotong'=>$request->npwppemotong_1721_formulirI,
             'jumlah_penghasilan_bruto'=>preg_replace('/[^0-9]/','',$request->jumlahbruto_1721_formulirI),
             'jumlah_pph_dipotong'=>preg_replace('/[^0-9]/','',$request->potonganpph),
+            'orang_penghasilan_bruto'=>preg_replace('/[^0-9]/','',$request->orang_1721_formulirI),
             'jht_penghasilan_bruto'=>preg_replace('/[^0-9]/','',$request->tht_1721_formulirI),
             'jumlah_total'=>preg_replace('/[^0-9]/','',$request->totaljumlah_1721_formulirI),
             'attribute1'=>Auth::user()->id,

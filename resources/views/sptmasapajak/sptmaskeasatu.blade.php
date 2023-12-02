@@ -10,7 +10,6 @@ xmlns="http://www.w3.org/TR/REC-html40">
 <meta name=Generator content="Microsoft Excel 15">
 <link rel=File-List href="asatu_files/filelist.xml">
 <style id="1721_A1_14448_Styles">
-<!--table
 	{mso-displayed-decimal-separator:"\.";
 	mso-displayed-thousand-separator:"\,";}
 .xl6714448

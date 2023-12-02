@@ -423,7 +423,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     class="form-control subdpp_1111b1" />
             </td>
             <td class="text-center">
-                <input required readonly autocomplete="off" type="text" onkeyup="this.value=sprator(this.value);"
+                <input required readonly autocomplete="off" type="text"
                     name="pajak_ppn_1111b1[]" id="pajak_ppn_1111b1[]"
                     min="0"
                     class="form-control subppn_1111b1" />
@@ -457,8 +457,8 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const hasilInput = row.querySelector('input[name="pajak_ppn_1111b1[]"]');
             const sum = retValangkA2 * 11/100;
-            hasilInput.value = sum;
-
+            hasilInput.value = sum.toLocaleString();
+console.log(hasilInput.value);
             var totaldpp = 0
             var totalppn = 0
             var totalppnbm = 0

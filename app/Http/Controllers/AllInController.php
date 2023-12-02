@@ -64,6 +64,7 @@ use App\Models\LatihanKeuangan;
 use App\Models\Spt1770S;
 use App\Models\Spt1770SS;
 use App\Models\AkunTest;
+use App\Models\PphBadanTahunan;
 use App\Models\KodeObjekPPhTidakFinal;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -479,7 +480,7 @@ class AllInController extends Controller
                 "tahun_pajak" => $record->tahun_pajak,
                 "pembukuan_terakhir" =>  Carbon::parse($record->end_periode_pembukuan)->format('d-M-Y'),
                 "negara" => $record->negara_domisili,
-                "laporan_keuangan" => number_format($record->laporan_keuangan,2),
+                "laporan_keuangan" => number_format($record->laporan_keuangan),
                 "created_by" => $record->users->name,
                 "tgl_pembuatan" => $record->created_at->format('d-M-Y'),
             );
@@ -593,8 +594,8 @@ class AllInController extends Controller
                 "id" => $record->formulir_id,
                 "no_npwp" => $record->id_npwp,
                 "nama_npwp" => $record->id_nama_npwp,
-                "penghasilankenapajak" => $record->a4_pajak,
-                "jumlahpajak" => $record->a7_jumlah_pajak,
+                "penghasilankenapajak" => number_format($record->a4_pajak),
+                "jumlahpajak" => number_format($record->a7_jumlah_pajak),
                 "created_by" => $record->users->name,
                 "tgl_pembuatan" => $record->created_at->format('d-M-Y'),
             );
@@ -607,7 +608,7 @@ class AllInController extends Controller
     }
     public function listDosen(Request $request){
         $daftar_dosen = User::whereNotNull('nama_lengkap')->where('status',1)->get();
-        $data_arr = array();
+    $data_arr = array();
         // dd($daftar_dosen);
         foreach ($daftar_dosen as $record) {
             $data_arr[] = array(
@@ -616,6 +617,32 @@ class AllInController extends Controller
                 "nama_lengkap" => $record->nama_lengkap,
                 "gender" => $record->gender,
                 "tgl" => $record->updated_at->format('d-M-Y'),
+            );
+        }
+        // dd($data_arr);
+        $response = array(
+            "aaData" => $data_arr,
+        );
+        return json_encode($response);
+    }
+    public function pphbadan(Request $request){
+        $iduser=Auth::user()->id;
+        $pphbadan = PphBadanTahunan::where('attribute1',$iduser)->get();
+        $data_arr = array();
+        // dd($daftar_dosen);
+        foreach ($pphbadan as $record) {
+            $data_arr[] = array(
+                "id" => $record->id,
+                "trx" => $record->trx,
+                "dasar_pengenaan_pajak" => number_format($record->dasar_pengenaan_pajak),
+                "pph_terutang" => number_format($record->pph_terutang),
+                "mendapat_fasilitas" => number_format($record->mendapat_fasilitas),
+                "tidak_mendapat_fasilitas" => number_format($record->tidak_mendapat_fasilitas),
+                "dpp" => number_format($record->dpp),
+                "jumlah_pph_terutang" => number_format($record->jumlah_pph_terutang),
+                "namapembuat" => $record->users->name,
+                "status" => $record->attribute3,
+                "created_at" => $record->created_at->format('d-M-Y'),
             );
         }
         // dd($data_arr);
@@ -3327,4 +3354,5 @@ class AllInController extends Controller
         // dd($data_arr);
         return response()->json($data_arr);
     }
+    
 }

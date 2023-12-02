@@ -7799,7 +7799,7 @@ tags will be replaced.-->
   <td rowspan=2 class=xl28421291><span
   style='mso-spacerun:yes'> </span>A.01<span style='mso-spacerun:yes'> </span></td>
   <td colspan=14 rowspan=2 class=xl31321291 style='border-right:.5pt solid black;
-  border-bottom:.5pt solid black'>{{$spt->a1_pajak}}&nbsp;</td>
+  border-bottom:.5pt solid black'>{{number_format($spt->a1_pajak)}}&nbsp;</td>
   <td class=xl19821291 style='border-left:none'>&nbsp;</td>
   <td class=xl19921291>&nbsp;</td>
   <td class=xl9921291></td>
@@ -7892,7 +7892,7 @@ tags will be replaced.-->
   <td rowspan=2 class=xl28421291><span
   style='mso-spacerun:yes'> </span>A.02<span style='mso-spacerun:yes'> </span></td>
   <td colspan=14 rowspan=2 class=xl31321291 style='border-right:.5pt solid black;
-  border-bottom:.5pt solid black'>{{$spt->a2_pajak}}&nbsp;</td>
+  border-bottom:.5pt solid black'>{{number_format($spt->a2_pajak)}}&nbsp;</td>
   <td class=xl19821291 style='border-left:none'>&nbsp;</td>
   <td class=xl19921291>&nbsp;</td>
   <td class=xl9921291></td>
@@ -8009,7 +8009,7 @@ tags will be replaced.-->
   <td rowspan=3 class=xl28421291><span
   style='mso-spacerun:yes'> </span>A.06<span style='mso-spacerun:yes'> </span></td>
   <td colspan=14 rowspan=3 class=xl31321291 style='border-right:.5pt solid black;
-  border-bottom:.5pt solid black'>{{$spt->a3_pajak}}&nbsp;</td>
+  border-bottom:.5pt solid black'>{{number_format($spt->a3_pajak)}}&nbsp;</td>
   <td class=xl19821291 style='border-left:none'>&nbsp;</td>
   <td class=xl19921291>&nbsp;</td>
   <td class=xl9921291></td>
@@ -8136,7 +8136,7 @@ tags will be replaced.-->
   <td rowspan=2 class=xl28421291><span
   style='mso-spacerun:yes'> </span>A.07<span style='mso-spacerun:yes'> </span></td>
   <td colspan=14 rowspan=2 class=xl31321291 style='border-right:.5pt solid black;
-  border-bottom:.5pt solid black'>{{$spt->a4_pajak}}&nbsp;</td>
+  border-bottom:.5pt solid black'>{{number_format($spt->a4_pajak)}}&nbsp;</td>
   <td class=xl19821291 style='border-left:none'>&nbsp;</td>
   <td class=xl19921291>&nbsp;</td>
   <td class=xl9921291></td>
@@ -8248,7 +8248,7 @@ tags will be replaced.-->
   <td rowspan=2 class=xl28421291><span
   style='mso-spacerun:yes'> </span>A.08<span style='mso-spacerun:yes'> </span></td>
   <td colspan=14 rowspan=2 class=xl31321291 style='border-right:.5pt solid black;
-  border-bottom:.5pt solid black'>{{$spt->a5_pajak}}&nbsp;</td>
+  border-bottom:.5pt solid black'>{{number_format($spt->a5_pajak)}}&nbsp;</td>
   <td class=xl19821291 style='border-left:none'>&nbsp;</td>
   <td class=xl19921291>&nbsp;</td>
   <td class=xl9921291></td>
@@ -8353,7 +8353,7 @@ tags will be replaced.-->
   <td rowspan=2 class=xl28421291><span
   style='mso-spacerun:yes'> </span>A.09<span style='mso-spacerun:yes'> </span></td>
   <td colspan=14 rowspan=2 class=xl31321291 style='border-right:.5pt solid black;
-  border-bottom:.5pt solid black'>{{$spt->a6_pajak}}&nbsp;</td>
+  border-bottom:.5pt solid black'>{{number_format($spt->a6_pajak)}}&nbsp;</td>
   <td class=xl19821291 style='border-left:none'>&nbsp;</td>
   <td class=xl19921291>&nbsp;</td>
   <td class=xl9921291></td>
@@ -8456,7 +8456,7 @@ tags will be replaced.-->
   <td rowspan=4 class=xl36621291><span
   style='mso-spacerun:yes'> </span>A.12<span style='mso-spacerun:yes'> </span></td>
   <td colspan=14 rowspan=4 class=xl34221291 style='border-right:.5pt solid black;
-  border-bottom:.5pt solid black'>{{$spt->a7_jumlah_pajak}}&nbsp;</td>
+  border-bottom:.5pt solid black'>{{number_format($spt->a7_jumlah_pajak)}}&nbsp;</td>
   <td class=xl11721291></td>
   <td class=xl11821291>&nbsp;</td>
   <td class=xl9921291></td>
@@ -8710,7 +8710,7 @@ tags will be replaced.-->
   <td rowspan=2 class=xl33621291><span
   style='mso-spacerun:yes'> </span>B.01<span style='mso-spacerun:yes'> </span></td>
   <td colspan=14 rowspan=2 class=xl33021291 style='border-right:.5pt solid black;
-  border-bottom:.5pt solid black'>{{$spt->b8_penghasilan}}&nbsp;</td>
+  border-bottom:.5pt solid black'>{{number_format($spt->b8_penghasilan)}}&nbsp;</td>
   <td class=xl11721291></td>
   <td class=xl21521291>&nbsp;</td>
   <td class=xl9921291></td>
@@ -8801,7 +8801,7 @@ tags will be replaced.-->
   <td rowspan=2 class=xl33621291><span
   style='mso-spacerun:yes'> </span>B.02<span style='mso-spacerun:yes'> </span></td>
   <td colspan=14 rowspan=2 class=xl33021291 style='border-right:.5pt solid black;
-  border-bottom:.5pt solid black'>{{$spt->b9_penghasilan}}&nbsp;</td>
+  border-bottom:.5pt solid black'>{{number_format($spt->b9_penghasilan)}}&nbsp;</td>
   <td class=xl11721291></td>
   <td class=xl21521291>&nbsp;</td>
   <td class=xl9921291></td>
@@ -8896,7 +8896,7 @@ tags will be replaced.-->
   <td rowspan=2 class=xl33621291><span
   style='mso-spacerun:yes'> </span>B.03<span style='mso-spacerun:yes'> </span></td>
   <td colspan=14 rowspan=2 class=xl33021291 style='border-right:.5pt solid black;
-  border-bottom:.5pt solid black'>{{$spt->b10_penghasilan}}&nbsp;</td>
+  border-bottom:.5pt solid black'>{{number_format($spt->b10_penghasilan)}}&nbsp;</td>
   <td class=xl11721291></td>
   <td class=xl21521291>&nbsp;</td>
   <td class=xl9921291></td>
@@ -9087,7 +9087,7 @@ tags will be replaced.-->
   <td rowspan=2 class=xl33621291><span
   style='mso-spacerun:yes'> </span>C.01<span style='mso-spacerun:yes'> </span></td>
   <td colspan=14 rowspan=2 class=xl33021291 style='border-right:.5pt solid black;
-  border-bottom:.5pt solid black'>{{$spt->c11_daftar}}&nbsp;</td>
+  border-bottom:.5pt solid black'>{{number_format($spt->c11_daftar)}}&nbsp;</td>
   <td class=xl11721291></td>
   <td class=xl21521291>&nbsp;</td>
   <td class=xl9921291></td>
@@ -9175,7 +9175,7 @@ tags will be replaced.-->
   <td rowspan=2 class=xl33621291><span
   style='mso-spacerun:yes'> </span>C.02<span style='mso-spacerun:yes'> </span></td>
   <td colspan=14 rowspan=2 class=xl33021291 style='border-right:.5pt solid black;
-  border-bottom:.5pt solid black'>{{$spt->c12_daftar}}&nbsp;</td>
+  border-bottom:.5pt solid black'>{{number_format($spt->c12_daftar)}}&nbsp;</td>
   <td class=xl11721291></td>
   <td class=xl21521291>&nbsp;</td>
   <td class=xl9921291></td>

@@ -13,6 +13,12 @@ use App\Models\Invoice;
 use App\Models\Faktur;
 use App\Models\HutangPpn;
 use App\Models\Prepopulate;
+use App\Models\PphBadanTahunan;
+use App\Models\SptTahunan;
+use App\Models\SptMasa;
+use App\Models\SptPpn;
+use App\Models\Spt1770S;
+use App\Models\Spt1770SS;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
@@ -63,10 +69,16 @@ class MahasiswaController extends Controller
         $trx=TransaksiPphDuapuluhSatu::where('attribute1',$id)->get();
         $pphfinal=Pphfinal::where('attribute1',$id)->get();
         $pphtidakfinal=PphTidakFinal::where('attribute1',$id)->get();
+        $pphtahunan=PphBadanTahunan::where('attribute1',$id)->get();
         $ebupot=Ebupot::where('attribute1',$id)->get();
         $invoice=Invoice::where('attribute1',$id)->get();
         $faktur=Faktur::where('attribute1',$id)->get();
         $billing=Billing::where('attribute1',$id)->get();
+        $spt1771=SptTahunan::where('attribute1',$id)->get();
+        $spt1721=SptMasa::where('attribute1',$id)->get();
+        $spt1111=SptPpn::where('attribute_1',$id)->get();
+        $spt1770s=Spt1770S::where('attribute1',$id)->get();
+        $spt1770ss=Spt1770SS::where('attribute1',$id)->get();
         $user = User::where('id',$id)->where('dosen_pembimbing',$iduser)->get()->first();
         if($user==null){
             return back();
@@ -78,7 +90,7 @@ class MahasiswaController extends Controller
         // dd($user);
        
         if(Auth::user()->status==1){
-            return view('mahasiswa.show',compact('hutangppn','prepopulate','faktur','invoice','pphtidakfinal','pphfinal','timeDifferent','user','trx','ebupot','billing'))->with('no',1);
+            return view('mahasiswa.show',compact('spt1770ss','spt1770s','spt1111','spt1721','spt1771','pphtahunan','hutangppn','prepopulate','faktur','invoice','pphtidakfinal','pphfinal','timeDifferent','user','trx','ebupot','billing'))->with('no',1);
         }else{
             return back();
         }

@@ -176,7 +176,7 @@
 				</tr>
 				<tr>
 					<td>Jenis Pembayaran</td>
-					<td>Pembayaran Sekarang</td>
+					<td>{{$billing->jenis_pembayaran}}</td>
 				</tr>
 				<tr>
 					<td><b>Status</b></td>

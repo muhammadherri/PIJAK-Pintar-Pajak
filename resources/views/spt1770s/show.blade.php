@@ -6620,7 +6620,7 @@ tags will be replaced.-->
   <td class=xl12622687 colspan=7>……………………………………<span style='display:none'>………..</span></td>
   <td rowspan=2 class=xl18022687 style='border-bottom:.5pt solid black'>1</td>
   <td colspan=11 rowspan=2 class=xl18122687 style='border-right:.5pt solid black;
-  border-bottom:.5pt hairline black'>{{$spt->a1_penghasil}}&nbsp;</td>
+  border-bottom:.5pt hairline black'>{{number_format($spt->a1_penghasil)}}&nbsp;</td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
@@ -6705,7 +6705,7 @@ tags will be replaced.-->
   style='display:none'>………………………………………….</span></td>
   <td rowspan=2 class=xl18022687 style='border-bottom:.5pt solid black'>2</td>
   <td colspan=11 rowspan=2 class=xl18122687 style='border-right:.5pt solid black;
-  border-bottom:.5pt hairline black'>{{$spt->a2_penghasil}}&nbsp;</td>
+  border-bottom:.5pt hairline black'>{{number_format($spt->a2_penghasil)}}&nbsp;</td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
@@ -6800,7 +6800,7 @@ tags will be replaced.-->
   style='display:none'>………………………….</span></td>
   <td rowspan=2 class=xl18022687 style='border-bottom:.5pt solid black'>3</td>
   <td colspan=11 rowspan=2 class=xl18122687 style='border-right:.5pt solid black;
-  border-bottom:.5pt hairline black'>{{$spt->a3_penghasil}}&nbsp;</td>
+  border-bottom:.5pt hairline black'>{{number_format($spt->a3_penghasil)}}&nbsp;</td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
@@ -6886,7 +6886,7 @@ tags will be replaced.-->
   <td class=xl12622687 colspan=17>………………………………………………………………………………………</td>
   <td rowspan=2 class=xl18022687 style='border-bottom:.5pt solid black'>4</td>
   <td colspan=11 rowspan=2 class=xl18122687 style='border-right:.5pt solid black;
-  border-bottom:.5pt hairline black'>{{$spt->a4_penghasil}}&nbsp;</td>
+  border-bottom:.5pt hairline black'>{{number_format($spt->a4_penghasil)}}&nbsp;</td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
@@ -6992,7 +6992,7 @@ tags will be replaced.-->
   style='display:none'>……………</span></td>
   <td rowspan=2 class=xl18022687 style='border-bottom:.5pt solid black'>5</td>
   <td colspan=11 rowspan=2 class=xl18122687 style='border-right:.5pt solid black;
-  border-bottom:.5pt hairline black'>{{$spt->a5_penghasil}}&nbsp;</td>
+  border-bottom:.5pt hairline black'>{{number_format($spt->a5_penghasil)}}&nbsp;</td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
@@ -7098,7 +7098,7 @@ tags will be replaced.-->
   <td class=xl12622687 colspan=4>……………………<span style='display:none'>…………………………………………………………………</span></td>
   <td rowspan=2 class=xl18022687 style='border-bottom:.5pt solid black'>6</td>
   <td colspan=11 rowspan=2 class=xl18122687 style='border-right:.5pt solid black;
-  border-bottom:.5pt hairline black'>{{$spt->a6_penghasil}}&nbsp;</td>
+  border-bottom:.5pt hairline black'>{{number_format($spt->a6_penghasil)}}&nbsp;</td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
@@ -7311,7 +7311,7 @@ tags will be replaced.-->
   <td class=xl12822687></td>
   <td rowspan=2 class=xl18022687 style='border-bottom:.5pt solid black'>7</td>
   <td colspan=11 rowspan=2 class=xl18122687 style='border-right:.5pt solid black;
-  border-bottom:.5pt hairline black'>{{$spt->b7_penghasil}}&nbsp;</td>
+  border-bottom:.5pt hairline black'>{{number_format($spt->b7_penghasil)}}&nbsp;</td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
@@ -7416,7 +7416,7 @@ tags will be replaced.-->
   <td class=xl12622687 colspan=18>…………………………………………………………………………………………….</td>
   <td class=xl18022687>8</td>
   <td colspan=11 rowspan=2 class=xl18122687 style='border-right:.5pt solid black;
-  border-bottom:.5pt hairline black'>{{$spt->b8_penghasil}}&nbsp;</td>
+  border-bottom:.5pt hairline black'>{{number_format($spt->b8_penghasil)}}&nbsp;</td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
@@ -7629,7 +7629,7 @@ tags will be replaced.-->
   <td class=xl12622687 colspan=13>……………………………………………………………………</td>
   <td rowspan=2 class=xl18022687 style='border-bottom:.5pt solid black'>9</td>
   <td colspan=11 rowspan=2 class=xl18122687 style='border-right:.5pt solid black;
-  border-bottom:.5pt hairline black'>{{$spt->c9_terutang}}&nbsp;</td>
+  border-bottom:.5pt hairline black'>{{number_format($spt->c9_terutang)}}&nbsp;</td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
@@ -7713,7 +7713,7 @@ tags will be replaced.-->
   <td class=xl12622687 colspan=7>……………………………………<span style='display:none'>…</span></td>
   <td rowspan=2 class=xl18022687 style='border-bottom:.5pt solid black'>10</td>
   <td colspan=11 rowspan=2 class=xl18122687 style='border-right:.5pt solid black;
-  border-bottom:.5pt hairline black'>{{$spt->c10_terutang}}&nbsp;</td>
+  border-bottom:.5pt hairline black'>{{number_format($spt->c10_terutang)}}&nbsp;</td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
@@ -7818,7 +7818,7 @@ tags will be replaced.-->
   <td class=xl12622687 colspan=18>……………………………………………………………………………………………</td>
   <td rowspan=2 class=xl18022687 style='border-bottom:.5pt solid black'>11</td>
   <td colspan=11 rowspan=2 class=xl18122687 style='border-right:.5pt solid black;
-  border-bottom:.5pt hairline black'>{{$spt->c11_terutang}}&nbsp;</td>
+  border-bottom:.5pt hairline black'>{{number_format($spt->c11_terutang)}}&nbsp;</td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
@@ -8027,7 +8027,7 @@ tags will be replaced.-->
   LAIN/DITANGGUNG PEMERINTAH DAN/ATAU KREDIT PAJAK LUAR</td>
   <td rowspan=2 class=xl18022687 style='border-bottom:.5pt solid black'>12</td>
   <td colspan=11 rowspan=2 class=xl18122687 style='border-right:.5pt solid black;
-  border-bottom:.5pt hairline black'>{{$spt->d12_kredit}}&nbsp;</td>
+  border-bottom:.5pt hairline black'>{{number_format($spt->d12_kredit)}}&nbsp;</td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
@@ -8179,7 +8179,7 @@ tags will be replaced.-->
   <td class=xl12622687></td>
   <td class=xl12622687></td>
   <td rowspan=3 class=xl18022687 style='border-bottom:.5pt solid black'>13</td>
-  <td colspan=11 rowspan=3 class=xl23622687 style='border-bottom:.5pt hairline black'>{{$spt->d13_kredit}}&nbsp;</td>
+  <td colspan=11 rowspan=3 class=xl23622687 style='border-bottom:.5pt hairline black'>{{number_format($spt->d13_kredit)}}&nbsp;</td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
@@ -8351,7 +8351,7 @@ tags will be replaced.-->
   style='display:none'>…</span></td>
   <td rowspan=2 class=xl18022687 style='border-bottom:.5pt solid black'>14a</td>
   <td colspan=11 rowspan=2 class=xl18122687 style='border-right:.5pt solid black;
-  border-bottom:.5pt hairline black'>{{$spt->d14a_kredit}}&nbsp;</td>
+  border-bottom:.5pt hairline black'>{{number_format($spt->d14a_kredit)}}&nbsp;</td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
@@ -8465,7 +8465,7 @@ tags will be replaced.-->
   <td class=xl12622687 colspan=8>…………………………………………<span style='display:none'>……………</span></td>
   <td rowspan=2 class=xl18022687 style='border-bottom:.5pt solid black'>14b</td>
   <td colspan=11 rowspan=2 class=xl18122687 style='border-right:.5pt solid black;
-  border-bottom:.5pt hairline black'>{{$spt->d14b_kredit}}&nbsp;</td>
+  border-bottom:.5pt hairline black'>{{number_format($spt->d14b_kredit)}}&nbsp;</td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
@@ -8572,7 +8572,7 @@ tags will be replaced.-->
   <td colspan=16 class=xl17822687 style='border-right:.5pt solid black'>…………………………………………………………………………………………</td>
   <td rowspan=2 class=xl18022687 style='border-bottom:.5pt solid black'>15</td>
   <td colspan=11 rowspan=2 class=xl18122687 style='border-right:.5pt solid black;
-  border-bottom:.5pt hairline black'>{{$spt->d15_kredit}}&nbsp;</td>
+  border-bottom:.5pt hairline black'>{{number_format($spt->d15_kredit)}}&nbsp;</td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
@@ -8874,7 +8874,7 @@ tags will be replaced.-->
   <td class=xl12622687></td>
   <td rowspan=3 class=xl18022687 style='border-bottom:.5pt solid black'>16</td>
   <td colspan=11 rowspan=3 class=xl18122687 style='border-right:.5pt solid black;
-  border-bottom:.5pt hairline black'>{{$spt->e16_jumlah_kurangbayar}}&nbsp;</td>
+  border-bottom:.5pt hairline black'>{{number_format($spt->e16_jumlah_kurangbayar)}}&nbsp;</td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
@@ -9360,7 +9360,7 @@ tags will be replaced.-->
   <td colspan=10 class=xl17822687 style='border-right:.5pt solid black'>……………………………………………………………………………………………………………………..</td>
   <td class=xl25222687 style='border-left:none'>18</td>
   <td colspan=11 class=xl27022687 style='border-right:.5pt solid black;
-  border-left:none'>{{$spt->f18_rupiah_kurangbayar}}&nbsp;</td>
+  border-left:none'>{{number_format($spt->f18_rupiah_kurangbayar)}}&nbsp;</td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>
   <td class=xl12822687></td>

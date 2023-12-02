@@ -35,8 +35,7 @@ class SptTahunanController extends Controller
 
     }
 
-    public function store(Request $request)
-    {
+    public function store(Request $request){
         $header_id =SptTahunan::get()->count();
         $header_id = $header_id ?? 0;
         $header_id = $header_id+1;
@@ -493,12 +492,12 @@ class SptTahunanController extends Controller
     {
         // dd($id);
         $iduser=Auth::user()->id;
-        // if(Auth::user()->status==1){
-        //     $spt=SptTahunan::where('formulir_id',$id)->get()->first();
+        if(Auth::user()->status==1){
+            $spt=SptTahunan::where('formulir_id',$id)->get()->first();
             
-        // }else{
+        }else{
             $spt=SptTahunan::where('attribute1',$iduser)->where('formulir_id',$id)->get()->first();
-        // }
+        }
         if($spt==null){
             return back();
         }

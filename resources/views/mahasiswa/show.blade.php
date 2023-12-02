@@ -43,8 +43,9 @@
                                         </li>
                                         <li class="nav-item"><a href="#e-bupot" data-bs-toggle="tab" class="nav-link">E-Bupot</a>
                                         </li>
-                                        {{-- <li class="nav-item"><a href="#e-billing" data-bs-toggle="tab" class="nav-link">Billing</a>
-                                        </li> --}}
+                                        <li class="nav-item"><a href="#pph-tahunan" data-bs-toggle="tab" class="nav-link">PPh 25/29</a>
+                                        </li>
+                                        
                                     </ul>
                                     <div class="tab-content">
                                         <div id="my-pph21" class="tab-pane fade active show">
@@ -55,14 +56,19 @@
                                                             <thead>
                                                                 <tr>
                                                                     <th>Nama NPWP Terdaftar</th>
-                                                                    <th>No NPWP</th>
+                                                                    <th>Nomor NPWP Terdaftar</th>
                                                                     <th>Masa Penghasilan</th>
-                                                                    <th>Tunjangan</th>
-                                                                    <th>Ketentuan PTKP</th>
-                                                                    <th>Ketentuan Tarif</th>
                                                                     <th>Gaji Pensiun</th>
-                                                                    <th>Tanggal Pembuatan</th>
+                                                                    <th>Penghasilan Bruto</th>
+                                                                    <th>Total Pengurang</th>
+                                                                    <th>Nilai PTKP</th>
+                                                                    <th>PPh 21 PKP</th>
+                                                                    <th>PPh 21 Potongan</th>
+                                                                    <th>PPh 21 Terutang 1 Bulan</th>
+                                                                    <th>PPh 21 Terutang 1 Tahun</th>
                                                                     <th>Status</th>
+                                                                    <th>Tanggal Pembuatan</th>
+                                                                    <th>Status NPWP</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
@@ -77,10 +83,23 @@
                                                                         @endif
                                                                     </td>
                                                                     <td>{{ date('d-m-Y',strtotime($row->masa_penghasilan_start))}}</td>
-                                                                    <td>{{ $row->tunjangan_pajak }}</td>
-                                                                    <td>{{ $row->ketentuan_ptkp }}</td>
-                                                                    <td>{{ $row->ketentuan_tarif }}</td>
-                                                                    <td>{{ $row->gaji_pensiun }}</td>
+                                                                    <td>{{ number_format($row->gaji_pensiun) }}</td>
+                                                                    <td>{{ number_format($row->penghasilan_bruto) }}</td>
+                                                                    <td>{{ number_format($row->total_pengurangan) }}</td>
+                                                                    <td>{{ number_format($row->ptkp) }}</td>
+                                                                    <td>{{ number_format($row->pph21ataspkp) }}</td>
+                                                                    <td>{{ number_format($row->pph21_dipotong_sebelumnya) }}</td>
+                                                                    <td>{{ number_format($row->pph21_perbulan) }}</td>
+                                                                    <td>{{ number_format($row->pph21_terutang) }}</td>
+                                                                    <td>
+                                                                        @if($row->status==null )
+                                                                            <a class="badge badge-rounded badge-outline-danger">Belum Dibayar</a>
+                                                                        @elseif($row->status==1)
+                                                                            <a class="badge badge-rounded badge-outline-warning">Menunggu Pembayaran</a>
+                                                                        @else
+                                                                            <a class="badge badge-rounded badge-outline-primary">Sudah Dibayar</a>
+                                                                        @endif
+                                                                    </td>
                                                                     <td>{{ date('d-m-Y',strtotime($row->created_at)) }}</td>
                                                                     <td >
                                                                         @if($row->status_npwp==0)
@@ -110,7 +129,6 @@
                                                                 <th>Jumlah Tarif</th>
                                                                 <th>Jumlah Potongan PPH</th>
                                                                 <th>Tanggal Pembuatan</th>
-                                                                <th>Dibuat Oleh</th>
                                                                 <th>Status</th>
                                                             </tr>
                                                         </thead>
@@ -123,7 +141,6 @@
                                                                     <td>{{ $row->tarif }}</td>
                                                                     <td>{{ $row->potongan_pph }}</td>
                                                                     <td>{{ date('d-M-Y',strtotime($row->created_at)) }}</td>
-                                                                    <td>{{ $row->users->name }}</td>
                                                                     <td >
                                                                         @if($row->attribute3==NULL)
                                                                         <div class="d-flex"><a class="badge badge-rounded badge-outline-danger">
@@ -156,7 +173,6 @@
                                                                 <th>Pengenaan Pajak</th>
                                                                 <th>Jumlah Potongan PPH</th>
                                                                 <th>Tanggal Pembuatan</th>
-                                                                <th>Dibuat Oleh</th>
                                                                 <th>Status</th>
                                                             </tr>
                                                         </thead>
@@ -170,7 +186,6 @@
                                                                     <td>{{ $row->dasar_pengenaan_pajak }}</td>
                                                                     <td>{{ $row->potongan_pph }}</td>
                                                                     <td>{{ date('d-M-Y',strtotime($row->created_at)) }}</td>
-                                                                    <td>{{ $row->users->name }}</td>
                                                                     <td >
                                                                         @if($row->attribute3==NULL)
                                                                         <div class="d-flex"><a class="badge badge-rounded badge-outline-danger">
@@ -239,51 +254,59 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        {{-- <div id="e-billing" class="tab-pane fade">
+                                        <div id="pph-tahunan" class="tab-pane fade">
                                             <div class="my-post-content pt-3">
                                                 <div class="table-responsive">
                                                     <table id="example3" class="display" style="min-width: 845px">
                                                         <thead>
                                                             <tr>
-                                                                <th>ID Billing</th>
-                                                                <th>Nomor NPWP Terdaftar</th>
-                                                                <th>Jenis Pajak</th>
-                                                                <th>Jenis Setoran</th>
-                                                                <th>Masa Pajak</th>
-                                                                <th>Tanggal Masa Aktif</th>
-                                                                <th>Jumlah</th>
-                                                                <th>Dibuat Oleh</th>
-                                                                <th>Tanggal Pembuatan</th>
+                                                                <th>No Transaksi</th>
+                                                                <th>Dasar Pengenaan Pajak</th>
+                                                                <th>PPh Terutang</th>
+                                                                <th>Mendapat Fasilitas</th>
+                                                                <th>Tidak Mendapat Fasilitas</th>
+                                                                <th>Jumlah DPP</th>
+                                                                <th>Jumlah PPh Terutang</th>
                                                                 <th>Status</th>
+                                                                <th>Tanggal Pembuatan</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            @foreach ($billing as $key => $row)
+                                                            @foreach ($pphtahunan as $key => $row)
                                                                 <tr>
-                                                                    <td>{{ $row->kode_billing }}</td>
-                                                                    <td>{{ $row->npwp }}</td>
-                                                                    <td>{{ $row->jenis_pajak }}</td>
-                                                                    <td>{{ $row->kode_jenis_setoran }}</td>
-                                                                    <td>{{ $row->masa_pajak }}</td>
-                                                                    <td>{{ date('d-M-Y',strtotime($row->end_periode_pajak)) }}</td>
-                                                                    <td>{{ $row->jumlah }}</td>
-                                                                    <td>{{ $row->users->name }}</td>
-                                                                    <td>{{ date('d-M-Y',strtotime($row->created_at)) }}</td>
+                                                                    <td>{{ $row->trx }}</td>
+                                                                    <td>{{ number_format($row->dasar_pengenaan_pajak) }}</td>
                                                                     <td>
+                                                                        @if($row->pph_terutang==0)
+                                                                            <a class="badge badge-rounded badge-outline-primary">Tarif 31E</a>
+                                                                        @else
+                                                                            <a class="badge badge-rounded badge-outline-primary">Tarif Pasal 17(1)b</a>
+                                                                        @endif
+                                                                    </td>
+                                                                    <td>{{ number_format($row->mendapat_fasilitas) }}</td>
+                                                                    <td>{{ number_format($row->tidak_mendapat_fasilitas )}}</td>
+                                                                    <td>{{ number_format($row->dpp) }}</td>
+                                                                    <td>{{ number_format($row->jumlah_pph_terutang) }}</td>
+                                                                    <td >
                                                                         @if($row->attribute3==NULL)
-                                                                        <a class="badge badge-rounded badge-outline-warning">
-                                                                            Menunggu Pembayaran</a>
+                                                                        <div class="d-flex"><a class="badge badge-rounded badge-outline-danger">
+                                                                            Belum Dibayar</a></div>
+                                                                        @elseif($row->attribute3==1)
+                                                                        <div class="d-flex">
+                                                                            <a class="badge badge-rounded badge-outline-warning">
+                                                                            Menunggu Pembayaran</a></div>
                                                                         @else
                                                                         <a class="badge badge-rounded badge-outline-primary">Sudah Dibayar</a>
                                                                         @endif
                                                                     </td>
+                                                                    <td>{{ date('d-M-Y',strtotime($row->created_at)) }}</td>
                                                                 </tr>
                                                             @endforeach
                                                         </tbody>
                                                     </table>
                                                 </div>
                                             </div>
-                                        </div> --}}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -321,7 +344,6 @@
                                                                     <th>Jenis Pembayaran</th>
                                                                     <th>Tanggal Invoice</th>
                                                                     <th>Total PPN</th>
-                                                                    <th>Dibuat Oleh</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
@@ -337,7 +359,6 @@
                                                                     <td >
                                                                         {{number_format($row->ppn )}}
                                                                     </td>
-                                                                    <td>{{ $row->users->name }}</td>
                                                                 </tr>
                                                             @endforeach
                                                             </tbody>
@@ -456,6 +477,10 @@
                                     <ul class="nav nav-tabs">
                                         <li class="nav-item"><a href="#hutangppn" data-bs-toggle="tab" class="nav-link active show">Hutang PPn</a>
                                         </li>
+                                        <li class="nav-item"><a href="#e-billing" data-bs-toggle="tab" class="nav-link">Billing</a>
+                                        </li>
+                                        <li class="nav-item"><a href="#pembayaran" data-bs-toggle="tab" class="nav-link">Pembayaran</a>
+                                        </li>
                                     </ul>
                                     <div class="tab-content">
                                         <div id="hutangppn" class="tab-pane fade active show">
@@ -501,6 +526,443 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div id="e-billing" class="tab-pane fade">
+                                            <div class="my-post-content pt-3">
+                                                <div class="table-responsive">
+                                                    <table id="example3" class="display" style="min-width: 845px">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>ID Billing</th>
+                                                                <th>Nomor NPWP Terdaftar</th>
+                                                                <th>Jenis Pajak</th>
+                                                                <th>Jenis Setoran</th>
+                                                                <th>Masa Pajak</th>
+                                                                <th>Tanggal Masa Aktif</th>
+                                                                <th>Jumlah</th>
+                                                                <th>Tanggal Pembuatan</th>
+                                                                <th>Status</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @foreach ($billing as $key => $row)
+                                                                <tr>
+                                                                    <td>{{ $row->kode_billing }}</td>
+                                                                    <td>{{ $row->npwp }}</td>
+                                                                    <td>{{ $row->jenispajak->kode}} - {{$row->jenispajak->jenis_pajak}}</td>
+                                                                    <td>{{ $row->jenissetoran->kode}} - {{$row->jenissetoran->jenis_setoran}}</td>
+                                                                    <td>{{ $row->masa_pajak }}</td>
+                                                                    <td>{{ date('d-M-Y',strtotime($row->end_periode_pajak)) }}</td>
+                                                                    <td>{{ number_format($row->jumlah) }}</td>
+                                                                    <td>{{ date('d-M-Y',strtotime($row->created_at)) }}</td>
+                                                                    <td>
+                                                                        @if($row->attribute3==NULL)
+                                                                        <a class="badge badge-rounded badge-outline-warning">
+                                                                            Menunggu Pembayaran</a>
+                                                                        @else
+                                                                        <a class="badge badge-rounded badge-outline-primary">Sudah Dibayar</a>
+                                                                        @endif
+                                                                    </td>
+                                                                </tr>
+                                                            @endforeach
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="pembayaran" class="tab-pane fade">
+                                            <div class="my-post-content pt-3">
+                                                <div class="table-responsive">
+                                                    <table id="example3" class="display" style="min-width: 845px">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>ID Billing</th>
+                                                                <th>Nomor NPWP Terdaftar</th>
+                                                                <th>Jenis Pajak</th>
+                                                                <th>Jenis Setoran</th>
+                                                                <th>Masa Pajak</th>
+                                                                <th>Tanggal Masa Aktif</th>
+                                                                <th>Jumlah</th>
+                                                                <th>Tanggal Pembuatan</th>
+                                                                <th>Status</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @foreach ($billing as $key => $row)
+                                                                <tr>
+                                                                    <td>{{ $row->kode_billing }}</td>
+                                                                    <td>{{ $row->npwp }}</td>
+                                                                    <td>{{ $row->jenispajak->kode}} - {{$row->jenispajak->jenis_pajak}}</td>
+                                                                    <td>{{ $row->jenissetoran->kode}} - {{$row->jenissetoran->jenis_setoran}}</td>
+                                                                    <td>{{ $row->masa_pajak }}</td>
+                                                                    <td>{{ date('d-M-Y',strtotime($row->end_periode_pajak)) }}</td>
+                                                                    <td>{{ number_format($row->jumlah) }}</td>
+                                                                    <td>{{ date('d-M-Y',strtotime($row->created_at)) }}</td>
+                                                                    <td>
+                                                                        @if($row->attribute3==NULL)
+                                                                        <a class="badge badge-rounded badge-outline-warning">
+                                                                            Menunggu Pembayaran</a>
+                                                                        @else
+                                                                        <a class="badge badge-rounded badge-outline-primary">Sudah Dibayar</a>
+                                                                        @endif
+                                                                    </td>
+                                                                </tr>
+                                                            @endforeach
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="profile-tab">
+                                <div class="custom-tab-1">
+                                    <div class="text-center">
+                                        <h4>PELAPORAN</h4>
+                                    </div>
+                                    <hr>
+                                    <ul class="nav nav-tabs">
+                                        <li class="nav-item"><a href="#spt-badan" data-bs-toggle="tab" class="nav-link active show">1771</a>
+                                        </li>
+                                        <li class="nav-item"><a href="#spt-masa" data-bs-toggle="tab" class="nav-link">1721</a>
+                                        </li>
+                                        <li class="nav-item"><a href="#spt-PPN" data-bs-toggle="tab" class="nav-link">1111</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div id="spt-badan" class="tab-pane fade active show">
+                                            <div class="my-post-content pt-3">
+                                                <div class="card">
+                                                    <div class="table-responsive">
+                                                        <table id="example3" class="display" style="min-width: 845px">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Nama NPWP SPT Badan</th>
+                                                                    <th>Nomor NPWP SPT Badan</th>
+                                                                    <th>Nama Jenis Usaha SPT Badan</th>
+                                                                    <th>Nomor Telepon</th>
+                                                                    <th>Tahun Pajak</th>
+                                                                    <th>Tanggal Pembukuan</th>
+                                                                    <th>Laporan Keuangan</th>
+                                                                    <th>Nama Negara Domisili</th>
+                                                                    <th>Tanggal Pembuatan</th>
+                                                                    <th>Action</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                @foreach ($spt1771 as $key => $row)
+                                                                <tr>
+                                                                    <td>{{ $row->nama_npwp }}</td>
+                                                                    <td>{{ $row->npwp }}</td>
+                                                                    <td>{{ $row->jenis_usaha }}</td>
+                                                                    <td>{{ $row->no_telp }}</td>
+                                                                    <td>{{ $row->tahun_pajak }}</td>
+                                                                    <td>{{ $row->end_periode_pembukuan}}</td>
+                                                                    <td>{{ number_format($row->laporan_keuangan) }}</td>
+                                                                    <td>{{ $row->negara_domisili }}</td>
+                                                                    <td>{{ $row->created_at->format('d-M-Y') }}</td>
+                                                                    <td>
+                                                                        <div class="d-flex">
+                                                                            <a class="btn btn-success shadow btn-xs sharp" href="{{ route('spttahunan/show', $row->formulir_id) }}">
+                                                                                <i class="fa fa-eye"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            @endforeach
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="spt-masa" class="tab-pane fade">
+                                            <div class="my-post-content pt-3">
+                                                <div class="card">
+                                                    <div class="table-responsive">
+                                                        <table id="example3" class="display" style="min-width: 845px">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Nama NPWP SPT Badan</th>
+                                                                    <th>Nomor NPWP SPT Badan</th>
+                                                                    <th>Alamat Lengkap SPT Badan</th>
+                                                                    <th>Masa Pajak Bulan</th>
+                                                                    <th>Masa Pajak Tahun</th>
+                                                                    <th>Tempat Tinggal SPT Badan</th>
+                                                                    <th>Tanggal Pembuatan</th>
+                                                                    <th>Action</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                @foreach ($spt1721 as $key => $row)
+                                                                <tr>
+                                                                    <td>{{ $row->nama }}</td>
+                                                                    <td>{{ $row->npwp }}</td>
+                                                                    <td>{{ $row->alamat }}</td>
+                                                                    <td>{{ $row->bulan->nama_bulan }}</td>
+                                                                    <td>{{ $row->masa_pajak_tahun }}</td>
+                                                                    <td>{{ $row->tempat_ttd}}</td>
+                                                                    <td>{{ $row->created_at->format('d-M-Y') }}</td>
+                                                                    <td>
+                                                                        <div class="d-flex">
+                                                                            <a class="btn btn-success shadow btn-xs sharp" href="{{ route('sptmasapajak/show', $row->formulir_id) }}">
+                                                                                <i class="fa fa-eye"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            @endforeach
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="spt-PPN" class="tab-pane fade">
+                                            <div class="my-post-content pt-3">
+                                                <div class="card">
+                                                    <div class="table-responsive">
+                                                        <table id="example3" class="display" style="min-width: 845px">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Nama Tertera PKP</th>
+                                                                    <th>Alamat Lengkap Tertera</th>
+                                                                    <th>Nomor Telp</th>
+                                                                    <th>Nomor KLU</th>
+                                                                    <th>Nomor NPWP</th>
+                                                                    <th>Tanggal Mulai Masa</th>
+                                                                    <th>Tanggal Akhir Masa</th>
+                                                                    <th>Tanggal Pembuatan</th>
+                                                                    <th>Action</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                @foreach ($spt1111 as $key => $row)
+                                                                <tr>
+                                                                    <td>{{ $row->nama_ptkp_1111 }}</td>
+                                                                    <td>{{ $row->alamat_1111 }}</td>
+                                                                    <td>{{ $row->no_telp_1111 }}</td>
+                                                                    <td>{{ $row->no_klu_1111 }}</td>
+                                                                    <td>{{ $row->no_npwp_1111 }}</td>
+                                                                    <td>{{ $row->start_masa_1111}}</td>
+                                                                    <td>{{ $row->end_masa_1111}}</td>
+                                                                    <td>{{ $row->created_at->format('d-M-Y') }}</td>
+                                                                    <td>
+                                                                        <div class="d-flex">
+                                                                            <a class="btn btn-success shadow btn-xs sharp" href="{{ route('sptPPN/show', $row->formulir_id) }}">
+                                                                                <i class="fa fa-eye"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            @endforeach
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="profile-tab">
+                                <div class="custom-tab-1">
+                                    <div class="text-center">
+                                        <h4>PELAPORAN PRIBADI</h4>
+                                    </div>
+                                    <hr>
+                                    <ul class="nav nav-tabs">
+                                        <li class="nav-item"><a href="#spt-1770S" data-bs-toggle="tab" class="nav-link active show">1770S</a>
+                                        </li>
+                                        <li class="nav-item"><a href="#spt-1770SS" data-bs-toggle="tab" class="nav-link">1770SS</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div id="spt-1770S" class="tab-pane fade active show">
+                                            <div class="my-post-content pt-3">
+                                                <div class="card">
+                                                    <div class="table-responsive">
+                                                        <table id="example3" class="display" style="min-width: 845px">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Nomor NPWP</th>
+                                                                    <th>Nama NPWP</th>
+                                                                    <th>Pekerjaan</th>
+                                                                    <th>Nomor KLU</th>
+                                                                    <th>Nomor Telp</th>
+                                                                    <th>Status Kewajiban</th>
+                                                                    <th>NPWP Pasangan</th>
+                                                                    <th>Tanggal Pembuatan</th>
+                                                                    <th>Action</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                @foreach ($spt1770s as $key => $row)
+                                                                    <tr>
+                                                                        <td>{{ $row->npwp }}</td>
+                                                                        <td>{{ $row->nama_npwp }}</td>
+                                                                        <td>{{ $row->pekerjaan }}</td>
+                                                                        <td>{{ $row->klu }}</td>
+                                                                        <td>{{ $row->no_telp }}</td>
+                                                                        <td>
+                                                                            @if($row->status_kewajiban==0)
+                                                                                <div class="d-flex"><a class="badge badge-rounded badge-outline-primary">KK</a></div>
+                                                                            @elseif($row->status_kewajiban==1)
+                                                                                <div class="d-flex"><a class="badge badge-rounded badge-outline-primary">HB</a></div>
+                                                                            @elseif($row->status_kewajiban==2)
+                                                                                <div class="d-flex"><a class="badge badge-rounded badge-outline-primary">PH</a></div>
+                                                                            @else
+                                                                                <div class="d-flex"><a class="badge badge-rounded badge-outline-primary">MT</a></div>
+                                                                            @endif
+                                                                        </td>
+                                                                        <td>{{ $row->npwp_pasangan}}</td>
+                                                                        <td>{{ $row->created_at->format('d-M-Y') }}</td>
+                                                                        <td>
+                                                                            <div class="d-flex">
+                                                                                <a class="btn btn-success shadow btn-xs sharp" href="{{ route('sptS/show', $row->formulir_id) }}">
+                                                                                    <i class="fa fa-eye"></i>
+                                                                                </a>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                @endforeach
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="spt-1770SS" class="tab-pane fade">
+                                            <div class="my-post-content pt-3">
+                                                <div class="card">
+                                                    <div class="table-responsive">
+                                                        <table id="example3" class="display" style="min-width: 845px">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Nomor NPWP</th>
+                                                                    <th>Nama NPWP</th>
+                                                                    <th>Penghasilan Kena Pajak</th>
+                                                                    <th>Jumlah Pajak</th>
+                                                                    <th>Tanggal Pembuatan</th>
+                                                                    <th>Action</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                @foreach ($spt1770ss as $key => $row)
+                                                                <tr>
+                                                                    <td>{{ $row->id_npwp }}</td>
+                                                                    <td>{{ $row->id_nama_npwp }}</td>
+                                                                    <td>{{ number_format($row->a4_pajak) }}</td>
+                                                                    <td>{{ number_format($row->a7_jumlah_pajak) }}</td>
+                                                                    <td>{{ $row->created_at->format('d-M-Y') }}</td>
+                                                                    <td>
+                                                                        <div class="d-flex">
+                                                                            <a class="btn btn-success shadow btn-xs sharp" href="{{ route('sptSS/show', $row->formulir_id) }}">
+                                                                                <i class="fa fa-eye"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            @endforeach
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="profile-tab">
+                                <div class="custom-tab-1">
+                                    <div class="text-center">
+                                        <h4>FISKAL LATIHAN</h4>
+                                    </div>
+                                    <hr>
+                                    <ul class="nav nav-tabs">
+                                        <li class="nav-item"><a href="#neraca" data-bs-toggle="tab" class="nav-link active show">Neraca</a>
+                                        </li>
+                                        <li class="nav-item"><a href="#labarugi" data-bs-toggle="tab" class="nav-link">Laba-Rugi</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div id="neraca" class="tab-pane fade active show">
+                                            <br>
+                                            <form action="{{ url('printpdflatihanneracafiskalshow') }}" method="POST" enctype="multipart/form-data">
+                                                @csrf
+                                                @method('POST')
+                                                <input type="hidden" name='user_id' value="{{$user->id}}">
+                                                <button type="submit" class="btn btn-primary">Neraca PDF</button>
+                                            </form>
+                                        </div>
+                                        <div id="labarugi" class="tab-pane fade">
+                                            <br>
+                                            <form action="{{ url('printpdflatihanneracafiskalshow') }}" method="POST" enctype="multipart/form-data">
+                                                @csrf
+                                                @method('POST')
+                                                <input type="hidden" name='user_id' value="{{$user->id}}">
+                                                <button type="submit" class="btn btn-primary">Laba-Rugi PDF</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="profile-tab">
+                                <div class="custom-tab-1">
+                                    <div class="text-center">
+                                        <h4>FISKAL TES</h4>
+                                    </div>
+                                    <hr>
+                                    <ul class="nav nav-tabs">
+                                        <li class="nav-item"><a href="#neracates" data-bs-toggle="tab" class="nav-link active show">Neraca</a>
+                                        </li>
+                                        <li class="nav-item"><a href="#labarugites" data-bs-toggle="tab" class="nav-link">Laba-Rugi</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div id="neracates" class="tab-pane fade active show">
+                                            <br>
+                                            <form action="{{ url('printpdfneracafiskalshow') }}" method="POST" enctype="multipart/form-data">
+                                                @csrf
+                                                @method('POST')
+                                                <input type="hidden" name='user_id' value="{{$user->id}}">
+                                                <button type="submit" class="btn btn-primary">Neraca PDF</button>
+                                            </form>
+                                        </div>
+                                        <div id="labarugites" class="tab-pane fade">
+                                            <br>
+                                            <form action="{{ url('printpdflabarugifiskalshow') }}" method="POST" enctype="multipart/form-data">
+                                                @csrf
+                                                @method('POST')
+                                                <input type="hidden" name='user_id' value="{{$user->id}}">
+                                                <button type="submit" class="btn btn-primary">Laba-Rugi PDF</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>

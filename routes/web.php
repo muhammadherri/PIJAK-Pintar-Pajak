@@ -365,8 +365,19 @@ Route::get('/jenis_pajak/{id}/destroy', [App\Http\Controllers\JenisPajakControll
 Route::get('/jenis_pajak/{id}/show', [App\Http\Controllers\JenisPajakController::class, 'show'])->name('jenis_pajak/show');
 Route::get('/jenis_pajak/{id}/edit', [App\Http\Controllers\JenisPajakController::class, 'edit'])->name('jenis_pajak/edit');
 Route::put('/jenis_pajak/{id}', [App\Http\Controllers\JenisPajakController::class, 'update'])->name('jenis_pajak/update');
-
 // jenispajak
+
+// pphbadantahunan
+Route::get('/pphbadantahunan', [App\Http\Controllers\PphbadantahunanController::class, 'index'])->name('pphbadantahunan');
+Route::get('/pphbadantahunan/create', [App\Http\Controllers\PphbadantahunanController::class, 'create'])->name('pphbadantahunan/create');
+Route::post('/pphbadantahunan/store', [App\Http\Controllers\PphbadantahunanController::class, 'store'])->name('pphbadantahunan/store');
+
+Route::get('/pphbadantahunan/{id}/destroy', [App\Http\Controllers\PphbadantahunanController::class, 'destroy'])->name('pphbadantahunan/destroy');
+Route::get('/pphbadantahunan/{id}/show', [App\Http\Controllers\PphbadantahunanController::class, 'show'])->name('pphbadantahunan/show');
+Route::get('/pphbadantahunan/{id}/edit', [App\Http\Controllers\PphbadantahunanController::class, 'edit'])->name('pphbadantahunan/edit');
+Route::put('/pphbadantahunan/{id}', [App\Http\Controllers\PphbadantahunanController::class, 'update'])->name('pphbadantahunan/update');
+
+// pphbadantahunan
 
 // pembayaran
 Route::get('/pembayaran', [App\Http\Controllers\PembayaranController::class, 'index'])->name('pembayaran');
@@ -408,6 +419,7 @@ Route::get('/pphtidakfinallist', [App\Http\Controllers\AllInController::class,'l
 Route::get('/spt1770sllist', [App\Http\Controllers\AllInController::class,'listspt1770s'])->name('data.spt1770s');
 Route::get('/spt1770ssllist', [App\Http\Controllers\AllInController::class,'listspt1770ss'])->name('data.spt1770ss');
 Route::get('/listDosen', [App\Http\Controllers\AllInController::class,'listDosen'])->name('data.dosen');
+Route::get('/pphbadan', [App\Http\Controllers\AllInController::class,'pphbadan'])->name('data.pphbadantahunan');
 // SEARCH
 Route::get('/search/resultPtkp', [App\Http\Controllers\AllInController::class,'resultPtkp'])->name('get.ptkp');
 Route::get('/search/resultNoakun', [App\Http\Controllers\AllInController::class,'akun_kredit'])->name('get.nokredit');
@@ -430,6 +442,10 @@ Route::post('/printpdflabarugifiskal', [App\Http\Controllers\PDFController::clas
 Route::post('/printpdfneracafiskal', [App\Http\Controllers\PDFController::class,'neracafiskalPDF']);
 Route::post('/printpdflatihanneracafiskal', [App\Http\Controllers\PDFController::class,'latihanneracafiskalPDF']);
 Route::post('/printpdflatihanlabarugifiskal', [App\Http\Controllers\PDFController::class,'latihanlabarugifiskalPDF']);
+Route::post('/printpdflatihanneracafiskalshow', [App\Http\Controllers\PDFController::class,'latihanneracafiskalPDFshow']);
+Route::post('/printpdflatihanlabarugifiskalshow', [App\Http\Controllers\PDFController::class,'latihanlabarugifiskalPDFshow']);
+Route::post('/printpdfneracafiskalshow', [App\Http\Controllers\PDFController::class,'neracafiskalPDFshow']);
+Route::post('/printpdflabarugifiskalshow', [App\Http\Controllers\PDFController::class,'labarugifiskalPDFshow']);
 
 Route::post('/formulirpertama', [App\Http\Controllers\AllInController::class,'formulirpertama']);
 Route::post('/formulirkedua', [App\Http\Controllers\AllInController::class,'formulirkedua']);

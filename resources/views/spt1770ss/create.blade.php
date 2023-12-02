@@ -81,8 +81,8 @@
                                 <div class="mb-3 row">
                                     <label class="col-sm-3 col-form-label"></label>
                                     <div class="col-sm-9">
-                                        <input type="number" min="0" autocomplete="off" required
-                                                placeholder="Masukkan Nilai"
+                                        <input type="text" min="0" autocomplete="off" required
+                                                placeholder="Masukkan Nilai" onkeyup="this.value=sprator(this.value);"
                                                 class="form-control"id="a1_pajak_1770ss" name="a1_pajak_1770ss">
                                     </div>
                                 </div>
@@ -90,8 +90,8 @@
                                 <div class="mb-3 row">
                                     <label class="col-sm-3 col-form-label"></label>
                                     <div class="col-sm-9">
-                                        <input type="number" min="0" autocomplete="off" required
-                                                placeholder="Masukkan Nilai"
+                                        <input type="text" min="0" autocomplete="off" required
+                                                placeholder="Masukkan Nilai" onkeyup="this.value=sprator(this.value);"
                                                 class="form-control"id="a2_pajak_1770ss" name="a2_pajak_1770ss">
                                     </div>
                                 </div>
@@ -108,8 +108,8 @@
                                     </div>
                                     <label class="col-sm-1 col-form-label"></label>
                                     <div class="col-sm-4">
-                                        <input type="number" min="0" autocomplete="off" required
-                                                placeholder="Masukkan Nilai"
+                                        <input type="text" min="0" autocomplete="off" required
+                                                placeholder="Masukkan Nilai" onkeyup="this.value=sprator(this.value);"
                                                 class="form-control"id="a3_pajak_1770ss" name="a3_pajak_1770ss">
                                     </div>
                                 </div>
@@ -117,7 +117,7 @@
                                 <div class="mb-3 row">
                                     <label class="col-sm-3 col-form-label"></label>
                                     <div class="col-sm-9">
-                                        <input type="number" min="0" readonly autocomplete="off" required
+                                        <input type="text" min="0" readonly autocomplete="off" required
                                                 class="form-control"id="a4_pajak_1770ss" name="a4_pajak_1770ss">
                                     </div>
                                 </div>
@@ -125,8 +125,8 @@
                                 <div class="mb-3 row">
                                     <label class="col-sm-3 col-form-label"></label>
                                     <div class="col-sm-9">
-                                        <input type="number" min="0" autocomplete="off" required
-                                            placeholder="Masukkan Nilai"
+                                        <input type="text" min="0" autocomplete="off" required
+                                            placeholder="Masukkan Nilai" onkeyup="this.value=sprator(this.value);"
                                                 class="form-control"id="a5_pajak_1770ss" name="a5_pajak_1770ss">
                                     </div>
                                 </div>
@@ -134,8 +134,8 @@
                                 <div class="mb-3 row">
                                     <label class="col-sm-3 col-form-label"></label>
                                     <div class="col-sm-9">
-                                        <input type="number" min="0" autocomplete="off" required
-                                            placeholder="Masukkan Nilai"
+                                        <input type="text" min="0" autocomplete="off" required
+                                            placeholder="Masukkan Nilai" onkeyup="this.value=sprator(this.value);"
                                                 class="form-control"id="a6_pajak_1770ss" name="a6_pajak_1770ss">
                                     </div>
                                 </div>
@@ -162,7 +162,7 @@
                                 <div class="mb-3 row">
                                     <label class="col-sm-3 col-form-label">7. Jumlah (5 - 6)</label>
                                     <div class="col-sm-9">
-                                        <input type="number" min="0" readonly autocomplete="off" required
+                                        <input type="text" min="0" readonly autocomplete="off" required
                                             {{-- placeholder="Masukkan Nilai" --}}
                                                 class="form-control"id="a7_pajak_jumlah_1770ss" name="a7_pajak_jumlah_1770ss">
                                     </div>
@@ -173,8 +173,8 @@
                                 <div class="mb-3 row">
                                     <label class="col-sm-3 col-form-label"></label>
                                     <div class="col-sm-9">
-                                        <input type="number" min="0" autocomplete="off" required
-                                            placeholder="Masukkan Nilai"
+                                        <input type="text" min="0" autocomplete="off" required
+                                            placeholder="Masukkan Nilai" onkeyup="this.value=sprator(this.value);"
                                                 class="form-control"id="a8_penghasil_1770ss" name="a8_penghasil_1770ss">
                                     </div>
                                 </div>
@@ -182,8 +182,8 @@
                                 <div class="mb-3 row">
                                     <label class="col-sm-3 col-form-label"></label>
                                     <div class="col-sm-9">
-                                        <input type="number" min="0" autocomplete="off" required
-                                            placeholder="Masukkan Nilai"
+                                        <input type="text" min="0" autocomplete="off" required
+                                            placeholder="Masukkan Nilai" onkeyup="this.value=sprator(this.value);"
                                                 class="form-control"id="a9_penghasil_1770ss" name="a9_penghasil_1770ss">
                                     </div>
                                 </div>
@@ -191,8 +191,8 @@
                                 <div class="mb-3 row">
                                     <label class="col-sm-3 col-form-label"></label>
                                     <div class="col-sm-9">
-                                        <input type="number" min="0" autocomplete="off" required
-                                            placeholder="Masukkan Nilai"
+                                        <input type="text" min="0" autocomplete="off" required
+                                            placeholder="Masukkan Nilai" onkeyup="this.value=sprator(this.value);"
                                                 class="form-control"id="a10_penghasil_1770ss" name="a10_penghasil_1770ss">
                                     </div>
                                 </div>
@@ -202,8 +202,8 @@
                                 <div class="mb-3 row">
                                     <label class="col-sm-3 col-form-label"></label>
                                     <div class="col-sm-9">
-                                        <input type="number" min="0" autocomplete="off" required
-                                            placeholder="Masukkan Nilai"
+                                        <input type="text" min="0" autocomplete="off" required
+                                            placeholder="Masukkan Nilai" onkeyup="this.value=sprator(this.value);"
                                                 class="form-control"id="a11_daftar_1770ss" name="a11_daftar_1770ss">
                                     </div>
                                 </div>
@@ -211,8 +211,8 @@
                                 <div class="mb-3 row">
                                     <label class="col-sm-3 col-form-label"></label>
                                     <div class="col-sm-9">
-                                        <input type="number" min="0" autocomplete="off" required
-                                            placeholder="Masukkan Nilai"
+                                        <input type="text" min="0" autocomplete="off" required
+                                            placeholder="Masukkan Nilai" onkeyup="this.value=sprator(this.value);"
                                                 class="form-control"id="a12_daftar_1770ss" name="a12_daftar_1770ss">
                                     </div>
                                 </div>

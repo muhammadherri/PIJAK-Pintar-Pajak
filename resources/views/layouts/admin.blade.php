@@ -143,6 +143,7 @@
                             <li><a href="{{ route('transaksipph21') }}">PPh 21</a></li>
                             <li><a href="{{ route('pphfinal') }}">PPh Final</a></li>
                             <li><a href="{{ route('pphtidakfinal') }}">PPh Tidak Final</a></li>
+                            <li><a href="{{ route('pphbadantahunan') }}">PPh 25/29</a></li>
                             <li><a href="{{ route('ebupot') }}">E-Bupot</a></li>
                         </ul>
                     </li>
@@ -181,6 +182,15 @@
                             <li><a href="{{ route('spttahunan') }}" >SPT Badan 1771</a></li>
                             <li><a href="{{ route('sptmasapajak') }}" >SPT 1721</a></li>
                             <li><a href="{{ route('sptPPN') }}" >SPT PPN 1111</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <i class="flaticon-044-menu"></i>
+                            <span class="nav-text">Pelaporan Pribadi</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{ route('sptS') }}" >1770S</a></li>
+                            <li><a href="{{ route('sptSS') }}" >1770SS</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
@@ -235,15 +245,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                        <i class="flaticon-022-copy"></i>
-                        <span class="nav-text">SPT Orang Pribadi</span>
-                    </a>
-                    <ul aria-expanded="false">
-                        <li><a href="{{ route('sptS') }}" >1770S</a></li>
-                        <li><a href="{{ route('sptSS') }}" >1770SS</a></li>
-                    </ul>
-                </li>
+                    
                     @if (Auth::user()->status == 1)
 
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
